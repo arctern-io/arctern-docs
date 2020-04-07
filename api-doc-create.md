@@ -1,6 +1,6 @@
 # API文档生成
 
-如果你的doc目录下没有api-doc文件夹开始生成API文档，请按照下面的操作一步一步执行，如果你的doc目录下存在api-doc文件夹且里面有rst文件，请直接跳到生成API文档操作。wq
+如果你的doc目录下没有api-doc文件夹开始生成API文档，请按照下面的操作一步一步执行，如果你的doc目录下存在api-doc文件夹且里面有rst文件，请直接跳到生成API文档操作。
 
 ## 环境准备
 
@@ -32,7 +32,7 @@ sphinx-quickstart /*输入项目信息*/
 在source/conf.py中加入如下代码：
     import os
     import sys
-    sys.path.insert(0, os.path.abspath('../../../python/arctern'))
+    sys.path.insert(0, os.path.abspath('../../../python/arctern')) #读取文件夹的绝对路径
 	......
 	extensions = [
    'sphinx.ext.autodoc',

@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../../python/arctern'))
+sys.path.insert(0, os.path.abspath('/home/liupeng/GIS/python/arctern'))
 project = 'arctern'
 copyright = '2020, zilliz'
 author = 'zilliz'
