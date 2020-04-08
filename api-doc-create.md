@@ -48,7 +48,7 @@ sphinx-quickstart /*输入项目信息*/
    
 生成rst文件：
    cd ../../..
-   sphinx-apidoc -o doc/api-doc/source python/arctern
+   sphinx-apidoc -o doc/api-doc/source path/to/python/arctern
 ```
 
 ## 替换automodules为automodapi
