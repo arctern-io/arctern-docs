@@ -32,7 +32,7 @@ sphinx-quickstart /*输入项目信息*/
 在source/conf.py中加入如下代码：
     import os
     import sys
-    sys.path.insert(0, os.path.abspath('../../../python/arctern')) #读取文件夹的绝对路径
+    sys.path.insert(0, os.path.abspath('/path/to/python/arctern')) #文件夹的绝对路径
 	......
 	extensions = [
    'sphinx.ext.autodoc',
@@ -47,13 +47,12 @@ sphinx-quickstart /*输入项目信息*/
    html_logo = './_static/arctern-color.png' #图片请下载
    
 生成rst文件：
-   cd ../../..
-   sphinx-apidoc -o doc/api-doc/source path/to/python/arctern
+   sphinx-apidoc -o /path/to/api-doc/source /path/to/python/arctern
 ```
 
 ## 替换automodules为automodapi
 ```
-执行replace.py(复制代码后在api-doc目录下执行）:
+执行replace.py(复制代码后在api-doc目录下执行):
     import os
     source_api_path = '/source'
     automo_method = 'automodapi' # automodapi | automodsumm | automodule
@@ -68,7 +67,7 @@ sphinx-quickstart /*输入项目信息*/
 
 ## 修改rst文件识别\_开头的文件以及html格式
 ```
-识别\_开头文件的格式如下：
+识别_开头文件的格式如下：
      .. automodapi:: arctern._wrapper_func
        :members:
        :undoc-members:
