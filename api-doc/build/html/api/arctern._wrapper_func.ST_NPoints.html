@@ -123,11 +123,8 @@
 <li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.ST_GeomFromText.html">ST_GeomFromText</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.ST_AsText.html">ST_AsText</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.point_map.html">point_map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.point_map_wkb.html">point_map_wkb</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.weighted_point_map.html">weighted_point_map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.weighted_point_map_wkb.html">weighted_point_map_wkb</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.heat_map.html">heat_map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.heat_map_wkb.html">heat_map_wkb</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.choropleth_map.html">choropleth_map</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.projection.html">projection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.transform_and_projection.html">transform_and_projection</a></li>
@@ -139,6 +136,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../arctern_pyspark.html">arctern_pyspark api</a></li>
 </ul>
 
             
@@ -224,7 +222,7 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">arctern</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;LINESTRING(1 1,1 4)&quot;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">rst</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">ST_NPoints</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rst</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">ST_NPoints</span><span class="p">(</span><span class="n">arctern</span><span class="o">.</span><span class="n">ST_GeomFromText</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">rst</span><span class="p">)</span>
 <span class="go">    0    2</span>
 <span class="go">    dtype: int64</span>
@@ -258,7 +256,7 @@
     <p>
         &copy; Copyright 2020, zilliz
       <span class="lastupdated">
-        Last updated on Apr 07, 2020.
+        Last updated on Apr 10, 2020.
       </span>
 
     </p>

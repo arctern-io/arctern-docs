@@ -123,11 +123,8 @@
 <li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.ST_GeomFromText.html">ST_GeomFromText</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.ST_AsText.html">ST_AsText</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.point_map.html">point_map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.point_map_wkb.html">point_map_wkb</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.weighted_point_map.html">weighted_point_map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.weighted_point_map_wkb.html">weighted_point_map_wkb</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.heat_map.html">heat_map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.heat_map_wkb.html">heat_map_wkb</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.choropleth_map.html">choropleth_map</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.projection.html">projection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arctern._wrapper_func.transform_and_projection.html">transform_and_projection</a></li>
@@ -139,6 +136,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../arctern_pyspark.html">arctern_pyspark api</a></li>
 </ul>
 
             
@@ -212,14 +210,14 @@
 <code class="sig-prename descclassname">arctern._wrapper_func.</code><code class="sig-name descname">ST_HausdorffDistance</code><span class="sig-paren">(</span><em class="sig-param">geo1</em>, <em class="sig-param">geo2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/arctern/_wrapper_func.html#ST_HausdorffDistance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arctern._wrapper_func.ST_HausdorffDistance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Hausdorff distance between two geometries, a measure of how similar
 or dissimilar 2 geometries are.</p>
-<p>Implements algorithm for computing a distance metric which can be thought of as 
-the &quot;Discrete Hausdorff Distance&quot;. This is the Hausdorff distance restricted to 
-discrete points for one of the geometries. Wikipedia article on Hausdorff distance 
-Martin Davis note on how Hausdorff Distance calculation was used to prove 
+<p>Implements algorithm for computing a distance metric which can be thought of as
+the &quot;Discrete Hausdorff Distance&quot;. This is the Hausdorff distance restricted to
+discrete points for one of the geometries. Wikipedia article on Hausdorff distance
+Martin Davis note on how Hausdorff Distance calculation was used to prove
 correctness of the CascadePolygonUnion approach.</p>
-<p>When densifyFrac is specified, this function performs a segment densification before 
+<p>When densifyFrac is specified, this function performs a segment densification before
 computing the discrete hausdorff distance. The densifyFrac parameter sets the fraction
-by which to densify each segment. Each segment will be split into a number of equal-length 
+by which to densify each segment. Each segment will be split into a number of equal-length
 subsegments, whose fraction of the total length is closest to the given fraction.</p>
 <p>Units are in the units of the spatial reference system of the geometries.</p>
 <dl class="field-list">
@@ -242,7 +240,7 @@ subsegments, whose fraction of the total length is closest to the given fraction
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;POLYGON((0 0 ,0 2, 1 1, 1 0, 0 0))&quot;</span><span class="p">,</span> <span class="s2">&quot;POINT(0 1)&quot;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data1</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data2</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">rst</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">ST_HausdorffDistance</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rst</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">ST_HausdorffDistance</span><span class="p">(</span><span class="n">arctern</span><span class="o">.</span><span class="n">ST_GeomFromText</span><span class="p">(</span><span class="n">data1</span><span class="p">),</span> <span class="n">arctern</span><span class="o">.</span><span class="n">ST_GeomFromText</span><span class="p">(</span><span class="n">data2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">rst</span><span class="p">)</span>
 <span class="go">    0    1.0</span>
 <span class="go">    1    1.0</span>
@@ -277,7 +275,7 @@ subsegments, whose fraction of the total length is closest to the given fraction
     <p>
         &copy; Copyright 2020, zilliz
       <span class="lastupdated">
-        Last updated on Apr 07, 2020.
+        Last updated on Apr 10, 2020.
       </span>
 
     </p>

@@ -2,6 +2,7 @@ arctern
 =======
 
 .. toctree::
-   :maxdepth: 8
+   :maxdepth: 4
 
    arctern
+   arctern_pyspark

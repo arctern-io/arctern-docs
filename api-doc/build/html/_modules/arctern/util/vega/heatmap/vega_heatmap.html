@@ -85,6 +85,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../arctern.html">arctern python api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../arctern_pyspark.html">arctern_pyspark api</a></li>
 </ul>
 
             
@@ -183,25 +184,28 @@
                 <span class="p">}</span>
                 <span class="k">return</span> <span class="n">dic</span>
 
-        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bounding_box</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">map_scale</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">color_agg</span><span class="p">:</span> <span class="n">Value</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bounding_box</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span>
+                     <span class="n">map_zoom_level</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span>
+                     <span class="n">coordinate_system</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span>
+                     <span class="n">aggregation_type</span><span class="p">:</span> <span class="n">Value</span><span class="p">):</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">bounding_box</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
-                    <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">map_scale</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+                    <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">map_zoom_level</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
                     <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">coordinate_system</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
-                    <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color_agg</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">)):</span>
+                    <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">aggregation_type</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">)):</span>
                 <span class="c1"># TODO error log here</span>
                 <span class="k">assert</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;illegal&quot;</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_bounding_box</span> <span class="o">=</span> <span class="n">bounding_box</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_map_scale</span> <span class="o">=</span> <span class="n">map_scale</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_map_zoom_level</span> <span class="o">=</span> <span class="n">map_zoom_level</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_coordinate_system</span> <span class="o">=</span> <span class="n">coordinate_system</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_color_agg</span> <span class="o">=</span> <span class="n">color_agg</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_aggregation_type</span> <span class="o">=</span> <span class="n">aggregation_type</span>
 
         <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="n">dic</span> <span class="o">=</span> <span class="p">{</span>
                 <span class="s2">&quot;enter&quot;</span><span class="p">:</span> <span class="p">{</span>
                     <span class="s2">&quot;bounding_box&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bounding_box</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
-                    <span class="s2">&quot;map_scale&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_map_scale</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+                    <span class="s2">&quot;map_zoom_level&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_map_zoom_level</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
                     <span class="s2">&quot;coordinate_system&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coordinate_system</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
-                    <span class="s2">&quot;color_agg&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_color_agg</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+                    <span class="s2">&quot;aggregation_type&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aggregation_type</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
                 <span class="p">}</span>
             <span class="p">}</span>
             <span class="k">return</span> <span class="n">dic</span>
@@ -215,15 +219,16 @@
         <span class="p">}]</span>
         <span class="k">return</span> <span class="n">dic</span></div></div>
 
+
 <div class="viewcode-block" id="VegaHeatMap"><a class="viewcode-back" href="../../../../../api/arctern.util.vega.heatmap.vega_heatmap.VegaHeatMap.html#arctern.util.vega.heatmap.vega_heatmap.VegaHeatMap">[docs]</a><span class="k">class</span> <span class="nc">VegaHeatMap</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">map_scale</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
-                 <span class="n">bounding_box</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">color_agg</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">bounding_box</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
+                 <span class="n">map_zoom_level</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">aggregation_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_width</span> <span class="o">=</span> <span class="n">width</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">height</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_bounding_box</span> <span class="o">=</span> <span class="n">bounding_box</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_map_scale</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">map_scale</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_map_zoom_level</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">map_zoom_level</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_coordinate_system</span> <span class="o">=</span> <span class="n">coordinate_system</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_color_agg</span> <span class="o">=</span> <span class="n">color_agg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_aggregation_type</span> <span class="o">=</span> <span class="n">aggregation_type</span>
 
 <div class="viewcode-block" id="VegaHeatMap.build"><a class="viewcode-back" href="../../../../../api/arctern.util.vega.heatmap.vega_heatmap.VegaHeatMap.html#arctern.util.vega.heatmap.vega_heatmap.VegaHeatMap.build">[docs]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">description</span> <span class="o">=</span> <span class="n">Description</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s2">&quot;heat_map_2d&quot;</span><span class="p">)</span>
@@ -234,9 +239,9 @@
         <span class="n">scale2</span> <span class="o">=</span> <span class="n">Scales</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">domain2</span><span class="p">)</span>
         <span class="n">scales</span> <span class="o">=</span> <span class="n">Scales</span><span class="p">([</span><span class="n">scale1</span><span class="p">,</span> <span class="n">scale2</span><span class="p">])</span>
         <span class="n">encode</span> <span class="o">=</span> <span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="p">(</span><span class="n">bounding_box</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_bounding_box</span><span class="p">),</span>
-                              <span class="n">map_scale</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map_scale</span><span class="p">),</span>
+                              <span class="n">map_zoom_level</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map_zoom_level</span><span class="p">),</span>
                               <span class="n">coordinate_system</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_coordinate_system</span><span class="p">),</span>
-                              <span class="n">color_agg</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_color_agg</span><span class="p">))</span>
+                              <span class="n">aggregation_type</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_aggregation_type</span><span class="p">))</span>
         <span class="n">marks</span> <span class="o">=</span> <span class="n">Marks</span><span class="p">(</span><span class="n">encode</span><span class="p">)</span>
         <span class="n">root</span> <span class="o">=</span> <span class="n">Root</span><span class="p">(</span><span class="n">Width</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_width</span><span class="p">),</span> <span class="n">Height</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_height</span><span class="p">),</span> <span class="n">description</span><span class="p">,</span>
                     <span class="n">data</span><span class="p">,</span> <span class="n">scales</span><span class="p">,</span> <span class="n">marks</span><span class="p">)</span>
@@ -269,7 +274,7 @@
     <p>
         &copy; Copyright 2020, zilliz
       <span class="lastupdated">
-        Last updated on Apr 07, 2020.
+        Last updated on Apr 10, 2020.
       </span>
 
     </p>

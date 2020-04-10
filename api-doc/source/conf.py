@@ -18,7 +18,8 @@
 # -- Project information -----------------------------------------------------
 import os
 import sys
-sys.path.insert(0, os.path.abspath('/home/liupeng/GIS/python/arctern'))
+sys.path.insert(0, os.path.abspath('/path/to/arctern/python/arctern'))
+sys.path.insert(1, os.path.abspath('/path/to/arctern/spark/pyspark/arctern_pyspark'))
 project = 'arctern'
 copyright = '2020, zilliz'
 author = 'zilliz'
@@ -36,8 +37,15 @@ extensions = [
    'sphinx.ext.autodoc',
    'sphinx.ext.viewcode',
    'sphinx_automodapi.automodapi',
-   'sphinx.ext.inheritance_diagram'
+   'sphinx.ext.inheritance_diagram',
+   'recommonmark'
 ]
+
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.txt': 'markdown',
+    '.md': 'markdown',
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

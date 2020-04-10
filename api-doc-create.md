@@ -1,6 +1,5 @@
 # API文档生成
 
-如果你的doc目录下没有api-doc文件夹开始生成API文档，请按照下面的操作一步一步执行，如果你的doc目录下存在api-doc文件夹且里面有rst文件，请直接跳到生成API文档操作。
 
 ## 环境准备
 
@@ -16,76 +15,47 @@ Ubuntu LTS  | 18.04 或以上
 ```
 conda install sphinx
 conda install sphinx_automodapi
-conda install sphinx_rtd_theme
+pip install sphinx_rtd_theme
+pip install --upgrade recommonmark
 ```
 
-## 生成conf.py文件
+## 安装pyspark
 ```
-cd arctern/doc
-mkdir api-doc
-cd api-doc
-sphinx-quickstart /*输入项目信息*/
+cd /spark-3.0.0-preview2/python
+python setup.py build && python setup.py install
 ```
 
-## 配置conf.py及生成rst文件
+## 修改conf.py文件
 ```
-在source/conf.py中加入如下代码：
-    import os
-    import sys
-    sys.path.insert(0, os.path.abspath('/path/to/python/arctern')) #文件夹的绝对路径
-	......
-	extensions = [
-   'sphinx.ext.autodoc',
-   'sphinx.ext.viewcode',
-   'sphinx_automodapi.automodapi',
-   'sphinx.ext.inheritance_diagram'
-   ]
-   ......
-   html_last_updated_fmt = '%b %d, %Y'
-   html_domain_indices = True
-   html_theme = 'sphinx_rtd_theme'
-   html_logo = './_static/arctern-color.png' #图片请下载
-   
-生成rst文件：
-   sphinx-apidoc -o /path/to/api-doc/source /path/to/python/arctern
+cd arctern-docs/api-doc/source
+vim conf.py
+修改路径，如下：
+    sys.path.insert(0, os.path.abspath('/path/to/python/arctern'))
+	修改为当前你的文件所在的绝对路径
 ```
 
-## 替换automodules为automodapi
+## 修改sphinx-build文件
 ```
-执行replace.py(复制代码后在api-doc目录下执行):
-    import os
-    source_api_path = '/source'
-    automo_method = 'automodapi' # automodapi | automodsumm | automodule
-    for rst_file in os.listdir(source_api_path):
-      if rst_file.endswith('.rst'):
-        with open(source_api_path + os.sep + rst_file, 'r') as f:
-            contents = f.read()
-        contents = contents.replace('automodule', automo_method)
-        with open(source_api_path + os.sep + rst_file, 'w') as f:
-            f.write(contents)
-```
+使用以下指令找到sphinx-build文件路径：
+    which sphinx-build
+	
+添加如下代码：
+    import functools
+    from pyspark.sql import functions
 
-## 修改rst文件识别\_开头的文件以及html格式
-```
-识别_开头文件的格式如下：
-     .. automodapi:: arctern._wrapper_func
-       :members:
-       :undoc-members:
-       :show-inheritance:
-   
-删除Submodules以及下面的模块名标题，例如：
-     Submodules
-     arctern.util.vega.choroplethmap.vega_choroplethmap module
-   
-如果需要打印类继承图，执行如下命令：
-     conda install -c conda-forge graphviz 
-     conda install -c conda-forge python-graphviz
-	 
-如果不打印类继承图，修改如下：
-     .. automodapi:: arctern.util.vega.heatmap.vega_heatmap
-        :members:
-        :undoc-members:
-        :no-inheritance-diagram:
+    def pandas_udf(p1, p2):
+
+       from functools import wraps
+       def inner(func):
+           @wraps(func)
+           def wrapper(*args, **kwargs):
+               result = func(*args, **kwargs)
+               return result
+           return wrapper
+
+       return inner
+
+    functions.pandas_udf=pandas_udf
 ```
 
 ## 生成API文档

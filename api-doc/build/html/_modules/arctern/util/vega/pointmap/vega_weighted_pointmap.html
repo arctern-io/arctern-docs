@@ -85,6 +85,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../arctern.html">arctern python api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../arctern_pyspark.html">arctern_pyspark api</a></li>
 </ul>
 
             
@@ -167,6 +168,7 @@
 <span class="kn">from</span> <span class="nn">arctern.util.vega.vega_node</span> <span class="k">import</span> <span class="p">(</span><span class="n">RootMarks</span><span class="p">,</span> <span class="n">Root</span><span class="p">,</span> <span class="n">Description</span><span class="p">,</span> <span class="n">Data</span><span class="p">,</span>
                                          <span class="n">Width</span><span class="p">,</span> <span class="n">Height</span><span class="p">,</span> <span class="n">Scales</span><span class="p">)</span>
 
+
 <div class="viewcode-block" id="Marks"><a class="viewcode-back" href="../../../../../api/arctern.util.vega.pointmap.vega_weighted_pointmap.Marks.html#arctern.util.vega.pointmap.vega_weighted_pointmap.Marks">[docs]</a><span class="k">class</span> <span class="nc">Marks</span><span class="p">(</span><span class="n">RootMarks</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Top-Level Vega Specification Property: Marks</span>
@@ -183,40 +185,40 @@
                 <span class="p">}</span>
                 <span class="k">return</span> <span class="n">dic</span>
 
-        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bounding_box</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">shape</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span>
-                     <span class="n">color_ruler</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">stroke_ruler</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">opacity</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span>
-                     <span class="n">coordinate_system</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">color_agg</span><span class="p">:</span> <span class="n">Value</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bounding_box</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">shape</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">color_gradient</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span>
+                     <span class="n">color_bound</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">size_bound</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">opacity</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span>
+                     <span class="n">coordinate_system</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">aggregation_type</span><span class="p">:</span> <span class="n">Value</span><span class="p">):</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">bounding_box</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
                     <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
-                    <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
-                    <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color_ruler</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
-                    <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stroke_ruler</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+                    <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color_gradient</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+                    <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color_bound</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+                    <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">size_bound</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
                     <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">opacity</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
                     <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">coordinate_system</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
-                    <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color_agg</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">)):</span>
+                    <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">aggregation_type</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">)):</span>
                 <span class="c1"># TODO error log here</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;illegal&quot;</span><span class="p">)</span>
                 <span class="k">assert</span> <span class="mi">0</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_bounding_box</span> <span class="o">=</span> <span class="n">bounding_box</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span> <span class="o">=</span> <span class="n">shape</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_color</span> <span class="o">=</span> <span class="n">color</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_color_ruler</span> <span class="o">=</span> <span class="n">color_ruler</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_stroke_ruler</span> <span class="o">=</span> <span class="n">stroke_ruler</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_color_gradient</span> <span class="o">=</span> <span class="n">color_gradient</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_color_bound</span> <span class="o">=</span> <span class="n">color_bound</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_size_bound</span> <span class="o">=</span> <span class="n">size_bound</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_opacity</span> <span class="o">=</span> <span class="n">opacity</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_coordinate_system</span> <span class="o">=</span> <span class="n">coordinate_system</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_color_agg</span> <span class="o">=</span> <span class="n">color_agg</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_aggregation_type</span> <span class="o">=</span> <span class="n">aggregation_type</span>
 
         <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="n">dic</span> <span class="o">=</span> <span class="p">{</span>
                 <span class="s2">&quot;enter&quot;</span><span class="p">:</span> <span class="p">{</span>
                     <span class="s2">&quot;bounding_box&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bounding_box</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
                     <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
-                    <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_color</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
-                    <span class="s2">&quot;color_ruler&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_color_ruler</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
-                    <span class="s2">&quot;stroke_ruler&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stroke_ruler</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+                    <span class="s2">&quot;color_gradient&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_color_gradient</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+                    <span class="s2">&quot;color_bound&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_color_bound</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+                    <span class="s2">&quot;size_bound&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size_bound</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
                     <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_opacity</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
                     <span class="s2">&quot;coordinate_system&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coordinate_system</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
-                    <span class="s2">&quot;color_agg&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_color_agg</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+                    <span class="s2">&quot;aggregation_type&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aggregation_type</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
                 <span class="p">}</span>
             <span class="p">}</span>
             <span class="k">return</span> <span class="n">dic</span>
@@ -230,18 +232,20 @@
         <span class="p">}]</span>
         <span class="k">return</span> <span class="n">dic</span></div></div>
 
+
 <div class="viewcode-block" id="VegaWeightedPointMap"><a class="viewcode-back" href="../../../../../api/arctern.util.vega.pointmap.vega_weighted_pointmap.VegaWeightedPointMap.html#arctern.util.vega.pointmap.vega_weighted_pointmap.VegaWeightedPointMap">[docs]</a><span class="k">class</span> <span class="nc">VegaWeightedPointMap</span><span class="p">(</span><span class="n">VegaScatterPlot</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">bounding_box</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
-                 <span class="n">mark_color</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">color_ruler</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">stroke_ruler</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">opacity</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
-                 <span class="n">coordinate_system</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">color_agg</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+                 <span class="n">color_gradient</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">color_bound</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">size_bound</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">opacity</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                 <span class="n">coordinate_system</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">aggregation_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+
         <span class="n">VegaScatterPlot</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_bounding_box</span> <span class="o">=</span> <span class="n">bounding_box</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_mark_color</span> <span class="o">=</span> <span class="n">mark_color</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_color_ruler</span> <span class="o">=</span> <span class="n">color_ruler</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_stroke_ruler</span> <span class="o">=</span> <span class="n">stroke_ruler</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_color_gradient</span> <span class="o">=</span> <span class="n">color_gradient</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_color_bound</span> <span class="o">=</span> <span class="n">color_bound</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_size_bound</span> <span class="o">=</span> <span class="n">size_bound</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_opacity</span> <span class="o">=</span> <span class="n">opacity</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_coordinate_system</span> <span class="o">=</span> <span class="n">coordinate_system</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_color_agg</span> <span class="o">=</span> <span class="n">color_agg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_aggregation_type</span> <span class="o">=</span> <span class="n">aggregation_type</span>
 
 <div class="viewcode-block" id="VegaWeightedPointMap.build"><a class="viewcode-back" href="../../../../../api/arctern.util.vega.pointmap.vega_weighted_pointmap.VegaWeightedPointMap.html#arctern.util.vega.pointmap.vega_weighted_pointmap.VegaWeightedPointMap.build">[docs]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">description</span> <span class="o">=</span> <span class="n">Description</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s2">&quot;circle_2d&quot;</span><span class="p">)</span>
@@ -253,12 +257,12 @@
         <span class="n">scales</span> <span class="o">=</span> <span class="n">Scales</span><span class="p">([</span><span class="n">scale1</span><span class="p">,</span> <span class="n">scale2</span><span class="p">])</span>
         <span class="n">encode</span> <span class="o">=</span> <span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="p">(</span><span class="n">bounding_box</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_bounding_box</span><span class="p">),</span>
                               <span class="n">shape</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="s2">&quot;circle&quot;</span><span class="p">),</span>
-                              <span class="n">color</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mark_color</span><span class="p">),</span>
-                              <span class="n">color_ruler</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_color_ruler</span><span class="p">),</span>
-                              <span class="n">stroke_ruler</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stroke_ruler</span><span class="p">),</span>
+                              <span class="n">color_gradient</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_color_gradient</span><span class="p">),</span>
+                              <span class="n">color_bound</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_color_bound</span><span class="p">),</span>
+                              <span class="n">size_bound</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_size_bound</span><span class="p">),</span>
                               <span class="n">opacity</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_opacity</span><span class="p">),</span>
                               <span class="n">coordinate_system</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_coordinate_system</span><span class="p">),</span>
-                              <span class="n">color_agg</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_color_agg</span><span class="p">))</span>
+                              <span class="n">aggregation_type</span><span class="o">=</span><span class="n">Marks</span><span class="o">.</span><span class="n">Encode</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_aggregation_type</span><span class="p">))</span>
         <span class="n">marks</span> <span class="o">=</span> <span class="n">Marks</span><span class="p">(</span><span class="n">encode</span><span class="p">)</span>
         <span class="n">root</span> <span class="o">=</span> <span class="n">Root</span><span class="p">(</span><span class="n">Width</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_width</span><span class="p">),</span> <span class="n">Height</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_height</span><span class="p">),</span> <span class="n">description</span><span class="p">,</span>
                     <span class="n">data</span><span class="p">,</span> <span class="n">scales</span><span class="p">,</span> <span class="n">marks</span><span class="p">)</span>
@@ -291,7 +295,7 @@
     <p>
         &copy; Copyright 2020, zilliz
       <span class="lastupdated">
-        Last updated on Apr 07, 2020.
+        Last updated on Apr 10, 2020.
       </span>
 
     </p>

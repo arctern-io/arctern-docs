@@ -123,11 +123,8 @@
 <li class="toctree-l4"><a class="reference internal" href="api/arctern._wrapper_func.ST_GeomFromText.html">ST_GeomFromText</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/arctern._wrapper_func.ST_AsText.html">ST_AsText</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/arctern._wrapper_func.point_map.html">point_map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/arctern._wrapper_func.point_map_wkb.html">point_map_wkb</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/arctern._wrapper_func.weighted_point_map.html">weighted_point_map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/arctern._wrapper_func.weighted_point_map_wkb.html">weighted_point_map_wkb</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/arctern._wrapper_func.heat_map.html">heat_map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/arctern._wrapper_func.heat_map_wkb.html">heat_map_wkb</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/arctern._wrapper_func.choropleth_map.html">choropleth_map</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/arctern._wrapper_func.projection.html">projection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/arctern._wrapper_func.transform_and_projection.html">transform_and_projection</a></li>
@@ -139,6 +136,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="arctern_pyspark.html">arctern_pyspark api</a></li>
 </ul>
 
             
@@ -325,13 +323,13 @@
 <td><p>For each geometry in geometries, return a string that indicates is type.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="api/arctern._wrapper_func.ST_MakeValid.html#arctern._wrapper_func.ST_MakeValid" title="arctern._wrapper_func.ST_MakeValid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_MakeValid</span></code></a>(geos)</p></td>
-<td><p>For every geometry in geometries, create a valid representation of it without  losing any of the input vertices.</p></td>
+<td><p>For every geometry in geometries, create a valid representation of it without losing any of the input vertices.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="api/arctern._wrapper_func.ST_SimplifyPreserveTopology.html#arctern._wrapper_func.ST_SimplifyPreserveTopology" title="arctern._wrapper_func.ST_SimplifyPreserveTopology"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_SimplifyPreserveTopology</span></code></a>(geos, ...)</p></td>
 <td><p>For each geometry in geometries create a &quot;simplified&quot; version for it according to the precision that parameter tolerance specifies.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="api/arctern._wrapper_func.ST_PolygonFromEnvelope.html#arctern._wrapper_func.ST_PolygonFromEnvelope" title="arctern._wrapper_func.ST_PolygonFromEnvelope"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_PolygonFromEnvelope</span></code></a>(min_x, min_y, max_x, ...)</p></td>
-<td><p>Construct polygon(rectangle) geometries from arr_min_x, arr_min_y, arr_max_x,  arr_max_y.</p></td>
+<td><p>Construct polygon(rectangle) geometries from arr_min_x, arr_min_y, arr_max_x, arr_max_y.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="api/arctern._wrapper_func.ST_Contains.html#arctern._wrapper_func.ST_Contains" title="arctern._wrapper_func.ST_Contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_Contains</span></code></a>(left, right)</p></td>
 <td><p>Check whether a geometry contain another geometry.</p></td>
@@ -367,60 +365,51 @@
 <td><p>Compute the double-precision minimum bounding box geometry for every geometry in geometries.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="api/arctern._wrapper_func.ST_Buffer.html#arctern._wrapper_func.ST_Buffer" title="arctern._wrapper_func.ST_Buffer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_Buffer</span></code></a>(geos, distance)</p></td>
-<td><p>Returns a geometry that represents all points whose distance from this geos is  less than or equal to distance.</p></td>
+<td><p>Returns a geometry that represents all points whose distance from this geos is less than or equal to distance.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="api/arctern._wrapper_func.ST_Union_Aggr.html#arctern._wrapper_func.ST_Union_Aggr" title="arctern._wrapper_func.ST_Union_Aggr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_Union_Aggr</span></code></a>(geos)</p></td>
 <td><p>This function returns a MULTI geometry or NON-MULTI geometry from a set of geometries.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="api/arctern._wrapper_func.ST_Envelope_Aggr.html#arctern._wrapper_func.ST_Envelope_Aggr" title="arctern._wrapper_func.ST_Envelope_Aggr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_Envelope_Aggr</span></code></a>(geos)</p></td>
-<td><p>Compute the double-precision minimum bounding box geometry for every geometry in geometries,  then returns a MULTI geometry or NON-MULTI geometry from a set of geometries.</p></td>
+<td><p>Compute the double-precision minimum bounding box geometry for every geometry in geometries, then returns a MULTI geometry or NON-MULTI geometry from a set of geometries.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="api/arctern._wrapper_func.ST_Transform.html#arctern._wrapper_func.ST_Transform" title="arctern._wrapper_func.ST_Transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_Transform</span></code></a>(geos, src, dst)</p></td>
-<td><p>Returns a new geometry with its coordinates transformed to a different spatial  reference system.</p></td>
+<td><p>Returns a new geometry with its coordinates transformed to a different spatial reference system.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="api/arctern._wrapper_func.ST_CurveToLine.html#arctern._wrapper_func.ST_CurveToLine" title="arctern._wrapper_func.ST_CurveToLine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_CurveToLine</span></code></a>(geos)</p></td>
-<td><p>Converts a CIRCULAR STRING to regular LINESTRING or CURVEPOLYGON to POLYGON or  MULTISURFACE to MULTIPOLYGON.</p></td>
+<td><p>Converts a CIRCULAR STRING to regular LINESTRING or CURVEPOLYGON to POLYGON or MULTISURFACE to MULTIPOLYGON.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="api/arctern._wrapper_func.ST_GeomFromGeoJSON.html#arctern._wrapper_func.ST_GeomFromGeoJSON" title="arctern._wrapper_func.ST_GeomFromGeoJSON"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_GeomFromGeoJSON</span></code></a>(json)</p></td>
-<td><p>Constructs a PostGIS geometry object from the GeoJSON representation.</p></td>
+<td><p>Constructs a geometry object from the GeoJSON representation.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="api/arctern._wrapper_func.ST_GeomFromText.html#arctern._wrapper_func.ST_GeomFromText" title="arctern._wrapper_func.ST_GeomFromText"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_GeomFromText</span></code></a>(text)</p></td>
-<td><p>Constructs a PostGIS ST_Geometry object from the OGC Well-Known text representation.</p></td>
+<td><p>Constructs a geometry object from the OGC Well-Known text representation.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="api/arctern._wrapper_func.ST_AsText.html#arctern._wrapper_func.ST_AsText" title="arctern._wrapper_func.ST_AsText"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_AsText</span></code></a>(text)</p></td>
 <td><p>Returns the Well-Known Text representation of the geometry.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern._wrapper_func.point_map.html#arctern._wrapper_func.point_map" title="arctern._wrapper_func.point_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">point_map</span></code></a>(xs, ys, conf)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern._wrapper_func.point_map.html#arctern._wrapper_func.point_map" title="arctern._wrapper_func.point_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">point_map</span></code></a>(vega, points)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/arctern._wrapper_func.point_map_wkb.html#arctern._wrapper_func.point_map_wkb" title="arctern._wrapper_func.point_map_wkb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">point_map_wkb</span></code></a>(points, conf)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern._wrapper_func.weighted_point_map.html#arctern._wrapper_func.weighted_point_map" title="arctern._wrapper_func.weighted_point_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weighted_point_map</span></code></a>(vega, points, **kwargs)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern._wrapper_func.weighted_point_map.html#arctern._wrapper_func.weighted_point_map" title="arctern._wrapper_func.weighted_point_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weighted_point_map</span></code></a>(xs, ys, conf, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern._wrapper_func.heat_map.html#arctern._wrapper_func.heat_map" title="arctern._wrapper_func.heat_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heat_map</span></code></a>(vega, points, weights)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/arctern._wrapper_func.weighted_point_map_wkb.html#arctern._wrapper_func.weighted_point_map_wkb" title="arctern._wrapper_func.weighted_point_map_wkb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weighted_point_map_wkb</span></code></a>(points, conf, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern._wrapper_func.choropleth_map.html#arctern._wrapper_func.choropleth_map" title="arctern._wrapper_func.choropleth_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">choropleth_map</span></code></a>(vega, region_boundaries, weights)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern._wrapper_func.heat_map.html#arctern._wrapper_func.heat_map" title="arctern._wrapper_func.heat_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heat_map</span></code></a>(x_data, y_data, c_data, conf)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern._wrapper_func.projection.html#arctern._wrapper_func.projection" title="arctern._wrapper_func.projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">projection</span></code></a>(geos, bottom_right, top_left, ...)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/arctern._wrapper_func.heat_map_wkb.html#arctern._wrapper_func.heat_map_wkb" title="arctern._wrapper_func.heat_map_wkb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heat_map_wkb</span></code></a>(points, c_data, conf)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern._wrapper_func.transform_and_projection.html#arctern._wrapper_func.transform_and_projection" title="arctern._wrapper_func.transform_and_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_and_projection</span></code></a>(geos, src_rs, ...)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern._wrapper_func.choropleth_map.html#arctern._wrapper_func.choropleth_map" title="arctern._wrapper_func.choropleth_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">choropleth_map</span></code></a>(wkb_data, count_data, conf)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern._wrapper_func.wkt2wkb.html#arctern._wrapper_func.wkt2wkb" title="arctern._wrapper_func.wkt2wkb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wkt2wkb</span></code></a>(arr_wkt)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/arctern._wrapper_func.projection.html#arctern._wrapper_func.projection" title="arctern._wrapper_func.projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">projection</span></code></a>(geos, bottom_right, top_left, ...)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern._wrapper_func.transform_and_projection.html#arctern._wrapper_func.transform_and_projection" title="arctern._wrapper_func.transform_and_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_and_projection</span></code></a>(geos, src_rs, ...)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/arctern._wrapper_func.wkt2wkb.html#arctern._wrapper_func.wkt2wkb" title="arctern._wrapper_func.wkt2wkb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wkt2wkb</span></code></a>(arr_wkt)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern._wrapper_func.wkb2wkt.html#arctern._wrapper_func.wkb2wkt" title="arctern._wrapper_func.wkb2wkt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wkb2wkt</span></code></a>(arr_wkb)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern._wrapper_func.wkb2wkt.html#arctern._wrapper_func.wkb2wkt" title="arctern._wrapper_func.wkb2wkt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wkb2wkt</span></code></a>(arr_wkb)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -451,7 +440,7 @@
     <p>
         &copy; Copyright 2020, zilliz
       <span class="lastupdated">
-        Last updated on Apr 07, 2020.
+        Last updated on Apr 10, 2020.
       </span>
 
     </p>
