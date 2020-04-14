@@ -92,7 +92,7 @@ $ conda activate arctern
 
 - GPU version
 
-  Use the following command to install Arctern CPU version:
+  Use the following command to install Arctern GPU version:
 
     ```shell
     $ conda install -y -q -n arctern -c conda-forge -c arctern-dev/label/cuda10.0 libarctern
