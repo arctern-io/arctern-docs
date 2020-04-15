@@ -95,7 +95,11 @@
 
 * GPU版本
 
+<<<<<<< HEAD
+  执行以下命令在 Conda 环境中安装 Arctern GPU 版本：  
+=======
 执行以下命令在 Conda 环境中安装 arctern_spark GPU 版本：  
+>>>>>>> 263862c94d478136cc449ccafad6a07bacced113
 
 ```shell
     conda install -y -q -n arctern -c conda-forge -c arctern-dev/label/cuda10.0 libarctern
