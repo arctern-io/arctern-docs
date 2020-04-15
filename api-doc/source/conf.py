@@ -18,9 +18,9 @@
 # -- Project information -----------------------------------------------------
 import os
 import sys
-sys.path.insert(0, os.path.abspath('/path/to/arctern/python/arctern'))
-sys.path.insert(1, os.path.abspath('/path/to/arctern/spark/pyspark/arctern_pyspark'))
-project = 'arctern'
+sys.path.insert(0, os.path.abspath('/home/liupeng/workspace/GIS/python/arctern'))
+sys.path.insert(1, os.path.abspath('/home/liupeng/workspace/GIS/arctern/spark/pyspark/arctern_pyspark'))
+project = 'Arctern'
 copyright = '2020, zilliz'
 author = 'zilliz'
 
@@ -38,6 +38,7 @@ extensions = [
    'sphinx.ext.viewcode',
    'sphinx_automodapi.automodapi',
    'sphinx.ext.inheritance_diagram',
+   'sphinx_markdown_tables',
    'recommonmark'
 ]
 
@@ -67,11 +68,11 @@ exclude_patterns = []
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
+#add_module_names = False
 html_last_updated_fmt = '%b %d, %Y'
 html_domain_indices = True
 html_theme = 'sphinx_rtd_theme'
-html_logo = './_static/arctern-color.png'
+#html_logo = './_static/arctern-color.png'
 inheritance_graph_attrs = dict(rankdir="LR", size='"6.0, 8.0"',
                                fontsize=14, ratio='compress')
 # Add any paths that contain custom static files (such as style sheets) here,

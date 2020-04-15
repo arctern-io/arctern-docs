@@ -87,7 +87,7 @@
 
 * CPU 版本
 
-  执行以下命令在 Conda 环境中安装 Arctern CPU 版本：
+执行以下命令在 Conda 环境中安装 arctern_spark CPU 版本：
 
 ```shell
     conda install -y -q -n arctern -c conda-forge -c arctern-dev arctern-spark
@@ -95,16 +95,18 @@
 
 * GPU版本
 
+<<<<<<< HEAD
   执行以下命令在 Conda 环境中安装 Arctern GPU 版本：  
+=======
+执行以下命令在 Conda 环境中安装 arctern_spark GPU 版本：  
+>>>>>>> 263862c94d478136cc449ccafad6a07bacced113
 
 ```shell
     conda install -y -q -n arctern -c conda-forge -c arctern-dev/label/cuda10.0 libarctern
     conda install -y -q -n arctern -c conda-forge -c arctern-dev arctern arctern-spark
 ```
 
-
-
-## <span id = "verification">安装验证</span>
+## <span id = "verification">arctern_pyspark安装验证</span>
 
 进入 Python 环境，尝试导入 `arctern` 和 `arctern_pyspark` 验证安装是否成功。
 
@@ -140,9 +142,7 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern/bin/python
 [path/to/your/conda]/envs/arctern
 ```
 
-
-
-## <span id = "test">测试样例</span>
+## <span id = "test">arctern_spark测试样例</span>
 
 下载测试文件
 
@@ -168,7 +168,7 @@ wget https://raw.githubusercontent.com/zilliztech/arctern/conda/spark/pyspark/ex
 在 Conda 环境中输入以下命令可卸载 Arctern
 
 ```shell
-conda uninstall -n arctern libarctern arctern arctern-spark
+conda uninstall -n arctern libarctern pyarctern arctern-spark
 ```
 
 ## <span id = "faq">FAQ</span>
