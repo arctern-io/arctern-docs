@@ -38,6 +38,7 @@ extensions = [
    'sphinx.ext.viewcode',
    'sphinx_automodapi.automodapi',
    'sphinx.ext.inheritance_diagram',
+   'sphinx_markdown_tables',
    'recommonmark'
 ]
 

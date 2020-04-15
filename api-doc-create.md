@@ -22,6 +22,7 @@ conda install sphinx
 pip install sphinx_automodapi
 pip install sphinx_rtd_theme
 pip install --upgrade recommonmark
+pip install sphinx-markdown-tables==0.0.3
 ```
 
 ### 安装pyspark
@@ -81,3 +82,5 @@ make clean
 make html
 python replace.py
 ```
+
+## <span id = "create">API文档添加</span>
