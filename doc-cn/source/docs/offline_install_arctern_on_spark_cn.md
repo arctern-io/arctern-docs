@@ -1,31 +1,20 @@
-# 安装说明-离线环境
+# 离线安装 
 本文档介绍在 Spark 环境中离线安装 Arctern 的步骤。
 
-## 大纲
-* [安装要求](#prerequisities)
-* [下载压缩包](#predownload)
-* [创建 Arctern Conda 环境](#constructenv)
-* [离线安装 Arctern](#offline-install)
-* [验证是否安装成功](#verification)
-* [配置 Spark的 Python 路径](#pathconfiguration)
-* [测试样例](#test)
-* [卸载](#uninstallation)
-* [FAQ](#faq)
 
-
-## <span id = "prerequisities">安装要求</span>
+## 安装要求
 
 Arctern 离线安装需要预先搭建以下环境:
  - Linux 操作系统
- - conda  (详见官网:https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html)
- - spark 3.0 （详见官网:https://spark.apache.org/downloads.html）
+ - conda  ([详见官网](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html))
+ - spark 3.0 （[详见官网](https://spark.apache.org/downloads.html)）
 GPU 版本还需要搭建以下环境:
- - CUDA Toolkit 10.0 (详见官网:https://developer.nvidia.com/cuda-10.0-download-archive)
- - Nvidia driver 4.30  (详见官网:https://www.nvidia.com/Download/index.aspx)
+ - CUDA Toolkit 10.0 ([详见官网](https://developer.nvidia.com/cuda-10.0-download-archive))
+ - Nvidia driver 4.30  ([详见官网](https://www.nvidia.com/Download/index.aspx))
 
 
 
-## <span id = "predownload">预先在有网环境下载安装所需要的压缩包</span>
+## 预先在有网环境下载安装所需要的压缩包
 
 * CPU 版本
 
@@ -48,9 +37,7 @@ $ wget ....so_dep.tar.gz
 $ tar vxf so_dep.tar.gz (add to LD_LIBRARY_PATH)
 ```
 
-
-
-## <span id = "constructenv">创建 Arctern Conda 离线环境</span>
+## 创建 Arctern Conda 离线环境
 
 ### 创建 Arctern 虚拟环境
 
@@ -78,8 +65,7 @@ $ conda create -n <your_env_name>
 **注意：后续工作必须在 Arctern 环境中进行**
 
 
-
-## <span id = "install">安装 Arctern</span>
+## 安装 Arctern
 
 
 * CPU 版本
@@ -100,7 +86,7 @@ $ conda create -n <your_env_name>
 
 
 
-## <span id = "verification">安装验证</span>
+## 安装验证
 
 进入 Python 环境，尝试导入 `arctern` 和 `arctern_pyspark` 验证安装是否成功。
 
@@ -112,7 +98,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> import arctern_pyspark
 ```
 
-## <span id = "pathconfiguration">配置 Spark 的 Python 路径</span>
+## 配置 Spark 的 Python 路径
 
 在 `conf/spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为Conda的安装路径。
 
@@ -136,9 +122,7 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern/bin/python
 [path/to/your/conda]/envs/arctern
 ```
 
-
-
-## <span id = "test">测试样例</span>
+## 测试样例
 
 下载测试文件
 
@@ -159,7 +143,7 @@ wget https://raw.githubusercontent.com/zilliztech/arctern/conda/spark/pyspark/ex
 [path/to/your/spark]/bin/spark-submit --master yarn [path/to/]spark_udf_ex.py
 ```
 
-## <span id = "uninstallation">卸载</span>
+## 卸载
 
 在 Conda 环境中输入以下命令可卸载 Arctern
 
@@ -167,7 +151,7 @@ wget https://raw.githubusercontent.com/zilliztech/arctern/conda/spark/pyspark/ex
 conda uninstall -n arctern libarctern arctern arctern-spark
 ```
 
-## <span id = "faq">FAQ</span>
+## FAQ
 
 ### 对Spark的支持
 

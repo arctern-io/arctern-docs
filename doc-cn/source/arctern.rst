@@ -4,7 +4,6 @@ GeoSpatial Functions
 
 .. toctree::
    :maxdepth: 4
-   :caption: 目录:
 
    api/ST_Point
    api/ST_Intersection
