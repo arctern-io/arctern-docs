@@ -24,6 +24,7 @@ pip install sphinx_automodapi
 pip install sphinx_rtd_theme
 pip install --upgrade recommonmark
 pip install sphinx-markdown-tables==0.0.3
+pip install sphinx-intl
 ```
 
 ### 安装pyspark
@@ -77,11 +78,9 @@ vim conf.py
 ### 生成API文档
 
 ```shell
-cd arctern-docs/doc
+cd arctern-docs/doc-cn
 mkdir build
-make clean
-make html
-python replace.py
+python compile.py
 ```
 
 ## <span id = "add">API文档添加</span>

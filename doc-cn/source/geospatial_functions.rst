@@ -22,6 +22,7 @@ GeoSpatial Functions
    api/Spark_ST_Intersects
    api/Spark_ST_Within
    api/Spark_ST_Distance
+   api/ST_DistanceSphere
    api/Spark_ST_Area
    api/Spark_ST_Centroid
    api/Spark_ST_Length

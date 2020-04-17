@@ -22,6 +22,7 @@ GeoSpatial Functions
    api/ST_Intersects
    api/ST_Within
    api/ST_Distance
+   api/ST_DistanceSphere
    api/ST_Area
    api/ST_Centroid
    api/ST_Length
