@@ -1,9 +1,17 @@
 # 文件的导入与导出
 
-Spark支持多种数据格式文件导入，以下是针对csv、parquet、json、orc等数据格式文件的导入导出例子。详细信息请查看[Spark官方文档](https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html)
+Arctern-Spark 借助 Spark 的文件读写功能完成数据的导入和导出。Spark支持多种数据格式文件导入，以下是针对csv、parquet、json、orc等数据格式文件的导入导出例子。更多的文件格式支持请查看[Spark官方文档](https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html)
 
 ```python
 #CSV文件导入，导出为PARQUET格式
+'''
+CSV 文件内容：
+geos                                         
+POINT (30 10)                                
+POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))
+POLYGON ((1 2, 3 4, 5 6, 1 2))               
+POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1)) 
+'''
 >>> from pyspark.sql import SparkSession
 >>> from arctern_pyspark import register_funcs
 >>> spark_session = SparkSession.builder.appName("Python Arrow-in-Spark example").getOrCreate()
@@ -80,7 +88,7 @@ Spark支持多种数据格式文件导入，以下是针对csv、parquet、json�
 >>> df.write.save("/path/to/geos.orc", format="orc")
 
 
-# ORC文件导入
+# ORC文件导入，导出为CSV格式
 >>> df = spark_session.read.format('orc').options(header='true',sep='|').load("/path/to/geos.orc")
 >>> df.show(100,0)
 +---------------------------------------------+
@@ -101,4 +109,5 @@ Spark支持多种数据格式文件导入，以下是针对csv、parquet、json�
 |false                             |
 |true                              |
 +----------------------------------+
+>>> df.select("geos").write.save("/path/to/geos.csv", format="csv")
 ```
