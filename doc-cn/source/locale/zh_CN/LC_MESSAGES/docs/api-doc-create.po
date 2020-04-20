@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-17 11:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/docs/api-doc-create.md:1
+msgid "API文档添加及生成"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:3
+msgid "大纲"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:4
+msgid "API文档生成"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:5
+msgid "API文档添加"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:7
+msgid "<span id = \"create\">API文档生成</span>"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:9
+msgid "环境准备"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:39
+msgid "安装所需包"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:49
+msgid "安装pyspark"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:56
+msgid "修改conf.py文件"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:65
+msgid "使用以下指令找到sphinx-build文件路径： which sphinx-build"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:68
+msgid "添加如下代码： import functools from pyspark.sql import functions"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:72
+msgid "修改sphinx-build文件"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:97
+msgid "生成API文档"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:107
+msgid "<span id = \"add\">API文档添加</span>"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:109
+msgid "当增加了新的对外接口函数文件需要生成API文档时，需要按照sphinx生成rst文件的流程执行一遍，生成对应的rst文件，若只是在原有的对外接口文件中新添加一个函数接口，则不需要进行这段流程，这里以新添加一个对外函数接口文件为例，具体步骤如下。"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:111
+msgid "修改conf.py文件添加文件路径"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:121
+msgid "挂载到对应的目录下"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:123
+msgid "这里假设挂载到python_api下，执行如下操作："
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:143
+msgid "添加函数的rst文件"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:145
+msgid "下面操作是为新添加的函数创建一个新的rst文件，这里需要注意的是需要为每一个新的函数创建一个rst文件。"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:160
+msgid "修改new_api_file.rst文件"
+msgstr ""
+

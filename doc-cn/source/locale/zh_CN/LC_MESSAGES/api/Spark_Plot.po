@@ -1,0 +1,119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-17 14:12+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/api/Spark_Plot.rst:2
+msgid "plot"
+msgstr ""
+
+#: arctern_pyspark.plot.plot:1 of
+msgid "Plots a collection of geometries to `ax`"
+msgstr ""
+
+#: arctern_pyspark.plot.plot of
+msgid "parms ax"
+msgstr ""
+
+#: arctern_pyspark.plot.plot:4 of
+msgid "The axes where geometries will be plotted"
+msgstr ""
+
+#: arctern_pyspark.plot.plot of
+msgid "parms geoms"
+msgstr ""
+
+#: arctern_pyspark.plot.plot:7 of
+msgid "sequence of geometries"
+msgstr ""
+
+#: arctern_pyspark.plot.plot of
+msgid "parms **style_kwds"
+msgstr ""
+
+#: arctern_pyspark.plot.plot:10 of
+msgid "optional, collection of plot style `Polygon` and `MultiPolygon`:"
+msgstr ""
+
+#: arctern_pyspark.plot.plot:12 of
+msgid "linewidth linestyle edgecolor facecolor"
+msgstr ""
+
+#: arctern_pyspark.plot.plot:18 of
+msgid "`LineString` and `MultiLineString`:"
+msgstr ""
+
+#: arctern_pyspark.plot.plot:17 of
+msgid "color linewidth linestyle"
+msgstr ""
+
+#: arctern_pyspark.plot.plot:22 of
+msgid "`Point` and `MultiPoint`:"
+msgstr ""
+
+#: arctern_pyspark.plot.plot:21 of
+msgid "color marker markersize"
+msgstr ""
+
+#: arctern_pyspark.plot.plot of
+msgid "example"
+msgstr ""
+
+#: arctern_pyspark.plot.plot:25 of
+msgid ""
+"from arctern_pyspark import register_funcs from pyspark.sql.types import "
+"* import matplotlib.pyplot as plt from arctern_pyspark import plot"
+msgstr ""
+
+#: arctern_pyspark.plot.plot:30 of
+msgid ""
+"spark.conf.set(\"spark.sql.execution.arrow.pyspark.enabled\", \"true\") "
+"raw_data = [] raw_data.append(('point(0 0)',)) "
+"raw_data.append(('linestring(0 10, 5 5, 10 0)',)) "
+"raw_data.append(('polygon((2 2,2 3,3 3,3 2,2 2))',)) "
+"raw_data.append((\"GEOMETRYCOLLECTION(\"                          "
+"\"polygon((1 1,1 2,2 2,2 1,1 1)),\"                          "
+"\"linestring(0 1, 5 6, 10 11),\"                          \"POINT(4 "
+"7))\",)) raw_schema = StructType([StructField('geo', "
+"StringType(),False)])"
+msgstr ""
+
+#: arctern_pyspark.plot.plot:38 of
+msgid ""
+"df = spark.createDataFrame(data=raw_data, schema=raw_schema) "
+"df.createOrReplaceTempView(\"geoms\")"
+msgstr ""
+
+#: arctern_pyspark.plot.plot:41 of
+msgid "df2=spark.sql(\"select st_geomfromtext(geo) from geoms\")"
+msgstr ""
+
+#: arctern_pyspark.plot.plot:43 of
+msgid "fig, ax = plt.subplots() plot(ax, df2,"
+msgstr ""
+
+#: arctern_pyspark.plot.plot:45 of
+msgid ""
+"color=['orange', 'green'], marker='^', markersize=100, linewidth=[None, "
+"7, 8], linestyle=[None, 'dashed', 'dashdot'], edgecolor=[None, None, "
+"'red'], facecolor=[None, None, 'black'])"
+msgstr ""
+
+#: arctern_pyspark.plot.plot:52 of
+msgid "ax.grid() fig.savefig('/tmp/plot_test.png')"
+msgstr ""
+

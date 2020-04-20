@@ -1,0 +1,449 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-18 16:41+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/docs/restful-api.md:1
+msgid "API"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:3
+msgid "创建scope"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:5
+msgid ""
+"arctern的web "
+"server支持自定义命令，这里的自定义命令特指python代码，也就是说用户可以向server提交一段特定的python代码，server将执行这段代码并返回运行结果，为了使不同用户使用的变量互不影响，我们需要为这些代码创建作用域，也就是scope，该url用于创建一个特定的作用域。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:7
+msgid ""
+"Note: "
+"如果后端是spark，那么创建scope的同时，arctern会为scope创建一个叫做spark的SparkSession。随后调用的如/loadfile、/query、/pointmap等restful"
+" api都会默认在spark内进行。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:9 ../../source/docs/restful-api.md:78
+#: ../../source/docs/restful-api.md:131 ../../source/docs/restful-api.md:202
+#: ../../source/docs/restful-api.md:320 ../../source/docs/restful-api.md:422
+#: ../../source/docs/restful-api.md:480
+msgid "Request"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:11 ../../source/docs/restful-api.md:133
+#: ../../source/docs/restful-api.md:204 ../../source/docs/restful-api.md:322
+#: ../../source/docs/restful-api.md:482 ../../source/docs/restful-api.md:585
+#: ../../source/docs/restful-api.md:673 ../../source/docs/restful-api.md:757
+#: ../../source/docs/restful-api.md:847
+msgid "Method: POST"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:12
+msgid "URL: /scope"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:13 ../../source/docs/restful-api.md:82
+#: ../../source/docs/restful-api.md:135 ../../source/docs/restful-api.md:206
+#: ../../source/docs/restful-api.md:324 ../../source/docs/restful-api.md:484
+#: ../../source/docs/restful-api.md:587 ../../source/docs/restful-api.md:675
+#: ../../source/docs/restful-api.md:759 ../../source/docs/restful-api.md:849
+msgid "Headers:"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:14 ../../source/docs/restful-api.md:83
+#: ../../source/docs/restful-api.md:136 ../../source/docs/restful-api.md:207
+#: ../../source/docs/restful-api.md:325 ../../source/docs/restful-api.md:485
+#: ../../source/docs/restful-api.md:588 ../../source/docs/restful-api.md:676
+#: ../../source/docs/restful-api.md:760 ../../source/docs/restful-api.md:850
+msgid "Content-Type: application/json"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:15 ../../source/docs/restful-api.md:137
+#: ../../source/docs/restful-api.md:208 ../../source/docs/restful-api.md:326
+#: ../../source/docs/restful-api.md:486 ../../source/docs/restful-api.md:589
+#: ../../source/docs/restful-api.md:677 ../../source/docs/restful-api.md:761
+#: ../../source/docs/restful-api.md:851
+msgid "Body:"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:22 ../../source/docs/restful-api.md:145
+#: ../../source/docs/restful-api.md:232 ../../source/docs/restful-api.md:345
+#: ../../source/docs/restful-api.md:505 ../../source/docs/restful-api.md:607
+#: ../../source/docs/restful-api.md:694 ../../source/docs/restful-api.md:780
+#: ../../source/docs/restful-api.md:870
+msgid "参数说明："
+msgstr ""
+
+#: ../../source/docs/restful-api.md:24
+msgid ""
+"scope：可选参数，若不指定scope，则request的header可以省略Content-Type: "
+"application/json，且后台使用uuid作为新建的scope。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:26 ../../source/docs/restful-api.md:85
+#: ../../source/docs/restful-api.md:150 ../../source/docs/restful-api.md:246
+#: ../../source/docs/restful-api.md:358 ../../source/docs/restful-api.md:431
+#: ../../source/docs/restful-api.md:512 ../../source/docs/restful-api.md:568
+#: ../../source/docs/restful-api.md:621 ../../source/docs/restful-api.md:659
+#: ../../source/docs/restful-api.md:707 ../../source/docs/restful-api.md:743
+#: ../../source/docs/restful-api.md:795 ../../source/docs/restful-api.md:833
+#: ../../source/docs/restful-api.md:885 ../../source/docs/restful-api.md:924
+msgid "样例："
+msgstr ""
+
+#: ../../source/docs/restful-api.md:51 ../../source/docs/restful-api.md:104
+#: ../../source/docs/restful-api.md:176 ../../source/docs/restful-api.md:294
+#: ../../source/docs/restful-api.md:396 ../../source/docs/restful-api.md:450
+#: ../../source/docs/restful-api.md:566 ../../source/docs/restful-api.md:657
+#: ../../source/docs/restful-api.md:741 ../../source/docs/restful-api.md:831
+#: ../../source/docs/restful-api.md:922
+msgid "Response"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:53 ../../source/docs/restful-api.md:106
+#: ../../source/docs/restful-api.md:296 ../../source/docs/restful-api.md:398
+#: ../../source/docs/restful-api.md:452
+msgid "成功样例："
+msgstr ""
+
+#: ../../source/docs/restful-api.md:64 ../../source/docs/restful-api.md:117
+#: ../../source/docs/restful-api.md:306 ../../source/docs/restful-api.md:408
+#: ../../source/docs/restful-api.md:466
+msgid "错误样例："
+msgstr ""
+
+#: ../../source/docs/restful-api.md:74
+msgid "删除scope"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:76
+msgid "删除指定的scope，该接口一般在用户敲完所有指令后被调用。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:80
+msgid "Method: DELETE"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:81
+msgid "URL: /scope/<scope>"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:127
+msgid "执行命令"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:129
+msgid "在指定作用域内(scope)执行python代码，后台返回执行结果。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:134
+msgid "URL: /command"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:147
+msgid "scope：该字段指明在哪一个作用域内执行command；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:148
+msgid "command：待执行的python代码。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:178
+msgid "正常执行："
+msgstr ""
+
+#: ../../source/docs/restful-api.md:188
+msgid "执行对应代码出现异常："
+msgstr ""
+
+#: ../../source/docs/restful-api.md:198
+msgid "从文件中加载表"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:200
+msgid "在指定作用域(scope)内加载文件内容，并执行对应的建表操作，注意，该操作使用scope内的spark作为默认的SparkSession，详见/scope。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:205
+msgid "URL: /loadfile"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:234 ../../source/docs/restful-api.md:347
+msgid "scope：该字段指明在哪一个作用域内执行建表操作；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:235 ../../source/docs/restful-api.md:348
+msgid "session：可选参数，该字段指明使用哪个SparkSession执行建表操作，若未指定，则使用默认的spark；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:236
+msgid "tables：建表描述，该字段为一个列表(list)，后台会按顺序进行建表操作，以下为具体参数说明："
+msgstr ""
+
+#: ../../source/docs/restful-api.md:237
+msgid "name：表名；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:238 ../../source/docs/restful-api.md:351
+msgid "format：待加载文件的文件格式，目前支持的文件格式有："
+msgstr ""
+
+#: ../../source/docs/restful-api.md:239 ../../source/docs/restful-api.md:352
+msgid "csv"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:240 ../../source/docs/restful-api.md:353
+msgid "json"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:241 ../../source/docs/restful-api.md:354
+msgid "parquet"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:242 ../../source/docs/restful-api.md:355
+msgid "path：文件路径；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:243
+msgid "options：加载文件时需要指定的选项，该字段使用key-value形式，和spark读取文件时保持一致；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:244
+msgid "schema：各列的schema描述，schema字段是一个列表(list)，顺序要和文件中各列的实际存储顺序相同。当前支持的schema类型有：（TODO）"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:316
+msgid "保存到文件"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:318
+msgid "在指定作用域(scope)内执行表数据写盘操作，将sql的结果存入指定文件，注意，该操作使用scope内的spark作为默认的SparkSession，详见/scope。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:323
+msgid "URL: /savetable"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:349
+msgid "tables：写盘操作描述，该字段为一个列表(list)，后台会按顺序进行写盘操作，以下为具体参数说明："
+msgstr ""
+
+#: ../../source/docs/restful-api.md:350
+msgid "sql：待执行的query语句，该语句的结果将作为要保存的表；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:356
+msgid "options：保存文件时需要指定的选项，该字段使用key-value形式，和spark保存文件时保持一致；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:418
+msgid "表信息统计"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:420
+msgid "返回表的统计信息，包括schema信息、行数等。(TODO: spark与pandas交集)"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:424
+msgid "Method: GET"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:425
+msgid "URL: /table?scope=scope1&session=spark&table=table1"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:427
+msgid "scope_name：该字段指明在哪一个作用域内查询表的信息；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:428
+msgid "session_name：可选参数，该字段指明使用哪个SparkSession查询表的信息，若未指定，则使用默认的spark；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:429
+msgid "table_name：表名。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:476
+msgid "查询"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:478
+msgid "执行sql语句，可以选择是否将sql语句的结果返回，如果是，则将结果以json形式返回。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:483
+msgid "URL: /query"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:507 ../../source/docs/restful-api.md:609
+#: ../../source/docs/restful-api.md:696 ../../source/docs/restful-api.md:782
+#: ../../source/docs/restful-api.md:872
+msgid "scope：该字段指明在哪一个作用域内执行sql语句；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:508 ../../source/docs/restful-api.md:610
+#: ../../source/docs/restful-api.md:697 ../../source/docs/restful-api.md:783
+#: ../../source/docs/restful-api.md:873
+msgid "session：可选参数，该字段指明使用哪个SparkSession执行sql语句，若未指定，则使用默认的spark；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:509
+msgid "sql：待执行的query语句；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:510
+msgid "collect_result：可选参数，默认为1，1表示将sql语句的结果用json形式返回，0表示不返回结果。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:581
+msgid "点图"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:583
+msgid "点图，根据sql语句以及相关画图参数绘制点图，将编码后的图片数据返回。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:586
+msgid "URL: /pointmap"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:611
+msgid "sql：待执行的query语句，该sql的结果作为绘制点图的渲染对象；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:612
+msgid "params：绘制点图时需要的参数，具体说明如下："
+msgstr ""
+
+#: ../../source/docs/restful-api.md:613 ../../source/docs/restful-api.md:700
+#: ../../source/docs/restful-api.md:786 ../../source/docs/restful-api.md:876
+msgid "width：图片宽度；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:614 ../../source/docs/restful-api.md:701
+#: ../../source/docs/restful-api.md:787 ../../source/docs/restful-api.md:877
+msgid "height：图片高度；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:615 ../../source/docs/restful-api.md:702
+#: ../../source/docs/restful-api.md:788 ../../source/docs/restful-api.md:878
+msgid "bounding_box：渲染图片所表示的地理范围[x_min, y_min, x_max, y_max]；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:616 ../../source/docs/restful-api.md:703
+#: ../../source/docs/restful-api.md:789 ../../source/docs/restful-api.md:879
+msgid "coordinate_system：输入数据的坐标系统，详见World Geodetic System；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:617
+msgid "point_size：点的大小；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:618
+msgid "point_color：点的颜色；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:619 ../../source/docs/restful-api.md:882
+msgid "opacity：点的不透明度；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:669
+msgid "热力图"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:671
+msgid "热力图，根据sql语句以及相关画图参数绘制热力图，将编码后的图片数据返回。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:674
+msgid "URL: /heatmap"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:698
+msgid "sql：待执行的query语句，该sql的结果作为绘制热力图的渲染对象；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:699
+msgid "params：绘制热力图时需要的参数，具体说明如下："
+msgstr ""
+
+#: ../../source/docs/restful-api.md:704
+msgid "map_zoom_level：地图放大比例，取值范围(1 ~ 15)；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:705 ../../source/docs/restful-api.md:793
+msgid "aggregation_type：聚合类型。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:753
+msgid "轮廓图"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:755
+msgid "轮廓图，根据sql语句以及相关画图参数绘制轮廓图，将编码后的图片数据返回。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:758
+msgid "URL: /choroplethmap"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:784
+msgid "sql：待执行的query语句，该sql的结果作为绘制轮廓图的渲染对象；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:785
+msgid "params：绘制轮廓图时需要的参数，具体说明如下："
+msgstr ""
+
+#: ../../source/docs/restful-api.md:790 ../../source/docs/restful-api.md:880
+msgid "color_gradient：点的颜色渐变范围，即点的颜色从左边渐变到右边；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:791 ../../source/docs/restful-api.md:881
+msgid "color_bound：点颜色的取值范围，与color_gradient配合使用；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:792
+msgid "opacity：点的不透明度。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:843
+msgid "权重图"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:845
+msgid "权重图，根据sql语句以及相关画图参数绘制权重图，将编码后的图片数据返回。"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:848
+msgid "URL: /weighted_pointmap"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:874
+msgid "sql：待执行的query语句，该sql的结果作为绘制权重图的渲染对象；"
+msgstr ""
+
+#: ../../source/docs/restful-api.md:875
+msgid "params：绘制权重图时需要的参数，具体说明如下："
+msgstr ""
+
+#: ../../source/docs/restful-api.md:883
+msgid "size_bound：点大小的取值范围。"
+msgstr ""
+
