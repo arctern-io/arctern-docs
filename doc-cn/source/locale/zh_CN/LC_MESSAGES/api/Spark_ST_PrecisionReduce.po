@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "For the coordinates of the geometry, reduce the number of significant "
 "digits to the given number. The last decimal place will be rounded."
-msgstr "保留 geometry 的坐标的有效数字到指定的位数，有效数字位的后一位要四舍五入。"
+msgstr "保留几何体的坐标的有效数字到指定的位数，有效数字位的后一位四舍五入。"
 
 #: arctern_pyspark._wrapper_func.ST_PrecisionReduce of
 msgid "参数"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_PrecisionReduce:5 of
 msgid "Geometry"
-msgstr "空间几何形状。"
+msgstr "几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_PrecisionReduce:8 of
 msgid "The number to of ignificant digits."

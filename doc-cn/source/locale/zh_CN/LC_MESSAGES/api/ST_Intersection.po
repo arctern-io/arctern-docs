@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_Intersection:1 of
 msgid "Calculate the point set intersection of two geometry objects."
-msgstr "计算left与right的交集，并组织为一个geometry。"
+msgstr "计算两个几何体的交集。"
 
 #: arctern._wrapper_func.ST_Intersection of
 msgid "参数"
@@ -33,7 +33,7 @@ msgstr ""
 #: arctern._wrapper_func.ST_Intersection:7
 #: arctern._wrapper_func.ST_Intersection:10 of
 msgid "Geometries in WKB form."
-msgstr "WKB 格式的 geometries。"
+msgstr "WKB 格式的几何体。"
 
 #: arctern._wrapper_func.ST_Intersection of
 msgid "返回类型"

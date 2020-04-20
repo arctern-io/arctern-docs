@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Check whether geometries are \"spatially equal\". \"Spatially equal\" "
 "here means two geometries represent the same geometry structure."
-msgstr "检查 geo1 与 geo2 是否“空间相等”。这里“空间相等”的意思是两个 geometry 拥有相同的几何结构。"
+msgstr "检查两个几何体是否“空间相等”。这里“空间相等”的意思是两个几何体拥有相同的几何结构。"
 
 #: arctern_pyspark._wrapper_func.ST_Equals of
 msgid "参数"
@@ -34,7 +34,7 @@ msgstr ""
 #: arctern_pyspark._wrapper_func.ST_Equals:5
 #: arctern_pyspark._wrapper_func.ST_Equals:8 of
 msgid "Geometry"
-msgstr "空间几何形状。"
+msgstr "几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_Equals of
 msgid "返回类型"

@@ -24,7 +24,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_Length:1 of
 msgid "Calculate the length of linear geometries."
-msgstr "计算线性 geometry 的长度。"
+msgstr "计算线性几何体的长度。"
 
 #: arctern_pyspark._wrapper_func.ST_Length of
 msgid "参数"
@@ -32,7 +32,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_Length:4 of
 msgid "Geometry"
-msgstr "空间几何形状。"
+msgstr "几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_Length of
 msgid "返回类型"
@@ -44,7 +44,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_Length:7 of
 msgid "The value that represents the length of geometry."
-msgstr "Geometry 的长度。"
+msgstr "几何体的长度。"
 
 #: arctern_pyspark._wrapper_func.ST_Length of
 msgid "example"

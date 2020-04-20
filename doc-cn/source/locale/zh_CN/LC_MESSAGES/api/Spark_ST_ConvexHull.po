@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Compute the smallest convex geometry that encloses all geometries in the "
 "given geometry."
-msgstr "计算并返回一个包含给定 geometry 集合中所有 geometry 的最小凸 geometry。"
+msgstr "计算并返回一个包含给定几何体集合中所有几何体的最小凸几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_ConvexHull of
 msgid "参数"
@@ -34,7 +34,7 @@ msgstr ""
 #: arctern_pyspark._wrapper_func.ST_ConvexHull:4
 #: arctern_pyspark._wrapper_func.ST_ConvexHull:6 of
 msgid "Geometry"
-msgstr "空间几何形状。"
+msgstr "几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_ConvexHull of
 msgid "返回"

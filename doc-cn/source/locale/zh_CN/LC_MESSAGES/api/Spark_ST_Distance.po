@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Calculates the minimum 2D Cartesian (planar) distance between \"geo1\" "
 "and \"geo2\"."
-msgstr "计算 geo1 与 geo2 的平面距离。"
+msgstr "计算几何体 geo1 与几何体 geo2 的平面距离。"
 
 #: arctern_pyspark._wrapper_func.ST_Distance of
 msgid "参数"
@@ -34,7 +34,7 @@ msgstr ""
 #: arctern_pyspark._wrapper_func.ST_Distance:4
 #: arctern_pyspark._wrapper_func.ST_Distance:7 of
 msgid "Geometry"
-msgstr "空间几何形状。"
+msgstr "几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_Distance of
 msgid "返回类型"

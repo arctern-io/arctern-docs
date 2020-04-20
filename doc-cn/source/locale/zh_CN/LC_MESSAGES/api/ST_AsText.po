@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_AsText:1 of
 msgid "Transform the representation of geometry from WKB to WKT."
-msgstr "将 WKB 格式的 geometry 的转化为 WKT 格式的 geometry。"
+msgstr "将 WKB 格式的几何体的转化为 WKT 格式的几何体。"
 
 #: arctern._wrapper_func.ST_AsText of
 msgid "参数"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_AsText:4 of
 msgid "Geometries in WKB form."
-msgstr "WKB格式的geometry。"
+msgstr "WKB 格式的几何体。"
 
 #: arctern._wrapper_func.ST_AsText of
 msgid "返回类型"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_AsText:7 of
 msgid "Geometries in WKT form."
-msgstr "WKT 格式的geometry。"
+msgstr "WKT 格式的几何体。"
 
 #: arctern._wrapper_func.ST_AsText of
 msgid "example"

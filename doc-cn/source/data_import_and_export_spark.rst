@@ -4,6 +4,6 @@
 .. toctree::
    :maxdepth: 1
 
-   docs/data_struct
+   docs/geometry_data_format_spark
    docs/file_data
    docs/jdbc_data

@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_Centroid:1 of
 msgid "Compute the centroid of geometry."
-msgstr "计算 geometry 的中点。"
+msgstr "计算几何体的中点。"
 
 #: arctern._wrapper_func.ST_Centroid of
 msgid "参数"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_Centroid:4 arctern._wrapper_func.ST_Centroid:7 of
 msgid "Geometries in WKB form."
-msgstr "WKB 格式的 geometries。"
+msgstr "WKB 格式的几何体。"
 
 #: arctern._wrapper_func.ST_Centroid of
 msgid "返回类型"

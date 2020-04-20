@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Compute the double-precision minimum bounding box geometry for the union "
 "of given geometries."
-msgstr "计算一个代表给定 geometry 并集的双精度最小边界的 geometry 并返回。"
+msgstr "计算一个代表给定几何体数组并集的双精度最小边界的几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_Envelope_Aggr of
 msgid "参数"
@@ -34,7 +34,7 @@ msgstr ""
 #: arctern_pyspark._wrapper_func.ST_Envelope_Aggr:4
 #: arctern_pyspark._wrapper_func.ST_Envelope_Aggr:7 of
 msgid "Geometry"
-msgstr "空间几何形状。"
+msgstr "几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_Envelope_Aggr of
 msgid "返回类型"

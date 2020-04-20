@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 16:41+0800\n"
+"POT-Creation-Date: 2020-04-20 15:42+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,22 +23,22 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_SimplifyPreserveTopology:1 of
 msgid ""
-"For each geometry in geometries create a \"simplified\" version for it "
-"according to the precision that parameter tolerance specifies."
-msgstr "根据指定的误差精度，为输入的 geometry 构造一个简化的版本。"
+"Returns a \"simplified\" version of the given geometry using the Douglas-"
+"Peucker algorithm."
+msgstr "返回一个使用 Douglas-Peucker 算法“简化”的几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_SimplifyPreserveTopology of
 msgid "参数"
 msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_SimplifyPreserveTopology:5
-#: arctern_pyspark._wrapper_func.ST_SimplifyPreserveTopology:11 of
+#: arctern_pyspark._wrapper_func.ST_SimplifyPreserveTopology:4
+#: arctern_pyspark._wrapper_func.ST_SimplifyPreserveTopology:10 of
 msgid "Geometry"
-msgstr "空间几何形状。"
+msgstr "几何体。"
 
-#: arctern_pyspark._wrapper_func.ST_SimplifyPreserveTopology:8 of
-msgid "The precision of the simplified geometry."
-msgstr "简化 geometry 时的精度误差。"
+#: arctern_pyspark._wrapper_func.ST_SimplifyPreserveTopology:7 of
+msgid "The maximum distance between a point on a linestring and a curve."
+msgstr "直线上的点与曲线上的点的最大距离。"
 
 #: arctern_pyspark._wrapper_func.ST_SimplifyPreserveTopology of
 msgid "返回类型"

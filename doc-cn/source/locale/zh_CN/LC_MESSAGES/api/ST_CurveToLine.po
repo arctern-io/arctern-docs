@@ -39,7 +39,7 @@ msgstr ""
 #: arctern._wrapper_func.ST_CurveToLine:6
 #: arctern._wrapper_func.ST_CurveToLine:9 of
 msgid "Geometries in WKB form."
-msgstr "WKB 格式的 geometries。"
+msgstr "WKB 格式的几何体。"
 
 #: arctern._wrapper_func.ST_CurveToLine of
 msgid "返回类型"

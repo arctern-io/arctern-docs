@@ -27,7 +27,7 @@ msgid ""
 "within geo2\" means no points of \"geo1\" lie in the exterior of \"geo2\""
 " and at least one point of the interior of \"geo1\" lies in the interior "
 "of \"geo2\"."
-msgstr "检查 geo1 是否在 geo2 里面。这里的意思是 geo1 没有点在 geo2 的外面，且至少有一个点在 geo2 里面。"
+msgstr "检查几何体 geo1 是否在几何体 geo2 里面。这里的意思是 geo1 没有点在 geo2 的外面，且至少有一个点在 geo2 里面。"
 
 #: arctern._wrapper_func.ST_Within of
 msgid "参数"
@@ -35,7 +35,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_Within:5 arctern._wrapper_func.ST_Within:8 of
 msgid "Geometries in WKB form."
-msgstr "WKB 格式的 geometries。"
+msgstr "WKB 格式的几何体。"
 
 #: arctern._wrapper_func.ST_Within of
 msgid "返回类型"

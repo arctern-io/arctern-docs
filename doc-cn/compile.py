@@ -19,6 +19,5 @@ if __name__ == "__main__":
     os.system('make clean')
     os.system('make html')
     os.system('make gettext')
-    os.system('sphinx-intl update -p build/gettext -l zh_CN')
     os.system('make html')
     replace()

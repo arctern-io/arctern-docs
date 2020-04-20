@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_Centroid:1 of
 msgid "Compute the centroid of geometry."
-msgstr "计算 geometry 的中点。"
+msgstr "计算几何体的中点。"
 
 #: arctern_pyspark._wrapper_func.ST_Centroid of
 msgid "参数"
@@ -32,7 +32,7 @@ msgstr ""
 #: arctern_pyspark._wrapper_func.ST_Centroid:4
 #: arctern_pyspark._wrapper_func.ST_Centroid:7 of
 msgid "Geometry"
-msgstr "空间几何形状。"
+msgstr "几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_Centroid of
 msgid "返回类型"

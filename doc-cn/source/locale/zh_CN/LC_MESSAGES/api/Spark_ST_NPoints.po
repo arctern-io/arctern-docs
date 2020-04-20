@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_NPoints:1 of
 msgid "Calculate the number of points for the given geometry."
-msgstr "计算给定 geometry 点的数量。"
+msgstr "计算给定几何体点的数量。"
 
 #: arctern_pyspark._wrapper_func.ST_NPoints of
 msgid "参数"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_NPoints:4 of
 msgid "Geometry"
-msgstr "空间几何形状。"
+msgstr "几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_NPoints of
 msgid "返回类型"

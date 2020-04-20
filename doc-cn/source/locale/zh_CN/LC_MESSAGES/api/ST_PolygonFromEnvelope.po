@@ -27,8 +27,8 @@ msgid ""
 "arr_max_x, arr_max_y. The edges of polygon are parallel to coordinate "
 "axis."
 msgstr ""
-"从给定的参数 arr_min_x，arr_min_y，arr_max_x，arr_max_y 构造矩形 "
-"geometry。矩形geometry的边应该平行于坐标轴。"
+"从给定的参数 arr_min_x，arr_min_y，arr_max_x，arr_max_y 构造矩形"
+"几何体。矩形几何体的边应该平行于坐标轴。"
 
 #: arctern._wrapper_func.ST_PolygonFromEnvelope of
 msgid "参数"
@@ -60,7 +60,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_PolygonFromEnvelope:17 of
 msgid "Geometries in WKB form."
-msgstr "WKB 格式的 geometries。"
+msgstr "WKB 格式的几何体。"
 
 #: arctern._wrapper_func.ST_PolygonFromEnvelope of
 msgid "example"

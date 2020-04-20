@@ -34,7 +34,7 @@ msgstr ""
 #: arctern_pyspark._wrapper_func.ST_DistanceSphere:5
 #: arctern_pyspark._wrapper_func.ST_DistanceSphere:8 of
 msgid "Geometry"
-msgstr "空间几何形状。"
+msgstr "几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_DistanceSphere of
 msgid "返回类型"
