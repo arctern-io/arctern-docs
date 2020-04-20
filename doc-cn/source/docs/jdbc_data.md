@@ -1,6 +1,11 @@
 # JDBC连接
 
-以下例子展示如何利用JDBC来从postgis中导入数据，详细信息请查看[Spark官方文档](https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html)。
+Arctern-Spark 可借助 Spark 的 JDBC 连接功能，完成数据从数据库的导入和导出。以下例子将展示如何利用 JDBC 从 postgis 中导入数据，更多详细信息请查看[Spark官方文档](https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html)。
+
+
+## Postgis配置信息
+
+假设 Postgis 的相关配置如下：
 
  配置 | 值
 :-----------:|:----------:
@@ -10,11 +15,25 @@ database name | test
 user name | acterner
 password | acterner
 
-使用如下命令测试能否连接postgis
+使用如下命令测试 postgis 连接：
 
+```bash
 psql test -h 172.17.0.2  -p 5432 -U arcterner
+```
 
-arctern使用jdbc加载postgis，jdbc_postgis.py示例代码如下:
+## JDBC 数据导入示例
+
+
+在提交spark任务时，需要指定jdbc驱动。从 [postgres 官网](https://jdbc.postgresql.org/download.html)下载其最新的JDBC驱动，以下示例中使用的的驱动为 `postgresql-42.2.11.jar`。
+
+以下命令为  Arctern-Spark 通过 JDBC 从 Postgis 导入数据的示例：
+
+```bash
+./bin/spark-submit  --driver-class-path ~/postgresql-42.2.11.jar --jars ~/postgresql-42.2.11.jar ~/query_postgis.py 
+```
+
+其中 `query_postgis.py` 具体代码如下：
+
 ```python
 from pyspark.sql import SparkSession
 from arctern_pyspark import register_funcs
@@ -44,7 +63,8 @@ if __name__ == "__main__":
 
     spark.stop()
 ```
-结果如下：
+上述代码的执行结果如下：
+
 ```
 +----------------------------------+                                            
 |ST_IsSimple(ST_GeomFromText(geos))|
@@ -55,7 +75,3 @@ if __name__ == "__main__":
 |true                              |
 +----------------------------------+
 ```
-
-从[postgres官网](https://jdbc.postgresql.org/download.html)下载最新的JDBC驱动，这里下载的驱动为postgresql-42.2.11.jar，在提交spark任务时，需要指定jdbc驱动
-
-./bin/spark-submit  --driver-class-path ~/postgresql-42.2.11.jar --jars ~/postgresql-42.2.11.jar ~/query_postgis.py 
