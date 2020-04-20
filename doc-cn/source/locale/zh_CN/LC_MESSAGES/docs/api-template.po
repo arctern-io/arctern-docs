@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-17 11:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/docs/api-template.md:1
+msgid "API注释以及Markdown文件模板"
+msgstr ""
+
+#: ../../source/docs/api-template.md:3
+msgid "以下是一个Markdown文件模板，这里需要一个函数写一个Markdown文件。"
+msgstr ""
+
+#: ../../source/docs/api-template.md:5
+msgid "<font size=\"5\">Function</font><br />"
+msgstr ""
+
+#: ../../source/docs/api-template.md:7
+msgid "Module.Function(param1,param2,...) [[source]](source code address)"
+msgstr ""
+
+#: ../../source/docs/api-template.md:9 ../../source/docs/api-template.md:18
+#: ../../source/docs/api-template.md:23
+msgid "Introduction"
+msgstr ""
+
+#: ../../source/docs/api-template.md:11
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/docs/api-template.md:13
+msgid "* param(type) -- Introduction"
+msgstr ""
+
+#: ../../source/docs/api-template.md:16
+msgid "Return"
+msgstr ""
+
+#: ../../source/docs/api-template.md:21
+msgid "Return Type"
+msgstr ""
+
+#: ../../source/docs/api-template.md:26
+msgid "Example:"
+msgstr ""
+
+#: ../../source/docs/api-template.md:33
+msgid "以下是一个函数注释模板："
+msgstr ""
+

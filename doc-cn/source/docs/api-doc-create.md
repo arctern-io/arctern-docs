@@ -38,7 +38,7 @@ python setup.py build && python setup.py install
 
 ```
 cd arctern-docs/doc/source
-vim conf.py
+vi conf.py
 修改路径，如下：
     sys.path.insert(0, os.path.abspath('/path/to/python/arctern'))
 	修改为当前你的文件所在的绝对路径
@@ -55,8 +55,9 @@ vim conf.py
 ```
 使用以下指令找到sphinx-build文件路径：
     which sphinx-build
+    vi path/to/sphinx-build
 	
-添加如下代码：
+在第七行添加如下代码：
     import functools
     from pyspark.sql import functions
 
@@ -91,7 +92,7 @@ python compile.py
 
 ```
 cd doc/source
-vim conf.py
+vi conf.py
 
 添加文件路径：
    sys.path.insert(3, os.path.abspath('/path/to/you/file'))
@@ -103,7 +104,7 @@ vim conf.py
 
 ```
 cd doc/source
-vim python_api.rst
+vi python_api.rst
 
 将文件名称添加到python_api.rst, 添加后的代码如下：
     Python API
@@ -125,7 +126,7 @@ new_api_file为新生成的rst文件名
 
 ```
 cd doc/source/api
-vim function1.rst
+vi function1.rst
 
 添加如下代码：
    function1
@@ -140,7 +141,7 @@ vim function1.rst
 
 ```
 cd doc/source
-vim new_api_file.rst
+vi new_api_file.rst
 
 修改之后如下：
     ============
