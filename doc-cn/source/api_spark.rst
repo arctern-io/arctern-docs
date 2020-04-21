@@ -7,4 +7,4 @@ API
 
    sql_functions_register
    geospatial_functions
-   plot_py
+   plot_spark

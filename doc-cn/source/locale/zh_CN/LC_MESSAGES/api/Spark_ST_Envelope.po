@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Compute the double-precision minimum bounding box geometry for the given "
 "geometry."
-msgstr "根据给定的 geometry，计算一个双精度最小边界的 geometry。"
+msgstr "计算包含给定几何体的最小矩形且该矩形的边与坐标轴平行。"
 
 #: arctern_pyspark._wrapper_func.ST_Envelope of
 msgid "参数"

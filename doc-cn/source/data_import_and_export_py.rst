@@ -4,5 +4,6 @@
 .. toctree::
    :maxdepth: 1
 
-   docs/data_struct
+
+   docs/geometry_data_format_pandas
    docs/pandas_data_import_and_export

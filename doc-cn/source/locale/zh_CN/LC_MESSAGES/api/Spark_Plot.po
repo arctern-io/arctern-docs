@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-17 14:12+0800\n"
+"POT-Creation-Date: 2020-04-21 19:12+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,98 +22,71 @@ msgid "plot"
 msgstr ""
 
 #: arctern_pyspark.plot.plot:1 of
-msgid "Plots a collection of geometries to `ax`"
-msgstr ""
-
-#: arctern_pyspark.plot.plot of
-msgid "parms ax"
-msgstr ""
+msgid ""
+"Plot a collection of geometries to `ax`. Parameters 'linewidth', "
+"'linestyle', 'edgecolor', 'facecolor', 'color', 'marker', 'markersize' "
+"are used to describe the style of plotted figure."
+msgstr "绘制一组几何体。参数“linewidth”，“linestyle”，“edgecolor”,"facecolor"，"
+"“color”,“marker”，“markersize”用来描述绘制图形的样式。"
 
 #: arctern_pyspark.plot.plot:4 of
-msgid "The axes where geometries will be plotted"
-msgstr ""
-
-#: arctern_pyspark.plot.plot of
-msgid "parms geoms"
-msgstr ""
+msgid ""
+"For geometry types `Polygon` and `MultiPolygon`, only 'linewidth', "
+"'linestyle', 'edgecolor', 'facecolor' are effective."
+msgstr "对于几何体“Polygon”，“MultiPolygon”只需要配置“linewidth”，“edgecolor”，“facecolor”，“linestyle”四个参数。"
 
 #: arctern_pyspark.plot.plot:7 of
-msgid "sequence of geometries"
-msgstr ""
+msgid ""
+"For geometry types `Linestring` and `MultiLinestring`, only 'color', "
+"'linewidth', 'linestyle' are effective."
+msgstr "对于几何体“Linestring”,“MultiLinestring”只需要配置“color”，“linewidth”，“linestyle”三个参数。"
+
+#: arctern_pyspark.plot.plot:9 of
+msgid ""
+"For geometry types `Point` and `MultiPoint`, only 'color', 'marker', "
+"'markersize' are effective."
+msgstr "对于几何体“Point”，“MultiPoint”，只需要配置“color”，“marker”，“markersize”三个参数。"
 
 #: arctern_pyspark.plot.plot of
-msgid "parms **style_kwds"
-msgstr ""
-
-#: arctern_pyspark.plot.plot:10 of
-msgid "optional, collection of plot style `Polygon` and `MultiPolygon`:"
+msgid "参数"
 msgstr ""
 
 #: arctern_pyspark.plot.plot:12 of
-msgid "linewidth linestyle edgecolor facecolor"
-msgstr ""
+msgid "The axes where geometries will be plotted."
+msgstr "用来绘制几何体的坐标轴。"
+
+#: arctern_pyspark.plot.plot:15 of
+msgid "sequence of geometries."
+msgstr "几何体序列。"
 
 #: arctern_pyspark.plot.plot:18 of
-msgid "`LineString` and `MultiLineString`:"
-msgstr ""
-
-#: arctern_pyspark.plot.plot:17 of
-msgid "color linewidth linestyle"
-msgstr ""
-
-#: arctern_pyspark.plot.plot:22 of
-msgid "`Point` and `MultiPoint`:"
-msgstr ""
+msgid "The width of line, the default value is 1.0."
+msgstr "线的宽度，默认值是1.0。"
 
 #: arctern_pyspark.plot.plot:21 of
-msgid "color marker markersize"
-msgstr ""
+msgid "The style of the line， the default value is '-'."
+msgstr "线的风格，默认值是‘-’。"
+
+#: arctern_pyspark.plot.plot:24 of
+msgid "The edge color of the geometry, the default value is 'black'."
+msgstr "几何体边的颜色，默认值是‘black’。"
+
+#: arctern_pyspark.plot.plot:27 of
+msgid "The color of the face of the geometry, the default value is 'C0'."
+msgstr "几何体面的颜色，默认值时‘C0’。"
+
+#: arctern_pyspark.plot.plot:30 of
+msgid "The color of the geometry, the default value is 'C0'."
+msgstr "几何体的颜色，默认值是‘C0’。"
+
+#: arctern_pyspark.plot.plot:33 of
+msgid "The shape of point, the default value is 'o'."
+msgstr "点的形状，默认值是‘o’。"
+
+#: arctern_pyspark.plot.plot:36 of
+msgid "The size of points, the default value is 6.0."
+msgstr "点的大小，默认值是6.0。"
 
 #: arctern_pyspark.plot.plot of
 msgid "example"
-msgstr ""
-
-#: arctern_pyspark.plot.plot:25 of
-msgid ""
-"from arctern_pyspark import register_funcs from pyspark.sql.types import "
-"* import matplotlib.pyplot as plt from arctern_pyspark import plot"
-msgstr ""
-
-#: arctern_pyspark.plot.plot:30 of
-msgid ""
-"spark.conf.set(\"spark.sql.execution.arrow.pyspark.enabled\", \"true\") "
-"raw_data = [] raw_data.append(('point(0 0)',)) "
-"raw_data.append(('linestring(0 10, 5 5, 10 0)',)) "
-"raw_data.append(('polygon((2 2,2 3,3 3,3 2,2 2))',)) "
-"raw_data.append((\"GEOMETRYCOLLECTION(\"                          "
-"\"polygon((1 1,1 2,2 2,2 1,1 1)),\"                          "
-"\"linestring(0 1, 5 6, 10 11),\"                          \"POINT(4 "
-"7))\",)) raw_schema = StructType([StructField('geo', "
-"StringType(),False)])"
-msgstr ""
-
-#: arctern_pyspark.plot.plot:38 of
-msgid ""
-"df = spark.createDataFrame(data=raw_data, schema=raw_schema) "
-"df.createOrReplaceTempView(\"geoms\")"
-msgstr ""
-
-#: arctern_pyspark.plot.plot:41 of
-msgid "df2=spark.sql(\"select st_geomfromtext(geo) from geoms\")"
-msgstr ""
-
-#: arctern_pyspark.plot.plot:43 of
-msgid "fig, ax = plt.subplots() plot(ax, df2,"
-msgstr ""
-
-#: arctern_pyspark.plot.plot:45 of
-msgid ""
-"color=['orange', 'green'], marker='^', markersize=100, linewidth=[None, "
-"7, 8], linestyle=[None, 'dashed', 'dashdot'], edgecolor=[None, None, "
-"'red'], facecolor=[None, None, 'black'])"
-msgstr ""
-
-#: arctern_pyspark.plot.plot:52 of
-msgid "ax.grid() fig.savefig('/tmp/plot_test.png')"
-msgstr ""
-
+msgstr "例子"

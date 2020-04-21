@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Returns a geometry that represents all points whose distance from this "
 "geos is less than or equal to \"distance\"."
-msgstr "返回一个所有点与给定的的 geometry 的距离不大于\"dfDist\"的一个 geometry。"
+msgstr "返回一个所有点与给定的的几何体的距离不大于\"dfDist\"的几何体。"
 
 #: arctern._wrapper_func.ST_Buffer of
 msgid "参数"
@@ -33,11 +33,11 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_Buffer:5 arctern._wrapper_func.ST_Buffer:11 of
 msgid "Geometries in WKB form."
-msgstr "WKB 格式的 geometries。"
+msgstr "WKB 格式的几何体。"
 
 #: arctern._wrapper_func.ST_Buffer:8 of
 msgid "The maximum distance of the returned geometry from the given geometry."
-msgstr "返回的 geometry 与给定的 geometry 的最大距离。"
+msgstr "返回的几何体与给定的几何体最大距离。"
 
 #: arctern._wrapper_func.ST_Buffer of
 msgid "返回类型"

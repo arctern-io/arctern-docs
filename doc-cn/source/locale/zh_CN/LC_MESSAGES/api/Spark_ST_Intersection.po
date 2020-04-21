@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_Intersection:1 of
 msgid "Calculate the point set intersection of two geometry objects."
-msgstr "计算 geo1 与 geo2 的交集。"
+msgstr "计算两个几何体的交集。"
 
 #: arctern_pyspark._wrapper_func.ST_Intersection of
 msgid "参数"
@@ -32,7 +32,7 @@ msgstr ""
 #: arctern_pyspark._wrapper_func.ST_Intersection:4
 #: arctern_pyspark._wrapper_func.ST_Intersection:7 of
 msgid "Geometry"
-msgstr "空间几何形状。"
+msgstr "几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_Intersection of
 msgid "返回类型"
@@ -44,7 +44,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_Intersection:10 of
 msgid "Geometry that represents the point set intersection."
-msgstr "表示 geo1 与 geo2 交集的 geometry。"
+msgstr "表示 geo1 与 geo2 交集的几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_Intersection of
 msgid "example"

@@ -29,9 +29,9 @@ msgid ""
 "the empty set and must have a dimensionality less than the maximum "
 "dimension of the two input geometries."
 msgstr ""
-"检查 geo1 是否和 geo2 “空间相交”。这里“空间相交”是指两个 "
-"geometry 具有一些但并非所有的内部点都相同。这两个的 geometry "
-"的交集不能为空，并且交集的维度不大于输入的两个 geometry 的最大维度。"
+"检查两个几何体是否“相交”，即两个"
+"几何体有部分但非全部内部点相同。这两个的几何体"
+"的交集不能为空，并且交集的维度小于输入几何体的最大维度。"
 
 #: arctern_pyspark._wrapper_func.ST_Crosses of
 msgid "参数"
@@ -40,7 +40,7 @@ msgstr ""
 #: arctern_pyspark._wrapper_func.ST_Crosses:7
 #: arctern_pyspark._wrapper_func.ST_Crosses:10 of
 msgid "Geometry"
-msgstr "空间几何形状。"
+msgstr "几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_Crosses of
 msgid "返回类型"
@@ -52,7 +52,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_Crosses:13 of
 msgid "True if geometry \"geo1\" crosses geometry \"geo2\"."
-msgstr "如果两个 geometry “空间相交”，返回 true,反之返回 false。"
+msgstr "如果 geo1 与geo2 “相交”，返回 true,反之返回 false。"
 
 #: arctern_pyspark._wrapper_func.ST_Crosses of
 msgid "example"

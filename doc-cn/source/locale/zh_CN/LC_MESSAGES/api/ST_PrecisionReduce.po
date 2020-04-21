@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 14:45+0800\n"
+"POT-Creation-Date: 2020-04-21 10:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,20 +25,19 @@ msgstr ""
 msgid ""
 "For the coordinates of the geometry, reduce the number of significant "
 "digits to the given number. The last decimal place will be rounded."
-msgstr "保留 geometry 的坐标的有效数字到指定的位数，有效数字位的后一位要四舍五入。"
+msgstr "根据指定的有效数字位数，降低几何体的坐标精度。"
 
 #: arctern._wrapper_func.ST_PrecisionReduce of
 msgid "参数"
 msgstr ""
 
-#: arctern._wrapper_func.ST_PrecisionReduce:5
-#: arctern._wrapper_func.ST_PrecisionReduce:11 of
+#: arctern._wrapper_func.ST_PrecisionReduce:5 of
 msgid "Geometries in WKB form."
-msgstr "WKB 格式的 geometries。"
+msgstr "WKB 格式的几何体。"
 
 #: arctern._wrapper_func.ST_PrecisionReduce:8 of
 msgid "The number to of ignificant digits."
-msgstr "有效数字的位数。"
+msgstr "有效数字位数。"
 
 #: arctern._wrapper_func.ST_PrecisionReduce of
 msgid "返回类型"
@@ -48,6 +47,11 @@ msgstr ""
 msgid "返回"
 msgstr ""
 
+#: arctern._wrapper_func.ST_PrecisionReduce:11 of
+msgid "Geometry with reduced precision."
+msgstr "降低坐标精度后的几何体。"
+
 #: arctern._wrapper_func.ST_PrecisionReduce of
 msgid "example"
 msgstr "例子"
+

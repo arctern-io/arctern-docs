@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_Area:1 of
 msgid "Calculate the 2D Cartesian (planar) area of geometry."
-msgstr "计算 geometry 的平面面积。"
+msgstr "计算几何体的平面面积。"
 
 #: arctern._wrapper_func.ST_Area of
 msgid "参数"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_Area:4 of
 msgid "Geometries in WKB form."
-msgstr "WKB 格式的 geometries。"
+msgstr "WKB 格式的几何体。"
 
 #: arctern._wrapper_func.ST_Area of
 msgid "返回类型"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_Area:7 of
 msgid "The value that represents the area of geometry."
-msgstr "Geomerty 平面面积的值。"
+msgstr "几何体平面面积的值。"
 
 #: arctern._wrapper_func.ST_Area of
 msgid "example"

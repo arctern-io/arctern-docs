@@ -26,7 +26,7 @@ msgid ""
 "Check whether geometries \"touch\". \"Touch\" here means two geometries "
 "have common points, and the common points locate only on their "
 "boundaries."
-msgstr "检查 geo1 与 geo2 是否“接触”。这里“接触”的意思是 geo1 与 geo2 的在它们的边界上有共同的点。"
+msgstr "检查两个几何体是否“相邻”，即它们在边界上有共同的点。"
 
 #: arctern._wrapper_func.ST_Touches of
 msgid "参数"
@@ -34,7 +34,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_Touches:5 arctern._wrapper_func.ST_Touches:8 of
 msgid "Geometries in WKB form."
-msgstr "WKB 格式的 geometries。"
+msgstr "WKB 格式的几何体。"
 
 #: arctern._wrapper_func.ST_Touches of
 msgid "返回类型"
@@ -46,7 +46,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_Touches:11 of
 msgid "True if geometry \"geo1\" touches geometry \"geo2\"."
-msgstr "如果 geo1 与 geo2 “接触”，返回 true,反之 false。"
+msgstr "如果 geo1 与 geo2 “相邻”，返回 true,反之 false。"
 
 #: arctern._wrapper_func.ST_Touches of
 msgid "example"

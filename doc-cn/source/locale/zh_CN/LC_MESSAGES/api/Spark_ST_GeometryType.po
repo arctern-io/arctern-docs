@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_GeometryType:1 of
 msgid "For each geometry in geometries, return a string that indicates is type."
-msgstr "对输入中的每一个 geometry,返回一个包含其类型的字符串。"
+msgstr "对输入中的每一个几何体,返回表示其类型的字符串。"
 
 #: arctern_pyspark._wrapper_func.ST_GeometryType of
 msgid "参数"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_GeometryType:4 of
 msgid "Geometry"
-msgstr "空间几何形状。"
+msgstr "几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_GeometryType of
 msgid "返回类型"
@@ -45,7 +45,7 @@ msgstr ""
 msgid ""
 "The type of geometry, e.g., \"ST_LINESTRING\", \"ST_POLYGON\", "
 "\"ST_POINT\", \"ST_MULTIPOINT\"."
-msgstr "Geometry的类型，例如 ST_LINESTRING，ST_POLYGON，ST_POINT，ST_MULTIPOINT。"
+msgstr "几何体的类型，例如 ST_LINESTRING，ST_POLYGON，ST_POINT，ST_MULTIPOINT。"
 
 #: arctern_pyspark._wrapper_func.ST_GeometryType of
 msgid "example"

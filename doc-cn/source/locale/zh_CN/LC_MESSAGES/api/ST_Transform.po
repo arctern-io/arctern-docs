@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Return a new geometry with its coordinates transformed from spatial "
 "reference system \"src\" to a \"dst\"."
-msgstr "将一个 geometry 的坐标从“src_rc”空间参考系映射到“dst_rs”空间参考系。"
+msgstr "将一个几何体的坐标从“src_rc”空间坐标系（SRID）映射到“dst_rs”空间坐标系。"
 
 #: arctern._wrapper_func.ST_Transform of
 msgid "参数"
@@ -34,15 +34,23 @@ msgstr ""
 #: arctern._wrapper_func.ST_Transform:4 arctern._wrapper_func.ST_Transform:13
 #: of
 msgid "Geometries in WKB form."
-msgstr "WKB 格式的 geometries。"
+msgstr "WKB 格式的几何体。"
 
 #: arctern._wrapper_func.ST_Transform:7 of
 msgid "The current srid of geometries."
-msgstr "当前 geometry 所在的 srid。"
+<<<<<<< HEAD
+msgstr "几何体当前所在的 SRID。"
 
 #: arctern._wrapper_func.ST_Transform:10 of
 msgid "The target srid of geometries tranfrom to."
-msgstr "geometry 需要转换的目标 srid。"
+msgstr "几何体需要转换的目标 SRID。"
+=======
+msgstr "几何体当前所在的 srid。"
+
+#: arctern._wrapper_func.ST_Transform:10 of
+msgid "The target srid of geometries tranfrom to."
+msgstr "几何体需要转换的目标 srid。"
+>>>>>>> 27e7bd479de70821fc7d8e0210c051d5f4e1bca3
 
 #: arctern._wrapper_func.ST_Transform of
 msgid "返回类型"

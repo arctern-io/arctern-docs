@@ -1,10 +1,6 @@
 # API文档添加及生成
 
-## 大纲
-* [API文档生成](#create)
-* [API文档添加](#add)
-
-## <span id = "create">API文档生成</span>
+## API文档生成
 
 ### 环境准备
 
@@ -37,23 +33,17 @@ python setup.py build && python setup.py install
 ### 修改conf.py文件
 
 ```
-cd arctern-docs/doc/source
+cd arctern-docs/doc-cn/source
 vi conf.py
 修改路径，如下：
     sys.path.insert(0, os.path.abspath('/path/to/python/arctern'))
 	修改为当前你的文件所在的绝对路径
 ```
-使用以下指令找到sphinx-build文件路径：
-    which sphinx-build
-	
-添加如下代码：
-    import functools
-    from pyspark.sql import functions
 
 ### 修改sphinx-build文件
 
 ```
-使用以下指令找到sphinx-build文件路径：
+使用以下指令找到sphinx-build文件路径并编辑该文件：
     which sphinx-build
     vi path/to/sphinx-build
 	
@@ -84,14 +74,14 @@ mkdir build
 python compile.py
 ```
 
-## <span id = "add">API文档添加</span>
+## API文档添加
 
 当增加了新的对外接口函数文件需要生成API文档时，需要按照sphinx生成rst文件的流程执行一遍，生成对应的rst文件，若只是在原有的对外接口文件中新添加一个函数接口，则不需要进行这段流程，这里以新添加一个对外函数接口文件为例，具体步骤如下。
 
 ### 修改conf.py文件添加文件路径
 
 ```
-cd doc/source
+cd doc-cn/source
 vi conf.py
 
 添加文件路径：
@@ -100,15 +90,15 @@ vi conf.py
 
 ### 挂载到对应的目录下
 
-这里假设挂载到python_api下，执行如下操作：
+这里假设挂载到api_py.rst下，执行如下操作：
 
 ```
-cd doc/source
-vi python_api.rst
+cd doc-cn/source
+vi api_rst.rst
 
-将文件名称添加到python_api.rst, 添加后的代码如下：
-    Python API
-    ==========
+将文件名称添加到api_py.rst, 添加后的代码如下：
+    API
+    ====
 
     .. toctree::
        :maxdepth: 6
@@ -122,10 +112,10 @@ new_api_file为新生成的rst文件名
 
 ### 添加函数的rst文件
 
-下面操作是为新添加的函数创建一个新的rst文件，这里需要注意的是需要为每一个新的函数创建一个rst文件。
+下面操作是为新添加的API创建一个新的rst文件，这里需要注意的是需要为每一个新的API创建一个rst文件。
 
 ```
-cd doc/source/api
+cd doc-cn/source/api
 vi function1.rst
 
 添加如下代码：
@@ -140,7 +130,7 @@ vi function1.rst
 ### 修改new_api_file.rst文件
 
 ```
-cd doc/source
+cd doc-cn/source
 vi new_api_file.rst
 
 修改之后如下：
@@ -153,4 +143,36 @@ vi new_api_file.rst
       :caption: Contents:
 
       /api/function1.rst
+```
+
+## 生成中文文档
+
+当添加新的API或者修改英文注释时，需要修改相应的文件，添加中文注释。
+
+### 修改compile.py文件
+
+```python
+cd doc-cn
+vi compile.py
+
+在21行添加如下代码：
+os.system('sphinx-intl update -p build/gettext -l zh_CN')
+```
+
+### 生成并修改相应的po文件
+
+```shell
+python compile.py
+cd source/locale/zh_CN/LC_MESSAGES/api
+
+找到对应的修改或者添加的API的po文件，添加或者修改中文注释，这里我们要注几点：
+       fuzzy.                                                         #如果出现该关键字，会忽略下面的注释
+       msgid "Calculate the 2D Cartesian (planar) area of geometry."  #html中提取出的英文
+       msgstr "计算几何体的平面面积。"                                    #这里添加英文对应的中文注释
+```
+
+### 生成中文文档
+
+```shell
+python compile.py
 ```

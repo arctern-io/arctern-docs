@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-17 20:48+0800\n"
+"POT-Creation-Date: 2020-04-20 15:42+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,21 +23,25 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_SimplifyPreserveTopology:1 of
 msgid ""
-"For each geometry in geometries create a \"simplified\" version for it "
-"according to the precision that parameter tolerance specifies."
-msgstr "根据指定的误差精度，为输入的 geometry 构造一个简化的版本。"
+"Returns a \"simplified\" version of the given geometry using the Douglas-"
+"Peucker algorithm."
+msgstr "通过 Douglas-Peucker 算法使用折线近似表示几何体中的曲线。"
 
 #: arctern._wrapper_func.ST_SimplifyPreserveTopology of
 msgid "参数"
 msgstr ""
 
-#: arctern._wrapper_func.ST_SimplifyPreserveTopology:5 of
+#: arctern._wrapper_func.ST_SimplifyPreserveTopology:4 of
 msgid "Geometries in WKB from."
-msgstr "WKB 格式的 geometries。"
+msgstr "WKB 格式的几何体。"
 
-#: arctern._wrapper_func.ST_SimplifyPreserveTopology:8 of
-msgid "The precision of the simplified geometry."
-msgstr "简化 geometry 时的精度误差。"
+#: arctern._wrapper_func.ST_SimplifyPreserveTopology:7 of
+msgid "The maximum distance between a point on a linestring and a curve."
+<<<<<<< HEAD
+msgstr "所允许的误差范围，即直线上的点到曲线距离的最大值。"
+=======
+msgstr "直线上的点与曲线上的点的最大距离。"
+>>>>>>> 27e7bd479de70821fc7d8e0210c051d5f4e1bca3
 
 #: arctern._wrapper_func.ST_SimplifyPreserveTopology of
 msgid "返回类型"
@@ -47,9 +51,21 @@ msgstr ""
 msgid "返回"
 msgstr ""
 
+<<<<<<< HEAD
+#: arctern._wrapper_func.ST_SimplifyPreserveTopology:10 of
+msgid "Geometries in WKB form."
+msgstr "WKB 格式的几何体。"
+=======
+<<<<<<< HEAD
+#: arctern._wrapper_func.ST_SimplifyPreserveTopology:10 of
+msgid "Geometries in WKB form."
+msgstr "WKB 格式的几何体。"
+=======
 #: arctern._wrapper_func.ST_SimplifyPreserveTopology:11 of
 msgid "Geometries in WKB form."
 msgstr "WKB 格式的 geometries。"
+>>>>>>> 0c0bae3c77d619dcf03f6fa507205868038464d3
+>>>>>>> 27e7bd479de70821fc7d8e0210c051d5f4e1bca3
 
 #: arctern._wrapper_func.ST_SimplifyPreserveTopology of
 msgid "example"

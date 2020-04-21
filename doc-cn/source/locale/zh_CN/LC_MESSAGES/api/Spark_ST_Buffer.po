@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 16:41+0800\n"
+"POT-Creation-Date: 2020-04-21 10:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,8 +24,8 @@ msgstr ""
 #: arctern_pyspark._wrapper_func.ST_Buffer:1 of
 msgid ""
 "Return a geometry that represents all points whose distance from the "
-"given geometry is less than or equal to \"dfDist\"."
-msgstr "返回一个所有点与给定的的 geometry 的距离不大于\"dfDist\"的一个 geometry。"
+"given geometry is less than or equal to \"distance\"."
+msgstr "返回一个所有点与给定的的几何体的距离不大于“distance”的几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_Buffer of
 msgid "参数"
@@ -38,7 +38,7 @@ msgstr "空间几何形状。"
 
 #: arctern_pyspark._wrapper_func.ST_Buffer:8 of
 msgid "The maximum distance of the returned geometry from the given geometry."
-msgstr "返回的 geometry 与给定的 geometry 的最大距离。"
+msgstr "返回的几何体与给定几何体的最大距离。"
 
 #: arctern_pyspark._wrapper_func.ST_Buffer of
 msgid "返回类型"
@@ -51,3 +51,4 @@ msgstr ""
 #: arctern_pyspark._wrapper_func.ST_Buffer of
 msgid "example"
 msgstr "例子"
+

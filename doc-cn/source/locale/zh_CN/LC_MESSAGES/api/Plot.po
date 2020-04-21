@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-17 14:12+0800\n"
+"POT-Creation-Date: 2020-04-21 17:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,86 +21,72 @@ msgstr ""
 msgid "plot"
 msgstr ""
 
-#: arctern.plot.plot:1 of
-msgid "Plots a collection of geometries to `ax`"
+#: arctern._plot.plot:1 of
+msgid ""
+"Plot a collection of geometries to `ax`. Parameters 'linewidth', "
+"'linestyle', 'edgecolor', 'facecolor', 'color', 'marker', 'markersize' "
+"are used to describe the style of plotted figure."
+msgstr "绘制一组几何体。参数“linewidth”，“linestyle”，“edgecolor”,"facecolor"，"
+"“color”,“marker”，“markersize”用来描述绘制图形的样式。"
+
+#: arctern._plot.plot:4 of
+msgid ""
+"For geometry types `Polygon` and `MultiPolygon`, only 'linewidth', "
+"'linestyle', 'edgecolor', 'facecolor' are effective."
+msgstr "对于几何体“Polygon”，“MultiPolygon”只需要配置“linewidth”，“edgecolor”，“facecolor”，“linestyle”四个参数。"
+
+#: arctern._plot.plot:7 of
+msgid ""
+"For geometry types `Linestring` and `MultiLinestring`, only 'color', "
+"'linewidth', 'linestyle' are effective."
+msgstr "对于几何体“Linestring”,“MultiLinestring”只需要配置“color”，“linewidth”，“linestyle”三个参数。"
+
+#: arctern._plot.plot:9 of
+msgid ""
+"For geometry types `Point` and `MultiPoint`, only 'color', 'marker', "
+"'markersize' are effective."
+msgstr "对于几何体“Point”，“MultiPoint”，只需要配置“color”，“marker”，“markersize”三个参数。"
+
+#: arctern._plot.plot of
+msgid "参数"
 msgstr ""
 
-#: arctern.plot.plot of
-msgid "parms ax"
-msgstr ""
+#: arctern._plot.plot:12 of
+msgid "The axes where geometries will be plotted."
+msgstr "用来绘制几何体的坐标轴。"
 
-#: arctern.plot.plot:4 of
-msgid "The axes where geometries will be plotted"
-msgstr ""
+#: arctern._plot.plot:15 of
+msgid "sequence of geometries."
+msgstr "几何体序列。"
 
-#: arctern.plot.plot of
-msgid "parms geoms"
-msgstr ""
+#: arctern._plot.plot:18 of
+msgid "The width of line, the default value is 1.0."
+msgstr "线的宽度，默认值是1.0。"
 
-#: arctern.plot.plot:7 of
-msgid "sequence of geometries"
-msgstr ""
+#: arctern._plot.plot:21 of
+msgid "The style of the line， the default value is '-'."
+msgstr "线的风格，默认值是‘-’。"
 
-#: arctern.plot.plot of
-msgid "parms **style_kwds"
-msgstr ""
+#: arctern._plot.plot:24 of
+msgid "The edge color of the geometry, the default value is 'black'."
+msgstr "几何体边的颜色，默认值是‘black’。"
 
-#: arctern.plot.plot:10 of
-msgid "optional, collection of plot style `Polygon` and `MultiPolygon`:"
-msgstr ""
+#: arctern._plot.plot:27 of
+msgid "The color of the face of the geometry, the default value is 'C0'."
+msgstr "几何体面的颜色，默认值时‘C0’。"
 
-#: arctern.plot.plot:12 of
-msgid "linewidth linestyle edgecolor facecolor"
-msgstr ""
+#: arctern._plot.plot:30 of
+msgid "The color of the geometry, the default value is 'C0'."
+msgstr "几何体的颜色，默认值是‘C0’。"
 
-#: arctern.plot.plot:18 of
-msgid "`LineString` and `MultiLineString`:"
-msgstr ""
+#: arctern._plot.plot:33 of
+msgid "The shape of point, the default value is 'o'."
+msgstr "点的形状，默认值是‘o’。"
 
-#: arctern.plot.plot:17 of
-msgid "color linewidth linestyle"
-msgstr ""
+#: arctern._plot.plot:36 of
+msgid "The size of points, the default value is 6.0."
+msgstr "点的大小，默认值是6.0。"
 
-#: arctern.plot.plot:22 of
-msgid "`Point` and `MultiPoint`:"
-msgstr ""
-
-#: arctern.plot.plot:21 of
-msgid "color marker markersize"
-msgstr ""
-
-#: arctern.plot.plot of
+#: arctern._plot.plot of
 msgid "example"
-msgstr ""
-
-#: arctern.plot.plot:25 of
-msgid "import pandas import matplotlib.pyplot as plt import arctern"
-msgstr ""
-
-#: arctern.plot.plot:29 of
-msgid ""
-"raw_data = [] raw_data.append('point(0 0)') raw_data.append('linestring(0"
-" 10, 5 5, 10 0)') raw_data.append('polygon((2 2,2 3,3 3,3 2,2 2))') "
-"raw_data.append(\"GEOMETRYCOLLECTION(\"                          "
-"\"polygon((1 1,1 2,2 2,2 1,1 1)),\"                          "
-"\"linestring(0 1, 5 6, 10 11),\"                          \"POINT(4 "
-"7))\") arr_wkt = pandas.Series(raw_data) arr_wkb = "
-"arctern.ST_CurveToLine(arctern.ST_GeomFromText(arr_wkt)) df = "
-"pandas.DataFrame({'wkb':arr_wkb})"
-msgstr ""
-
-#: arctern.plot.plot:38 of
-msgid "fig, ax = plt.subplots() arctern.plot(ax, df,"
-msgstr ""
-
-#: arctern.plot.plot:40 of
-msgid ""
-"color=['orange', 'green'], marker='^', markersize=100, linewidth=[None, "
-"7, 8], linestyle=[None, 'dashed', 'dashdot'], edgecolor=[None, None, "
-"'red'], facecolor=[None, None, 'black'])"
-msgstr ""
-
-#: arctern.plot.plot:47 of
-msgid "ax.grid() fig.savefig('/tmp/plot_test.png')"
-msgstr ""
-
+msgstr "例子"

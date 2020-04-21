@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-17 11:21+0800\n"
+"POT-Creation-Date: 2020-04-20 18:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,32 +22,66 @@ msgid "JDBC连接"
 msgstr ""
 
 #: ../../source/docs/jdbc_data.md:3
-msgid "以下例子展示如何利用JDBC来从postgis中导入数据，详细信息请查看Spark官方文档。"
-msgstr ""
-
-#: ../../source/docs/jdbc_data.md:36
-msgid "使用如下命令测试能否连接postgis"
-msgstr ""
-
-#: ../../source/docs/jdbc_data.md:38
-msgid "psql test -h 172.17.0.2  -p 5432 -U arcterner"
-msgstr ""
-
-#: ../../source/docs/jdbc_data.md:40
-msgid "arctern使用jdbc加载postgis，jdbc_postgis.py示例代码如下:"
-msgstr ""
-
-#: ../../source/docs/jdbc_data.md:70
-msgid "结果如下："
-msgstr ""
-
-#: ../../source/docs/jdbc_data.md:82
-msgid "从postgres官网下载最新的JDBC驱动，这里下载的驱动为postgresql-42.2.11.jar，在提交spark任务时，需要指定jdbc驱动"
-msgstr ""
-
-#: ../../source/docs/jdbc_data.md:84
 msgid ""
-"./bin/spark-submit  --driver-class-path ~/postgresql-42.2.11.jar --jars "
-"~/postgresql-42.2.11.jar ~/query_postgis.py"
+"Arctern-Spark 可借助 Spark 的 JDBC 连接功能，完成数据从数据库的导入和导出。以下例子将展示如何利用 JDBC 从 "
+"postgis 中导入数据，更多详细信息请查看Spark官方文档。"
 msgstr ""
+
+#: ../../source/docs/jdbc_data.md:6
+msgid "Postgis配置信息"
+msgstr ""
+
+#: ../../source/docs/jdbc_data.md:8
+msgid "假设 Postgis 的相关配置如下："
+msgstr ""
+
+#: ../../source/docs/jdbc_data.md:41
+msgid "使用如下命令测试 postgis 连接："
+msgstr ""
+
+#: ../../source/docs/jdbc_data.md:47
+msgid "JDBC 数据导入示例"
+msgstr ""
+
+#: ../../source/docs/jdbc_data.md:50
+msgid ""
+"在提交spark任务时，需要指定jdbc驱动。从 postgres 官网下载其最新的JDBC驱动，以下示例中使用的的驱动为 "
+"postgresql-42.2.11.jar。"
+msgstr ""
+
+#: ../../source/docs/jdbc_data.md:52
+msgid "以下命令为  Arctern-Spark 通过 JDBC 从 Postgis 导入数据的示例："
+msgstr ""
+
+#: ../../source/docs/jdbc_data.md:58
+msgid "其中 query_postgis.py 具体代码如下："
+msgstr ""
+
+#: ../../source/docs/jdbc_data.md:89
+msgid "上述代码的执行结果如下："
+msgstr ""
+
+#~ msgid "以下例子展示如何利用JDBC来从postgis中导入数据，详细信息请查看Spark官方文档。"
+#~ msgstr ""
+
+#~ msgid "使用如下命令测试能否连接postgis"
+#~ msgstr ""
+
+#~ msgid "psql test -h 172.17.0.2  -p 5432 -U arcterner"
+#~ msgstr ""
+
+#~ msgid "arctern使用jdbc加载postgis，jdbc_postgis.py示例代码如下:"
+#~ msgstr ""
+
+#~ msgid "结果如下："
+#~ msgstr ""
+
+#~ msgid "从postgres官网下载最新的JDBC驱动，这里下载的驱动为postgresql-42.2.11.jar，在提交spark任务时，需要指定jdbc驱动"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "./bin/spark-submit  --driver-class-path "
+#~ "~/postgresql-42.2.11.jar --jars ~/postgresql-42.2.11.jar"
+#~ " ~/query_postgis.py"
+#~ msgstr ""
 

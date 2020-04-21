@@ -1,6 +1,6 @@
 plot
 =====
 
-.. currentmodule:: arctern.plot
+.. currentmodule:: arctern._plot
 
 .. autofunction:: plot

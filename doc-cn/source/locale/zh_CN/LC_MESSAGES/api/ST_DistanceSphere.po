@@ -34,7 +34,7 @@ msgstr ""
 #: arctern._wrapper_func.ST_DistanceSphere:5
 #: arctern._wrapper_func.ST_DistanceSphere:8 of
 msgid "Geometries in WKB form."
-msgstr "WKB 格式的 geometries。"
+msgstr "WKB 格式的几何体。"
 
 #: arctern._wrapper_func.ST_DistanceSphere of
 msgid "返回类型"

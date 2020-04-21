@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_GeomFromText:1 of
 msgid "Transform the representation of geometry from WKT to WKB."
-msgstr "将 WKT 格式的 geometry 的转化为 WKB 格式的 geometry。"
+msgstr "将 WKT 格式的几何体的转化为 WKB 格式的几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_GeomFromText of
 msgid "参数"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_GeomFromText:4 of
 msgid "Geometry in WKT form."
-msgstr "WKT 格式的 geometry"
+msgstr "WKT 格式的几何体"
 
 #: arctern_pyspark._wrapper_func.ST_GeomFromText of
 msgid "返回类型"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_GeomFromText:7 of
 msgid "Geometry in WKB form."
-msgstr "WKB 格式的 geometry。"
+msgstr "WKB 格式的几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_GeomFromText of
 msgid "example"

@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_GeomFromGeoJSON:1 of
 msgid "Construct geometry from the GeoJSON representation."
-msgstr "从 GeoJson 格式的字符串中构造 geometry。"
+msgstr "根据 GeoJson 字符串构造几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_GeomFromGeoJSON of
 msgid "参数"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_GeomFromGeoJSON:4 of
 msgid "Geometry in GeoJson format."
-msgstr "GeoJson 格式的 geometry。"
+msgstr "GeoJson 格式的几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_GeomFromGeoJSON of
 msgid "返回类型"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_GeomFromGeoJSON:7 of
 msgid "Geometry in WKB form."
-msgstr "组织成 WKB 格式的 geometry"
+msgstr "组织成 WKB 格式的几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_GeomFromGeoJSON of
 msgid "example"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-17 11:21+0800\n"
+"POT-Creation-Date: 2020-04-20 18:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,11 @@ msgid "文件的导入与导出"
 msgstr ""
 
 #: ../../source/docs/pandas_data_import_and_export.md:3
-msgid "pandas支持多种数据文件格式导入，例如csv、html、json、orc等数据格式，详细内容可参考官方文档,下面是针对几种数据文件的导入导出例子："
+msgid ""
+"Arctern 借助 Pandas 的文件读写功能完成数据的导入和导出。Pandas "
+"支持多种数据文件格式，如CSV、HTML、JSON、ORC等，详细内容可参考官方文档,下面是针对 CSV 和JSON 格式数据的导入导出示例："
 msgstr ""
+
+#~ msgid "pandas支持多种数据文件格式导入，例如csv、html、json、orc等数据格式，详细内容可参考官方文档,下面是针对几种数据文件的导入导出例子："
+#~ msgstr ""
 

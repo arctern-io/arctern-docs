@@ -26,7 +26,7 @@ msgid ""
 "Check whether geometry is \"simple\". \"Simple\" here means that a "
 "geometry has no anomalous geometric points such as self intersection or "
 "self tangency."
-msgstr "检查 geoemtry 是否是简单的。这里简单的的意识是，geometry 没有异常的点，例如自相交或者自相切。"
+msgstr "检查几何体是否是“简单”的。这里的“简单”指几何体没有异常点，例如自相交或者自相切。"
 
 #: arctern._wrapper_func.ST_IsSimple of
 msgid "参数"
@@ -34,7 +34,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_IsSimple:5 of
 msgid "Geometries in WKB form."
-msgstr "WKB 格式的 geometries。"
+msgstr "WKB 格式的几何体。"
 
 #: arctern._wrapper_func.ST_IsSimple of
 msgid "返回类型"
@@ -46,7 +46,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_IsSimple:8 of
 msgid "True if geometry is simple."
-msgstr "如果 geometry 是简单的，返回 true，反之返回 false。"
+msgstr "如果几何体是“简单”的，返回 true，反之返回 false。"
 
 #: arctern._wrapper_func.ST_IsSimple of
 msgid "example"

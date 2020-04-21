@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-17 20:35+0800\n"
+"POT-Creation-Date: 2020-04-20 15:42+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_Point:1 of
 msgid "Construct Point geometries according to the coordinates."
-msgstr "根据输入的横纵坐标构建point对象。"
+msgstr "根据输入的横纵坐标构建 point 对象。"
 
 #: arctern._wrapper_func.ST_Point of
 msgid "参数"
@@ -46,8 +46,8 @@ msgid "返回"
 msgstr ""
 
 #: arctern._wrapper_func.ST_Point:10 of
-msgid "Geometries in WKB form."
-msgstr "WKB格式的 geometries。"
+msgid "Point in WKB form."
+msgstr "WKB格式的 point。"
 
 #: arctern._wrapper_func.ST_Point of
 msgid "example"

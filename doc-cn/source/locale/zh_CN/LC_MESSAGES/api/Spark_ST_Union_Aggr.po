@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_Union_Aggr:1 of
 msgid "Return a geometry that represents the union of a set of geometries."
-msgstr "返会一个代表给定 geometries 并集的 geometry。"
+msgstr "返回代表给定几何体数组并集的几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_Union_Aggr of
 msgid "参数"
@@ -32,7 +32,7 @@ msgstr ""
 #: arctern_pyspark._wrapper_func.ST_Union_Aggr:4
 #: arctern_pyspark._wrapper_func.ST_Union_Aggr:7 of
 msgid "Geometry"
-msgstr "空间几何形状。"
+msgstr "几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_Union_Aggr of
 msgid "返回类型"
