@@ -83,33 +83,17 @@ python manage.py
 arctern_server
 ```
 
-编写python文件内容如下：
-
-```python
-import sys
-from server import manage
-
-if __name__ == "__main__":
-    manage.main(sys.argv)
-```
-
-保存为your-name.py(名字可以自定义)
-
-执行命令`python your-name.py`启动服务，命令行参数在后面说明
-
-### 以上两种启动方式的命令行参数是一样的，说明如下
+通过命令参数在启动时可对 Arctern Restful Server 进行配置，以上两种方式使用完全相同的参数，具体的内容和含义如下：
 
 ```text
--h help
--r production mode
--p http port
--i http ip
--c [path/to/data-config] load data
---logfile= [path/to/logfile], default: ./log.txt'
---loglevel= log level [debug/info/warn/error/fatal], default: info'
+-h 显示帮助信息
+-r 以 release 模式启动服务
+-p 为服务指定 http 端口
+-i 为服务指定 IP 地址
+-c [path/to/data-config] 导入后台配置数据
+--logfile= [path/to/logfile], default: ./log.txt' 配置日志信息
+--loglevel= log level [debug/info/warn/error/fatal], default: info' 配置日志级别
 ```
-
-服务器启动后，可以通过[Load API]可以动态加载数据[TODO:结合新的api如何介绍]
 
 如果希望服务器启动时自动加载数据，可以通过-c指定，例如：
 
