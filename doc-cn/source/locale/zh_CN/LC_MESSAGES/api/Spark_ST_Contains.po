@@ -27,7 +27,7 @@ msgid ""
 "contains geo2\" means no points of \"geo2\" lie in the exterior of "
 "\"geo1\" and at least one point of the interior of \"geo2\" lies in the "
 "interior of \"geo1\"."
-msgstr "检查几何体 geo1 是否包含几何体 geo2。geo1 包含 geo2 是指 geo2 的任何点都不位于 geo1 的外部，geo2 的内部的至少一个点位于 geo1 的内部。"
+msgstr "检查几何体 geo1 是否包含几何体 geo2，即 geo2 的任何点都不位于 geo1 的外部，且 geo2 的内部至少有一个点位于 geo1 的内部。"
 
 #: arctern_pyspark._wrapper_func.ST_Contains of
 msgid "参数"

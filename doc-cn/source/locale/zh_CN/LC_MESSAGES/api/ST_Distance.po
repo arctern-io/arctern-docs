@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Calculates the minimum 2D Cartesian (planar) distance between \"geo1\" "
 "and \"geo2\"."
-msgstr "计算两个几何体的平面距离。"
+msgstr "计算几何体 geo1 与几何体 geo2 之间的平面距离。"
 
 #: arctern._wrapper_func.ST_Distance of
 msgid "参数"
@@ -47,7 +47,7 @@ msgstr ""
 msgid ""
 "The value that represents the distance between geometry \"geo1\" and "
 "geometry \"geo2\"."
-msgstr "geo1 与 geo2 的平面距离的值。"
+msgstr "geo1 与 geo2 之间的平面距离的值。"
 
 #: arctern._wrapper_func.ST_Distance of
 msgid "example"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-17 11:21+0800\n"
+"POT-Creation-Date: 2020-04-21 10:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,82 +22,100 @@ msgid "API文档添加及生成"
 msgstr ""
 
 #: ../../source/docs/api-doc-create.md:3
-msgid "大纲"
-msgstr ""
-
-#: ../../source/docs/api-doc-create.md:4
 msgid "API文档生成"
 msgstr ""
 
 #: ../../source/docs/api-doc-create.md:5
-msgid "API文档添加"
-msgstr ""
-
-#: ../../source/docs/api-doc-create.md:7
-msgid "<span id = \"create\">API文档生成</span>"
-msgstr ""
-
-#: ../../source/docs/api-doc-create.md:9
 msgid "环境准备"
 msgstr ""
 
-#: ../../source/docs/api-doc-create.md:39
+#: ../../source/docs/api-doc-create.md:35
 msgid "安装所需包"
 msgstr ""
 
-#: ../../source/docs/api-doc-create.md:49
+#: ../../source/docs/api-doc-create.md:46
 msgid "安装pyspark"
 msgstr ""
 
-#: ../../source/docs/api-doc-create.md:56
+#: ../../source/docs/api-doc-create.md:53
 msgid "修改conf.py文件"
 msgstr ""
 
-#: ../../source/docs/api-doc-create.md:65
-msgid "使用以下指令找到sphinx-build文件路径： which sphinx-build"
-msgstr ""
-
-#: ../../source/docs/api-doc-create.md:68
-msgid "添加如下代码： import functools from pyspark.sql import functions"
-msgstr ""
-
-#: ../../source/docs/api-doc-create.md:72
+#: ../../source/docs/api-doc-create.md:63
 msgid "修改sphinx-build文件"
 msgstr ""
 
-#: ../../source/docs/api-doc-create.md:97
+#: ../../source/docs/api-doc-create.md:89
 msgid "生成API文档"
 msgstr ""
 
-#: ../../source/docs/api-doc-create.md:107
-msgid "<span id = \"add\">API文档添加</span>"
+#: ../../source/docs/api-doc-create.md:97
+msgid "API文档添加"
 msgstr ""
 
-#: ../../source/docs/api-doc-create.md:109
+#: ../../source/docs/api-doc-create.md:99
 msgid "当增加了新的对外接口函数文件需要生成API文档时，需要按照sphinx生成rst文件的流程执行一遍，生成对应的rst文件，若只是在原有的对外接口文件中新添加一个函数接口，则不需要进行这段流程，这里以新添加一个对外函数接口文件为例，具体步骤如下。"
 msgstr ""
 
-#: ../../source/docs/api-doc-create.md:111
+#: ../../source/docs/api-doc-create.md:101
 msgid "修改conf.py文件添加文件路径"
 msgstr ""
 
-#: ../../source/docs/api-doc-create.md:121
+#: ../../source/docs/api-doc-create.md:111
 msgid "挂载到对应的目录下"
 msgstr ""
 
-#: ../../source/docs/api-doc-create.md:123
-msgid "这里假设挂载到python_api下，执行如下操作："
+#: ../../source/docs/api-doc-create.md:113
+msgid "这里假设挂载到api_py.rst下，执行如下操作："
 msgstr ""
 
-#: ../../source/docs/api-doc-create.md:143
+#: ../../source/docs/api-doc-create.md:133
 msgid "添加函数的rst文件"
 msgstr ""
 
-#: ../../source/docs/api-doc-create.md:145
-msgid "下面操作是为新添加的函数创建一个新的rst文件，这里需要注意的是需要为每一个新的函数创建一个rst文件。"
+#: ../../source/docs/api-doc-create.md:135
+msgid "下面操作是为新添加的API创建一个新的rst文件，这里需要注意的是需要为每一个新的API创建一个rst文件。"
 msgstr ""
 
-#: ../../source/docs/api-doc-create.md:160
+#: ../../source/docs/api-doc-create.md:150
 msgid "修改new_api_file.rst文件"
 msgstr ""
+
+#: ../../source/docs/api-doc-create.md:168
+#: ../../source/docs/api-doc-create.md:194
+msgid "生成中文文档"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:170
+msgid "当添加新的API或者修改英文注释时，需要修改相应的文件，添加中文注释。"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:172
+msgid "修改compile.py文件"
+msgstr ""
+
+#: ../../source/docs/api-doc-create.md:182
+msgid "生成并修改相应的po文件"
+msgstr ""
+
+#~ msgid "大纲"
+#~ msgstr ""
+
+#~ msgid "<span id = \"create\">API文档生成</span>"
+#~ msgstr ""
+
+#~ msgid "使用以下指令找到sphinx-build文件路径： which sphinx-build"
+#~ msgstr ""
+
+#~ msgid "添加如下代码： import functools from pyspark.sql import functions"
+#~ msgstr ""
+
+#~ msgid "<span id = \"add\">API文档添加</span>"
+#~ msgstr ""
+
+#~ msgid "这里假设挂载到python_api下，执行如下操作："
+#~ msgstr ""
+
+#~ msgid "下面操作是为新添加的函数创建一个新的rst文件，这里需要注意的是需要为每一个新的函数创建一个rst文件。"
+#~ msgstr ""
 

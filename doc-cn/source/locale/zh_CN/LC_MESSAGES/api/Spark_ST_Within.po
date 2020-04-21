@@ -27,7 +27,7 @@ msgid ""
 "within geo2\" means no points of \"geo1\" lie in the exterior of \"geo2\""
 " and at least one point of the interior of \"geo1\" lies in the interior "
 "of \"geo2\"."
-msgstr "检查 geo1 是否在 geo2 里面。这里的意思是 geo1 没有点在 geo2 的外面，且至少有一个点在 geo2 里面。"
+msgstr "检查 geo1 是否在 geo2 里面，即geo1 没有点在 geo2 的外面，且至少有一个点在 geo2 里面。"
 
 #: arctern_pyspark._wrapper_func.ST_Within of
 msgid "参数"
@@ -36,7 +36,7 @@ msgstr ""
 #: arctern_pyspark._wrapper_func.ST_Within:5
 #: arctern_pyspark._wrapper_func.ST_Within:8 of
 msgid "Geometry"
-msgstr "空间几何形状。"
+msgstr "几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_Within of
 msgid "返回类型"

@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Compute the double-precision minimum bounding box geometry for the union "
 "of given geometries."
-msgstr "计算一个代表给定几何体数组并集的双精度最小边界的几何体。"
+msgstr "计算包含一组几何体的最小矩形，且该矩形的边与坐标轴平行。"
 
 #: arctern._wrapper_func.ST_Envelope_Aggr of
 msgid "参数"

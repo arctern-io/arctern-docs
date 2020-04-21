@@ -27,8 +27,7 @@ msgid ""
 "arr_max_x, arr_max_y. The edges of polygon are parallel to coordinate "
 "axis."
 msgstr ""
-"从给定的参数 arr_min_x，arr_min_y，arr_max_x，arr_max_y 构造矩形"
-"几何体。矩形几何体的边应该平行于坐标轴。"
+"根据给定的参数构造矩形几何体，且该矩形的边与坐标轴平行。"
 
 #: arctern_pyspark._wrapper_func.ST_PolygonFromEnvelope of
 msgid "参数"

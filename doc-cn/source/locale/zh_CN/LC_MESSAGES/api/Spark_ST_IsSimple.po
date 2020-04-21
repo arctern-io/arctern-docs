@@ -26,7 +26,7 @@ msgid ""
 "Check whether geometry is \"simple\". \"Simple\" here means that a "
 "geometry has no anomalous geometric points such as self intersection or "
 "self tangency."
-msgstr "检查几何体是否是简单的。这里简单的的意识是几何体没有异常的点，例如自相交或者自相切。"
+msgstr "检查几何体是否是“简单”的。这里的“简单”指几何体没有异常点，例如自相交或者自相切。"
 
 #: arctern_pyspark._wrapper_func.ST_IsSimple of
 msgid "参数"
@@ -46,7 +46,11 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_IsSimple:8 of
 msgid "True if geometry is simple."
+<<<<<<< HEAD
+msgstr "如果几何体是“简单”的，返回 true，反之返回 false。"
+=======
 msgstr "如果几何体是简单的，返回 true，反之返回 false。"
+>>>>>>> 27e7bd479de70821fc7d8e0210c051d5f4e1bca3
 
 #: arctern_pyspark._wrapper_func.ST_IsSimple of
 msgid "example"

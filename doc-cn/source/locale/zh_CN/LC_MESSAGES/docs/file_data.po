@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-17 11:21+0800\n"
+"POT-Creation-Date: 2020-04-20 18:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,11 @@ msgid "文件的导入与导出"
 msgstr ""
 
 #: ../../source/docs/file_data.md:3
-msgid "Spark支持多种数据格式文件导入，以下是针对csv、parquet、json、orc等数据格式文件的导入导出例子。详细信息请查看Spark官方文档"
+msgid ""
+"Arctern-Spark 借助 Spark "
+"的文件读写功能完成数据的导入和导出。Spark支持多种数据格式文件导入，以下是针对csv、parquet、json、orc等数据格式文件的导入导出例子。更多的文件格式支持请查看Spark官方文档"
 msgstr ""
+
+#~ msgid "Spark支持多种数据格式文件导入，以下是针对csv、parquet、json、orc等数据格式文件的导入导出例子。详细信息请查看Spark官方文档"
+#~ msgstr ""
 

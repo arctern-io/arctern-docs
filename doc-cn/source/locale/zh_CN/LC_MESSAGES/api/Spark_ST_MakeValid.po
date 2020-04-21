@@ -26,8 +26,8 @@ msgid ""
 "Create a valid representation of the geometry without losing any of the "
 "input vertices. If the geometry is already-valid, then nothing will be "
 "done."
-msgstr "在不删除任何点的情况下，将输入的几何体构建为一个有效的几何体。如果"
-"几何体本来就是有效的，那么什么都不会做。"
+msgstr "在不删除任何顶点的情况下，将输入的几何体构建为一个合法的几何体。如果"
+"几何体本来就是合法的，则什么都不做。"
 
 #: arctern_pyspark._wrapper_func.ST_MakeValid of
 msgid "参数"
@@ -35,7 +35,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_MakeValid:5 of
 msgid "Geometry"
-msgstr "空间几何形状。"
+msgstr "几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_MakeValid of
 msgid "返回类型"
@@ -49,7 +49,7 @@ msgstr ""
 msgid ""
 "Geometry if the input geometry is already-valid or can be made valid. "
 "Otherwise, NULL."
-msgstr "如果输入的几何体原本是有效的或者可以被构造成一个有效的几何体,那么返回一个几何体,否则返回 NULL。"
+msgstr "如果输入的几何体原本是合法的或者可以被构造成一个合法的几何体,那么返回一个合法几何体,否则返回 NULL。"
 
 #: arctern_pyspark._wrapper_func.ST_MakeValid of
 msgid "example"

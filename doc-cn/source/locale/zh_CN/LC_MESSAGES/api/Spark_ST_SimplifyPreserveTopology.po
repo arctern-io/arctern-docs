@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Returns a \"simplified\" version of the given geometry using the Douglas-"
 "Peucker algorithm."
-msgstr "返回一个使用 Douglas-Peucker 算法“简化”的几何体。"
+msgstr "通过 Douglas-Peucker 算法使用折线近似表示几何体中的曲线。"
 
 #: arctern_pyspark._wrapper_func.ST_SimplifyPreserveTopology of
 msgid "参数"
@@ -38,7 +38,7 @@ msgstr "几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_SimplifyPreserveTopology:7 of
 msgid "The maximum distance between a point on a linestring and a curve."
-msgstr "直线上的点与曲线上的点的最大距离。"
+msgstr "所允许的误差范围，即直线上的点到曲线距离的最大值。"
 
 #: arctern_pyspark._wrapper_func.ST_SimplifyPreserveTopology of
 msgid "返回类型"

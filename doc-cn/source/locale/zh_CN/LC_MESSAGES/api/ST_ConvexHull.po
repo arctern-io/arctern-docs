@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Compute the smallest convex geometry that encloses all geometries in the "
 "given geometry."
-msgstr "计算并返回一个包含给定几何体数组集合中所有几何体的最小凸几何体。"
+msgstr "计算包含给定几何体的最小凸几何体。"
 
 #: arctern._wrapper_func.ST_ConvexHull of
 msgid "参数"

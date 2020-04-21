@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_NPoints:1 of
 msgid "Calculates the points number for every geometry in geometries."
-msgstr "计算给定几何体点的数量。"
+msgstr "计算给定几何体中顶点/端点的数量。"
 
 #: arctern._wrapper_func.ST_NPoints of
 msgid "参数"

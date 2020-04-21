@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 16:41+0800\n"
+"POT-Creation-Date: 2020-04-21 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,14 +23,13 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_Centroid:1 of
 msgid "Compute the centroid of geometry."
-msgstr "计算几何体的中点。"
+msgstr "计算几何体的质心。"
 
 #: arctern_pyspark._wrapper_func.ST_Centroid of
 msgid "参数"
 msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Centroid:4
-#: arctern_pyspark._wrapper_func.ST_Centroid:7 of
+#: arctern_pyspark._wrapper_func.ST_Centroid:4 of
 msgid "Geometry"
 msgstr "几何体。"
 
@@ -42,6 +41,11 @@ msgstr ""
 msgid "返回"
 msgstr ""
 
+#: arctern_pyspark._wrapper_func.ST_Centroid:7 of
+msgid "The centroid of geometry in WKB form."
+msgstr "用 WKB 表示的质心。"
+
 #: arctern_pyspark._wrapper_func.ST_Centroid of
 msgid "example"
 msgstr "例子"
+
