@@ -47,9 +47,9 @@
 
 ## 创建 Arctern Conda 环境
 
-### 创建 Arctern 虚拟环境
+### 创建 Arctern  Conda 环境
 
-通过以下命令创建 Arctern Conda 环境：
+通过以下命令创建 Arctern Conda 环境。此处假设环境名称为 `arctern_spark`，用户可根据需求自行选择合适的环境名称。
 
 `conda create -n arctern_spark python=3.7`
 

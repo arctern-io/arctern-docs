@@ -15,7 +15,7 @@ POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 >>> import pandas as pd
 >>> import arctern
 >>> df = pd.read_csv("/path/to/geos.csv",sep='|')
->>> data = pd.Series(df['geos'].values)
+>>> data = pd.Series(df['geos'].values,name='geos')
 >>> rst = arctern.ST_IsSimple(arctern.ST_GeomFromText(data))
 >>> print(rst)
 0     True
@@ -27,7 +27,7 @@ dtype: bool
 
 #导入JSON文件
 >>> df = pd.read_json("/path/to/geos.json")
->>> data = pd.Series(df['geos'].values)
+>>> data = pd.Series(df['geos'].values,name='geos')
 >>> rst = arctern.ST_IsSimple(arctern.ST_GeomFromText(data))
 >>> print(rst)
 0     True
@@ -35,5 +35,5 @@ dtype: bool
 2    False
 3     True
 dtype: bool
->>> rst.to_csv("/path/to/geos.csv")
+>>> df.to_csv("/path/to/geos.csv")
 ```

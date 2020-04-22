@@ -24,9 +24,8 @@ POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 >>> register_funcs(spark_session)
 >>> df = spark_session.read.format('csv').options(header='true',sep='|').load("/path/to/geos.csv")
 >>> df.createOrReplaceTempView("geos")
->>> make_valid_df = spark_session.createDataFrame(data=df, schema=['geos']).cache()
 >>> make_valid_df = spark_session.sql("select ST_AsText(ST_MakeValid(ST_GeomFromText(geos))) from geos")
->>> make_valid_df.select("geos").write.save("/path/to/new_geos.csv", format="csv")
+>>> df.select("geos").write.save("/path/to/new_geos.csv", format="csv")
 ```
 
 
@@ -49,5 +48,5 @@ b'\x01\x03\x00\x00\x00\x01\x00\x00\x00\x05\x00\x00\x00\x00\x00\x00\x00\x00\x00\x
 >>> df = spark_session.read.format('csv').options(header='true',sep='|').load("/path/to/geos.csv")
 >>> df.createOrReplaceTempView("geos")
 >>> make_valid_df = spark_session.sql("select ST_MakeValid(geos) from geos")
->>> make_valid_df.select("valid_geos").write.save("/path/to/new_geos.csv", format="csv")
+>>> df.select("geos").write.save("/path/to/new_geos.csv", format="csv")
 ```

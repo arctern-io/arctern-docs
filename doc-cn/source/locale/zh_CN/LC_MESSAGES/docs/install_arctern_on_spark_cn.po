@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-17 11:21+0800\n"
+"POT-Creation-Date: 2020-04-22 15:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,15 +57,15 @@ msgid "创建 Arctern Conda 环境"
 msgstr ""
 
 #: ../../source/docs/install_arctern_on_spark_cn.md:90
-msgid "创建 Arctern 虚拟环境"
+msgid "创建 Arctern  Conda 环境"
 msgstr ""
 
 #: ../../source/docs/install_arctern_on_spark_cn.md:92
-msgid "通过以下命令创建 Arctern Conda 环境："
+msgid "通过以下命令创建 Arctern Conda 环境。此处假设环境名称为 arctern_spark，用户可根据需求自行选择合适的环境名称。"
 msgstr ""
 
 #: ../../source/docs/install_arctern_on_spark_cn.md:94
-msgid "conda create -n arctern"
+msgid "conda create -n arctern_spark python=3.7"
 msgstr ""
 
 #: ../../source/docs/install_arctern_on_spark_cn.md:96
@@ -77,7 +77,7 @@ msgid "进入 Arctern 环境："
 msgstr ""
 
 #: ../../source/docs/install_arctern_on_spark_cn.md:107
-msgid "conda activate arctern"
+msgid "conda activate arctern_spark"
 msgstr ""
 
 #: ../../source/docs/install_arctern_on_spark_cn.md:110
@@ -182,4 +182,3 @@ msgstr ""
 #: ../../source/docs/install_arctern_on_spark_cn.md:213
 msgid "conda 虚拟环境名与集群中每个机器完全一致"
 msgstr ""
-

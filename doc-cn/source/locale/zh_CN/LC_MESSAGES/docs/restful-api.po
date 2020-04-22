@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 16:41+0800\n"
+"POT-Creation-Date: 2020-04-22 15:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Generated-By: Babel 2.8.0\n"
 
 #: ../../source/docs/restful-api.md:1
-msgid "API"
+msgid "接口文档"
 msgstr ""
 
 #: ../../source/docs/restful-api.md:3
@@ -446,4 +446,3 @@ msgstr ""
 #: ../../source/docs/restful-api.md:883
 msgid "size_bound：点大小的取值范围。"
 msgstr ""
-

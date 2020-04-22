@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-22 10:43+0800\n"
+"POT-Creation-Date: 2020-04-22 15:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,21 +22,17 @@ msgid "register_funcs"
 msgstr ""
 
 #: arctern_pyspark.register.register_funcs:1 of
-msgid ""
-"This is the core of whole package, It uses py4j to run wrapper which "
-"takes existing SparkSession and register all User Defined Functions by "
-"Arctern developers, for this SparkSession."
-msgstr "这是整个程序包的核心，它使用py4j运行封装接口，该封装接口将使用现有的SparkSession并为该SparkSession注册由Arctern开发人员注册的所有用户定义函数。"
+msgid "Register all functions provided by Arctern for the given SparkSession."
+msgstr "为给定的 SparkSession 注册 Arctern 提供的功能 API。"
 
 #: arctern_pyspark.register.register_funcs of
 msgid "参数"
 msgstr ""
 
-#: arctern_pyspark.register.register_funcs:4 of
+#: arctern_pyspark.register.register_funcs:3 of
 msgid "pyspark.sql.SparkSession, spark session instance."
-msgstr "spark session的一个实例。"
+msgstr "SparkSession的一个实例。"
 
 #: arctern_pyspark.register.register_funcs of
 msgid "example"
 msgstr "例子"
-
