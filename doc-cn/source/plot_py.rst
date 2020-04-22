@@ -1,5 +1,5 @@
-Plot
-=====
+Plot Functions
+===============
 
 
 .. toctree::

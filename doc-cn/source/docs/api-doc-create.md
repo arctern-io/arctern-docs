@@ -155,7 +155,7 @@ vi new_api_file.rst
 cd doc-cn
 vi compile.py
 
-在21行添加如下代码：
+在23行添加如下代码：
 os.system('sphinx-intl update -p build/gettext -l zh_CN')
 ```
 

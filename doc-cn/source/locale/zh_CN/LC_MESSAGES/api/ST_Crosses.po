@@ -51,12 +51,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_Crosses:13 of
 msgid "True if geometry \"geo1\" crosses geometry \"geo2\"."
-<<<<<<< HEAD
 msgstr "如果 geo1 与 geo2 “相交”，返回 true,反之返回 false。"
-=======
-msgstr "如果 geo1 与 geo2 “空间相交”，返回 true,反之返回 false。"
->>>>>>> 27e7bd479de70821fc7d8e0210c051d5f4e1bca3
-
 
 #: arctern._wrapper_func.ST_Crosses of
 msgid "example"

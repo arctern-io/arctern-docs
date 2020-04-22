@@ -37,11 +37,7 @@ msgstr "WKB 格式的几何体。"
 
 #: arctern._wrapper_func.ST_SimplifyPreserveTopology:7 of
 msgid "The maximum distance between a point on a linestring and a curve."
-<<<<<<< HEAD
 msgstr "所允许的误差范围，即直线上的点到曲线距离的最大值。"
-=======
-msgstr "直线上的点与曲线上的点的最大距离。"
->>>>>>> 27e7bd479de70821fc7d8e0210c051d5f4e1bca3
 
 #: arctern._wrapper_func.ST_SimplifyPreserveTopology of
 msgid "返回类型"
@@ -51,21 +47,8 @@ msgstr ""
 msgid "返回"
 msgstr ""
 
-<<<<<<< HEAD
 #: arctern._wrapper_func.ST_SimplifyPreserveTopology:10 of
 msgid "Geometries in WKB form."
-msgstr "WKB 格式的几何体。"
-=======
-<<<<<<< HEAD
-#: arctern._wrapper_func.ST_SimplifyPreserveTopology:10 of
-msgid "Geometries in WKB form."
-msgstr "WKB 格式的几何体。"
-=======
-#: arctern._wrapper_func.ST_SimplifyPreserveTopology:11 of
-msgid "Geometries in WKB form."
-msgstr "WKB 格式的 geometries。"
->>>>>>> 0c0bae3c77d619dcf03f6fa507205868038464d3
->>>>>>> 27e7bd479de70821fc7d8e0210c051d5f4e1bca3
 
 #: arctern._wrapper_func.ST_SimplifyPreserveTopology of
 msgid "example"

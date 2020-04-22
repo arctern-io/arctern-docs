@@ -31,8 +31,6 @@ GeoSpatial Functions
    api/Spark_ST_NPoints
    api/Spark_ST_Envelope
    api/Spark_ST_Buffer
-   api/Spark_ST_Union_Aggr
-   api/Spark_ST_Envelope_Aggr
    api/Spark_ST_Transform
    api/Spark_ST_CurveToLine
    api/Spark_ST_GeomFromGeoJSON

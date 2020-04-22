@@ -46,11 +46,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_IsSimple:8 of
 msgid "True if geometry is simple."
-<<<<<<< HEAD
 msgstr "如果几何体是“简单”的，返回 true，反之返回 false。"
-=======
-msgstr "如果几何体是简单的，返回 true，反之返回 false。"
->>>>>>> 27e7bd479de70821fc7d8e0210c051d5f4e1bca3
 
 #: arctern_pyspark._wrapper_func.ST_IsSimple of
 msgid "example"

@@ -31,8 +31,6 @@ GeoSpatial Functions
    api/ST_NPoints
    api/ST_Envelope
    api/ST_Buffer
-   api/ST_Union_Aggr
-   api/ST_Envelope_Aggr
    api/ST_Transform
    api/ST_CurveToLine
    api/ST_GeomFromGeoJSON

@@ -38,19 +38,11 @@ msgstr "WKB 格式的几何体。"
 
 #: arctern._wrapper_func.ST_Transform:7 of
 msgid "The current srid of geometries."
-<<<<<<< HEAD
 msgstr "几何体当前所在的 SRID。"
 
 #: arctern._wrapper_func.ST_Transform:10 of
 msgid "The target srid of geometries tranfrom to."
 msgstr "几何体需要转换的目标 SRID。"
-=======
-msgstr "几何体当前所在的 srid。"
-
-#: arctern._wrapper_func.ST_Transform:10 of
-msgid "The target srid of geometries tranfrom to."
-msgstr "几何体需要转换的目标 srid。"
->>>>>>> 27e7bd479de70821fc7d8e0210c051d5f4e1bca3
 
 #: arctern._wrapper_func.ST_Transform of
 msgid "返回类型"

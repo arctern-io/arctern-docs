@@ -49,11 +49,7 @@ msgstr ""
 msgid ""
 "Geometry if the input geometry is already-valid or can be made valid. "
 "Otherwise, NULL."
-<<<<<<< HEAD
 msgstr "如果输入的几何体原本是合法的或者可以被构造成一个合法的几何体,那么返回一个合法的几何体,否则返回 NULL。"
-=======
-msgstr "如果输入的几何体原本是有效的或者可以被构造成一个有效的几何体,那么返回一个几何体,否则返回 NULL。"
->>>>>>> 27e7bd479de70821fc7d8e0210c051d5f4e1bca3
 
 #: arctern._wrapper_func.ST_MakeValid of
 msgid "example"
