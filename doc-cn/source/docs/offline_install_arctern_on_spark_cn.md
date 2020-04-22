@@ -1,41 +1,59 @@
 # 离线安装 
 本文档介绍在 Spark 环境中离线安装 Arctern 的步骤。
 
-
 ## 安装要求
 
-Arctern 离线安装需要预先搭建以下环境:
- - Linux 操作系统
- - conda  ([详见官网](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html))
- - spark 3.0 （[详见官网](https://spark.apache.org/downloads.html)）
-GPU 版本还需要搭建以下环境:
- - CUDA Toolkit 10.0 ([详见官网](https://developer.nvidia.com/cuda-10.0-download-archive))
- - Nvidia driver 4.30  ([详见官网](https://www.nvidia.com/Download/index.aspx))
+- CPU 版本
 
+| 名称     | 版本              |
+| -------- | ----------------- |
+| 操作系统 | Ubuntu LTS 18.04  |
+| Conda    | Miniconda Python3 |
+| Spark    | 3.0               |
 
+- GPU 版本
 
-## 预先在有网环境下载安装所需要的压缩包
+| 名称          | 版本              |
+| ------------- | ----------------- |
+| 操作系统      | Ubuntu LTS 18.04  |
+| Conda         | Miniconda Python3 |
+| Spark         | 3.0               |
+| CUDA          | 10.0              |
+| Nvidia driver | 418 或更高版本              |
 
-* CPU 版本
+## <span id = "installdependencies">安装依赖项</span>
 
-  使用以下命令下载并解压相关包：
+### 安装系统依赖
+
 ```bash
-$ wget .....arctern_local_channel_cpu.tar.gz
-$ tar vxf arctern_local_channel_cpu.tar.gz
-$ wget ....so_dep.tar.gz
-$ tar vxf so_dep.tar.gz (add to LD_LIBRARY_PATH)
+$ git clone -b offline https://github.com/zilliztech/arctern-resources.git    # 有网环境中下载
+$ cd arctern-resources/arctern_dependcies/ubuntu_dependcies
+$ ./install_packages.sh gl      # 安装gl-mesa库
+$ ./install_packages.sh jdk     # 安装java8
 ```
 
-* GPU 版本
+### 安装Spark
+
+下载 [Spark 3.0.0-preview2](https://mirror.bit.edu.cn/apache/spark/spark-3.0.0-preview2/spark-3.0.0-preview2-bin-hadoop2.7.tgz)，并解压到指定目录
 
 
-  使用以下命令下载并解压相关包：
 ```bash
-$ wget .....arctern_local_channel_gpu.tar.gz
-$ tar vxf arctern_local_channel_gpu.tar.gz
-$ wget ....so_dep.tar.gz
-$ tar vxf so_dep.tar.gz (add to LD_LIBRARY_PATH)
+$ wget "http://mirror.bit.edu.cn/apache/spark/spark-3.0.0-preview2/spark-3.0.0-preview2-bin-hadoop2.7.tgz"       # 有网环境中下载
+$ mkdir -p $SPARK_HOME && tar zxvf spark-3.0.0-preview2-bin-hadoop2.7.tgz -C $SPARK_HOME       # SPARK_HOME 为spark的安装目录
 ```
+
+### 安装Miniconda
+
+下载 [Miniconda3](https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh)，并执行以下命令
+
+```bash
+$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh         # 有网环境中下载
+$ /bin/bash ~/miniconda.sh -b -p $CONDA_HOME      # CONDA_HOME 为Conda的安装目录
+```
+
+### CUDA 环境安装（可选）
+
+...
 
 ## 创建 Arctern Conda 离线环境
 
@@ -44,8 +62,9 @@ $ tar vxf so_dep.tar.gz (add to LD_LIBRARY_PATH)
 通过以下命令创建 Arctern Conda 环境：
 
 ```bash
+$ . $CONDA_HOME/etc/profile.d/conda.sh
 $ conda config --set offline True
-$ conda create -n <your_env_name>
+$ conda create -n arctern
 ```
 
 创建成功后，可以通过 `conda env list` 命令查看所有Conda环境，其输出结果应包含Arctern环境，类似如下：
@@ -53,13 +72,13 @@ $ conda create -n <your_env_name>
   ```bash
   conda environments:
   base         ...
-  <your_env_name>      ...
+  arctern      ...
   ...
   ```
 
  进入 Arctern 环境：
 
-  `conda activate <your_env_name>`
+  `conda activate arctern`
 
 
 **注意：后续工作必须在 Arctern 环境中进行**
@@ -72,16 +91,31 @@ $ conda create -n <your_env_name>
 
   执行以下命令在 Conda 环境中安装 Arctern CPU 版本：
 
-  ```shell
-  $ conda install -c file://path_to_arctern_local_channel_cpu -n <your_env_name> arctern-spark --offline --override-channels
+  ```bash
+  $ conda install -n arctern -c file:///[path/to/channel] arctern-spark --offline   --override-channels
   ```
+
+  例如:
+
+  ```bash
+  $ conda install -n arctern -c file:///tmp/arctern-resources/arctern_dependencies/conda_dependencies/channel arctern-spark   --offline --override-channels
+  ```
+
 
 * GPU版本
 
   执行以下命令在 Conda 环境中安装 Arctern CPU 版本：
 
-  ```shell
-  $ conda install -c file://path_to_arctern_local_channel_gpu -n <your_env_name> arctern-spark --offline --override-channels
+  ```bash
+      conda install -n arctern -c file:///[path/to/channel]/label/cuda10.0 libarctern   --offline --override-channels
+      conda install -n arctern -c file:///[path/to/channel] arctern arctern-spark   --offline --override-channels
+  ```
+
+  例如:
+
+  ```bash
+      conda install -n arctern -c file:///tmp/arctern-resources/arctern_dependencies/conda_dependencies/channel/label/cuda10.0 libarctern --offline --override-channels
+      conda install -n arctern -c file:///tmp/arctern-resources/arctern_dependencies/conda_dependencies/channel arctern   arctern-spark --offline --override-channels
   ```
 
 
@@ -124,23 +158,19 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern/bin/python
 
 ## 测试样例
 
-下载测试文件
+使用测试文件检验Arctern是否安装成功,通过以下命令提交 Spark 任务。
 
 ```bash
-wget https://raw.githubusercontent.com/zilliztech/arctern/conda/spark/pyspark/examples/gis/spark_udf_ex.py
-```
+$ cd arctern-resources/arctern_dependencies/example
 
-通过以下命令提交 Spark 任务，其中 `[path/to/]spark_udf_ex.py` 为测试文件所在的路径。
-
-```bash
 # local mode
-[path/to/your/spark]/bin/spark-submit [path/to/]spark_udf_ex.py
+[path/to/your/spark]/bin/spark-submit spark_udf_ex.py
 
 # standalone mode
-[path/to/your/spark]/bin/spark-submit --master [spark service address] [path/to/]spark_udf_ex.py
+[path/to/your/spark]/bin/spark-submit --master [spark service address] spark_udf_ex.py
 
 # hadoop/yarn mode
-[path/to/your/spark]/bin/spark-submit --master yarn [path/to/]spark_udf_ex.py
+[path/to/your/spark]/bin/spark-submit --master yarn spark_udf_ex.py
 ```
 
 ## 卸载
