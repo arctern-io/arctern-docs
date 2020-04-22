@@ -50,20 +50,20 @@
 
 通过以下命令创建 Arctern Conda 环境：
 
-`conda create -n arctern`
+`conda create -n arctern_python python=3.7`
 
 创建成功后，可以通过 `conda env list` 命令查看所有Conda环境，其输出结果应包含Arctern环境，类似如下：
   
   ```bash
   conda environments:
-  base         ...
-  arctern      ...
+  base                ...
+  arctern_python      ...
   ...
   ```
 
  进入 Arctern 环境：
 
-  `conda activate arctern`
+  `conda activate arctern_python`
 
 
 **注意：后续工作必须在 Arctern 环境中进行**
@@ -76,7 +76,7 @@
 执行以下命令在 Conda 环境中安装 arctern CPU 版本：
 
 ```shell
-   conda install -y -q -n arctern -c conda-forge -c arctern-dev arctern
+   conda install -y -q -n arctern_python -c conda-forge -c arctern-dev arctern
 ```
 
 * GPU版本
@@ -84,8 +84,8 @@
 执行以下命令在 Conda 环境中安装 arctern GPU 版本：
 
 ```shell
-   conda install -y -q -n arctern -c conda-forge -c arctern-dev/label/cuda10.0 libarctern
-   conda install -y -q -n arctern -c conda-forge -c arctern-dev arctern
+   conda install -y -q -n arctern_python -c conda-forge -c arctern-dev/label/cuda10.0 libarctern
+   conda install -y -q -n arctern_python -c conda-forge -c arctern-dev arctern
 ```
 
 ## 安装验证
@@ -114,5 +114,5 @@ py.test [/path/to/]geo_test.py
 ## 卸载
 
 ```shell
-conda uninstall -n arctern libarctern arctern
+conda uninstall -n arctern_python libarctern arctern
 ```

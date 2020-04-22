@@ -51,20 +51,20 @@
 
 通过以下命令创建 Arctern Conda 环境：
 
-`conda create -n arctern`
+`conda create -n arctern_spark python=3.7`
 
 创建成功后，可以通过 `conda env list` 命令查看所有Conda环境，其输出结果应包含Arctern环境，类似如下：
   
   ```bash
   conda environments:
-  base         ...
-  arctern      ...
+  base               ...
+  arctern_spark      ...
   ...
   ```
 
  进入 Arctern 环境：
 
-  `conda activate arctern`
+  `conda activate arctern_spark`
 
 
 **注意：后续工作必须在 Arctern 环境中进行**
@@ -79,7 +79,7 @@
 执行以下命令在 Conda 环境中安装 arctern_spark CPU 版本：
 
 ```shell
-    conda install -y -q -n arctern -c conda-forge -c arctern-dev arctern-spark
+    conda install -y -q -n arctern_spark -c conda-forge -c arctern-dev arctern-spark
 ```
 
 * GPU版本
@@ -87,8 +87,8 @@
 执行以下命令在 Conda 环境中安装 arctern_spark GPU 版本：  
 
 ```shell
-    conda install -y -q -n arctern -c conda-forge -c arctern-dev/label/cuda10.0 libarctern
-    conda install -y -q -n arctern -c conda-forge -c arctern-dev arctern arctern-spark
+    conda install -y -q -n arctern_spark -c conda-forge -c arctern-dev/label/cuda10.0 libarctern
+    conda install -y -q -n arctern_spark -c conda-forge -c arctern-dev arctern arctern-spark
 ```
 
 ## 安装验证
@@ -153,7 +153,7 @@ wget https://raw.githubusercontent.com/zilliztech/arctern/conda/spark/pyspark/ex
 在 Conda 环境中输入以下命令可卸载 Arctern
 
 ```shell
-conda uninstall -n arctern libarctern pyarctern arctern-spark
+conda uninstall -n arctern_spark libarctern arctern arctern-spark
 ```
 
 ## FAQ
