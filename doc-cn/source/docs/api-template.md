@@ -44,6 +44,8 @@
 
     :rtype: the type of return
 
+    .. image:: address
+
     :example:
       >>> import xxx
       ......

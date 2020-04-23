@@ -1,0 +1,49 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-23 15:26+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/python/data_source/geometry_data_format.md:1
+msgid "Geometry 数据格式"
+msgstr ""
+
+#: ../../source/python/data_source/geometry_data_format.md:3
+msgid ""
+"Arctern 在数据导入导出时支持 Well Know Text(WKT)  和 Well Know Binary (WKB) "
+"两种形式的几何体数据。相对 WKB 而言，WKT 形式的数据更方便人工阅读，但是计算机对其处理的效率相对较低并且占用的存储空间也更大。"
+msgstr ""
+
+#: ../../source/python/data_source/geometry_data_format.md:5
+msgid ""
+"目前 Arctern API 仅支持 WKB 形式的几何体数据作为传入和返回参数。如下例所示，如果数据源中使用 WKT "
+"形式的数据，在数据导入后需要调用 ST_GeomFromText 函数将数据转换为 WKB 形式；相应的，在数据导出时，也需要调用 "
+"ST_GeomFromText 函数将数据转换回 "
+"WKT形式。数据形式的转换将带来额外的数据开销。因此，建议对几何体数据没有可读性要求的用户将数据存储为 WKB 形式。"
+msgstr ""
+
+#: ../../source/python/data_source/geometry_data_format.md:7
+msgid "样例"
+msgstr ""
+
+#: ../../source/python/data_source/geometry_data_format.md:9
+msgid "WKT 形式数据的导入和导出："
+msgstr ""
+
+#: ../../source/python/data_source/geometry_data_format.md:33
+msgid "WKB 形式数据的导入和导出："
+msgstr ""
+

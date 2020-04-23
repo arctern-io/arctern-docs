@@ -17,6 +17,6 @@ Arctern项目致力于构建开源的时空数据分析平台。
 .. toctree::
    :maxdepth: 2
 
-   python
-   spark
-   restful
+   python/python
+   spark/spark
+   restful/restful
