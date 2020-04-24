@@ -50,7 +50,7 @@ $ /bin/bash ~/miniconda.sh -b -p $CONDA_HOME      # CONDA_HOME 为Conda的安装
 
 ## 创建 Arctern Conda 离线环境
 
-### 创建 Arctern 虚拟环境
+### 创建 Conda 虚拟环境
 
 通过以下命令创建 Arctern Conda 环境。此处假设环境名称为 `arctern_spark`，用户可根据需求自行选择合适的环境名称。
 
@@ -77,7 +77,7 @@ $ conda create -n arctern-spark
 > **注意：后续工作必须在 Arctern 虚拟环境中进行**
 
 
-## 安装 Arctern
+## 安装 Arctern-Spark
 
 执行以下命令在 Conda 环境中安装 Arctern-Spark：
 
@@ -130,7 +130,7 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern/bin/python
 
 ## 测试样例
 
-使用测试文件检验Arctern是否安装成功,通过以下命令提交 Spark 任务。
+使用测试文件检验 Arctern-Spark 是否安装成功,通过以下命令提交 Spark 任务。
 
 ```bash
 $ cd arctern-resources/arctern_dependencies/example
@@ -153,7 +153,7 @@ All tests of arctern have passed!
 
 ## 卸载
 
-在 Conda 环境中输入以下命令可卸载 Arctern
+在 Conda 环境中输入以下命令可卸载 Arctern-Spark
 
 ```shell
 conda uninstall -n arctern libarctern arctern arctern-spark
@@ -163,10 +163,10 @@ conda uninstall -n arctern libarctern arctern arctern-spark
 
 ### 对Spark的支持
 
-Arctern 可以运行在 Spark 的各种模式下，需要在每台运行 Spark 的机器上，执行如下操作：
+Arctern-Spark 可以运行在 Spark 的各种模式下，需要在每台运行 Spark 的机器上，执行如下操作：
 
 * 创建 Conda 虚拟环境
-* 安装 Arctern
+* 安装 Arctern-Spark
 * 配置 Spark 环境变量
 
 如果 Spark 运行在 `standalone` 集群模式下，提交任务机器的 Spark 环境需要与集群的 Spark 环境完全一致，包括以下几点：

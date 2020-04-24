@@ -30,7 +30,7 @@
 
 * CPU 版本
 
-  使用以下命令安装 Arctern CPU 版本的依赖库：
+  使用以下命令安装 Arctern-Spark CPU 版本的依赖库：
 ```bash
     sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 ```
@@ -38,18 +38,18 @@
 * GPU 版本
 
 
-  使用以下命令安装 Arctern GPU 版本的依赖库：
+  使用以下命令安装 Arctern-Spark GPU 版本的依赖库：
 ```bash
     sudo apt install libgl1-mesa-dev libegl1-mesa-dev
 ```
 
 
 
-## 创建 Arctern Conda 环境
+## 创建 Arctern-Spark Conda 环境
 
-### 创建 Arctern  Conda 环境
+### 创建 Conda 虚拟环境
 
-通过以下命令创建 Arctern Conda 环境。此处假设环境名称为 `arctern_spark`，用户可根据需求自行选择合适的环境名称。
+通过以下命令为 Arctern-Spark 创建 Conda 环境。此处假设环境名称为 `arctern_spark`，用户可根据需求自行选择合适的环境名称。
 
 `conda create -n arctern_spark python=3.7`
 
@@ -62,7 +62,7 @@
   ...
   ```
 
- 进入 Arctern 环境：
+ 进入 Arctern-Spark 环境：
 
   `conda activate arctern_spark`
 
@@ -71,7 +71,7 @@
 
 
 
-## 安装 Arctern
+## 安装 Arctern-Spark
 
 
 * CPU 版本
@@ -150,7 +150,7 @@ wget https://raw.githubusercontent.com/zilliztech/arctern/conda/spark/pyspark/ex
 
 ## 卸载
 
-在 Conda 环境中输入以下命令可卸载 Arctern
+在 Conda 环境中输入以下命令可卸载 Arctern-Spark
 
 ```shell
 conda uninstall -n arctern_spark libarctern arctern arctern-spark
@@ -160,10 +160,10 @@ conda uninstall -n arctern_spark libarctern arctern arctern-spark
 
 ### 对Spark的支持
 
-Arctern 可以运行在 Spark 的各种模式下，需要在每台运行 Spark 的机器上，执行如下操作：
+Arctern-Spark 可以运行在 Spark 的各种模式下，需要在每台运行 Spark 的机器上，执行如下操作：
 
 * 创建 Conda 虚拟环境
-* 安装 Arctern
+* 安装 Arctern-Spark
 * 配置 Spark 环境变量
 
 如果 Spark 运行在 `standalone` 集群模式下，提交任务机器的 Spark 环境需要与集群的 Spark 环境完全一致，包括以下几点：

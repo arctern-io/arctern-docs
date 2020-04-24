@@ -2,7 +2,7 @@
 
 This document introduces how to deploy Arctern on a pseudo-distributed PySpark environment with Docker Compose on a singe machine. 
 
-<span style="color:red">Notice: The introduced method deployes only a toy environment to let users try and use Arctern PySpark APIs, please do NOT use it in a production environment.</span>
+<span style="color:red">Notice: The introduced method deployes only a toy environment to let users try and use Arctern Spark APIs, please do NOT use it in a production environment.</span>
 
 <!-- TOC -->
 

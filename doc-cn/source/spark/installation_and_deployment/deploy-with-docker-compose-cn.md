@@ -1,7 +1,7 @@
 # 基于 docker compose 部署 
-本文档介绍如何使用 Docker Compose 在单台服务器上快速部署伪分布式 Arctern PySpark 实验环境，供用户体验 Arctern PySpark 接口的基本使用。
+本文档介绍如何使用 Docker Compose 在单台服务器上快速部署伪分布式 Arctern-Spark 实验环境，供用户体验 Arctern-Spark 接口的基本使用。
 
-<span style="color:red">强烈建议：本文档介绍的部署方案仅供示例和体验，请勿用于生产环境中的 Arctern 部署。</span>
+<span style="color:red">强烈建议：本文档介绍的部署方案仅供示例和体验，请勿用于生产环境中的 Arctern-Spark 部署。</span>
 
 
 ## 安装前提
@@ -39,7 +39,7 @@ $ docker info
 ## 配置 NVIDIA Docker （可选）
 
 ### 确认 NVIDIA Docker状态
-如果需要运行 GPU 版本 Arctern，需[安装 NVIDIA Docker Version 2.0](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0))。
+如果需要运行 GPU 版本 Arctern-Spark，需[安装 NVIDIA Docker Version 2.0](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0))。
 
 通过以下命令确认 NVIDIA Docker 是否安装成功。
 
