@@ -4,16 +4,20 @@ Arctern 提供基于 Restful 接口的 Web 服务。通过配置可将 Restful S
 
 以下将介绍 Arctern Restful Server 的安装和配置流程。更多 Arctern Restfull API 信息请查看 Restful 服务[接口文档](./restful-api.md)和[使用示例](./restful-nyc-taxi-example.md)。
 
+> 注意：Arctern Restful Server 仅负责 Restful 请求的接收和解析，实际操作由 Restful Server 所连接的 Arctern-Spark 执行。在安装 Arctern Restful Server 前请确保环境存在已安装好 Arctern-Spark 的后台系统。安装 Arctern-Spark 的方式请参照其[安装文档](TODO： ADD link to arctern-spark installation).
+
 ## 安装准备
 
 在安装 Arctern Restful Server 前请预先安装 MiniConda Python3。以下内容假设在 MiniConda 安装完成后进行。
 
-### 安装 Arctern-Spark
+### 安装依赖库
 
-使用以下命令安装 Arctern-Spark 的依赖库：
+使用以下命令安装 Arctern Restful Server 的依赖库：
 ```bash
 sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 ```
+
+### 创建 Conda 虚拟环境
 
 通过以下命令为 Arctern Restful Server 构建 Conda 环境。此处假设环境名称为 `arctern_server`，用户可根据需求自行选择合适的环境名称。
 
@@ -28,14 +32,19 @@ conda activate arctern_server
 
 > **注意，以下步骤需要在 conda 的 arctern 虚拟环境下进行**
 
-安装 Arctern-Spark 包:
+### 安装 Arctern-Spark 包
+
+Arctern Restful Server 的运行依赖于 Arctern-Spark，使用以下命令在虚拟环境中安装 Arctern-Spark 包:
+
 ```shell
 conda install -y -q -c conda-forge -c arctern-dev arctern-spark
 ```
 
+> 此处安装 Arctern-Spark 仅用于解决 Restful Server 的运行时依赖，不能作为执行 Restful 请求的 Arctern-Spark 后台。
+
 ### 安装 PySpark
 
-下载spark压缩包并解压
+下载压缩包并解压：
 
 ```shell
 wget https://mirror.bit.edu.cn/apache/spark/spark-3.0.0-preview2/spark-3.0.0-preview2-bin-hadoop2.7.tgz
@@ -53,7 +62,7 @@ python setup.py install
 
 ### 基于源码的安装
 
-从 [Arctern Github 仓库](https://github.com/zilliztech/arctern) 下载源码，在 `gui/server` 下运行以下命令构建 Arctern Restful Server 依赖环境：
+从 [Arctern Github 仓库](https://github.com/zilliztech/arctern) 下载源码，在 `gui/server` 路径下运行以下命令构建 Arctern Restful Server 依赖环境：
 
 ```bash
 pip install -r requirements.txt
@@ -67,110 +76,74 @@ pip install -r requirements.txt
 pip install arctern_server
 ```
 
-## 启动和配置 Arctern Restful Server
+## 配置后台 Arctern-Spark 信息
 
-以下展示了不同使用安装方法时， Arctern Restful Server 的启动方法。 
+### 配置基于源码安装的 Arctern Restful Server
 
-如果基于源码安装，在 Arctern项目的 `gui/server` 目录下使用以下命令启动服务：
+修改 Arctern 项目中 `gui/server` 路径下的 `config.ini` 文件，配置 Arctern Restful Server 所使用的 Arctern-Spark 后台信息。文件配置示例如下，其中 `spark_master_ip` 和 `port` 分别为后台 Arctern-Spark 中 master 节点的 IP 地址和端口号：
+
+```bash
+[spark]
+master-addr = spark://spark_master_ip:port
+```
+
+### 配置基于 PIP 安装的 Arctern Restful Server
+
+执行以下 Python 代码查看 Restful Server 的安装目录：
+
+```python
+import arctern_server
+print(arctern_server.__path__)
+```
+
+执行上述代码将会在终端打印 Restful Server 的安装目录，修改该目录下的 `config.ini`，配置 Arctern Restful Server 所使用的 Arctern-Spark 后台信息。文件配置示例如下，其中 `spark_master_ip` 和 `port` 分别为后台 Arctern-Spark 中 master 节点的 IP 地址和端口号：
+
+```bash
+[spark]
+master-addr = spark://spark_master_ip:port
+```
+
+## 启动 Arctern Restful Server
+
+### 启动基于源码安装的 Arctern Restful Server
+
+在 Arctern项目的 `gui/server` 目录下使用以下命令启动服务：
 
 ```shell
 python manage.py
 ```
 
-如果基于pip安装，使用以下命令启动服务：
+### 启动基于 PIP 安装的 Arctern Restful Server
+
+完成配置后，使用以下命令启动服务：
 
 ```shell
 arctern_server
 ```
 
-通过命令参数在启动时可对 Arctern Restful Server 进行配置，以上两种方式使用完全相同的参数，具体的内容和含义如下：
+### 命令参数介绍
 
-```text
--h 显示帮助信息
--r 以 release 模式启动服务
--p 为服务指定 http 端口
--i 为服务指定 IP 地址
--c [path/to/data-config] 导入后台配置数据
---logfile= [path/to/logfile], default: ./log.txt' 配置日志信息
---loglevel= log level [debug/info/warn/error/fatal], default: info' 配置日志级别
-```
+通过命令参数可在启动时对 Arctern Restful Server 进行配置，以上两种方式使用完全相同的参数，具体的内容和含义如下：
 
-如果希望服务器启动时自动加载数据，可以通过-c指定，例如：
+
+* -h：显示帮助信息
+
+* -r：以 release 模式启动服务
+
+* -p：为服务指定 http 端口
+
+* -i：为服务指定 IP 地址
+
+* --logfile= [path/to/logfile]： 配置日志文件路径信息，默认值为：` ./log.txt`
+
+* --loglevel= [log level]：配置日志级别(debug/info/warn/error/fatal)，默认值为: `info` 
+
+示例：
 
 ```bash
-python manage.py -r -c path/to/db.json
+python manage.py -r -i 192.168.1.2 -p 8088 
 ```
 
-其中，db.json内容的格式如下：
-
-```json
-{
-    "?db_name": "设定数据的名称",
-    "db_name": "db1",
-     "?type": "当前固定为spark",
-    "type": "spark",
-    "?spark": "spark配置相关",
-    "spark": {
-        "?app_name": "spark中运行的任务名称",
-        "app_name": "arctern",
-        "?master-addr": "spark地址",
-        "master-addr": "local[*]",
-        "?envs": "spark需要设定的环境变量",
-        "envs": {
-            "PYSPARK_PYTHON": "/home/ljq/miniconda3/envs/zgis_dev/bin/python"
-        },
-        "?configs": "spark配置相关",
-        "configs": {
-            "spark.sql.execution.arrow.pyspark.enabled": "true",
-            "spark.databricks.session.share": "false"
-        }
-    },
-    "?tables": "spark中需要构建的所有表",
-    "tables": [
-        {
-            "?name": "表的名称",
-            "name": "old_nyc_taxi",
-            "?path": "对应的数据位置",
-            "path": "/home/ljq/work/arctern/gui/server/data/0_5M_nyc_taxi_and_building.csv",
-            "?format": "数据的格式",
-            "format": "csv",
-            "?options": "数据的相关选项设置",
-            "options": {
-                "header": "True",
-                "delimiter": ","
-            },
-            "?schema": "表对应的schema",
-            "schema": [
-                {"VendorID": "string"},
-                {"tpep_pickup_datetime": "string"},
-                {"tpep_dropoff_datetime": "string"},
-                {"passenger_count": "long"},
-                {"trip_distance": "double"},
-                {"pickup_longitude": "double"},
-                {"pickup_latitude": "double"},
-                {"dropoff_longitude": "double"},
-                {"dropoff_latitude": "double"},
-                {"fare_amount": "double"},
-                {"tip_amount": "double"},
-                {"total_amount": "double"},
-                {"buildingid_pickup": "long"},
-                {"buildingid_dropoff": "long"},
-                {"buildingtext_pickup": "string"},
-                {"buildingtext_dropoff": "string"}
-            ],
-            "?visibility": "TODO: 怎么表述，新的scope和前端api如何区分",
-            "visibility": "False"
-        },
-        {
-            "?name": "表的名称",
-            "name": "nyc_taxi",
-            "?sql": "生成该表的sql语句",
-            "sql": "select VendorID, to_timestamp(tpep_pickup_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_pickup_datetime, to_timestamp(tpep_dropoff_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_dropoff_datetime, passenger_count, trip_distance, pickup_longitude, pickup_latitude, dropoff_longitude, dropoff_latitude, fare_amount, tip_amount, total_amount, buildingid_pickup, buildingid_dropoff, buildingtext_pickup, buildingtext_dropoff from old_nyc_taxi where (pickup_longitude between -180 and 180) and (pickup_latitude between -90 and 90) and (dropoff_longitude between -180 and 180) and  (dropoff_latitude between -90 and 90)",
-            "visibility": "True"
-        }
-    ]
-}
-```
 
 成功完成以上步骤后，即完成了 Arctern Restful Server 的安装和配置，请参考 Arctern Restful 服务[接口文档](./restful-api.md)和[使用示例](./restful-nyc-taxi-example.md)使用 Arctern Restful 服务。
 
