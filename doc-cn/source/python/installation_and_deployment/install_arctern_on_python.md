@@ -1,5 +1,5 @@
 # 安装部署
-本文档介绍在 python 环境中安装 arctern 的步骤。
+本文档介绍在 python 环境中安装 Arctern 的步骤。
 
 ## 安装要求
 
@@ -44,7 +44,7 @@
 
 `conda create -n arctern_python python=3.7`
 
-创建成功后，可以通过 `conda env list` 命令查看所有Conda环境，其输出结果应包含Arctern环境，类似如下：
+创建成功后，可以通过 `conda env list` 命令查看所有Conda环境，其输出结果应包含 Arctern 环境，类似如下：
   
   ```bash
   conda environments:
@@ -73,7 +73,7 @@
 
 * GPU版本
   
-执行以下命令在 Conda 环境中安装 rctern GPU 版本：
+执行以下命令在 Conda 环境中安装 Arctern GPU 版本：
 
 ```shell
    conda install -y -q -n arctern_python -c conda-forge -c arctern-dev/label/cuda10.0 libarctern
