@@ -18,14 +18,15 @@
 # -- Project information -----------------------------------------------------
 import os
 import sys
-sys.path.insert(0, os.path.abspath('/home/liupeng/workspace/GIS/python/arctern'))
-sys.path.insert(1, os.path.abspath('/home/liupeng/workspace/GIS/arctern/spark/pyspark/arctern_pyspark'))
+sys.path.insert(0, os.path.abspath('/patht/to/arctern/python/arctern'))
+sys.path.insert(1, os.path.abspath('/patht/to/arctern/spark/pyspark/arctern_pyspark'))
+
 project = 'Arctern'
 copyright = '2020, zilliz'
 author = 'zilliz'
 
 # The full version, including alpha/beta/rc tags
-release = '0.2.0'
+release = '0.1.0'
 
 
 # -- General configuration ---------------------------------------------------

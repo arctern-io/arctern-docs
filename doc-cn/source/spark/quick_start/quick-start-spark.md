@@ -208,7 +208,7 @@ SparkSession available as 'spark'.
 
 可以在[EPSG](http://epsg.io/transform#s_srs=4326&t_srs=3857)网站验证验证转换结果的正确性：
 
-<img src="../../../img/quickstart/epsg-4326-to-3857-example.png">
+![](../../../../img/quickstart/epsg-4326-to-3857-example.png)
 
 在指定地理区域（经度范围：-73.991504至-73.945155；纬度范围：40.770759至40.783434）中随机选取`200`个坐标点，并将这些坐标点从`EPSG:4326`坐标系转到`EPSG:3857`坐标系。
 
@@ -242,4 +242,4 @@ save_png(res, '/tmp/arctern_pointmap.png')
 
 绘图结果如下：
 
-<img src="../../../img/quickstart/arctern_pointmap.png">
+![](../../../../img/quickstart/arctern_pointmap.png)

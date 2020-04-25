@@ -4,8 +4,8 @@ Restful
 =======
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   start-up-arctern-server
+   webserver_installation_config
    api/api
    restful-nyc-taxi-example

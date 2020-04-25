@@ -6,7 +6,7 @@
 
 ### 服务器启动
 
-在调用 `Arctern Restful API` 之前请先启动服务，具体步骤详见[服务器启动](./start-up-arctern-server.md)。
+在调用 `Arctern Restful API` 之前请先启动服务，具体步骤详见[服务器启动](./webserver_installation_config.md)。
 
 ### 数据准备
 

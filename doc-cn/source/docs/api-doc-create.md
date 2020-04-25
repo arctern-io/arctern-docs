@@ -40,32 +40,6 @@ vi conf.py
 	修改为当前你的文件所在的绝对路径
 ```
 
-### 修改sphinx-build文件
-
-```
-使用以下指令找到sphinx-build文件路径并编辑该文件：
-    which sphinx-build
-    vi path/to/sphinx-build
-	
-在第七行添加如下代码：
-    import functools
-    from pyspark.sql import functions
-
-    def pandas_udf(p1, p2):
-
-       from functools import wraps
-       def inner(func):
-           @wraps(func)
-           def wrapper(*args, **kwargs):
-               result = func(*args, **kwargs)
-               return result
-           return wrapper
-
-       return inner
-
-    functions.pandas_udf=pandas_udf
-```
-
 ### 生成API文档
 
 ```shell
@@ -76,7 +50,13 @@ python compile.py
 
 ## API文档添加
 
-当增加了新的对外接口函数文件需要生成API文档时，需要按照sphinx生成rst文件的流程执行一遍，生成对应的rst文件，若只是在原有的对外接口文件中新添加一个函数接口，则不需要进行这段流程，这里以新添加一个对外函数接口文件为例，具体步骤如下。
+假设目前添加文件的目录结构如下：
+```
+package
+   |---functions1.py
+   |---functions2.py
+   |---__init__.py
+```
 
 ### 修改conf.py文件添加文件路径
 
@@ -85,64 +65,63 @@ cd doc-cn/source
 vi conf.py
 
 添加文件路径：
-   sys.path.insert(3, os.path.abspath('/path/to/you/file'))
+   sys.path.insert(2, os.path.abspath('/path/to/you/package'))
 ```
 
-### 挂载到对应的目录下
+### 创建rst文件
 
-这里假设挂载到api_py.rst下，执行如下操作：
-
+这里按照上述目录结构来创建rst文件，我们这里创建三个rst文件，分别为package.rst，functions1.rst，functions2.rst,以及为为个function创建一个rst文件，假设这里functions1.py中有两个函数function1与function2，functions2.py中有两个函数function3与function4。这里我们创建如下目录。
 ```
-cd doc-cn/source
-vi api_rst.rst
+package
+   |----------api---
+   |--package.rst  |---functions1.rst
+                   |---functions2.rst
+                   |---function
+                          |-----function1.rst
+                          |-----function2.rst
+                          |-----function3.rst
+                          |-----function4.rst
+```
 
-将文件名称添加到api_py.rst, 添加后的代码如下：
-    API
-    ====
+内容分别如下：
+```
+package.rst内容：
+    Package
+    =========
 
     .. toctree::
-       :maxdepth: 6
-       :caption: Contents:
+       :maxdepth: 2
 
-       arctern
-       new_api_file
+       api/functions1
+       api/functions2
 
-new_api_file为新生成的rst文件名
-```
+functions1.rst内容如下：
+    Functions1
+    ===========
 
-### 添加函数的rst文件
+    .. toctree::
+       :maxdepth: 2
 
-下面操作是为新添加的API创建一个新的rst文件，这里需要注意的是需要为每一个新的API创建一个rst文件。
+       function/function1
+       function/function2
 
-```
-cd doc-cn/source/api
-vi function1.rst
+function1.rst内容如下：
+    Function1
+    ==========
 
-添加如下代码：
-   function1
-   =========
-
-   .. currentmodule:: package.file_name
+   .. currentmodule:: package.functions1
 
    .. autofunction:: function1
 ```
 
-### 修改new_api_file.rst文件
+### 挂载到index.rst文件
 
+在index.rst文件里面将package.rst文件挂载上去。内容如下：
 ```
-cd doc-cn/source
-vi new_api_file.rst
+.. toctree::
+   :maxdepth: 2
 
-修改之后如下：
-    ============
-    NEW_API_FILE
-    ============
-
-   .. toctree::
-      :maxdepth: 3
-      :caption: Contents:
-
-      /api/function1.rst
+   package/package
 ```
 
 ## 生成中文文档
@@ -155,7 +134,7 @@ vi new_api_file.rst
 cd doc-cn
 vi compile.py
 
-在23行添加如下代码：
+在41行添加如下代码：
 os.system('sphinx-intl update -p build/gettext -l zh_CN')
 ```
 
@@ -174,5 +153,9 @@ cd source/locale/zh_CN/LC_MESSAGES/api
 ### 生成中文文档
 
 ```shell
+删除41行代码：
+os.system('sphinx-intl update -p build/gettext -l zh_CN')
+
+执行：
 python compile.py
 ```

@@ -1,4 +1,4 @@
-# 使用示例
+# Quick Start
 
 本文以纽约出租车数据集为例，展示如何使用 Arctern 完成数据的导入、运算和展示。
 
@@ -115,10 +115,10 @@ dtype: object
 ```
 可以在[EPSG](http://epsg.io/transform#s_srs=4326&t_srs=3857)网站上验证转换是否正确
 
-<img src="../../../img/quickstart/epsg-4326-to-3857-example.png">
+![](../../../../img/quickstart/epsg-4326-to-3857-example.png)
 
 
-## 使用 Arctern-Spark 绘制图层
+## 使用 Arctern 绘制图层
 
 导入绘图需要使用的模块：
 
@@ -127,15 +127,15 @@ dtype: object
 >>> from arctern.util.vega import vega_pointmap
 ```
 
-通过 Arctern-Spark 提供的绘图函数绘制图层：
+通过 Arctern 提供的绘图函数绘制图层：
 
 ```python
 >>> vega = vega_pointmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], point_size=10, point_color="#2DEF4A", opacity=1, coordinate_system="EPSG:4326")
->>> png = point_map(vega, ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude))
+>>> png = point_map_layer(vega, ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude))
 >>> save_png(png, '/tmp/arctern_pointmap_pandas.png')
 ```
 
 
 绘图结果如下：
 
-<img src="../../../img/quickstart/arctern_pointmap_pandas.png">
+![](../../../../img/quickstart/arctern_pointmap_pandas.png)
