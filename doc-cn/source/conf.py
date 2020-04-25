@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 import os
 import sys
-sys.path.insert(0, os.path.abspath('/patht/to/arctern/python/arctern'))
-sys.path.insert(1, os.path.abspath('/patht/to/arctern/spark/pyspark/arctern_pyspark'))
+sys.path.insert(0, os.path.abspath('/path/to/arctern/python/arctern'))
+sys.path.insert(1, os.path.abspath('/path/to/arctern/spark/pyspark/arctern_pyspark'))
 
 project = 'Arctern'
 copyright = '2020, zilliz'
