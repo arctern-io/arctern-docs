@@ -95,7 +95,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 下载测试文件
 ```bash
-wget https://raw.githubusercontent.com/zilliztech/arctern/master/python/tests/geo/geo_test.py
+wget https://raw.githubusercontent.com/zilliztech/arctern/branch-0.1.x/python/tests/geo/geo_test.py
 ```
 
 通过以下命令执行测试文件

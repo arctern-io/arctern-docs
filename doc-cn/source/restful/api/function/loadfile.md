@@ -1,6 +1,6 @@
 # 加载文件
 
-在指定作用域( `scope` )内加载数据文件，当前支持的文件格式详见 [Arctern-Spark 文件的导入导出](../file_data.md)。
+在指定作用域( `scope` )内加载数据文件，当前支持的文件格式详见 [Arctern-Spark 文件的导入导出](../../../../../spark/data_source/file_data.md)。
 
 ## 请求说明
 
@@ -40,7 +40,7 @@
     - name：数据表名称；
     - format：待加载文件的文件格式；
     - path：文件路径；
-    - options：加载文件时的指定选项，使用 `key-value` 形式提供。具体的选项内容参见 [Arctern-Spark 文件的导入导出](./file_data.md)；
+    - options：加载文件时的指定选项，使用 `key-value` 形式提供。具体的选项内容参见 [Arctern-Spark 文件的导入导出](../../../../../spark/data_source/file_data.md)；
     - schema：各列数据的名称和类型描述，schema 字段是一个列表( `list` )，顺序需要和文件中各列的实际存储顺序保持一致。
 
 python样例：

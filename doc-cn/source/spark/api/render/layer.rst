@@ -1,5 +1,5 @@
-Layer Functions
-===============
+Layer Functions (Experimental)
+===============================
 
   .. toctree::
    :maxdepth: 2

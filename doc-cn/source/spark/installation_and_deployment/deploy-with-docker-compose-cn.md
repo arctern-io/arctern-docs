@@ -81,7 +81,7 @@ $ docker-compose version
 
 ### 下载 docker-compose.yml 文件
 
-创建 docker compose 工作目录，下载 [docker-compose.yml](https://raw.githubusercontent.com/zilliztech/arctern-docs/master/scripts/docker-compose.yml) 文件并保存至该目录。
+创建 docker compose 工作目录，下载 [docker-compose.yml](https://raw.githubusercontent.com/zilliztech/arctern-docs/branch-0.1.x/scripts/docker-compose.yml) 文件并保存至该目录。
 
 
 ## 部署验证

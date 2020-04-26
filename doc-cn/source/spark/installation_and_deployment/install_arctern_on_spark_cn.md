@@ -132,7 +132,7 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern/bin/python
 下载测试文件
 
 ```bash
-wget https://raw.githubusercontent.com/zilliztech/arctern/conda/spark/pyspark/examples/gis/spark_udf_ex.py
+wget https://raw.githubusercontent.com/zilliztech/arctern/branch-0.1.x/spark/pyspark/examples/gis/spark_udf_ex.py
 ```
 
 通过以下命令提交 Spark 任务，其中 `[path/to/]spark_udf_ex.py` 为测试文件所在的路径。

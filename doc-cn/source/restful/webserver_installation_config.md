@@ -2,7 +2,7 @@
 
 Arctern 提供基于 Restful 接口的 Web 服务。通过配置可将 Restful Server 与 Arctern-Spark 进行对接，从而以 Restful API 的形式提供 Arctern-Spark 的时空数据分析与展示能力。
 
-以下将介绍 Arctern Restful Server 的安装和配置流程。更多 Arctern Restfull API 信息请查看 Restful 服务[接口文档](./api/api.html)和[使用示例](./restful-nyc-taxi-example.md)。
+以下将介绍 Arctern Restful Server 的安装和配置流程。更多 Arctern Restfull API 信息请查看 Restful 服务[接口文档](./api/api.html)和[使用示例](./restful_quick_start.md)。
 
 > 注意：Arctern Restful Server 仅负责 Restful 请求的接收和解析，实际操作由 Restful Server 所连接的 Arctern-Spark 执行。在安装 Arctern Restful Server 前请确保环境存在已安装好 Arctern-Spark 的后台系统。安装 Arctern-Spark 的方式请参照其[安装文档](../spark/installation_and_deployment/installation_and_deployment.html).
 
@@ -145,5 +145,5 @@ python manage.py -r -i 192.168.1.2 -p 8088
 ```
 
 
-成功完成以上步骤后，即完成了 Arctern Restful Server 的安装和配置，请参考 Arctern Restful 服务[接口文档](./restful-api.md)和[使用示例](./restful-nyc-taxi-example.md)使用 Arctern Restful 服务。
+成功完成以上步骤后，即完成了 Arctern Restful Server 的安装和配置，请参考 Arctern Restful 服务[接口文档](./api/api.html)和[使用示例](./restful_quick_start.md)使用 Arctern Restful 服务。
 
