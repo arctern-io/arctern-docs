@@ -26,7 +26,7 @@ copyright = '2020, zilliz'
 author = 'zilliz'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1.0'
+release = '0.1.x'
 
 
 # -- General configuration ---------------------------------------------------

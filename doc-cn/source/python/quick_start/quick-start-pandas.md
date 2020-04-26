@@ -4,7 +4,7 @@
 
 ## 数据准备
 
-在 Arctern 运行环境中下载[纽约出租车数据集](https://github.com/zilliztech/arctern-resources/blob/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv)，该数据集包含2009年纽约市出租车运营记录，各字段的含义如下：
+在 Arctern 运行环境中下载[纽约出租车数据集](https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv)，该数据集包含2009年纽约市出租车运营记录，各字段的含义如下：
 
 - VendorID: string，运营商名称；
 - tpep_pickup_datetime: string，上车时间；

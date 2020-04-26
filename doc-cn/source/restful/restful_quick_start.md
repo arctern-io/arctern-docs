@@ -10,7 +10,7 @@
 
 ### 数据准备
 
-在服务器端下载[纽约出租车数据集](https://github.com/zilliztech/arctern-resources/tree/master/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv)，该数据集包含2009年纽约市出租车运营记录，各字段的含义如下：
+在服务器端下载[纽约出租车数据集](https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv)，该数据集包含2009年纽约市出租车运营记录，各字段的含义如下：
 
 - VendorID: string，运营商名称；
 - tpep_pickup_datetime: string，上车时间；
@@ -259,7 +259,7 @@
 
 ### 绘制点图
 
-使用 `/pointmap` 接口根据乘客上车地点绘制点图。点图中具体参数说明请参见 [restful api reference](./restful-api.md)。
+使用 `/pointmap` 接口根据乘客上车地点绘制点图。点图中具体参数说明请参见 [点图 Restful API 说明](./api/function/pointmap.html)。
 
 ```python
 >>> import requests
@@ -299,7 +299,7 @@ eog /tmp/pointmap.png
 
 ### 带权点图
 
-使用 `/weighted_pointmap` 接口根据乘客上车地点绘制带权点图，使用总费用作为点的权重，总费用越高，权重越大，点的颜色越深。权重图中具体参数说明请参见 [restful api reference](./restful-api.md)。
+使用 `/weighted_pointmap` 接口根据乘客上车地点绘制带权点图，使用总费用作为点的权重，总费用越高，权重越大，点的颜色越深。权重图中具体参数说明请参见 [带权点图 Restful API 说明](./api/function/weighted_pointmap.html)。
 
 ```python
 >>> import requests
@@ -348,7 +348,7 @@ eog /tmp/pointmap.png
 
 ### 热力图
 
-使用 `/heatmap` 接口根据乘客下车地点以及行程费用绘制热力图，费用高的区域为红色，费用低的区域为绿色。热力图中具体参数说明请参见 [restful api reference](./restful-api.md)。
+使用 `/heatmap` 接口根据乘客下车地点以及行程费用绘制热力图，费用高的区域为红色，费用低的区域为绿色。热力图中具体参数说明请参见 [热力图 Restful API 说明](./api/function/heatmap.html)。
 
 ```python
 >>> import requests
@@ -386,7 +386,7 @@ eog /tmp/pointmap.png
 
 ### 轮廓图
 
-使用 `/choroplethmap` 接口，根据下车地点所在建筑物、小费金额绘制轮廓图，小费金额高为黄色，小费金额低为蓝色。轮廓图中具体参数说明请参见 [restful api reference](./restful-api.md)。
+使用 `/choroplethmap` 接口，根据下车地点所在建筑物、小费金额绘制轮廓图，小费金额高为黄色，小费金额低为蓝色。轮廓图中具体参数说明请参见 [轮廓图 Restful API 说明](./api/function/choroplethmap.html)。
 
 ```python
 >>> import requests

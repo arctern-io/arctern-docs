@@ -2,7 +2,7 @@
 
 Arctern Restful Server 使用作用域（`scope`）为用户分配服务器资源。每个作用域拥有独享的上下文信息，如载入的文件数据和创建的数据表。
 
-在创建 `scope` 的同时，Arctern  Restful Server 会为 `scope` 创建一个名为 `spark` 的 SparkSession。在调用 `/loadfile`、`/query`、`/pointmap` 等 API 时如未传入 `session` 字段，则会默认使用该 SparkSession 进行操作。如需创建自定义的 SparkSession，请使用 [`/command `接口](./command.md)。
+在创建 `scope` 的同时，Arctern  Restful Server 会为 `scope` 创建一个名为 `spark` 的 SparkSession。在调用 `/loadfile`、`/query`、`/pointmap` 等 API 时如未传入 `session` 字段，则会默认使用该 SparkSession 进行操作。如需创建自定义的 SparkSession，请使用 [`/command` 接口](./command.md)。
 
 ## 请求说明
 
