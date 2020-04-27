@@ -32,7 +32,7 @@
 - scope：执行绘制轮廓图操作的作用域名称；
 - session：可选参数，执行绘制轮廓图操作的 `SparkSession` 名称；
 - sql：待执行的 SQL 查询语句，该查询的结果作为绘制轮廓图的渲染对象；
-- params：绘图参数，具体说明如下，详见 [Arctern-Spark 绘图接口文档](../../../../../spark/api/render/function/layer/choroplethmap.md)：
+- params：绘图参数，具体说明如下，详见 [Arctern-Spark 绘图接口文档](../../../spark/api/render/function/layer/choroplethmap.md)：
     - width：图片宽度；
     - height：图片高度；
     - bounding_box：渲染图片所表示的地理范围 [`x_min`, `y_min`, `x_max`, `y_max`]；

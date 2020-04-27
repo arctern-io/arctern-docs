@@ -14,4 +14,5 @@ API
    function/weighted_pointmap
    function/heatmap
    function/choroplethmap
+   function/icon_viz
    function/command
