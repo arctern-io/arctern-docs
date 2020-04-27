@@ -1,11 +1,11 @@
-# 热力图
+# 图标图
 
-根据 SQL 语句以及相关画图参数绘制热力图，将绘图结果以 base64 编码方式返回。
+根据 SQL 语句以及相关画图参数绘制图标图，将绘图结果以 base64 编码方式返回。
 
 ## 请求说明
 
 - HTTP方法: **POST**
-- 请求URL: `/heatmap`
+- 请求URL: `/icon_viz`
 - Headers:
     - `Content-Type: application/json`
 - Body:
@@ -18,34 +18,32 @@
         "width": 1024,
         "height": 896,
         "bounding_box": [-75.37976, 40.191296, -71.714099, 41.897445],
-        "coordinate_system": "EPSG:4326",
-        "map_zoom_level": 10,
-        "aggragation_type": "sum"
+        "icon_path": "/path/to/icon.png",
+        "coordinate_system": "EPSG:4326"
     }
 }
 ```
 
 参数说明：
 
-- scope：执行绘制热力图操作的作用域名称；
-- session：可选参数，执行绘制热力图操作的 `SparkSession` 名称；
-- sql：待执行的 SQL 查询语句，该查询的结果作为绘制热力图的渲染对象；
-- params：绘图参数，具体说明如下，详见 [Arctern-Spark 绘图接口文档](../../../spark/api/render/function/layer/heatmap.md)：
+- scope：执行绘制图标图操作的作用域名称；
+- session：可选参数，执行绘制图标图操作的 `SparkSession` 名称；
+- sql：待执行的 SQL 查询语句，该查询的结果作为绘制图标图的渲染对象；
+- params：绘图参数，具体说明如下，详见 [Arctern-Spark 绘图接口文档](../../../spark/api/render/function/layer/iconviz.md)：
     - width：图片宽度；
     - height：图片高度；
     - bounding_box：渲染图片所表示的地理范围 [`x_min`, `y_min`, `x_max`, `y_max`]；
+    - icon_path：png 图标文件的绝对路径；
     - coordinate_system：输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)；
-    - map_zoom_level：地图放大比例，取值范围 `(1 ~ 15)`；
-    - aggregation_type：聚合类型。
 
-python样例：
+样例：
 
 ```python
 import requests
 
-url = "http://localhost:8080/heatmap"
+url = "http://localhost:8080/icon_viz"
 
-payload = {
+payload  = {
     "scope": "scope_name",
     "session": "session_name",
     "sql": "select ST_Point(col2, col2) as point from table_name",
@@ -53,8 +51,8 @@ payload = {
         "width": 1024,
         "height": 896,
         "bounding_box": [-75.37976, 40.191296, -71.714099, 41.897445],
-        "coordinate_system": "EPSG:4326",
-        "map_zoom_level": 10
+        "icon_path": "/path/to/icon.png",
+        "coordinate_system": "EPSG:4326"
     }
 }
 headers = {
@@ -66,10 +64,8 @@ response = requests.request("POST", url, headers=headers, data = payload)
 print(response.text.encode('utf8'))
 ```
 
-curl样例：
-
 ```shell
-curl --location --request POST 'http://localhost:8080/heatmap' \
+curl --location --request POST 'http://localhost:8080/icon_viz' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "scope": "scope_name",
@@ -79,8 +75,8 @@ curl --location --request POST 'http://localhost:8080/heatmap' \
         "width": 1024,
         "height": 896,
         "bounding_box": [-75.37976, 40.191296, -71.714099, 41.897445],
-        "coordinate_system": "EPSG:4326",
-        "map_zoom_level": 10
+        "icon_path": "/path/to/icon.png",
+        "coordinate_system": "EPSG:4326"
     }
 }'
 ```
@@ -93,7 +89,7 @@ curl --location --request POST 'http://localhost:8080/heatmap' \
 {
     "status": "success",
     "code": "200",
-    "result": "使用 base64 编码后的热力图数据"
+    "result": "使用 base64 编码后的图标图数据"
 }
 ```
 
@@ -106,4 +102,5 @@ curl --location --request POST 'http://localhost:8080/heatmap' \
     "status": "error"
 }
 ```
+
 
