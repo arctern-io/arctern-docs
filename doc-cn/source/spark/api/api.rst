@@ -3,7 +3,7 @@ API
 ======
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    register/sql_functions_register
    geospatial/constructor_functions

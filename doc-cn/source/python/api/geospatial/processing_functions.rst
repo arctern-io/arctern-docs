@@ -1,5 +1,5 @@
-Processing Functions
-=====================
+Processing Library
+===================
 
 
 .. toctree::

@@ -1,5 +1,5 @@
-Measurement Functions
-=======================
+Measurement Library
+=====================
 
 
 .. toctree::

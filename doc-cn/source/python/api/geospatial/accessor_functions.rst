@@ -1,5 +1,5 @@
-Accessor Functions
-===================
+Accessor Library
+=================
 
 
 .. toctree::
