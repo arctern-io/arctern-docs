@@ -1,6 +1,5 @@
-=====================
-Constructor Functions
-=====================
+Constructor Library
+====================
 
 
 .. toctree::

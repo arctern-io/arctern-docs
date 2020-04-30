@@ -1,5 +1,5 @@
-Relationship Functions
-=======================
+Relationship Library
+=====================
 
 
 .. toctree::
