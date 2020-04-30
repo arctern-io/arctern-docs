@@ -27,7 +27,7 @@
 
 ## 加载数据
 
-以下通过 Python 交互界面展示 Arctern 的使用方法。根据测试数据各字段的名称和数据类型，构建导入测试数据的 `schema`。
+以下通过 Python 交互界面展示 Arctern 的使用方法。根据测试数据各字段的名称和数据类型，构建导入测试数据的 `schema`并导入数据。
 
 ```python
 >>> import pandas as pd
