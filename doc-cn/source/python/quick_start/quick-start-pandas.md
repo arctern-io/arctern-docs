@@ -50,7 +50,7 @@
 ...     "buildingtext_dropoff":"string",
 ... }
 >>> df=pd.read_csv("/tmp/0_2M_nyc_taxi_and_building.csv",
-...                dtype=nyc_schame,
+...                dtype=nyc_schema,
 ...                date_parser=pd.to_datetime,
 ...                parse_dates=["tpep_pickup_datetime","tpep_dropoff_datetime"])
 ```

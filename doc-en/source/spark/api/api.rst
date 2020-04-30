@@ -11,4 +11,3 @@ API
    geospatial/measurement_functions
    geospatial/relationship_functions
    geospatial/aggr_functions
-   render/layer
