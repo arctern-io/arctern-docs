@@ -124,18 +124,70 @@ dtype: object
 
 ```python
 >>> from arctern.util import save_png
->>> from arctern.util.vega import vega_pointmap
+>>> from arctern.util.vega import vega_pointmap, vega_weighted_pointmap, vega_heatmap, vega_choroplethmap, vega_icon
 ```
 
-通过 Arctern 提供的绘图函数绘制图层：
+通过 Arctern 提供的绘图函数绘制点图图层：
 
 ```python
+>>> # 绘制点大小为10，点颜色为#2DEF4A，点不透明度为1的点图图层。
 >>> vega = vega_pointmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], point_size=10, point_color="#2DEF4A", opacity=1, coordinate_system="EPSG:4326")
 >>> png = point_map_layer(vega, ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude))
 >>> save_png(png, '/tmp/arctern_pointmap_pandas.png')
 ```
 
-
-绘图结果如下：
+点图图层绘制结果如下：
 
 ![](../../../../img/quickstart/arctern_pointmap_pandas.png)
+
+通过 Arctern 提供的绘图函数绘制带权点图图层：
+
+```python
+>>> # 绘制带权点图图层，点的颜色根据 fare_amount 在 "#115f9a" ~ "#d0f400" 之间变化，点的大小根据 total_amount 在 15 ~ 50 之间变化。
+>>> vega = vega_weighted_pointmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], color_gradient=["#115f9a", "#d0f400"], color_bound=[1, 50], size_bound=[3, 15], opacity=1.0, coordinate_system="EPSG:4326")
+>>> png = weighted_point_map_layer(vega, ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude), color_weights=df.head(limit_num).fare_amount, size_weights=df.head(limit_num).total_amount)
+>>> save_png(png, "/tmp/arctern_weighted_pointmap_pandas.png")
+```
+
+带权点图图层绘制结果如下：
+
+![](../../../../img/quickstart/arctern_weighted_pointmap_pandas.png)
+
+通过 Arctern 提供的绘图函数绘制热力图图层：
+
+```python
+>>> # 绘制热力图图层。
+>>> vega = vega_heatmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], map_zoom_level=13.0, coordinate_system="EPSG:4326")
+>>> png = heat_map_layer(vega, ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude), df.head(limit_num).fare_amount)
+>>> save_png(png, "/tmp/arctern_heatmap_pandas.png")
+```
+
+热力图图层绘制结果如下：
+
+![](../../../../img/quickstart/arctern_heatmap_pandas.png)
+
+通过 Arctern 提供的绘图函数绘制轮廓图图层：
+
+```python
+>>> # 绘制轮廓图图层，轮廓的填充颜色根据 fare_amount 在 "#115f9a" ~ "#d0f400" 之间变化。
+>>> vega = vega_choroplethmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], color_gradient=["#115f9a", "#d0f400"], color_bound=[2.5, 5], opacity=1.0, coordinate_system="EPSG:4326")
+>>> png = choropleth_map_layer(vega, ST_GeomFromText(pickup_df.buildingtext_pickup), df.head(limit_num).fare_amount)
+>>> save_png(png, "/tmp/arctern_choroplethmap_pandas.png")
+```
+
+轮廓图图层绘制结果如下：
+
+![](../../../../img/quickstart/arctern_choroplethmap_pandas.png)
+
+通过 Arctern 提供的绘图函数绘制图标图图层：
+
+```python
+>>> # 绘制图标图图层。
+>>> vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path='/tmp/arctern-color.png', coordinate_system="EPSG:4326")
+>>> png = icon_viz_layer(vega, ST_Point(pickup_df.head(25).pickup_longitude, pickup_df.head(25).pickup_latitude))
+>>> save_png(png, "/tmp/arctern_iconviz_pandas.png")
+```
+
+图标图图层绘制结果如下：
+
+![](../../../../img/quickstart/arctern_iconviz_pandas.png)
