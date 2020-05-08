@@ -191,3 +191,16 @@ dtype: object
 图标图图层绘制结果如下：
 
 ![](../../../../img/quickstart/arctern_iconviz_pandas.png)
+
+通过 Arctern 提供的绘图函数绘制鱼网图图层：
+
+```python
+>>> # 绘制鱼网图图层。
+>>> vega = vega_fishnetmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], cell_size=8, cell_spacing=1, opacity=1.0, coordinate_system="EPSG:4326")
+>>> png = fishnet_map_layer(vega, ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude), df.head(limit_num).fare_amount)
+>>> save_png(png, "/tmp/arctern_fishnetmap_pandas.png")
+```
+
+鱼网图图层绘制结果如下：
+
+![](../../../../img/quickstart/arctern_fishnetmap_pandas.png)

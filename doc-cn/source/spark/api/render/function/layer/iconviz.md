@@ -1,6 +1,6 @@
 # icon_viz
 
-绘制一个图标图，需要先后调用 vega_icon 和 icon_viz 两个接口，首先使用 vega_icon 构建描述图标图渲染样式的 VegaIcon 对象，然后使用 icon_viz 渲染图像。
+绘制一个图标图。需要先后调用 vega_icon 和 icon_viz 两个接口。首先使用 vega_icon 构建描述图标图渲染样式的 VegaIcon 对象，然后使用 icon_viz 渲染图像。
 
 ## vega_icon
 

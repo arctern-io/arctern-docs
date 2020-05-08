@@ -1,6 +1,6 @@
 # heat_map_layer
 
-绘制一个热力图，需要先后调用 vega_heatmap 和 heat_map_layer 两个接口，首先使用 vega_heatmap 构建描述热力图渲染样式的 VegaHeatMap 对象，然后使用 heat_map_layer 渲染图像。
+绘制一个热力图。需要先后调用 vega_heatmap 和 heat_map_layer 两个接口。首先使用 vega_heatmap 构建描述热力图渲染样式的 VegaHeatMap 对象，然后使用 heat_map_layer 渲染图像。
 
 ## vega_heatmap 
 

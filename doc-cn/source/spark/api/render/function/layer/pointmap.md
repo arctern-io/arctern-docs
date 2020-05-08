@@ -1,6 +1,6 @@
 # pointmap
 
-绘制一个点图，需要先后调用 vega_pointmap 和 pointmap 两个接口，首先使用 vega_pointmap 构建描述点图渲染样式的 VegaPointMap 对象，然后使用 pointmap 渲染图像。
+绘制一个点图。需要先后调用 vega_pointmap 和 pointmap 两个接口。首先使用 vega_pointmap 构建描述点图渲染样式的 VegaPointMap 对象，然后使用 pointmap 渲染图像。
 
 ## vega_pointmap
 

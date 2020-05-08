@@ -430,6 +430,83 @@ eog /tmp/pointmap.png
 
 ![轮廓图choroplethmap.png](../../../img/restful-result/choroplethmap.png)
 
+### 图标图
+
+使用 `/icon_viz` 接口根据乘客上车地点绘制图标图。图标图中具体参数说明请参见 [图标图 Restful API 说明](./api/function/icon_viz.html)。
+
+```python
+>>> import requests
+>>> payload = {\
+    "scope": "nyc_taxi",\
+    "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point from raw_data where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))')) limit 25",\
+    "params": {\
+        "width": 512,\
+        "height": 448,\
+        "bounding_box": [\
+            -73.9616334766551,\
+            40.704739019597156,\
+            -73.94232850242967,\
+            40.728133570887906\
+        ],\
+        "coordinate_system": "EPSG:4326",\
+        "icon_path": "path_to_icon_example.png"\
+    }\
+}
+>>> 
+>>> r = requests.post(url="http://127.0.0.1:8080/icon_viz", json=payload)
+>>> 
+>>> # 保存为png
+>>> import base64
+>>> with open("/tmp/icon_viz.png", "wb") as f:
+>>>     f.write(base64.b64decode(r.json()['result']))
+```
+
+图标图样例：
+
+![图标图icon_viz](../../../img/restful-result/icon_viz.png)
+
+### 鱼网图
+
+使用 `/fishnetmap` 接口根据乘客上车地点绘制鱼网图，使用总费用作为鱼网网格的权重，总费用越高，权重越大，鱼网网格的颜色越深。鱼网图中具体参数说明请参见 [鱼网图 Restful API 说明](./api/function/fishnetmap.html)。
+
+```python
+>>> import requests
+>>> payload = {\
+    "scope": "nyc_taxi",\
+    "sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color FROM raw_data where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))'))",\
+    "params": {\
+        "width": 512,\
+        "height": 448,\
+        "bounding_box": [\
+            -73.9616334766551,\
+            40.704739019597156,\
+            -73.94232850242967,\
+            40.728133570887906\
+        ],\
+        "opacity": 1,\
+        "coordinate_system": "EPSG:4326",\
+        "cell_size": 4,\
+        "cell_spacing": 1,\
+        "color_gradient": [\
+            "#115f9a",\
+            "#d0f400"\
+        ],\
+        "aggregation_type": "sum"\
+    }\
+}
+>>> 
+>>> r = requests.post(url="http://127.0.0.1:8080/fishnetmap", json=payload)
+>>> 
+>>> # 保存为png
+>>> import base64
+>>> with open("/tmp/fishnetmap.png", "wb") as f:
+>>>     f.write(base64.b64decode(r.json()['result']))
+```
+
+鱼网图样例：
+
+![鱼网图fishnetmap](../../../img/restful-result/fishnetmap.png)
+
 ### 删除作用域
 
 完成操作后需要通过 `/scope/<scope_name>` 接口删除作用域释放服务器资源。

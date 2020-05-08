@@ -320,3 +320,20 @@ save_png(res, "/tmp/arctern_iconviz.png")
 图标图图层绘制结果如下：
 
 ![](../../../../img/quickstart/arctern_iconviz.png)
+
+通过 Arctern-Spark 提供的绘图函数绘制鱼网图图层：
+
+```python
+# 在指定地理区域（经度范围：-73.991504至-73.945155；纬度范围：40.770759至40.783434）中随机选取`200`个坐标点，并将fare_amount作为颜色权重。
+pickup_sql = "select st_point(pickup_longitude, pickup_latitude) as point, fare_amount as weight from nyc_taxi where " \
+f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
+pickup_df = spark.sql(pickup_sql)
+# 根据查询结果绘制鱼网图图层。
+vega = vega_fishnetmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], cell_size=8, cell_spacing=1, opacity=1.0, coordinate_system="EPSG:4326")
+res = fishnetmap(vega, pickup_df)
+save_png(res, "/tmp/arctern_fishnetmap.png")
+```
+
+鱼网图图层绘制结果如下：
+
+![](../../../../img/quickstart/arctern_fishnetmap.png)

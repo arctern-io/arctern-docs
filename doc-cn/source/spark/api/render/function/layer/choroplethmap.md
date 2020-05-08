@@ -1,6 +1,6 @@
 # choroplehtmap
 
-绘制一个轮廓图，需要先后调用 vega_choroplethmap 和 choroplemap 两个接口，首先使用 vega_choroplethmap 构建描述轮廓图渲染样式的 VegaChoroplethMap 对象，然后使用 choroplemap 渲染图像。
+绘制一个轮廓图。需要先后调用 vega_choroplethmap 和 choroplemap 两个接口。首先使用 vega_choroplethmap 构建描述轮廓图渲染样式的 VegaChoroplethMap 对象，然后使用 choroplemap 渲染图像。
 
 ## vega_choroplethmap 
 
