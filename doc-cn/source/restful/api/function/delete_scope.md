@@ -17,13 +17,14 @@ python样例：
 
 ```python
 import requests
+import json
 
 url = "http://localhost:8080/scope/scope_name"
 
 payload = {}
 headers= {}
 
-response = requests.request("DELETE", url, headers=headers, data=payload)
+response = requests.request("DELETE", url, headers=headers, data=json.dumps(payload))
 
 print(response.text.encode('utf8'))
 ```

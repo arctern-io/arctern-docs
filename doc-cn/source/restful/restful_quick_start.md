@@ -41,10 +41,11 @@
 
 ```python
 >>> import requests
+>>> import json
 >>>
 >>> payload = {"scope": "nyc_taxi"}
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/scope", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/scope", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
     'code': 200,
@@ -60,6 +61,7 @@
 
 ```python
 >>> import requests
+>>> import json
 >>>
 >>> payload = {\
     "scope": "nyc_taxi",\
@@ -94,7 +96,7 @@
     ]\
 }
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/loadfile", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/loadfile", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
     'code': 200,
@@ -196,6 +198,7 @@
 
 ```python
 >>> import requests
+>>> import json
 >>>
 >>> payload = {\
     "scope": "nyc_taxi",\
@@ -204,7 +207,7 @@
     "collect_result": "0"\
 }
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
     'code': 200,
@@ -220,11 +223,12 @@
 
 ```python
 >>> import requests
+>>> import json
 >>>
 >>> sql = "select count(*) as num_rows from nyc_taxi"
 >>> payload = {"scope": "nyc_taxi", "sql": sql, "collect_result": "1"}
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
     'code': 200,
@@ -243,11 +247,12 @@
 
 ```python
 >>> import requests
+>>> import json
 >>>
 >>> sql = "drop table if exists raw_data"
 >>> payload = {"scope": "nyc_taxi", "sql": sql, "collect_result": "0"}
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
     'code': 200,
@@ -263,6 +268,7 @@
 
 ```python
 >>> import requests
+>>> import json
 >>> 
 >>> payload = {\
     "scope": "nyc_taxi",\
@@ -278,7 +284,7 @@
     }\
 }
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/pointmap", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/pointmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> # 保存为png
 ... 
@@ -303,8 +309,10 @@ eog /tmp/pointmap.png
 
 ```python
 >>> import requests
+>>> import json
+>>>
 >>> payload = {\
-    "scope": "scope1",\
+    "scope": "nyc_taxi",\
     "session": "spark",\
     "sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color FROM nyc_taxi",\
     "type": "weighted",\
@@ -333,7 +341,7 @@ eog /tmp/pointmap.png
     }\
 }
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/weighted_pointmap", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/weighted_pointmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> import base64
 >>> with open("/tmp/weighted_pointmap.png", "wb") as f:
@@ -352,8 +360,10 @@ eog /tmp/pointmap.png
 
 ```python
 >>> import requests
+>>> import json
+>>>
 >>> payload = {\
-    "scope": "scope1",\
+    "scope": "nyc_taxi",\
     "session": "spark",\
     "sql": "SELECT ST_Point (dropoff_longitude, dropoff_latitude) AS point, avg(fare_amount) AS w FROM nyc_taxi GROUP BY point",\
     "params": {\
@@ -371,7 +381,7 @@ eog /tmp/pointmap.png
     }\
 }
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/heatmap", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/heatmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> import base64
 >>> with open("/tmp/heatmap.png", "wb") as f:
@@ -390,8 +400,10 @@ eog /tmp/pointmap.png
 
 ```python
 >>> import requests
+>>> import json
+>>>
 >>> payload = {\
-    "scope": "scope1",\
+    "scope": "nyc_taxi",\
     "session": "spark",\
     "sql": "SELECT ST_GeomFromText(buildingtext_dropoff) AS wkt, avg(tip_amount) AS w FROM nyc_taxi WHERE ((buildingtext_dropoff!='')) GROUP BY wkt",\
     "params": {\
@@ -417,7 +429,7 @@ eog /tmp/pointmap.png
     }\
 }
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/choroplethmap", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/choroplethmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> import base64
 >>> with open("/tmp/choroplethmap.png", "wb") as f:
@@ -436,9 +448,11 @@ eog /tmp/pointmap.png
 
 ```python
 >>> import requests
+>>> import json
+>>>
 >>> payload = {\
     "scope": "nyc_taxi",\
-    "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point from raw_data where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))')) limit 25",\
+    "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point from nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))')) limit 25",\
     "params": {\
         "width": 512,\
         "height": 448,\
@@ -453,7 +467,7 @@ eog /tmp/pointmap.png
     }\
 }
 >>> 
->>> r = requests.post(url="http://127.0.0.1:8080/icon_viz", json=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/icon_viz", json=json.dumps(payload))
 >>> 
 >>> # 保存为png
 >>> import base64
@@ -471,9 +485,11 @@ eog /tmp/pointmap.png
 
 ```python
 >>> import requests
+>>> import json
+>>>
 >>> payload = {\
     "scope": "nyc_taxi",\
-    "sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color FROM raw_data where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))'))",\
+    "sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color FROM nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))'))",\
     "params": {\
         "width": 512,\
         "height": 448,\
@@ -495,7 +511,7 @@ eog /tmp/pointmap.png
     }\
 }
 >>> 
->>> r = requests.post(url="http://127.0.0.1:8080/fishnetmap", json=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/fishnetmap", json=json.dumps(payload))
 >>> 
 >>> # 保存为png
 >>> import base64
