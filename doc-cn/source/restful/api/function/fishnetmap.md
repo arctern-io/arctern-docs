@@ -38,10 +38,10 @@
     - height：图片高度；
     - bounding_box：渲染图片所表示的地理范围 [`x_min`, `y_min`, `x_max`, `y_max`]；
     - coordinate_system：输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)；
-    - color_gradient：点的颜色渐变范围，即点的颜色从左边渐变到右边；
+    - color_gradient：鱼网网格的颜色渐变范围，即网格的颜色从左边渐变到右边；
     - cell_size：鱼网网格的边长；
     - cell_spacing：鱼网网格之间的间隔；
-    - opacity：点的不透明度;
+    - opacity：鱼网网格的不透明度;
     - aggregation_type：聚合类型。
 
 
