@@ -210,6 +210,18 @@ SparkSession available as 'spark'.
 
 ![](../../../../img/quickstart/epsg-4326-to-3857-example.png)
 
+在指定地理区域（经度范围：-73.991504至-73.945155；纬度范围：40.770759至40.783434）中随机选取`200`个坐标点，并将这些坐标点从`EPSG:4326`坐标系转到`EPSG:3857`坐标系。
+
+```python
+>>> pos1=(-73.991504, 40.770759)
+>>> pos2=(-73.945155, 40.783434)
+>>> limit_num=200
+>>> pickup_sql = "select st_transform(st_point(pickup_longitude, pickup_latitude), 'epsg:4326', 'epsg:3857') " \
+...              "from nyc_taxi where " \
+...              f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
+>>> pickup_df = spark.sql(pickup_sql)
+```
+
 ## 使用 Arctern-Spark 绘制图层
 
 导入绘图需要使用的模块：
