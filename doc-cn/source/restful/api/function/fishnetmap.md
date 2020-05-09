@@ -1,11 +1,11 @@
-# 带权点图
+# 鱼网图
 
-根据 SQL 语句以及相关画图参数绘制权重图，将绘图结果以 base64 编码方式返回。
+根据 SQL 语句以及相关画图参数绘制鱼网图，将绘图结果以 base64 编码方式返回。
 
 ## 请求说明
 
 - HTTP方法: **POST**
-- 请求URL: `/weighted_pointmap`
+- 请求URL: `/fishnetmap`
 - Headers:
     - `Content-Type: application/json`
 - Body:
@@ -13,34 +13,37 @@
 {
     "scope": "scope_name",
     "session": "session_name",
-    "sql": "select ST_Point(col2, col2) as point, col2 as count1, col2 as count2 from table_name",
+    "sql": "select ST_Point(col2, col2) as point, col2 as count from table_name",
     "params": {
             "width": 1024,
             "height": 896,
             "bounding_box": [-75.37976, 40.191296, -71.714099, 41.897445],
             "color_gradient": ["#0000FF", "#FF0000"],
-            "color_bound": [0, 2],
-            "size_bound": [0, 10],
+            "cell_size": 4,
+            "cell_spacing": 1,
             "opacity": 1.0,
-            "coordinate_system": "EPSG:4326"
+            "coordinate_system": "EPSG:4326",
+            "aggregation_type": "sum"
     }
 }
 ```
 
 参数说明：
 
-- scope：执行绘制带权点图操作的作用域名称；
-- session：可选参数，执行绘制带权点图操作的 `SparkSession` 名称；
-- sql：待执行的 SQL 查询语句，该查询的结果作为绘制带权点图的渲染对象；
-- params：绘图参数，具体说明如下，详见 [Arctern-Spark 绘图接口文档](../../../spark/api/render/function/layer/weighted_pointmap.md)：
+- scope：执行绘制鱼网图操作的作用域名称；
+- session：可选参数，执行绘制鱼网图操作的 `SparkSession` 名称；
+- sql：待执行的 SQL 查询语句，该查询的结果作为绘制鱼网图的渲染对象；
+- params：绘图参数，具体说明如下，详见 [Arctern-Spark 绘图接口文档](../../../spark/api/render/function/layer/fishnetmap.md)：
     - width：图片宽度；
     - height：图片高度；
     - bounding_box：渲染图片所表示的地理范围 [`x_min`, `y_min`, `x_max`, `y_max`]；
     - coordinate_system：输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)；
     - color_gradient：点的颜色渐变范围，即点的颜色从左边渐变到右边；
-    - color_bound：点颜色的取值范围，与 `color_gradient` 配合使用；
-    - opacity：点的不透明度；
-    - size_bound：点大小的取值范围。
+    - cell_size：鱼网网格的边长；
+    - cell_spacing：鱼网网格之间的间隔；
+    - opacity：点的不透明度;
+    - aggregation_type：聚合类型。
+
 
 python样例：
 
@@ -48,21 +51,22 @@ python样例：
 import requests
 import json
 
-url = "http://localhost:8080/weighted_pointmap"
+url = "http://localhost:8080/fishnetmap"
 
 payload = {
     "scope": "scope_name",
     "session": "session_name",
-    "sql": "select ST_Point(col2, col2) as point, col2 as count1, col2 as count2 from table_name",
+    "sql": "select ST_Point(col2, col2) as point, col2 as count from table_name",
     "params": {
             "width": 1024,
             "height": 896,
             "bounding_box": [-75.37976, 40.191296, -71.714099, 41.897445],
             "color_gradient": ["#0000FF", "#FF0000"],
-            "color_bound": [0, 2],
-            "size_bound": [0, 10],
+            "cell_size": 4,
+            "cell_spacing": 1,
             "opacity": 1.0,
-            "coordinate_system": "EPSG:4326"
+            "coordinate_system": "EPSG:4326",
+            "aggregation_type": "sum"
     }
 }
 headers = {
@@ -77,21 +81,22 @@ print(response.text.encode('utf8'))
 curl样例：
 
 ```shell
-curl --location --request POST 'http://localhost:8080/weighted_pointmap' \
+curl --location --request POST 'http://localhost:8080/fishnetmap' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "scope": "scope_name",
     "session": "session_name",
-    "sql": "select ST_Point(col2, col2) as point, col2 as count1, col2 as count2 from table_name",
+    "sql": "select ST_Point(col2, col2) as point, col2 as count from table_name",
     "params": {
             "width": 1024,
             "height": 896,
             "bounding_box": [-75.37976, 40.191296, -71.714099, 41.897445],
             "color_gradient": ["#0000FF", "#FF0000"],
-            "color_bound": [0, 2],
-            "size_bound": [0, 10],
+            "cell_size": 4,
+            "cell_spacing": 1,
             "opacity": 1.0,
-            "coordinate_system": "EPSG:4326"
+            "coordinate_system": "EPSG:4326",
+            "aggregation_type": "sum"
     }
 }'
 ```
@@ -104,7 +109,7 @@ curl --location --request POST 'http://localhost:8080/weighted_pointmap' \
 {
     "status": "success",
     "code": "200",
-    "result": "使用 base64 编码后的权重图数据"
+    "result": "使用 base64 编码后的鱼网图数据"
 }
 ```
 

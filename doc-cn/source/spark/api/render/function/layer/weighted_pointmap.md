@@ -1,6 +1,6 @@
 # weighted_pointmap
 
-绘制一个带权点图，需要先后调用 vega_weighted_pointmap 和 weighted_pointmap 两个接口，首先使用 vega_weighted_pointmap 构建描述带权点图渲染样式的 VegaWeightedPointMap 对象，然后使用 weighted_pointmap 渲染图像。
+绘制一个带权点图。需要先后调用 vega_weighted_pointmap 和 weighted_pointmap 两个接口。首先使用 vega_weighted_pointmap 构建描述带权点图渲染样式的 VegaWeightedPointMap 对象，然后使用 weighted_pointmap 渲染图像。
 
 ## vega_weighted_pointmap
 

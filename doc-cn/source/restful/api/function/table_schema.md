@@ -21,7 +21,7 @@ url = "http://localhost:8080/table/schema?scope=scope1&session=spark&table=table
 payload = {}
 headers= {}
 
-response = requests.request("GET", url, headers=headers, data = payload)
+response = requests.request("GET", url, headers=headers, data=payload)
 
 print(response.text.encode('utf8'))
 ```
