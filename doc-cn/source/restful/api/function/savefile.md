@@ -5,7 +5,7 @@
 ## 请求说明
 
 - HTTP方法: **POST**
-- 请求URL: `/savetable`
+- 请求URL: `/savefile`
 - Headers:
     - `Content-Type: application/json`
 - Body:
@@ -35,14 +35,15 @@
     - sql：待执行的 SQL 查询语句，该语句的结果将作为要保存的表；
     - format：待保存的文件格式；
     - path：文件路径；
-    - options：保存文件时的指定选项，使用 `key-value` 形式提供。具体的选项内容参见 [Arctern-Spark 文件的导入导出](../../../../../spark/data_source/file_data.md)；
+    - options：保存文件时的指定选项，使用 `key-value` 形式提供。具体的选项内容参见 [Arctern-Spark 文件的导入导出](../../../spark/data_source/file_data.md)；
 
 python样例：
 
 ```python
 import requests
+import json
 
-url = "http://localhost:8080/savetable"
+url = "http://localhost:8080/savefile"
 
 payload = {
     "scope": "scope_name",
@@ -63,7 +64,7 @@ headers = {
   'Content-Type': 'application/json'
 }
 
-response = requests.request("POST", url, headers=headers, data = payload)
+response = requests.request("POST", url, headers=headers, data=json.dumps(payload))
 
 print(response.text.encode('utf8'))
 ```
@@ -71,7 +72,7 @@ print(response.text.encode('utf8'))
 curl样例：
 
 ```shell
-curl --location --request POST 'http://localhost:8080/savetable' \
+curl --location --request POST 'http://localhost:8080/savefile' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "scope": "scope_name",

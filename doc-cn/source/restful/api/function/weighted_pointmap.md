@@ -46,6 +46,7 @@ python样例：
 
 ```python
 import requests
+import json
 
 url = "http://localhost:8080/weighted_pointmap"
 
@@ -68,7 +69,7 @@ headers = {
   'Content-Type': 'application/json'
 }
 
-response = requests.request("POST", url, headers=headers, data = payload)
+response = requests.request("POST", url, headers=headers, data=json.dumps(payload))
 
 print(response.text.encode('utf8'))
 ```
