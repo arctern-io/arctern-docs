@@ -1,5 +1,5 @@
-Relationship Functions
-=======================
+Spatial Relationship
+=====================
 
 
 .. toctree::

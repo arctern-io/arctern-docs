@@ -21,8 +21,10 @@ POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 >>> import arctern
 >>> df = pd.read_csv("/path/to/geos.csv",sep='|')
 >>> data = pd.Series(df['geos'].values,name='geos')
+# 在对数据进行处理之前使用 ST_GeomFromText 将数据转换为 WKB 形式
 >>> data = arctern.ST_GeomFromText(data)
 >>> valid_data = arctern.ST_MakeValid(data)
+# 在将数据导出之前使用 ST_AsText 将数据转换为 WKT 形式
 >>> valid_data = arctern.ST_AsText(valid_data)
 >>> valid_data = valid_data.rename('geos')
 >>> valid_data.to_csv("/path/to/valid_geos.csv"，index=None,sep='|')
@@ -44,6 +46,7 @@ b'\x01\x03\x00\x00\x00\x01\x00\x00\x00\x05\x00\x00\x00\x00\x00\x00\x00\x00\x00\x
 >>> import arctern
 >>> df = pd.read_csv("/path/to/geos.csv",sep='|')
 >>> data = pd.Series(df['geos'].values)
+# 在对数据处理之前无需对数据进行转换
 >>> valid_data = arctern.ST_MakeValid(data)
 >>> valid_data = valid_data.rename('geos')
 >>> valid_data.to_csv("/path/to/valid_geos.csv"，index=None,sep='|')

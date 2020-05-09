@@ -8,13 +8,6 @@ Welcome to Arctern's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
-   installation_and_deployment_en
-   api_en
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`search`
+   python/python
+   spark/spark

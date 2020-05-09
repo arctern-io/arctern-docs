@@ -1,5 +1,5 @@
 register_funcs
-==============
+===============
 
 .. currentmodule:: arctern_pyspark.register
 

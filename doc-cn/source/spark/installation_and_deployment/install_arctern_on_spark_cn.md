@@ -79,7 +79,8 @@
 执行以下命令在 Conda 环境中安装 arctern_spark CPU 版本：
 
 ```shell
-    conda install -y -q -n arctern_spark -c conda-forge -c arctern-dev arctern-spark
+    conda install -c arctern libarctern
+    conda install -c arctern arctern-spark
 ```
 
 * GPU版本
@@ -87,8 +88,8 @@
 执行以下命令在 Conda 环境中安装 arctern_spark GPU 版本：  
 
 ```shell
-    conda install -y -q -n arctern_spark -c conda-forge -c arctern-dev/label/cuda10.0 libarctern
-    conda install -y -q -n arctern_spark -c conda-forge -c arctern-dev arctern arctern-spark
+    conda install -c arctern/label/cuda10.0 libarctern 
+    conda install -c arctern arctern-spark
 ```
 
 ## 安装验证
@@ -118,12 +119,23 @@ spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern/share/gdal
 export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern/bin/python
 ```
 
-通过如下方式，检查 PySpark 是否使用 $PYSPARK_PYTHON 指定的 Python 路径。其中 `[path/to/your/spark]` 为 Spark 的安装路径。
+### 确认路径配置是否成功
 
-```python
+执行以下命令进入 PySpark 交互界面，其中 `[path/to/your/spark]` 为 Spark 的安装路径。
+
+```bash
 [path/to/your/spark]/bin/pyspark
+```
+
+在交互界面中输入一下内容打印 PySpark 的 Python 路径。
+```python
 >>> import sys
 >>> print(sys.prefix)
+```
+
+如果终端打印了一下内容，说明 PySpark 的 Python 路径配置成功。
+
+```bash
 [path/to/your/conda]/envs/arctern
 ```
 
@@ -153,7 +165,7 @@ wget https://raw.githubusercontent.com/zilliztech/arctern/branch-0.1.x/spark/pys
 在 Conda 环境中输入以下命令可卸载 Arctern-Spark
 
 ```shell
-conda uninstall -n arctern_spark libarctern arctern arctern-spark
+conda uninstall libarctern arctern arctern-spark
 ```
 
 ## FAQ

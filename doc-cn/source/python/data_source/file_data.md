@@ -3,7 +3,7 @@
 Arctern 借助 Pandas 的文件读写功能完成数据的导入和导出。Pandas 支持多种数据文件格式，如CSV、HTML、JSON、ORC等，详细内容可参考[官方文档](https://pandas.pydata.org/pandas-docs/stable/reference/io.html),下面是针对 CSV 和JSON 格式数据的导入导出示例：
 
 ```python
-#导入CSV文件，导出为JSON格式
+#导入CSV文件，导出为JSON文件
 '''
 CSV 文件内容：
 geos                                         
@@ -25,7 +25,7 @@ POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 dtype: bool
 >>> df.to_json("/path/to/geos.json")
 
-#导入JSON文件
+#导入JSON文件，导出为CSV文件
 >>> df = pd.read_json("/path/to/geos.json")
 >>> data = pd.Series(df['geos'].values,name='geos')
 >>> rst = arctern.ST_IsSimple(arctern.ST_GeomFromText(data))
