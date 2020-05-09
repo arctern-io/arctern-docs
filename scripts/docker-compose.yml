@@ -2,7 +2,7 @@ version: '2.3'
 
 services:
   spark-master:
-    image: ${ARCTERN_REPO:-arcternio/arctern-spark}:${ARCTERN_TAG:-latest}
+    image: ${ARCTERN_REPO:-arcternio/arctern-spark}:${ARCTERN_TAG:-v0.1.0}
     environment:
       - SPARK_MODE=master
       - SPARK_RPC_AUTHENTICATION_ENABLED=no
@@ -13,7 +13,7 @@ services:
       - '8080:8080'
       - '7077:7077'
   spark-worker:
-    image: ${ARCTERN_REPO:-arcternio/arctern-spark}:${ARCTERN_TAG:-latest}
+    image: ${ARCTERN_REPO:-arcternio/arctern-spark}:${ARCTERN_TAG:-v0.1.0}
     depends_on:
       - spark-master
     environment:

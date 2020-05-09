@@ -68,7 +68,7 @@
 执行以下命令在 Conda 环境中安装 Arctern CPU 版本：
 
 ```shell
-   conda install -y -q -n arctern_python -c conda-forge -c arctern-dev arctern
+   conda install -c arctern -c conda-forge arctern
 ```
 
 * GPU版本
@@ -76,8 +76,8 @@
 执行以下命令在 Conda 环境中安装 Arctern GPU 版本：
 
 ```shell
-   conda install -y -q -n arctern_python -c conda-forge -c arctern-dev/label/cuda10.0 libarctern
-   conda install -y -q -n arctern_python -c conda-forge -c arctern-dev arctern
+   conda install -c arctern/label/cuda10.0 -c conda-forge libarctern 
+   conda install -c arctern -c conda-forge arctern
 ```
 
 ## 安装验证
@@ -93,9 +93,14 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## 测试样例
 
+安装py.test
+```bash
+conda install pytest
+```
+
 下载测试文件
 ```bash
-wget https://raw.githubusercontent.com/zilliztech/arctern/branch-0.1.x/python/tests/geo/geo_test.py
+wget https://raw.githubusercontent.com/zilliztech/arctern/v0.1.0/python/tests/geo/geo_test.py
 ```
 
 通过以下命令执行测试文件
@@ -111,5 +116,5 @@ py.test [/path/to/]geo_test.py
 ## 卸载
 
 ```shell
-conda uninstall -n arctern_python libarctern arctern
+conda uninstall libarctern arctern
 ```

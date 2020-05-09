@@ -1,6 +1,6 @@
-ST_AsText
-=========
+ST_Area
+========
 
 .. currentmodule:: arctern_pyspark._wrapper_func
 
-.. autofunction:: ST_AsText
+.. autofunction:: ST_Area

@@ -27,7 +27,7 @@
 
 ## 加载数据
 
-以下通过 Python 交互界面展示 Arctern 的使用方法。根据测试数据各字段的名称和数据类型，构建导入测试数据的 `schema`。
+以下通过 Python 交互界面展示 Arctern 的使用方法。根据测试数据各字段的名称和数据类型，构建导入测试数据的 `schema`并导入数据。
 
 ```python
 >>> import pandas as pd
@@ -50,7 +50,7 @@
 ...     "buildingtext_dropoff":"string",
 ... }
 >>> df=pd.read_csv("/tmp/0_2M_nyc_taxi_and_building.csv",
-...                dtype=nyc_schame,
+...                dtype=nyc_schema,
 ...                date_parser=pd.to_datetime,
 ...                parse_dates=["tpep_pickup_datetime","tpep_dropoff_datetime"])
 ```

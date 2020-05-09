@@ -83,6 +83,7 @@ $ docker-compose version
 
 创建 docker compose 工作目录，下载 [docker-compose.yml](https://raw.githubusercontent.com/zilliztech/arctern-docs/branch-0.1.x/scripts/docker-compose.yml) 文件并保存至该目录。
 
+如果需要运行 GPU 版本 Arctern-Spark，请将 docker-compose.yml 文件中的两处 `ARCTERN_REPO:-arcternio/arctern-spark` 修改为 `ARCTERN_REPO:-arcternio/arctern-spark-gpu`。
 
 ## 部署验证
 
@@ -120,7 +121,7 @@ $ sudo docker exec -it b7c75a456982 bash
 下载测试脚本
 ```shell
 $ cd /tmp
-$ wget https://raw.githubusercontent.com/zilliztech/arctern/conda/spark/pyspark/examples/gis/spark_udf_ex.py
+$ wget https://raw.githubusercontent.com/zilliztech/arctern/v0.1.0/spark/pyspark/examples/gis/spark_udf_ex.py
 ```
 
 通过`spark-submit`运行脚本

@@ -62,7 +62,7 @@ python setup.py install
 
 ### 基于源码的安装
 
-从 [Arctern Github 仓库](https://github.com/zilliztech/arctern) 下载源码，在 `gui/server` 路径下运行以下命令构建 Arctern Restful Server 依赖环境：
+从 [Arctern Github 仓库](https://github.com/zilliztech/arctern) 下载源码，在 `gui/server/arctern_server` 路径下运行以下命令构建 Arctern Restful Server 依赖环境：
 
 ```bash
 pip install -r requirements.txt
@@ -80,7 +80,7 @@ pip install arctern_server
 
 ### 配置基于源码安装的 Arctern Restful Server
 
-修改 Arctern 项目中 `gui/server` 路径下的 `config.ini` 文件，配置 Arctern Restful Server 所使用的 Arctern-Spark 后台信息。文件配置示例如下，其中 `spark_master_ip` 和 `port` 分别为后台 Arctern-Spark 中 master 节点的 IP 地址和端口号：
+修改 Arctern 项目中 `gui/server/arctern_server` 路径下的 `config.ini` 文件，配置 Arctern Restful Server 所使用的 Arctern-Spark 后台信息。文件配置示例如下，其中 `spark_master_ip` 和 `port` 分别为后台 Arctern-Spark 中 master 节点的 IP 地址和端口号：
 
 ```bash
 [spark]
@@ -107,9 +107,10 @@ master-addr = spark://spark_master_ip:port
 
 ### 启动基于源码安装的 Arctern Restful Server
 
-在 Arctern项目的 `gui/server` 目录下使用以下命令启动服务：
+在 Arctern 项目的 `gui/server/arctern_server` 目录下使用以下命令启动服务，其中`/path/to/server` 为 Arctern 项目下 `gui/server` 目录的绝对路径。
 
 ```shell
+export PYTHONPATH=/path/to/server:$PYTHONPATH
 python manage.py
 ```
 
@@ -141,8 +142,11 @@ arctern_server
 示例：
 
 ```bash
+export PYTHONPATH=/path/to/server:$PYTHONPATH
 python manage.py -r -i 192.168.1.2 -p 8088 
 ```
+
+其中`/path/to/server` 为 Arctern 项目下 `gui/server` 目录的绝对路径。
 
 
 成功完成以上步骤后，即完成了 Arctern Restful Server 的安装和配置，请参考 Arctern Restful 服务[接口文档](./api/api.html)和[使用示例](./restful_quick_start.md)使用 Arctern Restful 服务。
