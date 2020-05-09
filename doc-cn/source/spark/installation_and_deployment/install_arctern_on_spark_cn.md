@@ -79,8 +79,7 @@
 执行以下命令在 Conda 环境中安装 arctern_spark CPU 版本：
 
 ```shell
-    conda install -c arctern libarctern
-    conda install -c arctern arctern-spark
+    conda install -c arctern -c conda-forge arctern-spark
 ```
 
 * GPU版本
@@ -88,8 +87,8 @@
 执行以下命令在 Conda 环境中安装 arctern_spark GPU 版本：  
 
 ```shell
-    conda install -c arctern/label/cuda10.0 libarctern 
-    conda install -c arctern arctern-spark
+    conda install -c arctern/label/cuda10.0 -c conda-forge libarctern
+    conda install -c arctern -c conda-forge arctern-spark
 ```
 
 ## 安装验证
@@ -109,14 +108,14 @@ Type "help", "copyright", "credits" or "license" for more information.
 在文件 `conf/spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为Conda的安装路径。
 
 ```bash
-spark.executorEnv.PROJ_LIB [path/to/your/conda]/envs/arctern/share/proj
-spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern/share/gdal
+spark.executorEnv.PROJ_LIB [path/to/your/conda]/envs/arctern_spark/share/proj
+spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern_spark/share/gdal
 ```
 
 在文件 `conf/spark-env.sh` 的最后添加以下内容。其中 `[path/to/your/conda]` 为Conda的安装路径。
 
 ```bash
-export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern/bin/python
+export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_spark/bin/python
 ```
 
 ### 确认路径配置是否成功
@@ -136,7 +135,7 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern/bin/python
 如果终端打印了一下内容，说明 PySpark 的 Python 路径配置成功。
 
 ```bash
-[path/to/your/conda]/envs/arctern
+[path/to/your/conda]/envs/arctern_spark
 ```
 
 ## 测试样例
@@ -144,7 +143,7 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern/bin/python
 下载测试文件
 
 ```bash
-wget https://raw.githubusercontent.com/zilliztech/arctern/branch-0.1.x/spark/pyspark/examples/gis/spark_udf_ex.py
+wget https://raw.githubusercontent.com/zilliztech/arctern/v0.1.0/spark/pyspark/examples/gis/spark_udf_ex.py
 ```
 
 通过以下命令提交 Spark 任务，其中 `[path/to/]spark_udf_ex.py` 为测试文件所在的路径。
@@ -158,6 +157,11 @@ wget https://raw.githubusercontent.com/zilliztech/arctern/branch-0.1.x/spark/pys
 
 # hadoop/yarn mode
 [path/to/your/spark]/bin/spark-submit --master yarn [path/to/]spark_udf_ex.py
+```
+
+若最后打印结果类似以下内容，则表示通过测试样例。
+```bash
+All tests of arctern have passed!
 ```
 
 ## 卸载

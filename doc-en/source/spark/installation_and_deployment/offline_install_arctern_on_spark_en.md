@@ -140,7 +140,7 @@ Check whether PySpark uses the Python path determined by `$PYSPARK_PYTHON`. `[pa
 Download test file.
 
 ```bash
-wget https://raw.githubusercontent.com/zilliztech/arctern/conda/spark/pyspark/examples/gis/spark_udf_ex.py
+wget https://raw.githubusercontent.com/zilliztech/arctern/v0.1.0/spark/pyspark/examples/gis/spark_udf_ex.py
 ```
 
 Use the following command to submit Spark task. `[path/to/]spark_udf_ex.py` is the path of the test file.
