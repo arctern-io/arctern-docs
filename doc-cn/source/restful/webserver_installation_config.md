@@ -96,11 +96,42 @@ import arctern_server
 print(arctern_server.__path__)
 ```
 
-执行上述代码将会在终端打印 Restful Server 的安装目录，修改该目录下的 `config.ini`，配置 Arctern Restful Server 所使用的 Arctern-Spark 后台信息。文件配置示例如下，其中 `spark_master_ip` 和 `port` 分别为后台 Arctern-Spark 中 master 节点的 IP 地址和端口号：
+执行上述代码将会在终端打印 Restful Server 的安装目录，修改该目录下的 `config.ini`，配置 Arctern Restful Server 所使用的 Arctern-Spark 后台信息。文件配置示例如下：
 
-```bash
+```ini
 [spark]
 master-addr = spark://spark_master_ip:port
+```
+
+`master-addr` 的值根据 spark 部署模式的不同有以下三种情况：
+
+`local` 模式：
+
+```ini
+[spark]
+# local[K]表示在本地启动K个worker线程，
+# local表示启动一个worker线程，
+# local[*]表示启动尽可能多的worker线程，数量一般等于计算机核心数，
+# 具体可见 https://spark.apache.org/docs/latest/submitting-applications.html
+master-addr = local[*]
+```
+
+`standalone ` 集群模式：
+
+```ini
+[spark]
+# spark_master_ip 为 master 节点的 IP 地址，
+# port 为 master 节点监听 spark 任务的端口号，一般为7077，
+# 具体可见 https://spark.apache.org/docs/latest/spark-standalone.html
+master-addr = spark://spark_master_ip:port
+```
+
+`yarn` 集群模式：
+
+```ini
+[spark]
+# 具体可见 https://spark.apache.org/docs/latest/running-on-yarn.html
+master-addr = yarn
 ```
 
 ## 启动 Arctern Restful Server
@@ -110,7 +141,8 @@ master-addr = spark://spark_master_ip:port
 在 Arctern 项目的 `gui/server/arctern_server` 目录下使用以下命令启动服务，其中`/path/to/server` 为 Arctern 项目下 `gui/server` 目录的绝对路径。
 
 ```shell
-export PYTHONPATH=/path/to/server:$PYTHONPATH
+# 将/path/to/arctern/gui/server替换为实际gui/server所在路径
+export PYTHONPATH=/path/to/arctern/gui/server:$PYTHONPATH
 python manage.py
 ```
 
