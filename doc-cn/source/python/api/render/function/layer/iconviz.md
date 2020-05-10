@@ -66,7 +66,7 @@
       >>> 
       >>> # 读取 csv 文件并创建绘图数据
       >>> # test_data.csv下载链接: https://github.com/zilliztech/arctern-resources/raw/benchmarks/benchmarks/dataset/layer_rendering_test_data/test_data.csv
-      >>> df = pd.read_csv("test_data.csv", dtype={'longitude':np.float64, 'latitude':np.float64, 'color_weights':np.float64, 'size_weights':np.float64, 'region_boundaries':np.object}, nrows=10)
+      >>> df = pd.read_csv("/path/to/test_data.csv", dtype={'longitude':np.float64, 'latitude':np.float64, 'color_weights':np.float64, 'size_weights':np.float64, 'region_boundaries':np.object}, nrows=10)
       >>> region = arctern.ST_GeomFromText(pd.Series(['POLYGON ((-74.01424568752932 40.72759334104623, -74.01424568752932 40.76721122683304, -73.96056823889673 40.76721122683304, -73.96056823889673 40.72759334104623, -74.01424568752932 40.72759334104623))']))
       >>> d=pd.DataFrame(region).T
       >>> region = region.append([d]*(df.shape[0] - 1))
@@ -77,7 +77,7 @@
       >>> points = arctern.ST_Point(input1['longitude'], input1['latitude'])
       >>> 
       >>> # 根据 input1['color_weights'] 绘制图标图
-      >>> vega = vega_icon(1824, 1777, bounding_box=[-74.01424568752932, 40.72759334104623, -73.96056823889673, 40.76721122683304], icon_path='path_to_icon_example.png', coordinate_system='EPSG:4326')
+      >>> vega = vega_icon(1824, 1777, bounding_box=[-74.01424568752932, 40.72759334104623, -73.96056823889673, 40.76721122683304], icon_path='/path/to/icon.png', coordinate_system='EPSG:4326')
       >>> png = arctern.icon_viz_layer(vega, points)
       >>> save_png(png, "/tmp/python_icon_viz.png")
    ```

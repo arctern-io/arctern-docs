@@ -70,7 +70,7 @@
       >>> # test_data.csv下载链接: https://github.com/zilliztech/arctern-resources/raw/benchmarks/benchmarks/dataset/layer_rendering_test_data/test_data.csv
       >>> table_df = spark.read.format("csv").option("header", True).option("delimiter", ",").schema(
       "longitude double, latitude double, color_weights double, size_weights double, region_boundaries string").load(
-      "file:///tmp/test_data.csv").cache()
+      "file:///path/to/test_data.csv").cache()
       >>> table_df.createOrReplaceTempView("test_table")
       >>> 
       >>> register_funcs(spark)
@@ -78,7 +78,7 @@
       >>> # df 是包含 1 列数据的 pyspark.Dataframe，该列为 WKB 类型的points
       >>> # 根据 point 数据绘制图标图
       >>> df = spark.sql("select ST_Point(longitude, latitude) as point from test_table where ST_Within(ST_Point(longitude, latitude), ST_GeomFromText('POLYGON ((-74.01424568752932 40.72759334104623, -74.01424568752932 40.76721122683304, -73.96056823889673 40.76721122683304, -73.96056823889673 40.72759334104623, -74.01424568752932 40.72759334104623))'))  limit 10")
-      >>> vega = vega_icon(1824, 1777, bounding_box=[-74.01424568752932, 40.72759334104623, -73.96056823889673, 40.76721122683304], icon_path='path_to_icon_example.png', coordinate_system='EPSG:4326')
+      >>> vega = vega_icon(1824, 1777, bounding_box=[-74.01424568752932, 40.72759334104623, -73.96056823889673, 40.76721122683304], icon_path='/path/to/icon.png', coordinate_system='EPSG:4326')
       >>> res = icon_viz(vega, df)
       >>> save_png(res, '/tmp/icon_viz.png')
       >>> 
