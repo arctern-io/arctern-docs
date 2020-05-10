@@ -68,15 +68,22 @@ python setup.py install
 
 ### 基于源码的安装
 
-从 [Arctern Github 仓库](https://github.com/zilliztech/arctern) 下载源码，在 `gui/server/arctern_server` 路径下运行以下命令构建 Arctern Restful Server 依赖环境：
+运行以下命令安装 Arctern Restful Server：
 
 ```bash
+# 下载源码
+git clone https://github.com/zilliztech/arctern.git
+# 切换分支
+cd arctern
+git checkout master
+# 安装依赖
+cd gui/server/arctern_server
 pip install -r requirements.txt
 ```
 
 ### 基于 PIP 的安装
 
-运行以下命令安装 Arctern Restful Server。
+运行以下命令安装 Arctern Restful Server：
 
 ```bash
 pip install arctern_server
