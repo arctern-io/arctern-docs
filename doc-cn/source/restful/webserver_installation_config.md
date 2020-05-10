@@ -17,6 +17,12 @@ Arctern 提供基于 Restful 接口的 Web 服务。通过配置可将 Restful S
 sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 ```
 
+安装 Java，建议安装 open-jdk-8：
+
+```bash
+sudo apt-get install openjdk-8-jdk
+```
+
 ### 创建 Conda 虚拟环境
 
 通过以下命令为 Arctern Restful Server 构建 Conda 环境。此处假设环境名称为 `arctern_server`，用户可根据需求自行选择合适的环境名称。
