@@ -13,7 +13,7 @@
 {
     "scope": "scope_name",
     "session": "session_name",
-    "sql": "select ST_Point(col2, col2) as point, col2 as count from table_name",
+    "sql": "select ST_GeomFromText(col_wkb_polygon) as polygon, col2 as count from table_name",
     "params": {
         "width": 1024,
         "height": 896,
@@ -63,7 +63,7 @@ url = "http://localhost:8080/choroplethmap"
 payload  = {
     "scope": "scope_name",
     "session": "session_name",
-    "sql": "select ST_Point(col2, col2) as point, col2 as count from table_name",
+    "sql": "select ST_GeomFromText(col_wkb_polygon) as polygon, col2 as count from table_name",
     "params": {
         "width": 1024,
         "height": 896,
@@ -91,7 +91,7 @@ curl --location --request POST 'http://localhost:8080/choroplethmap' \
 --data-raw '{
     "scope": "scope_name",
     "session": "session_name",
-    "sql": "select ST_Point(col2, col2) as point, col2 as count from table_name",
+    "sql": "select ST_GeomFromText(col_wkb_polygon) as polygon, col2 as count from table_name",
     "params": {
         "width": 1024,
         "height": 896,
