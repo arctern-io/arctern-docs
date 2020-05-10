@@ -31,7 +31,7 @@
 
 ```python
 >>> import pandas as pd
->>> nyc_schame={
+>>> nyc_schema={
 ...     "VendorID":"string",
 ...     "tpep_pickup_datetime":"string",
 ...     "tpep_dropoff_datetime":"string",

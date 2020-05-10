@@ -26,7 +26,7 @@ $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O 
 在 `arctern-resources` 文件夹所在目录下执行以下指令安装 Arctern-Spark 的系统依赖：
 
 ```bash
-$ cd arctern-resources/arctern_dependcies/ubuntu_dependcies
+$ cd arctern-resources/arctern_dependencies/ubuntu_dependencies
 $ ./install_packages.sh gl      # 安装gl-mesa库
 $ ./install_packages.sh jdk     # 安装java8
 ```
