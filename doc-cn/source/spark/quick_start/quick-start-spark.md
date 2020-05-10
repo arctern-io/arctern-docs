@@ -212,16 +212,20 @@ SparkSession available as 'spark'.
 
 ## 使用 Arctern-Spark 绘制图层
 
-导入绘图需要使用的模块：
+导入绘图需要使用的模块并定义相关变量：
 
 ```python
 >>> from arctern.util import save_png
->>> from arctern.util.vega import vega_pointmap, vega_weighted_pointmap, vega_heatmap, vega_choroplethmap, vega_icon
+>>> from arctern.util.vega import vega_pointmap, vega_weighted_pointmap, vega_heatmap, vega_choroplethmap, vega_icon, vega_fishnetmap
 >>> from arctern_pyspark import pointmap
 >>> from arctern_pyspark import weighted_pointmap
 >>> from arctern_pyspark import heatmap
 >>> from arctern_pyspark import choroplethmap
 >>> from arctern_pyspark import icon_viz
+>>> from arctern_pyspark import fishnetmap
+>>> pos1=(-73.991504, 40.770759)
+>>> pos2=(-73.945155, 40.783434)
+>>> limit_num=200
 ```
 
 通过 Arctern-Spark 提供的绘图函数绘制点图图层：
