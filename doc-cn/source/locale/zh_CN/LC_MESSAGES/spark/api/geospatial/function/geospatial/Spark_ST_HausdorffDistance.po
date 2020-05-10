@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
       "Returns the Hausdorff distance between two geometries, which is a measure"
       " of how similar two geometries are."
-msgstr "返回两个几何体之间的 Hausdorff 距离。Huadorff 距离用于度量两个几何体之间的相似度。"
+msgstr "返回两个几何体之间的 Hausdorff 距离。Haudorff 距离用于度量两个几何体之间的相似度。"
 
 #: arctern_pyspark._wrapper_func.ST_HausdorffDistance of
 msgid "参数"

@@ -6,11 +6,11 @@ Arctern 借助 Pandas 的文件读写功能完成数据的导入和导出。Pand
 #导入CSV文件，导出为JSON文件
 '''
 CSV 文件内容：
-geos                                         
-POINT (30 10)                                
+geos
+POINT (30 10)
 POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))
-POLYGON ((1 2, 3 4, 5 6, 1 2))               
-POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1)) 
+POLYGON ((1 2, 3 4, 5 6, 1 2))
+POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 '''
 >>> import pandas as pd
 >>> import arctern
@@ -35,5 +35,5 @@ dtype: bool
 2    False
 3     True
 dtype: bool
->>> df.to_csv("/path/to/geos.csv")
+>>> df.to_csv("/path/to/geos.csv",index=None,quoting=1)
 ```
