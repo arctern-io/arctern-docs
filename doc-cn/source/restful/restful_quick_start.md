@@ -529,7 +529,8 @@ eog /tmp/pointmap.png
 >>> # 保存为png
 >>> import base64
 >>> with open("/tmp/fishnetmap.png", "wb") as f:
->>>     f.write(base64.b64decode(r.json()['result']))
+...     f.write(base64.b64decode(r.json()['result']))
+... 
 ```
 
 渔网图样例：
