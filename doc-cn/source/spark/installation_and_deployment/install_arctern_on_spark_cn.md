@@ -51,7 +51,7 @@
 
 通过以下命令为 Arctern-Spark 创建 Conda 环境。此处假设环境名称为 `arctern_spark`，用户可根据需求自行选择合适的环境名称。
 
-`conda create -n arctern_spark python=3.7`
+`conda create -n arctern_spark -c conda_forge python=3.7.6`
 
 创建成功后，可以通过 `conda env list` 命令查看所有Conda环境，其输出结果应包含Arctern环境，类似如下：
   
