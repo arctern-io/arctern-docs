@@ -22,7 +22,7 @@ sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 通过以下命令为 Arctern Restful Server 构建 Conda 环境。此处假设环境名称为 `arctern_server`，用户可根据需求自行选择合适的环境名称。
 
 ```shell
-conda create -n arctern_server python=3.7
+conda create -n arctern_server -c conda-forge python=3.7.6
 ```
 
 进入 `arctern_server` 虚拟环境：
