@@ -37,7 +37,17 @@
     - path：文件路径；
     - options：保存文件时的指定选项，使用 `key-value` 形式提供。具体的选项内容参见 [Arctern-Spark 文件的导入导出](../../../spark/data_source/file_data.md)；
 
-python样例：
+## 样例
+
+### python
+
+本文示例代码使用 python 的 `requests` 库调用 `Arctern Restful API`，使用下面的命令安装 `requests`：
+
+```shell
+pip install requests
+```
+
+调用示例
 
 ```python
 import requests
@@ -69,7 +79,7 @@ response = requests.request("POST", url, headers=headers, data=json.dumps(payloa
 print(response.text.encode('utf8'))
 ```
 
-curl样例：
+### curl
 
 ```shell
 curl --location --request POST 'http://localhost:8080/savefile' \

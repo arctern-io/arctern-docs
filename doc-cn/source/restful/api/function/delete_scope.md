@@ -13,7 +13,17 @@
 
 - scope：作用域名称。
 
-python样例：
+## 样例
+
+### python
+
+本文示例代码使用 python 的 `requests` 库调用 `Arctern Restful API`，使用下面的命令安装 `requests`：
+
+```shell
+pip install requests
+```
+
+调用示例：
 
 ```python
 import requests
@@ -29,7 +39,7 @@ response = requests.request("DELETE", url, headers=headers, data=json.dumps(payl
 print(response.text.encode('utf8'))
 ```
 
-curl样例：
+### curl
 
 ```shell
 curl --location --request DELETE 'http://localhost:8080/scope/scope_name'

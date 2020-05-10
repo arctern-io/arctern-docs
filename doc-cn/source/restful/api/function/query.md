@@ -39,7 +39,17 @@
 - sql：待执行的 SQL 查询语句；
 - collect_result：可选参数，默认值为 `1`。`1` 表示将 SQL 语句的查询结果用 `json` 格式返回，`0` 表示仅在后台执行查询语句不返回执行结果。
 
-python样例：
+## 样例
+
+### python
+
+本文示例代码使用 python 的 `requests` 库调用 `Arctern Restful API`，使用下面的命令安装 `requests`：
+
+```shell
+pip install requests
+```
+
+调用示例
 
 ```python
 import requests
@@ -83,7 +93,7 @@ response = requests.request("POST", url, headers=headers, data=json.dumps(payloa
 print(response.text.encode('utf8'))
 ```
 
-curl样例：
+### curl
 
 ```shell
 curl --location --request POST 'http://localhost:8080/query' \

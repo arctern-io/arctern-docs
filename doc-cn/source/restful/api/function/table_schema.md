@@ -11,7 +11,17 @@
 - session：可选参数，该字段指明使用哪个 `SparkSession` 查询表的信息；
 - table：表名。
 
-python样例：
+## 样例
+
+### python
+
+本文示例代码使用 python 的 `requests` 库调用 `Arctern Restful API`，使用下面的命令安装 `requests`：
+
+```shell
+pip install requests
+```
+
+调用示例
 
 ```python
 import requests
@@ -26,7 +36,7 @@ response = requests.request("GET", url, headers=headers, data=payload)
 print(response.text.encode('utf8'))
 ```
 
-curl样例：
+### curl
 
 ```shell
 curl --location --request GET 'http://localhost:8080/table/schema?scope=scope1&session=spark&table=table1'

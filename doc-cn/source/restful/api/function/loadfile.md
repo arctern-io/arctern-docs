@@ -43,7 +43,17 @@
     - options：加载文件时的指定选项，使用 `key-value` 形式提供。具体的选项内容参见 [Arctern-Spark 文件的导入导出](../../../spark/data_source/file_data.md)；
     - schema：各列数据的名称和类型描述，schema 字段是一个列表( `list` )，顺序需要和文件中各列的实际存储顺序保持一致。
 
-python样例：
+## 样例
+
+### python
+
+本文示例代码使用 python 的 `requests` 库调用 `Arctern Restful API`，使用下面的命令安装 `requests`：
+
+```shell
+pip install requests
+```
+
+调用示例：
 
 ```python
 import requests
@@ -93,7 +103,7 @@ response = requests.request("POST", url, headers=headers, data=json.dumps(payloa
 print(response.text.encode('utf8'))
 ```
 
-curl样例：
+### curl
 
 ```shell
 curl --location --request POST 'http://localhost:8080/loadfile' \
