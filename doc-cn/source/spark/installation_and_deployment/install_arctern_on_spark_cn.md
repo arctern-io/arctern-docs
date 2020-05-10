@@ -93,7 +93,7 @@
 
 ## 安装验证
 
-进入 Python 环境，尝试导入 `arctern` 和 `arctern_pyspark` 验证安装是否成功。
+进入 Python 环境，尝试导入 `arctern` 和 `arctern_pyspark` 并确认版本是否正确。
 
 ```python
 Python 3.7.6 | packaged by conda-forge | (default, Jan 29 2020, 14:55:04)
@@ -101,6 +101,8 @@ Python 3.7.6 | packaged by conda-forge | (default, Jan 29 2020, 14:55:04)
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import arctern
 >>> import arctern_pyspark
+>>> arctern.version()
+>>> arctern_pyspark.version()
 ```
 
 ## 配置 Spark 的 Python 路径

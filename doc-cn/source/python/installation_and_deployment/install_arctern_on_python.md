@@ -82,13 +82,14 @@
 
 ## 安装验证
 
-进入 Python 环境，尝试导入 `arctern` 验证安装是否成功。
+进入 Python 环境，尝试导入 `arctern` 并确认版本是否正确。
 
 ```python
 Python 3.7.6 | packaged by conda-forge | (default, Jan 29 2020, 14:55:04)
 [GCC 7.3.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import arctern
+>>> arctern.version()
 ```
 
 ## 测试样例

@@ -77,7 +77,7 @@
 >>> pos1=(-73.991504, 40.770759)
 >>> pos2=(-73.945155, 40.783434)
 >>> limit_num=200
->>> 
+>>> df=df.dropna()
 >>> pickup_df = df[(df.pickup_longitude>pos1[0]) & (df.pickup_longitude<pos2[0]) & (df.pickup_latitude>pos1[1]) & (df.pickup_latitude<pos2[1])]
 >>> pickup_df = pickup_df.head(limit_num)
 ```
@@ -124,7 +124,7 @@ dtype: object
 
 ```python
 >>> from arctern.util import save_png
->>> from arctern.util.vega import vega_pointmap, vega_weighted_pointmap, vega_heatmap, vega_choroplethmap, vega_icon
+>>> from arctern.util.vega import vega_pointmap, vega_weighted_pointmap, vega_heatmap, vega_choroplethmap, vega_icon, vega_fishnetmap
 ```
 
 通过 Arctern 提供的绘图函数绘制点图图层：
