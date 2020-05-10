@@ -6,11 +6,11 @@ Arctern-Spark 借助 Spark 的文件读写功能完成数据的导入和导出�
 #CSV文件导入，导出为PARQUET文件
 '''
 CSV 文件内容：
-geos                                         
-POINT (30 10)                                
+geos
+POINT (30 10)
 POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))
-POLYGON ((1 2, 3 4, 5 6, 1 2))               
-POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1)) 
+POLYGON ((1 2, 3 4, 5 6, 1 2))
+POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 '''
 >>> from pyspark.sql import SparkSession
 >>> from arctern_pyspark import register_funcs
