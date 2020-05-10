@@ -176,9 +176,9 @@ arctern-server
 
 * -r：以 release 模式启动服务
 
-* -p：为服务指定 http 端口
+* -p：为服务指定 http 端口，默认为 `8080`
 
-* -i：为服务指定 IP 地址
+* -i：为服务指定 IP 地址，默认为本机IP `127.0.0.1`
 
 * --logfile= [path/to/logfile]： 配置日志文件路径信息，默认值为：` ./log.txt`
 
