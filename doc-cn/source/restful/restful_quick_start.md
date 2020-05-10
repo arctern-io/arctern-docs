@@ -284,7 +284,7 @@ pip install requests
     "params": {\
          "width": 1024,\
          "height": 896,\
-        "bounding_box": [-75.37976, 40.191296, -71.714099, 41.897445],\
+        "bounding_box": [-73.998427, 40.730309, -73.954348, 40.780816],\
         "coordinate_system": "EPSG:4326",\
         "point_color": "#2DEF4A",\
         "point_size": 3,\
@@ -433,7 +433,7 @@ eog /tmp/pointmap.png
             5\
         ],\
         "opacity": 1,\
-        "aggregation_type": "avg"\
+        "aggregation_type": "mean"\
     }\
 }
 >>>
@@ -475,12 +475,14 @@ eog /tmp/pointmap.png
     }\
 }
 >>> 
->>> r = requests.post(url="http://127.0.0.1:8080/icon_viz", json=json.dumps(payload))
+>>> r = requests.post(url="http://127.0.0.1:8080/icon_viz", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> # 保存为png
 >>> import base64
 >>> with open("/tmp/icon_viz.png", "wb") as f:
->>>     f.write(base64.b64decode(r.json()['result']))
+...     f.write(base64.b64decode(r.json()['result']))
+... 
+>>>
 ```
 
 图标图样例：
@@ -519,7 +521,7 @@ eog /tmp/pointmap.png
     }\
 }
 >>> 
->>> r = requests.post(url="http://127.0.0.1:8080/fishnetmap", json=json.dumps(payload))
+>>> r = requests.post(url="http://127.0.0.1:8080/fishnetmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> # 保存为png
 >>> import base64
