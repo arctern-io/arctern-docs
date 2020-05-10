@@ -33,6 +33,14 @@
 
 下述示例中假设服务器 IP 地址为`127.0.0.1`，Restful服务端口为`8080`，数据文件所在路径为 `/example/data/0_2M_nyc_taxi_and_building.csv`。
 
+### 安装依赖
+
+本文示例代码使用 python 的 `requests` 库调用 `Arctern Restful API`，使用下面的命令安装 `requests`：
+
+```shell
+pip install requests
+```
+
 ## API调用
 
 ### 创建作用域

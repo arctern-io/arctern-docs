@@ -36,7 +36,17 @@
     - icon_path：png 图标文件的绝对路径；
     - coordinate_system：输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)；
 
-样例：
+## 样例
+
+### python
+
+本文示例代码使用 python 的 `requests` 库调用 `Arctern Restful API`，使用下面的命令安装 `requests`：
+
+```shell
+pip install requests
+```
+
+调用示例：
 
 ```python
 import requests
@@ -64,6 +74,8 @@ response = requests.request("POST", url, headers=headers, data=json.dumps(payloa
 
 print(response.text.encode('utf8'))
 ```
+
+### curl
 
 ```shell
 curl --location --request POST 'http://localhost:8080/icon_viz' \

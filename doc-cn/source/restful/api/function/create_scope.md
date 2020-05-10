@@ -21,7 +21,17 @@ Arctern Restful Server 使用作用域（`scope`）为用户分配服务器资�
 
 - scope：可选参数，若不指定 `scope`，则请求的 `headers` 字段可以省略，服务器将产生一个随机字符串作为新建 `scope` 的名称，并将其返回。
 
-python样例：
+## 样例
+
+### python
+
+本文示例代码使用 python 的 `requests` 库调用 `Arctern Restful API`，使用下面的命令安装 `requests`：
+
+```shell
+pip install requests
+```
+
+调用示例：
 
 ```python
 import requests
@@ -41,7 +51,7 @@ response = requests.request("POST", url, headers=headers, data=json.dumps(payloa
 print(response.text.encode('utf8'))
 ```
 
-curl样例：
+### curl
 
 ```shell
 curl --location --request POST 'http://localhost:8080/scope' \

@@ -37,7 +37,7 @@ conda activate arctern_server
 Arctern Restful Server 的运行依赖于 Arctern-Spark，使用以下命令在虚拟环境中安装 Arctern-Spark 包:
 
 ```shell
-conda install -y -q -c conda-forge -c arctern-dev arctern-spark
+conda install -y -q -c conda-forge -c arctern arctern-spark
 ```
 
 > 此处安装 Arctern-Spark 仅用于解决 Restful Server 的运行时依赖，不能作为执行 Restful 请求的 Arctern-Spark 后台。
