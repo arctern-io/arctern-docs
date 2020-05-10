@@ -458,6 +458,9 @@ eog /tmp/pointmap.png
 >>> import requests
 >>> import json
 >>>
+>>> # 下面 icon_path 的路径填写待显示图标所在的绝对路径，
+>>> # 本例中的图标文件可通过如下命令获取：
+>>> # wget https://github.com/zilliztech/arctern/raw/master/doc/img/icon/arctern-color.png
 >>> payload = {\
     "scope": "nyc_taxi",\
     "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point from nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))')) limit 25",\
@@ -526,7 +529,8 @@ eog /tmp/pointmap.png
 >>> # 保存为png
 >>> import base64
 >>> with open("/tmp/fishnetmap.png", "wb") as f:
->>>     f.write(base64.b64decode(r.json()['result']))
+...     f.write(base64.b64decode(r.json()['result']))
+... 
 ```
 
 渔网图样例：
