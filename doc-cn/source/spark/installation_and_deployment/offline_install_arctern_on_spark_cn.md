@@ -1,4 +1,4 @@
-# 离线安装 
+# 离线安装
 本文档介绍在 Spark 环境中离线安装 Arctern 的步骤。
 
 ## 安装要求
@@ -14,7 +14,7 @@
 通过以下命令在联网环境中分别下载 Arctern-Spark 的系统依赖、Spark 和 Miniconda 安装文件,并将其拷贝至需要安装 Arctern-Spark 的离线环境。
 
 ```bash
-$ git clone -b offline https://github.com/zilliztech/arctern-resources.git 
+$ git clone -b offline https://github.com/zilliztech/arctern-resources.git
 $ wget "http://mirror.bit.edu.cn/apache/spark/spark-3.0.0-preview2/spark-3.0.0-preview2-bin-hadoop2.7.tgz"
 $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh  
 ```
@@ -36,7 +36,7 @@ $ ./install_packages.sh jdk     # 安装java8
 在 `spark-3.0.0-preview2-bin-hadoop2.7.tgz` 文件所在目录下执行以下命令，将文件解压到指定目录：
 
 ```bash
-$ mkdir -p $SPARK_HOME && tar zxvf spark-3.0.0-preview2-bin-hadoop2.7.tgz -C $SPARK_HOME       # SPARK_HOME 为Spark的安装目录
+$ mkdir -p ${spark_install_path} && tar zxvf spark-3.0.0-preview2-bin-hadoop2.7.tgz -C ${spark_install_path}
 ```
 
 ### 安装Miniconda
@@ -44,7 +44,7 @@ $ mkdir -p $SPARK_HOME && tar zxvf spark-3.0.0-preview2-bin-hadoop2.7.tgz -C $SP
 执行以下命令安装 Miniconda：
 
 ```bash
-$ /bin/bash ~/miniconda.sh -b -p $CONDA_HOME      # CONDA_HOME 为Conda的安装目录
+$ /bin/bash ~/miniconda.sh -b -p ${conda_install_path}
 ```
 
 
@@ -55,7 +55,7 @@ $ /bin/bash ~/miniconda.sh -b -p $CONDA_HOME      # CONDA_HOME 为Conda的安装
 通过以下命令创建 Arctern Conda 环境。此处假设环境名称为 `arctern_spark`，用户可根据需求自行选择合适的环境名称。
 
 ```bash
-$ . $CONDA_HOME/etc/profile.d/conda.sh
+$ . ${conda_install_path}/etc/profile.d/conda.sh
 $ conda config --set offline True
 $ conda create -n arctern-spark
 ```
@@ -74,7 +74,7 @@ $ conda create -n arctern-spark
   `conda activate arctern-spark`
 
 
-> **注意：后续工作必须在 Arctern 虚拟环境中进行**
+> **注意：后续工作必须在 conda 虚拟环境 (arctern-spark) 中进行**
 
 
 ## 安装 Arctern-Spark
@@ -109,14 +109,14 @@ Type "help", "copyright", "credits" or "license" for more information.
 在 `conf/spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为Conda的安装路径。
 
 ```bash
-spark.executorEnv.PROJ_LIB [path/to/your/conda]/envs/arctern/share/proj
-spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern/share/gdal
+spark.executorEnv.PROJ_LIB [path/to/your/conda]/envs/arctern-spark/share/proj
+spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern-spark/share/gdal
 ```
 
 在文件 `conf/spark-env.sh` 的最后添加以下内容。其中 `[path/to/your/conda]` 为Conda的安装路径。
 
 ```bash
-export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern/bin/python
+export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern-spark/bin/python
 ```
 
 ### 确认路径配置是否成功
