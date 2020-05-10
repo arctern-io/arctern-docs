@@ -151,7 +151,7 @@ python manage.py
 完成配置后，使用以下命令启动服务：
 
 ```shell
-arctern_server
+arctern-server
 ```
 
 ### 命令参数介绍
