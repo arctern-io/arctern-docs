@@ -49,7 +49,7 @@ color_bound,opacity,coordinate_system,aggregation_type)**
 
 &#x2002; &#x2003; &#x2002; &#x2003; * vega(VegaChoroplethMap) -- VegaChoroplethMap 对象。
 
-&#x2002; &#x2003; &#x2002; &#x2003; * points(Series(dtype: object)) -- 所需绘制的多边形轮廓，格式为WKB。
+&#x2002; &#x2003; &#x2002; &#x2003; * region_boundaries(Series(dtype: object)) -- 所需绘制的多边形轮廓，格式为WKB。
 
 &#x2002; &#x2003; &#x2002; &#x2003; * weights(Series(dtype: float64|int64)) -- 轮廓的颜色权重。
 
