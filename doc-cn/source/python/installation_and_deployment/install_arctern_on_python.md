@@ -42,7 +42,7 @@
 
 通过以下命令创建 Arctern Conda 环境。此处假设环境名称为 `arctern_python`，用户可根据需求自行选择合适的环境名称。
 
-`conda create -n arctern_python python=3.7`
+`conda create -n arctern_python -c conda-forge python=3.7.6`
 
 创建成功后，可以通过 `conda env list` 命令查看所有Conda环境，其输出结果应包含 Arctern 环境，类似如下：
   
