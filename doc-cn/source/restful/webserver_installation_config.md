@@ -113,6 +113,9 @@ print(arctern_env.__path__)
 
 ```ini
 [spark]
+# spark_master_ip 为 master 节点的 IP 地址，
+# port 为 master 节点监听 spark 任务的端口号，一般为7077，
+# 具体可见 https://spark.apache.org/docs/latest/spark-standalone.html
 master-addr = spark://spark_master_ip:port
 ```
 
@@ -190,7 +193,11 @@ export PYTHONPATH=/path/to/server:$PYTHONPATH
 python manage.py -r -i 192.168.1.2 -p 8088 
 ```
 
+<<<<<<< HEAD
 其中 `/path/to/server` 为 Arctern 项目下 `gui/server` 目录的绝对路径。
+=======
+其中`/path/to/server` 为 Arctern 项目下 `gui/server` 目录的绝对路径。
+>>>>>>> 82eb7ea28aa77430db0d5d97d3365e5cf4b4c5e0
 
 
 完成以上步骤即完成了 Arctern RESTful Server 的安装和配置，请参考 Arctern RESTful 服务[接口文档](./api/api.html)和[使用示例](./restful_quick_start.md)使用 Arctern RESTful 服务。
