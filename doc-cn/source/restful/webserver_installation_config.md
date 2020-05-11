@@ -36,7 +36,7 @@ conda create -n arctern_env -c conda-forge python=3.7.6
 conda activate arctern_env
 ```
 
-> **注意：以下步骤需要在 Conda 的 Arctern 虚拟环境下进行。**
+> 注意：以下步骤需要在 Conda 的 Arctern 虚拟环境下进行。
 
 ### 安装 Arctern-Spark 包
 
@@ -46,7 +46,7 @@ Arctern RESTful Server 的运行依赖于 Arctern-Spark，执行以下命令在�
 conda install -y -q -c conda-forge -c arctern arctern-spark
 ```
 
-> **注意：此处安装 Arctern-Spark 仅用于解决 RESTful Server 的运行时依赖，不能作为执行 RESTful 请求的 Arctern-Spark 后台。**
+> 注意：此处安装 Arctern-Spark 仅用于解决 RESTful Server 的运行时依赖，不能作为执行 RESTful 请求的 Arctern-Spark 后台。
 
 ### 安装 PySpark
 
