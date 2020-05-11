@@ -159,7 +159,7 @@ export PYTHONPATH=/path/to/arctern/gui/server:$PYTHONPATH
 python manage.py
 ```
 
-### 启动基于 PIP 安装的 Arctern RESTful Server
+### 启动基于 pip 安装的 Arctern RESTful Server
 
 完成配置后，执行以下命令启动服务：
 
@@ -170,7 +170,6 @@ arctern-server
 ### 命令参数介绍
 
 通过命令参数可在启动时对 Arctern RESTful Server 进行配置，以上两种方式使用完全相同的参数，具体的内容和含义如下：
-
 
 * -h：显示帮助信息
 
