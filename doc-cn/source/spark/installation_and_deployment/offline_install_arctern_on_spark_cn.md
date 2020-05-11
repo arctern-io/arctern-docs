@@ -52,7 +52,7 @@ $ /bin/bash ~/miniconda.sh -b -p ${conda_install_path}
 
 ### 创建 Conda 虚拟环境
 
-执行以下命令创建 Arctern Conda 环境。此处假设环境名称为 `arctern_env`，用户可根据需求自行选择合适的环境名称。
+执行以下命令创建 Arctern Conda 环境。此处假设环境名称为 `arctern_env`，你可根据需求自行选择合适的环境名称。
 
 ```bash
 $ . ${conda_install_path}/etc/profile.d/conda.sh

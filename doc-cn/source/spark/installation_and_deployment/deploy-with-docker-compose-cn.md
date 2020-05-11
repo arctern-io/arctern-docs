@@ -1,6 +1,6 @@
 # 基于 Docker Compose 部署
 
-本文档介绍如何使用 Docker Compose 在单台服务器上快速部署伪分布式 Arctern-Spark 实验环境，供用户体验 Arctern-Spark 接口的基本使用。
+本文档介绍如何使用 Docker Compose 在单台服务器上快速部署伪分布式 Arctern-Spark 实验环境，供你体验 Arctern-Spark 接口的基本使用。
 
 <span style="color:red">强烈建议：本文档介绍的部署方案仅供示例和体验，请勿用于生产环境中的 Arctern-Spark 部署。</span>
 
@@ -33,7 +33,7 @@ $ docker info
 
 如果上述命令未能正常打印 Docker 相关信息，请启动 **Docker** daemon。
 
-> 提示：在 Linux 环境下，Docker 命令需要 `sudo` 权限。如需要在一般权限下运行 Docker 命令，请创建 `docker` 组并添加用户。详情请参阅 [Linux 安装后步骤](https://docs.docker.com/install/linux/linux-postinstall/)。
+> 提示：在 Linux 环境下，Docker 命令需要 `sudo` 权限。如需要在一般权限下运行 Docker 命令，请创建 `docker` 组并添加你。详情请参阅 [Linux 安装后步骤](https://docs.docker.com/install/linux/linux-postinstall/)。
 
 
 ## 配置 NVIDIA Docker （可选）
