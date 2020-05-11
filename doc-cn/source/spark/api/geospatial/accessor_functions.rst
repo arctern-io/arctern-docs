@@ -1,5 +1,5 @@
-Accessor Functions
-===================
+Geometry Accessor
+==================
 
 
 .. toctree::

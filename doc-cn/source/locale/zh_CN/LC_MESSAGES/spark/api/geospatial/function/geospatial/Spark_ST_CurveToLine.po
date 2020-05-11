@@ -28,7 +28,7 @@ msgid ""
 "MULTISURFACE to MULTIPOLYGON. Useful for outputting to devices that can't"
 " support CIRCULARSTRING geometry types."
 msgstr ""
-"将几何图形中的曲线转换为近似的线性表示形式，例如，将 CURCULAR STRING 转换为普通的"
+"将几何图形中的曲线转换为近似的线性表示形式，例如，将 CIRCULAR STRING 转换为普通的"
 " LINESTRING，将 CURVEPOLYGON 转换为 POLYGON，将 "
 "MULTISURFACE 转换为 MULTIPOLYGON。"
 

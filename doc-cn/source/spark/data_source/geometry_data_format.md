@@ -11,20 +11,26 @@ WKT 形式数据的导入和导出：
 ```Python
 '''
 CSV 文件内容：
-geos                                         
-POINT (30 10)                                
+geos
+POINT (30 10)
 POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))
-POLYGON ((1 2, 3 4, 5 6, 1 2))               
-POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1)) 
+POLYGON ((1 2, 3 4, 5 6, 1 2))
+POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 '''
 >>> from pyspark.sql import SparkSession
 >>> from arctern_pyspark import register_funcs
+# 创建 SparkSession 并对其进行配置
 >>> spark_session = SparkSession.builder.appName("Python Arrow-in-Spark example").getOrCreate()
 >>> spark_session.conf.set("spark.sql.execution.arrow.pyspark.enabled", "true")
+# 注册 Arctern-Spark 提供的函数
 >>> register_funcs(spark_session)
+# 数据导入
 >>> df = spark_session.read.format('csv').options(header='true',sep='|').load("/path/to/geos.csv")
+# 为导入数据创建数据表 ‘geos’ 并对其进行处理
 >>> df.createOrReplaceTempView("geos")
+# 在对数据进行处理之前使用 ST_GeomFromText 将数据转换为 WKB 形式，并在数据导出前使用 ST_AsText 将数据转换回 WKT 形式
 >>> make_valid_df = spark_session.sql("select ST_AsText(ST_MakeValid(ST_GeomFromText(geos))) from geos")
+# 数据导出
 >>> df.select("geos").write.save("/path/to/new_geos.csv", format="csv")
 ```
 
@@ -34,7 +40,7 @@ WKB 形式数据的导入和导出：
 ```Python
 '''
 CSV 文件内容：
-geos                                         
+geos
 b'\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00>@\x00\x00\x00\x00\x00\x00$@'
 b'\x01\x03\x00\x00\x00\x01\x00\x00\x00\x05\x00\x00\x00\x00\x00\x00\x00\x00\x00>@\x00\x00\x00\x00\x00\x00$@\x00\x00\x00\x00\x00\x00D@\x00\x00\x00\x00\x00\x00D@\x00\x00\x00\x00\x00\x004@\x00\x00\x00\x00\x00\x00D@\x00\x00\x00\x00\x00\x00$@\x00\x00\x00\x00\x00\x004@\x00\x00\x00\x00\x00\x00>@\x00\x00\x00\x00\x00\x00$@'
 b'\x01\x03\x00\x00\x00\x01\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x08@\x00\x00\x00\x00\x00\x00\x10@\x00\x00\x00\x00\x00\x00\x14@\x00\x00\x00\x00\x00\x00\x18@\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\x00@'
@@ -42,11 +48,17 @@ b'\x01\x03\x00\x00\x00\x01\x00\x00\x00\x05\x00\x00\x00\x00\x00\x00\x00\x00\x00\x
 '''
 >>> from pyspark.sql import SparkSession
 >>> from arctern_pyspark import register_funcs
+# 创建 SparkSession 并对其进行配置
 >>> spark_session = SparkSession.builder.appName("Python Arrow-in-Spark example").getOrCreate()
 >>> spark_session.conf.set("spark.sql.execution.arrow.pyspark.enabled", "true")
+# 注册 Arctern-Spark 提供的函数
 >>> register_funcs(spark_session)
+# 数据导入
 >>> df = spark_session.read.format('csv').options(header='true',sep='|').load("/path/to/geos.csv")
+# 为导入数据创建数据表 ‘geos’ 并对其进行处理
 >>> df.createOrReplaceTempView("geos")
+# 无需进行数据形式转换
 >>> make_valid_df = spark_session.sql("select ST_MakeValid(geos) from geos")
+# 数据导出
 >>> df.select("geos").write.save("/path/to/new_geos.csv", format="csv")
 ```

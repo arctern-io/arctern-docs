@@ -1,6 +1,5 @@
-=====================
-Constructor Functions
-=====================
+Geometry Contructor
+====================
 
 
 .. toctree::

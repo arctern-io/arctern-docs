@@ -27,11 +27,11 @@
 
 ## 加载数据
 
-以下通过 Python 交互界面展示 Arctern 的使用方法。根据测试数据各字段的名称和数据类型，构建导入测试数据的 `schema`。
+以下通过 Python 交互界面展示 Arctern 的使用方法。根据测试数据各字段的名称和数据类型，构建导入测试数据的 `schema`并导入数据。
 
 ```python
 >>> import pandas as pd
->>> nyc_schame={
+>>> nyc_schema={
 ...     "VendorID":"string",
 ...     "tpep_pickup_datetime":"string",
 ...     "tpep_dropoff_datetime":"string",
@@ -50,7 +50,7 @@
 ...     "buildingtext_dropoff":"string",
 ... }
 >>> df=pd.read_csv("/tmp/0_2M_nyc_taxi_and_building.csv",
-...                dtype=nyc_schame,
+...                dtype=nyc_schema,
 ...                date_parser=pd.to_datetime,
 ...                parse_dates=["tpep_pickup_datetime","tpep_dropoff_datetime"])
 ```
@@ -77,7 +77,7 @@
 >>> pos1=(-73.991504, 40.770759)
 >>> pos2=(-73.945155, 40.783434)
 >>> limit_num=200
->>> 
+>>> df=df.dropna()
 >>> pickup_df = df[(df.pickup_longitude>pos1[0]) & (df.pickup_longitude<pos2[0]) & (df.pickup_latitude>pos1[1]) & (df.pickup_latitude<pos2[1])]
 >>> pickup_df = pickup_df.head(limit_num)
 ```
@@ -124,7 +124,7 @@ dtype: object
 
 ```python
 >>> from arctern.util import save_png
->>> from arctern.util.vega import vega_pointmap, vega_weighted_pointmap, vega_heatmap, vega_choroplethmap, vega_icon
+>>> from arctern.util.vega import vega_pointmap, vega_weighted_pointmap, vega_heatmap, vega_choroplethmap, vega_icon, vega_fishnetmap
 ```
 
 通过 Arctern 提供的绘图函数绘制点图图层：
@@ -183,7 +183,7 @@ dtype: object
 
 ```python
 >>> # 绘制图标图图层。
->>> vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path='/tmp/arctern-color.png', coordinate_system="EPSG:4326")
+>>> vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path='/path/to/icon.png', coordinate_system="EPSG:4326")
 >>> png = icon_viz_layer(vega, ST_Point(pickup_df.head(25).pickup_longitude, pickup_df.head(25).pickup_latitude))
 >>> save_png(png, "/tmp/arctern_iconviz_pandas.png")
 ```
@@ -191,3 +191,16 @@ dtype: object
 图标图图层绘制结果如下：
 
 ![](../../../../img/quickstart/arctern_iconviz_pandas.png)
+
+通过 Arctern 提供的绘图函数绘制渔网图图层：
+
+```python
+>>> # 绘制渔网图图层。
+>>> vega = vega_fishnetmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], cell_size=8, cell_spacing=1, opacity=1.0, coordinate_system="EPSG:4326")
+>>> png = fishnet_map_layer(vega, ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude), df.head(limit_num).fare_amount)
+>>> save_png(png, "/tmp/arctern_fishnetmap_pandas.png")
+```
+
+渔网图图层绘制结果如下：
+
+![](../../../../img/quickstart/arctern_fishnetmap_pandas.png)

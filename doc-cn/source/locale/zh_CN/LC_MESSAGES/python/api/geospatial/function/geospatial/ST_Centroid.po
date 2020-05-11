@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_Centroid:1 of
 msgid "Compute the centroid of geometry."
-msgstr "计算几何体的质心。"
+msgstr "计算几何体的中心。"
 
 #: arctern._wrapper_func.ST_Centroid of
 msgid "参数"
