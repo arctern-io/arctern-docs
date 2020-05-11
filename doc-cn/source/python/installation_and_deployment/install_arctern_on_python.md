@@ -90,7 +90,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## 测试样例
 
-安装py.test
+安装py.test：
 ```bash
 conda install pytest
 ```
