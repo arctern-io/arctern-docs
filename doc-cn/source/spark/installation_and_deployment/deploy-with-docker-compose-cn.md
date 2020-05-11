@@ -121,7 +121,7 @@ $ sudo docker exec -it b7c75a456982 bash
 下载测试脚本
 ```shell
 $ cd /tmp
-$ wget https://raw.githubusercontent.com/zilliztech/arctern/conda/spark/pyspark/examples/gis/spark_udf_ex.py
+$ wget https://raw.githubusercontent.com/zilliztech/arctern/v0.1.0/spark/pyspark/examples/gis/spark_udf_ex.py
 ```
 
 通过`spark-submit`运行脚本

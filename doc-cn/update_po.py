@@ -6,6 +6,15 @@ def replace(source_api_path,src_prefix,dst_prefix):
            with open(source_api_path + os.sep + html_file, 'r') as f:
                 contents = f.read()
            contents = contents.replace(src_prefix, dst_prefix)
+           if html_file == "Spark_ST_GeomFromGeoJSON.html" or html_file == "ST_GeomFromGeoJSON.html":
+               contents = contents.replace("&quot;{&quot","&quot;{\\&quot")
+               contents = contents.replace(">type<",">type\\<")
+               contents = contents.replace("&quot;:&quot","&quot;:\\&quot")
+               contents = contents.replace(">Point<",">Point\\<")
+               contents = contents.replace("&quot;,&quot","&quot;,\\&quot")
+               contents = contents.replace(">coordinates<",">coordinates\\<")
+               contents = contents.replace(">LineString<",">LineString\\<")
+               contents = contents.replace(">Polygon<",">Polygon\\<")
            with open(source_api_path + os.sep + html_file, 'w') as f:
                 f.write(contents)
 
@@ -38,6 +47,7 @@ if __name__ == "__main__":
     os.system('make clean')
     os.system('make html')
     os.system('make gettext')
+    os.system('sphinx-intl update -p build/gettext -l zh_CN')
     os.system('make html')
     delete_content(path)
 

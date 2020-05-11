@@ -38,10 +38,21 @@
     - map_zoom_level：地图放大比例，取值范围 `(1 ~ 15)`；
     - aggregation_type：聚合类型。
 
-python样例：
+## 样例
+
+### python
+
+本文示例代码使用 python 的 `requests` 库调用 `Arctern Restful API`，使用下面的命令安装 `requests`：
+
+```shell
+pip install requests
+```
+
+调用示例：
 
 ```python
 import requests
+import json
 
 url = "http://localhost:8080/heatmap"
 
@@ -61,12 +72,12 @@ headers = {
   'Content-Type': 'application/json'
 }
 
-response = requests.request("POST", url, headers=headers, data = payload)
+response = requests.request("POST", url, headers=headers, data=json.dumps(payload))
 
 print(response.text.encode('utf8'))
 ```
 
-curl样例：
+### curl
 
 ```shell
 curl --location --request POST 'http://localhost:8080/heatmap' \

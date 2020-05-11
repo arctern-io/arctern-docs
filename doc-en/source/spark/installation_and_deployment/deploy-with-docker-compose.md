@@ -142,7 +142,7 @@ Download verification code:
 
 ```shell
 $ cd /tmp
-$ wget https://raw.githubusercontent.com/zilliztech/arctern/conda/spark/pyspark/examples/gis/spark_udf_ex.py
+$ wget https://raw.githubusercontent.com/zilliztech/arctern/v0.1.0/spark/pyspark/examples/gis/spark_udf_ex.py
 ```
 
 Executed the verification code with `spark-submit`

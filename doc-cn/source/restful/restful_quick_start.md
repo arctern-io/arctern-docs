@@ -33,6 +33,14 @@
 
 下述示例中假设服务器 IP 地址为`127.0.0.1`，Restful服务端口为`8080`，数据文件所在路径为 `/example/data/0_2M_nyc_taxi_and_building.csv`。
 
+### 安装依赖
+
+本文示例代码使用 python 的 `requests` 库调用 `Arctern Restful API`，使用下面的命令安装 `requests`：
+
+```shell
+pip install requests
+```
+
 ## API调用
 
 ### 创建作用域
@@ -41,10 +49,11 @@
 
 ```python
 >>> import requests
+>>> import json
 >>>
 >>> payload = {"scope": "nyc_taxi"}
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/scope", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/scope", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
     'code': 200,
@@ -60,6 +69,7 @@
 
 ```python
 >>> import requests
+>>> import json
 >>>
 >>> payload = {\
     "scope": "nyc_taxi",\
@@ -94,7 +104,7 @@
     ]\
 }
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/loadfile", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/loadfile", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
     'code': 200,
@@ -196,6 +206,7 @@
 
 ```python
 >>> import requests
+>>> import json
 >>>
 >>> payload = {\
     "scope": "nyc_taxi",\
@@ -204,7 +215,7 @@
     "collect_result": "0"\
 }
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
     'code': 200,
@@ -220,11 +231,12 @@
 
 ```python
 >>> import requests
+>>> import json
 >>>
 >>> sql = "select count(*) as num_rows from nyc_taxi"
 >>> payload = {"scope": "nyc_taxi", "sql": sql, "collect_result": "1"}
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
     'code': 200,
@@ -243,11 +255,12 @@
 
 ```python
 >>> import requests
+>>> import json
 >>>
 >>> sql = "drop table if exists raw_data"
 >>> payload = {"scope": "nyc_taxi", "sql": sql, "collect_result": "0"}
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
     'code': 200,
@@ -263,6 +276,7 @@
 
 ```python
 >>> import requests
+>>> import json
 >>> 
 >>> payload = {\
     "scope": "nyc_taxi",\
@@ -270,7 +284,7 @@
     "params": {\
          "width": 1024,\
          "height": 896,\
-        "bounding_box": [-75.37976, 40.191296, -71.714099, 41.897445],\
+        "bounding_box": [-73.998427, 40.730309, -73.954348, 40.780816],\
         "coordinate_system": "EPSG:4326",\
         "point_color": "#2DEF4A",\
         "point_size": 3,\
@@ -278,7 +292,7 @@
     }\
 }
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/pointmap", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/pointmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> # 保存为png
 ... 
@@ -303,8 +317,10 @@ eog /tmp/pointmap.png
 
 ```python
 >>> import requests
+>>> import json
+>>>
 >>> payload = {\
-    "scope": "scope1",\
+    "scope": "nyc_taxi",\
     "session": "spark",\
     "sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color FROM nyc_taxi",\
     "type": "weighted",\
@@ -333,7 +349,7 @@ eog /tmp/pointmap.png
     }\
 }
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/weighted_pointmap", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/weighted_pointmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> import base64
 >>> with open("/tmp/weighted_pointmap.png", "wb") as f:
@@ -352,8 +368,10 @@ eog /tmp/pointmap.png
 
 ```python
 >>> import requests
+>>> import json
+>>>
 >>> payload = {\
-    "scope": "scope1",\
+    "scope": "nyc_taxi",\
     "session": "spark",\
     "sql": "SELECT ST_Point (dropoff_longitude, dropoff_latitude) AS point, avg(fare_amount) AS w FROM nyc_taxi GROUP BY point",\
     "params": {\
@@ -371,7 +389,7 @@ eog /tmp/pointmap.png
     }\
 }
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/heatmap", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/heatmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> import base64
 >>> with open("/tmp/heatmap.png", "wb") as f:
@@ -390,8 +408,10 @@ eog /tmp/pointmap.png
 
 ```python
 >>> import requests
+>>> import json
+>>>
 >>> payload = {\
-    "scope": "scope1",\
+    "scope": "nyc_taxi",\
     "session": "spark",\
     "sql": "SELECT ST_GeomFromText(buildingtext_dropoff) AS wkt, avg(tip_amount) AS w FROM nyc_taxi WHERE ((buildingtext_dropoff!='')) GROUP BY wkt",\
     "params": {\
@@ -413,11 +433,11 @@ eog /tmp/pointmap.png
             5\
         ],\
         "opacity": 1,\
-        "aggregation_type": "avg"\
+        "aggregation_type": "mean"\
     }\
 }
 >>>
->>> r = requests.post(url="http://127.0.0.1:8080/choroplethmap", headers={"Content-Type": "application/json"}, data=payload)
+>>> r = requests.post(url="http://127.0.0.1:8080/choroplethmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> import base64
 >>> with open("/tmp/choroplethmap.png", "wb") as f:
@@ -429,6 +449,93 @@ eog /tmp/pointmap.png
 轮廓图样例：
 
 ![轮廓图choroplethmap.png](../../../img/restful-result/choroplethmap.png)
+
+### 图标图
+
+使用 `/icon_viz` 接口根据乘客上车地点绘制图标图。图标图中具体参数说明请参见 [图标图 Restful API 说明](./api/function/icon_viz.html)。
+
+```python
+>>> import requests
+>>> import json
+>>>
+>>> # 下面 icon_path 的路径填写待显示图标所在的绝对路径，
+>>> # 本例中的图标文件可通过如下命令获取：
+>>> # wget https://github.com/zilliztech/arctern-docs/raw/branch-0.1.x/img/icon/icon-viz.png
+>>> payload = {\
+    "scope": "nyc_taxi",\
+    "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point from nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))')) limit 25",\
+    "params": {\
+        "width": 512,\
+        "height": 448,\
+        "bounding_box": [\
+            -73.9616334766551,\
+            40.704739019597156,\
+            -73.94232850242967,\
+            40.728133570887906\
+        ],\
+        "coordinate_system": "EPSG:4326",\
+        "icon_path": "path_to_icon_example.png"\
+    }\
+}
+>>> 
+>>> r = requests.post(url="http://127.0.0.1:8080/icon_viz", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
+>>> 
+>>> # 保存为png
+>>> import base64
+>>> with open("/tmp/icon_viz.png", "wb") as f:
+...     f.write(base64.b64decode(r.json()['result']))
+... 
+>>>
+```
+
+图标图样例：
+
+![图标图icon_viz](../../../img/restful-result/icon_viz.png)
+
+### 渔网图
+
+使用 `/fishnetmap` 接口根据乘客上车地点绘制渔网图，使用总费用作为渔网网格的权重，总费用越高，权重越大，渔网网格的颜色越深。渔网图中具体参数说明请参见 [渔网图 Restful API 说明](./api/function/fishnetmap.html)。
+
+```python
+>>> import requests
+>>> import json
+>>>
+>>> payload = {\
+    "scope": "nyc_taxi",\
+    "sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color FROM nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))'))",\
+    "params": {\
+        "width": 512,\
+        "height": 448,\
+        "bounding_box": [\
+            -73.9616334766551,\
+            40.704739019597156,\
+            -73.94232850242967,\
+            40.728133570887906\
+        ],\
+        "opacity": 1,\
+        "coordinate_system": "EPSG:4326",\
+        "cell_size": 4,\
+        "cell_spacing": 1,\
+        "color_gradient": [\
+            "#115f9a",\
+            "#d0f400"\
+        ],\
+        "aggregation_type": "sum"\
+    }\
+}
+>>> 
+>>> r = requests.post(url="http://127.0.0.1:8080/fishnetmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
+>>> 
+>>> # 保存为png
+>>> import base64
+>>> with open("/tmp/fishnetmap.png", "wb") as f:
+...     f.write(base64.b64decode(r.json()['result']))
+... 
+```
+
+渔网图样例：
+
+![渔网图fishnetmap](../../../img/restful-result/fishnetmap.png)
 
 ### 删除作用域
 

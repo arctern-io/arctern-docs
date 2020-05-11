@@ -13,7 +13,7 @@
 {
     "scope": "scope_name",
     "session": "session_name",
-    "sql": "select ST_Point(col2, col2) as point, col2 as count from table_name",
+    "sql": "select ST_GeomFromText(col_wkb_polygon) as polygon, col2 as count from table_name",
     "params": {
         "width": 1024,
         "height": 896,
@@ -37,22 +37,33 @@
     - height：图片高度；
     - bounding_box：渲染图片所表示的地理范围 [`x_min`, `y_min`, `x_max`, `y_max`]；
     - coordinate_system：输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)；
-    - color_gradient：点的颜色渐变范围，即点的颜色从左边渐变到右边；
-    - color_bound：点颜色的取值范围，与 `color_gradient` 配合使用；
-    - opacity：点的不透明度。
+    - color_gradient：轮廓的颜色渐变范围，即轮廓的颜色从左边渐变到右边；
+    - color_bound：轮廓颜色的取值范围，与 `color_gradient` 配合使用；
+    - opacity：轮廓的不透明度。
     - aggregation_type：聚合类型。
 
-样例：
+## 样例
+
+### python
+
+本文示例代码使用 python 的 `requests` 库调用 `Arctern Restful API`，使用下面的命令安装 `requests`：
+
+```shell
+pip install requests
+```
+
+调用示例：
 
 ```python
 import requests
+import json
 
 url = "http://localhost:8080/choroplethmap"
 
 payload  = {
     "scope": "scope_name",
     "session": "session_name",
-    "sql": "select ST_Point(col2, col2) as point, col2 as count from table_name",
+    "sql": "select ST_GeomFromText(col_wkb_polygon) as polygon, col2 as count from table_name",
     "params": {
         "width": 1024,
         "height": 896,
@@ -67,10 +78,12 @@ headers = {
   'Content-Type': 'application/json'
 }
 
-response = requests.request("POST", url, headers=headers, data = payload)
+response = requests.request("POST", url, headers=headers, data=json.dumps(payload))
 
 print(response.text.encode('utf8'))
 ```
+
+### curl
 
 ```shell
 curl --location --request POST 'http://localhost:8080/choroplethmap' \
@@ -78,7 +91,7 @@ curl --location --request POST 'http://localhost:8080/choroplethmap' \
 --data-raw '{
     "scope": "scope_name",
     "session": "session_name",
-    "sql": "select ST_Point(col2, col2) as point, col2 as count from table_name",
+    "sql": "select ST_GeomFromText(col_wkb_polygon) as polygon, col2 as count from table_name",
     "params": {
         "width": 1024,
         "height": 896,

@@ -1,6 +1,6 @@
 # heatmap
 
-绘制一个热力图，需要先后调用 vega_heatmap 和 heatmap 两个接口，首先使用 vega_heatmap 构建描述热力图渲染样式的 VegaHeatMap 对象，然后使用 heatmap 渲染图像。
+绘制一个热力图。需要先后调用 vega_heatmap 和 heatmap 两个接口。首先使用 vega_heatmap 构建描述热力图渲染样式的 VegaHeatMap 对象，然后使用 heatmap 渲染图像。
 
 ## vega_heatmap
 
@@ -74,8 +74,8 @@ coordinate_system,aggregation_type)**
       >>> 
       >>> # test_data.csv下载链接: https://github.com/zilliztech/arctern-resources/raw/benchmarks/benchmarks/dataset/layer_rendering_test_data/test_data.csv
       >>> table_df = spark.read.format("csv").option("header", True).option("delimiter", ",").schema(
-      >>>     "longitude double, latitude double, color_weights double, size_weights double, region_boundaries string").load(
-      >>>     "file:///tmp/test_data.csv").cache()
+      "longitude double, latitude double, color_weights double, size_weights double, region_boundaries string").load(
+      "file:///path/to/test_data.csv").cache()
       >>> table_df.createOrReplaceTempView("test_table")
       >>> 
       >>> register_funcs(spark)

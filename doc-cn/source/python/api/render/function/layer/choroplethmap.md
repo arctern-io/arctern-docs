@@ -1,6 +1,6 @@
 # choropleth_map_layer
 
-绘制一个轮廓图，需要先后调用 vega_choroplethmap 和 choropleth_map_layer 两个接口，首先使用 vega_choroplethmap 构建描述轮廓图渲染样式的 VegaChoroplethMap 对象，然后使用 choropleth_map_layer 渲染图像。
+绘制一个轮廓图。需要先后调用 vega_choroplethmap 和 choropleth_map_layer 两个接口。首先使用 vega_choroplethmap 构建描述轮廓图渲染样式的 VegaChoroplethMap 对象，然后使用 choropleth_map_layer 渲染图像。
 
 ## vega_choroplethmap
 
@@ -19,7 +19,7 @@ color_bound,opacity,coordinate_system,aggregation_type)**
 
 &#x2002; &#x2003; &#x2002; &#x2003; * color_gradient(list) -- 轮廓的颜色渐变范围，表示形式为 ["hex_color"] 或 ["hex_color1", "hex_color2"]。当形式为["hex_color"] 时所有轮廓的颜色相同。当形式为["hex_color1", "hex_color2"] 时轮廓的颜色由输入数据中一列的值（权重）决定，且颜色在 "hex_color1" ~ "hex_color2" 之间变化。
 
-&#x2002; &#x2003; &#x2002; &#x2003; * color_bound(list) -- 可选参数，用于描述权重与颜色的对应关系，仅当color_gradient中包含两个颜色值时需要设置，表示形式为 [color_min, color_max]。权重值小于等于 color_min 时点的颜色为"hex_color1"， 权重值大于等于 color_max 时点的颜色为"hex_color2"。
+&#x2002; &#x2003; &#x2002; &#x2003; * color_bound(list) -- 可选参数，用于描述权重与颜色的对应关系，仅当color_gradient中包含两个颜色值时需要设置，表示形式为 [color_min, color_max]。权重值小于等于 color_min 时轮廓的颜色为"hex_color1"， 权重值大于等于 color_max 时轮廓的颜色为"hex_color2"。
 
 &#x2002; &#x2003; &#x2002; &#x2003; * opacity(float) -- 可选参数，表示轮廓的不透明度，范围为 0.0 ~ 1.0，默认值为 1.0。
 
@@ -49,7 +49,7 @@ color_bound,opacity,coordinate_system,aggregation_type)**
 
 &#x2002; &#x2003; &#x2002; &#x2003; * vega(VegaChoroplethMap) -- VegaChoroplethMap 对象。
 
-&#x2002; &#x2003; &#x2002; &#x2003; * points(Series(dtype: object)) -- 所需绘制的多边形轮廓，格式为WKB。
+&#x2002; &#x2003; &#x2002; &#x2003; * region_boundaries(Series(dtype: object)) -- 所需绘制的多边形轮廓，格式为WKB。
 
 &#x2002; &#x2003; &#x2002; &#x2003; * weights(Series(dtype: float64|int64)) -- 轮廓的颜色权重。
 
@@ -75,7 +75,7 @@ color_bound,opacity,coordinate_system,aggregation_type)**
       >>> 
       >>> # 读取 csv 文件并创建绘图数据
       >>> # test_data.csv下载链接: https://github.com/zilliztech/arctern-resources/raw/benchmarks/benchmarks/dataset/layer_rendering_test_data/test_data.csv
-      >>> df = pd.read_csv("test_data.csv", dtype={'longitude':np.float64, 'latitude':np.float64, 'color_weights':np.float64, 'size_weights':np.float64, 'region_boundaries':np.object})
+      >>> df = pd.read_csv("/path/to/test_data.csv", dtype={'longitude':np.float64, 'latitude':np.float64, 'color_weights':np.float64, 'size_weights':np.float64, 'region_boundaries':np.object})
       >>> input1 = df[pd.notna(df['region_boundaries'])].groupby(['region_boundaries']).mean().reset_index()
       >>> polygon = arctern.ST_GeomFromText(input1['region_boundaries'])
       >>> 

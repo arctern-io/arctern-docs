@@ -17,12 +17,18 @@ Arctern 提供基于 Restful 接口的 Web 服务。通过配置可将 Restful S
 sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 ```
 
+安装 Java，建议安装 open-jdk-8：
+
+```bash
+sudo apt-get install openjdk-8-jdk
+```
+
 ### 创建 Conda 虚拟环境
 
 通过以下命令为 Arctern Restful Server 构建 Conda 环境。此处假设环境名称为 `arctern_server`，用户可根据需求自行选择合适的环境名称。
 
 ```shell
-conda create -n arctern_server python=3.7
+conda create -n arctern_server -c conda-forge python=3.7.6
 ```
 
 进入 `arctern_server` 虚拟环境：
@@ -37,7 +43,7 @@ conda activate arctern_server
 Arctern Restful Server 的运行依赖于 Arctern-Spark，使用以下命令在虚拟环境中安装 Arctern-Spark 包:
 
 ```shell
-conda install -y -q -c conda-forge -c arctern-dev arctern-spark
+conda install -y -q -c conda-forge -c arctern arctern-spark
 ```
 
 > 此处安装 Arctern-Spark 仅用于解决 Restful Server 的运行时依赖，不能作为执行 Restful 请求的 Arctern-Spark 后台。
@@ -62,15 +68,22 @@ python setup.py install
 
 ### 基于源码的安装
 
-从 [Arctern Github 仓库](https://github.com/zilliztech/arctern) 下载源码，在 `gui/server/arctern_server` 路径下运行以下命令构建 Arctern Restful Server 依赖环境：
+运行以下命令安装 Arctern Restful Server：
 
 ```bash
+# 下载源码
+git clone https://github.com/zilliztech/arctern.git
+# 切换分支
+cd arctern
+git checkout branch-0.1.x
+# 安装依赖
+cd gui/server/arctern_server
 pip install -r requirements.txt
 ```
 
 ### 基于 PIP 的安装
 
-运行以下命令安装 Arctern Restful Server。
+运行以下命令安装 Arctern Restful Server：
 
 ```bash
 pip install arctern_server
@@ -96,11 +109,42 @@ import arctern_server
 print(arctern_server.__path__)
 ```
 
-执行上述代码将会在终端打印 Restful Server 的安装目录，修改该目录下的 `config.ini`，配置 Arctern Restful Server 所使用的 Arctern-Spark 后台信息。文件配置示例如下，其中 `spark_master_ip` 和 `port` 分别为后台 Arctern-Spark 中 master 节点的 IP 地址和端口号：
+执行上述代码将会在终端打印 Restful Server 的安装目录，修改该目录下的 `config.ini`，配置 Arctern Restful Server 所使用的 Arctern-Spark 后台信息。文件配置示例如下：
 
-```bash
+```ini
 [spark]
 master-addr = spark://spark_master_ip:port
+```
+
+`master-addr` 的值根据 spark 部署模式的不同有以下三种情况：
+
+`local` 模式：
+
+```ini
+[spark]
+# local[K]表示在本地启动K个worker线程，
+# local表示启动一个worker线程，
+# local[*]表示启动尽可能多的worker线程，数量一般等于计算机核心数，
+# 具体可见 https://spark.apache.org/docs/latest/submitting-applications.html
+master-addr = local[*]
+```
+
+`standalone ` 集群模式：
+
+```ini
+[spark]
+# spark_master_ip 为 master 节点的 IP 地址，
+# port 为 master 节点监听 spark 任务的端口号，一般为7077，
+# 具体可见 https://spark.apache.org/docs/latest/spark-standalone.html
+master-addr = spark://spark_master_ip:port
+```
+
+`yarn` 集群模式：
+
+```ini
+[spark]
+# 具体可见 https://spark.apache.org/docs/latest/running-on-yarn.html
+master-addr = yarn
 ```
 
 ## 启动 Arctern Restful Server
@@ -110,7 +154,8 @@ master-addr = spark://spark_master_ip:port
 在 Arctern 项目的 `gui/server/arctern_server` 目录下使用以下命令启动服务，其中`/path/to/server` 为 Arctern 项目下 `gui/server` 目录的绝对路径。
 
 ```shell
-export PYTHONPATH=/path/to/server:$PYTHONPATH
+# 将/path/to/arctern/gui/server替换为实际gui/server所在路径
+export PYTHONPATH=/path/to/arctern/gui/server:$PYTHONPATH
 python manage.py
 ```
 
@@ -119,7 +164,7 @@ python manage.py
 完成配置后，使用以下命令启动服务：
 
 ```shell
-arctern_server
+arctern-server
 ```
 
 ### 命令参数介绍
@@ -131,9 +176,9 @@ arctern_server
 
 * -r：以 release 模式启动服务
 
-* -p：为服务指定 http 端口
+* -p：为服务指定 http 端口，默认为 `8080`
 
-* -i：为服务指定 IP 地址
+* -i：为服务指定 IP 地址，默认为本机IP `127.0.0.1`
 
 * --logfile= [path/to/logfile]： 配置日志文件路径信息，默认值为：` ./log.txt`
 

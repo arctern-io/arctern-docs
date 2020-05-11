@@ -42,7 +42,7 @@
 
 通过以下命令创建 Arctern Conda 环境。此处假设环境名称为 `arctern_python`，用户可根据需求自行选择合适的环境名称。
 
-`conda create -n arctern_python python=3.7`
+`conda create -n arctern_python -c conda-forge python=3.7.6`
 
 创建成功后，可以通过 `conda env list` 命令查看所有Conda环境，其输出结果应包含 Arctern 环境，类似如下：
   
@@ -68,8 +68,7 @@
 执行以下命令在 Conda 环境中安装 Arctern CPU 版本：
 
 ```shell
-   conda install -c arctern libarctern
-   conda install -c arctern arctern
+   conda install -c arctern -c conda-forge arctern
 ```
 
 * GPU版本
@@ -77,26 +76,32 @@
 执行以下命令在 Conda 环境中安装 Arctern GPU 版本：
 
 ```shell
-   conda install -c arctern/label/cuda10.0 libarctern 
-   conda install -c arctern arctern
+   conda install -c arctern/label/cuda10.0 -c conda-forge libarctern 
+   conda install -c arctern -c conda-forge arctern
 ```
 
 ## 安装验证
 
-进入 Python 环境，尝试导入 `arctern` 验证安装是否成功。
+进入 Python 环境，尝试导入 `arctern` 并确认版本是否正确。
 
 ```python
 Python 3.7.6 | packaged by conda-forge | (default, Jan 29 2020, 14:55:04)
 [GCC 7.3.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import arctern
+>>> arctern.version()
 ```
 
 ## 测试样例
 
+安装py.test
+```bash
+conda install pytest
+```
+
 下载测试文件
 ```bash
-wget https://raw.githubusercontent.com/zilliztech/arctern/branch-0.1.x/python/tests/geo/geo_test.py
+wget https://raw.githubusercontent.com/zilliztech/arctern/v0.1.0/python/tests/geo/geo_test.py
 ```
 
 通过以下命令执行测试文件
