@@ -1,6 +1,6 @@
 # 在线安装
-本文档介绍在 Spark 环境中安装 Arctern 的步骤。
 
+本文档介绍在 Spark 环境中安装 Arctern 的步骤。
 
 ## 安装要求
 
@@ -12,7 +12,6 @@
 | Conda  | Miniconda Python3  |
 | Spark | 3.0  |
 
-
 * GPU 版本
 
 |  名称    |   版本     |
@@ -23,60 +22,50 @@
 |CUDA|10.0|
 |Nvidia driver|4.30|
 
-
-
 ## 安装依赖库
-
 
 * CPU 版本
 
-  使用以下命令安装 Arctern-Spark CPU 版本的依赖库：
+  执行以下命令安装 Arctern-Spark CPU 版本的依赖库：
 ```bash
     sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 ```
 
 * GPU 版本
 
-
-  使用以下命令安装 Arctern-Spark GPU 版本的依赖库：
+  执行以下命令安装 Arctern-Spark GPU 版本的依赖库：
 ```bash
     sudo apt install libgl1-mesa-dev libegl1-mesa-dev
 ```
-
-
 
 ## 创建 Arctern-Spark Conda 环境
 
 ### 创建 Conda 虚拟环境
 
-通过以下命令为 Arctern-Spark 创建 Conda 环境。此处假设环境名称为 `arctern_spark`，用户可根据需求自行选择合适的环境名称。
+执行以下命令为 Arctern-Spark 创建 Conda 环境。此处假设环境名称为 `arctern_env`，用户可根据需求自行选择合适的环境名称。
 
-`conda create -n arctern_spark -c conda_forge python=3.7.6`
+`conda create -n arctern_env -c conda_forge python=3.7.6`
 
-创建成功后，可以通过 `conda env list` 命令查看所有Conda环境，其输出结果应包含Arctern环境，类似如下：
+创建成功后，可以通过 `conda env list` 命令查看所有 Conda 环境，其输出结果应包含 Arctern 环境，类似如下：
   
   ```bash
   conda environments:
   base               ...
-  arctern_spark      ...
+  arctern_env      ...
   ...
   ```
 
- 进入 Arctern-Spark 环境：
+ 进入 arctern-env 环境：
 
-  `conda activate arctern_spark`
+  `conda activate arctern_env`
 
-
-**注意：后续工作必须在 Arctern 环境中进行**
-
-
+> 注意：后续工作必须在 Arctern 环境中进行。
 
 ## 安装 Arctern-Spark
 
-
 * CPU 版本
 
-执行以下命令在 Conda 环境中安装 arctern_spark CPU 版本：
+执行以下命令在 Conda 环境中安装 Arctern-Spark 的 CPU 版本：
 
 ```shell
     conda install -c arctern -c conda-forge arctern-spark
@@ -84,7 +73,7 @@
 
 * GPU版本
 
-执行以下命令在 Conda 环境中安装 arctern_spark GPU 版本：  
+执行以下命令在 Conda 环境中安装 Arctern-Spark 的 GPU 版本：  
 
 ```shell
     conda install -c arctern/label/cuda10.0 -c conda-forge libarctern
@@ -107,17 +96,17 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## 配置 Spark 的 Python 路径
 
-在文件 `conf/spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为Conda的安装路径。
+在文件 `conf/spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。
 
 ```bash
-spark.executorEnv.PROJ_LIB [path/to/your/conda]/envs/arctern_spark/share/proj
-spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern_spark/share/gdal
+spark.executorEnv.PROJ_LIB [path/to/your/conda]/envs/arctern_env/share/proj
+spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern_env/share/gdal
 ```
 
 在文件 `conf/spark-env.sh` 的最后添加以下内容。其中 `[path/to/your/conda]` 为Conda的安装路径。
 
 ```bash
-export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_spark/bin/python
+export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_env/bin/python
 ```
 
 ### 确认路径配置是否成功
@@ -134,21 +123,21 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_spark/bin/python
 >>> print(sys.prefix)
 ```
 
-如果终端打印了一下内容，说明 PySpark 的 Python 路径配置成功。
+如果终端打印了以下内容，说明 PySpark 的 Python 路径配置成功。
 
 ```bash
-[path/to/your/conda]/envs/arctern_spark
+[path/to/your/conda]/envs/arctern_env
 ```
 
 ## 测试样例
 
-下载测试文件
+执行以下命令下载测试文件：
 
 ```bash
 wget https://raw.githubusercontent.com/zilliztech/arctern/v0.1.0/spark/pyspark/examples/gis/spark_udf_ex.py
 ```
 
-通过以下命令提交 Spark 任务，其中 `[path/to/]spark_udf_ex.py` 为测试文件所在的路径。
+执行以下命令提交 Spark 任务，其中 `[path/to/]spark_udf_ex.py` 为测试文件所在的路径。
 
 ```bash
 # local mode
@@ -168,7 +157,7 @@ All tests of arctern have passed!
 
 ## 卸载
 
-在 Conda 环境中输入以下命令可卸载 Arctern-Spark
+在 Conda 环境中输入以下命令可卸载 Arctern-Spark：
 
 ```shell
 conda uninstall libarctern arctern arctern-spark
