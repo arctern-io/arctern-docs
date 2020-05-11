@@ -52,7 +52,7 @@ $ /bin/bash ~/miniconda.sh -b -p ${conda_install_path}
 
 ### 创建 Conda 虚拟环境
 
-执行以下命令创建 Arctern Conda 环境。此处假设环境名称为 `arctern_env`，用户可根据需求自行选择合适的环境名称。
+执行以下命令创建 Arctern Conda 环境。此处假设环境名称为 `arctern_env`，你可根据需求自行选择合适的环境名称。
 
 ```bash
 $ . ${conda_install_path}/etc/profile.d/conda.sh
@@ -74,7 +74,7 @@ $ conda create -n arctern_env
   `conda activate arctern_env`
 
 
-> **注意：后续工作必须在 conda 虚拟环境 (arctern_env) 中进行**
+> 注意：后续工作必须在 conda 虚拟环境 (arctern_env) 中进行。
 
 
 ## 安装 Arctern-Spark
@@ -106,14 +106,14 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## 配置 Spark 的 Python 路径
 
-在 `conf/spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为Conda的安装路径。
+在 `conf/spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。
 
 ```bash
 spark.executorEnv.PROJ_LIB [path/to/your/conda]/envs/arctern-spark/share/proj
 spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern-spark/share/gdal
 ```
 
-在文件 `conf/spark-env.sh` 的最后添加以下内容。其中 `[path/to/your/conda]` 为Conda的安装路径。
+在文件 `conf/spark-env.sh` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。
 
 ```bash
 export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern-spark/bin/python
