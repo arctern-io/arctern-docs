@@ -1,5 +1,5 @@
 # 安装部署
-本文档介绍在 python 环境中安装 Arctern 的步骤。
+本文档介绍在 Python 环境中安装 Arctern 的步骤。
 
 ## 安装要求
 
