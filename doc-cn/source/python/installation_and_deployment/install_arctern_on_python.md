@@ -41,7 +41,7 @@
 
 `conda create -n arctern_env -c conda-forge python=3.7.6`
 
-创建成功后，可以通过 `conda env list` 命令查看所有Conda环境，其输出结果应包含 Arctern 环境，类似如下：
+创建成功后，可以通过 `conda env list` 命令查看所有 Conda 环境，其输出结果应包含 Arctern 环境，类似如下：
   
   ```bash
   conda environments:
@@ -89,7 +89,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## 测试样例
 
-安装py.test：
+安装 py.test：
 ```bash
 conda install pytest
 ```

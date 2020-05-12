@@ -81,7 +81,7 @@ cd gui/server/arctern_env
 pip install -r requirements.txt
 ```
 
-### 基于 PIP 的安装
+### 基于 pip 的安装
 
 执行以下命令安装 Arctern RESTful Server：
 
@@ -100,7 +100,7 @@ pip install arctern_env
 master-addr = spark://spark_master_ip:port
 ```
 
-### 配置基于 PIP 安装的 Arctern RESTful Server
+### 配置基于 pip 安装的 Arctern RESTful Server
 
 执行以下 Python 代码查看 RESTful Server 的安装目录：
 
@@ -182,7 +182,7 @@ arctern-server
 
 * -i：为服务指定 IP 地址，默认为本机IP `127.0.0.1`
 
-* --logfile= [path/to/logfile]： 配置日志文件路径信息，默认值为：` ./log.txt`
+* --logfile= [path/to/logfile]： 配置日志文件路径信息，默认值为：`./log.txt`
 
 * --loglevel= [log level]：配置日志级别(debug/info/warn/error/fatal)，默认值为: `info` 
 
@@ -193,11 +193,7 @@ export PYTHONPATH=/path/to/server:$PYTHONPATH
 python manage.py -r -i 192.168.1.2 -p 8088 
 ```
 
-<<<<<<< HEAD
 其中 `/path/to/server` 为 Arctern 项目下 `gui/server` 目录的绝对路径。
-=======
-其中`/path/to/server` 为 Arctern 项目下 `gui/server` 目录的绝对路径。
->>>>>>> 82eb7ea28aa77430db0d5d97d3365e5cf4b4c5e0
 
 
 完成以上步骤即完成了 Arctern RESTful Server 的安装和配置，请参考 Arctern RESTful 服务[接口文档](./api/api.html)和[使用示例](./restful_quick_start.md)使用 Arctern RESTful 服务。

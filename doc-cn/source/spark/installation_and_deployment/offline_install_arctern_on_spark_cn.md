@@ -1,8 +1,5 @@
 # 离线安装
-<<<<<<< HEAD
 
-=======
->>>>>>> 82eb7ea28aa77430db0d5d97d3365e5cf4b4c5e0
 本文档介绍在 Spark 环境中离线安装 Arctern 的步骤。
 
 ## 安装要求
@@ -35,7 +32,7 @@ $ ./install_packages.sh gl      # 安装gl-mesa库
 $ ./install_packages.sh jdk     # 安装java8
 ```
 
-### 安装Spark
+### 安装 Spark
 
 在 `spark-3.0.0-preview2-bin-hadoop2.7.tgz` 文件所在目录下执行以下命令，将文件解压到指定目录：
 
@@ -43,7 +40,7 @@ $ ./install_packages.sh jdk     # 安装java8
 $ mkdir -p ${spark_install_path} && tar zxvf spark-3.0.0-preview2-bin-hadoop2.7.tgz -C ${spark_install_path}
 ```
 
-### 安装Miniconda
+### 安装 Miniconda
 
 执行以下命令安装 Miniconda：
 
@@ -130,7 +127,7 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern-spark/bin/python
 [path/to/your/spark]/bin/pyspark
 ```
 
-在交互界面中输入一下内容打印 PySpark 的 Python 路径。
+在交互界面中输入以下内容打印 PySpark 的 Python 路径。
 ```python
 >>> import sys
 >>> print(sys.prefix)
