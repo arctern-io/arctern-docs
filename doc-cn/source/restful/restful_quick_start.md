@@ -296,7 +296,7 @@ pip install requests
 >>>
 >>> r = requests.post(url="http://127.0.0.1:8080/pointmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
->>> # 保存为png
+>>> # 保存为 PNG 图片
 ... 
 >>> import base64
 >>> with open("/tmp/pointmap.png", "wb") as f:
@@ -305,7 +305,7 @@ pip install requests
 >>> 
 ```
 
-在上述样例代码中，我们将点图数据保存在了 `/tmp/pointmap.png`，可以在终端使用如下命令查看点图渲染效果：
+在上述样例代码中，我们将点图数据保存在了 `/tmp/pointmap.png`。你可以在终端使用如下命令查看点图渲染效果：
 
 ```shell
 eog /tmp/pointmap.png
@@ -482,7 +482,7 @@ eog /tmp/pointmap.png
 >>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/icon_viz", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
->>> # 保存为png
+>>> # 保存为 PNG 图片
 >>> import base64
 >>> with open("/tmp/icon_viz.png", "wb") as f:
 ...     f.write(base64.b64decode(r.json()['result']))
@@ -528,7 +528,7 @@ eog /tmp/pointmap.png
 >>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/fishnetmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
->>> # 保存为png
+>>> # 保存为 PNG 图片
 >>> import base64
 >>> with open("/tmp/fishnetmap.png", "wb") as f:
 ...     f.write(base64.b64decode(r.json()['result']))
@@ -537,7 +537,7 @@ eog /tmp/pointmap.png
 
 渔网图样例：
 
-![渔网图fishnetmap](../../../img/restful-result/fishnetmap.png)
+![渔网图](../../../img/restful-result/fishnetmap.png)
 
 ### 删除作用域
 
