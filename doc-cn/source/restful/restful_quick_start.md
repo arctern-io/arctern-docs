@@ -33,7 +33,7 @@
 
 > 该数据的时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`
 
-下述示例中假设服务器 IP 地址为 `127.0.0.1`，Restful服务端口为 `8080`，数据文件所在路径为 `/example/data/0_2M_nyc_taxi_and_building.csv`。
+下述示例中假设服务器 IP 地址为`127.0.0.1`，Restful服务端口为`8080`，数据文件所在路径为 `/example/data/0_2M_nyc_taxi_and_building.csv`。
 
 ### 安装依赖
 
