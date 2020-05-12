@@ -133,7 +133,7 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern-spark/bin/python
 >>> print(sys.prefix)
 ```
 
-如果终端打印了一下内容，说明 PySpark 的 Python 路径配置成功。
+如果终端打印了以下内容，说明 PySpark 的 Python 路径配置成功。
 
 ```bash
 [path/to/your/conda]/envs/arctern-spark
