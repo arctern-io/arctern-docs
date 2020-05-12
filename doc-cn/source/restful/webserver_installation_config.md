@@ -77,7 +77,7 @@ git clone https://github.com/zilliztech/arctern.git
 cd arctern
 git checkout master
 # 安装依赖
-cd gui/server/arctern_env
+cd gui/server/arctern-spark
 pip install -r requirements.txt
 ```
 
@@ -86,7 +86,7 @@ pip install -r requirements.txt
 执行以下命令安装 Arctern RESTful Server：
 
 ```bash
-pip install arctern_env
+pip install arctern-spark
 ```
 
 ## 配置后台 Arctern-Spark 信息
@@ -105,8 +105,8 @@ master-addr = spark://spark_master_ip:port
 执行以下 Python 代码查看 RESTful Server 的安装目录：
 
 ```python
-import arctern_env
-print(arctern_env.__path__)
+import arctern-spark
+print(arctern-spark.__path__)
 ```
 
 执行上述代码将会在终端打印 RESTful Server 的安装目录，修改该目录下的 `config.ini`，配置 Arctern RESTful Server 所使用的 Arctern-Spark 后台信息。文件配置示例如下：
