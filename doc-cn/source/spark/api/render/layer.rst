@@ -9,3 +9,4 @@ Layer Functions (Experimental)
    function/layer/heatmap
    function/layer/choroplethmap
    function/layer/iconviz
+   function/layer/fishnetmap
