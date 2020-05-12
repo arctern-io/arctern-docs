@@ -109,14 +109,14 @@ Type "help", "copyright", "credits" or "license" for more information.
 在 `conf/spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。
 
 ```bash
-spark.executorEnv.PROJ_LIB [path/to/your/conda]/envs/arctern-spark/share/proj
-spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern-spark/share/gdal
+spark.executorEnv.PROJ_LIB [path/to/your/conda]/envs/arctern_env/share/proj
+spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern_env/share/gdal
 ```
 
 在文件 `conf/spark-env.sh` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。
 
 ```bash
-export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern-spark/bin/python
+export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_env/bin/python
 ```
 
 ### 确认路径配置是否成功
@@ -167,7 +167,7 @@ All tests of arctern have passed!
 在 Conda 环境中执行以下命令可卸载 Arctern-Spark：
 
 ```shell
-conda uninstall -n arctern libarctern arctern arctern-spark
+conda uninstall libarctern arctern-spark
 ```
 
 ## FAQ
