@@ -15,4 +15,5 @@ API
    function/heatmap
    function/choroplethmap
    function/icon_viz
+   function/fishnetmap
    function/command
