@@ -1,4 +1,5 @@
 # 离线安装
+
 本文档介绍在 Spark 环境中离线安装 Arctern 的步骤。
 
 ## 安装要求
@@ -11,7 +12,7 @@
 
 ### 下载离线安装文件
 
-通过以下命令在联网环境中分别下载 Arctern-Spark 的系统依赖、Spark 和 Miniconda 安装文件,并将其拷贝至需要安装 Arctern-Spark 的离线环境。
+执行以下命令在联网环境中分别下载 Arctern-Spark 的系统依赖、Spark 和 Miniconda 安装文件,并将其拷贝至需要安装 Arctern-Spark 的离线环境。
 
 ```bash
 $ git clone -b offline https://github.com/zilliztech/arctern-resources.git
@@ -31,7 +32,7 @@ $ ./install_packages.sh gl      # 安装gl-mesa库
 $ ./install_packages.sh jdk     # 安装java8
 ```
 
-### 安装Spark
+### 安装 Spark
 
 在 `spark-3.0.0-preview2-bin-hadoop2.7.tgz` 文件所在目录下执行以下命令，将文件解压到指定目录：
 
@@ -39,7 +40,7 @@ $ ./install_packages.sh jdk     # 安装java8
 $ mkdir -p ${spark_install_path} && tar zxvf spark-3.0.0-preview2-bin-hadoop2.7.tgz -C ${spark_install_path}
 ```
 
-### 安装Miniconda
+### 安装 Miniconda
 
 执行以下命令安装 Miniconda：
 
@@ -47,34 +48,33 @@ $ mkdir -p ${spark_install_path} && tar zxvf spark-3.0.0-preview2-bin-hadoop2.7.
 $ /bin/bash ~/miniconda.sh -b -p ${conda_install_path}
 ```
 
-
 ## 创建 Arctern Conda 离线环境
 
 ### 创建 Conda 虚拟环境
 
-通过以下命令创建 Arctern Conda 环境。此处假设环境名称为 `arctern_spark`，用户可根据需求自行选择合适的环境名称。
+执行以下命令创建 Arctern Conda 环境。此处假设环境名称为 `arctern_env`，你可根据需求自行选择合适的环境名称。
 
 ```bash
 $ . ${conda_install_path}/etc/profile.d/conda.sh
 $ conda config --set offline True
-$ conda create -n arctern-spark
+$ conda create -n arctern_env
 ```
 
-创建成功后，可以通过 `conda env list` 命令查看所有Conda环境，其输出结果应包含Arctern环境，类似如下：
+创建成功后，可以通过 `conda env list` 命令查看所有 Conda 环境，其输出结果应包含 Arctern 环境，类似如下：
 
   ```bash
   conda environments:
   base         ...
-  arctern-spark      ...
+  arctern_env      ...
   ...
   ```
 
  进入 Arctern 环境：
 
-  `conda activate arctern-spark`
+  `conda activate arctern_env`
 
 
-> **注意：后续工作必须在 conda 虚拟环境 (arctern-spark) 中进行**
+> 注意：后续工作必须在 conda 虚拟环境 (arctern_env) 中进行。
 
 
 ## 安装 Arctern-Spark
@@ -82,13 +82,13 @@ $ conda create -n arctern-spark
 执行以下命令在 Conda 环境中安装 Arctern-Spark：
 
 ```bash
-$ conda install -n arctern-spark -c file:///[path/to/channel] arctern-spark --offline   --override-channels
+$ conda install -n arctern_env -c file:///[path/to/channel] arctern-spark --offline   --override-channels
 ```
 
 其中， `[path/to/channel]`为 `arctern-resources` 文件夹下 `arctern-resources/arctern_dependencies/conda_dependencies/channel` 目录所在路径，例如:
 
 ```bash
-$ conda install -n arctern-spark -c file:///tmp/arctern-resources/arctern_dependencies/conda_dependencies/channel arctern-spark   --offline --override-channels
+$ conda install -n arctern_env -c file:///tmp/arctern-resources/arctern_dependencies/conda_dependencies/channel arctern-spark   --offline --override-channels
 ```
 
 
@@ -106,17 +106,17 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## 配置 Spark 的 Python 路径
 
-在 `conf/spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为Conda的安装路径。
+在 `conf/spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。
 
 ```bash
-spark.executorEnv.PROJ_LIB [path/to/your/conda]/envs/arctern-spark/share/proj
-spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern-spark/share/gdal
+spark.executorEnv.PROJ_LIB [path/to/your/conda]/envs/arctern_env/share/proj
+spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern_env/share/gdal
 ```
 
-在文件 `conf/spark-env.sh` 的最后添加以下内容。其中 `[path/to/your/conda]` 为Conda的安装路径。
+在文件 `conf/spark-env.sh` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。
 
 ```bash
-export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern-spark/bin/python
+export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_env/bin/python
 ```
 
 ### 确认路径配置是否成功
@@ -127,21 +127,21 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern-spark/bin/python
 [path/to/your/spark]/bin/pyspark
 ```
 
-在交互界面中输入一下内容打印 PySpark 的 Python 路径。
+在交互界面中输入以下内容打印 PySpark 的 Python 路径。
 ```python
 >>> import sys
 >>> print(sys.prefix)
 ```
 
-如果终端打印了一下内容，说明 PySpark 的 Python 路径配置成功。
+如果终端打印了以下内容，说明 PySpark 的 Python 路径配置成功。
 
 ```bash
-[path/to/your/conda]/envs/arctern-spark
+[path/to/your/conda]/envs/arctern_env
 ```
 
 ## 测试样例
 
-使用测试文件检验 Arctern-Spark 是否安装成功,通过以下命令提交 Spark 任务。
+使用测试文件检验 Arctern-Spark 是否安装成功,执行以下命令提交 Spark 任务。
 
 ```bash
 $ cd arctern-resources/arctern_dependencies/example
@@ -164,15 +164,15 @@ All tests of arctern have passed!
 
 ## 卸载
 
-在 Conda 环境中输入以下命令可卸载 Arctern-Spark
+在 Conda 环境中执行以下命令可卸载 Arctern-Spark：
 
 ```shell
-conda uninstall -n arctern libarctern arctern arctern-spark
+conda uninstall libarctern arctern arctern-spark
 ```
 
 ## FAQ
 
-### 对Spark的支持
+### 对 Spark 的支持
 
 Arctern-Spark 可以运行在 Spark 的各种模式下，需要在每台运行 Spark 的机器上，执行如下操作：
 

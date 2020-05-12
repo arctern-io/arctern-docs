@@ -10,7 +10,6 @@
 | 操作系统 |Ubuntu LTS 18.04|
 | Conda  | Miniconda Python3  |
 
-
 * GPU 版本
 
 |  名称    |   版本     |
@@ -22,46 +21,42 @@
 
 ## 安装依赖库
 
-
 * CPU 版本
 
-  使用以下命令安装 Arctern CPU 版本的依赖库：
+  执行以下命令安装 Arctern CPU 版本的依赖库：
 ```bash
     sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 ```
 
 * GPU 版本
 
-
-  使用以下命令安装 Arctern GPU 版本的依赖库：
+  执行以下命令安装 Arctern GPU 版本的依赖库：
 ```bash
     sudo apt install libgl1-mesa-dev libegl1-mesa-dev
 ```
 
 ## 创建 Arctern Conda 环境
 
-通过以下命令创建 Arctern Conda 环境。此处假设环境名称为 `arctern_python`，用户可根据需求自行选择合适的环境名称。
+执行以下命令创建 Arctern Conda 环境。此处假设环境名称为 `arctern_env`，你可根据需求自行选择合适的环境名称。
 
-`conda create -n arctern_python -c conda-forge python=3.7.6`
+`conda create -n arctern_env -c conda-forge python=3.7.6`
 
-创建成功后，可以通过 `conda env list` 命令查看所有Conda环境，其输出结果应包含 Arctern 环境，类似如下：
+创建成功后，可以通过 `conda env list` 命令查看所有 Conda 环境，其输出结果应包含 Arctern 环境，类似如下：
   
   ```bash
   conda environments:
   base                ...
-  arctern_python      ...
+  arctern_env      ...
   ...
   ```
 
  进入 Arctern 环境：
 
-  `conda activate arctern_python`
+  `conda activate arctern_env`
 
-
-> **注意：后续工作必须在 Arctern Conda 环境中进行**
+> 注意：后续工作必须在 Arctern Conda 环境中进行。
 
 ## 安装 Arctern
-
 
 * CPU 版本
   
@@ -94,17 +89,17 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## 测试样例
 
-安装py.test
+安装 py.test：
 ```bash
 conda install pytest
 ```
 
-下载测试文件
+下载测试文件：
 ```bash
 wget https://raw.githubusercontent.com/zilliztech/arctern/v0.1.0/python/tests/geo/geo_test.py
 ```
 
-通过以下命令执行测试文件
+执行以下命令执行测试文件：
 ```bash
 py.test [/path/to/]geo_test.py
 ```

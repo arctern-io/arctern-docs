@@ -35,7 +35,7 @@
 
 ### 安装依赖
 
-本文示例代码使用 python 的 `requests` 库调用 `Arctern Restful API`，使用下面的命令安装 `requests`：
+本文示例代码使用 Python 的 `requests` 库调用 `Arctern Restful API`，使用下面的命令安装 `requests`：
 
 ```shell
 pip install requests
@@ -45,7 +45,7 @@ pip install requests
 
 ### 创建作用域
 
-使用 `/scope` 接口创建名为 `nyc_taxi` 的作用域。作用域用于为用户分配服务器资源，每个作用域拥有独享的上下文信息，如载入的文件数据。
+使用 `/scope` 接口创建名为 `nyc_taxi` 的作用域。作用域用于为你分配服务器资源，每个作用域拥有独享的上下文信息，如载入的文件数据。
 
 ```python
 >>> import requests
@@ -541,7 +541,7 @@ eog /tmp/pointmap.png
 
 完成操作后需要通过 `/scope/<scope_name>` 接口删除作用域释放服务器资源。
 
-<font color="#dd0000">注意：</font>`Arctern Restful`服务不会主动释放用户申请的作用域，完成操作后请务必删除所申请的所有作用域。
+<font color="#dd0000">注意：</font>`Arctern Restful`服务不会主动释放你申请的作用域，完成操作后请务必删除所申请的所有作用域。
 
 ```python
 >>> import requests
