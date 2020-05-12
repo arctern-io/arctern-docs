@@ -1,18 +1,18 @@
-# Arctern Restful Server 安装与配置
+# Arctern RESTful Server 安装与配置
 
-Arctern 提供基于 Restful 接口的 Web 服务。通过配置可将 Restful Server 与 Arctern-Spark 进行对接，从而以 Restful API 的形式提供 Arctern-Spark 的时空数据分析与展示能力。
+Arctern 提供基于 RESTful 接口的 Web 服务。通过配置可将 RESTful Server 与 Arctern-Spark 进行对接，从而以 RESTful API 的形式提供 Arctern-Spark 的时空数据分析与展示能力。
 
-以下将介绍 Arctern Restful Server 的安装和配置流程。更多 Arctern Restfull API 信息请查看 Restful 服务[接口文档](./api/api.html)和[使用示例](./restful_quick_start.md)。
+以下将介绍 Arctern RESTful Server 的安装和配置流程。更多 Arctern RESTful API 信息请查看 RESTful 服务[接口文档](./api/api.html)和[使用示例](./restful_quick_start.md)。
 
-> 注意：Arctern Restful Server 仅负责 Restful 请求的接收和解析，实际操作由 Restful Server 所连接的 Arctern-Spark 执行。在安装 Arctern Restful Server 前请确保环境存在已安装好 Arctern-Spark 的后台系统。安装 Arctern-Spark 的方式请参照其[安装文档](../spark/installation_and_deployment/installation_and_deployment.html).
+> 注意：Arctern RESTful Server 仅负责 RESTful 请求的接收和解析，实际操作由 RESTful Server 所连接的 Arctern-Spark 执行。在安装 Arctern RESTful Server 前请确保环境存在已安装好 Arctern-Spark 的后台系统。安装 Arctern-Spark 的方式请参照其[安装文档](../spark/installation_and_deployment/installation_and_deployment.html).
 
 ## 安装准备
 
-在安装 Arctern Restful Server 前请预先安装 MiniConda Python3。以下内容假设在 MiniConda 安装完成后进行。
+在安装 Arctern RESTful Server 前请预先安装 MiniConda Python3。以下内容假设在 MiniConda 安装完成后进行。
 
 ### 安装依赖库
 
-执行以下命令安装 Arctern Restful Server 的依赖库：
+执行以下命令安装 Arctern RESTful Server 的依赖库：
 ```bash
 sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 ```
@@ -25,7 +25,7 @@ sudo apt-get install openjdk-8-jdk
 
 ### 创建 Conda 虚拟环境
 
-执行以下命令为 Arctern Restful Server 构建 Conda 环境。此处假设环境名称为 `arctern_env`，你可根据需求自行选择合适的环境名称。
+执行以下命令为 Arctern RESTful Server 构建 Conda 环境。此处假设环境名称为 `arctern_env`，你可根据需求自行选择合适的环境名称。
 
 ```shell
 conda create -n arctern_env -c conda-forge python=3.7.6
@@ -40,13 +40,13 @@ conda activate arctern_env
 
 ### 安装 Arctern-Spark 包
 
-Arctern Restful Server 的运行依赖于 Arctern-Spark，执行以下命令在虚拟环境中安装 Arctern-Spark 包:
+Arctern RESTful Server 的运行依赖于 Arctern-Spark，执行以下命令在虚拟环境中安装 Arctern-Spark 包:
 
 ```shell
 conda install -y -q -c conda-forge -c arctern arctern-spark
 ```
 
-> 此处安装 Arctern-Spark 仅用于解决 Restful Server 的运行时依赖，不能作为执行 Restful 请求的 Arctern-Spark 后台。
+> 此处安装 Arctern-Spark 仅用于解决 RESTful Server 的运行时依赖，不能作为执行 RESTful 请求的 Arctern-Spark 后台。
 
 ### 安装 PySpark
 
@@ -64,11 +64,11 @@ cd python
 python setup.py install
 ```
 
-## 安装 Arctern Restful Server
+## 安装 Arctern RESTful Server
 
 ### 基于源码的安装
 
-执行以下命令安装 Arctern Restful Server：
+执行以下命令安装 Arctern RESTful Server：
 
 ```bash
 # 下载源码
@@ -81,9 +81,9 @@ cd gui/server/arctern_env
 pip install -r requirements.txt
 ```
 
-### 基于 PIP 的安装
+### 基于 pip 的安装
 
-执行以下命令安装 Arctern Restful Server：
+执行以下命令安装 Arctern RESTful Server：
 
 ```bash
 pip install arctern_env
@@ -91,25 +91,25 @@ pip install arctern_env
 
 ## 配置后台 Arctern-Spark 信息
 
-### 配置基于源码安装的 Arctern Restful Server
+### 配置基于源码安装的 Arctern RESTful Server
 
-在 Arctern 项目的 `gui/server/arctern_env` 目录下，修改 `config.ini` 文件以配置 Arctern Restful Server 所使用的 Arctern-Spark 后台信息。文件配置示例如下，其中 `spark_master_ip` 和 `port` 分别为后台 Arctern-Spark 中 master 节点的 IP 地址和端口号。
+在 Arctern 项目的 `gui/server/arctern_env` 目录下，修改 `config.ini` 文件以配置 Arctern RESTful Server 所使用的 Arctern-Spark 后台信息。文件配置示例如下，其中 `spark_master_ip` 和 `port` 分别为后台 Arctern-Spark 中 master 节点的 IP 地址和端口号。
 
 ```bash
 [spark]
 master-addr = spark://spark_master_ip:port
 ```
 
-### 配置基于 PIP 安装的 Arctern Restful Server
+### 配置基于 pip 安装的 Arctern RESTful Server
 
-执行以下 Python 代码查看 Restful Server 的安装目录：
+执行以下 Python 代码查看 RESTful Server 的安装目录：
 
 ```python
 import arctern_env
 print(arctern_env.__path__)
 ```
 
-执行上述代码将会在终端打印 Restful Server 的安装目录，修改该目录下的 `config.ini`，配置 Arctern Restful Server 所使用的 Arctern-Spark 后台信息。文件配置示例如下：
+执行上述代码将会在终端打印 RESTful Server 的安装目录，修改该目录下的 `config.ini`，配置 Arctern RESTful Server 所使用的 Arctern-Spark 后台信息。文件配置示例如下：
 
 ```ini
 [spark]
@@ -147,9 +147,9 @@ master-addr = spark://spark_master_ip:port
 master-addr = yarn
 ```
 
-## 启动 Arctern Restful Server
+## 启动 Arctern RESTful Server
 
-### 启动基于源码安装的 Arctern Restful Server
+### 启动基于源码安装的 Arctern RESTful Server
 
 在 Arctern 项目的 `gui/server/arctern_env` 目录下执行以下命令启动服务，其中 `/path/to/server` 为 Arctern 项目下 `gui/server` 目录的绝对路径。
 
@@ -159,7 +159,7 @@ export PYTHONPATH=/path/to/arctern/gui/server:$PYTHONPATH
 python manage.py
 ```
 
-### 启动基于 pip 安装的 Arctern Restful Server
+### 启动基于 pip 安装的 Arctern RESTful Server
 
 完成配置后，执行以下命令启动服务：
 
@@ -169,7 +169,7 @@ arctern-server
 
 ### 命令参数介绍
 
-通过命令参数可在启动时对 Arctern Restful Server 进行配置，以上两种方式使用完全相同的参数，具体的内容和含义如下：
+通过命令参数可在启动时对 Arctern RESTful Server 进行配置，以上两种方式使用完全相同的参数，具体的内容和含义如下：
 
 * -h：显示帮助信息
 
@@ -193,5 +193,5 @@ python manage.py -r -i 192.168.1.2 -p 8088
 其中 `/path/to/server` 为 Arctern 项目下 `gui/server` 目录的绝对路径。
 
 
-成功完成以上步骤后，即完成了 Arctern Restful Server 的安装和配置，请参考 Arctern Restful 服务[接口文档](./api/api.html)和[使用示例](./restful_quick_start.md)使用 Arctern Restful 服务。
+成功完成以上步骤后，即完成了 Arctern RESTful Server 的安装和配置，请参考 Arctern RESTful 服务[接口文档](./api/api.html)和[使用示例](./restful_quick_start.md)使用 Arctern RESTful 服务。
 

@@ -33,7 +33,7 @@ $ docker info
 
 如果上述命令未能正常打印 Docker 相关信息，请启动 **Docker** daemon。
 
-> 提示：在 Linux 环境下，Docker 命令需要 `sudo` 权限。如需要在一般权限下运行 Docker 命令，请创建 `docker` 组并添加你。详情请参阅 [Linux 安装后步骤](https://docs.docker.com/install/linux/linux-postinstall/)。
+> 提示：在 Linux 环境下，Docker 命令需要 `sudo` 权限。如需要在一般权限下运行 Docker 命令，请创建 `docker` 组并添加用户。详情请参阅 [Linux 安装后步骤](https://docs.docker.com/install/linux/linux-postinstall/)。
 
 
 ## 配置 NVIDIA Docker （可选）

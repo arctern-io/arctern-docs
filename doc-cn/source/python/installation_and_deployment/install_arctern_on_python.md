@@ -1,8 +1,4 @@
 # 安装部署
-<<<<<<< HEAD
-
-=======
->>>>>>> 73c6234df6be64811a1635f933347b7da8b34f42
 本文档介绍在 Python 环境中安装 Arctern 的步骤。
 
 ## 安装要求
@@ -42,7 +38,7 @@
 
 ## 创建 Arctern Conda 环境
 
-通过以下命令创建 Arctern Conda 环境。此处假设环境名称为 `arctern_env`，你可根据需求自行选择合适的环境名称。
+执行以下命令创建 Arctern Conda 环境。此处假设环境名称为 `arctern_env`，你可根据需求自行选择合适的环境名称。
 
 `conda create -n arctern_env -c conda-forge python=3.7.6`
 
@@ -104,7 +100,7 @@ conda install pytest
 wget https://raw.githubusercontent.com/zilliztech/arctern/v0.1.0/python/tests/geo/geo_test.py
 ```
 
-通过以下命令执行测试文件：
+执行以下命令执行测试文件：
 ```bash
 py.test [/path/to/]geo_test.py
 ```

@@ -165,7 +165,7 @@ conda uninstall libarctern arctern arctern-spark
 
 ## FAQ
 
-### 对Spark的支持
+### 对 Spark 的支持
 
 Arctern-Spark 可以运行在 Spark 的各种模式下，需要在每台运行 Spark 的机器上，执行如下操作：
 

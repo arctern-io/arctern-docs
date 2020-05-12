@@ -32,7 +32,7 @@ $ ./install_packages.sh gl      # 安装gl-mesa库
 $ ./install_packages.sh jdk     # 安装java8
 ```
 
-### 安装Spark
+### 安装 Spark
 
 在 `spark-3.0.0-preview2-bin-hadoop2.7.tgz` 文件所在目录下执行以下命令，将文件解压到指定目录：
 
@@ -40,7 +40,7 @@ $ ./install_packages.sh jdk     # 安装java8
 $ mkdir -p ${spark_install_path} && tar zxvf spark-3.0.0-preview2-bin-hadoop2.7.tgz -C ${spark_install_path}
 ```
 
-### 安装Miniconda
+### 安装 Miniconda
 
 执行以下命令安装 Miniconda：
 
