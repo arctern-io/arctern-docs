@@ -82,13 +82,13 @@ $ conda create -n arctern_env
 执行以下命令在 Conda 环境中安装 Arctern-Spark：
 
 ```bash
-$ conda install -n arctern_env -c file:///[path/to/channel] arctern-spark --offline   --override-channels
+$ conda install -n arctern-spark -c file:///[path/to/channel] arctern-spark --offline   --override-channels
 ```
 
 其中， `[path/to/channel]`为 `arctern-resources` 文件夹下 `arctern-resources/arctern_dependencies/conda_dependencies/channel` 目录所在路径，例如:
 
 ```bash
-$ conda install -n arctern_env -c file:///tmp/arctern-resources/arctern_dependencies/conda_dependencies/channel arctern-spark   --offline --override-channels
+$ conda install -n arctern-spark -c file:///tmp/arctern-resources/arctern_dependencies/conda_dependencies/channel arctern-spark   --offline --override-channels
 ```
 
 
@@ -136,7 +136,7 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern-spark/bin/python
 如果终端打印了以下内容，说明 PySpark 的 Python 路径配置成功。
 
 ```bash
-[path/to/your/conda]/envs/arctern-spark
+[path/to/your/conda]/envs/arctern_env
 ```
 
 ## 测试样例
