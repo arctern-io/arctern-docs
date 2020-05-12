@@ -117,7 +117,7 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_env/bin/python
 [path/to/your/spark]/bin/pyspark
 ```
 
-在交互界面中输入一下内容打印 PySpark 的 Python 路径。
+在交互界面中输入以下内容打印 PySpark 的 Python 路径。
 ```python
 >>> import sys
 >>> print(sys.prefix)
