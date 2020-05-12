@@ -57,7 +57,7 @@
 ...                parse_dates=["tpep_pickup_datetime","tpep_dropoff_datetime"])
 ```
 
-打印数据的前5行，验证数据是否加载成功：
+打印数据的前五行，验证数据是否加载成功：
 
 ```python
 >>> df.head()
@@ -73,7 +73,7 @@
 
 ## 数据过滤
 
-在指定地理区域（经度范围：-73.991504至-73.945155；纬度范围：40.770759至40.783434）中随机选取`200` 行数据。
+在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 `200` 行数据。
 
 ```python
 >>> pos1=(-73.991504, 40.770759)
@@ -104,7 +104,7 @@
 dtype: object
 ```
 
-将坐标点数据使用的空间坐标系从`EPSG:4326`坐标系转换为到`EPSG:3857`坐标系，更多不同空间坐标系标准的详细信息请查看[维基百科相关页面](https://en.wikipedia.org/wiki/Spatial_reference_system)。
+将坐标点数据使用的空间坐标系从 `EPSG:4326` 坐标系转换到 `EPSG:3857` 坐标系，更多不同空间坐标系标准的详细信息请查看[维基百科相关页面](https://en.wikipedia.org/wiki/Spatial_reference_system)。
 
 ```python
 >>> ST_AsText(ST_Transform(ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude),'epsg:4326', 'epsg:3857')).head()
@@ -115,7 +115,7 @@ dtype: object
 4     POINT (-8235715.04435814 4978714.5380168)
 dtype: object
 ```
-可以在[EPSG](http://epsg.io/transform#s_srs=4326&t_srs=3857)网站上验证转换是否正确
+你可以在 [EPSG](http://epsg.io/transform#s_srs=4326&t_srs=3857) 网站上验证转换结果是否正确。
 
 ![](../../../../img/quickstart/epsg-4326-to-3857-example.png)
 
@@ -132,7 +132,7 @@ dtype: object
 通过 Arctern 提供的绘图函数绘制点图图层：
 
 ```python
->>> # 绘制点大小为10，点颜色为#2DEF4A，点不透明度为1的点图图层。
+>>> # 绘制点大小为 10，点颜色为 #2DEF4A，点不透明度为 1 的点图图层。
 >>> vega = vega_pointmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], point_size=10, point_color="#2DEF4A", opacity=1, coordinate_system="EPSG:4326")
 >>> png = point_map_layer(vega, ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude))
 >>> save_png(png, '/tmp/arctern_pointmap_pandas.png')
@@ -145,7 +145,7 @@ dtype: object
 通过 Arctern 提供的绘图函数绘制带权点图图层：
 
 ```python
->>> # 绘制带权点图图层，点的颜色根据 fare_amount 在 "#115f9a" ~ "#d0f400" 之间变化，点的大小根据 total_amount 在 15 ~ 50 之间变化。
+>>> # 绘制带权点图图层，点的颜色根据 fare_amount 在 #115f9a ~ #d0f400 之间变化，点的大小根据 total_amount 在 15 ~ 50 之间变化。
 >>> vega = vega_weighted_pointmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], color_gradient=["#115f9a", "#d0f400"], color_bound=[1, 50], size_bound=[3, 15], opacity=1.0, coordinate_system="EPSG:4326")
 >>> png = weighted_point_map_layer(vega, ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude), color_weights=df.head(limit_num).fare_amount, size_weights=df.head(limit_num).total_amount)
 >>> save_png(png, "/tmp/arctern_weighted_pointmap_pandas.png")
@@ -171,7 +171,7 @@ dtype: object
 通过 Arctern 提供的绘图函数绘制轮廓图图层：
 
 ```python
->>> # 绘制轮廓图图层，轮廓的填充颜色根据 fare_amount 在 "#115f9a" ~ "#d0f400" 之间变化。
+>>> # 绘制轮廓图图层，轮廓的填充颜色根据 fare_amount 在 #115f9a ~ #d0f400 之间变化。
 >>> vega = vega_choroplethmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], color_gradient=["#115f9a", "#d0f400"], color_bound=[2.5, 5], opacity=1.0, coordinate_system="EPSG:4326")
 >>> png = choropleth_map_layer(vega, ST_GeomFromText(pickup_df.buildingtext_pickup), df.head(limit_num).fare_amount)
 >>> save_png(png, "/tmp/arctern_choroplethmap_pandas.png")

@@ -33,7 +33,7 @@
 
 > 该数据的时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`
 
-下述示例中假设服务器 IP 地址为`127.0.0.1`，Restful服务端口为`8080`，数据文件所在路径为 `/example/data/0_2M_nyc_taxi_and_building.csv`。
+下述示例中假设服务器 IP 地址为 `127.0.0.1`，Restful服务端口为 `8080`，数据文件所在路径为 `/example/data/0_2M_nyc_taxi_and_building.csv`。
 
 ### 安装依赖
 
@@ -296,7 +296,7 @@ pip install requests
 >>>
 >>> r = requests.post(url="http://127.0.0.1:8080/pointmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
->>> # 保存为png
+>>> # 保存为 PNG 图片。
 ... 
 >>> import base64
 >>> with open("/tmp/pointmap.png", "wb") as f:
@@ -311,7 +311,7 @@ pip install requests
 eog /tmp/pointmap.png
 ```
 
-![点图pointmap](../../../img/restful-result/pointmap.png)
+![点图](../../../img/restful-result/pointmap.png)
 
 ### 带权点图
 
@@ -366,7 +366,7 @@ eog /tmp/pointmap.png
 
 ### 热力图
 
-使用 `/heatmap` 接口根据乘客下车地点以及行程费用绘制热力图，费用高的区域为红色，费用低的区域为绿色。热力图中具体参数说明请参见 [热力图 Restful API 说明](./api/function/heatmap.html)。
+使用 `/heatmap` 接口根据乘客下车地点以及行程费用绘制热力图，费用高的区域为红色，费用低的区域为绿色。热力图中具体参数说明请参见[热力图 Restful API 说明](./api/function/heatmap.html)。
 
 ```python
 >>> import requests
@@ -402,11 +402,11 @@ eog /tmp/pointmap.png
 
 热力图样例：
 
-![热力图heatmap](../../../img/restful-result/heatmap.png)
+![热力图](../../../img/restful-result/heatmap.png)
 
 ### 轮廓图
 
-使用 `/choroplethmap` 接口，根据下车地点所在建筑物、小费金额绘制轮廓图，小费金额高为黄色，小费金额低为蓝色。轮廓图中具体参数说明请参见 [轮廓图 Restful API 说明](./api/function/choroplethmap.html)。
+使用 `/choroplethmap` 接口，根据下车地点所在建筑物、小费金额绘制轮廓图，小费金额高为黄色，小费金额低为蓝色。轮廓图中具体参数说明请参见 [轮廓图 RESTful API 说明](./api/function/choroplethmap.html)。
 
 ```python
 >>> import requests
@@ -450,7 +450,7 @@ eog /tmp/pointmap.png
 
 轮廓图样例：
 
-![轮廓图choroplethmap.png](../../../img/restful-result/choroplethmap.png)
+![轮廓图](../../../img/restful-result/choroplethmap.png)
 
 ### 图标图
 
@@ -482,7 +482,7 @@ eog /tmp/pointmap.png
 >>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/icon_viz", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
->>> # 保存为png
+>>> # 保存为 PNG 图片。
 >>> import base64
 >>> with open("/tmp/icon_viz.png", "wb") as f:
 ...     f.write(base64.b64decode(r.json()['result']))
@@ -492,7 +492,7 @@ eog /tmp/pointmap.png
 
 图标图样例：
 
-![图标图icon_viz](../../../img/restful-result/icon_viz.png)
+![图标图](../../../img/restful-result/icon_viz.png)
 
 ### 渔网图
 
@@ -528,7 +528,7 @@ eog /tmp/pointmap.png
 >>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/fishnetmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
->>> # 保存为png
+>>> # 保存为 PNG 图片。
 >>> import base64
 >>> with open("/tmp/fishnetmap.png", "wb") as f:
 ...     f.write(base64.b64decode(r.json()['result']))
@@ -537,7 +537,7 @@ eog /tmp/pointmap.png
 
 渔网图样例：
 
-![渔网图fishnetmap](../../../img/restful-result/fishnetmap.png)
+![渔网图](../../../img/restful-result/fishnetmap.png)
 
 ### 删除作用域
 
