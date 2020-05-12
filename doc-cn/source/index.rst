@@ -3,16 +3,21 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-欢迎访问Arctern文档
+欢迎访问 Arctern 文档
 ==================
 
-Arctern项目致力于构建开源的时空数据分析平台。 
+Arctern 聚焦时空数据科学，目标是加速时空数据的处理、分析、模型预测与呈现。Arctern 基于开源大数据生态，构建灵活、强大、高性能的时空数据分析平台，帮助你应对 5G/IoT 带来的新型数据挑战。
 
-* 如果您聚焦于单机环境的数据科学工作，Arctern提供了地理数据分析与可视化渲染接口，接口的Python绑定可与Pandas、Matplotlib无缝交互。详见Arctern项目的 :ref:`Pandas文档 <python>`。
+如果你正在寻找下述问题的解决方案，欢迎使用 Arctern：
 
-* 如果您需要获得大规模时空数据的高效处理能力，Arctern-Spark提供了地理数据分析与可视化渲染的分布式方案，并支持分布式GPU加速。详见Arctern项目的 :ref:`Spark文档 <spark>`。
-
-* 如果您希望通过Arctern构建时空数据分析服务，Arctern提供了完整的Web Service与后端适配方案，详见 :ref:`Restful文档 <restful>`。
+* 高效的标准地理信息分析库（OGC标准）；
+* 高级时空数据处理算法与模型，如轨迹分析、电子围栏数据处理、时空数据统计、时空数据挖掘等；
+* 海量时空数据的渲染与可视化；
+* 与 Pandas 生态无缝集成的时空数据分析（见 :ref:`Pandas 文档 <python>`）；
+* 与 Spark 生态无缝集成的时空数据分析（见 :ref:`Spark 文档 <spark>`）；
+* 以 SQL 为基础的时空数据交互式分析；
+* 面向时空数据分析的 RESTful 调用（见 :ref:`RESTful 文档 <restful>`）；
+* GPU 加速的地理信息处理。
 
 .. toctree::
    :maxdepth: 2
