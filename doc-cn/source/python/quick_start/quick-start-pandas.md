@@ -4,26 +4,28 @@
 
 ## 数据准备
 
-在 Arctern 运行环境中下载[纽约出租车数据集](https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv)，该数据集包含2009年纽约市出租车运营记录，各字段的含义如下：
+在 Arctern 运行环境中下载[纽约出租车数据集](https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv)，该数据集包含2009 年纽约市出租车的运营记录，各字段的含义如下：
 
-- VendorID: string，运营商名称；
-- tpep_pickup_datetime: string，上车时间；
-- tpep_dropoff_datetime: string，下车时间；
-- passenger_count: long，乘客数量；
-- trip_distance: double，行程距离；
-- pickup_longitude: double，上车地点-经度；
-- pickup_latitude: double，上车地点-纬度；
-- dropoff_longitude: double，下车地点-经度；
-- dropoff_latitude: double，下车地点-纬度；
-- fare_amount: double，行程费用；
-- tip_amount: double，小费；
-- total_amount: double，总费用；
-- buildingid_pickup: long，上车地点所在建筑的id；
-- buildingid_dropoff: long，下车地点所在建筑的id；
-- buildingtext_pickup: string，上车地点所在建筑的轮廓描述；
-- buildingtext_dropoff: string，下车地点所在建筑的轮廓描述。
+| 名称                  | 含义                       | 类型   |
+| :-------------------- | :------------------------- | :----- |
+| VendorID              | 运营商名称                 | string |
+| tpep_pickup_datetime  | 上车时间                   | string |
+| tpep_dropoff_datetime | 下车时间                   | string |
+| passenger_count       | 乘客数量                   | long   |
+| trip_distance         | 行程距离                   | double |
+| pickup_longitude      | 上车地点-经度              | double |
+| pickup_latitude       | 上车地点-纬度              | double |
+| dropoff_longitude     | 下车地点-经度              | double |
+| dropoff_latitude      | 下车地点-纬度              | double |
+| fare_amount           | 行程费用                   | double |
+| tip_amount            | 小费                       | double |
+| total_amount          | 总费用                     | double |
+| buildingid_pickup     | 上车地点所在建筑的 id      | long   |
+| buildingid_dropoff    | 下车地点所在建筑的 id      | long   |
+| buildingtext_pickup   | 上车地点所在建筑的轮廓描述 | string |
+| buildingtext_dropoff  | 下车地点所在建筑的轮廓描述 | string |
 
-该数据中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如`2009-04-12 03:16:33 +00:00`。
+> 该数据的时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`
 
 ## 加载数据
 
