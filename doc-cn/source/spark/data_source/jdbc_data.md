@@ -23,7 +23,6 @@ psql test -h 172.17.0.2  -p 5432 -U arcterner
 
 ## JDBC 数据导入示例
 
-
 在提交 Spark 任务时，需要指定 JDBC 驱动。从 [postgres 官网](https://jdbc.postgresql.org/download.html)下载其最新的 JDBC 驱动，以下示例中使用的的驱动为 `postgresql-42.2.11.jar`。
 
 以下命令为 Arctern-Spark 通过 JDBC 从 Postgis 导入数据的示例：
