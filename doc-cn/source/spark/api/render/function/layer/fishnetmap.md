@@ -51,7 +51,7 @@ cell_size,cell_spacing,opacity,coordinate_system,aggregation_type)**
 
 &#x2002; &#x2003; &#x2002; &#x2003; * vega(VegaFishNetMap) -- VegaFishNetMap 对象。
 
-&#x2002; &#x2003; &#x2002; &#x2003; * points(WKB) -- 数据点的位置，格式为WKB。
+&#x2002; &#x2003; &#x2002; &#x2003; * points(WKB) -- 数据点的位置，格式为 WKB。
 
 &#x2002; &#x2003; &#x2002; &#x2003; * color_weights(int|float) -- 数据点的颜色权重。
 
@@ -63,7 +63,7 @@ cell_size,cell_spacing,opacity,coordinate_system,aggregation_type)**
 
 &#x2002; &#x2003; 返回
 
-&#x2002; &#x2003; &#x2002; &#x2003; base64编码的png图片。
+&#x2002; &#x2003; &#x2002; &#x2003; base64 编码的 PNG 图片。
 
 
 ### 示例:

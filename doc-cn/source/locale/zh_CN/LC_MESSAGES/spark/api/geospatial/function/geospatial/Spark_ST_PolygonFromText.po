@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_PolygonFromText:1 of
 msgid "Transform the representation of polygon from WKT to WKB."
-msgstr "将 WKT 格式的 polygon 的转化为 WKB 格式的 polygon。"
+msgstr "将 Polygon 对象从 WKT 格式转化为 WKB 格式。"
 
 #: arctern_pyspark._wrapper_func.ST_PolygonFromText of
 msgid "参数"

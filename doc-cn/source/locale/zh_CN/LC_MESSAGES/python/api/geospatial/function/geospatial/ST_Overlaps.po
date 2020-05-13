@@ -27,7 +27,7 @@ msgid ""
 "here means two geometries intersect but one does not completely contain "
 "another."
 msgstr ""
-"检查两个几何体是否“交叠”，即两个几何体相交且其中任何一个均不完全包含另一个。"
+"检查两个几何体是否“交叠”，即它们相交且其中任何一个均不完全包含另一个。"
 
 #: arctern._wrapper_func.ST_Overlaps of
 msgid "参数"

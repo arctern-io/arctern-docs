@@ -47,7 +47,7 @@ opacity,coordinate_system)**
 
 &#x2002; &#x2003; &#x2002; &#x2003; * vega(VegaPointMap) -- VegaPointMap 对象。
 
-&#x2002; &#x2003; &#x2002; &#x2003; * points(WKB) -- 所需绘制的点，格式为WKB。
+&#x2002; &#x2003; &#x2002; &#x2003; * points(WKB) -- 所需绘制的点，格式为 WKB。
 
 
 &#x2002; &#x2003; 返回值类型
@@ -57,7 +57,7 @@ opacity,coordinate_system)**
 
 &#x2002; &#x2003; 返回
 
-&#x2002; &#x2003; &#x2002; &#x2003; base64编码的png图片。
+&#x2002; &#x2003; &#x2002; &#x2003; base64 编码的 PNG 图片。
 
 
 ### 示例:

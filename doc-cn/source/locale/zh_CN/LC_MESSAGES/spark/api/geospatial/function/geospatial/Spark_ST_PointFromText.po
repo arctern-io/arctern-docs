@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_PointFromText:1 of
 msgid "Transform the representation of point from WKT to WKB."
-msgstr "将 WKT 格式的 point 的转化为 WKB 格式的 point。"
+msgstr "将 Point 对象从 WKT 格式转化为 WKB 格式。"
 
 #: arctern_pyspark._wrapper_func.ST_PointFromText of
 msgid "参数"
