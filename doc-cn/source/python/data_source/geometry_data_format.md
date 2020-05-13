@@ -44,6 +44,7 @@ b'\x01\x03\x00\x00\x00\x01\x00\x00\x00\x05\x00\x00\x00\x00\x00\x00\x00\x00\x00\x
 >>> import arctern
 >>> df = pd.read_csv("/path/to/geos.csv",sep='|')
 >>> data = pd.Series(df['geos'].values)
+
 # 在对数据处理之前无需对数据进行转换
 >>> valid_data = arctern.ST_MakeValid(data)
 >>> valid_data = valid_data.rename('geos')

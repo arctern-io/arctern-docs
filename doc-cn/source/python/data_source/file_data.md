@@ -20,7 +20,7 @@ POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 >>> print(rst)
 0     True
 1     True
-2    False
+2     False
 3     True
 dtype: bool
 >>> df.to_json("/path/to/geos.json")
@@ -32,7 +32,7 @@ dtype: bool
 >>> print(rst)
 0     True
 1     True
-2    False
+2     False
 3     True
 dtype: bool
 >>> df.to_csv("/path/to/geos.csv",index=None,quoting=1)
