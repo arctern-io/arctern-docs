@@ -2,7 +2,6 @@
 
 Arctern-Spark 可借助 Spark 的 JDBC 连接功能，完成数据从数据库的导入和导出。以下例子将展示如何利用 JDBC 从 postgis 中导入数据，更多详细信息请查看 [Spark 官方文档](https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html)。
 
-
 ## Postgis 配置信息
 
 假设 Postgis 的相关配置如下：
