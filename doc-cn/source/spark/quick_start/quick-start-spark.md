@@ -4,7 +4,11 @@
 
 ## 数据准备
 
-在 Arctern-Spark 运行环境中下载[纽约出租车数据集](https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv)，该数据集包含 2009 年纽约市出租车运营记录，各字段的含义如下：
+在 Arctern-Spark 运行环境中下载纽约出租车数据集。
+```bash 
+wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
+```
+该数据集包含 2009 年纽约市出租车运营记录，各字段的含义如下：
 
 | 名称                  | 含义                       | 类型   |
 | :-------------------- | :------------------------- | :----- |
@@ -95,11 +99,12 @@ SparkSession available as 'spark'.
 加载测试数据，并创建临时表 `origin_nyc_taxi`：
 
 ```python
+# 文件路径需要本地配置
 >>> origin_df = spark.read.format("csv") \
 ...                       .option("header",True) \
 ...                       .option("delimiter",",") \
 ...                       .schema(nyc_schema) \
-...                       .load("/tmp/0_2M_nyc_taxi_and_building.csv") \
+...                       .load("/path/to/0_2M_nyc_taxi_and_building.csv") \
 ...                       .createOrReplaceTempView("origin_nyc_taxi")
 ```
 
@@ -306,7 +311,7 @@ save_png(res, "/tmp/arctern_choroplethmap.png")
 pickup_sql = "select st_point(pickup_longitude, pickup_latitude) from nyc_taxi where " \
 f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit 25"
 pickup_df = spark.sql(pickup_sql)
-# 根据查询结果绘制图标图图层。
+# 根据查询结果绘制图标图图层， icon_path 需要本地配置。
 vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path='/path/to/icon.png', coordinate_system="EPSG:4326")
 res = icon_viz(vega, pickup_df)
 save_png(res, "/tmp/arctern_iconviz.png")

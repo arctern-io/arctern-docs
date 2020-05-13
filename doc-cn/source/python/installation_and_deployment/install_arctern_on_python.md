@@ -9,6 +9,7 @@
 | ---------- | ------------ |
 | 操作系统 |Ubuntu LTS 18.04|
 | Conda  | Miniconda Python3  |
+| JDK    | JDK 8 | 
 
 
 * GPU 版本
@@ -19,6 +20,7 @@
 | Conda | Miniconda Python3  |
 |CUDA|10.0|
 |Nvidia driver|4.30|
+| JDK    | JDK 8 | 
 
 ## 安装依赖库
 
@@ -27,13 +29,27 @@
   执行以下命令安装 Arctern CPU 版本的依赖库：
 ```bash
     sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
+
+    # 配置 JDK 环境变量，路径需要配置为本地 JDK 8 路径
+    export JAVA_HOME=/path/to/java8
+    export PATH=$JAVA_HOME/bin:$PATH
+    export JRE_HOME=$JAVA_HOME/jre
+    export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
 ```
+
 
 * GPU 版本
 
   执行以下命令安装 Arctern GPU 版本的依赖库：
 ```bash
     sudo apt install libgl1-mesa-dev libegl1-mesa-dev
+
+    # 配置 JDK 环境变量，路径需要配置为本地 JDK 8 路径
+    export JAVA_HOME=/path/to/java8
+    export PATH=$JAVA_HOME/bin:$PATH
+    export JRE_HOME=$JAVA_HOME/jre
+    export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
+    
 ```
 
 ## 创建 Arctern Conda 环境
