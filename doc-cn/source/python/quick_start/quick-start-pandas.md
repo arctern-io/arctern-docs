@@ -4,7 +4,13 @@
 
 ## 数据准备
 
-在 Arctern 运行环境中下载[纽约出租车数据集](https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv)，该数据集包含2009 年纽约市出租车的运营记录，各字段的含义如下：
+在 Arctern 运行环境中下载纽约出租车数据集。
+
+```bash
+wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
+```
+
+该数据集包含2009 年纽约市出租车的运营记录，各字段的含义如下：
 
 | 名称                  | 含义                       | 类型   |
 | :-------------------- | :------------------------- | :----- |
@@ -51,6 +57,7 @@
 ...     "buildingtext_pickup":"string",
 ...     "buildingtext_dropoff":"string",
 ... }
+# 文件路径需要本地配置
 >>> df=pd.read_csv("/tmp/0_2M_nyc_taxi_and_building.csv",
 ...                dtype=nyc_schema,
 ...                date_parser=pd.to_datetime,
@@ -184,7 +191,7 @@ dtype: object
 通过 Arctern 提供的绘图函数绘制图标图图层：
 
 ```python
->>> # 绘制图标图图层。
+>>> # 绘制图标图图层 icon_path 需要本地配置。
 >>> vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path='/path/to/icon.png', coordinate_system="EPSG:4326")
 >>> png = icon_viz_layer(vega, ST_Point(pickup_df.head(25).pickup_longitude, pickup_df.head(25).pickup_latitude))
 >>> save_png(png, "/tmp/arctern_iconviz_pandas.png")

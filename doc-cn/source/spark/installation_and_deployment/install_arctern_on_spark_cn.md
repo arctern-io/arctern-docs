@@ -11,6 +11,7 @@
 | 操作系统 |Ubuntu LTS 18.04|
 | Conda  | Miniconda Python3  |
 | Spark | 3.0  |
+| JDK    | JDK 8 |
 
 * GPU 版本
 
@@ -21,6 +22,7 @@
 | Spark | 3.0  |
 |CUDA|10.0|
 |Nvidia driver|4.30|
+| JDK    | JDK 8 |
 
 ## 安装依赖库
 
@@ -29,14 +31,28 @@
   执行以下命令安装 Arctern-Spark CPU 版本的依赖库：
 ```bash
     sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
+
+    # 配置 JDK 环境变量，路径需要配置为本地 JDK 8 路径
+    export JAVA_HOME=/path/to/java8
+    export PATH=$JAVA_HOME/bin:$PATH
+    export JRE_HOME=$JAVA_HOME/jre
+    export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
 ```
+
 
 * GPU 版本
 
   执行以下命令安装 Arctern-Spark GPU 版本的依赖库：
 ```bash
     sudo apt install libgl1-mesa-dev libegl1-mesa-dev
+
+    # 配置 JDK 环境变量，路径需要配置为本地 JDK 8 路径
+    export JAVA_HOME=/path/to/java8
+    export PATH=$JAVA_HOME/bin:$PATH
+    export JRE_HOME=$JAVA_HOME/jre
+    export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
 ```
+
 
 ## 创建 Arctern-Spark Conda 环境
 
@@ -96,14 +112,28 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## 配置 Spark 的 Python 路径
 
-在文件 `conf/spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。
+下载 [spark-3.0.0-preview2编译包](https://mirrors.sonic.net/apache/spark/spark-3.0.0-preview2/spark-3.0.0-preview2-bin-hadoop2.7.tgz) 并解压spark压缩包。
+
+```bash
+tar -xvzf spark-3.0.0-preview2-bin-hadoop2.7.tgz
+```
+
+创建 `spark-default.conf` 以及 `spark-env.sh` 文件。
+
+```bash
+cd spark-3.0.0-preview2-bin-hadoop2.7/conf
+cp spark-defaults.conf.template spark-defaults.conf
+cp spark-env.sh.template spark-env.sh
+```
+
+在文件 `spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。可以通过 `conda env info` 来查看当前的conda环境信息。
 
 ```bash
 spark.executorEnv.PROJ_LIB [path/to/your/conda]/envs/arctern_env/share/proj
 spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern_env/share/gdal
 ```
 
-在文件 `conf/spark-env.sh` 的最后添加以下内容。其中 `[path/to/your/conda]` 为Conda的安装路径。
+在文件 `spark-env.sh` 的最后添加以下内容。其中 `[path/to/your/conda]` 为Conda的安装路径。
 
 ```bash
 export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_env/bin/python
