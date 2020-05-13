@@ -36,34 +36,28 @@ psql test -h 172.17.0.2  -p 5432 -U arcterner
 from pyspark.sql import SparkSession
 from arctern_pyspark import register_funcs
 if __name__ == "__main__":
-
     # 创建 SparkSession 并对其进行配置
     spark = SparkSession \
         .builder \
         .appName("polygon test") \
         .getOrCreate()
     spark.conf.set("spark.sql.execution.arrow.pyspark.enabled", "true")
-
     # 注册 Arctern-Spark 提供的函数
     register_funcs(spark)
-
     # 数据导入
     spark.read.format("jdbc") \
               .option("url", "jdbc:postgresql://172.17.0.2:5432/test?user=arcterner&password=arcterner") \
               .option("query", "select st_astext(geos) as geos from simple") \
               .load() \
               .createOrReplaceTempView("simple")
-
     # 对数据进行操作并打印结果
     spark.sql("select ST_IsSimple(ST_GeomFromText(geos)) from simple").show(20,0)
-
     # 数据导出
     spark.write.format("jdbc") \
                .option("url", "jdbc:postgresql://172.17.0.2:5432/test?user=arcterner&password=arcterner") \
                .option("query", "select st_astext(geos) as geos from simple") \
                .load() \
                .save()
-
     spark.stop()
 ```
 上述代码的执行结果如下：

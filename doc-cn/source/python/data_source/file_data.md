@@ -24,7 +24,6 @@ POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 3     True
 dtype: bool
 >>> df.to_json("/path/to/geos.json")
-
 # 导入 JSON 文件，导出 CSV 文件
 >>> df = pd.read_json("/path/to/geos.json")
 >>> data = pd.Series(df['geos'].values,name='geos')
