@@ -61,7 +61,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/spark/api/render/function/layer/iconviz.md:19
-msgid "* icon_path(str) -- 图标png文件的绝对路径。在集群模式下，该图片需要被存储在集群所用的文件系统中。"
+msgid "* icon_path(str) -- 图标 PNG 文件的绝对路径。在集群模式下，该图片需要被存储在集群所用的文件系统中。"
 msgstr ""
 
 #: ../../source/spark/api/render/function/layer/iconviz.md:21
@@ -102,7 +102,7 @@ msgid "* vega(VegaIcon) -- VegaIcon 对象。"
 msgstr ""
 
 #: ../../source/spark/api/render/function/layer/iconviz.md:45
-msgid "* points(WKB) -- 坐标位置，格式为WKB。"
+msgid "* points(WKB) -- 坐标位置，格式为 WKB。"
 msgstr ""
 
 #: ../../source/spark/api/render/function/layer/iconviz.md:50
@@ -110,7 +110,7 @@ msgid "bytes"
 msgstr ""
 
 #: ../../source/spark/api/render/function/layer/iconviz.md:55
-msgid "base64编码的png图片。"
+msgid "base64编码的 PNG 图片。"
 msgstr ""
 
 #: ../../source/spark/api/render/function/layer/iconviz.md:58

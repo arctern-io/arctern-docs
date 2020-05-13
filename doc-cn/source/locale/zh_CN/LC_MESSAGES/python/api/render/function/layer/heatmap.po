@@ -108,7 +108,7 @@ msgid "* vega(VegaHeatMap) -- VegaHeatMap 对象。"
 msgstr ""
 
 #: ../../source/python/api/render/function/layer/heatmap.md:48
-msgid "* points(Series(dtype: object)) -- 点的位置，格式为WKB。"
+msgid "* points(Series(dtype: object)) -- 点的位置，格式为 WKB。"
 msgstr ""
 
 #: ../../source/python/api/render/function/layer/heatmap.md:50
@@ -120,7 +120,7 @@ msgid "bytes"
 msgstr ""
 
 #: ../../source/python/api/render/function/layer/heatmap.md:60
-msgid "base64编码的png图片。"
+msgid "base64 编码的 PNG 图片。"
 msgstr ""
 
 #: ../../source/python/api/render/function/layer/heatmap.md:63

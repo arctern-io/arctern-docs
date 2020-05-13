@@ -28,7 +28,7 @@ msgid ""
 "The intersection of the interiors of the geometries must not be the empty"
 " set and must have a dimensionality less than the maximum dimension of "
 "the two input geometries."
-msgstr "检查两个几何体是否“相交”，即两个几何体有部分但非全部内部点相同。这两个的几何体的交集不能为空，并且交集的维度小于输入几何体的最大维度。"
+msgstr "检查两个几何体是否“相交”，即它们有部分但非全部内部点相同。这两个的几何体的交集不能为空，并且交集的维度小于输入几何体的最大维度。"
 
 #: arctern._wrapper_func.ST_Crosses of
 msgid "参数"

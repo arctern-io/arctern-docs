@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_GeometryType:1 of
 msgid "For each geometry in geometries, return a string that indicates is type."
-msgstr "对输入中的每一个几何体,返回表示其类型的字符串。"
+msgstr "对输入的每一个几何体，返回表示其类型的字符串。"
 
 #: arctern_pyspark._wrapper_func.ST_GeometryType of
 msgid "参数"
