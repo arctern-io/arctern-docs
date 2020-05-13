@@ -1,9 +1,9 @@
 # 文件的导入与导出
 
-Arctern-Spark 借助 Spark 的文件读写功能完成数据的导入和导出。Spark支持多种数据格式文件导入，以下是针对csv、parquet、json、orc等数据格式文件的导入导出例子。更多的文件格式支持请查看[Spark官方文档](https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html)
+Arctern-Spark 借助 Spark 的文件读写功能完成数据的导入和导出。Spark 支持多种数据格式文件导入，以下是针对 CSV、PARQUET、JSON、ORC 等数据格式文件的导入导出例子。更多的文件格式支持请查看 [Spark 官方文档](https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html)
 
 ```python
-#CSV文件导入，导出为PARQUET文件
+# 导入 CSV 文件，导出 PARQUET 文件
 '''
 CSV 文件内容：
 geos
@@ -45,7 +45,7 @@ POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 >>> df.select("geos").write.save("/path/to/geos.parquet", format="parquet")
 
 
-#PARQUET文件导入，导出为JSON文件
+# 导入 PARQUET 文件，导出 JSON 文件
 >>> df = spark_session.read.format('parquet').options(header='true',sep='|').load("/path/to/geos.parquet")
 >>> df.show(100,0)
 +---------------------------------------------+
@@ -69,7 +69,7 @@ POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 >>> df.select("geos").write.save("/path/to/geos.json", format="json")
 
 
-# JSON文件导入，导出为ORC文件
+# 导入 JSON 文件，导出 ORC 文件
 >>> df = spark_session.read.format('json').options(header='true',sep='|').load("/path/to/geos.json")
 >>> df.show(100,0)
 +---------------------------------------------+
@@ -93,7 +93,7 @@ POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 >>> df.write.save("/path/to/geos.orc", format="orc")
 
 
-# ORC文件导入，导出为CSV文件
+# 导入 ORC 文件，导出 CSV 文件
 >>> df = spark_session.read.format('orc').options(header='true',sep='|').load("/path/to/geos.orc")
 >>> df.show(100,0)
 +---------------------------------------------+
