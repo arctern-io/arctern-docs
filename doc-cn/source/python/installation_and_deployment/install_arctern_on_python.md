@@ -6,7 +6,7 @@
 * CPU 版本
 
 |  名称    |   版本     |
-| ---------- | ------------ |
+| :---------- | :------------ |
 | 操作系统 |Ubuntu LTS 18.04|
 | Conda  | Miniconda Python3  |
 | JDK   | JDK 8|
@@ -14,7 +14,7 @@
 * GPU 版本
 
 |  名称    |   版本     |
-| ---------- | ------------ |
+| :---------- | :------------ |
 | 操作系统 |Ubuntu LTS 18.04|
 | Conda | Miniconda Python3  |
 |CUDA|10.0|
@@ -124,7 +124,7 @@ $ py.test [/path/to/]geo_test.py
 
 若最后打印结果类似以下内容，则表示通过测试样例。
 ```bash
-   33 passed, 1 warning in 0.58s
+33 passed, 1 warning in 0.58s
 ```
 
 ## 卸载

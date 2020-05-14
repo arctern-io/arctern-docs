@@ -7,7 +7,7 @@
 * CPU 版本
 
 |  名称    |   版本     |
-| ---------- | ------------ |
+| :---------- | :------------ |
 | 操作系统 |Ubuntu LTS 18.04|
 | Conda  | Miniconda Python3  |
 | Spark | 3.0  |
@@ -16,7 +16,7 @@
 * GPU 版本
 
 |  名称    |   版本     |
-| ---------- | ------------ |
+| :---------- | :------------ |
 | 操作系统 |Ubuntu LTS 18.04|
 | Conda | Miniconda Python3  |
 | Spark | 3.0  |
@@ -116,7 +116,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## 配置 Spark 的 Python 路径
 
-下载 [spark-3.0.0-preview2编译包](https://mirrors.sonic.net/apache/spark/spark-3.0.0-preview2/spark-3.0.0-preview2-bin-hadoop2.7.tgz) 并解压spark压缩包。
+下载 [spark-3.0.0-preview2 编译包](https://mirrors.sonic.net/apache/spark/spark-3.0.0-preview2/spark-3.0.0-preview2-bin-hadoop2.7.tgz) 并解压 Spark 压缩包。
 
 ```bash
 $ tar -xvzf spark-3.0.0-preview2-bin-hadoop2.7.tgz
@@ -130,14 +130,14 @@ $ cp spark-defaults.conf.template spark-defaults.conf
 $ cp spark-env.sh.template spark-env.sh
 ```
 
-在文件 `spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。可以通过 `conda env info` 来查看当前的conda环境信息。
+在文件 `spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。可以通过 `conda env info` 来查看当前的 Conda 环境信息。
 
 ```bash
 spark.executorEnv.PROJ_LIB [path/to/your/conda]/envs/arctern_env/share/proj
 spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern_env/share/gdal
 ```
 
-在文件 `spark-env.sh` 的最后添加以下内容。其中 `[path/to/your/conda]` 为Conda的安装路径。
+在文件 `spark-env.sh` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。
 
 ```bash
 $ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_env/bin/python
@@ -209,8 +209,8 @@ Arctern-Spark 可以运行在 Spark 的各种模式下，需要在每台运行 S
 
 如果 Spark 运行在 `standalone` 集群模式下，提交任务机器的 Spark 环境需要与集群的 Spark 环境完全一致，包括以下几点：
 
-* `spark` 安装的绝对路径与集群中每台机器完全一致
-* `conda` 安装的绝对路径与集群中每个机器完全一致
-* `conda` 虚拟环境名与集群中每个机器完全一致
+* Spark 安装的绝对路径与集群中每台机器完全一致
+* Conda 安装的绝对路径与集群中每个机器完全一致
+* Conda 虚拟环境名与集群中每个机器完全一致
 
 

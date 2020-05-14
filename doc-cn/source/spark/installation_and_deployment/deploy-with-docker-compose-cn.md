@@ -33,7 +33,7 @@ $ docker info
 
 如果上述命令未能正常打印 Docker 相关信息，请启动 **Docker** daemon。
 
-> 提示：在 Linux 环境下，Docker 命令需要 `sudo` 权限。如需要在一般权限下运行 Docker 命令，请创建 `docker` 组并添加用户。详情请参阅 [Linux 安装后步骤](https://docs.docker.com/install/linux/linux-postinstall/)。
+> **注意：** 在 Linux 环境下，Docker 命令需要 `sudo` 权限。如需要在一般权限下运行 Docker 命令，请创建 `docker` 组并添加用户。详情请参阅 [Linux 安装后步骤](https://docs.docker.com/install/linux/linux-postinstall/)。
 
 
 ## 配置 NVIDIA Docker （可选）
@@ -108,7 +108,8 @@ $ sudo docker-compose up -d
 执行以下命令查看 Docker 容器的运行情况：
 
 ```bash
-$ sudo docker ps    # 输出如下：
+$ sudo docker ps    
+# 输出如下：
 CONTAINER ID        IMAGE                                                                  COMMAND                  CREATED             STATUS              PORTS                                            NAMES
 acbc7dfa299f        registry.zilliz.com/arctern/arctern-spark:master-ubuntu18.04-release   "/entrypoint.sh /run…"   About an hour ago   Up About an hour                                                     docker_spark-worker_1
 b7c75a456982        registry.zilliz.com/arctern/arctern-spark:master-ubuntu18.04-release   "/entrypoint.sh /run…"   About an hour ago   Up About an hour    0.0.0.0:7077->7077/tcp, 0.0.0.0:8080->8080/tcp   docker_spark-master_1

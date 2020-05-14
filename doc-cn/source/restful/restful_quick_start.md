@@ -47,7 +47,7 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 
 > **注意：** 该数据的时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`
 
-下述示例中假设服务器 IP 地址为 `127.0.0.1`，RESTful服务端口为 `8080`。
+下述示例中假设服务器 IP 地址为 `127.0.0.1`，RESTful 服务端口为 `8080`。
 
 ### 安装依赖
 
@@ -285,7 +285,7 @@ $ pip install requests
 
 ### 绘制点图
 
-使用 `/pointmap` 接口根据乘客上车地点绘制点图。点图中具体参数说明请参见 [点图 RESTful API 说明](./api/function/pointmap.html)。
+使用 `/pointmap` 接口根据乘客上车地点绘制点图。点图中具体参数说明请参见[点图 RESTful API 说明](./api/function/pointmap.html)。
 
 ```python
 >>> import requests
@@ -319,7 +319,7 @@ $ pip install requests
 
 ### 带权点图
 
-使用 `/weighted_pointmap` 接口根据乘客上车地点绘制带权点图，使用总费用作为点的权重，总费用越高，权重越大，点的颜色越深。权重图中具体参数说明请参见 [带权点图 RESTful API 说明](./api/function/weighted_pointmap.html)。
+使用 `/weighted_pointmap` 接口根据乘客上车地点绘制带权点图，使用总费用作为点的权重，总费用越高，权重越大，点的颜色越深。权重图中具体参数说明请参见[带权点图 RESTful API 说明](./api/function/weighted_pointmap.html)。
 
 ```python
 >>> import requests
@@ -368,7 +368,7 @@ $ pip install requests
 
 ### 热力图
 
-使用 `/heatmap` 接口根据乘客下车地点以及行程费用绘制热力图，费用高的区域为红色，费用低的区域为绿色。热力图中具体参数说明请参见 [热力图 RESTful API 说明](./api/function/heatmap.html)。
+使用 `/heatmap` 接口根据乘客下车地点以及行程费用绘制热力图，费用高的区域为红色，费用低的区域为绿色。热力图中具体参数说明请参见[热力图 RESTful API 说明](./api/function/heatmap.html)。
 
 ```python
 >>> import requests
@@ -406,7 +406,7 @@ $ pip install requests
 
 ### 轮廓图
 
-使用 `/choroplethmap` 接口，根据下车地点所在建筑物、小费金额绘制轮廓图，小费金额高为黄色，小费金额低为蓝色。轮廓图中具体参数说明请参见 [轮廓图 RESTful API 说明](./api/function/choroplethmap.html)。
+使用 `/choroplethmap` 接口，根据下车地点所在建筑物、小费金额绘制轮廓图，小费金额高为黄色，小费金额低为蓝色。轮廓图中具体参数说明请参见[轮廓图 RESTful API 说明](./api/function/choroplethmap.html)。
 
 ```python
 >>> import requests
@@ -452,7 +452,7 @@ $ pip install requests
 
 ### 图标图
 
-使用 `/icon_viz` 接口根据乘客上车地点绘制图标图。图标图中具体参数说明请参见 [图标图 RESTful API 说明](./api/function/icon_viz.html)。
+使用 `/icon_viz` 接口根据乘客上车地点绘制图标图。图标图中具体参数说明请参见[图标图 RESTful API 说明](./api/function/icon_viz.html)。
 
 ```python
 >>> import requests
@@ -493,7 +493,7 @@ $ pip install requests
 
 ### 渔网图
 
-使用 `/fishnetmap` 接口根据乘客上车地点绘制渔网图，使用总费用作为渔网网格的权重，总费用越高，权重越大，渔网网格的颜色越深。渔网图中具体参数说明请参见 [渔网图 RESTful API 说明](./api/function/fishnetmap.html)。
+使用 `/fishnetmap` 接口根据乘客上车地点绘制渔网图，使用总费用作为渔网网格的权重，总费用越高，权重越大，渔网网格的颜色越深。渔网图中具体参数说明请参见[渔网图 RESTful API 说明](./api/function/fishnetmap.html)。
 
 ```python
 >>> import requests
@@ -561,7 +561,7 @@ $ pip install requests
 
 完成操作后需要通过 `/scope/<scope_name>` 接口删除作用域释放服务器资源。
 
-<font color="#dd0000">注意：</font>`Arctern RESTful`服务不会主动释放你申请的作用域，完成操作后请务必删除所申请的所有作用域。
+<font color="#dd0000">注意：</font>`Arctern RESTful` 服务不会主动释放你申请的作用域，完成操作后请务必删除所申请的所有作用域。
 
 ```python
 >>> import requests

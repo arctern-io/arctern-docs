@@ -5,7 +5,7 @@
 ## 安装要求
 
 | 名称     | 版本              |
-| -------- | ----------------- |
+| :-------- | :----------------- |
 | 操作系统 | Ubuntu LTS 18.04  |
 
 ## <span id = "installdependencies">安装依赖项</span>
@@ -20,7 +20,7 @@ $ wget "http://mirror.bit.edu.cn/apache/spark/spark-3.0.0-preview2/spark-3.0.0-p
 $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh  
 ```
 
-> **注意：** 后续工作必须在 Arctern Conda 环境中进行。
+> **注意：** 后续工作需在安装 Arctern-Spark 的离线环境中执行。
 
 ### 安装系统依赖
 
@@ -184,6 +184,6 @@ Arctern-Spark 可以运行在 Spark 的各种模式下，需要在每台运行 S
 
 如果 Spark 运行在 `standalone` 集群模式下，提交任务机器的 Spark 环境需要与集群的 Spark 环境完全一致，包括以下几点：
 
-* `spark` 安装的绝对路径与集群中每台机器完全一致
-* `conda` 安装的绝对路径与集群中每个机器完全一致
-* `conda` 虚拟环境名与集群中每个机器完全一致
+* Spark 安装的绝对路径与集群中每台机器完全一致
+* Conda 安装的绝对路径与集群中每个机器完全一致
+* Conda 虚拟环境名与集群中每个机器完全一致
