@@ -99,7 +99,7 @@ SparkSession available as 'spark'.
 加载测试数据，并创建临时表 `origin_nyc_taxi`：
 
 ```python
-# 文件路径配置为本地配置
+# 文件路径配置为本地路径。
 >>> origin_df = spark.read.format("csv") \
 ...                       .option("header",True) \
 ...                       .option("delimiter",",") \
