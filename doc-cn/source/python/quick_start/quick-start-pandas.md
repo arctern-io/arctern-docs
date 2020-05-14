@@ -10,7 +10,7 @@
 $ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
 ```
 
-该数据集包含2009 年纽约市出租车的运营记录，各字段的含义如下：
+该数据集包含 2009 年纽约市出租车的运营记录，各字段的含义如下：
 
 | 名称                  | 含义                       | 类型   |
 | :-------------------- | :------------------------- | :----- |
