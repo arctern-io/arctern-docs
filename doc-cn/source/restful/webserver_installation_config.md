@@ -56,7 +56,7 @@ Arctern RESTful Server 的运行依赖于 Arctern-Spark，执行以下命令在�
 $ conda install -y -q -c conda-forge -c arctern arctern-spark
 ```
 
-**注意：** 此处安装 Arctern-Spark 仅用于解决 RESTful Server 的运行时依赖，不能作为执行 RESTful 请求的 Arctern-Spark 后台。
+> **注意：** 此处安装 Arctern-Spark 仅用于解决 RESTful Server 的运行时依赖，不能作为执行 RESTful 请求的 Arctern-Spark 后台。
 
 ### 安装 PySpark
 
@@ -84,9 +84,11 @@ $ python setup.py install
 ```bash
 # 下载源码
 $ git clone https://github.com/zilliztech/arctern.git
+
 # 切换分支
 $ cd arctern
 $ git checkout master
+
 # 安装依赖
 $ cd gui/server/arctern_server
 $ pip install -r requirements.txt
@@ -200,7 +202,6 @@ $ python manage.py -r -i 192.168.1.2 -p 8088
 ```
 
 其中 `/path/to/server` 为 Arctern 项目下 `gui/server` 目录的绝对路径。
-
 
 成功完成以上步骤后，即完成了 Arctern RESTful Server 的安装和配置，请参考 Arctern RESTful 服务[接口文档](./api/api.html)和[使用示例](./restful_quick_start.md)使用 Arctern RESTful 服务。
 

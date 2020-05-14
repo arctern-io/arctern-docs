@@ -11,7 +11,7 @@
 | 操作系统 |Ubuntu LTS 18.04|
 | Conda  | Miniconda Python3  |
 | Spark | 3.0  |
-| JDK   | JDK 8|
+| JDK    | JDK 8 |
 
 * GPU 版本
 
@@ -22,35 +22,37 @@
 | Spark | 3.0  |
 |CUDA|10.0|
 |Nvidia driver|4.30|
-| JDK   | JDK 8|
+| JDK    | JDK 8 |
 
 ## 安装依赖库
 
 * CPU 版本
 
-  执行以下命令安装 Arctern-Spark CPU 版本的依赖库：
+执行以下命令安装 Arctern-Spark CPU 版本的依赖库：
 ```bash
-    $ sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
+$ sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 
-    # 配置 JDK 环境变量，路径需要配置为本地 JDK 8 路径
-    $ export JAVA_HOME=/path/to/java8
-    $ export PATH=$JAVA_HOME/bin:$PATH
-    $ export JRE_HOME=$JAVA_HOME/jre
-    $ export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
+# 配置 JDK 环境变量，路径需要配置为本地 JDK 8 路径
+$ export JAVA_HOME=/path/to/java8
+$ export PATH=$JAVA_HOME/bin:$PATH
+$ export JRE_HOME=$JAVA_HOME/jre
+$ export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
 ```
+
 
 * GPU 版本
 
-  执行以下命令安装 Arctern-Spark GPU 版本的依赖库：
+执行以下命令安装 Arctern-Spark GPU 版本的依赖库：
 ```bash
-    $ sudo apt install libgl1-mesa-dev libegl1-mesa-dev
+$ sudo apt install libgl1-mesa-dev libegl1-mesa-dev
 
-    # 配置 JDK 环境变量，路径需要配置为本地 JDK 8 路径
-    $ export JAVA_HOME=/path/to/java8
-    $ export PATH=$JAVA_HOME/bin:$PATH
-    $ export JRE_HOME=$JAVA_HOME/jre
-    $ export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
+# 配置 JDK 环境变量，路径需要配置为本地 JDK 8 路径
+$ export JAVA_HOME=/path/to/java8
+$ export PATH=$JAVA_HOME/bin:$PATH
+$ export JRE_HOME=$JAVA_HOME/jre
+$ export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
 ```
+
 
 ## 创建 Arctern-Spark Conda 环境
 
@@ -64,18 +66,18 @@ $ conda create -n arctern_env -c conda_forge python=3.7.6
 
 创建成功后，可以通过 `conda env list` 命令查看所有 Conda 环境，其输出结果应包含 Arctern 环境，类似如下：
   
-  ```bash
-  conda environments:
-  base               ...
-  arctern_env      ...
-  ...
-  ```
+```bash
+conda environments:
+base               ...
+arctern_env      ...
+...
+```
 
- 进入 arctern-env 环境：
+进入 arctern-env 环境：
 
-  ```bash
-  $ conda activate arctern_env
-  ```
+```bash
+$ conda activate arctern_env
+```
 
 > **注意：** 后续工作必须在 Arctern Conda 环境中进行。
 
@@ -86,7 +88,7 @@ $ conda create -n arctern_env -c conda_forge python=3.7.6
 执行以下命令在 Conda 环境中安装 Arctern-Spark 的 CPU 版本：
 
 ```bash
-    $ conda install -c arctern -c conda-forge arctern-spark
+$ conda install -c arctern -c conda-forge arctern-spark
 ```
 
 * GPU版本
@@ -94,8 +96,8 @@ $ conda create -n arctern_env -c conda_forge python=3.7.6
 执行以下命令在 Conda 环境中安装 Arctern-Spark 的 GPU 版本：  
 
 ```bash
-    $ conda install -c arctern/label/cuda10.0 -c conda-forge libarctern
-    $ conda install -c arctern -c conda-forge arctern-spark
+$ conda install -c arctern/label/cuda10.0 -c conda-forge libarctern
+$ conda install -c arctern -c conda-forge arctern-spark
 ```
 
 ## 安装验证
@@ -197,7 +199,7 @@ $ conda uninstall libarctern arctern arctern-spark
 
 ## FAQ
 
-### 对Spark的支持
+### 对 Spark 的支持
 
 Arctern-Spark 可以运行在 Spark 的各种模式下，需要在每台运行 Spark 的机器上，执行如下操作：
 
@@ -210,4 +212,5 @@ Arctern-Spark 可以运行在 Spark 的各种模式下，需要在每台运行 S
 * `spark` 安装的绝对路径与集群中每台机器完全一致
 * `conda` 安装的绝对路径与集群中每个机器完全一致
 * `conda` 虚拟环境名与集群中每个机器完全一致
+
 

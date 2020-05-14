@@ -5,11 +5,9 @@
 ## 数据准备
 
 在 Arctern-Spark 运行环境中下载纽约出租车数据集。
-
-```bash
+```bash 
 $ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
 ```
-
 该数据集包含 2009 年纽约市出租车运营记录，各字段的含义如下：
 
 | 名称                  | 含义                       | 类型   |
@@ -35,7 +33,7 @@ $ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/be
 
 ## 启动 PySpark
 
-以下通过 PySpark 交互界面展示 Arctern-Spark 的使用方法，使用以下命令打开 PySpark 交互界面：
+以下通过 PySpark 交互界面展示 Arctern-Spark 的使用方法，执行以下命令打开 PySpark 交互界面：
 
 ```bash
 $ cd ${SPARK_HOME}
@@ -63,7 +61,7 @@ SparkSession available as 'spark'.
 
 ## 注册 Arctern-Spark 功能函数
 
-在使用 Arctern-Spark 之前需要在界面中输入以下代码对 Arctern-Spark 提供的功能函数进行注册：
+在使用 Arctern-Spark 之前，你需要在界面中输入以下代码对 Arctern-Spark 提供的功能函数进行注册：
 
 ```python
 >>> from pyspark.sql.types import *
@@ -75,7 +73,7 @@ SparkSession available as 'spark'.
 
 ## 加载数据
 
-根据测试数据各字段的名称和数据类型，构建导入测试数据的 `schema`。因为 Spark 不支持原始数据的时间格式，需要先将其作为字符串导入，之后转换为`TimeStamp`格式。
+根据测试数据各字段的名称和数据类型，构建导入测试数据的 `schema`。因为 Spark 不支持原始数据的时间格式，你需要先将其作为字符串导入，之后转换为 `TimeStamp` 格式。
 
 
 ```python
@@ -101,7 +99,7 @@ SparkSession available as 'spark'.
 加载测试数据，并创建临时表 `origin_nyc_taxi`：
 
 ```python
-# 文件路径配置为本地路径
+# 文件路径配置为本地配置
 >>> origin_df = spark.read.format("csv") \
 ...                       .option("header",True) \
 ...                       .option("delimiter",",") \
@@ -111,6 +109,7 @@ SparkSession available as 'spark'.
 ```
 
 查询数据表 `origin_nyc_taxi` 的行数，验证数据是否加载成功：
+
 ```python
 >>> spark.sql("select count(*) from origin_nyc_taxi").show()
 +--------+                                                                      
@@ -215,7 +214,7 @@ SparkSession available as 'spark'.
 +----------------------------+------------------------------------------+
 ```
 
-你可以在 [EPSG](http://epsg.io/transform#s_srs=4326&t_srs=3857) 网站验证验证转换结果是否正确。
+你可以在 [EPSG](http://epsg.io/transform#s_srs=4326&t_srs=3857) 网站上验证转换结果是否正确。
 
 ![](../../../../img/quickstart/epsg-4326-to-3857-example.png)
 
@@ -244,6 +243,7 @@ SparkSession available as 'spark'.
 pickup_sql = "select st_point(pickup_longitude, pickup_latitude) as point from nyc_taxi where " \
 f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
 pickup_df = spark.sql(pickup_sql)
+
 # 根据查询结果绘制点图图层。点大小为 10，点颜色为 #2DEF4A，点不透明度为 1.0。
 vega = vega_pointmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], point_size=10, point_color="#2DEF4A", opacity=1, coordinate_system="EPSG:4326")
 res = pointmap(vega, pickup_df)
@@ -261,6 +261,7 @@ save_png(res, '/tmp/arctern_pointmap.png')
 pickup_sql = "select st_point(pickup_longitude, pickup_latitude) as point, fare_amount as color_weight, total_amount as size_weight from nyc_taxi where " \
 f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
 pickup_df = spark.sql(pickup_sql)
+
 # 根据查询结果绘制带权点图图层。点的颜色根据 color_weight 在 #115f9a ~ #d0f400 之间变化，点的大小根据 size_weight 在 3 ~ 15 之间变化。
 vega = vega_weighted_pointmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], color_gradient=["#115f9a", "#d0f400"], color_bound=[1, 50], size_bound=[3, 15], opacity=1.0, coordinate_system="EPSG:4326")
 res = weighted_pointmap(vega, pickup_df)
@@ -278,6 +279,7 @@ save_png(res, "/tmp/arctern_weighted_pointmap.png")
 pickup_sql = "select st_point(pickup_longitude, pickup_latitude) as point, fare_amount as weight from nyc_taxi where " \
 f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
 pickup_df = spark.sql(pickup_sql)
+
 # 根据查询结果绘制热力图图层。
 vega = vega_heatmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], map_zoom_level=13.0, coordinate_system="EPSG:4326")
 res = heatmap(vega, pickup_df)
@@ -295,6 +297,7 @@ save_png(res, "/tmp/arctern_heatmap.png")
 pickup_sql = "select ST_GeomFromText(buildingtext_pickup) as buildings, fare_amount as color_weight from nyc_taxi where " \
 f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) and (buildingtext_pickup!='') limit {limit_num}"
 pickup_df = spark.sql(pickup_sql)
+
 # 根据查询结果绘制轮廓图图层。轮廓的填充颜色根据 color_weight 在 #115f9a ~ #d0f400 之间变化。
 vega = vega_choroplethmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], color_gradient=["#115f9a", "#d0f400"], color_bound=[2.5, 5], opacity=1.0, coordinate_system="EPSG:4326")
 res = choroplethmap(vega, pickup_df)
@@ -312,7 +315,8 @@ save_png(res, "/tmp/arctern_choroplethmap.png")
 pickup_sql = "select st_point(pickup_longitude, pickup_latitude) from nyc_taxi where " \
 f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit 25"
 pickup_df = spark.sql(pickup_sql)
-# 根据查询结果绘制图标图图层, icon_path 配置为本地路径。
+
+# 根据查询结果绘制图标图图层，icon_path 配置为本地路径。
 vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path='/path/to/icon.png', coordinate_system="EPSG:4326")
 res = icon_viz(vega, pickup_df)
 save_png(res, "/tmp/arctern_iconviz.png")
@@ -329,6 +333,7 @@ save_png(res, "/tmp/arctern_iconviz.png")
 pickup_sql = "select st_point(pickup_longitude, pickup_latitude) as point, fare_amount as weight from nyc_taxi where " \
 f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
 pickup_df = spark.sql(pickup_sql)
+
 # 根据查询结果绘制渔网图图层。
 vega = vega_fishnetmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], cell_size=8, cell_spacing=1, opacity=1.0, coordinate_system="EPSG:4326")
 res = fishnetmap(vega, pickup_df)

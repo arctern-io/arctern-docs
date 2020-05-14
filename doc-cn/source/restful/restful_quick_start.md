@@ -18,7 +18,7 @@
 $ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
 ```
 
-该数据集的行数为 `200000`，使用如下命令查看是否下载成功：
+该数据集的行数为 200000，使用如下命令查看是否下载成功：
 
 ```bash
 $ wc -l 0_2M_nyc_taxi_and_building.csv
@@ -45,7 +45,7 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 | buildingtext_pickup   | 上车地点所在建筑的轮廓描述 | string |
 | buildingtext_dropoff  | 下车地点所在建筑的轮廓描述 | string |
 
-> 该数据的时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`
+> **注意：** 该数据的时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`
 
 下述示例中假设服务器 IP 地址为 `127.0.0.1`，RESTful服务端口为 `8080`。
 
@@ -66,9 +66,9 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+...
 >>> payload = {"scope": "nyc_taxi"}
->>>
+...
 >>> r = requests.post(url="http://127.0.0.1:8080/scope", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -86,41 +86,41 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+...
 >>> file_path = "/example/data/0_2M_nyc_taxi_and_building.csv"
 >>> payload = {
-    "scope": "nyc_taxi",
-    "tables": [
-        {
-            "name": "raw_data",
-            "format": "csv",
-            "path": file_path,
-            "options": {
-                "header": "True",
-                "delimiter": ","
-            },
-            "schema": [
-                {"VendorID": "string"},
-                {"tpep_pickup_datetime": "string"},
-                {"tpep_dropoff_datetime": "string"},
-                {"passenger_count": "long"},
-                {"trip_distance": "double"},
-                {"pickup_longitude": "double"},
-                {"pickup_latitude": "double"},
-                {"dropoff_longitude": "double"},
-                {"dropoff_latitude": "double"},
-                {"fare_amount": "double"},
-                {"tip_amount": "double"},
-                {"total_amount": "double"},
-                {"buildingid_pickup": "long"},
-                {"buildingid_dropoff": "long"},
-                {"buildingtext_pickup": "string"},
-                {"buildingtext_dropoff": "string"}
-            ]
-        }
-    ]
-}
->>>
+... "scope": "nyc_taxi",
+... "tables": [
+...     {
+...         "name": "raw_data",
+...         "format": "csv",
+...         "path": file_path,
+...         "options": {
+...             "header": "True",
+...             "delimiter": ","
+...         },
+...         "schema": [
+...             {"VendorID": "string"},
+...             {"tpep_pickup_datetime": "string"},
+...             {"tpep_dropoff_datetime": "string"},
+...             {"passenger_count": "long"},
+...             {"trip_distance": "double"},
+...             {"pickup_longitude": "double"},
+...             {"pickup_latitude": "double"},
+...             {"dropoff_longitude": "double"},
+...             {"dropoff_latitude": "double"},
+...             {"fare_amount": "double"},
+...             {"tip_amount": "double"},
+...             {"total_amount": "double"},
+...             {"buildingid_pickup": "long"},
+...             {"buildingid_dropoff": "long"},
+...             {"buildingtext_pickup": "string"},
+...             {"buildingtext_dropoff": "string"}
+...         ]
+...     }
+... ]
+... }
+...
 >>> r = requests.post(url="http://127.0.0.1:8080/loadfile", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -210,7 +210,6 @@ $ pip install requests
     "status": "success",
     "table": "raw_data"
 }
->>> 
 ```
 
 ### SQL查询
@@ -224,14 +223,14 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+...
 >>> payload = {
-    "scope": "nyc_taxi",
-    "session": "spark",
-    "sql": "create table nyc_taxi as (select VendorID, to_timestamp(tpep_pickup_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_pickup_datetime, to_timestamp(tpep_dropoff_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_dropoff_datetime, passenger_count, trip_distance, pickup_longitude, pickup_latitude, dropoff_longitude, dropoff_latitude, fare_amount, tip_amount, total_amount, buildingid_pickup, buildingid_dropoff, buildingtext_pickup, buildingtext_dropoff from raw_data where (pickup_longitude between -180 and 180) and (pickup_latitude between -90 and 90) and (dropoff_longitude between -180 and 180) and  (dropoff_latitude between -90 and 90))",
-    "collect_result": "0"
-}
->>>
+... "scope": "nyc_taxi",
+... "session": "spark",
+... "sql": "create table nyc_taxi as (select VendorID, to_timestamp(tpep_pickup_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_pickup_datetime, to_timestamp(tpep_dropoff_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_dropoff_datetime, passenger_count, trip_distance, pickup_longitude, pickup_latitude, dropoff_longitude, dropoff_latitude, fare_amount, tip_amount, total_amount, buildingid_pickup, buildingid_dropoff, buildingtext_pickup, buildingtext_dropoff from raw_data where (pickup_longitude between -180 and 180) and (pickup_latitude between -90 and 90) and (dropoff_longitude between -180 and 180) and  (dropoff_latitude between -90 and 90))",
+... "collect_result": "0"
+... }
+...
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -239,7 +238,6 @@ $ pip install requests
     'message': 'execute sql successfully!',
     'status': 'success'
 }
->>> 
 ```
 
 #### 查询数据
@@ -249,10 +247,10 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+...
 >>> sql = "select count(*) as num_rows from nyc_taxi"
 >>> payload = {"scope": "nyc_taxi", "sql": sql, "collect_result": "1"}
->>>
+...
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -263,7 +261,6 @@ $ pip install requests
     ],
     'status': 'success'
 }
->>> 
 ```
 
 #### 删除表
@@ -273,7 +270,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+...
 >>> sql = "drop table if exists raw_data"
 >>> payload = {"scope": "nyc_taxi", "sql": sql, "collect_result": "0"}
 >>>
@@ -284,7 +281,6 @@ $ pip install requests
     'message': 'execute sql successfully!',
     'status': 'success'
 }
->>> 
 ```
 
 ### 绘制点图
@@ -294,30 +290,27 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>> 
+...
 >>> payload = {
-    "scope": "nyc_taxi",
-    "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point from nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.998427 40.730309, -73.954348 40.730309, -73.954348 40.780816 ,-73.998427 40.780816, -73.998427 40.730309))'))",
-    "params": {
-         "width": 1024,
-         "height": 896,
-        "bounding_box": [-73.998427, 40.730309, -73.954348, 40.780816],
-        "coordinate_system": "EPSG:4326",
-        "point_color": "#2DEF4A",
-        "point_size": 3,
-        "opacity": 0.5
-    }
-}
->>>
+... "scope": "nyc_taxi",
+... "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point from nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.998427 40.730309, -73.954348 40.730309, -73.954348 40.780816 ,-73.998427 40.780816, -73.998427 40.730309))'))",
+... "params": {
+...      "width": 1024,
+...      "height": 896,
+...     "bounding_box": [-73.998427, 40.730309, -73.954348, 40.780816],
+...     "coordinate_system": "EPSG:4326",
+...     "point_color": "#2DEF4A",
+...     "point_size": 3,
+...     "opacity": 0.5
+... }
+... }
+...
 >>> r = requests.post(url="http://127.0.0.1:8080/pointmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
->>> 
->>> # 保存为 PNG 图片
 ... 
+>>> # 保存为 PNG 图片 
 >>> import base64
 >>> with open("/tmp/pointmap.png", "wb") as f:
 ...     f.write(base64.b64decode(r.json()['result']))
-... 
->>> 
 ```
 
 点图样例：
@@ -333,42 +326,40 @@ $ pip install requests
 >>> import json
 >>>
 >>> payload = {
-    "scope": "nyc_taxi",
-    "session": "spark",
-    "sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color FROM nyc_taxi",
-    "type": "weighted",
-    "params": {
-        "width": 512,
-        "height": 448,
-        "bounding_box": [
-            -73.9616334766551,
-            40.704739019597156,
-            -73.94232850242967,
-            40.728133570887906
-        ],
-        "opacity": 0.8,
-        "coordinate_system": "EPSG:4326",
-        "size_bound": [
-            10
-        ],
-        "color_bound": [
-            2.5,
-            20
-        ],
-        "color_gradient": [
-            "#115f9a",
-            "#d0f400"
-        ]
-    }
-}
->>>
+... "scope": "nyc_taxi",
+... "session": "spark",
+... "sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color FROM nyc_taxi",
+... "type": "weighted",
+... "params": {
+...     "width": 512,
+...     "height": 448,
+...     "bounding_box": [
+...         -73.9616334766551,
+...         40.704739019597156,
+...         -73.94232850242967,
+...         40.728133570887906
+...     ],
+...     "opacity": 0.8,
+...     "coordinate_system": "EPSG:4326",
+...     "size_bound": [
+...         10
+...     ],
+...     "color_bound": [
+...         2.5,
+...         20
+...     ],
+...     "color_gradient": [
+...         "#115f9a",
+...         "#d0f400"
+...     ]
+... }
+... }
+...
 >>> r = requests.post(url="http://127.0.0.1:8080/weighted_pointmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
->>> 
+... 
 >>> import base64
 >>> with open("/tmp/weighted_pointmap.png", "wb") as f:
 ...     f.write(base64.b64decode(r.json()['result']))
-... 
->>> 
 ```
 
 带权点图样例：
@@ -384,31 +375,29 @@ $ pip install requests
 >>> import json
 >>>
 >>> payload = {
-    "scope": "nyc_taxi",
-    "session": "spark",
-    "sql": "SELECT ST_Point (dropoff_longitude, dropoff_latitude) AS point, avg(fare_amount) AS w FROM nyc_taxi GROUP BY point",
-    "params": {
-        "width": 512,
-        "height": 448,
-        "bounding_box": [
-            -74.01556543545699,
-            40.69354738164881,
-            -73.9434424136598,
-            40.780921656427836
-        ],
-        "coordinate_system": "EPSG:4326",
-        "map_zoom_level": 10,
-        "aggregation_type": "sum"
-    }
-}
->>>
+... "scope": "nyc_taxi",
+... "session": "spark",
+... "sql": "SELECT ST_Point (dropoff_longitude, dropoff_latitude) AS point, avg(fare_amount) AS w FROM nyc_taxi GROUP BY point",
+... "params": {
+...     "width": 512,
+...     "height": 448,
+...     "bounding_box": [
+...         -74.01556543545699,
+...         40.69354738164881,
+...         -73.9434424136598,
+...         40.780921656427836
+...     ],
+...     "coordinate_system": "EPSG:4326",
+...     "map_zoom_level": 10,
+...     "aggregation_type": "sum"
+... }
+... }
+...
 >>> r = requests.post(url="http://127.0.0.1:8080/heatmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
->>> 
+... 
 >>> import base64
 >>> with open("/tmp/heatmap.png", "wb") as f:
 ...     f.write(base64.b64decode(r.json()['result']))
-... 
->>> 
 ```
 
 热力图样例：
@@ -422,41 +411,39 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+...
 >>> payload = {
-    "scope": "nyc_taxi",
-    "session": "spark",
-    "sql": "SELECT ST_GeomFromText(buildingtext_dropoff) AS wkt, avg(tip_amount) AS w FROM nyc_taxi WHERE ((buildingtext_dropoff!='')) GROUP BY wkt",
-    "params": {
-        "width": 512,
-        "height": 448,
-        "bounding_box": [
-            -74.00235068563725,
-            40.735104211264684,
-            -73.96739189659048,
-            40.77744332808598
-        ],
-        "coordinate_system": "EPSG:4326",
-        "color_gradient": [
-            "#115f9a",
-            "#d0f400"
-        ],
-        "color_bound": [
-            0,
-            5
-        ],
-        "opacity": 1,
-        "aggregation_type": "mean"
-    }
-}
->>>
+... "scope": "nyc_taxi",
+... "session": "spark",
+... "sql": "SELECT ST_GeomFromText(buildingtext_dropoff) AS wkt, avg(tip_amount) AS w FROM nyc_taxi WHERE ((buildingtext_dropoff!='')) GROUP BY wkt",
+... "params": {
+...     "width": 512,
+...     "height": 448,
+...     "bounding_box": [
+...         -74.00235068563725,
+...         40.735104211264684,
+...         -73.96739189659048,
+...         40.77744332808598
+...     ],
+...     "coordinate_system": "EPSG:4326",
+...     "color_gradient": [
+...         "#115f9a",
+...         "#d0f400"
+...     ],
+...     "color_bound": [
+...         0,
+...         5
+...     ],
+...     "opacity": 1,
+...     "aggregation_type": "mean"
+... }
+... }
+...
 >>> r = requests.post(url="http://127.0.0.1:8080/choroplethmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
->>> 
+... 
 >>> import base64
 >>> with open("/tmp/choroplethmap.png", "wb") as f:
 ...     f.write(base64.b64decode(r.json()['result']))
-... 
->>> 
 ```
 
 轮廓图样例：
@@ -470,36 +457,34 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+...
 >>> # 下面 icon_path 的路径填写待显示图标所在的绝对路径，
 >>> # 本例中的图标文件可通过如下命令获取：
 >>> # wget https://github.com/zilliztech/arctern-docs/raw/master/img/icon/icon-viz.png
 >>> icon_path = "/path/to/icon_example.png"
 >>> payload = {
-    "scope": "nyc_taxi",
-    "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point from nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))')) limit 25",
-    "params": {
-        "width": 512,
-        "height": 448,
-        "bounding_box": [
-            -73.9616334766551,
-            40.704739019597156,
-            -73.94232850242967,
-            40.728133570887906
-        ],
-        "coordinate_system": "EPSG:4326",
-        "icon_path": icon_path
-    }
-}
->>> 
+... "scope": "nyc_taxi",
+... "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point from nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))')) limit 25",
+... "params": {
+...     "width": 512,
+...     "height": 448,
+...     "bounding_box": [
+...         -73.9616334766551,
+...         40.704739019597156,
+...         -73.94232850242967,
+...         40.728133570887906
+...     ],
+...     "coordinate_system": "EPSG:4326",
+...     "icon_path": icon_path
+... }
+... }
+... 
 >>> r = requests.post(url="http://127.0.0.1:8080/icon_viz", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
->>> 
+... 
 >>> # 保存为 PNG 图片
 >>> import base64
 >>> with open("/tmp/icon_viz.png", "wb") as f:
 ...     f.write(base64.b64decode(r.json()['result']))
-... 
->>>
 ```
 
 图标图样例：
@@ -513,38 +498,37 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+...
 >>> payload = {
-    "scope": "nyc_taxi",
-    "sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color FROM nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))'))",
-    "params": {
-        "width": 512,
-        "height": 448,
-        "bounding_box": [
-            -73.9616334766551,
-            40.704739019597156,
-            -73.94232850242967,
-            40.728133570887906
-        ],
-        "opacity": 1,
-        "coordinate_system": "EPSG:4326",
-        "cell_size": 4,
-        "cell_spacing": 1,
-        "color_gradient": [
-            "#115f9a",
-            "#d0f400"
-        ],
-        "aggregation_type": "sum"
-    }
-}
->>> 
+... "scope": "nyc_taxi",
+... "sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color FROM nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))'))",
+... "params": {
+...     "width": 512,
+...     "height": 448,
+...     "bounding_box": [
+...         -73.9616334766551,
+...         40.704739019597156,
+...         -73.94232850242967,
+...         40.728133570887906
+...     ],
+...     "opacity": 1,
+...     "coordinate_system": "EPSG:4326",
+...     "cell_size": 4,
+...     "cell_spacing": 1,
+...     "color_gradient": [
+...         "#115f9a",
+...         "#d0f400"
+...     ],
+...     "aggregation_type": "sum"
+... }
+... }
+... 
 >>> r = requests.post(url="http://127.0.0.1:8080/fishnetmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> # 保存为 PNG 图片
 >>> import base64
 >>> with open("/tmp/fishnetmap.png", "wb") as f:
 ...     f.write(base64.b64decode(r.json()['result']))
-... 
 ```
 
 渔网图样例：
@@ -560,10 +544,10 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+...
 >>> sql = "drop table if exists nyc_taxi"
 >>> payload = {"scope": "nyc_taxi", "sql": sql, "collect_result": "0"}
->>>
+...
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -571,7 +555,6 @@ $ pip install requests
     'message': 'execute sql successfully!',
     'status': 'success'
 }
->>> 
 ```
 
 ### 删除作用域
@@ -582,7 +565,7 @@ $ pip install requests
 
 ```python
 >>> import requests
->>> 
+... 
 >>> r = requests.delete(url="http://127.0.0.1:8080/scope/nyc_taxi")
 >>> r
 <Response [200]>
@@ -592,5 +575,4 @@ $ pip install requests
     'message': 'remove scope nyc_taxi successfully!',
     'status': 'success'
 }
->>>
 ```

@@ -62,14 +62,14 @@ $ conda create -n arctern_env
 
 创建成功后，可以通过 `conda env list` 命令查看所有 Conda 环境，其输出结果应包含 Arctern 环境，类似如下：
 
-  ```bash
-  conda environments:
-  base         ...
-  arctern_env      ...
-  ...
-  ```
+```bash
+conda environments:
+base         ...
+arctern_env      ...
+...
+```
 
-进入 Arctern 环境：
+ 进入 Arctern 环境：
 
 ```bash
 $ conda activate arctern_env
@@ -92,6 +92,7 @@ $ conda install -n arctern_env -c file:///[path/to/channel] arctern-spark --offl
 ```bash
 $ conda install -n arctern_env -c file:///tmp/arctern-resources/arctern_dependencies/conda_dependencies/channel arctern-spark   --offline --override-channels
 ```
+
 
 ## 安装验证
 
