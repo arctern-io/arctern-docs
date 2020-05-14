@@ -4,7 +4,7 @@ Arctern 提供基于 RESTful 接口的 Web 服务。通过配置可将 RESTful S
 
 以下将介绍 Arctern RESTful Server 的安装和配置流程。更多 Arctern RESTful API 信息请查看 RESTful 服务[接口文档](./api/api.html)和[使用示例](./restful_quick_start.md)。
 
-> 注意：Arctern RESTful Server 仅负责 RESTful 请求的接收和解析，实际操作由 RESTful Server 所连接的 Arctern-Spark 执行。在安装 Arctern RESTful Server 前请确保环境存在已安装好 Arctern-Spark 的后台系统。安装 Arctern-Spark 的方式请参照其[安装文档](../spark/installation_and_deployment/installation_and_deployment.html).
+> **注意：**Arctern RESTful Server 仅负责 RESTful 请求的接收和解析，实际操作由 RESTful Server 所连接的 Arctern-Spark 执行。在安装 Arctern RESTful Server 前请确保环境存在已安装好 Arctern-Spark 的后台系统。安装 Arctern-Spark 的方式请参照其[安装文档](../spark/installation_and_deployment/installation_and_deployment.html).
 
 ## 安装准备
 
@@ -36,7 +36,7 @@ conda create -n arctern_env -c conda-forge python=3.7.6
 conda activate arctern_env
 ```
 
-> 注意，以下步骤需要在 Conda 的 Arctern 虚拟环境下进行。
+> **注意：**以下步骤需要在 Conda 的 Arctern 虚拟环境下进行。
 
 ### 安装 Arctern-Spark 包
 
