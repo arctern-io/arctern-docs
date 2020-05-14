@@ -74,7 +74,7 @@ $ conda create -n arctern_env
   `conda activate arctern_env`
 
 
-> 注意：后续工作必须在 conda 虚拟环境 (arctern_env) 中进行。
+> **注意：**后续工作必须在 conda 虚拟环境 (arctern_env) 中进行。
 
 
 ## 安装 Arctern-Spark

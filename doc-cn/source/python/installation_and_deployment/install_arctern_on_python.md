@@ -68,7 +68,7 @@
 
   `conda activate arctern_env`
 
-> 注意：后续工作必须在 Arctern Conda 环境中进行。
+> **注意：**后续工作必须在 Arctern Conda 环境中进行。
 
 ## 安装 Arctern
 
