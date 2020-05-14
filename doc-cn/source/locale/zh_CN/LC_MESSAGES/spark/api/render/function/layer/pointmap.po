@@ -68,8 +68,8 @@ msgstr ""
 
 #: ../../source/spark/api/render/function/layer/pointmap.md:22
 msgid ""
-"* point_color(str) -- 可选参数，表示点的颜色，使用十六进制的颜色编码(Hex Color "
-"Code)表示，默认值为\"#115f9a\"。"
+"* point_color(str) -- 可选参数，表示点的颜色，使用十六进制的颜色编码 (Hex Color "
+"Code) 表示，默认值为\"#115f9a\"。"
 msgstr ""
 
 #: ../../source/spark/api/render/function/layer/pointmap.md:24
@@ -114,7 +114,7 @@ msgid "* vega(VegaPointMap) -- VegaPointMap 对象。"
 msgstr ""
 
 #: ../../source/spark/api/render/function/layer/pointmap.md:50
-msgid "* points(WKB) -- 所需绘制的点，格式为WKB。"
+msgid "* points(WKB) -- 所需绘制的点，格式为 WKB。"
 msgstr ""
 
 #: ../../source/spark/api/render/function/layer/pointmap.md:55
@@ -122,7 +122,7 @@ msgid "bytes"
 msgstr ""
 
 #: ../../source/spark/api/render/function/layer/pointmap.md:60
-msgid "base64编码的png图片。"
+msgid "base64编码的 PNG 图片。"
 msgstr ""
 
 #: ../../source/spark/api/render/function/layer/pointmap.md:63

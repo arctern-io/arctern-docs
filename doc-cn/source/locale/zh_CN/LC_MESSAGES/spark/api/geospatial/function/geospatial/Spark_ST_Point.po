@@ -24,7 +24,7 @@ msgstr ""
 #: arctern_pyspark._wrapper_func.ST_Point:1 of
 msgid ""
 "Construct point according to the coordinates."
-msgstr "从输入的坐标数据构造 point。"
+msgstr "根据输入的坐标构造 Point 对象。"
 
 #: arctern_pyspark._wrapper_func.ST_Point of
 msgid "参数"

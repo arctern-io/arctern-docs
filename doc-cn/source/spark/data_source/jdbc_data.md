@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
     # 注册 Arctern-Spark 提供的函数
     register_funcs(spark)
-
+    
     # 数据导入
     spark.read.format("jdbc") \
               .option("url", "jdbc:postgresql://172.17.0.2:5432/test?user=arcterner&password=arcterner") \
@@ -63,7 +63,6 @@ if __name__ == "__main__":
                .option("query", "select st_astext(geos) as geos from simple") \
                .load() \
                .save()
-
     spark.stop()
 ```
 上述代码的执行结果如下：

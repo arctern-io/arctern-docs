@@ -24,7 +24,7 @@ msgstr ""
 #: arctern_pyspark._wrapper_func.ST_Area:1 of
 msgid ""
 "Calculate the 2D Cartesian (planar) area of geometry."
-msgstr "计算几何体的平面面积。"
+msgstr "计算几何体的二维笛卡尔（平面）面积。"
 
 #: arctern_pyspark._wrapper_func.ST_Area of
 msgid "参数"
