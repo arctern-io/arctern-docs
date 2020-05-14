@@ -132,7 +132,7 @@ $ cd /tmp
 $ spark-submit --master spark://spark-master:7077 spark_udf_ex.py
 ```
 
-> **注意：**在 `docker-compose.yml` 文件中已将 master 容器的 IP 地址映射为了 `spark-master`，因此上述命令中可用 `spark-master` 代替 master 容器的 IP 地址。另外，`docker-compose.yml` 文件中 master容器的 `7077` 端口映射到了宿主机的端口（`7077`->`7077`），因此 `spark-master` 也可以替换为宿主机的 IP 地址。
+> **注意：** 在 `docker-compose.yml` 文件中已将 master 容器的 IP 地址映射为了 `spark-master`，因此上述命令中可用 `spark-master` 代替 master 容器的 IP 地址。另外，`docker-compose.yml` 文件中 master容器的 `7077` 端口映射到了宿主机的端口（`7077`->`7077`），因此 `spark-master` 也可以替换为宿主机的 IP 地址。
 
 
 ### 关闭分布式集群

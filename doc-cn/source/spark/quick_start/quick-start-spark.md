@@ -6,7 +6,7 @@
 
 在 Arctern-Spark 运行环境中下载纽约出租车数据集。
 ```bash 
-wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
+$ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
 ```
 该数据集包含 2009 年纽约市出租车运营记录，各字段的含义如下：
 
@@ -36,8 +36,8 @@ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benc
 以下通过 PySpark 交互界面展示 Arctern-Spark 的使用方法，执行以下命令打开 PySpark 交互界面：
 
 ```bash
-cd ${SPARK_HOME}
-./bin/pyspark
+$ cd ${SPARK_HOME}
+$ ./bin/pyspark
 ```
 
 打开交互界面后，会自动创建一个名为 `spark` 的 `SparkSession`：

@@ -7,7 +7,7 @@
 在 Arctern 运行环境中下载纽约出租车数据集。
 
 ```bash
-wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
+$ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
 ```
 
 该数据集包含2009 年纽约市出租车的运营记录，各字段的含义如下：
