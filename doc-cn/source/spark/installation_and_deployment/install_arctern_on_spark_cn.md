@@ -77,7 +77,7 @@ $ conda create -n arctern_env -c conda_forge python=3.7.6
   $ conda activate arctern_env
   ```
 
-> **注意：** 后续工作必须在 Arctern 环境中进行。
+> **注意：** 后续工作必须在 Arctern Conda 环境中进行。
 
 ## 安装 Arctern-Spark
 
