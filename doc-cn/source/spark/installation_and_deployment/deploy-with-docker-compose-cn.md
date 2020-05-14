@@ -53,7 +53,7 @@ NVIDIA Docker: 2.0.3
 
 编辑 `/etc/docker/daemon.json` 文件，并添加“default-runtime“相关配置:
 
-```
+```json
 {
     "default-runtime": "nvidia",
     "runtimes": {

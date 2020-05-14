@@ -56,7 +56,7 @@ Arctern RESTful Server 的运行依赖于 Arctern-Spark，执行以下命令在�
 $ conda install -y -q -c conda-forge -c arctern arctern-spark
 ```
 
-> 此处安装 Arctern-Spark 仅用于解决 RESTful Server 的运行时依赖，不能作为执行 RESTful 请求的 Arctern-Spark 后台。
+> **注意：** 此处安装 Arctern-Spark 仅用于解决 RESTful Server 的运行时依赖，不能作为执行 RESTful 请求的 Arctern-Spark 后台。
 
 ### 安装 PySpark
 

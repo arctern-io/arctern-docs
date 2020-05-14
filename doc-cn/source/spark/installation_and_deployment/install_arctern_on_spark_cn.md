@@ -28,29 +28,29 @@
 
 * CPU 版本
 
-  执行以下命令安装 Arctern-Spark CPU 版本的依赖库：
+执行以下命令安装 Arctern-Spark CPU 版本的依赖库：
 ```bash
-    $ sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
+$ sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 
-    # 配置 JDK 环境变量，路径需要配置为本地 JDK 8 路径
-    $ export JAVA_HOME=/path/to/java8
-    $ export PATH=$JAVA_HOME/bin:$PATH
-    $ export JRE_HOME=$JAVA_HOME/jre
-    $ export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
+# 配置 JDK 环境变量，路径需要配置为本地 JDK 8 路径
+$ export JAVA_HOME=/path/to/java8
+$ export PATH=$JAVA_HOME/bin:$PATH
+$ export JRE_HOME=$JAVA_HOME/jre
+$ export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
 ```
 
 
 * GPU 版本
 
-  执行以下命令安装 Arctern-Spark GPU 版本的依赖库：
+执行以下命令安装 Arctern-Spark GPU 版本的依赖库：
 ```bash
-    $ sudo apt install libgl1-mesa-dev libegl1-mesa-dev
+$ sudo apt install libgl1-mesa-dev libegl1-mesa-dev
 
-    # 配置 JDK 环境变量，路径需要配置为本地 JDK 8 路径
-    $ export JAVA_HOME=/path/to/java8
-    $ export PATH=$JAVA_HOME/bin:$PATH
-    $ export JRE_HOME=$JAVA_HOME/jre
-    $ export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
+# 配置 JDK 环境变量，路径需要配置为本地 JDK 8 路径
+$ export JAVA_HOME=/path/to/java8
+$ export PATH=$JAVA_HOME/bin:$PATH
+$ export JRE_HOME=$JAVA_HOME/jre
+$ export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
 ```
 
 
@@ -66,12 +66,12 @@ $ conda create -n arctern_env -c conda_forge python=3.7.6
 
 创建成功后，可以通过 `conda env list` 命令查看所有 Conda 环境，其输出结果应包含 Arctern 环境，类似如下：
   
-  ```bash
-  conda environments:
-  base               ...
-  arctern_env      ...
-  ...
-  ```
+```bash
+conda environments:
+base               ...
+arctern_env      ...
+...
+```
 
 进入 arctern-env 环境：
 
@@ -88,7 +88,7 @@ $ conda activate arctern_env
 执行以下命令在 Conda 环境中安装 Arctern-Spark 的 CPU 版本：
 
 ```bash
-    $ conda install -c arctern -c conda-forge arctern-spark
+$ conda install -c arctern -c conda-forge arctern-spark
 ```
 
 * GPU版本
@@ -96,8 +96,8 @@ $ conda activate arctern_env
 执行以下命令在 Conda 环境中安装 Arctern-Spark 的 GPU 版本：  
 
 ```bash
-    $ conda install -c arctern/label/cuda10.0 -c conda-forge libarctern
-    $ conda install -c arctern -c conda-forge arctern-spark
+$ conda install -c arctern/label/cuda10.0 -c conda-forge libarctern
+$ conda install -c arctern -c conda-forge arctern-spark
 ```
 
 ## 安装验证
