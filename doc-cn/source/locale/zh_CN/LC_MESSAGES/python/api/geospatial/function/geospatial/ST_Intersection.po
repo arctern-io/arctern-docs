@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_Intersection:1 of
 msgid "Calculate the point set intersection of two geometry objects."
-msgstr "计算两个几何体的交集。"
+msgstr "检查两个几何体是否存在交集，即它们存在共享空间。"
 
 #: arctern._wrapper_func.ST_Intersection of
 msgid "参数"

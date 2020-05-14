@@ -45,7 +45,7 @@ coordinate_system,aggregation_type)**
 
 &#x2002; &#x2003; &#x2002; &#x2003; * vega(VegaHeatMap) -- VegaHeatMap 对象。
 
-&#x2002; &#x2003; &#x2002; &#x2003; * points(Series(dtype: object)) -- 点的位置，格式为WKB。
+&#x2002; &#x2003; &#x2002; &#x2003; * points(Series(dtype: object)) -- 点的位置，格式为 WKB。
 
 &#x2002; &#x2003; &#x2002; &#x2003; * weights(Series(dtype: float64|int64)) -- 热力值。
 
@@ -57,7 +57,7 @@ coordinate_system,aggregation_type)**
 
 &#x2002; &#x2003; 返回
 
-&#x2002; &#x2003; &#x2002; &#x2003; base64编码的png图片。
+&#x2002; &#x2003; &#x2002; &#x2003; base64 编码的 PNG 图片。
 
 
 ### 示例:

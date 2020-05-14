@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Returns minimum distance in meters between two lon/lat points.Uses a "
 "spherical earth and radius derived from the spheroid defined by the SRID."
-msgstr "根据经纬度坐标，计算地球表面两点之间的球面距离（单位为米）。"
+msgstr "根据经纬度坐标，使用 SRID 定义的地球和半径计算地球表面两点之间的最短球面距离（单位为米）。"
 
 #: arctern_pyspark._wrapper_func.ST_DistanceSphere of
 msgid "参数"

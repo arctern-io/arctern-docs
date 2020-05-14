@@ -74,7 +74,7 @@ msgstr ""
 #: ../../source/python/api/render/function/layer/weighted_pointmap.md:22
 msgid ""
 "* color_bound(list) -- "
-"可选参数，用于描述权重与颜色的对应关系，仅当color_gradient中包含两个颜色值时需要设置，表示形式为 [color_min, "
+"可选参数，用于描述权重与颜色的对应关系，仅当 color_gradient 中包含两个颜色值时需要设置，表示形式为 [color_min, "
 "color_max]。权重值小于等于 color_min 时点的颜色为\"hex_color1\"， 权重值大于等于 color_max "
 "时点的颜色为\"hex_color2\"。"
 msgstr ""
@@ -132,7 +132,7 @@ msgid "* vega(VegaWeightedPointMap) -- VegaWeightedPointMap 对象。"
 msgstr ""
 
 #: ../../source/python/api/render/function/layer/weighted_pointmap.md:52
-msgid "* points(Series(dtype: object)) -- 所需绘制的点，格式为WKB。"
+msgid "* points(Series(dtype: object)) -- 所需绘制的点，格式为 WKB。"
 msgstr ""
 
 #: ../../source/python/api/render/function/layer/weighted_pointmap.md:54
@@ -148,7 +148,7 @@ msgid "bytes"
 msgstr ""
 
 #: ../../source/python/api/render/function/layer/weighted_pointmap.md:66
-msgid "base64编码的png图片。"
+msgid "base64 编码的 PNG 图片。"
 msgstr ""
 
 #: ../../source/python/api/render/function/layer/weighted_pointmap.md:69

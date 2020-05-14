@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_Intersects:1 of
 msgid "Check whether two geometries intersect (i.e., share any portion of space)."
-msgstr "检查两个几何体是否存在交集，即共享任何一个空间部分。"
+msgstr "检查两个几何体是否存在交集，即它们存在共享空间。"
 
 #: arctern_pyspark._wrapper_func.ST_Intersects of
 msgid "参数"

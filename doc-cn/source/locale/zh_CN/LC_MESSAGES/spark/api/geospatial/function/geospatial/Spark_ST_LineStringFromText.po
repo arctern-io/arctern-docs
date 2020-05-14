@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_LineStringFromText:1 of
 msgid "Transform the representation of linestring from WKT to WKB."
-msgstr "将 WKT 格式的 linestring 的转化为 WKB 格式的 linestring。"
+msgstr "将 LineString 对象从 WKT 格式转化为 WKB 格式。"
 
 #: arctern_pyspark._wrapper_func.ST_LineStringFromText of
 msgid "参数"

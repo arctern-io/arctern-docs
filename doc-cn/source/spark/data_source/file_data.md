@@ -50,7 +50,6 @@ POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 
 # 数据导出
 >>> df.select("geos").write.save("/path/to/geos.parquet", format="parquet")
-
 # 导入 PARQUET 文件，导出 JSON 文件
 >>> df = spark_session.read.format('parquet').options(header='true',sep='|').load("/path/to/geos.parquet")
 >>> df.show(100,0)
@@ -75,9 +74,7 @@ POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 |false                             |
 |true                              |
 +----------------------------------+
-
 >>> df.select("geos").write.save("/path/to/geos.json", format="json")
-
 # 导入 JSON 文件，导出 ORC 文件
 >>> df = spark_session.read.format('json').options(header='true',sep='|').load("/path/to/geos.json")
 >>> df.show(100,0)
@@ -102,9 +99,7 @@ POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 |false                             |
 |true                              |
 +----------------------------------+
-
 >>> df.write.save("/path/to/geos.orc", format="orc")
-
 # 导入 ORC 文件，导出 CSV 文件
 >>> df = spark_session.read.format('orc').options(header='true',sep='|').load("/path/to/geos.orc")
 >>> df.show(100,0)

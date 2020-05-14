@@ -49,7 +49,7 @@ color_bound,opacity,coordinate_system,aggregation_type)**
 
 &#x2002; &#x2003; &#x2002; &#x2003; * vega(VegaChoroplethMap) -- VegaChoroplethMap 对象。
 
-&#x2002; &#x2003; &#x2002; &#x2003; * region_boundaries(WKB) -- 所需绘制的多边形轮廓，格式为WKB。
+&#x2002; &#x2003; &#x2002; &#x2003; * region_boundaries(WKB) -- 所需绘制的多边形轮廓，格式为 WKB。
 
 &#x2002; &#x2003; &#x2002; &#x2003; * weights(int|float) -- 轮廓的颜色权重。
 
@@ -61,7 +61,7 @@ color_bound,opacity,coordinate_system,aggregation_type)**
 
 &#x2002; &#x2003; 返回
 
-&#x2002; &#x2003; &#x2002; &#x2003; base64编码的png图片。
+&#x2002; &#x2003; &#x2002; &#x2003; base64 编码的 PNG 图片。
 
 
 ### 示例:

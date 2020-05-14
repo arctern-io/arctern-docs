@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern._wrapper_func.ST_AsGeoJSON:1 of
 msgid "Return the GeoJSON representation of the geometry."
-msgstr "将 WKB 格式的几何体的转化为 GeoJSON 格式的几何体。"
+msgstr "将几何体从 WKB 格式转化为 GeoJSON 格式。"
 
 #: arctern._wrapper_func.ST_AsGeoJSON of
 msgid "参数"

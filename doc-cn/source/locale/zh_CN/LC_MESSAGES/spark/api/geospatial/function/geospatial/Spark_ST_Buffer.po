@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Return a geometry that represents all points whose distance from the "
 "given geometry is less than or equal to \"distance\"."
-msgstr "返回一个所有点与给定的的几何体的距离不大于“distance”的几何体。"
+msgstr "返回一个与给定的几何体的距离不大于“distance”的几何体。"
 
 #: arctern_pyspark._wrapper_func.ST_Buffer of
 msgid "参数"
