@@ -83,7 +83,7 @@ $ conda create -n arctern_env -c conda-forge python=3.7.6
   
 执行以下命令在 Conda 环境中安装 Arctern CPU 版本：
 
-```shell
+```bash
   $ conda install -c arctern -c conda-forge arctern
 ```
 
@@ -91,7 +91,7 @@ $ conda create -n arctern_env -c conda-forge python=3.7.6
   
 执行以下命令在 Conda 环境中安装 Arctern GPU 版本：
 
-```shell
+```bash
   $ conda install -c arctern/label/cuda10.0 -c conda-forge libarctern 
   $ conda install -c arctern -c conda-forge arctern
 ```
@@ -132,6 +132,6 @@ $ py.test [/path/to/]geo_test.py
 
 ## 卸载
 
-```shell
+```bash
 $ conda uninstall libarctern arctern
 ```

@@ -27,7 +27,7 @@
 
 执行以下命令确认 Docker daemon 运行状态：
 
-```shell
+```bash
 $ docker info
 ```
 
@@ -44,7 +44,7 @@ $ docker info
 
 执行以下命令确认 NVIDIA Docker 是否安装成功。
 
-```shell
+```bash
 $ nvidia-docker version
 NVIDIA Docker: 2.0.3
 ```
@@ -66,7 +66,7 @@ NVIDIA Docker: 2.0.3
 ```
 执行以下命令重新加载 Docker：
 
-```shell
+```bash
 $ sudo systemctl daemon-reload
 $ sudo systemctl restart docker
 ```
@@ -76,7 +76,7 @@ $ sudo systemctl restart docker
 ### 安装 Docker Compose
 [安装 Docker Compose](https://docs.docker.com/compose/install/)，并执行以下命令确认 Docker Compose 的版本信息：
 
-```shell
+```bash
 $ docker-compose version
 ```
 
@@ -94,12 +94,12 @@ $ docker-compose version
 在 Docker Compose 工作目录中执行以下命令启动分布式集群：
 
 前台执行：
-```shell
+```bash
 $ sudo docker-compose up
 ```
 
 后台执行：
-```shell
+```bash
 $ sudo docker-compose up -d
 ```
 
@@ -107,7 +107,7 @@ $ sudo docker-compose up -d
 
 执行以下命令查看 Docker 容器的运行情况：
 
-```shell
+```bash
 $ sudo docker ps    # 输出如下：
 CONTAINER ID        IMAGE                                                                  COMMAND                  CREATED             STATUS              PORTS                                            NAMES
 acbc7dfa299f        registry.zilliz.com/arctern/arctern-spark:master-ubuntu18.04-release   "/entrypoint.sh /run…"   About an hour ago   Up About an hour                                                     docker_spark-worker_1
@@ -116,18 +116,18 @@ b7c75a456982        registry.zilliz.com/arctern/arctern-spark:master-ubuntu18.04
 
 在 Docker 容器的运行情况中查找 NAMES 字段为“docker_spark-master_1” 的条目（在上方示例中，其 ID 为`b7c75a456982`），并执行以下命令进入 master 容器：
 
-```shell
+```bash
 $ sudo docker exec -it b7c75a456982 bash
 ```
 
 下载测试脚本：
-```shell
+```bash
 $ cd /tmp
 $ wget https://raw.githubusercontent.com/zilliztech/arctern/v0.1.0/spark/pyspark/examples/gis/spark_udf_ex.py
 ```
 
 通过 `spark-submit` 运行脚本：
-```shell
+```bash
 $ cd /tmp
 $ spark-submit --master spark://spark-master:7077 spark_udf_ex.py
 ```
@@ -139,6 +139,6 @@ $ spark-submit --master spark://spark-master:7077 spark_udf_ex.py
 
 在 Docker Compose 工作目录中执行以下命令关闭分布式集群：
 
-```shell
+```bash
 $ sudo docker-compose down
 ```

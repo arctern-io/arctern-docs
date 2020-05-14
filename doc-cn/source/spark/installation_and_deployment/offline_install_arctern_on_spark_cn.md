@@ -168,7 +168,7 @@ All tests of arctern have passed!
 
 在 Conda 环境中执行以下命令可卸载 Arctern-Spark：
 
-```shell
+```bash
 $ conda uninstall libarctern arctern arctern-spark
 ```
 

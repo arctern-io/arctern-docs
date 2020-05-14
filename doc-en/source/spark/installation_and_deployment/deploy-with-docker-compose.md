@@ -47,7 +47,7 @@ This document introduces how to deploy Arctern on a pseudo-distributed PySpark e
 
 Use the following command to confirm the status of docker daemon:
 
-```shell
+```bash
 $ docker info
 ```
 
@@ -64,7 +64,7 @@ To run Arctern with GPU support, you need to [install NVIDIA Docker Version 2.0]
 
 Use the following command to confirm whether NVIDIA docker is installed:
 
-```shell
+```bash
 $ nvidia-docker version
 NVIDIA Docker: 2.0.3
 ```
@@ -86,7 +86,7 @@ Edit `/etc/docker/daemon.json` and add  "default-runtime" configuration:
 ```
 Use the following command to reload docker:
 
-```shell
+```bash
 $ sudo systemctl daemon-reload
 $ sudo systemctl restart docker
 ```
@@ -97,7 +97,7 @@ $ sudo systemctl restart docker
 ### Install Docker compose
 [Install Docker compose](https://docs.docker.com/compose/install/) and use the following command to confirm Docker compose version info:
 
-```shell
+```bash
 $ docker-compose version
 ```
 
@@ -112,12 +112,12 @@ Create an directory for docker compose, download [docker-compose.yml](https://ra
 Execute the following command in the docker compose directory to launch spark cluster.
 
 Frontend mode:
-```shell
+```bash
 $ sudo docker-compose up
 ```
 
 Backend mode:
-```shell
+```bash
 $ sudo docker-compose up -d
 ```
 
@@ -125,7 +125,7 @@ $ sudo docker-compose up -d
 
 Run the following command to check information of running containers:
 
-```shell
+```bash
 $ sudo docker ps    # 输出如下：
 CONTAINER ID        IMAGE                                                                  COMMAND                  CREATED             STATUS              PORTS                                            NAMES
 acbc7dfa299f        registry.zilliz.com/arctern/arctern-spark:master-ubuntu18.04-release   "/entrypoint.sh /run…"   About an hour ago   Up About an hour                                                     docker_spark-worker_1
@@ -134,19 +134,19 @@ b7c75a456982        registry.zilliz.com/arctern/arctern-spark:master-ubuntu18.04
 
 Enter the master container, the name of which is "docker_spark-master_1". In the example output above, the ID of master container is `b7c75a456982`.
 
-```shell
+```bash
 $ sudo docker exec -it b7c75a456982 bash
 ```
 
 Download verification code:
 
-```shell
+```bash
 $ cd /tmp
 $ wget https://raw.githubusercontent.com/zilliztech/arctern/v0.1.0/spark/pyspark/examples/gis/spark_udf_ex.py
 ```
 
 Executed the verification code with `spark-submit`
-```shell
+```bash
 $ cd /tmp
 $ spark-submit --master spark://spark-master:7077 spark_udf_ex.py
 ```
@@ -157,6 +157,6 @@ Notice：In the `docker-compose.yml` file, the IP address of master container is
 
 Execute the following command in the docker compose directory to shutdown spark cluster.
 
-```shell
+```bash
 $ sudo docker-compose down
 ```

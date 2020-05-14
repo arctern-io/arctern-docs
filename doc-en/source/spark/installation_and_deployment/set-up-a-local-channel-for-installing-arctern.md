@@ -180,13 +180,13 @@ $ conda activate arctern
 
   Use the following command to install Arctern CPU version:
 
-```shell
+```bash
 $ conda install -c file:///[path/to/channel] -n arctern arctern-spark --offline --override-channels
 ```
 
 例如:
 
-```shell
+```bash
 $ conda install -c file:///tmp/arctern-dependencies/channel -n arctern arctern-spark --offline --override-channels
 ```
 
@@ -194,14 +194,14 @@ $ conda install -c file:///tmp/arctern-dependencies/channel -n arctern arctern-s
 
   Use the following command to install Arctern GPU version:  
 
-```shell
+```bash
     conda install -c file:///[path/to/channel]/label/cuda10.0 -n arctern libarctern --offline --override-channels
     conda install -c file:///[path/to/channel] -n arctern arctern arctern-spark --offline --override-channels
 ```
 
 For example:
 
-```shell
+```bash
     conda install -c file:///tmp/arctern-dependencies/channel/label/cuda10.0 -n arctern libarctern --offline --override-channels
     conda install -c file:///tmp/arctern-dependencies/channel -n arctern arctern arctern-spark --offline --override-channels
 ```
@@ -267,7 +267,7 @@ $ [path/to/your/spark]/bin/spark-submit --master yarn [path/to/]spark_udf_ex.py
 
 Use the following command to uninstall Arctern.
 
-```shell
+```bash
 $ conda uninstall -n arctern libarctern arctern arctern-spark
 ```
 
