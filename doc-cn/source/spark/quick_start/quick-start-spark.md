@@ -99,7 +99,7 @@ SparkSession available as 'spark'.
 加载测试数据，并创建临时表 `origin_nyc_taxi`：
 
 ```python
-# 文件路径需要本地配置
+# 文件路径配置为本地路径。
 >>> origin_df = spark.read.format("csv") \
 ...                       .option("header",True) \
 ...                       .option("delimiter",",") \
@@ -316,7 +316,7 @@ pickup_sql = "select st_point(pickup_longitude, pickup_latitude) from nyc_taxi w
 f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit 25"
 pickup_df = spark.sql(pickup_sql)
 
-# 根据查询结果绘制图标图图层， icon_path 需要本地配置。
+# 根据查询结果绘制图标图图层，icon_path 配置为本地路径。
 vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path='/path/to/icon.png', coordinate_system="EPSG:4326")
 res = icon_viz(vega, pickup_df)
 save_png(res, "/tmp/arctern_iconviz.png")
