@@ -17,7 +17,7 @@ Arctern-Spark 可借助 Spark 的 JDBC 连接功能，完成数据从数据库�
 使用如下命令测试 postgis 连接：
 
 ```bash
-psql test -h 172.17.0.2  -p 5432 -U arcterner
+$ psql test -h 172.17.0.2  -p 5432 -U arcterner
 ```
 
 ## JDBC 数据导入示例

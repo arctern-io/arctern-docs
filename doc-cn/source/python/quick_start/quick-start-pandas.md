@@ -1,4 +1,4 @@
-# Quick Start
+# 快速开始
 
 本文以纽约出租车数据集为例，展示如何使用 Arctern 完成数据的导入、运算和展示。
 
@@ -7,7 +7,7 @@
 在 Arctern 运行环境中下载纽约出租车数据集。
 
 ```bash
-wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
+$ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
 ```
 
 该数据集包含 2009 年纽约市出租车运营记录，各字段的含义如下：
@@ -105,7 +105,7 @@ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benc
 >>> ST_AsText(ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude)).head()
 0    POINT (-73.959908 40.776353)
 1    POINT (-73.955183 40.773459)
-2     POINT (-73.989523 40.77129)
+2    POINT (-73.989523 40.77129)
 3    POINT (-73.988154 40.774829)
 4    POINT (-73.982687 40.771625)
 dtype: object
@@ -117,9 +117,9 @@ dtype: object
 >>> ST_AsText(ST_Transform(ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude),'epsg:4326', 'epsg:3857')).head()
 0    POINT (-8233179.29767736 4979409.53917853)
 1    POINT (-8232653.31308336 4978984.12438949)
-2     POINT (-8236476.0243972 4978665.29594441)
-3      POINT (-8236323.6280143 4979185.5105596)
-4     POINT (-8235715.04435814 4978714.5380168)
+2    POINT (-8236476.0243972 4978665.29594441)
+3    POINT (-8236323.6280143 4979185.5105596)
+4    POINT (-8235715.04435814 4978714.5380168)
 dtype: object
 ```
 你可以在 [EPSG](http://epsg.io/transform#s_srs=4326&t_srs=3857) 网站上验证转换结果是否正确。

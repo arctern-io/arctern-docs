@@ -69,12 +69,14 @@ $ conda create -n arctern_env
   ...
   ```
 
- 进入 Arctern 环境：
+进入 Arctern 环境：
 
-  `conda activate arctern_env`
+```bash
+$ conda activate arctern_env
+```
 
 
-> **注意：**后续工作必须在 conda 虚拟环境 (arctern_env) 中进行。
+> **注意：** 后续工作必须在 conda 虚拟环境 (arctern_env) 中进行。
 
 
 ## 安装 Arctern-Spark
@@ -90,7 +92,6 @@ $ conda install -n arctern_env -c file:///[path/to/channel] arctern-spark --offl
 ```bash
 $ conda install -n arctern_env -c file:///tmp/arctern-resources/arctern_dependencies/conda_dependencies/channel arctern-spark   --offline --override-channels
 ```
-
 
 ## 安装验证
 
@@ -116,7 +117,7 @@ spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern_env/share/gdal
 在文件 `conf/spark-env.sh` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。
 
 ```bash
-export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_env/bin/python
+$ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_env/bin/python
 ```
 
 ### 确认路径配置是否成功
@@ -124,7 +125,7 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_env/bin/python
 执行以下命令进入 PySpark 交互界面，其中 `[path/to/your/spark]` 为 Spark 的安装路径。
 
 ```bash
-[path/to/your/spark]/bin/pyspark
+$ [path/to/your/spark]/bin/pyspark
 ```
 
 在交互界面中输入以下内容打印 PySpark 的 Python 路径。
@@ -136,7 +137,7 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_env/bin/python
 如果终端打印了以下内容，说明 PySpark 的 Python 路径配置成功。
 
 ```bash
-[path/to/your/conda]/envs/arctern_env
+$ [path/to/your/conda]/envs/arctern_env
 ```
 
 ## 测试样例
@@ -147,13 +148,13 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_env/bin/python
 $ cd arctern-resources/arctern_dependencies/example
 
 # local mode
-[path/to/your/spark]/bin/spark-submit spark_udf_ex.py
+$ [path/to/your/spark]/bin/spark-submit spark_udf_ex.py
 
 # standalone mode
-[path/to/your/spark]/bin/spark-submit --master [spark service address] spark_udf_ex.py
+$ [path/to/your/spark]/bin/spark-submit --master [spark service address] spark_udf_ex.py
 
 # hadoop/yarn mode
-[path/to/your/spark]/bin/spark-submit --master yarn spark_udf_ex.py
+$ [path/to/your/spark]/bin/spark-submit --master yarn spark_udf_ex.py
 ```
 
 如果测试样例运行无误，将在终端打印如下信息：
@@ -167,7 +168,7 @@ All tests of arctern have passed!
 在 Conda 环境中执行以下命令可卸载 Arctern-Spark：
 
 ```shell
-conda uninstall libarctern arctern arctern-spark
+$ conda uninstall libarctern arctern arctern-spark
 ```
 
 ## FAQ

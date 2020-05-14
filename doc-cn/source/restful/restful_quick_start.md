@@ -1,8 +1,8 @@
-# Quick Start
+# 快速开始
 
 本文以纽约出租车数据集为例，说明如何通过 `Arctern RESTful API` 完成数据的导入、运算和展示。
 
-> **注意：**本文档中所有示例代码均默认在 `Python 3.7` 环境中运行，如需在其他 Python 环境下运行可能需要对代码内容进行适当修改。
+> **注意：** 本文档中所有示例代码均默认在 `Python 3.7` 环境中运行，如需在其他 Python 环境下运行可能需要对代码内容进行适当修改。
 
 ## 服务器端的启动和配置
 
@@ -15,13 +15,13 @@
 在服务器端下载后续示例中使用到的纽约出租车数据集，该数据集可通过如下方式下载：
 
 ```bash
-wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
+$ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
 ```
 
 该数据集的行数为 `200000`，使用如下命令查看是否下载成功：
 
 ```bash
-wc -l 0_2M_nyc_taxi_and_building.csv
+$ wc -l 0_2M_nyc_taxi_and_building.csv
 ```
 
 该数据集包含 2009 年纽约市出租车运营记录，各字段的含义如下：
@@ -47,14 +47,14 @@ wc -l 0_2M_nyc_taxi_and_building.csv
 
 > 该数据的时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`
 
-下述示例中假设服务器 IP 地址为`127.0.0.1`，RESTful服务端口为`8080`。
+下述示例中假设服务器 IP 地址为 `127.0.0.1`，RESTful服务端口为 `8080`。
 
 ### 安装依赖
 
 本文示例代码使用 Python 的 `requests` 库调用 `Arctern RESTful API`，使用下面的命令安装 `requests`：
 
 ```shell
-pip install requests
+$ pip install requests
 ```
 
 ## API调用
@@ -322,7 +322,7 @@ pip install requests
 
 点图样例：
 
-![点图pointmap](../../../img/restful-result/pointmap.png)
+![点图](../../../img/restful-result/pointmap.png)
 
 ### 带权点图
 
@@ -373,7 +373,7 @@ pip install requests
 
 带权点图样例：
 
-![带权点图weighted_pointmap](../../../img/restful-result/weighted_pointmap.png)。
+![带权点图](../../../img/restful-result/weighted_pointmap.png)。
 
 ### 热力图
 
@@ -413,7 +413,7 @@ pip install requests
 
 热力图样例：
 
-![热力图heatmap](../../../img/restful-result/heatmap.png)
+![热力图](../../../img/restful-result/heatmap.png)
 
 ### 轮廓图
 
@@ -461,7 +461,7 @@ pip install requests
 
 轮廓图样例：
 
-![轮廓图choroplethmap.png](../../../img/restful-result/choroplethmap.png)
+![轮廓图](../../../img/restful-result/choroplethmap.png)
 
 ### 图标图
 
@@ -504,7 +504,7 @@ pip install requests
 
 图标图样例：
 
-![图标图icon_viz](../../../img/restful-result/icon_viz.png)
+![图标图](../../../img/restful-result/icon_viz.png)
 
 ### 渔网图
 
