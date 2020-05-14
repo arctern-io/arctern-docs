@@ -1,4 +1,4 @@
-# Quick Start
+# 快速开始
 
 本文以纽约出租车数据集为例，说明如何通过 `Arctern RESTful API` 完成数据的导入、运算和展示。
 
