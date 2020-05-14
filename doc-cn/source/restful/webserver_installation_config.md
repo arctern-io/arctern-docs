@@ -64,7 +64,7 @@ $ conda install -y -q -c conda-forge -c arctern arctern-spark
 
 ```bash
 $ wget https://mirror.bit.edu.cn/apache/spark/spark-3.0.0-preview2/spark-3.0.0-preview2-bin-hadoop2.7.tgz
-tar zxvf spark-3.0.0-preview2-bin-hadoop2.7.tgz
+$ tar zxvf spark-3.0.0-preview2-bin-hadoop2.7.tgz
 ```
 
 进入解压后产生的 `spark-3.0.0-preview2-bin-hadoop2.7` 目录，执行如下命令安装 PySpark：
