@@ -20,7 +20,7 @@ $ wget "http://mirror.bit.edu.cn/apache/spark/spark-3.0.0-preview2/spark-3.0.0-p
 $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh  
 ```
 
-> **注意：** 后续工作必须在 Arctern Conda 环境中进行。
+> **注意：** 以下操作均在需要安装 Arctern-Spark 的离线环境中执行。
 
 ### 安装系统依赖
 
@@ -76,7 +76,7 @@ $ conda activate arctern_env
 ```
 
 
-> **注意：** 后续工作必须在 conda 虚拟环境 (arctern_env) 中进行。
+> **注意：** 后续工作必须在 Conda 虚拟环境中进行。
 
 
 ## 安装 Arctern-Spark

@@ -29,7 +29,7 @@ $ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/be
 | buildingtext_pickup   | 上车地点所在建筑的轮廓描述 | string |
 | buildingtext_dropoff  | 下车地点所在建筑的轮廓描述 | string |
 
-> 该数据的时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`
+> **注意：** 该数据的时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`
 
 ## 启动 PySpark
 
@@ -257,7 +257,7 @@ save_png(res, '/tmp/arctern_pointmap.png')
 通过 Arctern-Spark 提供的绘图函数绘制带权点图图层：
 
 ```python
-# 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将fare_amount 作为颜色权重、total_amount 作为大小权重。
+# 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将 fare_amount 作为颜色权重、total_amount 作为大小权重。
 pickup_sql = "select st_point(pickup_longitude, pickup_latitude) as point, fare_amount as color_weight, total_amount as size_weight from nyc_taxi where " \
 f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
 pickup_df = spark.sql(pickup_sql)
@@ -275,7 +275,7 @@ save_png(res, "/tmp/arctern_weighted_pointmap.png")
 通过 Arctern-Spark 提供的绘图函数绘制热力图图层：
 
 ```python
-# 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将fare_amount 作为热力值。
+# 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将 fare_amount 作为热力值。
 pickup_sql = "select st_point(pickup_longitude, pickup_latitude) as point, fare_amount as weight from nyc_taxi where " \
 f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
 pickup_df = spark.sql(pickup_sql)
@@ -293,7 +293,7 @@ save_png(res, "/tmp/arctern_heatmap.png")
 通过 Arctern-Spark 提供的绘图函数绘制轮廓图图层：
 
 ```python
-# 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将fare_amount 作为颜色权重。
+# 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将 fare_amount 作为颜色权重。
 pickup_sql = "select ST_GeomFromText(buildingtext_pickup) as buildings, fare_amount as color_weight from nyc_taxi where " \
 f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) and (buildingtext_pickup!='') limit {limit_num}"
 pickup_df = spark.sql(pickup_sql)
@@ -329,7 +329,7 @@ save_png(res, "/tmp/arctern_iconviz.png")
 通过 Arctern-Spark 提供的绘图函数绘制渔网图图层：
 
 ```python
-# 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将fare_amount 作为颜色权重。
+# 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将 fare_amount 作为颜色权重。
 pickup_sql = "select st_point(pickup_longitude, pickup_latitude) as point, fare_amount as weight from nyc_taxi where " \
 f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
 pickup_df = spark.sql(pickup_sql)
