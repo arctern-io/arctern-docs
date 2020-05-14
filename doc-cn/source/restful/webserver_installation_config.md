@@ -27,12 +27,12 @@ $ sudo apt-get install openjdk-8-jdk
 
 执行以下命令为 Arctern RESTful Server 构建 Conda 环境。此处假设环境名称为 `arctern_env`，你可根据需求自行选择合适的环境名称。
 
-```shell
+```bash
 $ conda create -n arctern_env -c conda-forge python=3.7.6
 ```
 
 进入 `arctern_env` 虚拟环境：
-```shell
+```bash
 $ conda activate arctern_env
 ```
 
@@ -42,7 +42,7 @@ $ conda activate arctern_env
 
 Arctern RESTful Server 的运行依赖于 Arctern-Spark，执行以下命令在虚拟环境中安装 Arctern-Spark 包:
 
-```shell
+```bash
 $ conda install -y -q -c conda-forge -c arctern arctern-spark
 ```
 
@@ -52,7 +52,7 @@ $ conda install -y -q -c conda-forge -c arctern arctern-spark
 
 下载压缩包并解压：
 
-```shell
+```bash
 $ wget https://mirror.bit.edu.cn/apache/spark/spark-3.0.0-preview2/spark-3.0.0-preview2-bin-hadoop2.7.tgz
 $ tar zxvf spark-3.0.0-preview2-bin-hadoop2.7.tgz
 ```
@@ -153,7 +153,7 @@ master-addr = yarn
 
 在 Arctern 项目的 `gui/server/arctern_server` 目录下执行以下命令启动服务，其中 `/path/to/arctern` 为 Arctern 项目所在目录的绝对路径。
 
-```shell
+```bash
 $ export PYTHONPATH=/path/to/arctern/gui/server:$PYTHONPATH
 $ python manage.py
 ```
@@ -162,7 +162,7 @@ $ python manage.py
 
 完成配置后，执行以下命令启动服务：
 
-```shell
+```bash
 $ arctern-server
 ```
 

@@ -85,7 +85,7 @@ $ conda create -n arctern_env -c conda_forge python=3.7.6
 
 执行以下命令在 Conda 环境中安装 Arctern-Spark 的 CPU 版本：
 
-```shell
+```bash
     $ conda install -c arctern -c conda-forge arctern-spark
 ```
 
@@ -93,7 +93,7 @@ $ conda create -n arctern_env -c conda_forge python=3.7.6
 
 执行以下命令在 Conda 环境中安装 Arctern-Spark 的 GPU 版本：  
 
-```shell
+```bash
     $ conda install -c arctern/label/cuda10.0 -c conda-forge libarctern
     $ conda install -c arctern -c conda-forge arctern-spark
 ```
@@ -191,7 +191,7 @@ All tests of arctern have passed!
 
 在 Conda 环境中输入以下命令可卸载 Arctern-Spark：
 
-```shell
+```bash
 $ conda uninstall libarctern arctern arctern-spark
 ```
 
