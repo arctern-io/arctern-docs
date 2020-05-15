@@ -83,7 +83,7 @@ pos1=(-73.991504, 40.770759)
 pos2=(-73.945155, 40.783434)
 limit_num=200
 
-# 绘制地图
+# 绘制图层
 
 pickup_sql = f"select st_point(pickup_longitude, pickup_latitude) as point from nyc_taxi where (pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
 pickup_df = spark.sql(pickup_sql)
