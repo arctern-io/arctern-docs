@@ -1,6 +1,6 @@
 .. _spark:
 
-Spark
+Arctern on Spark
 =======
 
 .. toctree::
