@@ -57,7 +57,7 @@ $ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/be
 ...     "buildingtext_pickup":"string",
 ...     "buildingtext_dropoff":"string",
 ... }
-...
+>>>
 >>> # 文件路径需要本地配置
 >>> df=pd.read_csv("/tmp/0_2M_nyc_taxi_and_building.csv",
 ...                dtype=nyc_schema,

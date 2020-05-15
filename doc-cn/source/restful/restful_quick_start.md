@@ -66,9 +66,9 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
-...
+>>>
 >>> payload = {"scope": "nyc_taxi"}
-...
+>>>
 >>> r = requests.post(url="http://127.0.0.1:8080/scope", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -86,7 +86,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
-...
+>>>
 >>> file_path = "/example/data/0_2M_nyc_taxi_and_building.csv"
 >>> payload = {
 ... "scope": "nyc_taxi",
@@ -120,7 +120,7 @@ $ pip install requests
 ...     }
 ... ]
 ... }
-...
+>>>
 >>> r = requests.post(url="http://127.0.0.1:8080/loadfile", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -223,14 +223,14 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
-...
+>>>
 >>> payload = {
 ... "scope": "nyc_taxi",
 ... "session": "spark",
 ... "sql": "create table nyc_taxi as (select VendorID, to_timestamp(tpep_pickup_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_pickup_datetime, to_timestamp(tpep_dropoff_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_dropoff_datetime, passenger_count, trip_distance, pickup_longitude, pickup_latitude, dropoff_longitude, dropoff_latitude, fare_amount, tip_amount, total_amount, buildingid_pickup, buildingid_dropoff, buildingtext_pickup, buildingtext_dropoff from raw_data where (pickup_longitude between -180 and 180) and (pickup_latitude between -90 and 90) and (dropoff_longitude between -180 and 180) and  (dropoff_latitude between -90 and 90))",
 ... "collect_result": "0"
 ... }
-...
+>>>
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -247,10 +247,10 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
-...
+>>>
 >>> sql = "select count(*) as num_rows from nyc_taxi"
 >>> payload = {"scope": "nyc_taxi", "sql": sql, "collect_result": "1"}
-...
+>>>
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -270,7 +270,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
-...
+>>>
 >>> sql = "drop table if exists raw_data"
 >>> payload = {"scope": "nyc_taxi", "sql": sql, "collect_result": "0"}
 >>>
@@ -290,7 +290,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
-...
+>>>
 >>> payload = {
 ... "scope": "nyc_taxi",
 ... "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point from nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.998427 40.730309, -73.954348 40.730309, -73.954348 40.780816 ,-73.998427 40.780816, -73.998427 40.730309))'))",
@@ -304,9 +304,9 @@ $ pip install requests
 ...     "opacity": 0.5
 ... }
 ... }
-...
+>>>
 >>> r = requests.post(url="http://127.0.0.1:8080/pointmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
-... 
+>>> 
 >>> # 保存为 PNG 图片 
 >>> import base64
 >>> with open("/tmp/pointmap.png", "wb") as f:
@@ -354,9 +354,9 @@ $ pip install requests
 ...     ]
 ... }
 ... }
-...
+>>>
 >>> r = requests.post(url="http://127.0.0.1:8080/weighted_pointmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
-... 
+>>> 
 >>> import base64
 >>> with open("/tmp/weighted_pointmap.png", "wb") as f:
 ...     f.write(base64.b64decode(r.json()['result']))
@@ -392,9 +392,9 @@ $ pip install requests
 ...     "aggregation_type": "sum"
 ... }
 ... }
-...
+>>>
 >>> r = requests.post(url="http://127.0.0.1:8080/heatmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
-... 
+>>> 
 >>> import base64
 >>> with open("/tmp/heatmap.png", "wb") as f:
 ...     f.write(base64.b64decode(r.json()['result']))
@@ -411,7 +411,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
-...
+>>>
 >>> payload = {
 ... "scope": "nyc_taxi",
 ... "session": "spark",
@@ -438,9 +438,9 @@ $ pip install requests
 ...     "aggregation_type": "mean"
 ... }
 ... }
-...
+>>>
 >>> r = requests.post(url="http://127.0.0.1:8080/choroplethmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
-... 
+>>> 
 >>> import base64
 >>> with open("/tmp/choroplethmap.png", "wb") as f:
 ...     f.write(base64.b64decode(r.json()['result']))
@@ -457,7 +457,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
-...
+>>>
 >>> # 下面 icon_path 的路径填写待显示图标所在的绝对路径，
 >>> # 本例中的图标文件可通过如下命令获取：
 >>> # wget https://github.com/zilliztech/arctern-docs/raw/branch-0.1.x/img/icon/icon-viz.png
@@ -478,9 +478,9 @@ $ pip install requests
 ...     "icon_path": icon_path
 ... }
 ... }
-... 
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/icon_viz", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
-... 
+>>> 
 >>> # 保存为 PNG 图片
 >>> import base64
 >>> with open("/tmp/icon_viz.png", "wb") as f:
@@ -498,7 +498,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
-...
+>>>
 >>> payload = {
 ... "scope": "nyc_taxi",
 ... "sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color FROM nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))'))",
@@ -522,7 +522,7 @@ $ pip install requests
 ...     "aggregation_type": "sum"
 ... }
 ... }
-... 
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/fishnetmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> # 保存为 PNG 图片
@@ -544,10 +544,10 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
-...
+>>>
 >>> sql = "drop table if exists nyc_taxi"
 >>> payload = {"scope": "nyc_taxi", "sql": sql, "collect_result": "0"}
-...
+>>>
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -565,7 +565,7 @@ $ pip install requests
 
 ```python
 >>> import requests
-... 
+>>> 
 >>> r = requests.delete(url="http://127.0.0.1:8080/scope/nyc_taxi")
 >>> r
 <Response [200]>
