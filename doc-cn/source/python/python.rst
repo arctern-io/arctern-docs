@@ -1,6 +1,6 @@
 .. _python:
 
-Pandas
+Arctern on Pandas
 =======
 
 .. toctree::
