@@ -19,7 +19,7 @@
 
 本文示例代码使用 Python 的 `requests` 库调用 `Arctern RESTful API`，使用下面的命令安装 `requests`：
 
-```shell
+```bash
 pip install requests
 ```
 
@@ -41,7 +41,7 @@ print(response.text.encode('utf8'))
 
 ### curl
 
-```shell
+```bash
 curl --location --request DELETE 'http://localhost:8080/scope/scope_name'
 ```
 

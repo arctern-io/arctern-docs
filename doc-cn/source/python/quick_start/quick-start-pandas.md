@@ -1,4 +1,4 @@
-# Quick Start
+# 快速开始
 
 本文以纽约出租车数据集为例，展示如何使用 Arctern 完成数据的导入、运算和展示。
 
@@ -7,10 +7,10 @@
 在 Arctern 运行环境中下载纽约出租车数据集。
 
 ```bash
-wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
+$ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
 ```
 
-该数据集包含2009 年纽约市出租车的运营记录，各字段的含义如下：
+该数据集包含 2009 年纽约市出租车的运营记录，各字段的含义如下：
 
 | 名称                  | 含义                       | 类型   |
 | :-------------------- | :------------------------- | :----- |
@@ -31,7 +31,7 @@ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benc
 | buildingtext_pickup   | 上车地点所在建筑的轮廓描述 | string |
 | buildingtext_dropoff  | 下车地点所在建筑的轮廓描述 | string |
 
-> 该数据的时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`
+> **注意：** 该数据的时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`
 
 ## 加载数据
 
@@ -57,7 +57,8 @@ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benc
 ...     "buildingtext_pickup":"string",
 ...     "buildingtext_dropoff":"string",
 ... }
-# 文件路径需要本地配置
+>>>
+>>> # 文件路径需要本地配置
 >>> df=pd.read_csv("/tmp/0_2M_nyc_taxi_and_building.csv",
 ...                dtype=nyc_schema,
 ...                date_parser=pd.to_datetime,
@@ -80,7 +81,7 @@ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benc
 
 ## 数据过滤
 
-在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 `200` 行数据。
+在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 行数据。
 
 ```python
 >>> pos1=(-73.991504, 40.770759)
@@ -204,7 +205,7 @@ dtype: object
 通过 Arctern 提供的绘图函数绘制渔网图图层：
 
 ```python
->>> # 绘制渔网图图层
+>>> # 绘制渔网图图层。
 >>> vega = vega_fishnetmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], cell_size=8, cell_spacing=1, opacity=1.0, coordinate_system="EPSG:4326")
 >>> png = fishnet_map_layer(vega, ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude), df.head(limit_num).fare_amount)
 >>> save_png(png, "/tmp/arctern_fishnetmap_pandas.png")

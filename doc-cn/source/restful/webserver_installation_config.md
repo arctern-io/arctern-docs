@@ -4,65 +4,75 @@ Arctern 提供基于 RESTful 接口的 Web 服务。通过配置可将 RESTful S
 
 以下将介绍 Arctern RESTful Server 的安装和配置流程。更多 Arctern RESTful API 信息请查看 RESTful 服务[接口文档](./api/api.html)和[使用示例](./restful_quick_start.md)。
 
-> 注意：Arctern RESTful Server 仅负责 RESTful 请求的接收和解析，实际操作由 RESTful Server 所连接的 Arctern-Spark 执行。在安装 Arctern RESTful Server 前请确保环境存在已安装好 Arctern-Spark 的后台系统。安装 Arctern-Spark 的方式请参照其[安装文档](../spark/installation_and_deployment/installation_and_deployment.html).
-
 ## 安装准备
 
-在安装 Arctern RESTful Server 前请预先安装 Miniconda Python3，Miniconda 的安装可参考 [Linux 系统安装 Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html)。以下内容假设在 Miniconda 安装完成后进行。
+### 安装 Miniconda 和 Python3
+
+在安装 Arctern RESTful Server 前请预先安装 Miniconda 和 Python3。Miniconda 的安装可参考 [Linux 系统安装 Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html)。
+
+### 在 Spark 中安装 Arctern
+
+Arctern RESTful Server 仅负责 RESTful 请求的接收和解析，实际操作由 RESTful Server 所连接的 Arctern-Spark 执行。在安装 Arctern RESTful Server 前，你需要通过以下任意一种方式安装 Arctern-Spark 后台系统：
+
+* [在线安装](../spark/installation_and_deployment/install_arctern_on_spark_cn.md)
+* [离线安装](../spark/installation_and_deployment/offline_install_arctern_on_spark_cn.md)
+* [基于 Docker Compose 部署](../spark/installation_and_deployment/deploy-with-docker-compose-cn.md)
 
 ### 安装依赖库
 
 执行以下命令安装 Arctern RESTful Server 的依赖库：
 ```bash
-sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
+$ sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 ```
 
 安装 Java，建议安装 open-jdk-8：
 
 ```bash
-sudo apt-get install openjdk-8-jdk
+$ sudo apt-get install openjdk-8-jdk
 ```
 
 ### 创建 Conda 虚拟环境
 
-执行以下命令为 Arctern RESTful Server 构建 Conda 环境。此处假设环境名称为 `arctern_env`，你可根据需求自行选择合适的环境名称。
+执行以下命令为 Arctern RESTful Server 构建 Conda 环境。此处假设环境名称为 `arctern_server_env`，你可根据需求自行选择合适的环境名称。
 
-```shell
-conda create -n arctern_env -c conda-forge python=3.7.6
+> **注意：** 如果你在同一台计算机上安装 Arctern-Spark 后台系统和 Arctern RESTful Server，请确保二者的环境名称是不同的。例如，Arctern-Spark 后台系统的名称是 `arctern_env`，Arctern RESTful Server 的名称是 `arctern_server_env`。
+
+```bash
+$ conda create -n arctern_server_env -c conda-forge python=3.7.6
 ```
 
-进入 `arctern_env` 虚拟环境：
-```shell
-conda activate arctern_env
+进入 `arctern_server_env` 虚拟环境：
+```bash
+$ conda activate arctern_server_env
 ```
 
-> 注意，以下步骤需要在 Conda 的 Arctern 虚拟环境下进行。
+> **注意：** 后续工作必须在 Arctern Conda 环境中进行。
 
 ### 安装 Arctern-Spark 包
 
 Arctern RESTful Server 的运行依赖于 Arctern-Spark，执行以下命令在虚拟环境中安装 Arctern-Spark 包:
 
-```shell
-conda install -y -q -c conda-forge -c arctern arctern-spark
+```bash
+$ conda install -y -q -c conda-forge -c arctern arctern-spark
 ```
 
-> 此处安装 Arctern-Spark 仅用于解决 RESTful Server 的运行时依赖，不能作为执行 RESTful 请求的 Arctern-Spark 后台。
+> **注意：** 此处安装 Arctern-Spark 仅用于解决 RESTful Server 的运行时依赖，不能作为执行 RESTful 请求的 Arctern-Spark 后台。
 
 ### 安装 PySpark
 
 下载压缩包并解压：
 
-```shell
-wget https://mirror.bit.edu.cn/apache/spark/spark-3.0.0-preview2/spark-3.0.0-preview2-bin-hadoop2.7.tgz
-tar zxvf spark-3.0.0-preview2-bin-hadoop2.7.tgz
+```bash
+$ wget https://mirror.bit.edu.cn/apache/spark/spark-3.0.0-preview2/spark-3.0.0-preview2-bin-hadoop2.7.tgz
+$ tar zxvf spark-3.0.0-preview2-bin-hadoop2.7.tgz
 ```
 
 进入解压后产生的 `spark-3.0.0-preview2-bin-hadoop2.7` 目录，执行如下命令安装 PySpark：
 
 ```bash
-cd spark-3.0.0-preview2-bin-hadoop2.7
-cd python
-python setup.py install
+$ cd spark-3.0.0-preview2-bin-hadoop2.7
+$ cd python
+$ python setup.py install
 ```
 
 ## 安装 Arctern RESTful Server
@@ -73,13 +83,13 @@ python setup.py install
 
 ```bash
 # 下载源码
-git clone https://github.com/zilliztech/arctern.git
+$ git clone https://github.com/zilliztech/arctern.git
 # 切换分支
-cd arctern
-git checkout branch-0.1.x
+$ cd arctern
+$ git checkout branch-0.1.x
 # 安装依赖
-cd gui/server/arctern_server
-pip install -r requirements.txt
+$ cd gui/server/arctern_server
+$ pip install -r requirements.txt
 ```
 
 ### 基于 pip 的安装
@@ -87,7 +97,7 @@ pip install -r requirements.txt
 执行以下命令安装 Arctern RESTful Server：
 
 ```bash
-pip install arctern_server
+$ pip install arctern_server
 ```
 
 ## 配置后台 Arctern-Spark 信息
@@ -108,8 +118,8 @@ master-addr = spark://spark-master:7077
 使用如下命令到达 `config.ini` 文件所在目录，其中 `/path/to/arctern` 为 arctern 源代码根目录的实际路径：
 
 ```bash
-cd /path/to/arctern
-cd gui/server/arctern_server
+$ cd /path/to/arctern
+$ cd gui/server/arctern_server
 ```
 
 #### 配置基于 pip 安装的 Arctern RESTful Server
@@ -153,17 +163,17 @@ master-addr = yarn
 
 在 Arctern 项目的 `gui/server/arctern_server` 目录下执行以下命令启动服务，其中 `/path/to/arctern` 为 Arctern 项目所在目录的绝对路径。
 
-```shell
-export PYTHONPATH=/path/to/arctern/gui/server:$PYTHONPATH
-python manage.py
+```bash
+$ export PYTHONPATH=/path/to/arctern/gui/server:$PYTHONPATH
+$ python manage.py
 ```
 
 ### 启动基于 pip 安装的 Arctern RESTful Server
 
 完成配置后，执行以下命令启动服务：
 
-```shell
-arctern-server
+```bash
+$ arctern-server
 ```
 
 ### 命令参数介绍
@@ -185,8 +195,8 @@ arctern-server
 示例：
 
 ```bash
-export PYTHONPATH=/path/to/server:$PYTHONPATH
-python manage.py -r -i 192.168.1.2 -p 8088 
+$ export PYTHONPATH=/path/to/server:$PYTHONPATH
+$ python manage.py -r -i 192.168.1.2 -p 8088 
 ```
 
 其中 `/path/to/server` 为 Arctern 项目下 `gui/server` 目录的绝对路径。

@@ -86,7 +86,7 @@ $ conda activate arctern
 
   Use the following command to install Arctern CPU version:
 
-    ```shell
+    ```bash
     $ conda install -y -q -n arctern -c conda-forge -c arctern-dev arctern-spark
     ```
 
@@ -94,7 +94,7 @@ $ conda activate arctern
 
   Use the following command to install Arctern GPU version:
 
-    ```shell
+    ```bash
     $ conda install -y -q -n arctern -c conda-forge -c arctern-dev/label/cuda10.0 libarctern
     $ conda install -y -q -n arctern -c conda-forge -c arctern-dev arctern arctern-spark
     ```
@@ -160,7 +160,7 @@ $ [path/to/your/spark]/bin/spark-submit --master yarn [path/to/]spark_udf_ex.py
 
 Use the following command to uninstall Arctern.
 
-```shell
+```bash
 $ conda uninstall -n arctern libarctern arctern arctern-spark
 ```
 
