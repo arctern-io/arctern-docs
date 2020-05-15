@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern_pyspark._wrapper_func.ST_Union_Aggr:1 of
 msgid "Return a geometry that represents the union of a set of geometries."
-msgstr "返回一个代表给定的一组几何体的并集的几何体。"
+msgstr "计算包含给定的一组几何体的最小矩形边界范围，且该矩形的边与坐标轴平行。"
 
 #: arctern_pyspark._wrapper_func.ST_Union_Aggr of
 msgid "参数"

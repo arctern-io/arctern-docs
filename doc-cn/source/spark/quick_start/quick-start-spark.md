@@ -240,9 +240,8 @@ SparkSession available as 'spark'.
 
 ```python
 >>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点。
->>> pickup_sql = "select st_point(pickup_longitude, pickup_latitude) as point from nyc_taxi where " \
-f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
-pickup_df = spark.sql(pickup_sql)
+>>> pickup_sql = f"select st_point(pickup_longitude, pickup_latitude) as point from nyc_taxi where (pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
+>>> pickup_df = spark.sql(pickup_sql)
 >>>
 >>> # 根据查询结果绘制点图图层。点大小为 10，点颜色为 #2DEF4A，点不透明度为 1.0。
 >>> vega = vega_pointmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], point_size=10, point_color="#2DEF4A", opacity=1, coordinate_system="EPSG:4326")
@@ -258,8 +257,7 @@ pickup_df = spark.sql(pickup_sql)
 
 ```python
 >>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将 fare_amount 作为颜色权重、total_amount 作为大小权重。
->>> pickup_sql = "select st_point(pickup_longitude, pickup_latitude) as point, fare_amount as color_weight, total_amount as size_weight from nyc_taxi where " \
-f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
+>>> pickup_sql = f"select st_point(pickup_longitude, pickup_latitude) as point, fare_amount as color_weight, total_amount as size_weight from nyc_taxi where (pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
 >>> pickup_df = spark.sql(pickup_sql)
 >>> 
 >>> # 根据查询结果绘制带权点图图层。点的颜色根据 color_weight 在 #115f9a ~ #d0f400 之间变化，点的大小根据 size_weight 在 3 ~ 15 之间变化。
@@ -276,8 +274,7 @@ f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude betwee
 
 ```python
 >>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将 fare_amount 作为热力值。
->>> pickup_sql = "select st_point(pickup_longitude, pickup_latitude) as point, fare_amount as weight from nyc_taxi where " \
-f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
+>>> pickup_sql = f"select st_point(pickup_longitude, pickup_latitude) as point, fare_amount as weight from nyc_taxi where (pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
 >>> pickup_df = spark.sql(pickup_sql)
 >>> 
 >>> # 根据查询结果绘制热力图图层。
@@ -294,8 +291,7 @@ f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude betwee
 
 ```python
 >>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将 fare_amount 作为颜色权重。
->>> pickup_sql = "select ST_GeomFromText(buildingtext_pickup) as buildings, fare_amount as color_weight from nyc_taxi where " \
-f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) and (buildingtext_pickup!='') limit {limit_num}"
+>>> pickup_sql = f"select ST_GeomFromText(buildingtext_pickup) as buildings, fare_amount as color_weight from nyc_taxi where (pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) and (buildingtext_pickup!='') limit {limit_num}"
 >>> pickup_df = spark.sql(pickup_sql)
 >>>
 >>> # 根据查询结果绘制轮廓图图层。轮廓的填充颜色根据 color_weight 在 #115f9a ~ #d0f400 之间变化。
@@ -312,8 +308,7 @@ f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude betwee
 
 ```python
 >>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 25 个坐标点。
->>> pickup_sql = "select st_point(pickup_longitude, pickup_latitude) from nyc_taxi where " \
-f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit 25"
+>>> pickup_sql = f"select st_point(pickup_longitude, pickup_latitude) from nyc_taxi where (pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit 25"
 >>> pickup_df = spark.sql(pickup_sql)
 >>> 
 >>> # 根据查询结果绘制图标图图层，icon_path 配置为本地路径。
@@ -330,8 +325,7 @@ f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude betwee
 
 ```python
 >>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将 fare_amount 作为颜色权重。
->>> pickup_sql = "select st_point(pickup_longitude, pickup_latitude) as point, fare_amount as weight from nyc_taxi where " \
-f"(pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
+>>> pickup_sql = f"select st_point(pickup_longitude, pickup_latitude) as point, fare_amount as weight from nyc_taxi where (pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
 >>> pickup_df = spark.sql(pickup_sql)
 >>> 
 >>> # 根据查询结果绘制渔网图图层。

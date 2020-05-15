@@ -1,6 +1,6 @@
 .. _restful:
 
-RESTful
+Arctern RESTful Service
 =======
 
 .. toctree::

@@ -8,7 +8,7 @@ Arctern 在数据导入导出时支持 [Well Know Text(WKT)](https://en.wikipedi
 
 WKT 形式数据的导入和导出：
 
-```Python
+```python
 '''
 CSV 文件内容：
 geos
@@ -41,7 +41,7 @@ POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 ```
 
 WKB 形式数据的导入和导出：
-```Python
+```python
 '''
 CSV 文件内容：
 geos
