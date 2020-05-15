@@ -87,7 +87,7 @@ $ conda activate <your_env_name>
 
   Use the following command to install Arctern CPU version:
 
-    ```shell
+    ```bash
     $ conda install -c file://path_to_arctern_local_channel_cpu -n <your_env_name> arctern-spark --offline --override-channels
     ```
 
@@ -95,7 +95,7 @@ $ conda activate <your_env_name>
 
   Use the following command to install Arctern CPU version:
 
-    ```shell
+    ```bash
     $ conda install -c file://path_to_arctern_local_channel_gpu -n <your_env_name> arctern-spark --offline --override-channels
     ```
 
@@ -160,7 +160,7 @@ $ [path/to/your/spark]/bin/spark-submit --master yarn [path/to/]spark_udf_ex.py
 
 Use the following command to uninstall Arctern.
 
-```shell
+```bash
 $ conda uninstall -n arctern libarctern arctern arctern-spark
 ```
 

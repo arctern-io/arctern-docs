@@ -5,7 +5,7 @@
 ## 安装要求
 
 | 名称     | 版本              |
-| -------- | ----------------- |
+| :-------- | :----------------- |
 | 操作系统 | Ubuntu LTS 18.04  |
 
 ## <span id = "installdependencies">安装依赖项</span>
@@ -20,7 +20,7 @@ $ wget "http://mirror.bit.edu.cn/apache/spark/spark-3.0.0-preview2/spark-3.0.0-p
 $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh  
 ```
 
-> 以下操作均在需要安装 Arctern-Spark 的离线环境中执行。
+> **注意：** 后续工作需在安装 Arctern-Spark 的离线环境中执行。
 
 ### 安装系统依赖
 
@@ -62,19 +62,21 @@ $ conda create -n arctern_env
 
 创建成功后，可以通过 `conda env list` 命令查看所有 Conda 环境，其输出结果应包含 Arctern 环境，类似如下：
 
-  ```bash
-  conda environments:
-  base         ...
-  arctern_env      ...
-  ...
-  ```
+```bash
+conda environments:
+base         ...
+arctern_env      ...
+...
+```
 
  进入 Arctern 环境：
 
-  `conda activate arctern_env`
+```bash
+$ conda activate arctern_env
+```
 
 
-> 注意：后续工作必须在 conda 虚拟环境 (arctern_env) 中进行。
+> **注意：** 后续工作必须在 conda 虚拟环境 (arctern_env) 中进行。
 
 
 ## 安装 Arctern-Spark
@@ -116,7 +118,7 @@ spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern_env/share/gdal
 在文件 `conf/spark-env.sh` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。
 
 ```bash
-export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_env/bin/python
+$ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_env/bin/python
 ```
 
 ### 确认路径配置是否成功
@@ -124,7 +126,7 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_env/bin/python
 执行以下命令进入 PySpark 交互界面，其中 `[path/to/your/spark]` 为 Spark 的安装路径。
 
 ```bash
-[path/to/your/spark]/bin/pyspark
+$ [path/to/your/spark]/bin/pyspark
 ```
 
 在交互界面中输入以下内容打印 PySpark 的 Python 路径。
@@ -147,13 +149,13 @@ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_env/bin/python
 $ cd arctern-resources/arctern_dependencies/example
 
 # local mode
-[path/to/your/spark]/bin/spark-submit spark_udf_ex.py
+$ [path/to/your/spark]/bin/spark-submit spark_udf_ex.py
 
 # standalone mode
-[path/to/your/spark]/bin/spark-submit --master [spark service address] spark_udf_ex.py
+$ [path/to/your/spark]/bin/spark-submit --master [spark service address] spark_udf_ex.py
 
 # hadoop/yarn mode
-[path/to/your/spark]/bin/spark-submit --master yarn spark_udf_ex.py
+$ [path/to/your/spark]/bin/spark-submit --master yarn spark_udf_ex.py
 ```
 
 如果测试样例运行无误，将在终端打印如下信息：
@@ -166,8 +168,8 @@ All tests of arctern have passed!
 
 在 Conda 环境中执行以下命令可卸载 Arctern-Spark：
 
-```shell
-conda uninstall libarctern arctern arctern-spark
+```bash
+$ conda uninstall libarctern arctern arctern-spark
 ```
 
 ## FAQ
@@ -182,6 +184,6 @@ Arctern-Spark 可以运行在 Spark 的各种模式下，需要在每台运行 S
 
 如果 Spark 运行在 `standalone` 集群模式下，提交任务机器的 Spark 环境需要与集群的 Spark 环境完全一致，包括以下几点：
 
-* `spark` 安装的绝对路径与集群中每台机器完全一致
-* `conda` 安装的绝对路径与集群中每个机器完全一致
-* `conda` 虚拟环境名与集群中每个机器完全一致
+* Spark 安装的绝对路径与集群中每台机器完全一致
+* Conda 安装的绝对路径与集群中每个机器完全一致
+* Conda 虚拟环境名与集群中每个机器完全一致

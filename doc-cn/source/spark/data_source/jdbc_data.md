@@ -17,7 +17,7 @@ Arctern-Spark 可借助 Spark 的 JDBC 连接功能，完成数据从数据库�
 使用如下命令测试 postgis 连接：
 
 ```bash
-psql test -h 172.17.0.2  -p 5432 -U arcterner
+$ psql test -h 172.17.0.2  -p 5432 -U arcterner
 ```
 
 ## JDBC 数据导入示例
@@ -27,7 +27,7 @@ psql test -h 172.17.0.2  -p 5432 -U arcterner
 以下命令为 Arctern-Spark 通过 JDBC 从 Postgis 导入数据的示例：
 
 ```bash
-./bin/spark-submit  --driver-class-path ~/postgresql-42.2.11.jar --jars ~/postgresql-42.2.11.jar ~/query_postgis.py 
+$ ./bin/spark-submit  --driver-class-path ~/postgresql-42.2.11.jar --jars ~/postgresql-42.2.11.jar ~/query_postgis.py 
 ```
 
 其中 `query_postgis.py` 具体代码如下：
@@ -46,6 +46,7 @@ if __name__ == "__main__":
 
     # 注册 Arctern-Spark 提供的函数
     register_funcs(spark)
+    
     # 数据导入
     spark.read.format("jdbc") \
               .option("url", "jdbc:postgresql://172.17.0.2:5432/test?user=arcterner&password=arcterner") \
@@ -55,6 +56,7 @@ if __name__ == "__main__":
 
     # 对数据进行操作并打印结果
     spark.sql("select ST_IsSimple(ST_GeomFromText(geos)) from simple").show(20,0)
+
     # 数据导出
     spark.write.format("jdbc") \
                .option("url", "jdbc:postgresql://172.17.0.2:5432/test?user=arcterner&password=arcterner") \
