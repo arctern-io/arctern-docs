@@ -31,7 +31,7 @@
 }
 ```
 
-若数据处理后台为 pyspark, 则需将 input_data 改为如下内容：
+若数据处理后台为 pyspark, 则 input_data 应为相应的 SQL 查询语句，示例如下：
 ```
 "sql": "select ST_GeomFromText(col_wkb_polygon) as polygon, col2 as count from table_name"
 ```
