@@ -194,7 +194,7 @@ $ pip install requests
 
 使用 `/query` 接口可完成数据表的创建、查询和删除操作。
 
-> **注意：** `/query` 接口仅当数据处理后台为 pyspark 时可用。
+> **注意：** `/query` 接口仅当数据处理后台为 PySpark 时可用。
 
 #### 创建数据表
 
@@ -321,7 +321,7 @@ $ pip install requests
 
 ### 带权点图
 
-使用 `/weighted_pointmap` 接口根据乘客的上车地点绘制带权点图。其中，将总费用作为点的权重 —— 总费用越高，权重越大，点的颜色越深。带权点图的具体参数说明请参见 [带权点图 RESTful API 说明](./api/function/weighted_pointmap.html)。
+使用 `/weighted_pointmap` 接口根据乘客的上车地点绘制带权点图。其中，将总费用作为点的权重 —— 总费用越高，权重越大，点的颜色越深。带权点图的具体参数说明请参见[带权点图 RESTful API 说明](./api/function/weighted_pointmap.html)。
 
 如果数据处理后台为 Python, 则代码示例如下：
 
@@ -473,7 +473,7 @@ $ pip install requests
 
 ### 图标图
 
-使用 `/icon_viz` 接口根据乘客的上车地点绘制图标图。图标图的具体参数说明请参见 [图标图 RESTful API 说明](./api/function/icon_viz.html)。
+使用 `/icon_viz` 接口根据乘客的上车地点绘制图标图。图标图的具体参数说明请参见[图标图 RESTful API 说明](./api/function/icon_viz.html)。
 
 如果数据处理后台为 Python, 则代码示例如下：
 
@@ -567,7 +567,7 @@ $ pip install requests
 ...     f.write(base64.b64decode(r.json()['result']))
 ```
 
-如果数据处理后台为 PySpark,则需将 `input_data` 改为以下内容：
+如果数据处理后台为 PySpark，则需将 `input_data` 改为以下内容：
 
 ```python
 "sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color FROM nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))'))"
