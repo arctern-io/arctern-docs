@@ -1,6 +1,6 @@
 # 加载文件
 
-在指定作用域( `scope` )内加载数据文件，当前支持的文件格式详见 [Arctern-Spark 文件的导入导出](../../../spark/data_source/file_data.md)。
+加载数据文件。当前支持的文件格式详见 [Arctern-Spark 文件的导入导出](../../../spark/data_source/file_data.md)。
 
 ## 请求说明
 
@@ -11,8 +11,6 @@
 - Body:
 ```json
 {
-    "scope": "scope_name",
-    "session": "session_name", 
     "tables": [
         {
             "name": "table_name",
@@ -34,8 +32,6 @@
 
 参数说明：
 
-- scope：执行建表操作的作用域名称；
-- session：可选参数，执行建表操作的 `SparkSession` 名称；
 - tables：创建数据表的描述信息，该字段为一个列表( `list` )，系统将会按照列表中的顺序依次进行建表操作，以下为列表中每个元素的具体参数说明：
     - name：数据表名称；
     - format：待加载文件的文件格式；
@@ -43,7 +39,7 @@
     - options：加载文件时的指定选项，使用 `key-value` 形式提供。具体的选项内容参见 [Arctern-Spark 文件的导入导出](../../../spark/data_source/file_data.md)；
     - schema：各列数据的名称和类型描述，schema 字段是一个列表( `list` )，顺序需要和文件中各列的实际存储顺序保持一致。
 
-## 样例
+## 请求样例
 
 ### Python
 
@@ -69,8 +65,6 @@ str2, 0.2, 2
 str3, 0.3, 3
 """
 payload = {
-    "scope": "scope_name",
-    "session": "session_name",
     "tables": [
         {
             "name": "table_name",
@@ -109,8 +103,6 @@ print(response.text.encode('utf8'))
 curl --location --request POST 'http://localhost:8080/loadfile' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "scope": "scope_name",
-    "session": "session_name",
     "tables": [
         {
             "name": "table_name",
@@ -136,9 +128,7 @@ curl --location --request POST 'http://localhost:8080/loadfile' \
 }'
 ```
 
-## 返回说明
-
-成功样例：
+## 响应样例
 
 ```json
 {
@@ -147,14 +137,3 @@ curl --location --request POST 'http://localhost:8080/loadfile' \
     "message": "create table successfully!"
 }
 ```
-
-失败样例：
-
-```json
-{
-    "status": "error",
-    "code": "-1",
-    "message": "scope not found!"
-}
-```
-

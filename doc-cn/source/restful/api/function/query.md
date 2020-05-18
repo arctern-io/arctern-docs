@@ -1,6 +1,6 @@
 # 查询
 
-执行给定的 SQL 查询语句。
+执行给定的 SQL 查询语句。仅当数据处理后台为 pyspark 时可用。
 
 ## 请求说明
 
@@ -14,8 +14,6 @@
 
 ```json
 {
-    "scope": "scope_name",
-    "session": "session_name",
     "sql": "select * from table_name limit 1",
     "collect_result": "1"
 }
@@ -25,8 +23,6 @@
 
 ```json
 {
-    "scope": "scope_name",
-    "session": "session_name",
     "sql": "create table new_table as (select * from table_name)",
     "collect_result": "0"
 }
@@ -34,12 +30,10 @@
 
 参数说明：
 
-- scope：执行查询操作的作用域名称；
-- session：可选参数，执行 SQL 的 `SparkSession` 名称；
 - sql：待执行的 SQL 查询语句；
 - collect_result：可选参数，默认值为 `1`。`1` 表示将 SQL 语句的查询结果用 `json` 格式返回，`0` 表示仅在后台执行查询语句不返回执行结果。
 
-## 样例
+## 请求样例
 
 ### Python
 
@@ -58,8 +52,6 @@ import json
 url = "http://localhost:8080/query"
 
 payload = {
-    "scope": "scope_name",
-    "session": "session_name",
     "sql": "select * from table_name limit 1",
     "collect_result": "1"
 }
@@ -79,8 +71,6 @@ import json
 url = "http://localhost:8080/query"
 
 payload = {
-    "scope": "scope_name",
-    "session": "session_name",
     "sql": "create table new_table as (select * from table_name)",
     "collect_result": "0"
 }
@@ -99,8 +89,6 @@ print(response.text.encode('utf8'))
 curl --location --request POST 'http://localhost:8080/query' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "scope": "scope_name",
-    "session": "session_name",
     "sql": "select * from table_name limit 1",
     "collect_result": "1"
 }'
@@ -110,16 +98,12 @@ curl --location --request POST 'http://localhost:8080/query' \
 curl --location --request POST 'http://localhost:8080/query' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "scope": "scope_name",
-    "session": "session_name",
     "sql": "create table new_table as (select * from table_name)",
     "collect_result": "0"
 }'
 ```
 
-## 返回说明
-
-样例：
+## 响应样例
 
 ```json
 {
@@ -131,14 +115,3 @@ curl --location --request POST 'http://localhost:8080/query' \
     "message": "execute sql successfully!"
 }
 ```
-
-失败样例：
-
-```json
-{
-    "code": -1,
-    "message": "Table or view not found: error_table; line 1 pos 14;\n'Project [*]\n+- 'UnresolvedRelation [error_table]\n",
-    "status": "error"
-}
-```
-

@@ -9,11 +9,15 @@
 - Headers:
     - `Content-Type: application/json`
 - Body:
+
+如果数据处理后台为 python, 则示例 json 如下：
+
 ```json
 {
-    "scope": "scope_name",
-    "session": "session_name",
-    "sql": "select ST_Point(col2, col2) as point from table_name",
+    "input_data": {
+        "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)",
+        "weights": "raw_data.fare_amount"
+    },
     "params": {
         "width": 1024,
         "height": 896,
@@ -25,10 +29,13 @@
 }
 ```
 
+若数据处理后台为 pyspark, 则需将 input_data 改为如下内容：
+```
+"sql": "select ST_Point(col2, col2) as point from table_name"
+```
+
 参数说明：
 
-- scope：执行绘制热力图操作的作用域名称；
-- session：可选参数，执行绘制热力图操作的 `SparkSession` 名称；
 - sql：待执行的 SQL 查询语句，该查询的结果作为绘制热力图的渲染对象；
 - params：绘图参数，具体说明如下，详见 [Arctern-Spark 绘图接口文档](../../../spark/api/render/function/layer/heatmap.md)：
     - width：图片宽度；
@@ -38,7 +45,7 @@
     - map_zoom_level：地图放大比例，取值范围 `(1 ~ 15)`；
     - aggregation_type：聚合类型。
 
-## 样例
+## 请求样例
 
 ### Python
 
@@ -57,9 +64,10 @@ import json
 url = "http://localhost:8080/heatmap"
 
 payload = {
-    "scope": "scope_name",
-    "session": "session_name",
-    "sql": "select ST_Point(col2, col2) as point from table_name",
+    "input_data": {
+        "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)",
+        "weights": "raw_data.fare_amount"
+    },
     "params": {
         "width": 1024,
         "height": 896,
@@ -83,9 +91,10 @@ print(response.text.encode('utf8'))
 curl --location --request POST 'http://localhost:8080/heatmap' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "scope": "scope_name",
-    "session": "session_name",
-    "sql": "select ST_Point(col2, col2) as point from table_name",
+    "input_data": {
+        "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)",
+        "weights": "raw_data.fare_amount"
+    },
     "params": {
         "width": 1024,
         "height": 896,
@@ -96,9 +105,7 @@ curl --location --request POST 'http://localhost:8080/heatmap' \
 }'
 ```
 
-## 返回说明
-
-成功样例：
+## 响应样例
 
 ```json
 {
@@ -107,14 +114,3 @@ curl --location --request POST 'http://localhost:8080/heatmap' \
     "result": "使用 base64 编码后的热力图数据"
 }
 ```
-
-失败样例：
-
-```json
-{
-    "code": -1,
-    "message": "Table or view not found: error_table; line 1 pos 14;\n'Project [*]\n+- 'UnresolvedRelation [error_table]\n",
-    "status": "error"
-}
-```
-
