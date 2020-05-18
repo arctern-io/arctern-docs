@@ -61,12 +61,12 @@ $ pip install requests
 
 ### 数据导入
 
-使用 `/loadfile` 接口导入纽约出租车数据集，将其对应的数据表命名为 `raw_data`，`scope` 字段使用先前创建的 `scope` 名称 `nyc_taxi`。其中，`file_path` 为数据文件所在的绝对路径，你需要根据实际情况更改此路径。
+使用 `/loadfile` 接口导入纽约出租车数据集，将其对应的数据表命名为 `raw_data`。其中，`file_path` 为数据文件所在的绝对路径，你需要根据实际情况更改此路径。
 
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> file_path = "/example/data/0_2M_nyc_taxi_and_building.csv"
 >>> payload = {
 ... "tables": [
@@ -228,15 +228,15 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> sql = "select count(*) as num_rows from nyc_taxi"
 >>> payload = { 
-... "input_data":{
-...     "sql": sql
-... },
-... "collect_result": "1"
-... }
->>>
+    "input_data":{
+        "sql": sql
+    },
+    "collect_result": "1"
+}
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -253,10 +253,12 @@ $ pip install requests
 
 删除原始的 `raw_data` 数据表。
 
+<font color="#dd0000">注意：</font>`Arctern RESTful` 服务不会主动删除数据表，请务必删除不再使用的数据表释放服务器资源。
+
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> sql = "drop table if exists raw_data"
 >>> payload = {
 ... "input_data":{
@@ -283,7 +285,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> payload = {
 ... "input_data": {
 ...     "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)"
@@ -326,7 +328,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> payload = {
 ... "input_data": {
 ...     "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)",
@@ -376,7 +378,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> payload = {
 ... "input_data": {
 ...     "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)",
@@ -423,7 +425,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> payload = {
 ... "input_data": {
 ...     "region_boundaries": "ST_GeomFromText(raw_data.dropna().buildingtext_pickup)",
@@ -529,7 +531,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> payload = {
     "input_data": {
         "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)",
@@ -577,17 +579,17 @@ $ pip install requests
 
 ### 删除数据表
 
-如果后续不再使用已创建的数据表，你可以使用 `query` 接口删除该数据表。该接口仅对数据处理后台为 PySpark 时可用。
+使用 `query` 接口删除 `nyc_taxi` 数据表, 释放服务器资源。
 
 <font color="#dd0000">注意：</font>`Arctern RESTful` 服务不会主动删除数据表，请务必删除不再使用的数据表释放服务器资源。
 
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> sql = "drop table if exists nyc_taxi"
->>> payload = {"scope": "nyc_taxi", "sql": sql, "collect_result": "0"}
->>>
+>>> payload = {"sql": sql, "collect_result": "0"}
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {

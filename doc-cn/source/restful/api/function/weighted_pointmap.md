@@ -32,7 +32,7 @@
 }
 ```
 
-若数据处理后台为 pyspark, 则需将 input_data 改为如下内容：
+若数据处理后台为 pyspark, 则 input_data 应为相应的 SQL 查询语句，示例如下：
 ```
 "sql": "select ST_Point(col2, col2) as point, col2 as count1, col2 as count2 from table_name"
 ```
