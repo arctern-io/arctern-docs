@@ -61,12 +61,12 @@ $ pip install requests
 
 ### 数据导入
 
-使用 `/loadfile` 接口导入纽约出租车数据集，将其对应的数据表命名为 `raw_data`，`scope` 字段使用先前创建的 `scope` 名称 `nyc_taxi`，其中 `file_path` 为数据文件所在的绝对路径，可根据实际情况进行更改：
+使用 `/loadfile` 接口导入纽约出租车数据集，将其对应的数据表命名为 `raw_data`，其中 `file_path` 为数据文件所在的绝对路径，可根据实际情况进行更改：
 
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> file_path = "/example/data/0_2M_nyc_taxi_and_building.csv"
 >>> payload = {
     "tables": [
@@ -99,7 +99,7 @@ $ pip install requests
         }
     ]
 }
->>>
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/loadfile", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -202,14 +202,14 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> payload = {
     "input_data": {
     "sql": "create table nyc_taxi as (select VendorID, to_timestamp(tpep_pickup_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_pickup_datetime, to_timestamp(tpep_dropoff_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_dropoff_datetime, passenger_count, trip_distance, pickup_longitude, pickup_latitude, dropoff_longitude, dropoff_latitude, fare_amount, tip_amount, total_amount, buildingid_pickup, buildingid_dropoff, buildingtext_pickup, buildingtext_dropoff from raw_data where (pickup_longitude between -180 and 180) and (pickup_latitude between -90 and 90) and (dropoff_longitude between -180 and 180) and  (dropoff_latitude between -90 and 90))",
     }
     "collect_result": "0"
 }
->>>
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -226,15 +226,15 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> sql = "select count(*) as num_rows from nyc_taxi"
 >>> payload = { 
-... "input_data":{
-...     "sql": sql
-... },
-... "collect_result": "1"
-... }
->>>
+    "input_data":{
+        "sql": sql
+    },
+    "collect_result": "1"
+}
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -251,10 +251,12 @@ $ pip install requests
 
 删除原始表 `raw_data`：
 
+<font color="#dd0000">注意：</font>`Arctern RESTful` 服务不会主动删除数据表，请务必删除不再使用的数据表释放服务器资源。
+
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> sql = "drop table if exists raw_data"
 >>> payload = {
     "input_data":{
@@ -262,7 +264,7 @@ $ pip install requests
     },
     "collect_result": "1"
 }
->>>
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -281,7 +283,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> payload = {
     "input_data": {
         "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)"
@@ -296,7 +298,7 @@ $ pip install requests
         "opacity": 0.5
     }
 }
->>>
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/pointmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> # 保存为 PNG 图片 
@@ -323,7 +325,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> payload = {
     "input_data": {
         "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)",
@@ -346,7 +348,7 @@ $ pip install requests
         "color_gradient": ["#115f9a", "#d0f400"]
     }
 }
->>>
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/weighted_pointmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> import base64
@@ -373,7 +375,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> payload = {
     "input_data": {
         "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)",
@@ -393,7 +395,7 @@ $ pip install requests
         "aggregation_type": "sum"
     }
 }
->>>
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/heatmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> import base64
@@ -420,7 +422,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> payload = {
     "input_data": {
         "region_boundaries": "ST_GeomFromText(raw_data.dropna().buildingtext_pickup)",
@@ -448,7 +450,7 @@ $ pip install requests
         "aggregation_type": "mean"
     }
 }
->>>
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/choroplethmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> import base64
@@ -475,7 +477,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> # 下面 icon_path 的路径填写待显示图标所在的绝对路径，
 >>> # 本例中的图标文件可通过如下命令获取：
 >>> # wget https://github.com/zilliztech/arctern-docs/raw/branch-0.1.x/img/icon/icon-viz.png
@@ -525,7 +527,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> payload = {
     "input_data": {
         "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)",
@@ -573,17 +575,17 @@ $ pip install requests
 
 ### 删除数据表
 
-通过 `query` 接口创建的数据表如果后续不再被使用，请将其删除。该接口仅对数据处理后台为 pyspark 时可用。
+使用 `query` 接口删除 `nyc_taxi` 数据表, 释放服务器资源。
 
 <font color="#dd0000">注意：</font>`Arctern RESTful` 服务不会主动删除数据表，请务必删除不再使用的数据表释放服务器资源。
 
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> sql = "drop table if exists nyc_taxi"
->>> payload = {"scope": "nyc_taxi", "sql": sql, "collect_result": "0"}
->>>
+>>> payload = {"sql": sql, "collect_result": "0"}
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
