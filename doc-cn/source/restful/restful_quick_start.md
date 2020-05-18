@@ -2,23 +2,23 @@
 
 本文以纽约出租车数据集为例，说明如何通过 `Arctern RESTful API` 完成数据的导入、运算和展示。
 
-> **注意：** 本文档中所有示例代码均默认在 `Python 3.7` 环境中运行，如需在其他 Python 环境下运行可能需要对代码内容进行适当修改。
+> **注意：** 本章所有示例代码均默认在 `Python 3.7` 环境中运行。若要在其他 Python 环境下运行，你可能需要适当修改代码内容。
 
 ## 服务器端的启动和配置
 
 ### 服务器启动
 
-在调用 `Arctern RESTful API` 之前请先启动服务，具体步骤详见[服务器启动](./webserver_installation_config.md)。
+在调用 `Arctern RESTful API` 之前请先启动服务，具体步骤见[服务器启动](./webserver_installation_config.md)。
 
 ### 数据准备
 
-在服务器端下载后续示例中使用到的纽约出租车数据集，该数据集可通过如下方式下载：
+在后续示例中，你需要使用纽约出租车数据集。执行以下命令下载该数据集：
 
 ```bash
 $ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
 ```
 
-该数据集的行数为 200000，使用如下命令查看是否下载成功：
+执行以下命令查看是否下载成功：
 
 ```bash
 $ wc -l 0_2M_nyc_taxi_and_building.csv
@@ -33,10 +33,10 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 | tpep_dropoff_datetime | 下车时间                   | string |
 | passenger_count       | 乘客数量                   | long   |
 | trip_distance         | 行程距离                   | double |
-| pickup_longitude      | 上车地点-经度              | double |
-| pickup_latitude       | 上车地点-纬度              | double |
-| dropoff_longitude     | 下车地点-经度              | double |
-| dropoff_latitude      | 下车地点-纬度              | double |
+| pickup_longitude      | 上车地点的经度              | double |
+| pickup_latitude       | 上车地点的纬度              | double |
+| dropoff_longitude     | 下车地点的经度              | double |
+| dropoff_latitude      | 下车地点的纬度              | double |
 | fare_amount           | 行程费用                   | double |
 | tip_amount            | 小费                       | double |
 | total_amount          | 总费用                     | double |
@@ -45,23 +45,23 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 | buildingtext_pickup   | 上车地点所在建筑的轮廓描述 | string |
 | buildingtext_dropoff  | 下车地点所在建筑的轮廓描述 | string |
 
-> **注意：** 该数据的时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`
+> **注意：** 该数据集有 200000 行，其中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`。
 
-下述示例中假设服务器 IP 地址为 `127.0.0.1`，RESTful服务端口为 `8080`。
+下述示例中，假设服务器 IP 地址为 `127.0.0.1`，RESTful 服务端口为 `8080`。
 
 ### 安装依赖
 
-本文示例代码使用 Python 的 `requests` 库调用 `Arctern RESTful API`，使用下面的命令安装 `requests`：
+本文示例代码使用 Python 的 `requests` 库调用 `Arctern RESTful API`，执行以下命令安装 `requests`：
 
 ```bash
 $ pip install requests
 ```
 
-## API调用
+## API 调用
 
 ### 数据导入
 
-使用 `/loadfile` 接口导入纽约出租车数据集，将其对应的数据表命名为 `raw_data`，其中 `file_path` 为数据文件所在的绝对路径，可根据实际情况进行更改：
+使用 `/loadfile` 接口导入纽约出租车数据集，将其对应的数据表命名为 `raw_data`。其中，`file_path` 为数据文件所在的绝对路径，你需要根据实际情况更改此路径。
 
 ```python
 >>> import requests
@@ -69,37 +69,37 @@ $ pip install requests
 >>> 
 >>> file_path = "/example/data/0_2M_nyc_taxi_and_building.csv"
 >>> payload = {
-    "tables": [
-        {
-            "name": "raw_data",
-            "format": "csv",
-            "path": file_path,
-            "options": {
-                "header": "True",
-                "delimiter": ","
-            },
-            "schema": [
-                {"VendorID": "string"},
-                {"tpep_pickup_datetime": "string"},
-                {"tpep_dropoff_datetime": "string"},
-                {"passenger_count": "long"},
-                {"trip_distance": "double"},
-                {"pickup_longitude": "double"},
-                {"pickup_latitude": "double"},
-                {"dropoff_longitude": "double"},
-                {"dropoff_latitude": "double"},
-                {"fare_amount": "double"},
-                {"tip_amount": "double"},
-                {"total_amount": "double"},
-                {"buildingid_pickup": "long"},
-                {"buildingid_dropoff": "long"},
-                {"buildingtext_pickup": "string"},
-                {"buildingtext_dropoff": "string"}
-            ]
-        }
-    ]
-}
->>> 
+... "tables": [
+...     {
+...         "name": "raw_data",
+...         "format": "csv",
+...         "path": file_path,
+...         "options": {
+...             "header": "True",
+...             "delimiter": ","
+...         },
+...         "schema": [
+...             {"VendorID": "string"},
+...             {"tpep_pickup_datetime": "string"},
+...             {"tpep_dropoff_datetime": "string"},
+...             {"passenger_count": "long"},
+...             {"trip_distance": "double"},
+...             {"pickup_longitude": "double"},
+...             {"pickup_latitude": "double"},
+...             {"dropoff_longitude": "double"},
+...             {"dropoff_latitude": "double"},
+...             {"fare_amount": "double"},
+...             {"tip_amount": "double"},
+...             {"total_amount": "double"},
+...             {"buildingid_pickup": "long"},
+...             {"buildingid_dropoff": "long"},
+...             {"buildingtext_pickup": "string"},
+...             {"buildingtext_dropoff": "string"}
+...         ]
+...     }
+... ]
+... }
+>>>
 >>> r = requests.post(url="http://127.0.0.1:8080/loadfile", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -107,12 +107,11 @@ $ pip install requests
     'message': 'load table successfully!',
     'status': 'success'
 }
->>> 
 ```
 
-### 查询表信息
+### 查询数据表信息
 
-之前的操作在后台建了一张名为 `raw_data` 的表，使用 `/table/schema` 接口查询该表中各字段的名称以及对应的数据类型：
+你已经在后台创建了一张名为 `raw_data` 的数据表。接着，使用 `/table/schema` 接口可查询该表中各字段的名称以及对应的数据类型。
 
 ```python
 >>> import requests
@@ -191,25 +190,28 @@ $ pip install requests
 }
 ```
 
-### SQL查询
+### SQL 查询
 
-使用 `/query` 接口可完成数据表的创建、查询和删除操作。该接口仅对数据处理后台为 pyspark 时可用。
+使用 `/query` 接口可完成数据表的创建、查询和删除操作。
 
-#### 创建表
+> **注意：** `/query` 接口仅当数据处理后台为 PySpark 时可用。
 
-将 `raw_data` 中字符串格式的时间信息转换为 `timestamp` 类型的数据并移除与后续操作无关的字段，保存为一张新的表 `nyc_taxi`。
+#### 创建数据表
+
+将 `raw_data` 数据表中的时间信息从 `string` 类型转换为 `timestamp` 类型，并移除与后续操作无关的字段，保存为一张新的 `nyc_taxi` 数据表。
 
 ```python
 >>> import requests
 >>> import json
->>> 
+>>>
+>>> sql = "create table nyc_taxi as (select VendorID, to_timestamp(tpep_pickup_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_pickup_datetime, to_timestamp(tpep_dropoff_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_dropoff_datetime, passenger_count, trip_distance, pickup_longitude, pickup_latitude, dropoff_longitude, dropoff_latitude, fare_amount, tip_amount, total_amount, buildingid_pickup, buildingid_dropoff, buildingtext_pickup, buildingtext_dropoff from raw_data where (pickup_longitude between -180 and 180) and (pickup_latitude between -90 and 90) and (dropoff_longitude between -180 and 180) and  (dropoff_latitude between -90 and 90))"
 >>> payload = {
-    "input_data": {
-    "sql": "create table nyc_taxi as (select VendorID, to_timestamp(tpep_pickup_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_pickup_datetime, to_timestamp(tpep_dropoff_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_dropoff_datetime, passenger_count, trip_distance, pickup_longitude, pickup_latitude, dropoff_longitude, dropoff_latitude, fare_amount, tip_amount, total_amount, buildingid_pickup, buildingid_dropoff, buildingtext_pickup, buildingtext_dropoff from raw_data where (pickup_longitude between -180 and 180) and (pickup_latitude between -90 and 90) and (dropoff_longitude between -180 and 180) and  (dropoff_latitude between -90 and 90))",
-    }
-    "collect_result": "0"
-}
->>> 
+... "input_data": {
+... "sql": sql,
+... }
+... "collect_result": "0"
+... }
+>>>
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -221,7 +223,7 @@ $ pip install requests
 
 #### 查询数据
 
-查询 `nyc_taxi` 表的行数：
+查询 `nyc_taxi` 数据表的行数。
 
 ```python
 >>> import requests
@@ -247,9 +249,9 @@ $ pip install requests
 }
 ```
 
-#### 删除表
+#### 删除数据表
 
-删除原始表 `raw_data`：
+删除原始的 `raw_data` 数据表。
 
 <font color="#dd0000">注意：</font>`Arctern RESTful` 服务不会主动删除数据表，请务必删除不再使用的数据表释放服务器资源。
 
@@ -259,12 +261,12 @@ $ pip install requests
 >>> 
 >>> sql = "drop table if exists raw_data"
 >>> payload = {
-    "input_data":{
-        "sql": sql
-    },
-    "collect_result": "1"
-}
->>> 
+... "input_data":{
+...     "sql": sql
+... },
+... "collect_result": "1"
+... }
+>>>
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -276,29 +278,29 @@ $ pip install requests
 
 ### 绘制点图
 
-使用 `/pointmap` 接口根据乘客上车地点绘制点图。点图中具体参数说明请参见[点图 RESTful API 说明](./api/function/pointmap.html)。
+使用 `/pointmap` 接口根据乘客的上车地点绘制点图。点图的具体参数说明请参见[点图 RESTful API 说明](./api/function/pointmap.html)。
 
-如果数据处理后台为 python, 则代码示例如下：
+如果数据处理后台为 Python, 则代码示例如下：
 
 ```python
 >>> import requests
 >>> import json
 >>> 
 >>> payload = {
-    "input_data": {
-        "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)"
-    },
-    "params": {
-        "width": 1024,
-        "height": 896,
-        "bounding_box": [-73.998427, 40.730309, -73.954348, 40.780816],
-        "coordinate_system": "EPSG:4326",
-        "point_color": "#2DEF4A",
-        "point_size": 3,
-        "opacity": 0.5
-    }
-}
->>> 
+... "input_data": {
+...     "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)"
+... },
+... "params": {
+...     "width": 1024,
+...     "height": 896,
+...     "bounding_box": [-73.998427, 40.730309, -73.954348, 40.780816],
+...     "coordinate_system": "EPSG:4326",
+...     "point_color": "#2DEF4A",
+...     "point_size": 3,
+...     "opacity": 0.5
+... }
+... }
+>>>
 >>> r = requests.post(url="http://127.0.0.1:8080/pointmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> # 保存为 PNG 图片 
@@ -307,48 +309,49 @@ $ pip install requests
 ...     f.write(base64.b64decode(r.json()['result']))
 ```
 
-若数据处理后台为 pyspark,则需将 input_data 改为如下内容：
-```
+如果数据处理后台为 PySpark，则需将 `input_data` 改为以下内容：
+
+```python
 "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point from nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.998427 40.730309, -73.954348 40.730309, -73.954348 40.780816 ,-73.998427 40.780816, -73.998427 40.730309))'))"
 ```
 
-点图样例：
+点图的绘制结果如下：
 
 ![点图](../../../img/restful-result/pointmap.png)
 
 ### 带权点图
 
-使用 `/weighted_pointmap` 接口根据乘客上车地点绘制带权点图，使用总费用作为点的权重，总费用越高，权重越大，点的颜色越深。权重图中具体参数说明请参见 [带权点图 RESTful API 说明](./api/function/weighted_pointmap.html)。
+使用 `/weighted_pointmap` 接口根据乘客的上车地点绘制带权点图。其中，将总费用作为点的权重 —— 总费用越高，权重越大，点的颜色越深。带权点图的具体参数说明请参见[带权点图 RESTful API 说明](./api/function/weighted_pointmap.html)。
 
-如果数据处理后台为 python, 则代码示例如下：
+如果数据处理后台为 Python, 则代码示例如下：
 
 ```python
 >>> import requests
 >>> import json
 >>> 
 >>> payload = {
-    "input_data": {
-        "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)",
-        "color_weights": "raw_data.fare_amount",
-        "size_weights": "raw_data.total_amount"
-    },
-    "params": {
-        "width": 1024,
-        "height": 896,
-        "bounding_box": [
-            -73.998427,
-            40.730309,
-            -73.954348,
-            40.780816
-        ],
-        "opacity": 1.0,
-        "coordinate_system": "EPSG:4326",
-        "size_bound": [0, 10],
-        "color_bound": [0, 2],
-        "color_gradient": ["#115f9a", "#d0f400"]
-    }
-}
->>> 
+... "input_data": {
+...     "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)",
+...     "color_weights": "raw_data.fare_amount",
+...     "size_weights": "raw_data.total_amount"
+... },
+... "params": {
+...     "width": 1024,
+...     "height": 896,
+...     "bounding_box": [
+...         -73.998427,
+...         40.730309,
+...         -73.954348,
+...         40.780816
+...     ],
+...     "opacity": 1.0,
+...     "coordinate_system": "EPSG:4326",
+...     "size_bound": [0, 10],
+...     "color_bound": [0, 2],
+...     "color_gradient": ["#115f9a", "#d0f400"]
+... }
+... }
+>>>
 >>> r = requests.post(url="http://127.0.0.1:8080/weighted_pointmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> import base64
@@ -356,46 +359,46 @@ $ pip install requests
 ...     f.write(base64.b64decode(r.json()['result']))
 ```
 
-若数据处理后台为 pyspark,则需将 input_data 改为如下内容：
+如果数据处理后台为 PySpark，则需将 `input_data` 改为以下内容：
 
-```
-"sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color FROM nyc_taxi",
+```python
+"sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color FROM nyc_taxi"
 ```
 
-带权点图样例：
+带权点图的绘制结果如下：
 
 ![带权点图](../../../img/restful-result/weighted_pointmap.png)。
 
 ### 热力图
 
-使用 `/heatmap` 接口根据乘客下车地点以及行程费用绘制热力图，费用高的区域为红色，费用低的区域为绿色。热力图中具体参数说明请参见 [热力图 RESTful API 说明](./api/function/heatmap.html)。
+使用 `/heatmap` 接口根据乘客的下车地点以及行程费用绘制热力图。其中，费用高的区域为红色，费用低的区域为绿色。热力图的具体参数说明请参见 [热力图 RESTful API 说明](./api/function/heatmap.html)。
 
-如果数据处理后台为 python, 则代码示例如下：
+如果数据处理后台为 Python, 则代码示例如下：
 
 ```python
 >>> import requests
 >>> import json
 >>> 
 >>> payload = {
-    "input_data": {
-        "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)",
-        "weights": "raw_data.fare_amount"
-    },
-    "params": {
-        "width": 512,
-        "height": 448,
-        "bounding_box": [
-            -74.01556543545699,
-            40.69354738164881,
-            -73.9434424136598,
-            40.780921656427836
-        ],
-        "coordinate_system": "EPSG:4326",
-        "map_zoom_level": 10,
-        "aggregation_type": "sum"
-    }
-}
->>> 
+... "input_data": {
+...     "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)",
+...     "weights": "raw_data.fare_amount"
+... },
+... "params": {
+...     "width": 512,
+...     "height": 448,
+...     "bounding_box": [
+...         -74.01556543545699,
+...         40.69354738164881,
+...         -73.9434424136598,
+...         40.780921656427836
+...     ],
+...     "coordinate_system": "EPSG:4326",
+...     "map_zoom_level": 10,
+...     "aggregation_type": "sum"
+... }
+... }
+>>>
 >>> r = requests.post(url="http://127.0.0.1:8080/heatmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> import base64
@@ -403,54 +406,54 @@ $ pip install requests
 ...     f.write(base64.b64decode(r.json()['result']))
 ```
 
-若数据处理后台为 pyspark,则需将 input_data 改为如下内容：
+如果数据处理后台为 PySpark,则需将 `input_data` 改为以下内容：
 
-```
+```python
 "sql": "SELECT ST_Point (dropoff_longitude, dropoff_latitude) AS point, avg(fare_amount) AS w FROM nyc_taxi GROUP BY point"
 ```
 
-热力图样例：
+热力图的绘制结果如下：
 
 ![热力图](../../../img/restful-result/heatmap.png)
 
 ### 轮廓图
 
-使用 `/choroplethmap` 接口，根据下车地点所在建筑物、小费金额绘制轮廓图，小费金额高为黄色，小费金额低为蓝色。轮廓图中具体参数说明请参见 [轮廓图 RESTful API 说明](./api/function/choroplethmap.html)。
+使用 `/choroplethmap` 接口，根据下车地点的建筑物、小费金额绘制轮廓图。其中，小费金额高的区域为黄色，小费金额低的区域为蓝色。轮廓图的具体参数说明请参见 [轮廓图 RESTful API 说明](./api/function/choroplethmap.html)。
 
-如果数据处理后台为 python, 则代码示例如下：
+如果数据处理后台为 Python, 则代码示例如下：
 
 ```python
 >>> import requests
 >>> import json
 >>> 
 >>> payload = {
-    "input_data": {
-        "region_boundaries": "ST_GeomFromText(raw_data.dropna().buildingtext_pickup)",
-        "weights": "raw_data.dropna().fare_amount"
-    },
-    "params": {
-        "width": 512,
-        "height": 448,
-        "bounding_box": [
-            -74.00235068563725,
-            40.735104211264684,
-            -73.96739189659048,
-            40.77744332808598
-        ],
-        "coordinate_system": "EPSG:4326",
-        "color_gradient": [
-            "#115f9a",
-            "#d0f400"
-        ],
-        "color_bound": [
-            0,
-            5
-        ],
-        "opacity": 1,
-        "aggregation_type": "mean"
-    }
-}
->>> 
+... "input_data": {
+...     "region_boundaries": "ST_GeomFromText(raw_data.dropna().buildingtext_pickup)",
+...     "weights": "raw_data.dropna().fare_amount"
+... },
+... "params": {
+...     "width": 512,
+...     "height": 448,
+...     "bounding_box": [
+...         -74.00235068563725,
+...         40.735104211264684,
+...         -73.96739189659048,
+...         40.77744332808598
+...     ],
+...     "coordinate_system": "EPSG:4326",
+...     "color_gradient": [
+...         "#115f9a",
+...         "#d0f400"
+...     ],
+...     "color_bound": [
+...         0,
+...         5
+...     ],
+...     "opacity": 1,
+...     "aggregation_type": "mean"
+... }
+... }
+>>>
 >>> r = requests.post(url="http://127.0.0.1:8080/choroplethmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> import base64
@@ -458,47 +461,48 @@ $ pip install requests
 ...     f.write(base64.b64decode(r.json()['result']))
 ```
 
-若数据处理后台为 pyspark,则需将 input_data 改为如下内容：
+如果数据处理后台为 PySpark,则需将 `input_data` 改为以下内容：
 
-```
+```python
 "sql": "SELECT ST_GeomFromText(buildingtext_dropoff) AS wkt, avg(tip_amount) AS w FROM nyc_taxi WHERE ((buildingtext_dropoff!='')) GROUP BY wkt"
 ```
 
-轮廓图样例：
+轮廓图的绘制结果如下：
 
 ![轮廓图](../../../img/restful-result/choroplethmap.png)
 
 ### 图标图
 
-使用 `/icon_viz` 接口根据乘客上车地点绘制图标图。图标图中具体参数说明请参见 [图标图 RESTful API 说明](./api/function/icon_viz.html)。
+使用 `/icon_viz` 接口根据乘客的上车地点绘制图标图。图标图的具体参数说明请参见[图标图 RESTful API 说明](./api/function/icon_viz.html)。
 
-如果数据处理后台为 python, 则代码示例如下：
+如果数据处理后台为 Python, 则代码示例如下：
 
 ```python
 >>> import requests
 >>> import json
->>> 
->>> # 下面 icon_path 的路径填写待显示图标所在的绝对路径，
->>> # 本例中的图标文件可通过如下命令获取：
+>>>
+>>> # 本例中的图标文件可通过以下命令获取：
 >>> # wget https://github.com/zilliztech/arctern-docs/raw/branch-0.1.x/img/icon/icon-viz.png
+>>>
+>>> # icon_path 为待显示图标的绝对路径
 >>> icon_path = "/path/to/icon_example.png"
 >>> payload = {
-    "input_data": {
-        "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)"
-    },
-    "params": {
-        "width": 512,
-        "height": 448,
-        "bounding_box": [
-            -73.9616334766551,
-            40.704739019597156,
-            -73.94232850242967,
-            40.728133570887906
-        ],
-        "coordinate_system": "EPSG:4326",
-        "icon_path": icon_path
-    }
-}
+... "input_data": {
+...     "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)"
+... },
+... "params": {
+...     "width": 512,
+...     "height": 448,
+...     "bounding_box": [
+...         -73.9616334766551,
+...         40.704739019597156,
+...         -73.94232850242967,
+...         40.728133570887906
+...     ],
+...     "coordinate_system": "EPSG:4326",
+...     "icon_path": icon_path
+... }
+... }
 >>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/icon_viz", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
@@ -508,21 +512,21 @@ $ pip install requests
 ...     f.write(base64.b64decode(r.json()['result']))
 ```
 
-若数据处理后台为 pyspark,则需将 input_data 改为如下内容：
+如果数据处理后台为 PySpark,则需将 `input_data` 改为以下内容：
 
-```
+```python
 "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point from nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))')) limit 25"
 ```
 
-图标图样例：
+图标图的绘制结果如下：
 
 ![图标图](../../../img/restful-result/icon_viz.png)
 
 ### 渔网图
 
-使用 `/fishnetmap` 接口根据乘客上车地点绘制渔网图，使用总费用作为渔网网格的权重，总费用越高，权重越大，渔网网格的颜色越深。渔网图中具体参数说明请参见 [渔网图 RESTful API 说明](./api/function/fishnetmap.html)。
+使用 `/fishnetmap` 接口根据乘客的上车地点绘制渔网图。其中，将总费用作为渔网网格的权重 —— 总费用越高，权重越大，渔网网格的颜色越深。渔网图的具体参数说明请参见[渔网图 RESTful API 说明](./api/function/fishnetmap.html)。
 
-如果数据处理后台为 python, 则代码示例如下：
+如果数据处理后台为 Python, 则代码示例如下：
 
 ```python
 >>> import requests
@@ -563,13 +567,13 @@ $ pip install requests
 ...     f.write(base64.b64decode(r.json()['result']))
 ```
 
-若数据处理后台为 pyspark,则需将 input_data 改为如下内容：
+如果数据处理后台为 PySpark，则需将 `input_data` 改为以下内容：
 
-```
+```python
 "sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color FROM nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))'))"
 ```
 
-渔网图样例：
+渔网图的绘制结果如下：
 
 ![渔网图](../../../img/restful-result/fishnetmap.png)
 
