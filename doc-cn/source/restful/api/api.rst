@@ -4,8 +4,6 @@ API
 .. toctree::
    :maxdepth: 1
 
-   function/create_scope
-   function/delete_scope
    function/loadfile
    function/savetable
    function/table_schema

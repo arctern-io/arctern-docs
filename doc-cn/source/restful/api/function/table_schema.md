@@ -5,13 +5,11 @@
 ## 请求说明
 
 - HTTP方法: **GET**
-- 请求URL: /table/schema?scope=scope1&session=spark&table=table1
+- 请求URL: /table/schema?table=table1
 
-- scope：该字段指明在哪一个作用域内查询表的信息；
-- session：可选参数，该字段指明使用哪个 `SparkSession` 查询表的信息；
 - table：表名。
 
-## 样例
+## 请求样例
 
 ### Python
 
@@ -26,7 +24,7 @@ pip install requests
 ```python
 import requests
 
-url = "http://localhost:8080/table/schema?scope=scope1&session=spark&table=table1"
+url = "http://localhost:8080/table/schema?table=table1"
 
 payload = {}
 headers= {}
@@ -39,12 +37,10 @@ print(response.text.encode('utf8'))
 ### curl
 
 ```bash
-curl --location --request GET 'http://localhost:8080/table/schema?scope=scope1&session=spark&table=table1'
+curl --location --request GET 'http://localhost:8080/table/schema?table=table1'
 ```
 
-## 返回说明
-
-成功样例：
+## 响应样例
 
 ```json
 {
@@ -57,14 +53,3 @@ curl --location --request GET 'http://localhost:8080/table/schema?scope=scope1&s
     "num_rows": 500
 }
 ```
-
-失败样例：
-
-```json
-{
-    "status": "error",
-    "code": "-1",
-    "message": "table not found!"
-}
-```
-
