@@ -1,6 +1,6 @@
 # 文件的导入与导出
 
-Arctern 借助 Pandas 的文件读写功能完成数据的导入和导出。Pandas 支持多种数据文件格式，如 CSV、HTML、JSON、ORC 等，详细内容可参考[官方文档](https://pandas.pydata.org/pandas-docs/stable/reference/io.html),下面是针对 CSV 和 JSON 格式数据的导入导出示例：
+Arctern 借助 Pandas 的文件读写功能完成数据的导入和导出。Pandas 支持多种数据文件格式，如 CSV、HTML、JSON、ORC 等，详细内容可参考[Pandas 官方文档](https://pandas.pydata.org/pandas-docs/stable/reference/io.html)。下面是针对 CSV 和 JSON 格式数据的导入导出示例：
 
 ```python
 # 导入 CSV 文件，导出 JSON 文件
