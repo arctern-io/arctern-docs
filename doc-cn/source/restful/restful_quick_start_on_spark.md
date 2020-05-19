@@ -313,7 +313,7 @@ $ pip install requests
 
 ![点图](../../../img/restful-result/pointmap.png)
 
-### 带权点图
+### 绘制带权点图
 
 使用 `/weighted_pointmap` 接口根据乘客的上车地点绘制带权点图。其中，将总费用作为点的权重 —— 总费用越高，权重越大，点的颜色越深。带权点图的具体参数说明请参见[带权点图 RESTful API 说明](./api/function/weighted_pointmap.html)。
 
@@ -353,7 +353,7 @@ $ pip install requests
 
 ![带权点图](../../../img/restful-result/weighted_pointmap.png)。
 
-### 热力图
+### 绘制热力图
 
 使用 `/heatmap` 接口根据乘客的下车地点以及行程费用绘制热力图。其中，费用高的区域为红色，费用低的区域为绿色。热力图的具体参数说明请参见 [热力图 RESTful API 说明](./api/function/heatmap.html)。
 
@@ -391,7 +391,7 @@ $ pip install requests
 
 ![热力图](../../../img/restful-result/heatmap.png)
 
-### 轮廓图
+### 绘制轮廓图
 
 使用 `/choroplethmap` 接口，根据下车地点的建筑物、小费金额绘制轮廓图。其中，小费金额高的区域为黄色，小费金额低的区域为蓝色。轮廓图的具体参数说明请参见 [轮廓图 RESTful API 说明](./api/function/choroplethmap.html)。
 
@@ -437,7 +437,7 @@ $ pip install requests
 
 ![轮廓图](../../../img/restful-result/choroplethmap.png)
 
-### 图标图
+### 绘制图标图
 
 使用 `/icon_viz` 接口根据乘客的上车地点绘制图标图。图标图的具体参数说明请参见[图标图 RESTful API 说明](./api/function/icon_viz.html)。
 
@@ -482,7 +482,7 @@ $ pip install requests
 
 ![图标图](../../../img/restful-result/icon_viz.png)
 
-### 渔网图
+### 绘制渔网图
 
 使用 `/fishnetmap` 接口根据乘客的上车地点绘制渔网图。其中，将总费用作为渔网网格的权重 —— 总费用越高，权重越大，渔网网格的颜色越深。渔网图的具体参数说明请参见[渔网图 RESTful API 说明](./api/function/fishnetmap.html)。
 

@@ -66,17 +66,7 @@ $ conda install -c conda-forge -c arctern arctern-webserver
 
 ### 配置 Zeppelin 后台
 
-Zeppelin 默认在本机的 8080 端口启动后台服务，如果需要更改默认的端口号，执行以下命令修改 Zeppelin 的配置文件 `zeppelin-site.xml`：
-
-```bash
-cd zeppelin-0.9.0-preview1-bin-all
-cd conf
-
-# 编辑配置文件
-vim zeppelin-site.xml   
-```
-
-将下方 `<value>` 标签内的 8080 替换为你想要使用的端口号：
+Zeppelin 默认在本机的 8080 端口启动后台服务，如果需要更改默认的端口号，请在 `zeppelin-0.9.0-preview1-bin-all/conf` 目录下修改 Zeppelin 的配置文件 `zeppelin-site.xml`。将下方 `<value>` 标签内的 8080 替换为你想要使用的端口号：
 
 ```xml
 <property>
@@ -88,7 +78,7 @@ vim zeppelin-site.xml
 
 ### 配置 Arctern RESTful Server
 
-Arctern RESTful Server 的配置文件 `config.ini` 所在目录可通过以下 Python 代码查看：
+执行以下 Python 命令查看 Arctern RESTful Server 的配置文件 `config.ini` 所在目录：
 
 ```python
 >>> import arctern_server
@@ -96,7 +86,7 @@ Arctern RESTful Server 的配置文件 `config.ini` 所在目录可通过以下 
 </path/to/arctern_server>
 ```
 
-目前，Arctern RESTful Server 兼容 Python 和 PySpark 两种后台系统。因此，在不同的后台下 `config.ini` 的配置情况稍有不同。
+目前，Arctern RESTful Server 兼容 Python 和 PySpark 两种后台系统。因此，在不同的后台下 `config.ini` 的配置情况稍有不同。进入 `config.ini` 所在目录，并编辑根据你使用的后台系统修改配置文件 `config.ini`。
 
 #### 兼容 Python 的 Arctern RESTful Server 后台
 
