@@ -5,7 +5,7 @@
 ## 请求说明
 
 - HTTP方法: **GET**
-- 请求URL: /table/schema?table=table1
+- 请求URL: /table/schema?table=table_name
 
 - table：表名。
 
@@ -24,7 +24,7 @@ pip install requests
 ```python
 import requests
 
-url = "http://localhost:8080/table/schema?table=table1"
+url = "http://localhost:8080/table/schema?table=table_name"
 
 payload = {}
 headers= {}
@@ -37,7 +37,7 @@ print(response.text.encode('utf8'))
 ### curl
 
 ```bash
-curl --location --request GET 'http://localhost:8080/table/schema?table=table1'
+curl --location --request GET 'http://localhost:8080/table/schema?table=table_name'
 ```
 
 ## 响应样例

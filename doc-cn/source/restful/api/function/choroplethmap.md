@@ -1,6 +1,6 @@
 # 轮廓图
 
-根据 SQL 语句以及相关画图参数绘制轮廓图，将绘图结果以 base64 编码方式返回。
+根据相关画图参数绘制轮廓图，将绘图结果以 base64 编码方式返回。
 
 ## 请求说明
 
@@ -33,12 +33,14 @@
 
 若数据处理后台为 pyspark, 则 input_data 应为相应的 SQL 查询语句，示例如下：
 ```
-"sql": "select ST_GeomFromText(col_wkb_polygon) as polygon, col2 as count from table_name"
+"sql": "select ST_GeomFromText(buildingtext_pickup) as polygon, fare_amount as count from raw_data where buildingtext_pickup!=''"
 ```
 
 参数说明：
 
-- sql：待执行的 SQL 查询语句，该查询的结果作为绘制轮廓图的渲染对象；
+- input_data：输入数据描述，需为已定义的变量名称或可执行的 python 语句；
+    - region_boundaries：轮廓的位置，格式为 WKB 的 pandas.Series；
+    - weights：轮廓权重，为 float64|int64 类型的 pandas.Series；
 - params：绘图参数，具体说明如下，详见 [Arctern-Spark 绘图接口文档](../../../spark/api/render/function/layer/choroplethmap.md)：
     - width：图片宽度；
     - height：图片高度；
@@ -79,7 +81,8 @@ payload  = {
         "coordinate_system": "EPSG:4326",
         "color_gradient": ["#0000FF", "#FF0000"],
         "color_bound": [2.5, 5],
-        "opacity": 1
+        "opacity": 1,
+        "aggregation_type": "mean"
     }
 }
 headers = {
@@ -108,7 +111,8 @@ curl --location --request POST 'http://localhost:8080/choroplethmap' \
         "coordinate_system": "EPSG:4326",
         "color_gradient": ["#0000FF", "#FF0000"],
         "color_bound": [2.5, 5],
-        "opacity": 1
+        "opacity": 1,
+        "aggregation_type": "mean"
     }
 }'
 ```

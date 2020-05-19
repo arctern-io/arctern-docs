@@ -1,6 +1,6 @@
 # 带权点图
 
-根据 SQL 语句以及相关画图参数绘制权重图，将绘图结果以 base64 编码方式返回。
+根据相关画图参数绘制权重图，将绘图结果以 base64 编码方式返回。
 
 ## 请求说明
 
@@ -34,12 +34,15 @@
 
 若数据处理后台为 pyspark, 则 input_data 应为相应的 SQL 查询语句，示例如下：
 ```
-"sql": "select ST_Point(col2, col2) as point, col2 as count1, col2 as count2 from table_name"
+"sql": "select ST_Point(pickup_longitude, pickup_latitude) as point, fare_amount as count1, total_amount as count2 from raw_data"
 ```
 
 参数说明：
 
-- sql：待执行的 SQL 查询语句，该查询的结果作为绘制带权点图的渲染对象；
+- input_data：输入数据描述，需为已定义的变量名称或可执行的 python 语句；
+    - points：点的位置，格式为 WKB 的 pandas.Series；
+    - color_weights：点的颜色权重，为 float64|int64 类型的 pandas.Series；
+    - size_weights：点的大小权重，为 float64|int64 类型的 pandas.Series；
 - params：绘图参数，具体说明如下，详见 [Arctern-Spark 绘图接口文档](../../../spark/api/render/function/layer/weighted_pointmap.md)：
     - width：图片宽度；
     - height：图片高度；
