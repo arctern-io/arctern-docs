@@ -104,7 +104,7 @@ Arctern RESTful Server 的配置文件 `config.ini` 所在目录可通过以下 
 
 ```ini
 [zeppelin]
-zeppelin-server = <localhost>
+zeppelin-server = localhost
 zeppelin-port = 8888
 
 [interpreter]
