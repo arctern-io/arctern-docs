@@ -96,8 +96,6 @@ Arctern RESTful Server 的配置文件 `config.ini` 所在目录可通过以下 
 <'/path/to/arctern_server'>
 ```
 
-> 补充：此处缺少编辑 config.ini 的方法，比如：先 cd 再 vim 的代码。
-
 目前，Arctern RESTful Server 兼容 Python 和 PySpark 两种后台系统。因此，在不同的后台下 `config.ini` 的配置情况稍有不同。
 
 #### 兼容 Python 的 Arctern RESTful Server 后台
