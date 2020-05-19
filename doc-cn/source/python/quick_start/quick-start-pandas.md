@@ -67,7 +67,7 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 ... }
 >>>
 >>> # 你需要将文件路径配置为本地路径
->>> df=pd.read_csv("/tmp/0_2M_nyc_taxi_and_building.csv",
+>>> df=pd.read_csv("/path/to/0_2M_nyc_taxi_and_building.csv",
 ...                dtype=nyc_schema,
 ...                date_parser=pd.to_datetime,
 ...                parse_dates=["tpep_pickup_datetime","tpep_dropoff_datetime"])
@@ -102,7 +102,7 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 
 ## 使用 Arctern 提供的 GeoSpatial 函数处理数据
 
-1. 导入 `arctern` 模块。
+1. 导入 `arctern` 模块：
 
 ```python
 >>> from arctern import *
