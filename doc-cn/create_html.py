@@ -18,6 +18,14 @@ def replace(source_api_path,src_prefix,dst_prefix):
            with open(source_api_path + os.sep + html_file, 'w') as f:
                 f.write(contents)
 
+def ignore_python_prompt():
+    with open("build/html/_static/pygments.css", 'r') as f:
+                contents = f.read()
+    contents = contents.replace(".highlight .go { color: #888888 }",".highlight .go { color: #888888; -moz-user-select: none; -o-user-select:none; -khtml-user-select:none; -webkit-user-select:none; -ms-user-select:none; user-select:none }")
+    contents = contents.replace(".highlight .gp { color: #000080; font-weight: bold }",".highlight .gp { color: #000080; font-weight: bold; -moz-user-select: none; -o-user-select:none; -khtml-user-select:none; -webkit-user-select:none; -ms-user-select:none; user-select:none }")
+    with open("build/html/_static/pygments.css", 'w') as f:
+                f.write(contents)
+
 def add_content(path):
     file_read = open(path, 'r')
     udf_file_read = open('replace_udf.py','r')
@@ -76,3 +84,4 @@ if __name__ == "__main__":
     src_prefix = '>arctern_pyspark.register.<'
     dst_prefix = '>arctern_pyspark.<' 
     replace(source_api_path,src_prefix,dst_prefix)
+    ignore_python_prompt()
