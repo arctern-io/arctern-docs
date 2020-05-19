@@ -59,7 +59,7 @@ $ conda activate arctern_server_env
 3. 安装 Arctern RESTful Server：
 
 ```bash
-$ conda install -c conda-forge arctern-webserver
+$ conda install -c conda-forge -c arctern arctern-webserver
 ```
 
 ## 配置服务器
