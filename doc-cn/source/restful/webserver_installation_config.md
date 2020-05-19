@@ -40,7 +40,7 @@ $ tar -zxvf zeppelin-0.9.0-preview1-bin-all.tgz
 
 ## 配置 Zeppelin 后台
 
-Zeppelin 默认在本机的 8080 端口启动后台服务，如果需要更改默认的端口号，执行以下命令修改 Zeppelin 的配置文件 `zeppelin-site.xml`：
+Zeppelin 默认在本机的 8080 端口启动后台服务，如果需要更改默认的端口号，请在 zeppelin-0.9.0-preview1-bin-all/conf 目录下修改 Zeppelin 的配置文件 zeppelin-site.xml。将下方 <value> 标签内的 8080 替换为你想要使用的端口号：
 
 ```bash
 cd zeppelin-0.9.0-preview1-bin-all
