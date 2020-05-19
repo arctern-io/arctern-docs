@@ -451,7 +451,7 @@ $ pip install requests
 >>> # wget https://github.com/zilliztech/arctern-docs/raw/branch-0.1.x/img/icon/icon-viz.png
 >>>
 >>> # icon_path 为待显示图标的绝对路径
->>> icon_path = "/path/to/icon_viz.png"
+>>> icon_path = "/path/to/icon-viz.png"
 >>> payload = {
 ... "input_data": {
 ...     "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point from nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))')) limit 25"

@@ -365,7 +365,7 @@ $ pip install requests
 >>> # wget https://github.com/zilliztech/arctern-docs/raw/branch-0.1.x/img/icon/icon-viz.png
 >>>
 >>> # icon_path 为待显示图标的绝对路径
->>> icon_path = "/path/to/icon_viz.png"
+>>> icon_path = "/path/to/icon-viz.png"
 >>> payload = {
 ... "input_data": {
 ...     "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)"
