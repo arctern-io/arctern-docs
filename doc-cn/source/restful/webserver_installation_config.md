@@ -76,7 +76,7 @@ cd conf
 vim zeppelin-site.xml   
 ```
 
-将下方 `<value>` 标签内的 8080 替换为你想要更改的端口号：
+将下方 `<value>` 标签内的 8080 替换为你想要使用的端口号：
 
 ```xml
 <property>
