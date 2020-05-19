@@ -1,6 +1,6 @@
 # 点图
 
-根据 SQL 语句以及相关画图参数绘制点图，将绘图结果以 base64 编码方式返回。
+根据相关画图参数绘制点图，将绘图结果以 base64 编码方式返回。
 
 ## 请求说明
 
@@ -31,12 +31,13 @@
 
 若数据处理后台为 pyspark, 则 input_data 应为相应的 SQL 查询语句，示例如下：
 ```
-"sql": "select ST_Point(col2, col2) as point from table_name"
+"sql": "select ST_Point(pickup_longitude, pickup_latitude) as point from raw_data"
 ```
 
 参数说明：
 
-- sql：待执行的 SQL 查询语句，该查询的结果作为绘制点图的渲染对象；
+- input_data：输入数据描述，需为已定义的变量名称或可执行的 python 语句；
+    - points：点的位置，格式为 WKB 的 pandas.Series；
 - params：绘图参数，具体说明如下，详见 [Arctern-Spark 绘图接口文档](../../../spark/api/render/function/layer/pointmap.md)：
     - width：图片宽度；
     - height：图片高度；
@@ -44,7 +45,7 @@
     - coordinate_system：输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)；
     - point_size：点的大小；
     - point_color：点的颜色；
-    - opacity：点的不透明度；
+    - opacity：点的不透明度。
 
 ## 请求样例
 

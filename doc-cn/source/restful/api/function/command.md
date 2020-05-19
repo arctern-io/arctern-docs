@@ -55,7 +55,7 @@ print(response.text.encode('utf8'))
 curl --location --request POST 'http://localhost:8080/command' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-	"comamnd":"import sys\nprint(len(sys.argv))"
+	"command":"import sys\nprint(len(sys.argv))"
 }'
 ```
 
