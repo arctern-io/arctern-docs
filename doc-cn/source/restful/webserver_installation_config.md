@@ -4,6 +4,10 @@ Arctern RESTful Server 依赖于 Apache Zeppelin 以及 Conda，因此安装 Arc
 
 > **注意：** Conda 包括 Anaconda 和 Miniconda，建议使用 Miniconda。
 
+## 安装 Miniconda
+
+Miniconda 的安装可参考 [Linux 系统安装 Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html)。
+
 ## 安装 Arctern 后台
 
 Arctern RESTful Server 仅负责接收和解析 RESTful 请求，实际操作由 Arctern 后台执行。在安装 Arctern RESTful Server 前，你需要事先安装 Arctern 后台系统。目前，Arctern RESTful Server 支持基于 Python 和基于 PySpark 的两种 Arctern 后台，你可以任选一种安装使用。
@@ -12,14 +16,14 @@ Arctern RESTful Server 仅负责接收和解析 RESTful 请求，实际操作由
 
 请参考如下链接：
 
-* [安装 Arctern Python 后台](../python/installation_and_deployment/install_arctern_on_python.md)
+* [在线安装 Arctern Python 后台](../python/installation_and_deployment/install_arctern_on_python.md)
 
 ### 安装基于 PySpark 的 Arctern 后台
 
 通过以下任意一种方式安装基于 PySpark 的 Arctern 后台：
 
-* [在线安装](../spark/installation_and_deployment/install_arctern_on_spark_cn.md)
-* [离线安装](../spark/installation_and_deployment/offline_install_arctern_on_spark_cn.md)
+* [在线安装 Arctern PySpark 后台](../spark/installation_and_deployment/install_arctern_on_spark_cn.md)
+* [离线安装 Arctern PySpark 后台](../spark/installation_and_deployment/offline_install_arctern_on_spark_cn.md)
 * [基于 Docker Compose 部署](../spark/installation_and_deployment/deploy-with-docker-compose-cn.md)
 
 ## 安装 Apache Zeppelin
@@ -34,9 +38,26 @@ $ wget https://mirror.bit.edu.cn/apache/zeppelin/zeppelin-0.9.0-preview1/zeppeli
 $ tar -zxvf zeppelin-0.9.0-preview1-bin-all.tgz 
 ```
 
-## 安装 Miniconda
+## 配置 Zeppelin 后台
 
-Miniconda 的安装可参考 [Linux 系统安装 Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html)。
+Zeppelin 默认在本机的 8080 端口启动后台服务，如果需要更改默认的端口号，请在 zeppelin-0.9.0-preview1-bin-all/conf 目录下修改 Zeppelin 的配置文件 zeppelin-site.xml。将下方 <value> 标签内的 8080 替换为你想要使用的端口号：
+
+```bash
+cp zeppelin-site.xml.template zeppelin-site.xml
+
+# 编辑配置文件
+vim zeppelin-site.xml   
+```
+
+将下方 `<value>` 标签内的 8080 替换为你想要使用的端口号：
+
+```xml
+<property>
+    <name>zeppelin.server.port</name>
+    <value>8080</value>
+    <description>Server port.</description>
+</property>
+```
 
 ## 安装 Arctern RESTful Server
 
@@ -46,7 +67,7 @@ Miniconda 的安装可参考 [Linux 系统安装 Miniconda](https://docs.conda.i
 $ conda create -n arctern_server_env -c conda-forge python=3.7.6
 ```
 
-> **注意：** 如果你在同一台计算机上安装 Arctern 后台系统和 Arctern RESTful Server，请确保二者的环境名称是不同的。例如，Arctern 后台系统的名称是 `arctern_env`，Arctern RESTful Server 的名称是 `arctern_server_env`。
+> **注意：** 如果你在同一台计算机上安装 Arctern 后台系统和 Arctern RESTful Server，建议二者的环境名称是不同的。例如，Arctern 后台系统的名称是 `arctern_env`，Arctern RESTful Server 的名称是 `arctern_server_env`。
 
 2. 进入 `arctern_server_env` 虚拟环境：
 
@@ -54,26 +75,10 @@ $ conda create -n arctern_server_env -c conda-forge python=3.7.6
 $ conda activate arctern_server_env
 ```
 
-> **注意：** 后续工作必须在 Arctern Conda 环境中进行。
-
 3. 安装 Arctern RESTful Server：
 
 ```bash
 $ conda install -c conda-forge -c arctern arctern-webserver
-```
-
-## 配置服务器
-
-### 配置 Zeppelin 后台
-
-Zeppelin 默认在本机的 8080 端口启动后台服务，如果需要更改默认的端口号，请在 `zeppelin-0.9.0-preview1-bin-all/conf` 目录下修改 Zeppelin 的配置文件 `zeppelin-site.xml`。将下方 `<value>` 标签内的 8080 替换为你想要使用的端口号：
-
-```xml
-<property>
-    <name>zeppelin.server.port</name>
-    <value>8080</value>
-    <description>Server port.</description>
-</property>
 ```
 
 ### 配置 Arctern RESTful Server
@@ -94,7 +99,7 @@ Zeppelin 默认在本机的 8080 端口启动后台服务，如果需要更改�
 
 ```ini
 [zeppelin]
-zeppelin-server = localhost
+zeppelin-host = localhost
 zeppelin-port = 8888
 
 [interpreter]
@@ -106,7 +111,7 @@ python-path = </path/to/python>
 配置文件 `config.ini` 中各字段的含义如下：
 
 * `zepplin`：指定 Arctern RESTful Server 所使用的 Zeppelin 系统的相关信息。
-    - `zeppelin-server`： Zeppelin 后台的 IP 地址
+    - `zeppelin-host`： Zeppelin 后台的 IP 地址
     - `zeppelin-port`： Zeppelin 后台的端口号
 * `interpreter`：指定 Arctern 数据分析后台的相关信息。
     - `type`：解释器类型
@@ -119,7 +124,7 @@ python-path = </path/to/python>
 
 ```ini
 [zeppelin]
-zeppelin-server = localhost
+zeppelin-host = localhost
 zeppelin-port = 8888
 
 [interpreter]
@@ -134,7 +139,7 @@ pyspark-driver-python = python
 配置文件 `config.ini` 中各字段的含义如下：
 
 * `zepplin`：指定 Arctern RESTful Server 所使用的 Zeppelin 系统的相关信息。
-    - `zeppelin-server`： Zeppelin 后台的 IP 地址
+    - `zeppelin-host`： Zeppelin 后台的 IP 地址
     - `zeppelin-port`： Zeppelin 后台的端口号
 * `interpreter`：指定 Arctern 数据分析后台的相关信息。
     - `type`：解释器类型
