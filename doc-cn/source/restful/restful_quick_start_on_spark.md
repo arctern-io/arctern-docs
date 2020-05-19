@@ -47,8 +47,6 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 
 > **注意：** 该数据集有 200000 行，其中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`。
 
-下述示例中，假设服务器 IP 地址为 `127.0.0.1`，RESTful 服务端口为 `8080`。
-
 ### 安装依赖
 
 本文示例代码使用 Python 的 `requests` 库调用 `Arctern RESTful API`，执行以下命令安装 `requests`：
@@ -58,6 +56,8 @@ $ pip install requests
 ```
 
 ## API 调用
+
+下述示例中，假设服务器 IP 地址为 `127.0.0.1`，RESTful 服务端口为 `8080`,若在启动 arctern-server 时指定了 IP 与端口,则使用指定的 IP 与端口。
 
 ### 数据导入
 
