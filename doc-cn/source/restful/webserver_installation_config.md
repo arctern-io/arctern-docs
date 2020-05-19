@@ -93,7 +93,7 @@ Arctern RESTful Server 的配置文件 `config.ini` 所在目录可通过以下 
 ```python
 >>> import arctern_server
 >>> print(arctern_server.__path__)
-<'/path/to/arctern_server'>
+</path/to/arctern_server>
 ```
 
 目前，Arctern RESTful Server 兼容 Python 和 PySpark 两种后台系统。因此，在不同的后台下 `config.ini` 的配置情况稍有不同。
