@@ -33,7 +33,7 @@
 $ sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 
 # 配置 JDK 环境变量，你需要将路径配置为本地的 JDK 8 路径
-$ export JAVA_HOME=/path/to/java8
+$ export JAVA_HOME=</path/to/java8>
 $ export PATH=$JAVA_HOME/bin:$PATH
 $ export JRE_HOME=$JAVA_HOME/jre
 $ export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
@@ -47,7 +47,7 @@ $ export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
 $ sudo apt install libgl1-mesa-dev libegl1-mesa-dev
 
 # 配置 JDK 环境变量，你需要将路径配置为本地的 JDK 8 路径
-$ export JAVA_HOME=/path/to/java8
+$ export JAVA_HOME=</path/to/java8>
 $ export PATH=$JAVA_HOME/bin:$PATH
 $ export JRE_HOME=$JAVA_HOME/jre
 $ export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
