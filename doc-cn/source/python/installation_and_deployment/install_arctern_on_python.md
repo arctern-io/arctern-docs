@@ -1,6 +1,6 @@
 # 安装部署
 
-本文档介绍在 Python 环境中安装 Arctern 的步骤。
+本文档引导你在 Python 环境中安装 Arctern。
 
 ## 安装要求
 
@@ -47,7 +47,7 @@ $ sudo apt install libgl1-mesa-dev libegl1-mesa-dev
 $ conda create -n arctern_env -c conda-forge python=3.7.6
 ```
 
-创建成功后，可以通过 `conda env list` 命令查看所有 Conda 环境，其输出结果应包含 Arctern 环境，类似如下：
+成功创建 Conda 环境后，你可以通过 `conda env list` 命令查看所有 Conda 环境，其输出结果应包含 Arctern 环境，类似如下：
   
 ```bash
 conda environments:
@@ -88,36 +88,21 @@ $ conda install -c arctern -c conda-forge arctern
 进入 Python 环境，尝试导入 `arctern` 并确认版本是否正确。
 
 ```python
-Python 3.7.6 | packaged by conda-forge | (default, Jan 29 2020, 14:55:04)
-[GCC 7.3.0] on linux
-Type "help", "copyright", "credits" or "license" for more information.
 >>> import arctern
 >>> arctern.version()
 ```
 
 ## 测试样例
 
-安装 py.test：
-
 ```bash
+# 安装 py.test
 $ conda install pytest
-```
 
-下载测试文件：
-
-```bash
+# 下载测试文件
 $ wget https://raw.githubusercontent.com/zilliztech/arctern/v0.1.0/python/tests/geo/geo_test.py
-```
 
-执行以下命令执行测试文件：
-
-```bash
+# 执行测试文件
 $ py.test [/path/to/]geo_test.py
-```
-
-若最后打印结果类似以下内容，则表示通过测试样例。
-
-```bash
 33 passed, 1 warning in 0.58s
 ```
 

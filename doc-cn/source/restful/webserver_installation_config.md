@@ -85,7 +85,7 @@ $ conda install -c conda-forge -c arctern arctern-webserver
 
 ### 配置 Arctern RESTful Server
 
-Arctern RESTful Server 的配置文件 `config.ini` 所在目录可通过以下 Python 代码查看：
+执行以下 Python 命令查看 Arctern RESTful Server 的配置文件 `config.ini` 所在目录：
 
 ```python
 >>> import arctern_server
@@ -93,7 +93,7 @@ Arctern RESTful Server 的配置文件 `config.ini` 所在目录可通过以下 
 </path/to/arctern_server>
 ```
 
-目前，Arctern RESTful Server 兼容 Python 和 PySpark 两种后台系统。因此，在不同的后台下 `config.ini` 的配置情况稍有不同。
+目前，Arctern RESTful Server 兼容 Python 和 PySpark 两种后台系统。因此，在不同的后台下 `config.ini` 的配置情况稍有不同。进入 `config.ini` 所在目录，并编辑根据你使用的后台系统修改配置文件 `config.ini`。
 
 #### 兼容 Python 的 Arctern RESTful Server 后台
 
