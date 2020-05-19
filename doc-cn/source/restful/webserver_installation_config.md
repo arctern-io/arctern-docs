@@ -1,6 +1,6 @@
 # Arctern RESTful Server 安装与配置
 
-Arctern RESTful Server 依赖于 Apache Zeppelin 以及 Conda，因此安装 Arctern RESTful Server 前需要先安装 Apache Zeppelin 以及 Conda。
+以下为 Conda 环境下的安装过程，在安装 Arctern RESTful Server 前请安装 Conda。
 
 > **注意：** Conda 包括 Anaconda 和 Miniconda，建议使用 Miniconda。
 
@@ -26,7 +26,52 @@ Arctern RESTful Server 仅负责接收和解析 RESTful 请求，实际操作由
 * [离线安装 Arctern PySpark 后台](../spark/installation_and_deployment/offline_install_arctern_on_spark_cn.md)
 * [基于 Docker Compose 部署](../spark/installation_and_deployment/deploy-with-docker-compose-cn.md)
 
+## 安装 Arctern RESTful Server
+
+1. 执行以下命令为 Arctern RESTful Server 构建 Conda 环境。此处使用的环境名为 `arctern_server_env`，你可根据需求自行选择合适的环境名称。
+
+```bash
+$ conda create -n arctern_server_env -c conda-forge python=3.7.6
+```
+
+> **注意：** 如果你在同一台计算机上安装 Arctern 后台系统和 Arctern RESTful Server，建议二者的环境名称是不同的。例如，Arctern 后台系统的名称是 `arctern_env`，Arctern RESTful Server 的名称是 `arctern_server_env`。
+
+2. 进入 `arctern_server_env` 虚拟环境：
+
+```bash
+$ conda activate arctern_server_env
+```
+
+3. 安装 Arctern RESTful Server：
+
+```bash
+$ conda install -c conda-forge -c arctern arctern-webserver
+```
+
+## 配置 Arctern RESTful Server Workspace
+
+目前 Arctern RESTful Server 支持 Python 以及 PySpark 两种数据处理后后台，下面是两种数据处理后台的配置指令。
+
+当使用 Python 作为数据处理后台时，使用如下命令进行配置：
+
+```bash
+cd xxx
+arctern-server config --arctern_server_port=8080 --zepplin_server_port=8888 –logfile=/log/path –loglevel=warn --interpreter_type=python --interpreter_path=/path/to/python
+```
+
+
+
+## 启动
+
+```bash
+arctern-server start --mode=release
+```
+
+
 ## 安装 Apache Zeppelin
+
+
+
 
 执行以下命令安装 Apache Zeppelin：
 

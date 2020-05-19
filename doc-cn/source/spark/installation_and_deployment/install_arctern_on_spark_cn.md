@@ -122,7 +122,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 $ tar -xvzf spark-3.0.0-preview2-bin-hadoop2.7.tgz
 ```
 
-创建 `spark-default.conf` 以及 `spark-env.sh` 文件。
+创建 `spark-defaults.conf` 以及 `spark-env.sh` 文件。
 
 ```bash
 $ cd spark-3.0.0-preview2-bin-hadoop2.7/conf
@@ -130,7 +130,7 @@ $ cp spark-defaults.conf.template spark-defaults.conf
 $ cp spark-env.sh.template spark-env.sh
 ```
 
-在文件 `spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。可以通过 `conda env info` 来查看当前的conda环境信息。
+在文件 `spark-defaults.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。可以通过 `conda env info` 来查看当前的conda环境信息。
 
 ```bash
 spark.executorEnv.PROJ_LIB [path/to/your/conda]/envs/arctern_env/share/proj

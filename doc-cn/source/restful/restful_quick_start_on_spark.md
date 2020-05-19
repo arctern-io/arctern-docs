@@ -205,8 +205,8 @@ $ pip install requests
 >>> sql = "create table nyc_taxi as (select VendorID, to_timestamp(tpep_pickup_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_pickup_datetime, to_timestamp(tpep_dropoff_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_dropoff_datetime, passenger_count, trip_distance, pickup_longitude, pickup_latitude, dropoff_longitude, dropoff_latitude, fare_amount, tip_amount, total_amount, buildingid_pickup, buildingid_dropoff, buildingtext_pickup, buildingtext_dropoff from raw_data where (pickup_longitude between -180 and 180) and (pickup_latitude between -90 and 90) and (dropoff_longitude between -180 and 180) and  (dropoff_latitude between -90 and 90))"
 >>> payload = {
 ... "input_data": {
-... "sql": sql,
-... }
+... "sql": sql
+... },
 ... "collect_result": "0"
 ... }
 >>>
@@ -229,11 +229,11 @@ $ pip install requests
 >>> 
 >>> sql = "select count(*) as num_rows from nyc_taxi"
 >>> payload = { 
-    "input_data":{
-        "sql": sql
-    },
-    "collect_result": "0"
-}
+... "input_data":{
+...     "sql": sql
+... },
+... "collect_result": "0"
+... }
 >>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
@@ -311,7 +311,7 @@ $ pip install requests
 
 点图的绘制结果如下：
 
-![点图](../../../img/restful-result/pointmap.png)
+![点图](../../../img/restful-result/pointmap_spark.png)
 
 ### 绘制带权点图
 
@@ -323,11 +323,11 @@ $ pip install requests
 >>> 
 >>> payload = {
 ... "input_data": {
-...     "sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color, fare_amount AS size FROM nyc_taxi"
+...     "sql": "SELECT ST_Point (pickup_longitude, pickup_latitude) AS point, total_amount AS color, fare_amount AS size FROM nyc_taxi limit 200"
 ... },
 ... "params": {
-...     "width": 1024,
-...     "height": 896,
+...     "width": 512,
+...     "height": 448,
 ...     "bounding_box": [
 ...         -73.998427,
 ...         40.730309,
@@ -337,7 +337,7 @@ $ pip install requests
 ...     "opacity": 1.0,
 ...     "coordinate_system": "EPSG:4326",
 ...     "size_bound": [0, 10],
-...     "color_bound": [0, 2],
+...     "color_bound": [0, 20],
 ...     "color_gradient": ["#115f9a", "#d0f400"]
 ... }
 ... }
@@ -351,7 +351,7 @@ $ pip install requests
 
 带权点图的绘制结果如下：
 
-![带权点图](../../../img/restful-result/weighted_pointmap.png)。
+![带权点图](../../../img/restful-result/weighted_pointmap_spark.png)。
 
 ### 绘制热力图
 
@@ -389,7 +389,7 @@ $ pip install requests
 
 热力图的绘制结果如下：
 
-![热力图](../../../img/restful-result/heatmap.png)
+![热力图](../../../img/restful-result/heatmap_spark.png)
 
 ### 绘制轮廓图
 
@@ -435,7 +435,7 @@ $ pip install requests
 
 轮廓图的绘制结果如下：
 
-![轮廓图](../../../img/restful-result/choroplethmap.png)
+![轮廓图](../../../img/restful-result/choroplethmap_spark.png)
 
 ### 绘制图标图
 
@@ -448,10 +448,10 @@ $ pip install requests
 >>> import json
 >>>
 >>> # 本例中的图标文件可通过以下命令获取：
->>> # wget https://github.com/zilliztech/arctern-docs/raw/branch-0.1.x/img/icon/icon-viz.png
+>>> # wget https://github.com/zilliztech/arctern-docs/raw/branch-0.1.x/img/icon/arctern-logo.png
 >>>
 >>> # icon_path 为待显示图标的绝对路径
->>> icon_path = "/path/to/icon-viz.png"
+>>> icon_path = "/path/to/arctern-logo.png"
 >>> payload = {
 ... "input_data": {
 ...     "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point from nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))')) limit 25"
@@ -480,7 +480,7 @@ $ pip install requests
 
 图标图的绘制结果如下：
 
-![图标图](../../../img/restful-result/icon_viz.png)
+![图标图](../../../img/restful-result/icon_viz_spark.png)
 
 ### 绘制渔网图
 
@@ -513,7 +513,7 @@ $ pip install requests
 ...       ],
 ...       "aggregation_type": "sum"
 ...   }
-}
+... }
 >>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/fishnetmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
@@ -525,7 +525,7 @@ $ pip install requests
 
 渔网图的绘制结果如下：
 
-![渔网图](../../../img/restful-result/fishnetmap.png)
+![渔网图](../../../img/restful-result/fishnetmap_spark.png)
 
 ### 删除数据表
 
@@ -541,7 +541,7 @@ $ pip install requests
 >>> payload = {
 ... "input_data": {
 ...    "sql": sql 
-... }
+... }，
 ... "collect_result": "0"
 ... }
 >>> 

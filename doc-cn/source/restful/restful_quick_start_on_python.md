@@ -203,8 +203,8 @@ $ pip install requests
 ...     "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)"
 ... },
 ... "params": {
-...     "width": 1024,
-...     "height": 896,
+...     "width": 512,
+...     "height": 448,
 ...     "bounding_box": [-73.998427, 40.730309, -73.954348, 40.780816],
 ...     "coordinate_system": "EPSG:4326",
 ...     "point_color": "#2DEF4A",
@@ -240,8 +240,8 @@ $ pip install requests
 ...     "size_weights": "raw_data.total_amount"
 ... },
 ... "params": {
-...     "width": 1024,
-...     "height": 896,
+...     "width": 512,
+...     "height": 448,
 ...     "bounding_box": [
 ...         -73.998427,
 ...         40.730309,
@@ -251,7 +251,7 @@ $ pip install requests
 ...     "opacity": 1.0,
 ...     "coordinate_system": "EPSG:4326",
 ...     "size_bound": [0, 10],
-...     "color_bound": [0, 2],
+...     "color_bound": [0, 20],
 ...     "color_gradient": ["#115f9a", "#d0f400"]
 ... }
 ... }
@@ -335,7 +335,7 @@ $ pip install requests
 ...     ],
 ...     "color_bound": [
 ...         0,
-...         5
+...         15
 ...     ],
 ...     "opacity": 1,
 ...     "aggregation_type": "mean"
@@ -362,10 +362,10 @@ $ pip install requests
 >>> import json
 >>>
 >>> # 本例中的图标文件可通过以下命令获取：
->>> # wget https://github.com/zilliztech/arctern-docs/raw/branch-0.1.x/img/icon/icon-viz.png
+>>> # wget https://github.com/zilliztech/arctern-docs/raw/branch-0.1.x/img/icon/arctern-logo.png
 >>>
 >>> # icon_path 为待显示图标的绝对路径
->>> icon_path = "/path/to/icon-viz.png"
+>>> icon_path = "/path/to/arctern-logo.png"
 >>> payload = {
 ... "input_data": {
 ...     "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)"
