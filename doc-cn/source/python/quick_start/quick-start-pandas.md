@@ -103,13 +103,13 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 
 ## 使用 Arctern 提供的 GeoSpatial 函数处理数据
 
-导入 `arctern` 模块：
+1. 导入 `arctern` 模块：
 
 ```python
 >>> from arctern import *
 ```
 
-根据经纬度数据创建坐标点数据：
+2. 根据经纬度数据创建坐标点数据：
 
 ```python
 >>> ST_AsText(ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude)).head()

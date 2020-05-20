@@ -10,7 +10,10 @@
 | :---------- | :------------ |
 | 操作系统 |Ubuntu LTS 18.04|
 | Conda  | Miniconda Python3  |
+<<<<<<< HEAD
 
+=======
+>>>>>>> dd452c9becbac899c3fdd272610a55e2f0a0a65d
 
 * GPU 版本
 
