@@ -31,7 +31,7 @@ $ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/be
 | buildingtext_pickup   | 上车地点所在建筑的轮廓描述 | string |
 | buildingtext_dropoff  | 下车地点所在建筑的轮廓描述 | string |
 
-> **注意：** 该数据集有 200000 行，其中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如“2009-04-12 03:16:33 +00:00“。
+> **注意：** 该数据集有 200000 行，其中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如“2009-04-12 03:16:33 +00:00”。
 
 ## 启动 PySpark
 
