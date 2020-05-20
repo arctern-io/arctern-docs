@@ -2,13 +2,13 @@
 
 本文以纽约出租车数据集为例，以 Python 作为数据处理后台，说明如何通过 `Arctern RESTful API` 完成数据的导入、运算和展示。
 
-> **注意：** 本章所有示例代码均默认在 `Python 3.7` 环境中运行。若要在其他 Python 环境下运行，你可能需要适当修改代码内容。
+> **注意：** 本章所有示例代码均默认在 Python 3.7 环境中运行。若要在其他 Python 环境下运行，你可能需要适当修改代码内容。
 
 ## 服务器端的启动和配置
 
 ### 服务器启动
 
-在调用 `Arctern RESTful API` 之前请先启动服务，具体步骤见[服务器启动](./webserver_installation_config.md)。
+在调用 Arctern RESTful API 之前请先启动服务，具体步骤见[服务器启动](./webserver_installation_config.md)。
 
 ### 数据准备
 
@@ -45,11 +45,11 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 | buildingtext_pickup   | 上车地点所在建筑的轮廓描述 | string |
 | buildingtext_dropoff  | 下车地点所在建筑的轮廓描述 | string |
 
-> **注意：** 该数据集有 200000 行，其中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`。
+> **注意：** 该数据集有 200000 行，其中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如“2009-04-12 03:16:33 +00:00”。
 
 ### 安装依赖
 
-本文示例代码使用 Python 的 `requests` 库调用 `Arctern RESTful API`，执行以下命令安装 `requests`：
+本文示例代码使用 Python 的 `requests` 库调用 Arctern RESTful API，执行以下命令安装 `requests`：
 
 ```bash
 $ pip install requests
@@ -63,7 +63,7 @@ $ pip install requests
 
 使用 `/loadfile` 接口导入纽约出租车数据集，将其对应的数据表命名为 `raw_data`。
 
-> **注意：** 你需要将示例中的 `</path/to/file>` 替换为数据文件的绝对路径。
+> **注意：** 你需要将示例中的 `file_path` 替换为数据文件的绝对路径。
 
 ```python
 >>> import requests
@@ -75,7 +75,7 @@ $ pip install requests
 ...     {
 ...         "name": "raw_data",
 ...         "format": "csv",
-...         "path": "</path/to/file>",
+...         "path": file_path,
 ...         "options": {
 ...             "header": "True",
 ...             "delimiter": ","
@@ -113,7 +113,7 @@ $ pip install requests
 
 ### 查询数据表信息
 
-你已经在后台创建了一张名为 `raw_data` 的数据表。接着，使用 `/table/schema` 接口可查询该表中各字段的名称以及对应的数据类型。
+你已经在后台创建了一张名为 `raw_data`的数据表。接着，使用 `/table/schema` 接口可查询该表中各字段的名称以及对应的数据类型。
 
 ```python
 >>> import requests
@@ -310,7 +310,7 @@ $ pip install requests
 
 ### 绘制轮廓图
 
-使用 `/choroplethmap` 接口，根据下车地点的建筑物、小费金额绘制轮廓图。其中，小费金额高的区域为黄色，小费金额低的区域为蓝色。轮廓图的具体参数说明请参见 [轮廓图 RESTful API 说明](./api/function/choroplethmap.html)。
+使用 `/choroplethmap` 接口，根据下车地点的建筑物、小费金额绘制轮廓图。其中，小费金额高的区域为黄色，小费金额低的区域为蓝色。轮廓图的具体参数说明请参见[轮廓图 RESTful API 说明](./api/function/choroplethmap.html)。
 
 ```python
 >>> import requests

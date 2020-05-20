@@ -12,7 +12,7 @@
 
 ### 下载离线安装文件
 
-执行以下命令在联网环境中分别下载 Arctern-Spark 的系统依赖、Spark 和 Miniconda 安装文件,并将其拷贝至需要安装 Arctern-Spark 的离线环境。
+执行以下命令在联网环境中分别下载 Arctern-Spark 的系统依赖、Spark 和 Miniconda 安装文件，并将其拷贝至需要安装 Arctern-Spark 的离线环境。
 
 ```bash
 $ git clone -b offline https://github.com/zilliztech/arctern-resources.git
@@ -28,8 +28,10 @@ $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O 
 
 ```bash
 $ cd arctern-resources/arctern_dependencies/ubuntu_dependencies
-$ ./install_packages.sh gl      # 安装gl-mesa库
-$ ./install_packages.sh jdk     # 安装java8
+# 安装 gl-mesa 库
+$ ./install_packages.sh gl    
+# 安装 java8  
+$ ./install_packages.sh jdk     
 ```
 
 ### 安装 Spark
@@ -60,7 +62,7 @@ $ conda config --set offline True
 $ conda create -n arctern_env
 ```
 
-创建成功后，可以通过 `conda env list` 命令查看所有 Conda 环境，其输出结果应包含 Arctern 环境，类似如下：
+成功创建 Conda 环境后，你可以通过 `conda env list` 命令查看所有 Conda 环境，其输出结果应包含 Arctern 环境，类似如下：
 
 ```bash
 conda environments:
@@ -75,19 +77,17 @@ arctern_env      ...
 $ conda activate arctern_env
 ```
 
-
 > **注意：** 后续工作必须在 Conda 虚拟环境中进行。
-
 
 ## 安装 Arctern-Spark
 
 执行以下命令在 Conda 环境中安装 Arctern-Spark：
 
 ```bash
-$ conda install -n arctern_env -c file:///[path/to/channel] arctern-spark --offline   --override-channels
+$ conda install -n arctern_env -c file:///<path/to/channel> arctern-spark --offline   --override-channels
 ```
 
-其中， `[path/to/channel]`为 `arctern-resources` 文件夹下 `arctern-resources/arctern_dependencies/conda_dependencies/channel` 目录所在路径，例如:
+其中， `<path/to/channel>`为“arctern-resources“文件夹下“arctern-resources/arctern_dependencies/conda_dependencies/channel“目录所在路径，例如:
 
 ```bash
 $ conda install -n arctern_env -c file:///tmp/arctern-resources/arctern_dependencies/conda_dependencies/channel arctern-spark   --offline --override-channels
@@ -99,34 +99,35 @@ $ conda install -n arctern_env -c file:///tmp/arctern-resources/arctern_dependen
 进入 Python 环境，尝试导入 `arctern` 和 `arctern_pyspark` 验证安装是否成功。
 
 ```python
-Python 3.7.6 | packaged by conda-forge | (default, Jan 29 2020, 14:55:04)
-[GCC 7.3.0] on linux
-Type "help", "copyright", "credits" or "license" for more information.
 >>> import arctern
 >>> import arctern_pyspark
 ```
 
 ## 配置 Spark 的 Python 路径
 
-在 `conf/spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。
+在“conf/spark-default.conf“的最后添加以下内容。
+
+> **注意：** 你需要将 `<path/to/your/conda>` 替换为 Conda 的本地安装路径。
 
 ```bash
-spark.executorEnv.PROJ_LIB [path/to/your/conda]/envs/arctern_env/share/proj
-spark.executorEnv.GDAL_DATA [path/to/your/conda]/envs/arctern_env/share/gdal
+spark.executorEnv.PROJ_LIB <path/to/your/conda>/envs/arctern_env/share/proj
+spark.executorEnv.GDAL_DATA <path/to/your/conda>/envs/arctern_env/share/gdal
 ```
 
-在文件 `conf/spark-env.sh` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。
+在文件“conf/spark-env.sh“的最后添加以下内容。
 
 ```bash
-$ export PYSPARK_PYTHON=[path/to/your/conda]/envs/arctern_env/bin/python
+$ export PYSPARK_PYTHON=<path/to/your/conda>/envs/arctern_env/bin/python
 ```
 
 ### 确认路径配置是否成功
 
-执行以下命令进入 PySpark 交互界面，其中 `[path/to/your/spark]` 为 Spark 的安装路径。
+执行以下命令进入 PySpark 交互界面。
+
+> **注意：** 你需要将 `<path/to/your/spark>` 替换为 Spark 的本地安装路径。
 
 ```bash
-$ [path/to/your/spark]/bin/pyspark
+$ <path/to/your/spark>/bin/pyspark
 ```
 
 在交互界面中输入以下内容打印 PySpark 的 Python 路径。
@@ -138,7 +139,7 @@ $ [path/to/your/spark]/bin/pyspark
 如果终端打印了以下内容，说明 PySpark 的 Python 路径配置成功。
 
 ```bash
-[path/to/your/conda]/envs/arctern_env
+<path/to/your/conda>/envs/arctern_env
 ```
 
 ## 测试样例
@@ -176,13 +177,13 @@ $ conda uninstall libarctern arctern arctern-spark
 
 ### 对 Spark 的支持
 
-Arctern-Spark 可以运行在 Spark 的各种模式下，需要在每台运行 Spark 的机器上，执行如下操作：
+Arctern-Spark 可以运行在 Spark 的各种模式下，你需要在每台运行 Spark 的机器上执行如下操作：
 
 * 创建 Conda 虚拟环境
 * 安装 Arctern-Spark
 * 配置 Spark 环境变量
 
-如果 Spark 运行在 `standalone` 集群模式下，提交任务机器的 Spark 环境需要与集群的 Spark 环境完全一致，包括以下几点：
+此外，在 `standalone` 集群模式下，提交任务机器的 Spark 环境需要与集群的 Spark 环境完全一致，包括以下几点：
 
 * `spark` 安装的绝对路径与集群中每台机器完全一致
 * `conda` 安装的绝对路径与集群中每个机器完全一致
