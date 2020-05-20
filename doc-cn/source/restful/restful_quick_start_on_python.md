@@ -57,7 +57,7 @@ $ pip install requests
 
 ## API 调用
 
-下述示例中，假设服务器 IP 地址为 `127.0.0.1`，RESTful 服务端口为 `8080`,若在启动 arctern-server 时指定了 IP 与端口,则使用指定的 IP 与端口。
+下述示例中，假设服务器 IP 地址为 `127.0.0.1`，RESTful 服务端口为 `8080`。如果你在启动 arctern-server 时指定了 IP 与端口，则使用指定的 IP 与端口。
 
 ### 数据导入
 

@@ -57,7 +57,7 @@ $ pip install requests
 
 ## API 调用
 
-下述示例中，假设服务器 IP 地址为 `127.0.0.1`，RESTful 服务端口为 `8080`,若在启动 arctern-server 时指定了 IP 与端口,则使用指定的 IP 与端口。
+下述示例中，假设服务器 IP 地址为 `127.0.0.1`，RESTful 服务端口为 `8080`。如果你在启动 arctern-server 时指定了 IP 与端口，则使用指定的 IP 与端口。
 
 ### 数据导入
 
@@ -251,9 +251,8 @@ $ pip install requests
 
 删除原始的 `raw_data` 数据表。
 
-<font color="#dd0000">注意：</font>`Arctern RESTful` 服务不会主动删除数据表，请务必删除不再使用的数据表释放服务器资源。
+<font color="#dd0000">注意：</font>Arctern RESTful 服务不会主动删除数据表，请务必删除不再使用的数据表释放服务器资源。
 
-<font color="#dd0000">注意：</font>`Arctern RESTful` 服务不会主动删除数据表，请务必删除不再使用的数据表释放服务器资源。
 
 ```python
 >>> import requests
