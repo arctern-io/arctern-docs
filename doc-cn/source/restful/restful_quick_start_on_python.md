@@ -61,7 +61,9 @@ $ pip install requests
 
 ### 数据导入
 
-使用 `/loadfile` 接口导入纽约出租车数据集，将其对应的数据表命名为 `raw_data`。其中，`file_path` 为数据文件所在的绝对路径，你需要根据实际情况更改此路径。
+使用 `/loadfile` 接口导入纽约出租车数据集，将其对应的数据表命名为 `raw_data`。
+
+> **注意：** 你需要将示例中的 `</path/to/file>` 替换为数据文件的绝对路径。
 
 ```python
 >>> import requests
@@ -73,7 +75,7 @@ $ pip install requests
 ...     {
 ...         "name": "raw_data",
 ...         "format": "csv",
-...         "path": file_path,
+...         "path": "</path/to/file>",
 ...         "options": {
 ...             "header": "True",
 ...             "delimiter": ","
@@ -357,6 +359,8 @@ $ pip install requests
 
 使用 `/icon_viz` 接口根据乘客的上车地点绘制图标图。图标图的具体参数说明请参见[图标图 RESTful API 说明](./api/function/icon_viz.html)。
 
+> **注意：** 你需要将示例中的 `</path/to/arctern-logo.png>` 替换为待显示图标的绝对路径。
+
 ```python
 >>> import requests
 >>> import json
@@ -364,8 +368,7 @@ $ pip install requests
 >>> # 本例中的图标文件可通过以下命令获取：
 >>> # wget https://github.com/zilliztech/arctern-docs/raw/branch-0.1.x/img/icon/arctern-logo.png
 >>>
->>> # icon_path 为待显示图标的绝对路径
->>> icon_path = "/path/to/arctern-logo.png"
+>>> icon_path = "</path/to/arctern-logo.png>"
 >>> payload = {
 ... "input_data": {
 ...     "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)"

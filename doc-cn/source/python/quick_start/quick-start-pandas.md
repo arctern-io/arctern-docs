@@ -45,6 +45,8 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 
 本文示例代码通过 Python 交互界面展示 Arctern 的使用方法。根据数据集中各字段的名称和数据类型，构建数据的 `schema` 并导入数据集。
 
+> **注意：** 你需要将示例中的 `</path/to/0_2M_nyc_taxi_and_building.csv>` 替换为本地数据集的绝对路径。
+
 ```python
 >>> import pandas as pd
 >>> nyc_schema={
@@ -66,8 +68,7 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 ...     "buildingtext_dropoff":"string",
 ... }
 >>>
->>> # 你需要将文件路径配置为本地路径
->>> df=pd.read_csv("/path/to/0_2M_nyc_taxi_and_building.csv",
+>>> df=pd.read_csv("</path/to/0_2M_nyc_taxi_and_building.csv>",
 ...                dtype=nyc_schema,
 ...                date_parser=pd.to_datetime,
 ...                parse_dates=["tpep_pickup_datetime","tpep_dropoff_datetime"])
@@ -208,9 +209,10 @@ dtype: object
 
 执行以下代码绘制图标图：
 
+> **注意：** 你需要将示例中的 `</path/to/icon.png>` 替换为本地图片的绝对路径。
+
 ```python
->>> # 你需要将图标图的 icon_path 配置为本地路径
->>> vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path='/path/to/icon.png', coordinate_system="EPSG:4326")
+>>> vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path="</path/to/icon.png>", coordinate_system="EPSG:4326")
 >>> png = icon_viz_layer(vega, ST_Point(pickup_df.head(25).pickup_longitude, pickup_df.head(25).pickup_latitude))
 >>> save_png(png, "/tmp/arctern_iconviz_pandas.png")
 ```
