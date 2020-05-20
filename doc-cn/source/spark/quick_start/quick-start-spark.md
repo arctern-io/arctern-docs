@@ -31,11 +31,11 @@ $ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/be
 | buildingtext_pickup   | 上车地点所在建筑的轮廓描述 | string |
 | buildingtext_dropoff  | 下车地点所在建筑的轮廓描述 | string |
 
-> **注意：** 该数据的时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`
+> **注意：** 该数据集有 200000 行，其中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`。
 
 ## 启动 PySpark
 
-以下通过 PySpark 交互界面展示 Arctern-Spark 的使用方法，执行以下命令打开 PySpark 交互界面：
+本文示例代码通过 PySpark 交互界面展示 Arctern-Spark 的使用方法，执行以下命令打开 PySpark 交互界面：
 
 ```bash
 $ cd ${SPARK_HOME}
@@ -63,7 +63,7 @@ SparkSession available as 'spark'.
 
 ## 注册 Arctern-Spark 功能函数
 
-在使用 Arctern-Spark 之前，你需要在界面中输入以下代码对 Arctern-Spark 提供的功能函数进行注册：
+在使用 Arctern-Spark 之前，执行代码对 Arctern-Spark 提供的功能函数进行注册：
 
 ```python
 >>> from pyspark.sql.types import *
@@ -75,8 +75,7 @@ SparkSession available as 'spark'.
 
 ## 加载数据
 
-根据测试数据各字段的名称和数据类型，构建导入测试数据的 `schema`。因为 Spark 不支持原始数据的时间格式，你需要先将其作为字符串导入，之后转换为 `TimeStamp` 格式。
-
+根据测试数据各字段的名称和数据类型，构建导入测试数据的 `schema`。因为 Spark 不支持原始数据的时间格式，你需要先将其作为 `String` 导入，之后转换为 `TimeStamp` 格式。
 
 ```python
 >>> nyc_schema = StructType([
@@ -98,6 +97,7 @@ SparkSession available as 'spark'.
 ...     StructField("buildingtext_dropoff",StringType(),True)
 ... ])
 ```
+
 加载测试数据，并创建临时表 `origin_nyc_taxi`：
 
 ```python
@@ -169,7 +169,7 @@ SparkSession available as 'spark'.
 
 ## 使用 Arctern-Spark 提供的 GeoSpatial 函数处理数据
 
-根据经纬度数据创建坐标点数据：
+1. 根据经纬度数据创建坐标点数据：
 
 ```python
 >>> spark.sql("select st_astext(st_point(pickup_longitude, pickup_latitude)) from nyc_taxi limit 10").show(10,0)
@@ -189,7 +189,7 @@ SparkSession available as 'spark'.
 +------------------------------------------------------+
 ```
 
-将坐标点数据使用的空间坐标系从 `EPSG:4326` 坐标系转换为到 `EPSG:3857` 坐标系，更多不同空间坐标系标准的详细信息请查看[维基百科相关页面](https://en.wikipedia.org/wiki/Spatial_reference_system)。
+2. 将坐标点数据使用的空间坐标系从 `EPSG:4326` 坐标系转换为 `EPSG:3857` 坐标系。有关空间坐标系标准的详细信息请查看[维基百科相关页面](https://en.wikipedia.org/wiki/Spatial_reference_system)。
 
 ```python
 >>> spark.sql("select " \
@@ -216,7 +216,7 @@ SparkSession available as 'spark'.
 +----------------------------+------------------------------------------+
 ```
 
-你可以在 [EPSG](http://epsg.io/transform#s_srs=4326&t_srs=3857) 网站上验证转换结果是否正确。
+3. 在 [EPSG](http://epsg.io/transform#s_srs=4326&t_srs=3857) 网站上验证转换结果是否正确。
 
 ![](../../../../img/quickstart/epsg-4326-to-3857-example.png)
 
@@ -238,104 +238,105 @@ SparkSession available as 'spark'.
 >>> limit_num=200
 ```
 
-通过 Arctern-Spark 提供的绘图函数绘制点图图层：
+通过 Arctern-Spark 提供的绘图函数绘制点图：
 
 ```python
->>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点。
+>>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点
 >>> pickup_sql = f"select st_point(pickup_longitude, pickup_latitude) as point from nyc_taxi where (pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
 >>> pickup_df = spark.sql(pickup_sql)
 >>>
->>> # 根据查询结果绘制点图图层。点大小为 10，点颜色为 #2DEF4A，点不透明度为 1.0。
+>>> # 根据查询结果绘制点图：点的大小为 10，颜色为 #2DEF4A，不透明度为 1.0
 >>> vega = vega_pointmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], point_size=10, point_color="#2DEF4A", opacity=1, coordinate_system="EPSG:4326")
 >>> res = pointmap(vega, pickup_df)
 >>> save_png(res, '/tmp/arctern_pointmap.png')
 ```
 
-点图图层绘制结果如下：
+点图绘制结果如下：
 
 ![](../../../../img/quickstart/arctern_pointmap.png)
 
-通过 Arctern-Spark 提供的绘图函数绘制带权点图图层：
+通过 Arctern-Spark 提供的绘图函数绘制带权点图：
 
 ```python
->>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将 fare_amount 作为颜色权重、total_amount 作为大小权重。
+>>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将 fare_amount 作为颜色权重、total_amount 作为大小权重
 >>> pickup_sql = f"select st_point(pickup_longitude, pickup_latitude) as point, fare_amount as color_weight, total_amount as size_weight from nyc_taxi where (pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
 >>> pickup_df = spark.sql(pickup_sql)
 >>> 
->>> # 根据查询结果绘制带权点图图层。点的颜色根据 color_weight 在 #115f9a ~ #d0f400 之间变化，点的大小根据 size_weight 在 3 ~ 15 之间变化。
+>>> # 根据查询结果绘制带权点图：点的颜色根据 color_weight 在 #115f9a ~ #d0f400 之间变化，点的大小根据 size_weight 在 3 ~ 15 之间变化
 >>> vega = vega_weighted_pointmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], color_gradient=["#115f9a", "#d0f400"], color_bound=[1, 50], size_bound=[3, 15], opacity=1.0, coordinate_system="EPSG:4326")
 >>> res = weighted_pointmap(vega, pickup_df)
 >>> save_png(res, "/tmp/arctern_weighted_pointmap.png")
 ```
 
-带权点图图层绘制结果如下：
+带权点图绘制结果如下：
 
 ![](../../../../img/quickstart/arctern_weighted_pointmap.png)
 
-通过 Arctern-Spark 提供的绘图函数绘制热力图图层：
+通过 Arctern-Spark 提供的绘图函数绘制热力图：
 
 ```python
->>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将 fare_amount 作为热力值。
+>>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将 fare_amount 作为热力值
 >>> pickup_sql = f"select st_point(pickup_longitude, pickup_latitude) as point, fare_amount as weight from nyc_taxi where (pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
 >>> pickup_df = spark.sql(pickup_sql)
 >>> 
->>> # 根据查询结果绘制热力图图层。
+>>> # 根据查询结果绘制热力图
 >>> vega = vega_heatmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], map_zoom_level=13.0, coordinate_system="EPSG:4326")
 >>> res = heatmap(vega, pickup_df)
 >>> save_png(res, "/tmp/arctern_heatmap.png")
 ```
 
-热力图图层绘制结果如下：
+热力图绘制结果如下：
 
 ![](../../../../img/quickstart/arctern_heatmap.png)
 
-通过 Arctern-Spark 提供的绘图函数绘制轮廓图图层：
+通过 Arctern-Spark 提供的绘图函数绘制轮廓图：
 
 ```python
->>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将 fare_amount 作为颜色权重。
+>>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将 fare_amount 作为颜色权重
 >>> pickup_sql = f"select ST_GeomFromText(buildingtext_pickup) as buildings, fare_amount as color_weight from nyc_taxi where (pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) and (buildingtext_pickup!='') limit {limit_num}"
 >>> pickup_df = spark.sql(pickup_sql)
 >>>
->>> # 根据查询结果绘制轮廓图图层。轮廓的填充颜色根据 color_weight 在 #115f9a ~ #d0f400 之间变化。
+>>> # 根据查询结果绘制轮廓图图：轮廓的填充颜色根据 color_weight 在 #115f9a ~ #d0f400 之间变化
 >>> vega = vega_choroplethmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], color_gradient=["#115f9a", "#d0f400"], color_bound=[2.5, 5], opacity=1.0, coordinate_system="EPSG:4326")
 >>> res = choroplethmap(vega, pickup_df)
 >>> save_png(res, "/tmp/arctern_choroplethmap.png")
 ```
 
-轮廓图图层绘制结果如下：
+轮廓图绘制结果如下：
 
 ![](../../../../img/quickstart/arctern_choroplethmap.png)
 
-通过 Arctern-Spark 提供的绘图函数绘制图标图图层：
+通过 Arctern-Spark 提供的绘图函数绘制图标图：
+
+> **注意：** 你需要将示例中的 `</path/to/icon.png>` 替换为本地图片的绝对路径。
 
 ```python
->>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 25 个坐标点。
+>>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 25 个坐标点
 >>> pickup_sql = f"select st_point(pickup_longitude, pickup_latitude) from nyc_taxi where (pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit 25"
 >>> pickup_df = spark.sql(pickup_sql)
 >>> 
->>> # 根据查询结果绘制图标图图层，icon_path 配置为本地路径。
->>> vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path='/path/to/icon.png', coordinate_system="EPSG:4326")
+>>> vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path="</path/to/icon.png>", coordinate_system="EPSG:4326")
 >>> res = icon_viz(vega, pickup_df)
 >>> save_png(res, "/tmp/arctern_iconviz.png")
 ```
 
-图标图图层绘制结果如下：
+图标图绘制结果如下：
 
 ![](../../../../img/quickstart/arctern_iconviz.png)
 
-通过 Arctern-Spark 提供的绘图函数绘制渔网图图层：
+通过 Arctern-Spark 提供的绘图函数绘制渔网图：
 
 ```python
->>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将 fare_amount 作为颜色权重。
+>>> # 在指定地理区域（经度范围：-73.991504 至 -73.945155；纬度范围：40.770759 至 40.783434）中随机选取 200 个坐标点，并将 fare_amount 作为颜色权重
 >>> pickup_sql = f"select st_point(pickup_longitude, pickup_latitude) as point, fare_amount as weight from nyc_taxi where (pickup_longitude between {pos1[0]} and {pos2[0]}) and (pickup_latitude between {pos1[1]} and {pos2[1]}) limit {limit_num}"
 >>> pickup_df = spark.sql(pickup_sql)
 >>> 
->>> # 根据查询结果绘制渔网图图层。
+>>> # 根据查询结果绘制渔网图
 >>> vega = vega_fishnetmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], cell_size=8, cell_spacing=1, opacity=1.0, coordinate_system="EPSG:4326")
 >>> res = fishnetmap(vega, pickup_df)
 >>> save_png(res, "/tmp/arctern_fishnetmap.png")
 ```
 
-渔网图图层绘制结果如下：
+渔网图绘制结果如下：
 
 ![](../../../../img/quickstart/arctern_fishnetmap.png)

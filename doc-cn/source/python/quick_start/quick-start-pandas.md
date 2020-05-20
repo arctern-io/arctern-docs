@@ -56,7 +56,7 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 ...     "passenger_count":"int64",
 ...     "trip_distance":"double",
 ...     "pickup_longitude":"double",
-...     "pickup_latitude":"double",
+...     "pickup_latitude":"double",导入绘图需要使用的模块：
 ...     "dropoff_longitude":"double",
 ...     "dropoff_latitude":"double",
 ...     "fare_amount":"double",

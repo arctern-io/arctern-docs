@@ -63,7 +63,7 @@ $ pip install requests
 
 使用 `/loadfile` 接口导入纽约出租车数据集，将其对应的数据表命名为 `raw_data`。
 
-> **注意：** 你需要将示例中的 `</path/to/file>` 替换为数据文件的绝对路径。
+> **注意：** 你需要将示例中的 `file_path` 替换为数据文件的绝对路径。
 
 ```python
 >>> import requests
@@ -75,7 +75,7 @@ $ pip install requests
 ...     {
 ...         "name": "raw_data",
 ...         "format": "csv",
-...         "path": "</path/to/file>",
+...         "path": file_path,
 ...         "options": {
 ...             "header": "True",
 ...             "delimiter": ","
