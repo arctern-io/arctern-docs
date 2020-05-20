@@ -27,7 +27,7 @@
 执行以下命令安装 Arctern CPU 版本的依赖库：
 
 ```bash
-    $ sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
+$ sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 ```
 
 * GPU 版本
@@ -35,7 +35,7 @@
 执行以下命令安装 Arctern GPU 版本的依赖库：
 
 ```bash
-    $ sudo apt install libgl1-mesa-dev libegl1-mesa-dev
+$ sudo apt install libgl1-mesa-dev libegl1-mesa-dev
 ```
 
 ## 创建 Arctern Conda 环境

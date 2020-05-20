@@ -2,7 +2,7 @@
 
 本文以纽约出租车数据集为例，说明如何通过 Arctern 完成数据的导入、运算和展示。
 
-> **注意：** 本章所有示例代码均默认在 `Python 3.7` 环境中运行。若要在其他 Python 环境下运行，你可能需要适当修改代码内容。
+> **注意：** 本章所有示例代码均默认在 Python 3.7 环境中运行。若要在其他 Python 环境下运行，你可能需要适当修改代码内容。
 
 ## 数据准备
 
@@ -39,11 +39,13 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 | buildingtext_pickup   | 上车地点所在建筑的轮廓描述 | string |
 | buildingtext_dropoff  | 下车地点所在建筑的轮廓描述 | string |
 
-> **注意：** 该数据集有 200000 行，其中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`。
+> **注意：** 该数据集有 200000 行，其中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如“2009-04-12 03:16:33 +00:00”。
 
 ## 加载数据
 
 本文示例代码通过 Python 交互界面展示 Arctern 的使用方法。根据数据集中各字段的名称和数据类型，构建数据的 `schema` 并导入数据集。
+
+> **注意：** 你需要将示例中的 `</path/to/0_2M_nyc_taxi_and_building.csv>` 替换为本地数据集的绝对路径。
 
 ```python
 >>> import pandas as pd
@@ -66,8 +68,7 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 ...     "buildingtext_dropoff":"string",
 ... }
 >>>
->>> # 你需要将文件路径配置为本地路径
->>> df=pd.read_csv("/path/to/0_2M_nyc_taxi_and_building.csv",
+>>> df=pd.read_csv("</path/to/0_2M_nyc_taxi_and_building.csv>",
 ...                dtype=nyc_schema,
 ...                date_parser=pd.to_datetime,
 ...                parse_dates=["tpep_pickup_datetime","tpep_dropoff_datetime"])
@@ -120,7 +121,7 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 dtype: object
 ```
 
-3. 将坐标点数据使用的空间坐标系从 `EPSG:4326` 坐标系转换到 `EPSG:3857` 坐标系。有关空间坐标系标准的详细信息请查看[维基百科相关页面](https://en.wikipedia.org/wiki/Spatial_reference_system)。
+将坐标点数据使用的空间坐标系从 `EPSG:4326` 坐标系转换到 `EPSG:3857` 坐标系。有关空间坐标系标准的详细信息请查看[维基百科相关页面](https://en.wikipedia.org/wiki/Spatial_reference_system)。
 
 ```python
 >>> ST_AsText(ST_Transform(ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude),'epsg:4326', 'epsg:3857')).head()
@@ -132,7 +133,7 @@ dtype: object
 dtype: object
 ```
 
-4. 在 [EPSG](http://epsg.io/transform#s_srs=4326&t_srs=3857) 网站上验证转换结果是否正确。
+在 [EPSG](http://epsg.io/transform#s_srs=4326&t_srs=3857) 网站上验证转换结果是否正确。
 
 ![](../../../../img/quickstart/epsg-4326-to-3857-example.png)
 
@@ -177,7 +178,7 @@ dtype: object
 
 ### 热力图
 
-执行以下代码绘制热力图：
+执行以下命令绘制热力图：
 
 ```python
 >>> vega = vega_heatmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], map_zoom_level=13.0, coordinate_system="EPSG:4326")
@@ -191,7 +192,7 @@ dtype: object
 
 ### 轮廓图
 
-执行以下代码绘制轮廓图：
+执行以下命令绘制轮廓图：
 
 ```python
 >>> # 轮廓的填充颜色根据 fare_amount 在 #115f9a ~ #d0f400 之间变化
@@ -206,11 +207,12 @@ dtype: object
 
 ### 图标图
 
-执行以下代码绘制图标图：
+执行以下命令绘制图标图：
+
+> **注意：** 你需要将示例中的 `</path/to/icon.png>` 替换为本地图片的绝对路径。
 
 ```python
->>> # 你需要将图标图的 icon_path 配置为本地路径
->>> vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path='/path/to/icon.png', coordinate_system="EPSG:4326")
+>>> vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path="</path/to/icon.png>", coordinate_system="EPSG:4326")
 >>> png = icon_viz_layer(vega, ST_Point(pickup_df.head(25).pickup_longitude, pickup_df.head(25).pickup_latitude))
 >>> save_png(png, "/tmp/arctern_iconviz_pandas.png")
 ```
@@ -221,7 +223,7 @@ dtype: object
 
 ### 渔网图
 
-执行以下代码绘制渔网图：
+执行以下命令绘制渔网图：
 
 ```python
 >>> vega = vega_fishnetmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], cell_size=8, cell_spacing=1, opacity=1.0, coordinate_system="EPSG:4326")
