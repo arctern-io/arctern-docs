@@ -2,7 +2,7 @@
 
 以下为 Conda 环境下的安装过程，在安装 Arctern RESTful Server 前请安装 Conda。
 
-> **注意：** Conda 包括 Anaconda 和 Miniconda，建议使用 Miniconda。
+> **注意：** Conda 可选 Anaconda 和 Miniconda，建议使用 Miniconda。
 
 ## 安装 Miniconda
 
@@ -71,7 +71,7 @@ arctern-server config --arctern_server_host=127.0.0.1 --arctern_server_port=8080
 arctern-server config --arctern_server_host=127.0.0.1 --arctern_server_port=8080 --interpreter_type=pyspark --interpreter_name=arcternpyspark --interpreter_pyspark_python="</path/to/python>" --interpreter_pyspark_driver_python=</path/to/python> --interpreter_spark_home="</path/to/spark>" --interpreter_master=local[*]
 ```
 
-> **注意：** 你需要将 `</path/to/file>` 替换为 Arctern 所在的 Conda 环境内对应文件的绝对路径。
+> **注意：** 你需要将 `</path/to/python>` 替换为 Arctern 所在的 Conda 环境内 Python 的绝对路径，此 Python 路径可通过 which python 命令查询。你需要将 `</path/to/spark>` 替换为 Arctern 所在的 Conda 环境内 Spark 的绝对路径。
 
 ## 启动
 
@@ -80,3 +80,9 @@ arctern-server start --mode=release
 ```
 
 `mode` 可选 `release` 或 `debug`。debug 模式会提供更准确的提示信息，但比 release 模式的执行效率低。
+
+## FAQ
+
+使用 http 代理对运行 Arctern RESTful Server 的影响：
+
+使用 http 代理可能会导致 RESTful API 无法被正常调用，请关闭 http 代理然后重启 Arctern RESTful Server。

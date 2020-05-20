@@ -242,8 +242,8 @@ $ pip install requests
 ...     "size_weights": "raw_data.total_amount"
 ... },
 ... "params": {
-...     "width": 512,
-...     "height": 448,
+...     "width": 1024,
+...     "height": 896,
 ...     "bounding_box": [
 ...         -73.998427,
 ...         40.730309,

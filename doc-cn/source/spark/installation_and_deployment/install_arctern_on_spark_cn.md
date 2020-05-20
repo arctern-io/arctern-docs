@@ -36,7 +36,6 @@ $ sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 $ export JAVA_HOME=/path/to/java8
 $ export PATH=$JAVA_HOME/bin:$PATH
 $ export JRE_HOME=$JAVA_HOME/jre
-$ export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
 ```
 
 
@@ -50,7 +49,6 @@ $ sudo apt install libgl1-mesa-dev libegl1-mesa-dev
 $ export JAVA_HOME=/path/to/java8
 $ export PATH=$JAVA_HOME/bin:$PATH
 $ export JRE_HOME=$JAVA_HOME/jre
-$ export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
 ```
 
 
@@ -61,7 +59,7 @@ $ export CLASSPATH=.:$JAVA_HOME/lib:${JRE_HOME}/lib
 执行以下命令为 Arctern-Spark 创建 Conda 环境。此处假设环境名称为 `arctern_env`，你可根据需求自行选择合适的环境名称。
 
 ```bash
-$ conda create -n arctern_env -c conda_forge python=3.7.6
+$ conda create -n arctern_env -c conda-forge python=3.7.6
 ```
 
 创建成功后，可以通过 `conda env list` 命令查看所有 Conda 环境，其输出结果应包含 Arctern 环境，类似如下：
