@@ -62,13 +62,13 @@ Arctern RESTful Server 为用户开放了一组系统配置项，包括服务端
 如果选用 Python 作为后台，请依照以下命令示例进行配置，配置项解释详见 [Arctern RESTful Server 配置选项](./restful_config.md)：
 
 ```bash
-arctern-server config --arctern_server_host=127.0.0.1 --arctern_server_port=8080 --interpreter_type=python --interpreter_name=arcternpython --interpreter_python_path=</path/to/python>
+arctern-server config --arctern_server_host=127.0.0.1 --arctern_server_port=8080 --interpreter_type=python --interpreter_name=arcternpython --interpreter_python_path="</path/to/python>"
 ```
 
 如果选用 PySpark 作为后台，请依照以下命令示例进行配置，配置项解释详见 [Arctern RESTful Server 配置选项](./restful_config.md)：
 
 ```bash
-arctern-server config --arctern_server_host=127.0.0.1 --arctern_server_port=8080 --interpreter_type=pyspark --interpreter_name=arcternpyspark --interpreter_pyspark_python=</path/to/python> --interpreter_pyspark_driver_python=</path/to/python> --interpreter_spark_home=</path/to/spark> --interpreter_master=local[*]
+arctern-server config --arctern_server_host=127.0.0.1 --arctern_server_port=8080 --interpreter_type=pyspark --interpreter_name=arcternpyspark --interpreter_pyspark_python="</path/to/python>" --interpreter_pyspark_driver_python=</path/to/python> --interpreter_spark_home="</path/to/spark>" --interpreter_master=local[*]
 ```
 
 > **注意：** 你需要将 `</path/to/file>` 替换为 Arctern 所在的 Conda 环境内对应文件的绝对路径。

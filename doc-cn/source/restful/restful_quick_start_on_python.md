@@ -75,7 +75,7 @@ $ pip install requests
 ...     {
 ...         "name": "raw_data",
 ...         "format": "csv",
-...         "path": </path/to/file>,
+...         "path": "</path/to/file>",
 ...         "options": {
 ...             "header": "True",
 ...             "delimiter": ","
@@ -368,7 +368,7 @@ $ pip install requests
 >>> # 本例中的图标文件可通过以下命令获取：
 >>> # wget https://github.com/zilliztech/arctern-docs/raw/branch-0.1.x/img/icon/arctern-logo.png
 >>>
->>> icon_path = </path/to/arctern-logo.png>
+>>> icon_path = "</path/to/arctern-logo.png>"
 >>> payload = {
 ... "input_data": {
 ...     "points": "ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)"

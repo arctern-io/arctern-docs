@@ -75,7 +75,7 @@ $ pip install requests
 ...     {
 ...         "name": "raw_data",
 ...         "format": "csv",
-...         "path": </path/to/file>,
+...         "path": "</path/to/file>",
 ...         "options": {
 ...             "header": "True",
 ...             "delimiter": ","
@@ -451,7 +451,7 @@ $ pip install requests
 >>> # 本例中的图标文件可通过以下命令获取：
 >>> # wget https://github.com/zilliztech/arctern-docs/raw/branch-0.1.x/img/icon/arctern-logo.png
 >>>
->>> icon_path = </path/to/arctern-logo.png>
+>>> icon_path = "</path/to/arctern-logo.png>"
 >>> payload = {
 ... "input_data": {
 ...     "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point from nyc_taxi where ST_Within(ST_Point(pickup_longitude, pickup_latitude), ST_GeomFromText('POLYGON ((-73.9616334766551 40.704739019597156, -73.94232850242967 40.704739019597156, -73.94232850242967 40.728133570887906 ,-73.9616334766551 40.728133570887906, -73.9616334766551 40.704739019597156))')) limit 25"
