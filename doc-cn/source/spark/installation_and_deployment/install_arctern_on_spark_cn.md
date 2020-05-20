@@ -183,7 +183,8 @@ $ [path/to/your/spark]/bin/spark-submit [path/to/]spark_udf_ex.py
 standalone 模式：
 
 ```bash
-$ [path/to/your/spark]/bin/spark-submit --master [spark service address] [path/to/]spark_udf_ex.py
+# IP 与 PORT 为 Spark 集群 master 主机的 IP 与 端口 
+$ [path/to/your/spark]/bin/spark-submit --master spark://<IP>:<PORT> [path/to/]spark_udf_ex.py
 ```
 
 hadoop/yarn 模式：
