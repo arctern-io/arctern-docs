@@ -101,7 +101,7 @@ $ pip install requests
 ...     }
 ... ]
 ... }
->>>
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/loadfile", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -203,7 +203,7 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> sql = "create table nyc_taxi as (select VendorID, to_timestamp(tpep_pickup_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_pickup_datetime, to_timestamp(tpep_dropoff_datetime,'yyyy-MM-dd HH:mm:ss XXXXX') as tpep_dropoff_datetime, passenger_count, trip_distance, pickup_longitude, pickup_latitude, dropoff_longitude, dropoff_latitude, fare_amount, tip_amount, total_amount, buildingid_pickup, buildingid_dropoff, buildingtext_pickup, buildingtext_dropoff from raw_data where (pickup_longitude between -180 and 180) and (pickup_latitude between -90 and 90) and (dropoff_longitude between -180 and 180) and  (dropoff_latitude between -90 and 90))"
 >>> payload = {
 ... "input_data": {
@@ -211,7 +211,7 @@ $ pip install requests
 ... },
 ... "collect_result": "0"
 ... }
->>>
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -267,7 +267,7 @@ $ pip install requests
 ... },
 ... "collect_result": "0"
 ... }
->>>
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/query", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> r.json()
 {
@@ -301,7 +301,7 @@ $ pip install requests
 ...     "opacity": 0.5
 ... }
 ... }
->>>
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/pointmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> # 保存为 PNG 图片 
@@ -342,7 +342,7 @@ $ pip install requests
 ...     "color_gradient": ["#115f9a", "#d0f400"]
 ... }
 ... }
->>>
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/weighted_pointmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> import base64
@@ -380,7 +380,7 @@ $ pip install requests
 ...     "aggregation_type": "sum"
 ... }
 ... }
->>>
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/heatmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> import base64
@@ -426,7 +426,7 @@ $ pip install requests
 ...     "aggregation_type": "mean"
 ... }
 ... }
->>>
+>>> 
 >>> r = requests.post(url="http://127.0.0.1:8080/choroplethmap", headers={"Content-Type": "application/json"}, data=json.dumps(payload))
 >>> 
 >>> import base64
@@ -447,10 +447,10 @@ $ pip install requests
 ```python
 >>> import requests
 >>> import json
->>>
+>>> 
 >>> # 本例中的图标文件可通过以下命令获取：
 >>> # wget https://github.com/zilliztech/arctern-docs/raw/branch-0.1.x/img/icon/arctern-logo.png
->>>
+>>> 
 >>> icon_path = "</path/to/arctern-logo.png>"
 >>> payload = {
 ... "input_data": {
@@ -531,7 +531,7 @@ $ pip install requests
 
 使用 `query` 接口删除 `nyc_taxi` 数据表, 释放服务器资源。
 
-<font color="#dd0000">注意：</font>`Arctern RESTful` 服务不会主动删除数据表，请务必删除不再使用的数据表释放服务器资源。
+> **注意：** `Arctern RESTful` 服务不会主动删除数据表，请务必删除不再使用的数据表释放服务器资源。
 
 ```python
 >>> import requests
@@ -541,7 +541,7 @@ $ pip install requests
 >>> payload = {
 ... "input_data": {
 ...    "sql": sql 
-... }，
+... },
 ... "collect_result": "0"
 ... }
 >>> 
@@ -550,6 +550,6 @@ $ pip install requests
 {
     'code': 200,
     'message': 'execute sql successfully!',
-    'status': 'success'
+    'status': 'success' 
 }
 ```
