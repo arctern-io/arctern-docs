@@ -1,5 +1,5 @@
-API
-====
+RESTful API
+===========
 
 .. toctree::
    :maxdepth: 1

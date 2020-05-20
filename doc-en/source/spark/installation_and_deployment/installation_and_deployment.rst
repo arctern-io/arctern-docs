@@ -6,4 +6,3 @@
     
    install_arctern_on_spark_en
    offline_install_arctern_on_spark_en
-   deploy-with-docker-compose

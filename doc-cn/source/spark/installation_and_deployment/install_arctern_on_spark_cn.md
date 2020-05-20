@@ -114,7 +114,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> arctern_pyspark.version()
 ```
 
-## 配置 Spark 的 Python 路径
+## 安装并配置 Spark
+
+以下对 local 模式以及 standalone 单机模式下的 Spark 安装和配置流程进行介绍。若需要以集群模式安装 Spark,请参考 [Spark 官方文档](https://spark.apache.org/docs/latest/) 以及本文档末尾的 [FAQ](#FAQ)部分。
+
 
 下载 [spark-3.0.0-preview2编译包](https://mirrors.sonic.net/apache/spark/spark-3.0.0-preview2/spark-3.0.0-preview2-bin-hadoop2.7.tgz) 并解压spark压缩包。
 
@@ -122,7 +125,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 $ tar -xvzf spark-3.0.0-preview2-bin-hadoop2.7.tgz
 ```
 
-创建 `spark-default.conf` 以及 `spark-env.sh` 文件。
+创建 `spark-defaults.conf` 以及 `spark-env.sh` 文件。
 
 ```bash
 $ cd spark-3.0.0-preview2-bin-hadoop2.7/conf
@@ -130,7 +133,7 @@ $ cp spark-defaults.conf.template spark-defaults.conf
 $ cp spark-env.sh.template spark-env.sh
 ```
 
-在文件 `spark-default.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。可以通过 `conda env info` 来查看当前的conda环境信息。
+在文件 `spark-defaults.conf` 的最后添加以下内容。其中 `[path/to/your/conda]` 为 Conda 的安装路径。可以通过 `conda env info` 来查看当前的conda环境信息。
 
 ```bash
 spark.executorEnv.PROJ_LIB [path/to/your/conda]/envs/arctern_env/share/proj
@@ -173,14 +176,20 @@ $ wget https://raw.githubusercontent.com/zilliztech/arctern/v0.1.0/spark/pyspark
 
 执行以下命令提交 Spark 任务，其中 `[path/to/]spark_udf_ex.py` 为测试文件所在的路径。
 
+local 模式：
+
 ```bash
-# local mode
 $ [path/to/your/spark]/bin/spark-submit [path/to/]spark_udf_ex.py
+```
 
-# standalone mode
+standalone 模式：
+
+```bash
 $ [path/to/your/spark]/bin/spark-submit --master [spark service address] [path/to/]spark_udf_ex.py
+```
 
-# hadoop/yarn mode
+hadoop/yarn 模式：
+```bash
 $ [path/to/your/spark]/bin/spark-submit --master yarn [path/to/]spark_udf_ex.py
 ```
 
@@ -199,18 +208,16 @@ $ conda uninstall libarctern arctern arctern-spark
 
 ## FAQ
 
-### 对 Spark 的支持
+### Spark 集群模式下的安装与配置
 
-Arctern-Spark 可以运行在 Spark 的各种模式下，需要在每台运行 Spark 的机器上，执行如下操作：
+在集群模式下（如 standalone 集群模式、hadoop/yarn 模式），需要在每台运行 Spark 的机器上，执行如下操作：
 
 * 创建 Conda 虚拟环境
 * 安装 Arctern-Spark
 * 配置 Spark 环境变量
 
-如果 Spark 运行在 `standalone` 集群模式下，提交任务机器的 Spark 环境需要与集群的 Spark 环境完全一致，包括以下几点：
+此外 `standalone` 集群模式下，提交任务机器的 Spark 环境需要与集群的 Spark 环境完全一致，包括以下几点：
 
-* `spark` 安装的绝对路径与集群中每台机器完全一致
-* `conda` 安装的绝对路径与集群中每个机器完全一致
-* `conda` 虚拟环境名与集群中每个机器完全一致
-
-
+* 集群中每台机器的 `spark` 安装路径完全一致
+* 集群中每台机器的 `conda` 安装路径完全一致
+* 集群中每台机器中 `conda` 虚拟环境名完全一致
