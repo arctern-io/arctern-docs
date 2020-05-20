@@ -80,3 +80,9 @@ arctern-server start --mode=release
 ```
 
 `mode` 可选 `release` 或 `debug`。debug 模式会提供更准确的提示信息，但比 release 模式的执行效率低。
+
+## FAQ
+
+使用 http 代理对运行 Arctern RESTful Server 的影响：
+
+使用 http 代理可能会导致 RESTful API 无法被正常调用，请关闭 http 代理然后重启 Arctern RESTful Server。
