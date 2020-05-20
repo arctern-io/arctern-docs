@@ -103,13 +103,13 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 
 ## 使用 Arctern 提供的 GeoSpatial 函数处理数据
 
-1. 导入 `arctern` 模块：
+导入 `arctern` 模块：
 
 ```python
 >>> from arctern import *
 ```
 
-2. 根据经纬度数据创建坐标点数据：
+根据经纬度数据创建坐标点数据：
 
 ```python
 >>> ST_AsText(ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude)).head()
@@ -121,7 +121,7 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 dtype: object
 ```
 
-3. 将坐标点数据使用的空间坐标系从 `EPSG:4326` 坐标系转换到 `EPSG:3857` 坐标系。有关空间坐标系标准的详细信息请查看[维基百科相关页面](https://en.wikipedia.org/wiki/Spatial_reference_system)。
+将坐标点数据使用的空间坐标系从 `EPSG:4326` 坐标系转换到 `EPSG:3857` 坐标系。有关空间坐标系标准的详细信息请查看[维基百科相关页面](https://en.wikipedia.org/wiki/Spatial_reference_system)。
 
 ```python
 >>> ST_AsText(ST_Transform(ST_Point(pickup_df.pickup_longitude, pickup_df.pickup_latitude),'epsg:4326', 'epsg:3857')).head()
@@ -133,7 +133,7 @@ dtype: object
 dtype: object
 ```
 
-4. 在 [EPSG](http://epsg.io/transform#s_srs=4326&t_srs=3857) 网站上验证转换结果是否正确。
+在 [EPSG](http://epsg.io/transform#s_srs=4326&t_srs=3857) 网站上验证转换结果是否正确。
 
 ![](../../../../img/quickstart/epsg-4326-to-3857-example.png)
 

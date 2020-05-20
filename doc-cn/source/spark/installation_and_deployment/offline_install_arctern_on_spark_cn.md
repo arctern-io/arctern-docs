@@ -28,8 +28,10 @@ $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O 
 
 ```bash
 $ cd arctern-resources/arctern_dependencies/ubuntu_dependencies
+
 # 安装 gl-mesa 库
 $ ./install_packages.sh gl    
+
 # 安装 java8  
 $ ./install_packages.sh jdk     
 ```

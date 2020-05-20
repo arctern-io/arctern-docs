@@ -100,13 +100,14 @@ SparkSession available as 'spark'.
 
 加载测试数据，并创建临时表 `origin_nyc_taxi`：
 
+> **注意：** 你需要将 `</path/to/0_2M_nyc_taxi_and_building.csv>` 替换为数据文件的本地路径。
+
 ```python
-# 文件路径配置为本地路径。
 >>> origin_df = spark.read.format("csv") \
 ...                       .option("header",True) \
 ...                       .option("delimiter",",") \
 ...                       .schema(nyc_schema) \
-...                       .load("/path/to/0_2M_nyc_taxi_and_building.csv") \
+...                       .load("</path/to/0_2M_nyc_taxi_and_building.csv>") \
 ...                       .createOrReplaceTempView("origin_nyc_taxi")
 ```
 
@@ -169,7 +170,7 @@ SparkSession available as 'spark'.
 
 ## 使用 Arctern-Spark 提供的 GeoSpatial 函数处理数据
 
-1. 根据经纬度数据创建坐标点数据：
+根据经纬度数据创建坐标点数据：
 
 ```python
 >>> spark.sql("select st_astext(st_point(pickup_longitude, pickup_latitude)) from nyc_taxi limit 10").show(10,0)
@@ -189,7 +190,7 @@ SparkSession available as 'spark'.
 +------------------------------------------------------+
 ```
 
-2. 将坐标点数据使用的空间坐标系从 `EPSG:4326` 坐标系转换为 `EPSG:3857` 坐标系。有关空间坐标系标准的详细信息请查看[维基百科相关页面](https://en.wikipedia.org/wiki/Spatial_reference_system)。
+将坐标点数据使用的空间坐标系从 `EPSG:4326` 坐标系转换为 `EPSG:3857` 坐标系。有关空间坐标系标准的详细信息请查看[维基百科相关页面](https://en.wikipedia.org/wiki/Spatial_reference_system)。
 
 ```python
 >>> spark.sql("select " \
@@ -216,7 +217,7 @@ SparkSession available as 'spark'.
 +----------------------------+------------------------------------------+
 ```
 
-3. 在 [EPSG](http://epsg.io/transform#s_srs=4326&t_srs=3857) 网站上验证转换结果是否正确。
+在 [EPSG](http://epsg.io/transform#s_srs=4326&t_srs=3857) 网站上验证转换结果是否正确。
 
 ![](../../../../img/quickstart/epsg-4326-to-3857-example.png)
 

@@ -394,7 +394,7 @@ $ pip install requests
 
 ### 绘制轮廓图
 
-使用 `/choroplethmap` 接口，根据下车地点的建筑物、小费金额绘制轮廓图。其中，小费金额高的区域为黄色，小费金额低的区域为蓝色。轮廓图的具体参数说明请参见 [轮廓图 RESTful API 说明](./api/function/choroplethmap.html)。
+使用 `/choroplethmap` 接口，根据下车地点的建筑物、小费金额绘制轮廓图。其中，小费金额高的区域为黄色，小费金额低的区域为蓝色。轮廓图的具体参数说明请参见[轮廓图 RESTful API 说明](./api/function/choroplethmap.html)。
 
 ```python
 >>> import requests
