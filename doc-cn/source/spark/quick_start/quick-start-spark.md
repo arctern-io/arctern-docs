@@ -2,7 +2,7 @@
 
 本文以纽约出租车数据集为例，演示如何使用 Arctern-Spark 完成数据的导入、运算和展示。
 
-> **注意：** 本章所有示例代码均默认在 `Python 3.7` 环境中运行。若要在其他 Python 环境下运行，你可能需要适当修改代码内容。
+> **注意：** 本章所有示例代码均默认在 Python 3.7 环境中运行。若要在其他 Python 环境下运行，你可能需要适当修改代码内容。
 
 ## 数据准备
 
@@ -31,7 +31,7 @@ $ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/be
 | buildingtext_pickup   | 上车地点所在建筑的轮廓描述 | string |
 | buildingtext_dropoff  | 下车地点所在建筑的轮廓描述 | string |
 
-> **注意：** 该数据集有 200000 行，其中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`。
+> **注意：** 该数据集有 200000 行，其中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如“2009-04-12 03:16:33 +00:00“。
 
 ## 启动 PySpark
 

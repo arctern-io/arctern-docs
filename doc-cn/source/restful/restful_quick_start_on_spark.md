@@ -1,14 +1,14 @@
 # 快速开始（PySpark 后台）
 
-本文以纽约出租车数据集为例，以 PySpark 作为数据处理后台，说明如何通过 `Arctern RESTful API` 完成数据的导入、运算和展示。
+本文以纽约出租车数据集为例，以 PySpark 作为数据处理后台，说明如何通过 Arctern RESTful API 完成数据的导入、运算和展示。
 
-> **注意：** 本章所有示例代码均默认在 `Python 3.7` 环境中运行。若要在其他 Python 环境下运行，你可能需要适当修改代码内容。
+> **注意：** 本章所有示例代码均默认在 Python 3.7 环境中运行。若要在其他 Python 环境下运行，你可能需要适当修改代码内容。
 
 ## 服务器端的启动和配置
 
 ### 服务器启动
 
-在调用 `Arctern RESTful API` 之前请先启动服务，具体步骤见[服务器启动](./webserver_installation_config.md)。
+在调用 Arctern RESTful API 之前请先启动服务，具体步骤见[服务器启动](./webserver_installation_config.md)。
 
 ### 数据准备
 
@@ -45,11 +45,11 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 | buildingtext_pickup   | 上车地点所在建筑的轮廓描述 | string |
 | buildingtext_dropoff  | 下车地点所在建筑的轮廓描述 | string |
 
-> **注意：** 该数据集有 200000 行，其中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`。
+> **注意：** 该数据集有 200000 行，其中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如“2009-04-12 03:16:33 +00:00“。
 
 ### 安装依赖
 
-本文示例代码使用 Python 的 `requests` 库调用 `Arctern RESTful API`，执行以下命令安装 `requests`：
+本文示例代码使用 Python 的 `requests` 库调用 Arctern RESTful API，执行以下命令安装 `requests`：
 
 ```bash
 $ pip install requests
@@ -57,11 +57,11 @@ $ pip install requests
 
 ## API 调用
 
-下述示例中，假设服务器 IP 地址为 `127.0.0.1`，RESTful 服务端口为 `8080`。如果你在启动 arctern-server 时指定了 IP 与端口，则使用指定的 IP 与端口。
+下述示例中，假设服务器 IP 地址为“127.0.0.1“，RESTful 服务端口为“8080“。如果你在启动 arctern-server 时指定了 IP 与端口，则使用指定的 IP 与端口。
 
 ### 数据导入
 
-使用 `/loadfile` 接口导入纽约出租车数据集，将其对应的数据表命名为 `raw_data`。
+使用 `/loadfile` 接口导入纽约出租车数据集，将其对应的数据表命名为`raw_data`。
 
 > **注意：** 你需要将示例中的 `file_path` 替换为数据文件的绝对路径。
 
@@ -198,7 +198,7 @@ $ pip install requests
 
 #### 创建数据表
 
-将 `raw_data` 数据表中的时间信息从 `string` 类型转换为 `timestamp` 类型，并移除与后续操作无关的字段，保存为一张新的 `nyc_taxi` 数据表。
+将“raw_data“数据表中的时间信息从 `String` 类型转换为 `Timestamp` 类型，并移除与后续操作无关的字段，保存为一张新的 `nyc_taxi` 数据表。
 
 ```python
 >>> import requests
@@ -356,7 +356,7 @@ $ pip install requests
 
 ### 绘制热力图
 
-使用 `/heatmap` 接口根据乘客的下车地点以及行程费用绘制热力图。其中，费用高的区域为红色，费用低的区域为绿色。热力图的具体参数说明请参见 [热力图 RESTful API 说明](./api/function/heatmap.html)。
+使用 `/heatmap` 接口根据乘客的下车地点以及行程费用绘制热力图。其中，费用高的区域为红色，费用低的区域为绿色。热力图的具体参数说明请参见[热力图 RESTful API 说明](./api/function/heatmap.html)。
 
 ```python
 >>> import requests

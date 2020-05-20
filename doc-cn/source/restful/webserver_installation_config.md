@@ -71,7 +71,7 @@ arctern-server config --arctern_server_host=127.0.0.1 --arctern_server_port=8080
 arctern-server config --arctern_server_host=127.0.0.1 --arctern_server_port=8080 --interpreter_type=pyspark --interpreter_name=arcternpyspark --interpreter_pyspark_python="</path/to/python>" --interpreter_pyspark_driver_python=</path/to/python> --interpreter_spark_home="</path/to/spark>" --interpreter_master=local[*]
 ```
 
-> **注意：** 你需要将 `</path/to/python>` 替换为 Arctern 所在的 Conda 环境内 Python 的绝对路径，此 Python 路径可通过 which python 命令查询。你需要将 `</path/to/spark>` 替换为 Arctern 所在的 Conda 环境内 Spark 的绝对路径。
+> **注意：** 你需要将 `</path/to/python>` 替换为 Python 的绝对路径，此 Python 路径可通过 which python 命令查询。你还需要将 `</path/to/spark>` 替换为 Spark 的绝对路径。
 
 ## 启动
 

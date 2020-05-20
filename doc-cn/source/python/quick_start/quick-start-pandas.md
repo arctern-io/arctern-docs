@@ -2,7 +2,7 @@
 
 本文以纽约出租车数据集为例，说明如何通过 Arctern 完成数据的导入、运算和展示。
 
-> **注意：** 本章所有示例代码均默认在 `Python 3.7` 环境中运行。若要在其他 Python 环境下运行，你可能需要适当修改代码内容。
+> **注意：** 本章所有示例代码均默认在 Python 3.7 环境中运行。若要在其他 Python 环境下运行，你可能需要适当修改代码内容。
 
 ## 数据准备
 
@@ -39,7 +39,7 @@ $ wc -l 0_2M_nyc_taxi_and_building.csv
 | buildingtext_pickup   | 上车地点所在建筑的轮廓描述 | string |
 | buildingtext_dropoff  | 下车地点所在建筑的轮廓描述 | string |
 
-> **注意：** 该数据集有 200000 行，其中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如 `2009-04-12 03:16:33 +00:00`。
+> **注意：** 该数据集有 200000 行，其中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如”2009-04-12 03:16:33 +00:00“。
 
 ## 加载数据
 
@@ -178,7 +178,7 @@ dtype: object
 
 ### 热力图
 
-执行以下代码绘制热力图：
+执行以下命令绘制热力图：
 
 ```python
 >>> vega = vega_heatmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], map_zoom_level=13.0, coordinate_system="EPSG:4326")
@@ -192,7 +192,7 @@ dtype: object
 
 ### 轮廓图
 
-执行以下代码绘制轮廓图：
+执行以下命令绘制轮廓图：
 
 ```python
 >>> # 轮廓的填充颜色根据 fare_amount 在 #115f9a ~ #d0f400 之间变化
@@ -207,7 +207,7 @@ dtype: object
 
 ### 图标图
 
-执行以下代码绘制图标图：
+执行以下命令绘制图标图：
 
 > **注意：** 你需要将示例中的 `</path/to/icon.png>` 替换为本地图片的绝对路径。
 
@@ -223,7 +223,7 @@ dtype: object
 
 ### 渔网图
 
-执行以下代码绘制渔网图：
+执行以下命令绘制渔网图：
 
 ```python
 >>> vega = vega_fishnetmap(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], cell_size=8, cell_spacing=1, opacity=1.0, coordinate_system="EPSG:4326")
