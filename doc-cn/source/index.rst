@@ -16,12 +16,9 @@ Arctern 聚焦时空数据科学，目标是加速时空数据的处理、分析
 * 与 Pandas 生态无缝集成的时空数据分析；
 * 与 Spark 生态无缝集成的时空数据分析；
 * 以 SQL 为基础的时空数据交互式分析；
-* 面向时空数据分析的 RESTful 调用；
 * GPU 加速的地理信息处理。
 
 .. toctree::
    :maxdepth: 2
 
-   python/python
-   spark/spark
-   restful/restful
+   quick_start/quick_start
