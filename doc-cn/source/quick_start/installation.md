@@ -86,7 +86,7 @@ $ conda activate arctern_env
 version : 0.1.2
 ```
 
-## 卸载
+## 卸载 Arctern
 
 ```bash
 $ conda deactivate
