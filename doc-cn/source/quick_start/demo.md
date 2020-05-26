@@ -77,4 +77,4 @@ dtype: bool
 
 你还可以点击 Kepler.Gl 界面右上角的 **&gt;** 按钮以展开侧边栏，在其中设置每条路线的颜色和线宽：
 
-![在 Kepler.Gl 中设置路线的颜色和线宽](../../../img/quick_start/kepler-set-witth.png)
+![在 Kepler.Gl 中设置路线的颜色和线宽](../../../img/quick_start/kepler_set_witth.png)
