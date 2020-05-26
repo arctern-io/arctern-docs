@@ -17,53 +17,53 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:1
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:42
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:1
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:42
 msgid "weighted_pointmap"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:3
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:3
 msgid ""
 "绘制一个带权点图，需要先后调用 vega_weighted_pointmap 和 weighted_pointmap 两个接口，首先使用 "
 "vega_weighted_pointmap 构建描述带权点图渲染样式的 VegaWeightedPointMap 对象，然后使用 "
 "weighted_pointmap 渲染图像。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:5
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:5
 msgid "vega_weighted_pointmap"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:7
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:7
 msgid ""
 "arctern.util.vega.vega_weighted_pointmap(width,height,bounding_box,color_gradient,"
 " color_bound,size_bound,opacity,coordinate_system)"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:10
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:10
 msgid "根据给定的配置参数，构建描述带权点图渲染样式的 VegaWeightedPointMap 对象。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:12
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:48
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:12
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:48
 msgid "参数"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:14
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:14
 msgid "* width(int) -- 图片宽度，单位为像素个数。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:16
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:16
 msgid "* height(int) -- 图片高度，单位为像素个数。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:18
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:18
 msgid ""
 "* bounding_box(list) -- 图片对应的地理坐标区域，以 [x_min, y_min, x_max, y_max] "
 "的形式表示一个矩形区域。图片左下角的像素坐标 (0, 0) 对应地理坐标 (x_min, y_min) ，图片右上角的像素坐标 (width, "
 "height) 对应地理坐标 (x_max, y_max)。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:20
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:20
 msgid ""
 "* color_gradient(list) -- 点的颜色渐变范围，表示形式为 [\"hex_color\"] 或 "
 "[\"hex_color1\", \"hex_color2\"]。当形式为[\"hex_color\"] "
@@ -71,7 +71,7 @@ msgid ""
 " \"hex_color1\" ~ \"hex_color2\" 之间变化。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:22
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:22
 msgid ""
 "* color_bound(list) -- "
 "可选参数，用于描述权重与颜色的对应关系，仅当 color_gradient 中包含两个颜色值时需要设置，表示形式为 [color_min, "
@@ -79,7 +79,7 @@ msgid ""
 "时点的颜色为\"hex_color2\"。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:24
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:24
 msgid ""
 "* size_bound(list) -- 可选参数，用于描述点的直径范围，表示形式为 [diameter] 或 [diameter_min, "
 "diameter_max]，默认值为[3]。[diameter] 形式表示所有点的直径都为 diameter; [diameter_min, "
@@ -88,74 +88,74 @@ msgid ""
 "时点的直径为 diameter_max; 权重值在 diameter_min ~ diameter_max 之间时点的直径与权重值相等。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:26
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:26
 msgid "* opacity(float) -- 可选参数，表示点的不透明度，范围为 0.0 ~ 1.0，默认值为 1.0。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:28
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:28
 msgid ""
 "* coordinate_system(str) -- "
 "可选参数，表示输入数据所属的地理坐标系统，默认值为\"EPSG:3857\"，当前支持的地理坐标系统请参照 "
 "https://spatialreference.org/。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:31
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:59
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:31
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:59
 msgid "返回值类型"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:33
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:33
 msgid "arctern.util.vega.pointmap.vega_weighted_pointmap.VegaWeightedPointMap"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:36
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:64
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:36
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:64
 msgid "返回"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:38
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:38
 msgid "用于描述渲染样式的 VegaWeightedPointMap 对象。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:44
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:44
 msgid ""
 "arctern_pyspark.weighted_pointmap(vega, points, color_weights, "
 "size_weights)"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:46
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:46
 msgid "绘制带权重的点图，权重用于决定点的大小和颜色。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:50
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:50
 msgid "* vega(VegaWeightedPointMap) -- VegaWeightedPointMap 对象。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:52
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:52
 msgid "* points(WKB) -- 所需绘制的点，格式为 WKB。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:54
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:54
 msgid "* color_weights(int|float) -- 可选参数，点的颜色权重。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:56
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:56
 msgid "* size_weights(int|float) -- 可选参数，点的大小权重。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:61
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:61
 msgid "bytes"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:66
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:66
 msgid "base64编码的 PNG 图片。"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:69
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:69
 msgid "示例:"
 msgstr ""
 
-#: ../../source/spark/api/render/function/layer/weighted_pointmap.md:113
+#: ../../source/api/spark_api/render/function/layer/weighted_pointmap.md:113
 msgid "渲染结果如下："
 msgstr ""
 

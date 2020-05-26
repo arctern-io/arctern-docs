@@ -22,3 +22,4 @@ Arctern 聚焦时空数据科学，目标是加速时空数据的处理、分析
    :maxdepth: 2
 
    quick_start/quick_start
+   api/api

@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: ../../source/python/api/geospatial/function/geospatial/ST_GeomFromGeoJSON.rst:2
+#: ../../source/api/pandas_api/geospatial/function/geospatial/ST_GeomFromGeoJSON.rst:2
 msgid "ST_GeomFromGeoJSON"
 msgstr ""
 

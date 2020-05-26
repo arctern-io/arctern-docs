@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: ../../source/spark/api/geospatial/function/geospatial/Spark_ST_GeometryType.rst:2
+#: ../../source/api/spark_api/geospatial/function/geospatial/Spark_ST_GeometryType.rst:2
 msgid "ST_GeometryType"
 msgstr ""
 
