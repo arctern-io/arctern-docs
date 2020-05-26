@@ -4,6 +4,8 @@
 
 ### 安装 Jupyter 和 Kepler.Gl
 
+在后续步骤中，你需要使用 Jupyter Notebook 运行代码，以及使用 Kepler.Gl 进行空间数据可视化。请按照以下步骤安装 Jupyter 和 Kepler.Gl：
+
 进入 Conda 环境：
 
 ```bash
@@ -42,9 +44,11 @@ $ jupyter-notebook
 >>> import arctern
 ```
 
-以帝国大厦附近的两条道路为分析对象，创建 [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) 格式的变量（`road1`、`road2`）以表示这两条道路。
+以帝国大厦附近的两条道路为分析对象，创建 [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) 格式的 LINESTRING 对象（`road1`、`road2`）以表示这两条道路。
 
 ```python
+>>> # road1 道路两端的经纬度坐标分别是 (-73.996324, 40.753388)、(-73.972088, 40.743215)
+>>> # road2 道路两端的经纬度坐标分别是 (-73.989555, 40.741531)、(-73.973952, 40.762962)
 >>> road1 = 'LINESTRING (-73.996324 40.753388, -73.972088 40.743215)'
 >>> road2 = 'LINESTRING (-73.989555 40.741531, -73.973952 40.762962)'
 ```
