@@ -69,7 +69,6 @@ dtype: bool
 使用 Kepler.Gl 在地图上绘制 `road1` 和 `road2`，观察到这两条路确实相交：
 
 ```python
->>> df = pd.DataFrame(data={'geos': [road1, road2]})
 >>> KeplerGl(height=600,data={"road1": pd.DataFrame(data={"road1":[road1]}),
                           "road2": pd.DataFrame(data={"raod2":[road2]})})
 ```
