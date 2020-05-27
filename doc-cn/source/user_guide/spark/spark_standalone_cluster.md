@@ -140,7 +140,7 @@ rm -rf spark-3.0.0-preview2-bin-hadoop2.7.tgz
 export SPARK_HOME=$HOME/spark-3.0.0-preview2-bin-hadoop2.7
 ```
 
-执行 `vim ～/spark-3.0.0-preview2-bin-hadoop2.7/conf/spark-env.sh` 以编辑 **spark-env.sh** 文件。 文件内容如下:
+执行 `vim ～/spark-3.0.0-preview2-bin-hadoop2.7/conf/spark-env.sh` 以编辑 **spark-env.sh** 文件。文件内容如下:
 
 ```bash
 #! /usr/bin/env bash
@@ -157,7 +157,7 @@ SPARK_WORKER_MEMORY=4g
 docker exec -it node20 bash
 ```
 
-执行 `vim ~/spark-3.0.0-preview2-bin-hadoop2.7/conf/spark-defaults.conf` 以编辑 **spark-defaults.conf** 文件。 文件内容如下:
+执行 `vim ~/spark-3.0.0-preview2-bin-hadoop2.7/conf/spark-defaults.conf` 以编辑 **spark-defaults.conf** 文件。文件内容如下:
 
 ```txt
 spark.executorEnv.PROJ_LIB         /home/arcterner/miniconda3/envs/arctern_env/share/proj
@@ -168,7 +168,7 @@ spark.executor.cores               1
 
 结合 `spark-env.sh` 和 `spark.defaults.conf` 可知，当前的 Spark 集群一共有 `2×3=6` 个 CPU，`4g×3=12g` 内存，并且每个 executor 使用 1 个`cpu`，2 G 内存，一共有 6 个 executor。
 
-执行 `vim ~/spark-3.0.0-preview2-bin-hadoop2.7/conf/slaves` 以编辑 **slaves** 文件。 文件内容如下:
+执行 `vim ~/spark-3.0.0-preview2-bin-hadoop2.7/conf/slaves` 以编辑 **slaves** 文件。文件内容如下:
 
 ```txt
 node20
@@ -208,14 +208,14 @@ $SPARK_HOME/sbin/start-master.sh
 ```
 关闭浏览器代理，在浏览器中输入 `http://172.18.0.20:8080/`，验证 `master` 是否正确启动：
 
-<img src="./img/screen-shot/standalone-cluster-start-master.png">
+![查看 master](./img/screen-shot/standalone-cluster-start-master.png)
 
 启动 `slaves`：
 ```bash
 $SPARK_HOME/sbin/start-slaves.sh
 ```
 
-<img src="./img/screen-shot/standalone-cluster-start-slaves.png">
+![启动 slaves](./img/screen-shot/standalone-cluster-start-slaves.png)
 
 ## 测试 Arctern
 
@@ -273,7 +273,7 @@ ls -lh /arcternas/st_transform/
 ```
 你也可以在浏览器中检查上述程序的运行情况：
 
-<img src="./img/screen-shot/standalone-cluster-submit-task.png">
+![运行情况](./img/screen-shot/standalone-cluster-submit-task.png)
 
 ## 参考文献
 
