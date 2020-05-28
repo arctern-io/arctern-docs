@@ -19,7 +19,7 @@ Welcome to explore Arctern if you are looking for a solution that integrates the
 * GPU accelerated geographic information processing.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    quick_start/quick_start
    api/api
