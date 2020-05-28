@@ -66,15 +66,15 @@ dtype: bool
 
 ### 使用 Kepler.Gl 绘制地图
 
-使用 Kepler.Gl 在地图上绘制 `road1` 和 `road2`，观察到这两条路确实相交：
+使用 Kepler.Gl 在地图上绘制 `road1` 和 `road2`，观察这两条路是否相交：
 
 ```python
 >>> KeplerGl(height=600,data={"road1": pd.DataFrame(data={"road1":[road1]}),
                           "road2": pd.DataFrame(data={"raod2":[road2]})})
 ```
 
-![用 Kepler.Gl 显示两条道路](../../../img/quick_start/crossed_road.png)
+![](../../../img/quick_start/crossed_road.png)
 
-你还可以点击 Kepler.Gl 界面右上角的 **&gt;** 按钮以展开侧边栏，在其中设置每条路线的颜色和线宽：
+你还可以点击 Kepler.Gl 界面右上角的 **&gt;** 按钮以展开侧边栏，在其中设置每条路线的颜色和线宽。
 
-![在 Kepler.Gl 中设置路线的颜色和线宽](../../../img/quick_start/kepler_set_witth.png)
+![](../../../img/quick_start/kepler_set_witth.png)
