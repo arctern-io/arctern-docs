@@ -10,3 +10,4 @@ Pandas
    quick_start/quick-start-pandas
    data_source/data_import_and_export
    api/api
+   api/geoseries

@@ -7,7 +7,7 @@ Welcome to Arctern's documentation!
 ===================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    python/python
    spark/spark
