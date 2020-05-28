@@ -3,11 +3,24 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Arctern's documentation!
-===================================
+Welcome to Arctern Documentation
+==================
+
+Arctern focuses on spatiotemporal data science and is dedicated to accelerating the processing, analysis, model prediction, and presentation of spatiotemporal data. Based on the open-source big data ecology, Arctern builds a flexible, powerful, and high-performance spatiotemporal data analysis platform to help you cope with the new data challenge brought by 5G / IoT.
+
+Welcome to explore Arctern if you are looking for a solution that integrates the following functions:
+
+* Efficient standard geographic information analysis database (OGC standard);
+* Advanced spatiotemporal data processing algorithms and models, such as trajectory analysis, electronic fence data processing, spatiotemporal data statistics, and spatiotemporal data mining.
+* Rendering and visualization of massive spatiotemporal data;
+* Spatio-temporal data analysis seamlessly integrated with Pandas ecology;
+* Spatio-temporal data analysis seamlessly integrated with Spark ecology;
+* Interactive analysis of spatiotemporal data based on SQL;
+* GPU accelerated geographic information processing.
 
 .. toctree::
    :maxdepth: 2
 
-   python/python
-   spark/spark
+   quick_start/quick_start
+   api/api
+   user_guide/user_guide

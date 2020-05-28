@@ -36,6 +36,8 @@ $ sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 $ sudo apt install libgl1-mesa-dev libegl1-mesa-dev
 ```
 
+> **注意：** 如果安装失败，请先执行 `apt update` 再执行以上命令。
+
 ## 安装 Miniconda
 
 安装 [Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install)：

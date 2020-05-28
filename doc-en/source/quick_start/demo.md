@@ -1,42 +1,41 @@
-# 使用 Arctern 分析空间数据
+# Using Arctern to analyze spatial data
 
-完成 [Arctern 的安装部署](./installation.md) 之后，本文档引导你使用 Arctern 分析帝国大厦附近的道路信息。
+If you have completed the [installation and deployment of Arctern](./installation.md), this guide will walk you through analyzing the road information near the Empire State Building via Arctern.
 
-### 安装 Jupyter 和 Kepler.Gl
+### Installing Jupyter and Kepler.Gl
 
-在后续步骤中，你需要使用 Jupyter Notebook 运行代码，以及使用 Kepler.Gl 进行空间数据可视化。请按照以下步骤安装 Jupyter 和 Kepler.Gl：
+In the next sections, you need to use Jupyter Notebook for running Python codes and Kepler.Gl for visualizing spatial data. Follow the steps below to install Jupyter and Kepler.Gl:
 
-进入 Conda 环境：
+Enter the Conda environment:
 
 ```bash
 $ conda activate arctern_env
 ```
 
-安装 Jupyter 和 Kepler.Gl：
+Install Jupyter and Kepler.Gl:
 
 ```bash
 $ conda install -c conda-forge jupyterlab
 $ pip install keplergl
 ```
 
-## 运行 Jupyter Notebook
+## Running Jupyter Notebook
 
-在 Conda 环境中运行 Jupyter Notebook，它将在你的默认浏览器中打开一个页面。
+Run Jupyter Notebook in the Conda environment, and it will open a page in your default browser.
 
 ```bash
 $ jupyter-notebook
 ```
 
-点击页面右上角的 **New &gt; Python3** 以新建一个 Notebook。
+Click **New &gt; Python3** at the top right corner of the page to create a new notebook.
 
-## 运行 Arctern
+## Running Arctern
 
-### 使用 Arctern 分析道路信息
+### Using Arctern to analyze road information
 
-> **注意：** 以下操作均在新建的 Notebook 中运行。
+> **Note:** Run the following operations in the newly created Notebook.
 
-导入 `arctern`、`keplergl` 以及其他的相关库：
-
+Import `arctern`, `keplergl` and other related libraries:
 
 ```python
 >>> from keplergl import KeplerGl
@@ -44,19 +43,19 @@ $ jupyter-notebook
 >>> import arctern
 ```
 
-以帝国大厦附近的两条道路为分析对象，创建 [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) 格式的 LINESTRING 对象（`road1`、`road2`）以表示这两条道路。
+Create two LINESTRING objects (`road1`, `road2`) in WKT format based on the two roads near the Empire State Building:
 
 ```python
->>> # road1 道路两端的经纬度坐标分别是 (-73.996324, 40.753388)、(-73.972088, 40.743215)
->>> # road2 道路两端的经纬度坐标分别是 (-73.989555, 40.741531)、(-73.973952, 40.762962)
+>>> # The latitude and longitude coordinates of the two ends of road1 are (-73.996324, 40.753388) and (-73.972088, 40.743215).
+>>> # The latitude and longitude coordinates of the two ends of road2 are (-73.989555, 40.741531) and (-73.973952, 40.762962).
 >>> road1 = 'LINESTRING (-73.996324 40.753388, -73.972088 40.743215)'
 >>> road2 = 'LINESTRING (-73.989555 40.741531, -73.973952 40.762962)'
 ```
 
-使用 `arctern.ST_Intersects` 方法检查 `road1` 与 `road2` 是否相交。
+Use `arctern.ST_Intersects` to check whether `road1` and `road2` intersect.
 
-* 若返回 *True*，则相交；
-* 若返回 *False*，则不相交。
+* _True:_ the two roads intersect.
+* _False:_ the two roads do not intersect.
 
 ```python
 >>> arctern.ST_Intersects(arctern.ST_GeomFromText(road1), arctern.ST_GeomFromText(road2))
@@ -64,17 +63,17 @@ $ jupyter-notebook
 dtype: bool
 ```
 
-### 使用 Kepler.Gl 绘制地图
+### Using Kepler.Gl to create a map
 
-使用 Kepler.Gl 在地图上绘制 `road1` 和 `road2`，观察到这两条路确实相交：
+Use Kepler.Gl to plot `road1` and `road2` on a map, and check if the two roads intersect:
 
 ```python
 >>> KeplerGl(height=600,data={"road1": pd.DataFrame(data={"road1":[road1]}),
                           "road2": pd.DataFrame(data={"raod2":[road2]})})
 ```
 
-![用 Kepler.Gl 显示两条道路](../../../img/quick_start/crossed_road.png)
+![](../../../img/quick_start/crossed_road.png)
 
-你还可以点击 Kepler.Gl 界面右上角的 **&gt;** 按钮以展开侧边栏，在其中设置每条路线的颜色和线宽：
+You can also click **&gt;** at the top right corner of the Kepler.Gl interface to expand the sidebar and change the color and line width of each road.
 
-![在 Kepler.Gl 中设置路线的颜色和线宽](../../../img/quick_start/kepler_set_witth.png)
+![](../../../img/quick_start/kepler_set_witth.png)
