@@ -1,20 +1,16 @@
 # 使用 Arctern 分析空间数据
 
-完成 [Arctern 的安装部署](./installation.md) 之后，本文档引导你使用 Arctern 分析帝国大厦附近的道路信息。
+完成 [Arctern 的安装部署](./standalone_installation.md) 之后，本文档引导你使用 Arctern 分析帝国大厦附近的道路信息。
 
-### 安装 Jupyter 和 Kepler.Gl
+### 安装 Jupyter 和 Kepler.gl
 
-在后续步骤中，你需要使用 Jupyter Notebook 运行代码，以及使用 Kepler.Gl 进行空间数据可视化。请按照以下步骤安装 Jupyter 和 Kepler.Gl：
-
-进入 Conda 环境：
+在后续步骤中，你需要使用 Jupyter Notebook 运行代码，以及使用 Kepler.gl 进行空间数据可视化。如果你的计算机未安装 Jupyter 和 Kepler.gl，请执行以下命令安装这两个工具：
 
 ```bash
+# 进入 Conda 环境
 $ conda activate arctern_env
-```
 
-安装 Jupyter 和 Kepler.Gl：
-
-```bash
+# 安装 Jupyter 和 Kepler.gl
 $ conda install -c conda-forge jupyterlab
 $ pip install keplergl
 ```
@@ -64,9 +60,9 @@ $ jupyter-notebook
 dtype: bool
 ```
 
-### 使用 Kepler.Gl 绘制地图
+### 使用 Kepler.gl 绘制地图
 
-使用 Kepler.Gl 在地图上绘制 `road1` 和 `road2`，观察这两条路是否相交：
+使用 Kepler.gl 在地图上绘制 `road1` 和 `road2`，观察这两条路是否相交：
 
 ```python
 >>> KeplerGl(height=600,data={"road1": pd.DataFrame(data={"road1":[road1]}),
@@ -75,6 +71,6 @@ dtype: bool
 
 ![](../../../img/quick_start/crossed_road.png)
 
-你还可以点击 Kepler.Gl 界面右上角的 **&gt;** 按钮以展开侧边栏，在其中设置每条路线的颜色和线宽。
+你还可以点击 Kepler.gl 界面右上角的 **&gt;** 按钮以展开侧边栏，在其中设置每条路线的颜色和线宽。
 
 ![](../../../img/quick_start/kepler_set_witth.png)
