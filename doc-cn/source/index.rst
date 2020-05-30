@@ -10,17 +10,18 @@ Arctern 聚焦时空数据科学，目标是加速时空数据的处理、分析
 
 如果你正在寻找下述问题的解决方案，欢迎使用 Arctern：
 
-* 高效的标准地理信息分析库（OGC标准）；
-* 高级时空数据处理算法与模型，如轨迹分析、电子围栏数据处理、时空数据统计、时空数据挖掘等；
-* 海量时空数据的渲染与可视化；
-* 与 Pandas 生态无缝集成的时空数据分析；
-* 与 Spark 生态无缝集成的时空数据分析；
-* 以 SQL 为基础的时空数据交互式分析；
+* 高效的标准地理信息分析库（OGC标准）。
+* 高级时空数据处理算法与模型，如轨迹分析、电子围栏数据处理、时空数据统计、时空数据挖掘等。
+* 海量时空数据的渲染与可视化。
+* 与 Pandas 生态无缝集成的时空数据分析。
+* 与 Spark 生态无缝集成的时空数据分析。
+* 以 SQL 为基础的时空数据交互式分析。
 * GPU 加速的地理信息处理。
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1       
 
+   overview
    quick_start/quick_start
-   api/api
-   user_guide/user_guide
+   feature_description/feature_description
+   api_reference/api_reference

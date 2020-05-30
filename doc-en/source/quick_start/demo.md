@@ -1,10 +1,10 @@
 # Using Arctern to analyze spatial data
 
-If you have completed the [installation and deployment of Arctern](./installation.md), this guide will walk you through analyzing the road information near the Empire State Building via Arctern.
+If you have completed the [installation and deployment of Arctern](./standalone_installation.md), this guide will walk you through analyzing the road information near the Empire State Building via Arctern.
 
-### Installing Jupyter and Kepler.Gl
+### Installing Jupyter and Kepler.gl
 
-In the next sections, you need to use Jupyter Notebook for running Python codes and Kepler.Gl for visualizing spatial data. Follow the steps below to install Jupyter and Kepler.Gl:
+In the next sections, you need to use Jupyter Notebook for running Python codes and Kepler.gl for visualizing spatial data. Follow the steps below to install Jupyter and Kepler.gl:
 
 Enter the Conda environment:
 
@@ -12,7 +12,7 @@ Enter the Conda environment:
 $ conda activate arctern_env
 ```
 
-Install Jupyter and Kepler.Gl:
+Install Jupyter and Kepler.gl:
 
 ```bash
 $ conda install -c conda-forge jupyterlab
@@ -63,9 +63,9 @@ Use `arctern.ST_Intersects` to check whether `road1` and `road2` intersect.
 dtype: bool
 ```
 
-### Using Kepler.Gl to create a map
+### Using Kepler.gl to create a map
 
-Use Kepler.Gl to plot `road1` and `road2` on a map, and check if the two roads intersect:
+Use Kepler.gl to plot `road1` and `road2` on a map, and check if the two roads intersect:
 
 ```python
 >>> KeplerGl(height=600,data={"road1": pd.DataFrame(data={"road1":[road1]}),
@@ -74,6 +74,6 @@ Use Kepler.Gl to plot `road1` and `road2` on a map, and check if the two roads i
 
 ![](../../../img/quick_start/crossed_road.png)
 
-You can also click **&gt;** at the top right corner of the Kepler.Gl interface to expand the sidebar and change the color and line width of each road.
+You can also click **&gt;** at the top right corner of the Kepler.gl interface to expand the sidebar and change the color and line width of each road.
 
 ![](../../../img/quick_start/kepler_set_witth.png)

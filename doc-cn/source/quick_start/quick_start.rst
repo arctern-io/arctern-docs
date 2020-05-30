@@ -6,5 +6,5 @@
 .. toctree::
    :maxdepth: 1
 
-   installation
+   standalone_installation
    demo
