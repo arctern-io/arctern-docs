@@ -1,4 +1,4 @@
-# 使用 Kepler.gl 渲染时空信息
+# 使用 Kepler.gl 展示时空信息
 
 [Kepler.gl](https://kepler.gl/) 是一款功能强大的开源地理空间数据可视化工具。你只需在 Jupyter Notebook 中导入 Kepler.gl，就可以获得生动且直观的时空数据渲染效果。本文介绍如何使用 Kepler.gl 展示 Arctern 输出的时空信息。
 
@@ -34,7 +34,6 @@ map_1
 
 ```python
 import pandas as pd
-# DataFrame
 df = pd.DataFrame({'geos': ['LINESTRING (-73.996324 40.753388, -73.972088 40.743215)', 'LINESTRING (-73.989555 40.741531, -73.973952 40.762962)']})
 map_1.add_data(data=df, name='data_1')
 map_1
@@ -50,7 +49,7 @@ with open('csv-data.csv', 'r') as f:
     csvData = f.read()
 map_1.add_data(data=csvData, name='data_2')
 
-# GeoJSON as string
+# GeoJSON
 with open('sf_zip_geo.json', 'r') as f:
     geojson = f.read()
 

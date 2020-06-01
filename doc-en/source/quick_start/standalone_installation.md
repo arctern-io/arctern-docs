@@ -1,46 +1,46 @@
-# 安装部署
+# Installation
 
-Arctern 既支持单机工作，也支持多个计算机通过集群模式协作。本文档将引导你在单机模式下安装 Arctern。如果你想了解如何部署 Arctern 的集群工作环境，请查看 [模拟 Spark Standalone 集群的安装部署](../feature_description/spatiotemporal_analysis/cluster_installation.md)。
+This document guides you to install Arctern in standalone mode.
 
-## 系统要求
+## System requirements
 
-* CPU 版本
+* CPU version
 
-| 名称     | 版本              |
-| :------- | :---------------- |
-| 操作系统 | Ubuntu LTS 18.04  |
-| Conda    | Miniconda Python3 |
+| Name             | Version           |
+| :--------------- | :---------------- |
+| Operating system | Ubuntu LTS 18.04  |
+| Conda            | Miniconda Python3 |
 
-* GPU 版本
+* GPU version
 
-| 名称          | 版本              |
-| :------------ | :---------------- |
-| 操作系统      | Ubuntu LTS 18.04  |
-| Conda         | Miniconda Python3 |
-| CUDA          | 10.0              |
-| NVIDIA driver | 4.30              |
+| Name             | Version           |
+| :--------------- | :---------------- |
+| Operating system | Ubuntu LTS 18.04  |
+| Conda            | Miniconda Python3 |
+| CUDA             | 10.0              |
+| NVIDIA driver    | 4.30              |
 
-> **注意：** 你可以到 [NVIDIA 官网](https://developer.nvidia.com/cuda-gpus) 查询你的 GPU 是否支持 CUDA 功能。
+> **Note:** You can go to [NVIDIA website](https://developer.nvidia.com/cuda-gpus) to check whether you have a CUDA-enabled GPU.
 
-## 安装依赖库
+## Installing dependent libraries
 
-* CPU 版本
+* CPU version
 
 ```bash
 $ sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 ```
 
-* GPU 版本
+* GPU version
 
 ```bash
 $ sudo apt install libgl1-mesa-dev libegl1-mesa-dev
 ```
 
-> **注意：** 如果安装失败，请先执行 `apt update` 再执行以上命令。
+> **Note:** If the installation fails, please run `apt update` and then run the above commands again.
 
-## 安装 Miniconda
+## Installing Miniconda
 
-安装 [Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install)：
+Install [Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install)：
 
 ```
 $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -49,38 +49,38 @@ $ echo "source $HOME/miniconda3/etc/profile.d/conda.sh" >> .bashrc
 $ rm Miniconda3-latest-Linux-x86_64.sh
 ```
 
-关闭当前终端，并重新打开一个新的终端。在新终端中打印所有 Conda 环境。若出现 `base` 环境，则 Conda 安装成功。
+Close the current terminal. Then, open a new terminal and run the commands below to list all Conda environments in it. Conda installation is successful if the `base` environment is printed.
 
 ```bash
 $ conda env list
 base                   * /home/arcterner/miniconda3
 ```
 
-## 安装 Arctern
+## Installing Arctern
 
-安装 Arctern 并创建名为 `arctern_env` 的 Conda 环境：
+Install Arctern and create a Conda environment named `arctern_env`:
 
-* CPU 版本
+* CPU version
 
 ```bash
 $ conda create -n arctern_env -c conda-forge -c arctern arctern
 ```
 
-* GPU版本
+* GPU version
 
 ```bash 
 $ conda create -n arctern_env -c conda-forge -c arctern/label/cuda10.0 arctern
 ```
 
-进入 Conda 环境：
+Enter the Conda environment:
 
 ```bash
 $ conda activate arctern_env
 ```
 
-## 安装验证
+## Installation verification
 
-进入 Python 环境，尝试导入 `arctern` 并确认版本是否正确。
+In the Python environment, try to import `arctern` and check whether it is the latest version (0.1.2):
 
 ```python
 >>> import arctern
@@ -88,7 +88,7 @@ $ conda activate arctern_env
 version : 0.1.2
 ```
 
-## 卸载 Arctern
+## Uninstalling Arctern
 
 ```bash
 $ conda deactivate
