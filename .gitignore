@@ -2,5 +2,5 @@ doc-cn/source/docs/conf.py
 doc-cn/build/
 doc-en/build/
 .idea
-doc-en/source/python/api/reference
-doc-en/source/spark/api/reference
+doc-en/source/api_reference/standalone_api/api
+doc-cn/source/api_reference/standalone_api/api

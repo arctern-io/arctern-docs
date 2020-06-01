@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-26 15:43+0800\n"
+"POT-Creation-Date: 2020-05-30 14:26+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,43 +47,43 @@ msgstr ""
 msgid "运行 Jupyter Notebook"
 msgstr ""
 
-#: ../../source/quick_start/demo.md:24
+#: ../../source/quick_start/demo.md:20
 msgid "在 Conda 环境中运行 Jupyter Notebook，它将在你的默认浏览器中打开一个页面。"
 msgstr ""
 
-#: ../../source/quick_start/demo.md:30
+#: ../../source/quick_start/demo.md:26
 msgid "点击页面右上角的 New > Python3 以新建一个 Notebook。"
 msgstr ""
 
-#: ../../source/quick_start/demo.md:32
+#: ../../source/quick_start/demo.md:28
 msgid "运行 Arctern"
 msgstr ""
 
-#: ../../source/quick_start/demo.md:34
+#: ../../source/quick_start/demo.md:30
 msgid "使用 Arctern 分析道路信息"
 msgstr ""
 
-#: ../../source/quick_start/demo.md:36
+#: ../../source/quick_start/demo.md:32
 msgid "注意： 以下操作均在新建的 Notebook 中运行。"
 msgstr ""
 
-#: ../../source/quick_start/demo.md:38
+#: ../../source/quick_start/demo.md:34
 msgid "导入 arctern、keplergl 以及其他的相关库："
 msgstr ""
 
-#: ../../source/quick_start/demo.md:47
+#: ../../source/quick_start/demo.md:43
 msgid "以帝国大厦附近的两条道路为分析对象，创建 WKT 格式的 LINESTRING 对象（road1、road2）以表示这两条道路。"
 msgstr ""
 
-#: ../../source/quick_start/demo.md:56
+#: ../../source/quick_start/demo.md:52
 msgid "使用 arctern.ST_Intersects 方法检查 road1 与 road2 是否相交。"
 msgstr ""
 
-#: ../../source/quick_start/demo.md:58
+#: ../../source/quick_start/demo.md:54
 msgid "若返回 True，则相交；"
 msgstr ""
 
-#: ../../source/quick_start/demo.md:59
+#: ../../source/quick_start/demo.md:55
 msgid "若返回 False，则不相交。"
 msgstr ""
 
