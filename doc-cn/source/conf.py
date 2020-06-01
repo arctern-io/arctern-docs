@@ -16,17 +16,13 @@
 
 
 # -- Project information -----------------------------------------------------
-import os
-import sys
-sys.path.insert(0, os.path.abspath('/path/to/arctern/python/arctern'))
-sys.path.insert(1, os.path.abspath('/path/to/arctern/spark/pyspark/arctern_pyspark'))
-
 project = 'Arctern'
 copyright = '2020, zilliz'
 author = 'zilliz'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1.x'
+import arctern
+release = arctern.version()
 
 
 # -- General configuration ---------------------------------------------------
@@ -39,6 +35,7 @@ extensions = [
    'sphinx.ext.viewcode',
    'sphinx_automodapi.automodapi',
    'sphinx.ext.inheritance_diagram',
+   'sphinx.ext.autosummary',
    'sphinx_markdown_tables',
    'recommonmark'
 ]
@@ -48,6 +45,7 @@ source_suffix = {
     '.txt': 'markdown',
     '.md': 'markdown',
 }
+autosummary_generate = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

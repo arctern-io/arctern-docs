@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-26 15:43+0800\n"
+"POT-Creation-Date: 2020-05-30 14:26+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,27 +32,27 @@ msgid "如果你正在寻找下述问题的解决方案，欢迎使用 Arctern�
 msgstr ""
 
 #: ../../source/index.rst:13
-msgid "高效的标准地理信息分析库（OGC标准）；"
+msgid "高效的标准地理信息分析库（OGC标准）。"
 msgstr ""
 
 #: ../../source/index.rst:14
-msgid "高级时空数据处理算法与模型，如轨迹分析、电子围栏数据处理、时空数据统计、时空数据挖掘等；"
+msgid "高级时空数据处理算法与模型，如轨迹分析、电子围栏数据处理、时空数据统计、时空数据挖掘等。"
 msgstr ""
 
 #: ../../source/index.rst:15
-msgid "海量时空数据的渲染与可视化；"
+msgid "海量时空数据的渲染与可视化。"
 msgstr ""
 
 #: ../../source/index.rst:16
-msgid "与 Pandas 生态无缝集成的时空数据分析；"
+msgid "与 Pandas 生态无缝集成的时空数据分析。"
 msgstr ""
 
 #: ../../source/index.rst:17
-msgid "与 Spark 生态无缝集成的时空数据分析；"
+msgid "与 Spark 生态无缝集成的时空数据分析。"
 msgstr ""
 
 #: ../../source/index.rst:18
-msgid "以 SQL 为基础的时空数据交互式分析；"
+msgid "以 SQL 为基础的时空数据交互式分析。"
 msgstr ""
 
 #: ../../source/index.rst:19
