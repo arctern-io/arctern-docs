@@ -1,6 +1,6 @@
 .. _feature_description:
 
-功能说明
+Feature Description
 ============
 
 .. toctree::

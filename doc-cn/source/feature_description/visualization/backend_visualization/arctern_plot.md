@@ -1,6 +1,6 @@
-# 使用 Arctern 绘制图层
+# 使用 Arctern 展示时空信息
 
-本文介绍如何使用 Arctern 绘制多种类型的透明图层，以及如何将这些透明图层叠加到地图背景上。
+Arctern 可以绘制多种类型的透明图层，并将这些透明图层叠加到地图背景上。本文介绍如何使用 Arctern 展示时空信息。
 
 ## 生成模拟数据
 
@@ -47,8 +47,8 @@ conda install -c conda-forge pyproj
 
 导入以下库：
 
-* arctern: 提供绘制和保存地理信息图层的模块。
-* matplotlib: 提供在 Juypter Notebook 中绘制图片的模块。
+* **arctern:** 提供绘制和保存地理信息图层的模块。
+* **matplotlib:** 提供在 Juypter Notebook 中绘制图片的模块。
 
 ```python
 import arctern
@@ -61,7 +61,7 @@ import matplotlib.image as mpimg
 
 ### 透明点图
 
-通过 Arctern 的 `vega_pointmap` 和 `point_map_layer` 方法根据出租车运营数据绘制点图。其中，点的位置为上车地点、点的大小为 10、颜色为 #2DEF4A、不透明度为 1。保存图片后，通过 Matplotlib 的 `imshow` 方法预览该图片。
+通过 Arctern 的 `vega_pointmap` 和 `point_map_layer` 方法根据出租车运营数据绘制点图。其中，点的位置为上车地点、点的大小为 10、颜色为 #2DEF4A、不透明度为 1。
 
 ```python
 point_vega = vega.vega_pointmap(1024, 
@@ -81,7 +81,7 @@ plt.imshow(mpimg.imread("/tmp/arctern_pointmap.png"))
 
 ### 点图叠加地图背景
 
-通过 Matplotlib 的 `subplots` 方法创建一个图层。然后在该图层上使用 Arctern 的 `plot_pointmap` 方法根据出租车运营数据绘制带地图背景的点图。其中，点的位置为上车地点、点的大小为 10、颜色为 #2DEF4A、不透明度为 1。
+使用 Arctern 的 `plot_pointmap` 方法根据出租车运营数据绘制带地图背景的点图。其中，点的位置为上车地点、点的大小为 10、颜色为 #2DEF4A、不透明度为 1。
 
 ```python
 fig, ax = plt.subplots(figsize=(10, 6), dpi=200)
@@ -100,9 +100,7 @@ arctern.plot_pointmap(ax,
 
 ### 透明带权点图
 
-通过 Arctern 的 `vega_weighted_pointmap` 和 `weighted_point_map_layer` 方法根据出租车运营数据绘制带权点图。其中，点的位置为上车地点，点的颜色根据出租车的行程费用（`df.fare_amount`）在 #115f9a ～ #d0f400 之间变化，点的大小根据出租车的总费用（`df.total_amount`）在 5 ～ 30 之间变化，点的不透明度为 1。保存图片后，通过 Matplotlib 的 `imshow` 方法预览该图片。
-
-<!-- 问题：确认2个变化范围 -->
+通过 Arctern 的 `vega_weighted_pointmap` 和 `weighted_point_map_layer` 方法根据出租车运营数据绘制带权点图。其中，点的位置为上车地点，点的颜色根据出租车的行程费用（`df.fare_amount`）在 #115f9a ～ #d0f400 之间变化，点的大小根据出租车的总费用（`df.total_amount`）在 5 ～ 30 之间变化，点的不透明度为 1。
 
 ```python
 color_bound=[df.fare_amount.min(), df.fare_amount.max()]
@@ -133,9 +131,7 @@ plt.imshow(mpimg.imread("/tmp/arctern_weighted_pointmap.png"))
 
 ### 带权点图叠加地图背景
 
-通过 Matplotlib 的 `subplots` 方法创建一个图层。然后在该图层上使用 Arctern 的 `plot_weighted_pointmap` 方法根据出租车运营数据绘制带地图背景的带权点图。其中，点的位置为上车地点，点的颜色根据出租车的行程费用（`df.fare_amount`）在 #115f9a ～ #d0f400 之间变化，点的大小根据出租车的总费用（`df.total_amount`）在 5 ～ 30 之间变化，点的不透明度为 1。
-
-<!-- 问题：确认2个变化范围（同上） -->
+使用 Arctern 的 `plot_weighted_pointmap` 方法根据出租车运营数据绘制带地图背景的带权点图。其中，点的位置为上车地点，点的颜色根据出租车的行程费用（`df.fare_amount`）在 #115f9a ～ #d0f400 之间变化，点的大小根据出租车的总费用（`df.total_amount`）在 5 ～ 30 之间变化，点的不透明度为 1。
 
 ```python
 color_bound=[df.fare_amount.min(), df.fare_amount.max()]
@@ -165,7 +161,7 @@ arctern.plot_weighted_pointmap(ax,
 
 ### 透明热力图
 
-通过 Arctern 的 `vega_heatmap` 和 `heat_map_layer` 方法根据出租车运营数据绘制热力图。其中，每个位置的颜色由出租车的总费用（`df.total_amount`）决定。保存图片后，通过 Matplotlib 的 `imshow` 方法预览该图片。
+通过 Arctern 的 `vega_heatmap` 和 `heat_map_layer` 方法根据出租车运营数据绘制热力图。其中，每个位置的颜色由出租车的总费用（`df.total_amount`）决定。
 
 ```python
 head_vega = vega.vega_heatmap(1024, 
@@ -184,7 +180,7 @@ plt.imshow(mpimg.imread("/tmp/arctern_heatmap.png"))
 
 ### 热力图叠加地图背景
 
-通过 Matplotlib 的 `subplots` 方法创建一个图层。然后在该图层上使用 Arctern 的 `plot_heatmap` 方法根据出租车运营数据绘制带地图背景的热力图。其中，每个位置的颜色由出租车的总费用（`df.total_amount`）决定。
+使用 Arctern 的 `plot_heatmap` 方法根据出租车运营数据绘制带地图背景的热力图。其中，每个位置的颜色由出租车的总费用（`df.total_amount`）决定。
 
 ```python
 fig, ax = plt.subplots(figsize=(10, 6), dpi=200)
@@ -208,7 +204,7 @@ p2="POLYGON ((-73.9542329907899 40.7787670145087,-73.9545101860555 40.7783876598
 
 ### 透明轮廓图
 
-通过 Arctern 的 `vega_choroplethmap` 和 `choropleth_map_layer` 方法根据两个建筑物的轮廓描述（`p1`、`p2`）绘制轮廓图。保存图片后，通过 Matplotlib 的 `imshow` 方法预览该图片。
+通过 Arctern 的 `vega_choroplethmap` 和 `choropleth_map_layer` 方法根据两个建筑物的轮廓描述（`p1`、`p2`）绘制轮廓图。
 
 ```python
 choropleth_vega = vega.vega_choroplethmap(1024, 
@@ -229,7 +225,7 @@ plt.imshow(mpimg.imread("/tmp/arctern_choroplethmap.png"))
 
 ### 轮廓图叠加地图背景
 
-通过 Arctern 的 `plot_choroplethmap` 方法根据两个建筑物的轮廓描述（`p1`、`p2`）绘制带地图背景的轮廓图。
+使用 Arctern 的 `plot_choroplethmap` 方法根据两个建筑物的轮廓描述（`p1`、`p2`）绘制带地图背景的轮廓图。
 
 ```python
 fig, ax = plt.subplots(figsize=(10, 6), dpi=200)
@@ -247,7 +243,7 @@ arctern.plot_choroplethmap(ax,
 
 ## 图标图
 
-执行以下命令下载图标。你将用此图标绘制透明图标图和带地图背景的图标图。
+执行以下命令下载图标，你将用此图标绘制图标图。
 
 ```bash
 wget https://raw.githubusercontent.com/zilliztech/arctern-docs/master/img/icon/arctern-icon-small.png -o /tmp/arctern-logo.png
@@ -255,7 +251,7 @@ wget https://raw.githubusercontent.com/zilliztech/arctern-docs/master/img/icon/a
 
 ### 透明图标图
 
-通过 Arctern 的 `vega_icon` 和 `icon_viz_layer` 方法根据出租车运营数绘制图标图。其中，图标的位置为上车地点。保存图片后，通过 Matplotlib 的 `imshow` 方法预览该图片。
+通过 Arctern 的 `vega_icon` 和 `icon_viz_layer` 方法根据出租车运营数绘制图标图。其中，图标的位置为上车地点。
 
 ```python
 icon_vega = vega.vega_icon(1024, 
@@ -273,7 +269,7 @@ plt.imshow(mpimg.imread("/tmp/arctern_iconviz.png"))
 
 ### 图标图叠加地图背景
 
-通过 Arctern 的 `plot_iconviz` 方法根据出租车运营数绘制带地图背景的图标图。其中，图标的位置为上车地点。
+使用 Arctern 的 `plot_iconviz` 方法根据出租车运营数绘制带地图背景的图标图。其中，图标的位置为上车地点。
 
 ```python
 fig, ax = plt.subplots(figsize=(10, 6), dpi=200)
@@ -290,7 +286,7 @@ arctern.plot_iconviz(ax,
 
 ### 透明渔网图
 
-通过 Arctern 的 `vega_fishnetmap` 和 `fishnet_map_layer` 方法根据出租车运营数绘制图标图。其中，网点的位置为上车地点。保存图片后，通过 Matplotlib 的 `imshow` 方法预览该图片。
+使用 Arctern 的 `vega_fishnetmap` 和 `fishnet_map_layer` 方法根据出租车运营数绘制图标图。其中，网点的位置为上车地点。
 
 ```python
 fish_vega = vega.vega_fishnetmap(1024, 
@@ -311,7 +307,7 @@ plt.imshow(mpimg.imread("/tmp/arctern_fishnetmap.png"))
 
 ### 渔网图叠加地图背景
 
-通过 Arctern 的 `plot_fishnetmap` 方法根据出租车运营数绘制图标图。其中，网点的位置为上车地点。
+使用 Arctern 的 `plot_fishnetmap` 方法根据出租车运营数绘制渔网图。其中，网点的位置为上车地点。
 
 ```python
 fig, ax = plt.subplots(figsize=(10, 6), dpi=200)
