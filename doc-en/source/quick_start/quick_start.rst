@@ -1,6 +1,6 @@
 .. _quick_start:
 
-快速开始
+Quick Start
 ============
 
 .. toctree::

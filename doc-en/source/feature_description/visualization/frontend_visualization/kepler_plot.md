@@ -1,6 +1,6 @@
 # Visualizing Spatiotemporal Information via Kepler.gl
 
-[Kepler.gl](https://kepler.gl/) is a powerful open source web application for geospatial analytic visualizations. After importing Kepler.gl into Jupyter Notebook, you can get vivid and intuitive rendering of spatiotemporal data. This article introduces how to use Kepler.gl to display the spatiotemporal information output by Arctern.
+[Kepler.gl](https://kepler.gl/) is a powerful open source web application for geospatial analytic visualizations. After importing Kepler.gl into Jupyter Notebook, you can get vivid and intuitive rendering of spatiotemporal data. This article shows how to use Kepler.gl to display the spatiotemporal information output by Arctern.
 
 ## Installing Jupyter Notebook and Kepler.gl
 
