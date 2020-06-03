@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-30 14:26+0800\n"
+"POT-Creation-Date: 2020-06-03 10:46+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,7 +36,7 @@ msgid "Geometries in WKB form."
 msgstr ""
 
 #: arctern._wrapper_func.ST_PrecisionReduce:8 of
-msgid "The number of significant digits."
+msgid "The number to of ignificant digits."
 msgstr ""
 
 #: arctern._wrapper_func.ST_PrecisionReduce of
@@ -56,5 +56,8 @@ msgid "example"
 msgstr ""
 
 #~ msgid "The number to of ignificant digits."
+#~ msgstr ""
+
+#~ msgid "The number of significant digits."
 #~ msgstr ""
 

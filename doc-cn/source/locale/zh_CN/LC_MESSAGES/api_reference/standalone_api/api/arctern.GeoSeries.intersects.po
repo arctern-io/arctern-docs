@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.intersects.rst:2
+msgid "arctern.GeoSeries.intersects"
+msgstr ""
+
+#: arctern.GeoSeries.intersects:1 of
+msgid "Check whether each geometry intersects other (elementwise)."
+msgstr ""
+
+#: arctern.GeoSeries.intersects of
+msgid "参数"
+msgstr ""
+
+#: arctern.GeoSeries.intersects:4 of
+msgid ""
+"The geometries to test if is intersected. Can be scalar WKB formed bytes "
+"object, or a GeoSeries."
+msgstr ""
+
+#: arctern.GeoSeries.intersects:7 of
+msgid ""
+":rtype : Series(dtype: bool) :return: A Series with value True if "
+"intersected."
+msgstr ""
+
+#: arctern.GeoSeries.intersects of
+msgid "example"
+msgstr ""
+
+#: arctern.GeoSeries.intersects:19 of
+msgid "Alternatively other can be ca scalar bytes object."
+msgstr ""
+

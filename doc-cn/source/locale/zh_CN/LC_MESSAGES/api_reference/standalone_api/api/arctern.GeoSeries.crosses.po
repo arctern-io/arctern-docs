@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.crosses.rst:2
+msgid "arctern.GeoSeries.crosses"
+msgstr ""
+
+#: arctern.GeoSeries.crosses:1 of
+msgid "Check whether each geometry and other(elementwise) \"spatially cross\"."
+msgstr ""
+
+#: arctern.GeoSeries.crosses:3 of
+msgid ""
+"\"Spatially cross\" here means two geometries have some, but not all "
+"interior points in common. The intersection of the interiors of the "
+"geometries must not be the empty set and must have a dimensionality less "
+"than the maximum dimension of the two input geometries."
+msgstr ""
+
+#: arctern.GeoSeries.crosses of
+msgid "参数"
+msgstr ""
+
+#: arctern.GeoSeries.crosses:9 of
+msgid ""
+"The geometries to test if cross. Can be scalar WKB formed bytes object, "
+"or a GeoSeries."
+msgstr ""
+
+#: arctern.GeoSeries.crosses of
+msgid "返回类型"
+msgstr ""
+
+#: arctern.GeoSeries.crosses of
+msgid "返回"
+msgstr ""
+
+#: arctern.GeoSeries.crosses:13 of
+msgid "A Series with value True if each geometry crosses other."
+msgstr ""
+
+#: arctern.GeoSeries.crosses of
+msgid "example"
+msgstr ""
+

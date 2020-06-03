@@ -14,8 +14,6 @@ Welcome to explore Arctern if you are looking for a solution that integrates the
 * Advanced spatiotemporal data processing algorithms and models, such as trajectory analysis, electronic fence data processing, spatiotemporal data statistics, and spatiotemporal data mining.
 * Rendering and visualization of massive spatiotemporal data.
 * Spatio-temporal data analysis seamlessly integrated with Pandas ecology.
-* Spatio-temporal data analysis seamlessly integrated with Spark ecology.
-* Interactive analysis of spatiotemporal data based on SQL.
 * GPU accelerated geographic information processing.
 
 .. toctree::
