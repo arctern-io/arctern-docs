@@ -25,7 +25,7 @@ Attributes
    GeoSeries.length
    GeoSeries.is_simple
    GeoSeries.area
-   GeoSeries.geometry_type
+   GeoSeries.geom_type
    GeoSeries.centroid
    GeoSeries.convex_hull
    GeoSeries.npoints
@@ -54,8 +54,9 @@ Processing Geometry
    GeoSeries.precision_reduce
    GeoSeries.intersection
    GeoSeries.make_valid
-   GeoSeries.simplify_preserve_topology
+   GeoSeries.simplify
    GeoSeries.set_crs
+   GeoSeries.crs
    GeoSeries.to_crs
    GeoSeries.curve_to_line
 
@@ -86,7 +87,7 @@ Aggregation
 .. autosummary::
    :toctree: api/
 
-   GeoSeries.union_aggr
+   GeoSeries.unary_union
    GeoSeries.envelope_aggr
 
 Pandas Methods
