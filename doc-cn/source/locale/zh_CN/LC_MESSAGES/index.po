@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-30 14:26+0800\n"
+"POT-Creation-Date: 2020-06-03 10:46+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,14 +48,12 @@ msgid "与 Pandas 生态无缝集成的时空数据分析。"
 msgstr ""
 
 #: ../../source/index.rst:17
-msgid "与 Spark 生态无缝集成的时空数据分析。"
-msgstr ""
-
-#: ../../source/index.rst:18
-msgid "以 SQL 为基础的时空数据交互式分析。"
-msgstr ""
-
-#: ../../source/index.rst:19
 msgid "GPU 加速的地理信息处理。"
 msgstr ""
+
+#~ msgid "与 Spark 生态无缝集成的时空数据分析。"
+#~ msgstr ""
+
+#~ msgid "以 SQL 为基础的时空数据交互式分析。"
+#~ msgstr ""
 
