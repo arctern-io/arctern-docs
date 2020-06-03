@@ -14,14 +14,11 @@ Arctern 聚焦时空数据科学，目标是加速时空数据的处理、分析
 * 高级时空数据处理算法与模型，如轨迹分析、电子围栏数据处理、时空数据统计、时空数据挖掘等。
 * 海量时空数据的渲染与可视化。
 * 与 Pandas 生态无缝集成的时空数据分析。
-* 与 Spark 生态无缝集成的时空数据分析。
-* 以 SQL 为基础的时空数据交互式分析。
 * GPU 加速的地理信息处理。
 
 .. toctree::
    :maxdepth: 1       
 
-   overview
    quick_start/quick_start
    feature_description/feature_description
    api_reference/api_reference
