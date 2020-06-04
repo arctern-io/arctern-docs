@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "For each geometry, returns a geometry that represents all points whose "
 "distance from this geos is less than or equal to \"distance\"."
-msgstr ""
+msgstr "返回一个与给定的几何体的距离不大于“distance”的几何体。"
 
 #: arctern.GeoSeries.buffer of
 msgid "参数"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: arctern.GeoSeries.buffer:5 of
 msgid "he maximum distance of the returned geometry from each geometry."
-msgstr ""
+msgstr "返回的几何体与给定的几何体最大距离。"
 
 #: arctern.GeoSeries.buffer of
 msgid "返回类型"
@@ -45,9 +45,9 @@ msgstr ""
 
 #: arctern.GeoSeries.buffer:8 of
 msgid "Geometries."
-msgstr ""
+msgstr "几何体"
 
 #: arctern.GeoSeries.buffer of
 msgid "example"
-msgstr ""
+msgstr "例子"
 

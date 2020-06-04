@@ -49,5 +49,5 @@ msgstr ""
 
 #: arctern.GeoSeries.contains of
 msgid "example"
-msgstr ""
+msgstr "例子"
 

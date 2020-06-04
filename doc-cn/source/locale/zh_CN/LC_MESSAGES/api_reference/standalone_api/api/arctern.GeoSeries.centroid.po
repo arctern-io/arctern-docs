@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.centroid:1 of
 msgid "Compute the centroid of each geometry."
-msgstr ""
+msgstr "计算几何体的中心。"
 
 #: arctern.GeoSeries.centroid of
 msgid "返回类型"
@@ -35,9 +35,9 @@ msgstr ""
 
 #: arctern.GeoSeries.centroid:4 of
 msgid "The centroid of geometries."
-msgstr ""
+msgstr "几何体的中心"
 
 #: arctern.GeoSeries.centroid of
 msgid "example"
-msgstr ""
+msgstr "例子"
 

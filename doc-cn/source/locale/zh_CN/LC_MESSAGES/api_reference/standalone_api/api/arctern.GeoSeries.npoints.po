@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.npoints:1 of
 msgid "Calculates the points number for each geometry."
-msgstr ""
+msgstr "计算给定几何体中顶点/端点的数量。"
 
 #: arctern.GeoSeries.npoints of
 msgid "返回类型"
@@ -35,9 +35,9 @@ msgstr ""
 
 #: arctern.GeoSeries.npoints:4 of
 msgid "The number of points for each geometry."
-msgstr ""
+msgstr "几何体的点的数量。"
 
 #: arctern.GeoSeries.npoints of
 msgid "example"
-msgstr ""
+msgstr "例子"
 

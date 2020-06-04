@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "For each geometry, compute the smallest convex geometry that encloses all"
 " geometries in it."
-msgstr ""
+msgstr "计算包含给定几何体的最小凸几何体。"
 
 #: arctern.GeoSeries.convex_hull of
 msgid "返回类型"
@@ -37,9 +37,9 @@ msgstr ""
 
 #: arctern.GeoSeries.convex_hull:5 of
 msgid "Convex Geometries."
-msgstr ""
+msgstr "凸几何体"
 
 #: arctern.GeoSeries.convex_hull of
 msgid "example"
-msgstr ""
+msgstr "例子"
 

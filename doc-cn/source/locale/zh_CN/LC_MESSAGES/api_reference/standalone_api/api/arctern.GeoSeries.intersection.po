@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.intersection:1 of
 msgid "Calculate the point set intersection between each geometry and other."
-msgstr ""
+msgstr "检查两个几何体是否存在交集，即它们存在共享空间。"
 
 #: arctern.GeoSeries.intersection of
 msgid "参数"
@@ -33,7 +33,7 @@ msgstr ""
 msgid ""
 "The geometries to calculate the intersection point set between each "
 "geometry."
-msgstr ""
+msgstr "用于计算每两个几何体的交集的几何体。"
 
 #: arctern.GeoSeries.intersection of
 msgid "返回类型"
@@ -45,9 +45,9 @@ msgstr ""
 
 #: arctern.GeoSeries.intersection:8 of
 msgid "A GeoSeries contains geometries."
-msgstr ""
+msgstr "GeoSeries 包含几何体。"
 
 #: arctern.GeoSeries.intersection of
 msgid "example"
-msgstr ""
+msgstr "例子"
 

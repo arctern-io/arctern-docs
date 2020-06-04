@@ -25,13 +25,13 @@ msgstr ""
 msgid ""
 "Create a valid representation of each geometry without losing any of the "
 "input vertices."
-msgstr ""
+msgstr "在不删除任何顶点的情况下，将输入的几何体构建为一个合法的几何体。"
 
 #: arctern.GeoSeries.make_valid:3 of
 msgid ""
 "If the geometry is already-valid, then nothing will be done. If the "
 "geometry can't be made to valid, it will be set to None value."
-msgstr ""
+msgstr "如果几何体本来就是合法的，则什么都不做。如果几何体不能被构造为合法的几何体，它将被设为 None 值。"
 
 #: arctern.GeoSeries.make_valid of
 msgid "返回类型"
@@ -43,9 +43,9 @@ msgstr ""
 
 #: arctern.GeoSeries.make_valid:7 of
 msgid "Geometries that are made to valid."
-msgstr ""
+msgstr "被构造为合法的几何体。"
 
 #: arctern.GeoSeries.make_valid of
 msgid "example"
-msgstr ""
+msgstr "例子"
 

@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.area:1 of
 msgid "Calculate the 2D Cartesian (planar) area of each geometry."
-msgstr ""
+msgstr "计算几何体的二维笛卡尔（平面）面积。"
 
 #: arctern.GeoSeries.area of
 msgid "返回类型"
@@ -35,9 +35,9 @@ msgstr ""
 
 #: arctern.GeoSeries.area:4 of
 msgid "The area of each geometry."
-msgstr ""
+msgstr "几何体的面积"
 
 #: arctern.GeoSeries.area of
 msgid "examples"
-msgstr ""
+msgstr "例子"
 

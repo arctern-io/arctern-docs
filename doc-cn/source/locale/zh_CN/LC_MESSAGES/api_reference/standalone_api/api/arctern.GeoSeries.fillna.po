@@ -23,5 +23,5 @@ msgstr ""
 
 #: arctern.GeoSeries.fillna:1 of
 msgid "Fill NA values with a geometry, which can be WKT or WKB formed."
-msgstr ""
+msgstr "给 NA 值填入几何体，可为 WKT 或 WKB 格式的。"
 

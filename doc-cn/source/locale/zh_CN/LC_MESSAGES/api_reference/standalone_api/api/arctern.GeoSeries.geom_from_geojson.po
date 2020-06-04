@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.geom_from_geojson:1 of
 msgid "Construct geometry from the GeoJSON representation string."
-msgstr ""
+msgstr "根据 GeoJson 字符串构造几何体。"
 
 #: arctern.GeoSeries.geom_from_geojson of
 msgid "参数"
@@ -31,11 +31,11 @@ msgstr ""
 
 #: arctern.GeoSeries.geom_from_geojson:4 of
 msgid "Geometries in json format."
-msgstr ""
+msgstr "Json 格式的几何体。"
 
 #: arctern.GeoSeries.geom_from_geojson:7 of
 msgid "Must be SRID format string."
-msgstr ""
+msgstr "必须为 SRID 格式字符串。"
 
 #: arctern.GeoSeries.geom_from_geojson of
 msgid "返回类型"
@@ -47,9 +47,9 @@ msgstr ""
 
 #: arctern.GeoSeries.geom_from_geojson:10 of
 msgid "A GeoSeries contains geometries."
-msgstr ""
+msgstr "GeoSeries 包含 几何体。"
 
 #: arctern.GeoSeries.geom_from_geojson of
 msgid "example"
-msgstr ""
+msgstr "例子"
 

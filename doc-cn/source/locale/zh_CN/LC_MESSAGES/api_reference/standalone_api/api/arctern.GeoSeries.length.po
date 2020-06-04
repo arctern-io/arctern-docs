@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.length:1 of
 msgid "Calculate the length of each geometry."
-msgstr ""
+msgstr "计算几何体的长度。"
 
 #: arctern.GeoSeries.length of
 msgid "返回类型"
@@ -35,9 +35,9 @@ msgstr ""
 
 #: arctern.GeoSeries.length:4 of
 msgid "The length of each geometry in the GeoSeries."
-msgstr ""
+msgstr "几何体的长度在 GeoSeries。"
 
 #: arctern.GeoSeries.length of
 msgid "examples"
-msgstr ""
+msgstr "例子"
 
