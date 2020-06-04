@@ -12,7 +12,7 @@ Except for utilizing traditional web rendering tools to visualize graphical data
 
 ## Comparison of rendering performance between Arctern and Kepler.gl
 
-When processing different amount of data, the rendering times of Arctern (CPU and GPU version) and Kepler.gl are as follows:
+When processing different amount of data, the rendering time of Arctern (CPU and GPU version) and Kepler.gl are as follows:
 
 | Amount of data  |   10 | 1e<sup>6</sup> | 2e<sup>6</sup> | 3e<sup>6</sup> | 4e<sup>6</sup> | 5e<sup>6</sup> | 6e<sup>6</sup> | 7e<sup>6</sup> | 8e<sup>6</sup> | 9e<sup>6</sup> | 10e<sup>6</sup> |
 | --------------- | ---: | :------------: | :------------: | :------------: | :------------: | :------------: | :------------: | :------------: | :------------: | :------------: | :-------------: |
@@ -20,7 +20,7 @@ When processing different amount of data, the rendering times of Arctern (CPU an
 | **Arctern CPU** | 0.05 |      1.45      |      2.98      |      4.32      |      5.81      |      7.02      |      8.31      |     10.36      |     11.71      |     12.72      |      13.65      |
 | **Arctern GPU** | 0.05 |      0.81      |      1.71      |      2.45      |      3.24      |      4.08      |      4.94      |      6.00      |      6.69      |      7.77      |      8.59       |
 
-> Time unit of data in the above table: second
+> **Note:** Time unit of data in the above table: second
 
 Here is a line chart correspondent with the above data:
 
