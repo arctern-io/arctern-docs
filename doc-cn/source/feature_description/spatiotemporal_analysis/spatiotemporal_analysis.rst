@@ -12,3 +12,4 @@
    convert_from_and_to_geopandas_geoseries
    geometric_manipulation
    aggregation
+   nearest_road
