@@ -6,7 +6,7 @@
 
 目前，Arctern 包含 [OGC](https://en.wikipedia.org/wiki/Open_Geospatial_Consortium) 标准中常用的 API，涵盖几何对象的构造、访问、关系分析，以及度量。因此，任何接受 OGC 标准格式输入的第三方 Web 渲染工具都可以为 Arctern 所用，比如 [Kepler.gl](https://kepler.gl/)。
 
-根据 [Kepler.gl 用户手册](https://docs.kepler.gl/docs/user-guides)，Kepler.gl 接收 OGC 标准的 [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) 数据作为输入。因此，使用 Arctern 的 `ST_AsText` 方法将时空数据从 Arctern 的内部数据格式转换成 WKT 格式之后，你即可调用 Kepler.gl 实现数据渲染。
+根据 [Kepler.gl 用户手册](https://docs.kepler.gl/docs/user-guides)，Kepler.gl 接收 OGC 标准的 [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) 数据作为输入。因此，使用 Arctern 的 `GeoSeries.to_wkt` 方法将时空数据从 Arctern 的内部数据格式转换成 WKT 格式之后，你即可调用 Kepler.gl 实现数据渲染。
 
 除了调用传统的 Web 渲染工具实现图形化展示，Arctern 本身提供服务器端的渲染。Arctern 支持渲染大规模数据的轮廓图、热力图、散点图、图标图、渔网图等。另外 Arctern 的服务器端渲染支持 GPU 加速。
 
