@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries:1 of
 msgid "A Series to store geometry data which is WKB formed bytes object."
-msgstr ""
+msgstr "Series 存储几何体，此几何体是 WKB 格式的字节对象。"
 
 #: arctern.GeoSeries of
 msgid "参数"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: arctern.GeoSeries:4 of
 msgid "Geometries to store, which can be WKB formed bytes or WKT formed string."
-msgstr ""
+msgstr "用于存储的几何体可以是 WKB 格式的字节对象或 WKT 格式的字符串。"
 
 #: arctern.GeoSeries:7 of
 msgid ""
@@ -43,19 +43,19 @@ msgstr ""
 
 #: arctern.GeoSeries:15 of
 msgid "The name to give to the Series."
-msgstr ""
+msgstr "赋给 Series 的名称"
 
 #: arctern.GeoSeries:18 of
 msgid "The coordinate system for the GeoSeries, now only support SRID form."
-msgstr ""
+msgstr "GeoSeries 的参考坐标系现在只支持 SRID 格式。"
 
 #: arctern.GeoSeries:20 of
 msgid "Additional arguments passed to the GeoSeries constructor, e.g. ``copy``"
-msgstr ""
+msgstr "传到 GeoSeries 构造器中的其他参数，例如 ``copy``。"
 
 #: arctern.GeoSeries of
 msgid "example"
-msgstr ""
+msgstr "例子"
 
 #: arctern.GeoSeries.__init__:1 of
 msgid "Initialize self.  See help(type(self)) for accurate signature."
@@ -63,7 +63,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:13
 msgid "Methods"
-msgstr ""
+msgstr "方法"
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:53:<autosummary>:1
 msgid ""

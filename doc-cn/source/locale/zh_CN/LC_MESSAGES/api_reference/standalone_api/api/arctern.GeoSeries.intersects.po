@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.intersects:1 of
 msgid "Check whether each geometry intersects other (elementwise)."
-msgstr ""
+msgstr "检查两个几何体是否存在交集。"
 
 #: arctern.GeoSeries.intersects of
 msgid "参数"
@@ -33,7 +33,7 @@ msgstr ""
 msgid ""
 "The geometries to test if is intersected. Can be scalar WKB formed bytes "
 "object, or a GeoSeries."
-msgstr ""
+msgstr "用于测试是否存在交集的几何体。它可以是标量 WKB 格式的字节对象或 GeoSeries。"
 
 #: arctern.GeoSeries.intersects:7 of
 msgid ""
@@ -43,9 +43,9 @@ msgstr ""
 
 #: arctern.GeoSeries.intersects of
 msgid "example"
-msgstr ""
+msgstr "例子"
 
 #: arctern.GeoSeries.intersects:19 of
 msgid "Alternatively other can be ca scalar bytes object."
-msgstr ""
+msgstr "或者其他几何体可为标量字节对象。"
 

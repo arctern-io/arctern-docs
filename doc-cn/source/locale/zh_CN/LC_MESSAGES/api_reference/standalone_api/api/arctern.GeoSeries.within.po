@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.within:1 of
 msgid "Check whether each geometry is within other (elementwise)."
-msgstr ""
+msgstr "检查几何体是否在其他几何体内部。"
 
 #: arctern.GeoSeries.within of
 msgid "参数"
@@ -33,7 +33,7 @@ msgstr ""
 msgid ""
 "The geometries to test if each geometry is within. Can be scalar WKB "
 "formed bytes object, or a GeoSeries."
-msgstr ""
+msgstr "用于测试几何体是否在内部的几何体。它可以是标量 WKB 格式的字节对象或 GeoSeries。"
 
 #: arctern.GeoSeries.within of
 msgid "返回类型"
@@ -45,9 +45,9 @@ msgstr ""
 
 #: arctern.GeoSeries.within:9 of
 msgid "A Series with value True if each geometry is within other."
-msgstr ""
+msgstr "返回值为 True 的 Series 表示每个几何体都在其他几何体内部。"
 
 #: arctern.GeoSeries.within of
 msgid "example"
-msgstr ""
+msgstr "例子"
 

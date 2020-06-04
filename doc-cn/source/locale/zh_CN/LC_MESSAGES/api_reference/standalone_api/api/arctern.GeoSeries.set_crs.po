@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.set_crs:1 of
 msgid "Set the coordinate system for the GeoSeries."
-msgstr ""
+msgstr "为 GeoSeries 设置坐标系。"
 
 #: arctern.GeoSeries.set_crs of
 msgid "参数"
@@ -31,5 +31,5 @@ msgstr ""
 
 #: arctern.GeoSeries.set_crs:4 of
 msgid "SRID(spatial reference identifier) form."
-msgstr ""
+msgstr "SRID（空间参考标识符）格式"
 

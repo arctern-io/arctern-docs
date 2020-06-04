@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.to_wkb:1 of
 msgid "Transform each geometry to WKB formed bytes object."
-msgstr ""
+msgstr "转换几何体为 WKB 格式的字节对象。"
 
 #: arctern.GeoSeries.to_wkb of
 msgid "返回类型"
@@ -35,5 +35,5 @@ msgstr ""
 
 #: arctern.GeoSeries.to_wkb:4 of
 msgid "A Series contains geometries as WKB formed bytes object."
-msgstr ""
+msgstr "由 WKB 格式的字节对象构造的多个几何体组成 Series。"
 

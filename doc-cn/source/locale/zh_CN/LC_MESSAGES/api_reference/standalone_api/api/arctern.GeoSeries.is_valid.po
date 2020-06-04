@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.is_valid:1 of
 msgid "Check if each geometry is of valid geometry format."
-msgstr ""
+msgstr "检查几何体是否合法。"
 
 #: arctern.GeoSeries.is_valid of
 msgid "返回类型"
@@ -35,9 +35,9 @@ msgstr ""
 
 #: arctern.GeoSeries.is_valid:4 of
 msgid "True value for geometries that are valid, False otherwise."
-msgstr ""
+msgstr "如果几何体是合法的，返回 true，反之 false。"
 
 #: arctern.GeoSeries.is_valid of
 msgid "examples"
-msgstr ""
+msgstr "例子"
 

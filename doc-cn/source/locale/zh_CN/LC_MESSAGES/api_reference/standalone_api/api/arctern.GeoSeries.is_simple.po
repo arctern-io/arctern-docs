@@ -23,13 +23,13 @@ msgstr ""
 
 #: arctern.GeoSeries.is_simple:1 of
 msgid "Check whether each geometry is \"simple\"."
-msgstr ""
+msgstr "检查几何体是否是“简单”的。"
 
 #: arctern.GeoSeries.is_simple:3 of
 msgid ""
 "\"Simple\" here means that a geometry has no anomalous geometric points, "
 "such as self intersection or self tangency."
-msgstr ""
+msgstr "这里的“简单”指几何体没有异常点，例如自相交或者自相切。"
 
 #: arctern.GeoSeries.is_simple of
 msgid "返回类型"
@@ -41,9 +41,9 @@ msgstr ""
 
 #: arctern.GeoSeries.is_simple:7 of
 msgid "True for geometries that are simple, False otherwise."
-msgstr ""
+msgstr "如果几何体是“简单”的，返回 true，反之返回 false。"
 
 #: arctern.GeoSeries.is_simple of
 msgid "examples"
-msgstr ""
+msgstr "例子"
 
