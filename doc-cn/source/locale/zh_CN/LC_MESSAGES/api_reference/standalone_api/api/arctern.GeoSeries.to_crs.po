@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Transform each geometry to a different coordinate reference system. The "
 "``crs`` attribute on the current GeoSeries must be set."
-msgstr ""
+msgstr "转换几何体的坐标参考系，必须设置当前的 GeoSeries 的 ``crs`` 属性。"
 
 #: arctern.GeoSeries.to_crs of
 msgid "参数"
@@ -35,7 +35,7 @@ msgstr ""
 msgid ""
 "Coordinate Reference System of the geometry objects. Must be SRID formed,"
 " e.g. \"EPSG:4326\""
-msgstr ""
+msgstr "几何体的坐标参考系必须是 SRID 格式的，例如 \"EPSG:4326\"。"
 
 #: arctern.GeoSeries.to_crs of
 msgid "返回类型"
@@ -47,9 +47,9 @@ msgstr ""
 
 #: arctern.GeoSeries.to_crs:9 of
 msgid "Geometries with transformed coordinate reference system."
-msgstr ""
+msgstr "具有转换的坐标参考系的几何体。"
 
 #: arctern.GeoSeries.to_crs of
 msgid "example"
-msgstr ""
+msgstr "例子"
 

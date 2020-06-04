@@ -26,7 +26,7 @@ msgid ""
 "Construct polygon(rectangle) geometries from arr_min_x, arr_min_y, "
 "arr_max_x, arr_max_y and special coordinate system. The edges of polygon "
 "are parallel to coordinate axis."
-msgstr ""
+msgstr "根据给定的参数和特殊坐标参考系构造矩形几何体，且该矩形的边与坐标轴平行。"
 
 #: arctern.GeoSeries.polygon_from_envelope of
 msgid "参数"
@@ -34,23 +34,23 @@ msgstr ""
 
 #: arctern.GeoSeries.polygon_from_envelope:5 of
 msgid "The minimum value of x coordinate of the rectangles."
-msgstr ""
+msgstr "矩形横坐标的最小值。"
 
 #: arctern.GeoSeries.polygon_from_envelope:8 of
 msgid "The minimum value of y coordinate of the rectangles."
-msgstr ""
+msgstr "矩形纵坐标的最小值。"
 
 #: arctern.GeoSeries.polygon_from_envelope:11 of
 msgid "The maximum value of x coordinate of the rectangles."
-msgstr ""
+msgstr "矩形横坐标的最大值。"
 
 #: arctern.GeoSeries.polygon_from_envelope:14 of
 msgid "The maximum value of y coordinate of the rectangles."
-msgstr ""
+msgstr "矩形纵坐标的最大值。"
 
 #: arctern.GeoSeries.polygon_from_envelope:17 of
 msgid "Must be SRID format string."
-msgstr ""
+msgstr "必须是 SRID 格式的字符串。"
 
 #: arctern.GeoSeries.polygon_from_envelope of
 msgid "返回类型"
@@ -62,9 +62,9 @@ msgstr ""
 
 #: arctern.GeoSeries.polygon_from_envelope:20 of
 msgid "A GeoSeries contains geometries."
-msgstr ""
+msgstr "GeoSeries 包含几何体。"
 
 #: arctern.GeoSeries.polygon_from_envelope of
 msgid "example"
-msgstr ""
+msgstr "例子"
 

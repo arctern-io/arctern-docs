@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.point:1 of
 msgid "Construct Point geometries according to the coordinates."
-msgstr ""
+msgstr "根据输入的横纵坐标构建 point 对象。"
 
 #: arctern.GeoSeries.point of
 msgid "参数"
@@ -31,15 +31,15 @@ msgstr ""
 
 #: arctern.GeoSeries.point:4 of
 msgid "Abscissa of the point."
-msgstr ""
+msgstr "点的横坐标"
 
 #: arctern.GeoSeries.point:7 of
 msgid "Ordinate of the point."
-msgstr ""
+msgstr "点的纵坐标"
 
 #: arctern.GeoSeries.point:10 of
 msgid "Must be SRID format string."
-msgstr ""
+msgstr "必须是 SRID 格式的字符串。"
 
 #: arctern.GeoSeries.point of
 msgid "返回类型"
@@ -51,9 +51,9 @@ msgstr ""
 
 #: arctern.GeoSeries.point:13 of
 msgid "A GeoSeries contains point geometries."
-msgstr ""
+msgstr "GeoSeries 包含 point 对象。"
 
 #: arctern.GeoSeries.point of
 msgid "example"
-msgstr ""
+msgstr "例子"
 

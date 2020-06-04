@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Compute the double-precision minimum bounding box geometry for the union "
 "of all geometries."
-msgstr ""
+msgstr "计算包含几何体集合的最小矩形边界范围，且该矩形的边与坐标轴平行。"
 
 #: arctern.GeoSeries.envelope_aggr of
 msgid "返回类型"
@@ -37,9 +37,9 @@ msgstr ""
 
 #: arctern.GeoSeries.envelope_aggr:4 of
 msgid "A GeoSeries contains only one geometry."
-msgstr ""
+msgstr "GeoSeries 只包含一个几何体。"
 
 #: arctern.GeoSeries.envelope_aggr of
 msgid "example"
-msgstr ""
+msgstr "例子"
 

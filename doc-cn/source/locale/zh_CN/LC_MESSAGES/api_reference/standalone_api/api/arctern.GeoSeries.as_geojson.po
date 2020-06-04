@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.as_geojson:1 of
 msgid "Transform each to GeoJSON format string."
-msgstr ""
+msgstr "转换为 GeoJSON 格式的字符串。"
 
 #: arctern.GeoSeries.as_geojson of
 msgid "返回类型"
@@ -35,9 +35,9 @@ msgstr ""
 
 #: arctern.GeoSeries.as_geojson:4 of
 msgid "A Series contains geometries as GeoJSON formed string."
-msgstr ""
+msgstr "由 GeoJSON 格式的字符串构造的多个几何体组成 Series。"
 
 #: arctern.GeoSeries.as_geojson of
 msgid "example"
-msgstr ""
+msgstr "例子"
 

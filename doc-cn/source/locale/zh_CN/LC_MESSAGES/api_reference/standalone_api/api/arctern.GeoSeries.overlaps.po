@@ -23,13 +23,13 @@ msgstr ""
 
 #: arctern.GeoSeries.overlaps:1 of
 msgid "Check whether each geometry \"spatially overlaps\" other."
-msgstr ""
+msgstr "检查两个几何体是否“交叠”。"
 
 #: arctern.GeoSeries.overlaps:3 of
 msgid ""
 "\"Spatially overlap\" here means two geometries intersect but one does "
 "not completely contain another."
-msgstr ""
+msgstr "“交叠”表示它们相交且其中任何一个均不完全包含另一个。"
 
 #: arctern.GeoSeries.overlaps of
 msgid "参数"
@@ -39,7 +39,7 @@ msgstr ""
 msgid ""
 "The geometries to test if each geometry overlaps. Can be scalar WKB "
 "formed bytes object, or a GeoSeries."
-msgstr ""
+msgstr "用来测试几何体是否“交叠”的几何体。它可为标量 WKB 格式的字节对象或 GeoSeries。"
 
 #: arctern.GeoSeries.overlaps of
 msgid "返回类型"
@@ -51,9 +51,9 @@ msgstr ""
 
 #: arctern.GeoSeries.overlaps:11 of
 msgid "A Series with value True if each geometry overlaps other."
-msgstr ""
+msgstr "返回值为 True 的 Series 表示每个几何体都“交叠”。"
 
 #: arctern.GeoSeries.overlaps of
 msgid "example"
-msgstr ""
+msgstr "例子"
 

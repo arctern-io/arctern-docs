@@ -23,11 +23,11 @@ msgstr ""
 
 #: arctern.GeoSeries.hausdorff_distance:1 of
 msgid "Returns the Hausdorff distance between each geometry and other."
-msgstr ""
+msgstr "返回每个几何体与其他几何体之间的 Hausdorff 距离。"
 
 #: arctern.GeoSeries.hausdorff_distance:3 of
 msgid "This is a measure of how similar or dissimilar 2 geometries are."
-msgstr ""
+msgstr "此距离用于度量两个几何体之间的相似度。"
 
 #: arctern.GeoSeries.hausdorff_distance of
 msgid "参数"
@@ -35,7 +35,7 @@ msgstr ""
 
 #: arctern.GeoSeries.hausdorff_distance:7 of
 msgid "The geometries to calculate the hausdorff distance to each geometry."
-msgstr ""
+msgstr "用于计算每两个几何体之间的 Hausdorff 距离的几何体。"
 
 #: arctern.GeoSeries.hausdorff_distance of
 msgid "返回类型"
@@ -45,9 +45,9 @@ msgstr ""
 msgid ""
 ":return : A Series contains the hausdorff distance between each geometry "
 "and other."
-msgstr ""
+msgstr "Series 包含每两个几何体之间的 Hausdorff 距离。"
 
 #: arctern.GeoSeries.hausdorff_distance of
 msgid "example"
-msgstr ""
+msgstr "例子"
 
