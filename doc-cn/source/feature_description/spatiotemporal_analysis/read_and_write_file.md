@@ -6,20 +6,19 @@ Arctern 继承 pandas 的文件读写接口，支持读写数据类型为 [WKT](
 
 ### WKT 和 WKB 格式
 
-本例使用 **wkt_geos.csv** 文件演示如何从文件读取 WKT 和 WKB 数据。此文件主要定义了四个 WKT 格式的几何体对象，包括一个点（POINT）和三个多边形（POLYGON）。
+本例使用 **wkt_geos.csv** 文件演示如何从文件读取 WKT 和 WKB 数据。此文件主要定义了四个 WKT 格式的几何体对象，包括一个点（POINT）和三个多边形（POLYGON）。wkt_geos.csv 文件内容如下：
 
-首先，使用 pandas 的 `read_csv` 方法导入文件并构造 pandas.Series 对象 `data_wkt`：
-
-```python
-'''
-wkt_geos.csv 文件内容：
+```
 geos
 POINT (30 10)
 POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))
 POLYGON ((1 2, 3 4, 5 6, 1 2))
 POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
-'''
+```
 
+首先，使用 pandas 的 `read_csv` 方法导入文件并构造 pandas.Series 对象 `data_wkt`：
+
+```python
 >>> import pandas as pd
 >>> import arctern
 >>> 
@@ -63,20 +62,20 @@ dtype: bool
 
 ### GeoJson 格式
 
-本例使用 **geos.json** 文件演示如何从文件读取 GeoJson 数据。此文件主要定义了四个 WKT 格式的几何体对象，包括一个点（POINT）和三个多边形（POLYGON）。
+本例使用 **geos.json** 文件演示如何从文件读取 GeoJson 数据。此文件主要定义了四个 WKT 格式的几何体对象，包括一个点（POINT）和三个多边形（POLYGON）。geos.json 文件内容如下：
 
-首先，使用 pandas 的 `read_json` 方法导入文件并构造 pandas.Series 对象 `data_json`：
-
-```python
-'''
-geos.json 文件内容：
+```
 {
     "0":"{ \"type\": \"Point\", \"coordinates\": [ 30.0, 10.0 ] }",
     "1":"{ \"type\": \"Polygon\", \"coordinates\": [ [ [ 30.0, 10.0 ], [ 40.0, 40.0 ], [ 20.0, 40.0 ], [ 10.0, 20.0 ], [ 30.0, 10.0 ] ] ] }",
     "2":"{ \"type\": \"Polygon\", \"coordinates\": [ [ [ 1.0, 2.0 ], [ 3.0, 4.0 ], [ 5.0, 6.0 ], [ 1.0, 2.0 ] ] ] }",
     "3":"{ \"type\": \"Polygon\", \"coordinates\": [ [ [ 1.0, 1.0 ], [ 3.0, 1.0 ], [ 3.0, 3.0 ], [ 1.0, 3.0 ], [ 1.0, 1.0 ] ] ] }"
 }
-'''
+```
+
+首先，使用 pandas 的 `read_json` 方法导入文件并构造 pandas.Series 对象 `data_json`：
+
+```python
 >>> df = pd.read_json("</path/to/geos.json>",orient='index')
 >>> data_json = df[0]
 >>> print(data_json)
