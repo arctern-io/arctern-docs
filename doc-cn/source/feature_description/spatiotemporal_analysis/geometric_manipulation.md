@@ -4,7 +4,7 @@ Arctern 实现了多个符合 OGC 标准的 GIS 处理函数。它们被封装�
 
 ## GeoSeries.length
 
-* **功能：** 计算 GeoSeries 对象中每个几何体的长度。如果几何体不是  LineString 和 MultiLineString 类型的几何体， 则它的长度为 0 。
+* **功能：** 计算 GeoSeries 对象中每个几何体的长度。如果几何体不是 LineString 和 MultiLineString 类型的几何体， 则它的长度为 0 。
 * **返回：** 浮点型的 pandas.Series
 
 ```python
