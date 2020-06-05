@@ -1,6 +1,6 @@
 .. _kepler_visualization:
 
-前端渲染
+Front-End Visualization
 ============
 
 .. toctree::

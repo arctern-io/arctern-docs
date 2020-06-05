@@ -1,12 +1,12 @@
-# 与 GeoPandas GeoSeries 互相转换
+# Convert with GeoPandas GeoSeries
 
-Arctern 可以与 GeoPandas 生态无缝衔接。通过灵活切换 Arctern GeoSeries 与 GeoPandas GeoSeries，你可以提高空间地理信息的处理效率。例如，在大数据量的场景下，GeoPandas 的运行速度不够理想，而 Arctern 对 GeoSeries 的部分功能进行了 GPU 加速。因此，你可以把 GeoPandas GeoSeries 转为 Arctern GeoSeries，发挥 Arctern 的运算加速能力。
+Arctern can seamlessly connect with GeoPandas ecology. By flexibly switching between Arctern GeoSeries and GeoPandas GeoSeries, you can improve the processing efficiency of spatial geographic information. For example, GeoPandas does not perform well in scenarios of big data, while Arctern shows more promising results by implementing GPU acceleration to some of the GeoSeries funtions. Therefore, you can convert GeoPandas GeoSeries to Arctern GeoSeries to take advantage of Arctern's computing speed.
 
-本文档介绍如何在 Arctern GeoSeries 与 GeoPandas GeoSeries 之间进行转换。
+This article describes how to convert between Arctern GeoSeries and GeoPandas GeoSeries.
 
-## 构造 Arctern GeoSeries
+## Construct Arctern GeoSeries
 
-构造一个 Arctern GeoSeries 对象 `arctern_geoseries`。
+Construct an Arctern GeoSeries object `arctern_geoseries`.
 
 ```python
 >>> import arctern
@@ -18,9 +18,9 @@ Arctern 可以与 GeoPandas 生态无缝衔接。通过灵活切换 Arctern GeoS
 dtype: GeoDtype
 ```
 
-## 将 Arctern GeoSeries 转换为 GeoPandas GeoSeries
+## Convert Arctern GeoSeries to GeoPandas GeoSeries
 
-使用 Arctern GeoSeries 的 `to_geopandas` 方法将 Arctern GeoSeries 转为 GeoPandas GeoSeries。
+Use the `to_geopandas` method of Arctern GeoSeries to convert Arctern GeoSeries to GeoPandas GeoSeries.
 
 <!-- link: [to_geopandas](/path/to/to_geopandas) -->
 
@@ -31,9 +31,9 @@ dtype: GeoDtype
 dtype: geometry
 ```
 
-## 将 GeoPandas GeoSeries 转换为 Arctern GeoSeries
+## Convert GeoPandas GeoSeries to Arctern GeoSeries
 
-使用 Arctern GeoSeries 的 `from_geopandas` 方法将 GeoPandas GeoSeries 转为 Arctern GeoSeries。
+Use the `from_geopandas` method of Arctern GeoSeries to convert GeoPandas GeoSeries to Arctern GeoSeries.
 
 <!-- link: [from_geopandas](/path/to/from_geopandas) -->
 
