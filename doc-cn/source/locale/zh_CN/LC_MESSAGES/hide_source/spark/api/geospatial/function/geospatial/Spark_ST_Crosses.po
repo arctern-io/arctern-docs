@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-26 15:43+0800\n"
+"POT-Creation-Date: 2020-06-05 10:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,37 +21,33 @@ msgstr ""
 msgid "ST_Crosses"
 msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Crosses:1 of
-msgid ""
-"Check whether geometries \"spatially cross\". \"Spatially cross\" here "
-"means two geometries have some, but not all interior points in common. "
-"The intersection of the interiors of the geometries must not be the empty"
-" set and must have a dimensionality less than the maximum dimension of "
-"the two input geometries."
-msgstr ""
+#~ msgid ""
+#~ "Check whether geometries \"spatially cross\"."
+#~ " \"Spatially cross\" here means two "
+#~ "geometries have some, but not all "
+#~ "interior points in common. The "
+#~ "intersection of the interiors of the "
+#~ "geometries must not be the empty "
+#~ "set and must have a dimensionality "
+#~ "less than the maximum dimension of "
+#~ "the two input geometries."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Crosses of
-msgid "参数"
-msgstr ""
+#~ msgid "参数"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Crosses:7
-#: arctern_pyspark._wrapper_func.ST_Crosses:10 of
-msgid "Geometry"
-msgstr ""
+#~ msgid "Geometry"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Crosses of
-msgid "返回类型"
-msgstr ""
+#~ msgid "返回类型"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Crosses of
-msgid "返回"
-msgstr ""
+#~ msgid "返回"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Crosses:13 of
-msgid "True if geometry \"geo1\" crosses geometry \"geo2\"."
-msgstr ""
+#~ msgid "True if geometry \"geo1\" crosses geometry \"geo2\"."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Crosses of
-msgid "example"
-msgstr ""
+#~ msgid "example"
+#~ msgstr ""
 

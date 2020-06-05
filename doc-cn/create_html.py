@@ -1,23 +1,5 @@
 import os
 
-def replace(source_api_path,src_prefix,dst_prefix):
-    for html_file in os.listdir(source_api_path):
-        if html_file.endswith('.html'):
-           with open(source_api_path + os.sep + html_file, 'r') as f:
-                contents = f.read()
-           contents = contents.replace(src_prefix, dst_prefix)
-           if html_file == "Spark_ST_GeomFromGeoJSON.html" or html_file == "ST_GeomFromGeoJSON.html":
-               contents = contents.replace("&quot;{&quot","&quot;{\\&quot")
-               contents = contents.replace(">type<",">type\\<")
-               contents = contents.replace("&quot;:&quot","&quot;:\\&quot")
-               contents = contents.replace(">Point<",">Point\\<")
-               contents = contents.replace("&quot;,&quot","&quot;,\\&quot")
-               contents = contents.replace(">coordinates<",">coordinates\\<")
-               contents = contents.replace(">LineString<",">LineString\\<")
-               contents = contents.replace(">Polygon<",">Polygon\\<")
-           with open(source_api_path + os.sep + html_file, 'w') as f:
-                f.write(contents)
-
 def ignore_python_prompt():
     with open("build/html/_static/pygments.css", 'r') as f:
                 contents = f.read()
@@ -57,32 +39,4 @@ if __name__ == "__main__":
     os.system('make gettext')
     os.system('make html')
     delete_content(path)
-
-    # Will be deprecated
-
-    # source_api_path = 'build/html/api/pandas_api/geospatial/function/aggr'
-    # src_prefix = '>arctern._wrapper_func.<'
-    # dst_prefix = '>arctern.<'
-    # replace(source_api_path,src_prefix,dst_prefix)
-    #
-    # source_api_path = 'build/html/api/pandas_api/geospatial/function/geospatial'
-    # replace(source_api_path,src_prefix,dst_prefix)
-    #
-    # source_api_path = 'build/html/api/pandas_api/render/function/plot'
-    # src_prefix = '>arctern._plot.<'
-    # replace(source_api_path,src_prefix,dst_prefix)
-
-    # source_api_path = 'build/html/api/spark_api/geospatial/function/aggr'
-    # dst_prefix = '>arctern_pyspark.<'
-    # replace(source_api_path,src_prefix,dst_prefix)
-    #
-    # source_api_path = 'build/html/api/spark_api/geospatial/function/geospatial'
-    # src_prefix = '>arctern_pyspark._wrapper_func.<'
-    # dst_prefix = '>arctern_pyspark.<'
-    # replace(source_api_path,src_prefix,dst_prefix)
-    #
-    # source_api_path = 'build/html/api/spark_api/register/function'
-    # src_prefix = '>arctern_pyspark.register.<'
-    # dst_prefix = '>arctern_pyspark.<'
-    # replace(source_api_path,src_prefix,dst_prefix)
-    # ignore_python_prompt()
+    ignore_python_prompt()

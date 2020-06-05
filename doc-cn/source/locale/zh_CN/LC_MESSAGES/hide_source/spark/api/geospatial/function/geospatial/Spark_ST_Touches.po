@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-26 15:43+0800\n"
+"POT-Creation-Date: 2020-06-05 10:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,35 +21,28 @@ msgstr ""
 msgid "ST_Touches"
 msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Touches:1 of
-msgid ""
-"Check whether geometries \"touch\". \"Touch\" here means two geometries "
-"have common points, and the common points locate only on their "
-"boundaries."
-msgstr ""
+#~ msgid ""
+#~ "Check whether geometries \"touch\". \"Touch\""
+#~ " here means two geometries have "
+#~ "common points, and the common points "
+#~ "locate only on their boundaries."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Touches of
-msgid "参数"
-msgstr ""
+#~ msgid "参数"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Touches:5
-#: arctern_pyspark._wrapper_func.ST_Touches:8 of
-msgid "Geometry"
-msgstr ""
+#~ msgid "Geometry"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Touches of
-msgid "返回类型"
-msgstr ""
+#~ msgid "返回类型"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Touches of
-msgid "返回"
-msgstr ""
+#~ msgid "返回"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Touches:11 of
-msgid "True if geometry \"geo1\" touches geometry \"geo2\"."
-msgstr ""
+#~ msgid "True if geometry \"geo1\" touches geometry \"geo2\"."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Touches of
-msgid "example"
-msgstr ""
+#~ msgid "example"
+#~ msgstr ""
 

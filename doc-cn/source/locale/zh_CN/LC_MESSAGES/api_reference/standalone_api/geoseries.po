@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-05 10:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,7 +78,7 @@ msgid "Calculate the 2D Cartesian (planar) area of each geometry."
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
-msgid ":obj:`GeoSeries.geometry_type <arctern.GeoSeries.geometry_type>`\\"
+msgid ":obj:`GeoSeries.geom_type <arctern.GeoSeries.geom_type>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
@@ -185,234 +185,253 @@ msgstr ""
 msgid "Processing Geometry"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:61:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ":obj:`GeoSeries.buffer <arctern.GeoSeries.buffer>`\\ \\(distance\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:61:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ""
 "For each geometry, returns a geometry that represents all points whose "
 "distance from this geos is less than or equal to \"distance\"."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:61:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ""
 ":obj:`GeoSeries.precision_reduce <arctern.GeoSeries.precision_reduce>`\\ "
 "\\(precision\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:61:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ""
 "For the coordinates of each geometry, reduce the number of significant "
 "digits to the given number."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:61:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ""
 ":obj:`GeoSeries.intersection <arctern.GeoSeries.intersection>`\\ "
 "\\(other\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:61:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid "Calculate the point set intersection between each geometry and other."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:61:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ":obj:`GeoSeries.make_valid <arctern.GeoSeries.make_valid>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:61:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ""
 "Create a valid representation of each geometry without losing any of the "
 "input vertices."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:61:<autosummary>:1
-msgid ""
-":obj:`GeoSeries.simplify_preserve_topology "
-"<GeoSeries.simplify_preserve_topology>`\\"
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
+msgid ":obj:`GeoSeries.simplify <arctern.GeoSeries.simplify>`\\ \\(tolerance\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:61:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
+msgid ""
+"Returns a \"simplified\" version for each geometry using the Douglas-"
+"Peucker algorithm."
+msgstr ""
+
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ":obj:`GeoSeries.set_crs <arctern.GeoSeries.set_crs>`\\ \\(crs\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:61:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid "Set the coordinate system for the GeoSeries."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:61:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
+msgid ":obj:`GeoSeries.crs <arctern.GeoSeries.crs>`\\"
+msgstr ""
+
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ":obj:`GeoSeries.to_crs <arctern.GeoSeries.to_crs>`\\ \\(crs\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:61:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid "Transform each geometry to a different coordinate reference system."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:61:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ":obj:`GeoSeries.curve_to_line <arctern.GeoSeries.curve_to_line>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:61:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ""
 "Convert curves in each geometry to approximate linear representation, "
 "e.g., CIRCULAR STRING to regular LINESTRING, CURVEPOLYGON to POLYGON, and"
 " MULTISURFACE to MULTIPOLYGON."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:63
+#: ../../source/api_reference/standalone_api/geoseries.rst:64
 msgid "Spatial Relationship"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:74:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid ":obj:`GeoSeries.geom_equals <arctern.GeoSeries.geom_equals>`\\ \\(other\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:74:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid "Check whether each geometry is \"spatially equal\" to other."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:74:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid ":obj:`GeoSeries.touches <arctern.GeoSeries.touches>`\\ \\(other\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:74:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid "Check whether each geometry \"touches\" other."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:74:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid ":obj:`GeoSeries.overlaps <arctern.GeoSeries.overlaps>`\\ \\(other\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:74:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid "Check whether each geometry \"spatially overlaps\" other."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:74:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid ":obj:`GeoSeries.crosses <arctern.GeoSeries.crosses>`\\ \\(other\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:74:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid "Check whether each geometry and other(elementwise) \"spatially cross\"."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:74:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid ":obj:`GeoSeries.contains <arctern.GeoSeries.contains>`\\ \\(other\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:74:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid "Check whether each geometry contains other (elementwise)."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:74:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid ":obj:`GeoSeries.intersects <arctern.GeoSeries.intersects>`\\ \\(other\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:74:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid "Check whether each geometry intersects other (elementwise)."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:74:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid ":obj:`GeoSeries.within <arctern.GeoSeries.within>`\\ \\(other\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:74:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid "Check whether each geometry is within other (elementwise)."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:76
+#: ../../source/api_reference/standalone_api/geoseries.rst:77
 msgid "Measurement"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:83:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:84:<autosummary>:1
 msgid ""
 ":obj:`GeoSeries.distance_sphere <arctern.GeoSeries.distance_sphere>`\\ "
 "\\(other\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:83:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:84:<autosummary>:1
 msgid "Return minimum distance in meters between two lon/lat points."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:83:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:84:<autosummary>:1
 msgid ":obj:`GeoSeries.distance <arctern.GeoSeries.distance>`\\ \\(other\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:83:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:84:<autosummary>:1
 msgid ""
 "Calculates the minimum 2D Cartesian (planar) distance between each "
 "geometry and other."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:83:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:84:<autosummary>:1
 msgid ""
 ":obj:`GeoSeries.hausdorff_distance "
 "<arctern.GeoSeries.hausdorff_distance>`\\ \\(other\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:83:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:84:<autosummary>:1
 msgid "Returns the Hausdorff distance between each geometry and other."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:85
+#: ../../source/api_reference/standalone_api/geoseries.rst:86
 msgid "Aggregation"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:91:<autosummary>:1
-msgid ":obj:`GeoSeries.union_aggr <arctern.GeoSeries.union_aggr>`\\ \\(\\)"
+#: ../../source/api_reference/standalone_api/geoseries.rst:92:<autosummary>:1
+msgid ":obj:`GeoSeries.unary_union <arctern.GeoSeries.unary_union>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:91:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:92:<autosummary>:1
 msgid ""
 "Return a geometry that represents the union of all geometries in the "
 "GeoSeries."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:91:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:92:<autosummary>:1
 msgid ":obj:`GeoSeries.envelope_aggr <arctern.GeoSeries.envelope_aggr>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:91:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:92:<autosummary>:1
 msgid ""
 "Compute the double-precision minimum bounding box geometry for the union "
 "of all geometries."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:93
+#: ../../source/api_reference/standalone_api/geoseries.rst:94
 msgid "Pandas Methods"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:101:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:102:<autosummary>:1
 msgid ":obj:`GeoSeries.isna <arctern.GeoSeries.isna>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:101:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:102:<autosummary>:1
 msgid "Detect missing values."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:101:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:102:<autosummary>:1
 msgid ":obj:`GeoSeries.notna <arctern.GeoSeries.notna>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:101:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:102:<autosummary>:1
 msgid "Detect non-missing values."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:101:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:102:<autosummary>:1
 msgid ""
 ":obj:`GeoSeries.fillna <arctern.GeoSeries.fillna>`\\ \\(\\[value\\, "
 "method\\, axis\\, ...\\]\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:101:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:102:<autosummary>:1
 msgid "Fill NA values with a geometry, which can be WKT or WKB formed."
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:101:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:102:<autosummary>:1
 msgid ":obj:`GeoSeries.equals <arctern.GeoSeries.equals>`\\ \\(other\\)"
 msgstr ""
 
-#: ../../source/api_reference/standalone_api/geoseries.rst:101:<autosummary>:1
+#: ../../source/api_reference/standalone_api/geoseries.rst:102:<autosummary>:1
 msgid "Test whether two objects contain the same elements."
 msgstr ""
+
+#~ msgid ":obj:`GeoSeries.geometry_type <arctern.GeoSeries.geometry_type>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`GeoSeries.simplify_preserve_topology "
+#~ "<GeoSeries.simplify_preserve_topology>`\\"
+#~ msgstr ""
+
+#~ msgid ":obj:`GeoSeries.union_aggr <arctern.GeoSeries.union_aggr>`\\ \\(\\)"
+#~ msgstr ""
 

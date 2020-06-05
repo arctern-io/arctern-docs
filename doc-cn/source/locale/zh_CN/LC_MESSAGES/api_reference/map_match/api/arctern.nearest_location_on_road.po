@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-05 10:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/api_reference/map_match/api/arctern.nearest_location_on_road.rst:2
+msgid "arctern.nearest\\_location\\_on\\_road"
+msgstr ""
+
+#: arctern.nearest_location_on_road:1 of
+msgid ""
+"Compute the location on roads closest to each point in points, The points"
+" passed do not need to be part of a continuous path."
+msgstr ""
+
+#: arctern.nearest_location_on_road of
+msgid "参数"
+msgstr ""
+
+#: arctern.nearest_location_on_road:4 of
+msgid "LineStrings in WKB form."
+msgstr ""
+
+#: arctern.nearest_location_on_road:7 arctern.nearest_location_on_road:10 of
+msgid "Points in WKB form."
+msgstr ""
+
+#: arctern.nearest_location_on_road of
+msgid "返回类型"
+msgstr ""
+
+#: arctern.nearest_location_on_road of
+msgid "返回"
+msgstr ""
+
+#: arctern.nearest_location_on_road of
+msgid "example"
+msgstr ""
+

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-26 15:43+0800\n"
+"POT-Creation-Date: 2020-06-05 10:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,36 +21,32 @@ msgstr ""
 msgid "ST_MakeValid"
 msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_MakeValid:1 of
-msgid ""
-"Create a valid representation of the geometry without losing any of the "
-"input vertices. If the geometry is already-valid, then nothing will be "
-"done."
-msgstr ""
+#~ msgid ""
+#~ "Create a valid representation of the "
+#~ "geometry without losing any of the "
+#~ "input vertices. If the geometry is "
+#~ "already-valid, then nothing will be "
+#~ "done."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_MakeValid of
-msgid "参数"
-msgstr ""
+#~ msgid "参数"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_MakeValid:5 of
-msgid "Geometry"
-msgstr ""
+#~ msgid "Geometry"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_MakeValid of
-msgid "返回类型"
-msgstr ""
+#~ msgid "返回类型"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_MakeValid of
-msgid "返回"
-msgstr ""
+#~ msgid "返回"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_MakeValid:8 of
-msgid ""
-"Geometry if the input geometry is already-valid or can be made valid. "
-"Otherwise, NULL."
-msgstr ""
+#~ msgid ""
+#~ "Geometry if the input geometry is "
+#~ "already-valid or can be made valid."
+#~ " Otherwise, NULL."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_MakeValid of
-msgid "example"
-msgstr ""
+#~ msgid "example"
+#~ msgstr ""
 
