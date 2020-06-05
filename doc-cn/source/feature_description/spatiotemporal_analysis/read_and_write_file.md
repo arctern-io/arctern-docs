@@ -6,7 +6,7 @@ Arctern 继承 pandas 的文件读写接口，支持读写数据类型为 [WKT](
 
 ### WKT 和 WKB 格式
 
-本例使用 **wkt_geos.csv** 文件演示如何从文件读取 WKT 和 WKB 数据。此文件主要定义了四个 WKT 格式的几何体对象，包括一个点（POINT）和三个多边形（POLYGON）。wkt_geos.csv 文件内容如下：
+本例使用 **wkt_geos.csv** 文件演示如何从文件读取 WKT 和 WKB 数据。此文件主要定义了四个 WKT 格式的几何体对象，包括一个点（POINT）和三个多边形（POLYGON）。文件内容如下：
 
 ```
 geos
@@ -62,7 +62,7 @@ dtype: bool
 
 ### GeoJson 格式
 
-本例使用 **geos.json** 文件演示如何从文件读取 GeoJson 数据。此文件主要定义了四个 WKT 格式的几何体对象，包括一个点（POINT）和三个多边形（POLYGON）。geos.json 文件内容如下：
+本例使用 **geos.json** 文件演示如何从文件读取 GeoJson 数据。此文件主要定义了四个 WKT 格式的几何体对象，包括一个点（POINT）和三个多边形（POLYGON）。文件内容如下：
 
 ```
 {
@@ -107,7 +107,7 @@ dtype: bool
 
 ### WKT 格式
 
-首先，调用 GeoSeries 的 `to_wkt` 方法从 GeoSeries 对象得到一个 pandas.Series 对象。然后，调用 pandas.Series 的 `to_csv` 方法将数据保存为 CSV 文件。
+首先，使用 GeoSeries 的 `to_wkt` 方法从 GeoSeries 对象得到一个 pandas.Series 对象。然后，使用 pandas.Series 的 `to_csv` 方法将数据保存为 CSV 文件。
 
 <!--  [to_wkt](/path/to/to_wkt)  -->
 
@@ -124,7 +124,7 @@ dtype: object
 
 ### GeoJson 格式
 
-首先，调用 GeoSeries 的 `as_geojson` 方法从 GeoSeries 对象得到一个 pandas.Series 对象。然后，调用 pandas.Series 的 `to_json` 方法将数据保存为 JSON 文件。
+首先，使用 GeoSeries 的 `as_geojson` 方法从 GeoSeries 对象得到一个 pandas.Series 对象。然后，使用 pandas.Series 的 `to_json` 方法将数据保存为 JSON 文件。
 
 <!--  [as_geojson](/path/to/as_geojson) -->
 
