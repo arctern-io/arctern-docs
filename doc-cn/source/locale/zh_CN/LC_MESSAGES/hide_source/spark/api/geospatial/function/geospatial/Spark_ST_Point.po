@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-26 15:43+0800\n"
+"POT-Creation-Date: 2020-06-05 10:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,35 +21,27 @@ msgstr ""
 msgid "ST_Point"
 msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Point:1 of
-msgid "Construct point according to the coordinates."
-msgstr ""
+#~ msgid "Construct point according to the coordinates."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Point of
-msgid "参数"
-msgstr ""
+#~ msgid "参数"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Point:4 of
-msgid "Abscissa of the point."
-msgstr ""
+#~ msgid "Abscissa of the point."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Point:7 of
-msgid "Ordinate of the point."
-msgstr ""
+#~ msgid "Ordinate of the point."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Point of
-msgid "返回类型"
-msgstr ""
+#~ msgid "返回类型"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Point of
-msgid "返回"
-msgstr ""
+#~ msgid "返回"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Point:10 of
-msgid "Point in WKB form."
-msgstr ""
+#~ msgid "Point in WKB form."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_Point of
-msgid "example"
-msgstr ""
+#~ msgid "example"
+#~ msgstr ""
 

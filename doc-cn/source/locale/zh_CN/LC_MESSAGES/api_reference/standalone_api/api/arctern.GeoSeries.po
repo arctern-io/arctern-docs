@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-05 10:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,6 +167,14 @@ msgid "Fill NA values with a geometry, which can be WKT or WKB formed."
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:53:<autosummary>:1
+msgid ":obj:`from_geopandas <arctern.GeoSeries.from_geopandas>`\\ \\(data\\)"
+msgstr ""
+
+#: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:53:<autosummary>:1
+msgid "Construct geometries from geopandas GeoSeries."
+msgstr ""
+
+#: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:53:<autosummary>:1
 msgid ":obj:`geom_equals <arctern.GeoSeries.geom_equals>`\\ \\(other\\)"
 msgstr ""
 
@@ -277,16 +285,6 @@ msgid ""
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:53:<autosummary>:1
-msgid ""
-":obj:`projection <arctern.GeoSeries.projection>`\\ \\(bottom\\_right\\, "
-"top\\_left\\, height\\, width\\)"
-msgstr ""
-
-#: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:53:<autosummary>:1
-msgid "TODO(shengjh): fill here"
-msgstr ""
-
-#: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:53:<autosummary>:1
 msgid ":obj:`set_crs <arctern.GeoSeries.set_crs>`\\ \\(crs\\)"
 msgstr ""
 
@@ -295,10 +293,7 @@ msgid "Set the coordinate system for the GeoSeries."
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:53:<autosummary>:1
-msgid ""
-":obj:`simplify_preserve_to_pology "
-"<arctern.GeoSeries.simplify_preserve_to_pology>`\\ "
-"\\(distance\\_tolerance\\)"
+msgid ":obj:`simplify <arctern.GeoSeries.simplify>`\\ \\(tolerance\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:53:<autosummary>:1
@@ -313,6 +308,14 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:53:<autosummary>:1
 msgid "Transform each geometry to a different coordinate reference system."
+msgstr ""
+
+#: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:53:<autosummary>:1
+msgid ":obj:`to_geopandas <arctern.GeoSeries.to_geopandas>`\\ \\(\\)"
+msgstr ""
+
+#: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:53:<autosummary>:1
+msgid "Transform each arctern GeoSeries to GeoPandas GeoSeries."
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:53:<autosummary>:1
@@ -340,14 +343,7 @@ msgid "Check whether each geometry \"touches\" other."
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:53:<autosummary>:1
-msgid ""
-":obj:`transform_and_projection "
-"<arctern.GeoSeries.transform_and_projection>`\\ \\(src\\_rs\\, "
-"dst\\_rs\\, ...\\)"
-msgstr ""
-
-#: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:53:<autosummary>:1
-msgid ":obj:`union_aggr <arctern.GeoSeries.union_aggr>`\\ \\(\\)"
+msgid ":obj:`unary_union <arctern.GeoSeries.unary_union>`\\ \\(\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:53:<autosummary>:1
@@ -409,7 +405,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:67:<autosummary>:1
-msgid ":obj:`geometry_type <arctern.GeoSeries.geometry_type>`\\"
+msgid ":obj:`geom_type <arctern.GeoSeries.geom_type>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:67:<autosummary>:1
@@ -447,4 +443,31 @@ msgstr ""
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:67:<autosummary>:1
 msgid "Calculates the points number for each geometry."
 msgstr ""
+
+#~ msgid ""
+#~ ":obj:`projection <arctern.GeoSeries.projection>`\\ "
+#~ "\\(bottom\\_right\\, top\\_left\\, height\\, "
+#~ "width\\)"
+#~ msgstr ""
+
+#~ msgid "TODO(shengjh): fill here"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`simplify_preserve_to_pology "
+#~ "<arctern.GeoSeries.simplify_preserve_to_pology>`\\ "
+#~ "\\(distance\\_tolerance\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`transform_and_projection "
+#~ "<arctern.GeoSeries.transform_and_projection>`\\ \\(src\\_rs\\,"
+#~ " dst\\_rs\\, ...\\)"
+#~ msgstr ""
+
+#~ msgid ":obj:`union_aggr <arctern.GeoSeries.union_aggr>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ":obj:`geometry_type <arctern.GeoSeries.geometry_type>`\\"
+#~ msgstr ""
 

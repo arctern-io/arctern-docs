@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-26 15:43+0800\n"
+"POT-Creation-Date: 2020-06-05 10:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,33 +21,29 @@ msgstr ""
 msgid "ST_GeometryType"
 msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_GeometryType:1 of
-msgid "For each geometry in geometries, return a string that indicates it's type."
-msgstr ""
+#~ msgid ""
+#~ "For each geometry in geometries, return"
+#~ " a string that indicates it's type."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_GeometryType of
-msgid "参数"
-msgstr ""
+#~ msgid "参数"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_GeometryType:4 of
-msgid "Geometry"
-msgstr ""
+#~ msgid "Geometry"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_GeometryType of
-msgid "返回类型"
-msgstr ""
+#~ msgid "返回类型"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_GeometryType of
-msgid "返回"
-msgstr ""
+#~ msgid "返回"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_GeometryType:7 of
-msgid ""
-"The type of geometry, e.g., \"ST_LINESTRING\", \"ST_POLYGON\", "
-"\"ST_POINT\", \"ST_MULTIPOINT\"."
-msgstr ""
+#~ msgid ""
+#~ "The type of geometry, e.g., "
+#~ "\"ST_LINESTRING\", \"ST_POLYGON\", \"ST_POINT\", "
+#~ "\"ST_MULTIPOINT\"."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_GeometryType of
-msgid "example"
-msgstr ""
+#~ msgid "example"
+#~ msgstr ""
 

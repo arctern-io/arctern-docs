@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-26 15:43+0800\n"
+"POT-Creation-Date: 2020-06-05 10:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,46 +21,37 @@ msgstr ""
 msgid "ST_PolygonFromEnvelope"
 msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_PolygonFromEnvelope:1 of
-msgid ""
-"Construct a polygon(rectangle) geometry from arr_min_x, arr_min_y, "
-"arr_max_x, arr_max_y. The edges of polygon are parallel to coordinate "
-"axis."
-msgstr ""
+#~ msgid ""
+#~ "Construct a polygon(rectangle) geometry from"
+#~ " arr_min_x, arr_min_y, arr_max_x, arr_max_y. "
+#~ "The edges of polygon are parallel "
+#~ "to coordinate axis."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_PolygonFromEnvelope of
-msgid "参数"
-msgstr ""
+#~ msgid "参数"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_PolygonFromEnvelope:5 of
-msgid "The minimum value of x coordinate of the rectangles."
-msgstr ""
+#~ msgid "The minimum value of x coordinate of the rectangles."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_PolygonFromEnvelope:8 of
-msgid "The minimum value of y coordinate of the rectangles."
-msgstr ""
+#~ msgid "The minimum value of y coordinate of the rectangles."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_PolygonFromEnvelope:11 of
-msgid "The maximum value of x coordinate of the rectangles."
-msgstr ""
+#~ msgid "The maximum value of x coordinate of the rectangles."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_PolygonFromEnvelope:14 of
-msgid "The maximum value of y coordinate of the rectangles."
-msgstr ""
+#~ msgid "The maximum value of y coordinate of the rectangles."
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_PolygonFromEnvelope of
-msgid "返回类型"
-msgstr ""
+#~ msgid "返回类型"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_PolygonFromEnvelope of
-msgid "返回"
-msgstr ""
+#~ msgid "返回"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_PolygonFromEnvelope:17 of
-msgid "Geometry"
-msgstr ""
+#~ msgid "Geometry"
+#~ msgstr ""
 
-#: arctern_pyspark._wrapper_func.ST_PolygonFromEnvelope of
-msgid "example"
-msgstr ""
+#~ msgid "example"
+#~ msgstr ""
 
