@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 10:53+0800\n"
+"POT-Creation-Date: 2020-06-05 16:36+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,7 +83,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid "For each geometry in geometries, return a string that indicates is type."
-msgstr "几何体中的每个几何体返回表示类型的字符串。"
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid ":obj:`GeoSeries.centroid <arctern.GeoSeries.centroid>`\\"
@@ -225,7 +225,9 @@ msgstr ""
 msgid ""
 "Create a valid representation of each geometry without losing any of the "
 "input vertices."
-msgstr "对于 GeoSeries 对象中的每个几何体，根据它创建一个新的有效的几何体。在构造新几何体过程中，不会删除原始几何体的任何顶点。如果原始几何体本来就是有效的，则直接返回原始几何体。"
+msgstr ""
+"对于 GeoSeries "
+"对象中的每个几何体，根据它创建一个新的有效的几何体。在构造新几何体过程中，不会删除原始几何体的任何顶点。如果原始几何体本来就是有效的，则直接返回原始几何体。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ":obj:`GeoSeries.simplify <arctern.GeoSeries.simplify>`\\ \\(tolerance\\)"
@@ -360,7 +362,9 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:84:<autosummary>:1
 msgid "Returns the Hausdorff distance between each geometry and other."
-msgstr " 对于 GeoSeries 对象中的每个几何体，判断它与 other 对象中相同位置的几何体之间的 Hausdorff 距离。此距离用于度量两个几何体之间的相似度。"
+msgstr ""
+" 对于 GeoSeries 对象中的每个几何体，判断它与 other 对象中相同位置的几何体之间的 Hausdorff "
+"距离。此距离用于度量两个几何体之间的相似度。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:86
 msgid "Aggregation"
@@ -374,7 +378,7 @@ msgstr ""
 msgid ""
 "Return a geometry that represents the union of all geometries in the "
 "GeoSeries."
-msgstr "返回代表 GeoSeries 中的所有几何体集合的几何体。"
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:92:<autosummary>:1
 msgid ":obj:`GeoSeries.envelope_aggr <arctern.GeoSeries.envelope_aggr>`\\ \\(\\)"
@@ -433,5 +437,42 @@ msgstr "测试两个几何体是否含有相同元素。"
 #~ msgstr ""
 
 #~ msgid ":obj:`GeoSeries.union_aggr <arctern.GeoSeries.union_aggr>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ":obj:`GeoSeries.geom_type <arctern.GeoSeries.geom_type>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For each geometry in geometries, return"
+#~ " a string that indicates is type."
+#~ msgstr "几何体中的每个几何体返回表示类型的字符串。"
+
+#~ msgid ""
+#~ ":obj:`GeoSeries.simplify <arctern.GeoSeries.simplify>`\\ "
+#~ "\\(tolerance\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns a \"simplified\" version for "
+#~ "each geometry using the Douglas-Peucker"
+#~ " algorithm."
+#~ msgstr ""
+
+#~ msgid ":obj:`GeoSeries.unary_union <arctern.GeoSeries.unary_union>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Return a geometry that represents the"
+#~ " union of all geometries in the "
+#~ "GeoSeries."
+#~ msgstr "返回代表 GeoSeries 中的所有几何体集合的几何体。"
+
+#~ msgid ":obj:`GeoSeries.geom_type <GeoSeries.geom_type>`\\"
+#~ msgstr ""
+
+#~ msgid ":obj:`GeoSeries.simplify <GeoSeries.simplify>`\\"
+#~ msgstr ""
+
+#~ msgid ":obj:`GeoSeries.unary_union <GeoSeries.unary_union>`\\"
 #~ msgstr ""
 

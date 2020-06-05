@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 10:53+0800\n"
+"POT-Creation-Date: 2020-06-05 16:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,34 @@ msgstr ""
 
 #: ../../source/hide_source/spark/api/geospatial/function/geospatial/Spark_ST_GeomFromText.rst:2
 msgid "ST_GeomFromText"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_GeomFromText:1 of
+msgid "Transform the representation of geometry from WKT to WKB."
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_GeomFromText of
+msgid "参数"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_GeomFromText:4 of
+msgid "Geometry in WKT form."
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_GeomFromText of
+msgid "返回类型"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_GeomFromText of
+msgid "返回"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_GeomFromText:7 of
+msgid "Geometry in WKB form."
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_GeomFromText of
+msgid "example"
 msgstr ""
 
 #~ msgid "Transform the representation of geometry from WKT to WKB."

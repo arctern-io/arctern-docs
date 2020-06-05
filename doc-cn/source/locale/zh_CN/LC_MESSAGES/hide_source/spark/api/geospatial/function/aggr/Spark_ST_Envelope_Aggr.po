@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 10:53+0800\n"
+"POT-Creation-Date: 2020-06-05 16:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,33 @@ msgstr ""
 
 #: ../../source/hide_source/spark/api/geospatial/function/aggr/Spark_ST_Envelope_Aggr.rst:2
 msgid "ST_Envelope_Aggr"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Envelope_Aggr:1 of
+msgid ""
+"Compute the double-precision minimum bounding box geometry for the union "
+"of given geometries."
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Envelope_Aggr of
+msgid "参数"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Envelope_Aggr:4
+#: arctern_pyspark._wrapper_func.ST_Envelope_Aggr:7 of
+msgid "Geometry"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Envelope_Aggr of
+msgid "返回类型"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Envelope_Aggr of
+msgid "返回"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Envelope_Aggr of
+msgid "example"
 msgstr ""
 
 #~ msgid ""
