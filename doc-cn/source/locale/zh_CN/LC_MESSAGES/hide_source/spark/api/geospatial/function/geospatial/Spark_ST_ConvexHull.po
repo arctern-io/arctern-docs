@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 10:53+0800\n"
+"POT-Creation-Date: 2020-06-05 16:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,33 @@ msgstr ""
 
 #: ../../source/hide_source/spark/api/geospatial/function/geospatial/Spark_ST_ConvexHull.rst:2
 msgid "ST_ConvexHull"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_ConvexHull:1 of
+msgid ""
+"Compute the smallest convex geometry that encloses all geometries in the "
+"given geometry."
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_ConvexHull of
+msgid "参数"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_ConvexHull:4
+#: arctern_pyspark._wrapper_func.ST_ConvexHull:7 of
+msgid "Geometry"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_ConvexHull of
+msgid "返回类型"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_ConvexHull of
+msgid "返回"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_ConvexHull of
+msgid "example"
 msgstr ""
 
 #~ msgid ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 10:53+0800\n"
+"POT-Creation-Date: 2020-06-05 16:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,22 @@ msgstr ""
 
 #: ../../source/hide_source/spark/api/register/function/Register.rst:2
 msgid "register_funcs"
+msgstr ""
+
+#: arctern_pyspark.register.register_funcs:1 of
+msgid "Register all functions provided by Arctern for the given SparkSession."
+msgstr ""
+
+#: arctern_pyspark.register.register_funcs of
+msgid "参数"
+msgstr ""
+
+#: arctern_pyspark.register.register_funcs:3 of
+msgid "pyspark.sql.SparkSession, spark session instance."
+msgstr ""
+
+#: arctern_pyspark.register.register_funcs of
+msgid "example"
 msgstr ""
 
 #~ msgid "Register all functions provided by Arctern for the given SparkSession."

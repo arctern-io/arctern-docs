@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 10:53+0800\n"
+"POT-Creation-Date: 2020-06-05 16:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,37 @@ msgstr ""
 
 #: ../../source/hide_source/spark/api/geospatial/function/geospatial/Spark_ST_HausdorffDistance.rst:2
 msgid "ST_HausdorffDistance"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_HausdorffDistance:1 of
+msgid ""
+"Returns the Hausdorff distance between two geometries, which is a measure"
+" of how similar two geometries are."
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_HausdorffDistance of
+msgid "参数"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_HausdorffDistance:5
+#: arctern_pyspark._wrapper_func.ST_HausdorffDistance:8 of
+msgid "Geometry"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_HausdorffDistance of
+msgid "返回类型"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_HausdorffDistance of
+msgid "返回"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_HausdorffDistance:11 of
+msgid "The value that represents the hausdorff distance between geo1 and geo2."
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_HausdorffDistance of
+msgid "example"
 msgstr ""
 
 #~ msgid ""

@@ -108,6 +108,5 @@ dtype: GeoDtype
 
 下图分别是纠偏前后 GPS 点和道路的拓扑关系。我们可以看出 `nearest_location_on_road` 成功地将偏离道路的 GPS 点绑定到了最近的道路上。
 
-<center class="half">
-    <img src="./img/topo_before_correction.png" width="400"/><img src="./img/topo_after_correction.png" width="400"/>
-</center>
+![](./img/topo_before_correction.png)
+![](./img/topo_after_correction.png)

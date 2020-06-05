@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 10:53+0800\n"
+"POT-Creation-Date: 2020-06-05 16:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,35 @@ msgstr ""
 
 #: ../../source/hide_source/spark/api/geospatial/function/geospatial/Spark_ST_CurveToLine.rst:2
 msgid "ST_CurveToLine"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_CurveToLine:1 of
+msgid ""
+"Convert curves in a geometry to approximate linear representation, e.g., "
+"CIRCULAR STRING to regular LINESTRING, CURVEPOLYGON to POLYGON, and "
+"MULTISURFACE to MULTIPOLYGON. Useful for outputting to devices that can't"
+" support CIRCULARSTRING geometry types."
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_CurveToLine of
+msgid "参数"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_CurveToLine:6
+#: arctern_pyspark._wrapper_func.ST_CurveToLine:9 of
+msgid "Geometry"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_CurveToLine of
+msgid "返回类型"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_CurveToLine of
+msgid "返回"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_CurveToLine of
+msgid "example"
 msgstr ""
 
 #~ msgid ""
