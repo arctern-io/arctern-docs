@@ -45,7 +45,7 @@ msgstr ""
 
 #: arctern.GeoSeries.intersection:8 of
 msgid "A GeoSeries contains geometries."
-msgstr "GeoSeries 包含几何体。"
+msgstr "GeoSeries 包含的几何体。"
 
 #: arctern.GeoSeries.intersection of
 msgid "example"

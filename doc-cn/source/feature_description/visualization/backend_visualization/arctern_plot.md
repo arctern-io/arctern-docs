@@ -147,7 +147,7 @@ $ conda install -c conda-forge pyproj
 执行以下命令下载图标，你将用此图标绘制图标图。
 
 ```bash
-wget https://raw.githubusercontent.com/zilliztech/arctern-docs/branch-0.2.x/img/icon/icon.png -o /tmp/icon.png
+wget https://raw.githubusercontent.com/arctern-io/arctern-docs/branch-0.2.x/img/icon/icon-viz.png -O /tmp/icon.png
 ```
 
 使用 Arctern 的 `plot.iconviz` 方法根据出租车运营数绘制带地图背景的图标图。其中，图标的位置为上车地点。
