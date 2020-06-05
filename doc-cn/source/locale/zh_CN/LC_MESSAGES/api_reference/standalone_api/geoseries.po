@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "GeoSeries is a Series to store and process geometry data by extending "
 "Pandas Series. It internally store geometry as bytes object."
-msgstr ""
+msgstr "GeoSeries 是通过扩展 Pandas Series 来存储和处理几何体的 Series"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:11
 msgid "Constructor"
@@ -39,7 +39,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:18:<autosummary>:1
 msgid "A Series to store geometry data which is WKB formed bytes object."
-msgstr ""
+msgstr "存储 WKB 格式的字节对象几何体的 Series。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:20
 msgid "Attributes"
@@ -51,7 +51,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid "Check if each geometry is of valid geometry format."
-msgstr ""
+msgstr "判断每个几何体是否有效。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid ":obj:`GeoSeries.length <arctern.GeoSeries.length>`\\"
@@ -59,7 +59,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid "Calculate the length of each geometry."
-msgstr ""
+msgstr "计算每个几何体的长度"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid ":obj:`GeoSeries.is_simple <arctern.GeoSeries.is_simple>`\\"
@@ -67,7 +67,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid "Check whether each geometry is \"simple\"."
-msgstr ""
+msgstr "判断每个几何体是否简单。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid ":obj:`GeoSeries.area <arctern.GeoSeries.area>`\\"
@@ -75,7 +75,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid "Calculate the 2D Cartesian (planar) area of each geometry."
-msgstr ""
+msgstr "计算几何体的二维笛卡尔（平面）面积。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid ":obj:`GeoSeries.geom_type <arctern.GeoSeries.geom_type>`\\"
@@ -83,7 +83,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid "For each geometry in geometries, return a string that indicates is type."
-msgstr ""
+msgstr "几何体中的每个几何体返回表示类型的字符串。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid ":obj:`GeoSeries.centroid <arctern.GeoSeries.centroid>`\\"
@@ -91,7 +91,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid "Compute the centroid of each geometry."
-msgstr ""
+msgstr "计算每个几何体的中心点"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid ":obj:`GeoSeries.convex_hull <arctern.GeoSeries.convex_hull>`\\"
@@ -101,7 +101,7 @@ msgstr ""
 msgid ""
 "For each geometry, compute the smallest convex geometry that encloses all"
 " geometries in it."
-msgstr ""
+msgstr "对于 GeoSeries 对象中的每个几何体，计算包围它的最小的凸几何体"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid ":obj:`GeoSeries.npoints <arctern.GeoSeries.npoints>`\\"
@@ -109,7 +109,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid "Calculates the points number for each geometry."
-msgstr ""
+msgstr "对于 GeoSeries 对象中的每个几何体，计算它的点的数量。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid ":obj:`GeoSeries.envelope <arctern.GeoSeries.envelope>`\\"
@@ -119,7 +119,7 @@ msgstr ""
 msgid ""
 "Compute the double-precision minimum bounding box geometry for each "
 "geometry."
-msgstr ""
+msgstr "对于 GeoSeries 对象中的每个几何体，计算它的最小矩形边界范围。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:37
 msgid "Constructing Geometry"
@@ -133,7 +133,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:47:<autosummary>:1
 msgid "Construct Point geometries according to the coordinates."
-msgstr ""
+msgstr "根据坐标集合构造 Point 几何体。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:47:<autosummary>:1
 msgid ""
@@ -145,7 +145,7 @@ msgstr ""
 msgid ""
 "Construct polygon(rectangle) geometries from arr_min_x, arr_min_y, "
 "arr_max_x, arr_max_y and special coordinate system."
-msgstr ""
+msgstr "对于 GeoSeries 对象中的每个几何体，根据给定的参数计算它的最小矩形边界范围，且该矩形的边与坐标轴平行。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:47:<autosummary>:1
 msgid ""
@@ -155,7 +155,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:47:<autosummary>:1
 msgid "Construct geometry from the GeoJSON representation string."
-msgstr ""
+msgstr "根据 GeoJSON 代表字符串构造几何体。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:47:<autosummary>:1
 msgid ":obj:`GeoSeries.as_geojson <arctern.GeoSeries.as_geojson>`\\ \\(\\)"
@@ -163,7 +163,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:47:<autosummary>:1
 msgid "Transform each to GeoJSON format string."
-msgstr ""
+msgstr "将几何体转换为 GeoJSON 格式字符串。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:47:<autosummary>:1
 msgid ":obj:`GeoSeries.to_wkt <arctern.GeoSeries.to_wkt>`\\ \\(\\)"
@@ -171,7 +171,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:47:<autosummary>:1
 msgid "Transform each geometry to WKT formed string."
-msgstr ""
+msgstr "将几何体转换为 WKT 格式字符串。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:47:<autosummary>:1
 msgid ":obj:`GeoSeries.to_wkb <arctern.GeoSeries.to_wkb>`\\ \\(\\)"
@@ -179,7 +179,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:47:<autosummary>:1
 msgid "Transform each geometry to WKB formed bytes object."
-msgstr ""
+msgstr "将几何体转换为 WKB 格式字符串。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:49
 msgid "Processing Geometry"
@@ -193,7 +193,7 @@ msgstr ""
 msgid ""
 "For each geometry, returns a geometry that represents all points whose "
 "distance from this geos is less than or equal to \"distance\"."
-msgstr ""
+msgstr "对于 GeoSeries 对象中的每个几何体，创建一个与它的最远距离不大于 distance 的几何体。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ""
@@ -205,7 +205,7 @@ msgstr ""
 msgid ""
 "For the coordinates of each geometry, reduce the number of significant "
 "digits to the given number."
-msgstr ""
+msgstr "对于 GeoSeries 对象中的每个几何体，根据指定的有效数字位数 precision 创建降低坐标精度后的几何体。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ""
@@ -215,7 +215,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid "Calculate the point set intersection between each geometry and other."
-msgstr ""
+msgstr "对于 GeoSeries 对象中的每个几何体，计算它与 other 对象中相同位置的几何体之间交集。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ":obj:`GeoSeries.make_valid <arctern.GeoSeries.make_valid>`\\ \\(\\)"
@@ -225,7 +225,7 @@ msgstr ""
 msgid ""
 "Create a valid representation of each geometry without losing any of the "
 "input vertices."
-msgstr ""
+msgstr "对于 GeoSeries 对象中的每个几何体，根据它创建一个新的有效的几何体。在构造新几何体过程中，不会删除原始几何体的任何顶点。如果原始几何体本来就是有效的，则直接返回原始几何体。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ":obj:`GeoSeries.simplify <arctern.GeoSeries.simplify>`\\ \\(tolerance\\)"
@@ -243,7 +243,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid "Set the coordinate system for the GeoSeries."
-msgstr ""
+msgstr "设置 GeoSeries 的坐标系。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ":obj:`GeoSeries.crs <arctern.GeoSeries.crs>`\\"
@@ -255,7 +255,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid "Transform each geometry to a different coordinate reference system."
-msgstr ""
+msgstr "转换几何体的 坐标参考系。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:62:<autosummary>:1
 msgid ":obj:`GeoSeries.curve_to_line <arctern.GeoSeries.curve_to_line>`\\ \\(\\)"
@@ -266,7 +266,7 @@ msgid ""
 "Convert curves in each geometry to approximate linear representation, "
 "e.g., CIRCULAR STRING to regular LINESTRING, CURVEPOLYGON to POLYGON, and"
 " MULTISURFACE to MULTIPOLYGON."
-msgstr ""
+msgstr "对于 GeoSeries 对象中的每个几何体，计算它的近似表示。近似表示的方法是将每个几何图形中的曲线转换为近似线性表示。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:64
 msgid "Spatial Relationship"
@@ -278,7 +278,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid "Check whether each geometry is \"spatially equal\" to other."
-msgstr ""
+msgstr "对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体等价。“等价”表示两个几何体的几何结构相同。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid ":obj:`GeoSeries.touches <arctern.GeoSeries.touches>`\\ \\(other\\)"
@@ -286,7 +286,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid "Check whether each geometry \"touches\" other."
-msgstr ""
+msgstr "对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体相邻。“相邻”表示两个几何体在边界上有共同的点。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid ":obj:`GeoSeries.overlaps <arctern.GeoSeries.overlaps>`\\ \\(other\\)"
@@ -294,7 +294,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid "Check whether each geometry \"spatially overlaps\" other."
-msgstr ""
+msgstr "对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体重叠。“重叠”表示两个几何体相交且不互相包含。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid ":obj:`GeoSeries.crosses <arctern.GeoSeries.crosses>`\\ \\(other\\)"
@@ -302,7 +302,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid "Check whether each geometry and other(elementwise) \"spatially cross\"."
-msgstr ""
+msgstr " 对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体相交。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid ":obj:`GeoSeries.contains <arctern.GeoSeries.contains>`\\ \\(other\\)"
@@ -310,7 +310,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid "Check whether each geometry contains other (elementwise)."
-msgstr ""
+msgstr "对于 GeoSeries 对象中的每个几何体，判断它是否包含 other 对象中相同位置的几何体。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid ":obj:`GeoSeries.intersects <arctern.GeoSeries.intersects>`\\ \\(other\\)"
@@ -318,7 +318,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid "Check whether each geometry intersects other (elementwise)."
-msgstr ""
+msgstr " 对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体存在交集。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid ":obj:`GeoSeries.within <arctern.GeoSeries.within>`\\ \\(other\\)"
@@ -326,7 +326,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:75:<autosummary>:1
 msgid "Check whether each geometry is within other (elementwise)."
-msgstr ""
+msgstr "对于 GeoSeries 对象中的每个几何体，判断它是否在 other 对象中相同位置的几何体的内部。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:77
 msgid "Measurement"
@@ -340,7 +340,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:84:<autosummary>:1
 msgid "Return minimum distance in meters between two lon/lat points."
-msgstr ""
+msgstr "返回两个经纬度点之间的以米为单位的距离。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:84:<autosummary>:1
 msgid ":obj:`GeoSeries.distance <arctern.GeoSeries.distance>`\\ \\(other\\)"
@@ -350,7 +350,7 @@ msgstr ""
 msgid ""
 "Calculates the minimum 2D Cartesian (planar) distance between each "
 "geometry and other."
-msgstr ""
+msgstr "计算两个几何体之间的最小二维笛卡尔（平面）距离。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:84:<autosummary>:1
 msgid ""
@@ -360,7 +360,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:84:<autosummary>:1
 msgid "Returns the Hausdorff distance between each geometry and other."
-msgstr ""
+msgstr " 对于 GeoSeries 对象中的每个几何体，判断它与 other 对象中相同位置的几何体之间的 Hausdorff 距离。此距离用于度量两个几何体之间的相似度。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:86
 msgid "Aggregation"
@@ -374,7 +374,7 @@ msgstr ""
 msgid ""
 "Return a geometry that represents the union of all geometries in the "
 "GeoSeries."
-msgstr ""
+msgstr "返回代表 GeoSeries 中的所有几何体集合的几何体。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:92:<autosummary>:1
 msgid ":obj:`GeoSeries.envelope_aggr <arctern.GeoSeries.envelope_aggr>`\\ \\(\\)"
@@ -384,7 +384,7 @@ msgstr ""
 msgid ""
 "Compute the double-precision minimum bounding box geometry for the union "
 "of all geometries."
-msgstr ""
+msgstr "对于 GeoSeries 对象中的所有几何体集合，计算它的最小矩形边界范围。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:94
 msgid "Pandas Methods"
@@ -396,7 +396,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:102:<autosummary>:1
 msgid "Detect missing values."
-msgstr ""
+msgstr "检测丢失值"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:102:<autosummary>:1
 msgid ":obj:`GeoSeries.notna <arctern.GeoSeries.notna>`\\ \\(\\)"
@@ -404,7 +404,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:102:<autosummary>:1
 msgid "Detect non-missing values."
-msgstr ""
+msgstr "检测未丢失值"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:102:<autosummary>:1
 msgid ""
@@ -414,7 +414,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:102:<autosummary>:1
 msgid "Fill NA values with a geometry, which can be WKT or WKB formed."
-msgstr ""
+msgstr "用几何体填补 NA 值，其可为 WKT 或 WKB 格式。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:102:<autosummary>:1
 msgid ":obj:`GeoSeries.equals <arctern.GeoSeries.equals>`\\ \\(other\\)"
@@ -422,7 +422,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:102:<autosummary>:1
 msgid "Test whether two objects contain the same elements."
-msgstr ""
+msgstr "测试两个几何体是否含有相同元素。"
 
 #~ msgid ":obj:`GeoSeries.geometry_type <arctern.GeoSeries.geometry_type>`\\"
 #~ msgstr ""
