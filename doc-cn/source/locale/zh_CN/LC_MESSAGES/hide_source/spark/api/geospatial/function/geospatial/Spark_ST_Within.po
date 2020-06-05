@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 10:53+0800\n"
+"POT-Creation-Date: 2020-06-05 16:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,39 @@ msgstr ""
 
 #: ../../source/hide_source/spark/api/geospatial/function/geospatial/Spark_ST_Within.rst:2
 msgid "ST_Within"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Within:1 of
+msgid ""
+"Check whether geometry \"geo1\" is within geometry \"geo2\". \"geo1 "
+"within geo2\" means no points of \"geo1\" lie in the exterior of \"geo2\""
+" and at least one point of the interior of \"geo1\" lies in the interior "
+"of \"geo2\"."
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Within of
+msgid "参数"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Within:5
+#: arctern_pyspark._wrapper_func.ST_Within:8 of
+msgid "Geometry"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Within of
+msgid "返回类型"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Within of
+msgid "返回"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Within:11 of
+msgid "True if geometry \"geo1\" within geometry \"geo2\"."
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Within of
+msgid "example"
 msgstr ""
 
 #~ msgid ""

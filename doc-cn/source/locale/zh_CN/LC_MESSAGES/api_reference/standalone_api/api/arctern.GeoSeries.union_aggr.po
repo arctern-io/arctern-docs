@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-05 16:36+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,25 +21,21 @@ msgstr ""
 msgid "arctern.GeoSeries.union\\_aggr"
 msgstr ""
 
-#: arctern.GeoSeries.union_aggr:1 of
-msgid ""
-"Return a geometry that represents the union of all geometries in the "
-"GeoSeries."
-msgstr "返回一个代表在 GeoSeries 中给定的一组几何体的并集的几何体。"
+#~ msgid ""
+#~ "Return a geometry that represents the"
+#~ " union of all geometries in the "
+#~ "GeoSeries."
+#~ msgstr "返回一个代表在 GeoSeries 中给定的一组几何体的并集的几何体。"
 
-#: arctern.GeoSeries.union_aggr of
-msgid "返回类型"
-msgstr ""
+#~ msgid "返回类型"
+#~ msgstr ""
 
-#: arctern.GeoSeries.union_aggr of
-msgid "返回"
-msgstr ""
+#~ msgid "返回"
+#~ msgstr ""
 
-#: arctern.GeoSeries.union_aggr:4 of
-msgid "A GeoSeries contains only one geometry."
-msgstr "GeoSeries 只包含一个几何体。"
+#~ msgid "A GeoSeries contains only one geometry."
+#~ msgstr "GeoSeries 只包含一个几何体。"
 
-#: arctern.GeoSeries.union_aggr of
-msgid "example"
-msgstr "例子"
+#~ msgid "example"
+#~ msgstr "例子"
 

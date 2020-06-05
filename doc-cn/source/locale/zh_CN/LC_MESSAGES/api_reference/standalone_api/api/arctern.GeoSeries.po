@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 10:53+0800\n"
+"POT-Creation-Date: 2020-06-05 16:36+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -469,5 +469,26 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ":obj:`geometry_type <arctern.GeoSeries.geometry_type>`\\"
+#~ msgstr ""
+
+#~ msgid ":obj:`from_geopandas <arctern.GeoSeries.from_geopandas>`\\ \\(data\\)"
+#~ msgstr ""
+
+#~ msgid "Construct geometries from geopandas GeoSeries."
+#~ msgstr ""
+
+#~ msgid ":obj:`simplify <arctern.GeoSeries.simplify>`\\ \\(tolerance\\)"
+#~ msgstr ""
+
+#~ msgid ":obj:`to_geopandas <arctern.GeoSeries.to_geopandas>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Transform each arctern GeoSeries to GeoPandas GeoSeries."
+#~ msgstr ""
+
+#~ msgid ":obj:`unary_union <arctern.GeoSeries.unary_union>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ":obj:`geom_type <arctern.GeoSeries.geom_type>`\\"
 #~ msgstr ""
 

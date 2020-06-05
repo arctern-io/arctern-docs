@@ -6,10 +6,13 @@
 .. toctree::
    :maxdepth: 1
 
+   data_structure
    read_and_write_file
-   indexing_selecting_data
-   crs_and_transform
-   convert_from_and_to_geopandas_geoseries
    geometric_manipulation
+   convert_from_and_to_geopandas_geoseries
+   spatial_relationship_calculation
+   map_match
+   plot_geometry
+   crs_and_transform
    aggregation
-   nearest_road
+   indexing_selecting_data

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 10:53+0800\n"
+"POT-Creation-Date: 2020-06-05 16:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,37 @@ msgstr ""
 
 #: ../../source/hide_source/spark/api/geospatial/function/geospatial/Spark_ST_Equals.rst:2
 msgid "ST_Equals"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Equals:1 of
+msgid ""
+"Check whether geometries are \"spatially equal\". \"Spatially equal\" "
+"here means two geometries represent the same geometry structure."
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Equals of
+msgid "参数"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Equals:5
+#: arctern_pyspark._wrapper_func.ST_Equals:8 of
+msgid "Geometry"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Equals of
+msgid "返回类型"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Equals of
+msgid "返回"
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Equals:11 of
+msgid "True if geometry \"geo1\" equals geometry \"geo2\"."
+msgstr ""
+
+#: arctern_pyspark._wrapper_func.ST_Equals of
+msgid "example"
 msgstr ""
 
 #~ msgid ""
