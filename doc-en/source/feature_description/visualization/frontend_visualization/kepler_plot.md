@@ -4,13 +4,13 @@
 
 ## Installing Jupyter Notebook and Kepler.gl
 
-In the next sections, you need to use Jupyter Notebook for running Python codes and Kepler.Gl for visualizing spatial data. Run the commands below to install Jupyter and Kepler.Gl if you have not installed them yet:
+In the next sections, you need to use Jupyter Notebook for running Python codes and Kepler.gl for visualizing spatial data. Run the commands below to install Jupyter and Kepler.gl if you have not installed them yet:
 
 ```bash
 # Enter the Conda environment
 $ conda activate arctern_env
 
-# Install Jupyter and Kepler.Gl
+# Install Jupyter and Kepler.gl
 $ conda install -c conda-forge jupyterlab
 $ pip install keplergl
 ```

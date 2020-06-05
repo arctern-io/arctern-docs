@@ -1,6 +1,6 @@
 # Using Arctern to analyze spatial data
 
-If you have completed the [installation and deployment of Arctern](./standalone_installation.md), this guide will walk you through analyzing the road information near the Empire State Building via Arctern.
+After completing the [installation and deployment of Arctern](./standalone_installation.md), let's have a try at Arctern through analyzing the road information near the Empire State Building.
 
 ### Installing Jupyter and Kepler.gl
 
@@ -21,7 +21,7 @@ $ pip install keplergl
 
 ## Running Jupyter Notebook
 
-Run Jupyter Notebook in the Conda environment, and it will open a page in your default browser.
+Run Jupyter Notebook in the Conda environment, and it opens a page in your default browser.
 
 ```bash
 $ jupyter-notebook
