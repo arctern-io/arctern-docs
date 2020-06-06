@@ -29,7 +29,7 @@ dtype: GeoDtype
 
 #### Initializing from WKB format data
 
-You can put multiple string data in WKB format into a list, numpy.ndarray, or pandas.Series, and then pass in the GeoSeries constructor to create GeoSeries objects.
+You can put multiple string data in WKB format into a list, numpy.ndarray, or pandas.Series, and then pass the GeoSeries constructor to create GeoSeries objects.
 ```python
 >>> data = [b'\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?',
 ...        b'\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\x08@']
