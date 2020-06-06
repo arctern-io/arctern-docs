@@ -1,11 +1,11 @@
-# 几何体的基本操作
+# Basic manipulations of geometry
 
-Arctern 实现了多个符合 OGC 标准的 GIS 处理函数。它们被封装成 GeoSeries 类的属性和方法。其中的方法又分为一元操作方法和二元操作方法。
+Arctern implements multiple GIS processing functions that comply with the OGC standard. They are encapsulated as attributes and methods of the GeoSeries class. The methods are divided into unary operation methods and binary operation methods.
 
 ## GeoSeries.length
 
-* **功能：** 计算 GeoSeries 对象中每个几何体的长度。如果几何体不是 LineString 和 MultiLineString 类型的几何体， 则它的长度为 0 。
-* **返回：** 浮点型的 pandas.Series
+* **Functions：** Calculate the length of each geometry in the GeoSeries object. If the geometry is not of type LineString and MultiLineString, its length is 0.
+* **Return value type：** Floating point pandas.Series
 
 ```python
 >>> from arctern import GeoSeries
@@ -19,8 +19,8 @@ dtype: float64
 
 ## GeoSeries.area
 
-* **功能：** 计算 GeoSeries 对象中每个几何体的面积。
-* **返回：** 浮点型的 pandas.Series
+* **Functions：** Calculate the area of each geometry in a GeoSeries object.
+* **Return value type：** Floating point pandas.Series
 
 ```python
 >>> from arctern import GeoSeries
@@ -35,8 +35,8 @@ dtype: float64
 
 ## GeoSeries.centroid
 
-* **功能：** 计算 GeoSeries 对象中每个几何体的中心点。
-* **返回：** GeoSeries。
+* **Functions：** Calculate the center point of each geometry in a GeoSeries object.
+* **Return value type：** GeoSeries。
 
 ```python
 >>> from arctern import GeoSeries
@@ -50,10 +50,10 @@ dtype: float64
 
 ## GeoSeries.is_valid
 
-* **功能：** 判断 GeoSeries 对象中的每个几何体是否有效。
-* **返回：** 布尔型的 pandas.Series
-  * **True：** 几何体有效。
-  * **False：** 几何体无效。
+* **Functions：** Determine whether each geometry in the GeoSeries object is valid.
+* **Return value type：** Boolean pandas.Series
+  * **True：** Geometry is valid。
+  * **False：** Geometry is invalid。
 
 ```python
 >>> from arctern import GeoSeries
@@ -66,10 +66,10 @@ dtype: bool
 
 ## GeoSeries.is_simple
 
-* **功能：** 判断 GeoSeries 对象中的每个几何体是否简单。这里的“简单”表示某个几何图形没有异常的几何图形点，例如自相交或相切。
-* **返回：** 布尔型的 pandas.Series
-  * **True：** 几何体是简单的。
-  * **False：** 几何体不是简单的。
+* **Functions：** Determine if each geometry in the GeoSeries object is simple. "Simple" here means that a certain geometric figure has no abnormal geometric figure points, such as self-intersection or tangent.
+* **Return value type：** Boolean pandas.Series
+  * **True：** Geometry is simple.
+  * **False：** Geometry is not simple.
 
 ```python
 >>> from arctern import GeoSeries
@@ -83,8 +83,8 @@ dtype: bool
 
 ## GeoSeries.convex_hull
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，计算包围它的最小的凸几何体。
-* **返回：** GeoSeries
+* **Functions：** For each geometry in the GeoSeries object, calculate the smallest convex geometry surrounding it.
+* **Return value type：** GeoSeries
 
 ```python
 >>> from arctern import GeoSeries
@@ -98,8 +98,8 @@ dtype: GeoDtype
 
 ## GeoSeries.npoints
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，计算它的点的数量。
-* **返回：** int64 类型的 pandas.Series
+* **Functions：** For each geometry in the GeoSeries object, calculate the number of points.
+* **Return value type：** int64 type pandas.Series
 
 ```python
 >>> from arctern import GeoSeries
@@ -112,8 +112,8 @@ dtype: int64
 
 ## GeoSeries.curve_to_line
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，计算它的近似表示。近似表示的方法是将每个几何图形中的曲线转换为近似线性表示。
-* **返回：** GeoSeries
+* **Functions：** For each geometry in the GeoSeries object, calculate its approximate representation. The approximate representation method is to convert the curve in each geometric figure into an approximate linear representation.
+* **Return value type：** GeoSeries
 
 ```python
 >>> from arctern import GeoSeries
@@ -126,9 +126,9 @@ dtype: GeoDtype
 
 ## GeoSeries.simplify(tolerance)
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，计算它的简化表示。简化表示的算法是 Douglas-Peucker 算法。
-* **参数：** `tolerance` 为浮点型数字，表示线串上的点和曲线之间的最大距离。
-* **返回：** GeoSeries
+* **Functions：** For each geometry in the GeoSeries object, calculate its simplified representation. The simplified representation algorithm is Douglas-Peucker algorithm.
+* **parameters：** `tolerance` is a floating-point number, indicating the maximum distance between a point on the line string and the curve.
+* **Return value type：** GeoSeries
 
 ```python
 >>> from arctern import GeoSeries
@@ -141,8 +141,8 @@ dtype: GeoDtype
 
 ## GeoSeries.envelope
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，计算它的最小矩形边界范围。
-* **返回：** GeoSeries
+* **Functions：** For each geometry in the GeoSeries object, calculate its minimum rectangular bounding box.
+* **Return value type：** GeoSeries
 
 ```python
 >>> from arctern import GeoSeries
@@ -156,13 +156,13 @@ dtype: GeoDtype
 
 ## GeoSeries.buffer(distance)
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，创建一个与它的最远距离不大于 `distance` 的几何体。
-* **参数：** `distance` 为浮点型数字，表示新几何体与原几何体之间的最大距离。
-* **返回：** GeoSeries
+* **Functions：** For each geometry in the GeoSeries object, create a geometry with the maximum distance not greater than `distance`.
+* **parameters** `distance` is a floating point number, indicating the maximum distance between the new geometry and the original geometry.
+* **Return value type：** GeoSeries
 
-### 示例 1
+### Example 1
 
-将 `distance` 设为 0，则返回一个空的多边形。
+Setting `distance` to 0 returns an empty polygon.
 
 ```python
 >>> from arctern import GeoSeries
@@ -171,9 +171,9 @@ dtype: GeoDtype
 0    POLYGON EMPTY
 dtype: GeoDtype
 ```
-### 示例 2
+### Example 2
 
-将 `distance` 设为 1.0，则返回一个多边形。该多边形近似表示一个半径为 1.0、圆心为 `Point(0, 1)` 的圆，该圆的面积为近似为 3.14。
+Setting `distance` to 1.0 returns a polygon. The polygon approximately represents a circle with a radius of 1.0 and a center of `Point(0, 1)`, and the area of the circle is approximately 3.14.
 
 ```python
 >>> from arctern import GeoSeries
@@ -191,11 +191,11 @@ dtype: float64
 
 ## GeoSeries.precision_reduce(precision)
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，根据指定的有效数字位数 `precision` 创建降低坐标精度后的几何体。
-* **参数：** `precision` 为整型数字，表示有效数字位数。
-* **返回：** GeoSeries
+* **Functions：** For each geometry in the GeoSeries object, the geometry with reduced coordinate accuracy is created according to the specified valid digits number `precision`.
+* **parameters：** `precision` is an integer number, indicating the number of valid digits.
+* **Return value type：** GeoSeries
 
-以下示例中，由于设置的有效位数是 3， 结果中所有点的坐标只保留了 3 位有效数字。其中 POINT (1.333 2.666) 的坐标 2.666 的最后有效位采用四舍五入的规则，变为 2.67 。
+In the following example, since the effective digits are set to 3, the coordinates of all points in the result retain only 3 valid digits. In the POINT (1.333 2.666) of the coordinate, the last valid digit of 2.666 is rounded to 2.67.
 
 ```python
 >>> from arctern import GeoSeries
@@ -208,10 +208,10 @@ dtype: GeoDtype
 
 ## GeoSeries.make_valid
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，根据它创建一个新的有效的几何体。在构造新几何体过程中，不会删除原始几何体的任何顶点。如果原始几何体本来就是有效的，则直接返回原始几何体。
-* **返回：** GeoSeries
+* **Functions：** For each geometry in the GeoSeries object, create a new valid geometry based on it. During the construction of the new geometry, no vertices of the original geometry are deleted. If the original geometry is already valid, then return the original geometry directly.
+* **Return value type：** GeoSeries
 
-在以下示例中，输入的几何体在 POINT (2 2) 附近存在自相交的情况。因此，`make_valid` 方法返回一个新的几何体集合，该集合包含一个多边形和一个线串。
+In the following example, the imported geometry is self-intersecting near POINT (2 2). Therefore, the `make_valid` method returns a new union of geometry, which contains a polygon and a line string.
 
 ```python
 >>> from arctern import GeoSeries
@@ -224,13 +224,13 @@ dtype: GeoDtype
 
 ## GeoSeries.intersects(other)
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否与 `other` 对象中相同位置的几何体存在交集。
-* **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
-* **返回：** 布尔型的 pandas.Series
-  * **True：** 两个几何体存在交集。
-  * **False：** 两个几何体不存在交集。
+* **Functions：** For each geometry in the GeoSeries object, check whether it intersects with the geometry at the same position in the `other` object.
+* **parameters：** `other` is GeoSeries or WKB formed object.
+* **Return value type：** Boolean pandas.Series
+  * **True：** Two geometries have intersection.
+  * **False：** Two geometries have no intersection.
 
-### 示例 1
+### Example 1
 ```python
 >>> from arctern import GeoSeries
 >>> s1 = GeoSeries(["POLYGON((7 7,9 4,5 4,7 7))", "POLYGON((8 0,9 0,9 1,8 1,8 0))"])
@@ -242,7 +242,7 @@ dtype: bool
 ```
 ![](./img/intersects_1.png)
 
-### 示例 2
+### Example 2
 ```python
 >>> from arctern import GeoSeries
 >>> s1 = GeoSeries(["POLYGON((7 7,9 4,5 4,7 7))"])
@@ -254,7 +254,7 @@ dtype: bool
 ```
 ![](./img/intersects_2.png)
 
-### 示例 3
+### Example 3
 ```python
 >>> from arctern import GeoSeries
 >>> s1 = GeoSeries(["POLYGON((8 0,9 0,9 1,8 1,8 0))"])
@@ -268,11 +268,11 @@ dtype: bool
 
 ## GeoSeries.within(other)
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否在 `other` 对象中相同位置的几何体的内部。
-* **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
-* **返回：** 布尔型的 pandas.Series
-  * **True：** 两个几何体存在包含关系。
-  * **False：** 两个几何体存在包含关系。
+* **Functions：** For each geometry in the GeoSeries object, check whether it is within the geometry at the same position in the `other` object.
+* **parameters：** `other` is GeoSeries or WKB formed object.
+* **Return value type：** Boolean pandas.Series
+  * **True：** Each geometry is within other.
+  * **False：** Each geometry is not within other.
 
 ```python
 >>> s1 = GeoSeries(["POLYGON((1 1, 4 1, 4 4, 1 4, 1 1))", "POLYGON((5 1, 7 1, 7 3, 5 3, 5 1))", "POLYGON((8 1, 9 1, 9 2, 8 2, 8 1))"])
@@ -287,11 +287,11 @@ dtype: bool
 
 ## GeoSeries.contains(other)
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否包含 `other` 对象中相同位置的几何体。
-* **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
-* **返回：** 布尔型的 pandas.Series
-  * **True：** 两个几何体存在包含关系。
-  * **False：** 两个几何体存在包含关系。
+* **Functions：** For each geometry in the GeoSeries object, check whether it contains the geometry at the same position in the `other` object.
+* **parameters：** `other` is GeoSeries or WKB formed object.
+* **Return value type：** Boolean pandas.Series
+  * **True：** Each geometry contains other.
+  * **False：** Each geometry does not contain other.
 
 ```python
 >>> from arctern import GeoSeries
@@ -307,11 +307,11 @@ dtype: bool
 
 ## GeoSeries.crosses(other)
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否与 `other` 对象中相同位置的几何体相交。
-* **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
-* **返回：** 布尔型的 pandas.Series
-  * **True：** 两个几何体存在相交关系。
-  * **False：** 两个几何体存在相交关系。
+* **Functions：** For each geometry in the GeoSeries object, check whether it crosses the geometry at the same position in the `other` object.
+* **parameters：** `other` is GeoSeries or WKB formed object.
+* **Return value type：** Boolean pandas.Series
+  * **True：** Two geometries cross.
+  * **False：** Two geometries do not cross.
 
 ```python
 >>> from arctern import GeoSeries
@@ -327,11 +327,11 @@ dtype: bool
 
 ## GeoSeries.geom_equals(other)
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否与 `other` 对象中相同位置的几何体等价。“等价”表示两个几何体的几何结构相同。
-* **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
-* **返回：** 布尔型的 pandas.Series
-  * **True：** 两个几何体等价。
-  * **False：** 两个几何体不等价。
+* **Functions：** For each geometry in the GeoSeries object, check whether it equals the geometry at the same position in the `other` object. "equals" means that the two geometries have the same geometric structure.
+* **parameters：** `other` is GeoSeries or WKB formed object.
+* **Return value type：** Boolean pandas.Series
+  * **True：** Two geometries equal.
+  * **False：** Two geometries do not equal.
 
 ```python
 >>> from arctern import GeoSeries
@@ -345,11 +345,11 @@ dtype: bool
 
 ## GeoSeries.touches(other)
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否与 `other` 对象中相同位置的几何体相邻。“相邻”表示两个几何体在边界上有共同的点。
-* **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
-* **返回：** 布尔型的 pandas.Series
-  * **True：** 两个几何体相邻。
-  * **False：** 两个几何体不相邻。
+* **Functions：** For each geometry in the GeoSeries object, check whether it touches the geometry at the same position in the `other` object. "touches" means that two geometries have a common point on the boundary.
+* **parameters：** `other` is GeoSeries or WKB formed object.
+* **Return value type：** Boolean pandas.Series
+  * **True：** Two geometries touch.
+  * **False：** Two geometries do not touch.
 
 ```python
 >>> from arctern import GeoSeries
@@ -364,11 +364,11 @@ dtype: bool
 
 ## GeoSeries.overlaps(other)
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否与 `other` 对象中相同位置的几何体重叠。“重叠”表示两个几何体相交且不互相包含。
-* **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
-* **返回：** 布尔型的 pandas.Series
-  * **True：** 两个几何体重叠。
-  * **False：** 两个几何体不重叠。
+* **Functions：** For each geometry in the GeoSeries object, check whether it overlaps the geometry at the same position in the `other` object. "overlaps" means that the two geometries cross and do not contain each other.
+* **parameters：** `other` is GeoSeries or WKB formed object.
+* **Return value type：** Boolean pandas.Series
+  * **True：** Two geometries overlap.
+  * **False：** Two geometries do not overlap.
 
 ```python
 >>> from arctern import GeoSeries
@@ -383,9 +383,9 @@ dtype: bool
 
 ## GeoSeries.distance(other)
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，判断它与 `other` 对象中相同位置的几何体之间的最短二维笛卡尔（平面）距离。
-* **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
-* **返回：** 浮点型的 pandas.Series
+* **Functions：** For each geometry in the GeoSeries object, check the shortest 2D Cartesian (planar) distance between the geometry at the same position in the `other` object.
+* **parameters：** `other` is GeoSeries or WKB formed object.
+* **Return value type：** Floating point pandas.Series
 
 ```python
 >>> from arctern import GeoSeries
@@ -400,9 +400,9 @@ dtype: float64
 
 ## GeoSeries.distance_sphere(other)
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，根据经纬度坐标计算地球表面两点之间的最短球面距离。该方法使用 SRID 定义的地球和半径。
-* **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
-* **返回：** 浮点型的 pandas.Series
+* **Functions：** For each geometry in the GeoSeries object, the minimum distance between two points on the earth's surface is calculated based on the latitude and longitude coordinates. This method uses the earth and radius defined by the SRID.
+* **parameters：** `other` is GeoSeries or WKB formed object.
+* **Return value type：** Floating point pandas.Series
 
 ```python
 >>> from arctern import GeoSeries
@@ -415,9 +415,9 @@ dtype: float64
 
 ## GeoSeries.hausdorff_distance(other)
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，判断它与 `other` 对象中相同位置的几何体之间的 Hausdorff 距离。此距离用于度量两个几何体之间的相似度。
-* **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
-* **返回：** 浮点型的 pandas.Series
+* **Functions：** For each geometry in the GeoSeries object, check the Hausdorff distance between it and the geometry at the same position in the `other` object. This distance is to measure the similarity between two geometries.
+* **parameters：** `other` is GeoSeries or WKB formed object.
+* **Return value type：** Floating point pandas.Series
 
 ```python
 >>> from arctern import GeoSeries
@@ -432,9 +432,9 @@ dtype: float64
 
 ## GeoSeries.intersection(other)
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，计算它与 `other` 对象中相同位置的几何体之间交集。
-* **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
-* **返回：** GeoSeries
+* **Functions：** For each geometry in the GeoSeries object, calculate the intersection with the geometry at the same position in the `other` object.
+* **parameters：** `other` is GeoSeries or WKB formed object.
+* **Return value type：** GeoSeries
 
 ```python
 >>> from arctern import GeoSeries
@@ -448,14 +448,14 @@ dtype: GeoDtype
 
 ## GeoSeries.polygon_from_envelope(min_x, min_y, max_x, max_y, crs=None)
 
-* **功能：** 对于 GeoSeries 对象中的每个几何体，根据给定的参数计算它的最小矩形边界范围，且该矩形的边与坐标轴平行。
-* **参数：**  
-  * **min_x：** 浮点型的 pandas.Series，表示矩形横坐标的最小值。
-  * **min_y：** 浮点型的 pandas.Series，表示矩形纵坐标的最小值。
-  * **max_x：** 浮点型的 pandas.Series，表示矩形横坐标的最大值。
-  * **max_y：** 浮点型的 pandas.Series，表示矩形纵坐标的最大值。
-  * **crs：** （可选参数）字符串，比如“ESPG:4326”、“ESPG:3857”。
-* **返回：** GeoSeries
+* **Functions：** For each geometry in the GeoSeries object, calculate its minimum rectangular bounding box according to the given parameters, and the sides of the box are parallel to the coordinate axis.
+* **parameters：**  
+  * **min_x：** Floating point pandas.Series, represents the minimum value of the rectangular abscissa。
+  * **min_y：** Floating point pandas.Series, represents the minimum value of the rectangular ordinate.
+  * **max_x：** Floating point pandas.Series, represents the maximum value of the rectangular abscissa.
+  * **max_y：** Floating point pandas.Series, represents the maximum value of the rectangular ordinate.
+  * **crs：** （Optional parameters）String, such as "ESPG:4326"、"ESPG:3857".
+* **Return value type：** GeoSeries
 
 ```python
 >>> from pandas import Series
@@ -473,11 +473,11 @@ dtype: GeoDtype
 
 ## GeoSeries.point(x, y)
 
-* **功能：** 根据横坐标集合 `x` 和纵坐标集合 `y` 构造一组 POINT 对象。
-* **参数：**  
-  * **x：** 浮点型的 pandas.Series，表示一组点的横坐标。
-  * **y：** 浮点型的 pandas.Series，表示一组点的纵坐标。
-* **返回：** POINT
+* **Functions：** Construct a group of POINT objects according to the abscissa set `x` and the ordinate set `y`.
+* **parameters：**  
+  * **x：** Floating point pandas.Series, represents the abscissa of a group of points.。
+  * **y：** Floating point pandas.Series, represents the ordinate of a group of points.
+* **Return value type：** POINT
 
 ```python
 >>> from pandas import Series
