@@ -473,7 +473,7 @@ dtype: GeoDtype
 
 ## GeoSeries.point(x, y)
 
-* **Functions：** 根据横坐标集合 `x` 和纵坐标集合 `y` 构造一组 POINT 对象。
+* **Functions：** Construct a group of POINT objects according to the abscissa set `x` and the ordinate set `y`.
 * **parameters：**  
   * **x：** Floating point pandas.Series, represents the abscissa of a group of points.。
   * **y：** Floating point pandas.Series, represents the ordinate of a group of points.
