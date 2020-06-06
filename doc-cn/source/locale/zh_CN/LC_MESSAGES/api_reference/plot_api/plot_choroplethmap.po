@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 16:17+0800\n"
+"POT-Creation-Date: 2020-06-06 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,81 +18,145 @@ msgstr ""
 "Generated-By: Babel 2.8.0\n"
 
 #: ../../source/api_reference/plot_api/plot_choroplethmap.md:1
-msgid "plot_choropleth_map"
+msgid "plot.choroplethmap"
 msgstr ""
 
 #: ../../source/api_reference/plot_api/plot_choroplethmap.md:3
+msgid "绘制轮廓图。"
+msgstr ""
+
+#: ../../source/api_reference/plot_api/plot_choroplethmap.md:5
 msgid ""
-"plot_choropleth_map(ax, region_boundaries, weights, bounding_box, "
+"plot.choroplethmap(ax, region_boundaries, weights, bounding_box, "
 "color_gradient, color_bound=None, opacity=1.0, "
 "coordinate_system='EPSG:3857', **extra_contextily_params)"
 msgstr ""
 
-#: ../../source/api_reference/plot_api/plot_choroplethmap.md:8
+#: ../../source/api_reference/plot_api/plot_choroplethmap.md:10
 msgid "直接在matplotlib中绘制点图。"
 msgstr ""
 
-#: ../../source/api_reference/plot_api/plot_choroplethmap.md:10
+#: ../../source/api_reference/plot_api/plot_choroplethmap.md:12
 msgid "参数"
 msgstr ""
 
-#: ../../source/api_reference/plot_api/plot_choroplethmap.md:12
-msgid "* ax(matplotlib.axes.Axes) -- 用来绘制几何体的坐标轴。"
-msgstr ""
-
 #: ../../source/api_reference/plot_api/plot_choroplethmap.md:14
-msgid "* region_boundaries(Series(dtype: object)) -- 所需绘制的多边形轮廓，格式为WKB。"
+msgid "ax(matplotlib.axes.Axes) -- 用来绘制几何体的坐标轴。"
 msgstr ""
 
 #: ../../source/api_reference/plot_api/plot_choroplethmap.md:16
-msgid "* weights(Series(dtype: float64|int64)) -- 轮廓的颜色权重。"
+msgid "region_boundaries(GeoSeries(dtype: GeoDtype)) -- 所需绘制的多边形轮廓，格式为WKB。"
 msgstr ""
 
 #: ../../source/api_reference/plot_api/plot_choroplethmap.md:18
-msgid ""
-"* bounding_box(list) -- 图片对应的地理坐标区域，以 [x_min, y_min, x_max, y_max] "
-"的形式表示一个矩形区域。图片左下角的像素坐标 (0, 0) 对应地理坐标 (x_min, y_min) ，图片右上角的像素坐标 (width, "
-"height) 对应地理坐标 (x_max, y_max)。"
+msgid "weights(Series(dtype: float64|int64)) -- 轮廓的颜色权重。"
 msgstr ""
 
 #: ../../source/api_reference/plot_api/plot_choroplethmap.md:20
 msgid ""
-"* color_gradient(list) -- 轮廓的颜色渐变范围，表示形式为 [\"hex_color\"] 或 "
+"bounding_box(list) -- 图片对应的地理坐标区域，以 [x_min, y_min, x_max, y_max] "
+"的形式表示一个矩形区域。图片左下角的像素坐标 (0, 0) 对应地理坐标 (x_min, y_min) ，图片右上角的像素坐标 (width, "
+"height) 对应地理坐标 (x_max, y_max)。"
+msgstr ""
+
+#: ../../source/api_reference/plot_api/plot_choroplethmap.md:22
+msgid ""
+"color_gradient(list) -- 轮廓的颜色渐变范围，表示形式为 [\"hex_color\"] 或 "
 "[\"hex_color1\", \"hex_color2\"]。当形式为[\"hex_color\"] "
 "时所有轮廓的颜色相同。当形式为[\"hex_color1\", \"hex_color2\"] "
 "时轮廓的颜色由输入数据中一列的值（权重）决定，且颜色在 \"hex_color1\" ~ \"hex_color2\" 之间变化。"
 msgstr ""
 
-#: ../../source/api_reference/plot_api/plot_choroplethmap.md:22
+#: ../../source/api_reference/plot_api/plot_choroplethmap.md:24
 msgid ""
-"* color_bound(list) -- "
+"color_bound(list) -- "
 "可选参数，用于描述权重与颜色的对应关系，仅当color_gradient中包含两个颜色值时需要设置，表示形式为 [color_min, "
 "color_max]。权重值小于等于 color_min 时轮廓的颜色为\"hex_color1\"， 权重值大于等于 color_max "
 "时轮廓的颜色为\"hex_color2\"。"
 msgstr ""
 
-#: ../../source/api_reference/plot_api/plot_choroplethmap.md:24
-msgid "* opacity(float) -- 可选参数，表示轮廓的不透明度，范围为 0.0 ~ 1.0，默认值为 1.0。"
+#: ../../source/api_reference/plot_api/plot_choroplethmap.md:26
+msgid "opacity(float) -- 可选参数，表示轮廓的不透明度，范围为 0.0 ~ 1.0，默认值为 1.0。"
 msgstr ""
 
-#: ../../source/api_reference/plot_api/plot_choroplethmap.md:26
+#: ../../source/api_reference/plot_api/plot_choroplethmap.md:28
 msgid ""
-"* coordinate_system(str) -- "
+"coordinate_system(str) -- "
 "可选参数，表示输入数据所属的地理坐标系统，默认值为\"EPSG:3857\"，当前支持的地理坐标系统请参照 "
 "https://spatialreference.org/。"
 msgstr ""
 
-#: ../../source/api_reference/plot_api/plot_choroplethmap.md:28
-msgid "* aggregation_type(str) -- 可选参数，表示输入数据到轮廓权重的聚合方式，默认值为\"sum\"。"
+#: ../../source/api_reference/plot_api/plot_choroplethmap.md:30
+msgid "aggregation_type(str) -- 可选参数，表示输入数据到轮廓权重的聚合方式，默认值为\"sum\"。"
 msgstr ""
 
-#: ../../source/api_reference/plot_api/plot_choroplethmap.md:30
+#: ../../source/api_reference/plot_api/plot_choroplethmap.md:32
 msgid ""
-"* extra_contextily_params(dict) -- 剩余参数, 传递给 contextily.add_basemap, "
+"extra_contextily_params(dict) -- 剩余参数, 传递给 contextily.add_basemap, "
 "可用于更换地图背景, 或修改地图提供商."
 msgstr ""
 
 #: ../../source/api_reference/plot_api/plot_choroplethmap.md:35
 msgid "示例:"
 msgstr ""
+
+#~ msgid "plot_choropleth_map"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "plot_choropleth_map(ax, region_boundaries, weights, "
+#~ "bounding_box, color_gradient, color_bound=None, "
+#~ "opacity=1.0, coordinate_system='EPSG:3857', "
+#~ "**extra_contextily_params)"
+#~ msgstr ""
+
+#~ msgid "* ax(matplotlib.axes.Axes) -- 用来绘制几何体的坐标轴。"
+#~ msgstr ""
+
+#~ msgid "* region_boundaries(Series(dtype: object)) -- 所需绘制的多边形轮廓，格式为WKB。"
+#~ msgstr ""
+
+#~ msgid "* weights(Series(dtype: float64|int64)) -- 轮廓的颜色权重。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "* bounding_box(list) -- 图片对应的地理坐标区域，以 [x_min,"
+#~ " y_min, x_max, y_max] 的形式表示一个矩形区域。图片左下角的像素坐标 "
+#~ "(0, 0) 对应地理坐标 (x_min, y_min) ，图片右上角的像素坐标"
+#~ " (width, height) 对应地理坐标 (x_max, y_max)。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "* color_gradient(list) -- 轮廓的颜色渐变范围，表示形式为 "
+#~ "[\"hex_color\"] 或 [\"hex_color1\", "
+#~ "\"hex_color2\"]。当形式为[\"hex_color\"] "
+#~ "时所有轮廓的颜色相同。当形式为[\"hex_color1\", \"hex_color2\"] "
+#~ "时轮廓的颜色由输入数据中一列的值（权重）决定，且颜色在 \"hex_color1\" ~ "
+#~ "\"hex_color2\" 之间变化。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "* color_bound(list) -- "
+#~ "可选参数，用于描述权重与颜色的对应关系，仅当color_gradient中包含两个颜色值时需要设置，表示形式为 "
+#~ "[color_min, color_max]。权重值小于等于 color_min "
+#~ "时轮廓的颜色为\"hex_color1\"， 权重值大于等于 color_max "
+#~ "时轮廓的颜色为\"hex_color2\"。"
+#~ msgstr ""
+
+#~ msgid "* opacity(float) -- 可选参数，表示轮廓的不透明度，范围为 0.0 ~ 1.0，默认值为 1.0。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "* coordinate_system(str) -- "
+#~ "可选参数，表示输入数据所属的地理坐标系统，默认值为\"EPSG:3857\"，当前支持的地理坐标系统请参照 "
+#~ "https://spatialreference.org/。"
+#~ msgstr ""
+
+#~ msgid "* aggregation_type(str) -- 可选参数，表示输入数据到轮廓权重的聚合方式，默认值为\"sum\"。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "* extra_contextily_params(dict) -- 剩余参数, 传递给"
+#~ " contextily.add_basemap, 可用于更换地图背景, 或修改地图提供商."
+#~ msgstr ""
 

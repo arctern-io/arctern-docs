@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 16:36+0800\n"
+"POT-Creation-Date: 2020-06-06 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Generated-By: Babel 2.8.0\n"
 
 #: ../../source/api_reference/map_match/map_match.rst:4
-msgid "Map Macth"
+msgid "Map Match"
 msgstr ""
 
 #: ../../source/api_reference/map_match/map_match.rst:12:<autosummary>:1
@@ -113,5 +113,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ":obj:`arctern.within_which <arctern.within_which>`\\"
+#~ msgstr ""
+
+#~ msgid "Map Macth"
 #~ msgstr ""
 

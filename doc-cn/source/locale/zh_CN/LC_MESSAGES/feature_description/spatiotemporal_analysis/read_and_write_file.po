@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 16:17+0800\n"
+"POT-Creation-Date: 2020-06-06 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 #: ../../source/feature_description/spatiotemporal_analysis/read_and_write_file.md:9
 msgid ""
 "本例使用 wkt_geos.csv 文件演示如何从文件读取 WKT 和 WKB 数据。此文件主要定义了四个 WKT "
-"格式的几何体对象，包括一个点（POINT）和三个多边形（POLYGON）。wkt_geos.csv 文件内容如下："
+"格式的几何体对象，包括一个点（POINT）和三个多边形（POLYGON）。文件内容如下："
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/read_and_write_file.md:19
@@ -74,7 +74,7 @@ msgstr ""
 #: ../../source/feature_description/spatiotemporal_analysis/read_and_write_file.md:65
 msgid ""
 "本例使用 geos.json 文件演示如何从文件读取 GeoJson 数据。此文件主要定义了四个 WKT "
-"格式的几何体对象，包括一个点（POINT）和三个多边形（POLYGON）。geos.json 文件内容如下："
+"格式的几何体对象，包括一个点（POINT）和三个多边形（POLYGON）。文件内容如下："
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/read_and_write_file.md:76
@@ -104,13 +104,38 @@ msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/read_and_write_file.md:110
 msgid ""
-"首先，调用 GeoSeries 的 to_wkt 方法从 GeoSeries 对象得到一个 pandas.Series 对象。然后，调用 "
+"首先，使用 GeoSeries 的 to_wkt 方法从 GeoSeries 对象得到一个 pandas.Series 对象。然后，使用 "
 "pandas.Series 的 to_csv 方法将数据保存为 CSV 文件。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/read_and_write_file.md:127
 msgid ""
-"首先，调用 GeoSeries 的 as_geojson 方法从 GeoSeries 对象得到一个 pandas.Series 对象。然后，调用 "
+"首先，使用 GeoSeries 的 as_geojson 方法从 GeoSeries 对象得到一个 pandas.Series 对象。然后，使用 "
 "pandas.Series 的 to_json 方法将数据保存为 JSON 文件。"
 msgstr ""
+
+#~ msgid ""
+#~ "本例使用 wkt_geos.csv 文件演示如何从文件读取 WKT 和 WKB"
+#~ " 数据。此文件主要定义了四个 WKT "
+#~ "格式的几何体对象，包括一个点（POINT）和三个多边形（POLYGON）。wkt_geos.csv 文件内容如下："
+#~ msgstr ""
+
+#~ msgid ""
+#~ "本例使用 geos.json 文件演示如何从文件读取 GeoJson "
+#~ "数据。此文件主要定义了四个 WKT "
+#~ "格式的几何体对象，包括一个点（POINT）和三个多边形（POLYGON）。geos.json 文件内容如下："
+#~ msgstr ""
+
+#~ msgid ""
+#~ "首先，调用 GeoSeries 的 to_wkt 方法从 GeoSeries"
+#~ " 对象得到一个 pandas.Series 对象。然后，调用 pandas.Series "
+#~ "的 to_csv 方法将数据保存为 CSV 文件。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "首先，调用 GeoSeries 的 as_geojson 方法从 "
+#~ "GeoSeries 对象得到一个 pandas.Series 对象。然后，调用 "
+#~ "pandas.Series 的 to_json 方法将数据保存为 JSON "
+#~ "文件。"
+#~ msgstr ""
 

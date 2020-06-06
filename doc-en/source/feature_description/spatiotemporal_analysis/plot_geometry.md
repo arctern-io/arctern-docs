@@ -1,33 +1,32 @@
-# 绘图方法
+# Plot methods
 
-本文档介绍 Arctern 的绘图方法。
+This article describes Arctern's plot methods.
 
 ## plot_geometry
-
-### 方法定义
+### Definition
 
 ```python
    def plot_geometry(ax, geoms, **style_kwds)
 ```
-### 参数介绍
+### Parameters
 
-* **ax：** matplotlib.axes._subplots.AxesSubplot 的实例，表示用于绘图的画布。
-* **geoms：** 当前要绘制的几何图形集合，接受 pandas Series、Arctrn GeoSeries 或者 pandas DataFrame 作为输入。其中的几何图形元素必须是 WKB 形式。
-* **style_kwds：** 绘图风格参数，包括：
-  * **linewidth：** 线或多边形的线宽
-  * **linestyle：** 线或多边形的线型
-  * **edgecolor：** 多边形的边缘颜色
-  * **facecolor：** 多边形的填充颜色
-  * **color：** 点或线的颜色
-  * **marker：** 点的形状
-  * **markersize：** 点的大小
-  * **alpha：** 透明度
+* **ax:** An instance of matplotlib.axes._subplots.AxesSubplot. It represents the axes of canvas.
+* **geoms:** A collection of geometries to be drawn. It accepts pandas Series, Arctrn GeoSeries, or pandas DataFrame as input. Note that the geometries must be in WKB form.
+* **style_kwds:** Parameters that describes the drawing style, including:
+  * **linewidth:** Line width of lines or polygons
+  * **linestyle:** Line style
+  * **edgecolor:** Edge color of polygons
+  * **facecolor:** Face color of polygons
+  * **color:** Color of points or lines
+  * **marker:** Shape of points
+  * **markersize:** Size of points
+  * **alpha:** Transparency
 
-以下展示如何使用 `plot_geometry` 方法绘制几何图形。
+The following examples show you how to use the `plot_geometry` method to draw geometric figures.
 
-## 生成测试数据
+## Generate test data
 
-使用 GeoSeries 的构造函数创建一些几何体对象，包括点（POINT）、线（LINESTRING）、多边形（POLYGON）、多点（MULTIPOINT）、多个多边形（MULTIPOLYGON）、几何体集合（GEOMETRYCOLLECTION）和多线（MULTILINESTRING）。在后续步骤中，我们将演示如何绘制这些几何图形。
+We use the GeoSeries constructor to create some geometric objects, including points (POINT), lines (LINESTRING), polygons (POLYGON), multiple points (MULTIPOINT), multiple polygons (MULTIPOLYGON), geometry collections (GEOMETRYCOLLECTION), and multiple lines (MULTILINESTRING) . In the next steps, we will demonstrate how to draw these geometric figures.
 
 ```python
 >>> from arctern import GeoSeries
@@ -45,12 +44,12 @@
 >>> geoms = GeoSeries(["MULTILINESTRING ((0 0,1 1,2 3),(1 0,2 4))","POINT (3 4)","POLYGON ((0 0,0 1,1.5 2,0 0))"])
 ```
 
-## 绘制几何图形
+## Plot geometric figures
 
-### 点
+### Point
 
-- **颜色：** 蓝
-- **透明度：** 0.4
+- **Color:** Blue
+- **Transparency:** 0.4
 ```python
 from arctern import plot
 import matplotlib.pyplot as plt
@@ -62,11 +61,11 @@ plt.show()
 
 ![](./img/point_s.png)
 
-### 线
+### Line
 
-- **颜色：** 蓝
-- **线型：** " -. "
-- **透明度：** 0.4
+- **Color:** Blue
+- **Line style:** " -. "
+- **Transparency:** 0.4
 
 ```python
 from arctern import plot
@@ -79,12 +78,12 @@ plt.show()
 
 ![](./img/linestring_s.png)
 
-### 多边形
+### Polygon
 
-- **填充颜色：** 绿
-- **线宽：** 3.0
-- **边缘颜色：** 红
-- **透明度：** 0.4
+- **Face color:** Green
+- **Line width:** 3.0
+- **Edge color:** Red
+- **Transparency:** 0.4
 
 ```python
 from arctern import plot
@@ -97,12 +96,12 @@ plt.show()
 
 ![](./img/polygon_s.png)
 
-### 多点
+### Multiple points
 
-- **颜色：** 蓝
-- **点型：** " * "
-- **大小：** 40.0
-- **透明度：** 0.4
+- **Color:** Blue
+- **Marker:** " * "
+- **Size:** 40.0
+- **Transparency:** 0.4
 
 ```python
 from arctern import plot
@@ -115,11 +114,11 @@ plt.show()
 
 ![](./img/multi_point_s.png)
 
-### 多线
+### Multiple lines
 
-- **颜色：** 蓝
-- **线型：** " -- "
-- **透明度：** 0.4
+- **Color:** Blue
+- **Line style:** " -- "
+- **Transparency:** 0.4
 
 ```python
 from arctern import plot
@@ -132,11 +131,10 @@ plt.show()
 
 ![](./img/multi_linestring_s.png)
 
-### 多个多边形
+### Multiple polygons
 
-
-- **填充颜色：** 蓝
-- **透明度：** 0.4
+- **Face color:** Blue
+- **Transparency:** 0.4
 
 ```python
 from arctern import plot
@@ -149,12 +147,12 @@ plt.show()
 
 ![](./img/multi_polygon_s.png)
 
-### 几何体集合
+### Geometry collection
 
-- **填充颜色：** 蓝
-- **边缘颜色：** 红
-- **点线颜色：** 绿
-- **透明度：** 0.4
+- **Face Color:** Blue
+- **Edge Color:** Red
+- **Point and line Color:** Green
+- **Transparency:** 0.4
 
 ```python
 from arctern import plot
@@ -167,17 +165,17 @@ plt.show()
 
 ![](./img/geom_collection_s.png)
 
-### 多个几何图形
+### Multiple Geometries
 
 - **多线**
-  * **线型：** " -. "
-  * **颜色：** 蓝
+  * **Line style:** " -. " 
+  * **Color:** Blue
 - **多边形**
-  * **线型：** 虚线 
-  * **填充颜色：** 绿 
-  * **边缘颜色**： 红
-  * **点型：** " o "
-  * **透明度：** 0.4
+  * **Line style:** " -- "
+  * **Face color:** Green 
+  * **Edge color**: Red
+  * **Marker:** " o "
+  * **Transparency:** 0.4
 
 ```python
 from arctern import plot
@@ -190,22 +188,22 @@ plt.show()
 
 ![](./img/geoms.png)
 
-### 多次绘制几何图形
+### Plot geometries multiple times
 
-- **线**
-   * **颜色：** 蓝
-   * **线型：** " -. "
-   * **透明度：** 0.4
-- **多边形**
-   * **填充颜色：** 绿
-   * **线宽：** 3.0
-   * **边缘颜色：** 红
-   * **透明度：** 0.4
-- **几何体集合**
-   * **填充颜色：** 蓝
-   * **边缘颜色：** 红
-   * **点线颜色：** 绿
-   * **透明度：** 0.4
+- **Line**
+   * **Color:** Blue
+   * **Line style:** " -. "
+   * **Transparency:** 0.4
+- **Polygon**
+   * **Face color:** Green
+   * **Line width:** 3.0
+   * **Edge color:** Red
+   * **Transparency:** 0.4
+- **Geometry collection**
+   * **Face color:** Blue
+   * **Edge color:** Red
+   * **Point and line color:** Green
+   * **Transparency:** 0.4
 
 ```python
 from arctern import plot
