@@ -11,17 +11,17 @@
 ```
 ### 参数介绍
 
-* **ax：** matplotlib.axes._subplots.AxesSubplot 的实例，表示用于绘图的画布。
-* **geoms：** 当前要绘制的几何图形集合，接受 pandas Series、Arctrn GeoSeries 或者 pandas DataFrame 作为输入。其中的几何图形元素必须是 WKB 形式。
-* **style_kwds：** 绘图风格参数，包括：
-  * **linewidth：** 线或多边形的线宽
-  * **linestyle：** 线或多边形的线型
-  * **edgecolor：** 多边形的边缘颜色
-  * **facecolor：** 多边形的填充颜色
-  * **color：** 点或线的颜色
-  * **marker：** 点的形状
-  * **markersize：** 点的大小
-  * **alpha：** 透明度
+* **ax:** matplotlib.axes._subplots.AxesSubplot 的实例，表示用于绘图的画布。
+* **geoms:** 当前要绘制的几何图形集合，接受 pandas Series、Arctrn GeoSeries 或者 pandas DataFrame 作为输入。其中的几何图形元素必须是 WKB 形式。
+* **style_kwds:** 绘图风格参数，包括：
+  * **linewidth:** 线或多边形的线宽
+  * **linestyle:** 线或多边形的线型
+  * **edgecolor:** 多边形的边缘颜色
+  * **facecolor:** 多边形的填充颜色
+  * **color:** 点或线的颜色
+  * **marker:** 点的形状
+  * **markersize:** 点的大小
+  * **alpha:** 透明度
 
 以下展示如何使用 `plot_geometry` 方法绘制几何图形。
 
