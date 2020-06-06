@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-06 17:35+0800\n"
+"POT-Creation-Date: 2020-06-06 20:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,49 +38,49 @@ msgid "参数介绍"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:14
-msgid "ax： matplotlib.axes._subplots.AxesSubplot 的实例，表示用于绘图的画布。"
+msgid "ax: matplotlib.axes._subplots.AxesSubplot 的实例，表示用于绘图的画布。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:15
 msgid ""
-"geoms： 当前要绘制的几何图形集合，接受 pandas Series、Arctrn GeoSeries 或者 pandas DataFrame"
+"geoms: 当前要绘制的几何图形集合，接受 pandas Series、Arctrn GeoSeries 或者 pandas DataFrame"
 " 作为输入。其中的几何图形元素必须是 WKB 形式。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:16
-msgid "style_kwds： 绘图风格参数，包括："
+msgid "style_kwds: 绘图风格参数，包括："
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:17
-msgid "linewidth： 线或多边形的线宽"
+msgid "linewidth: 线或多边形的线宽"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:18
-msgid "linestyle： 线或多边形的线型"
+msgid "linestyle: 线或多边形的线型"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:19
-msgid "edgecolor： 多边形的边缘颜色"
+msgid "edgecolor: 多边形的边缘颜色"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:20
-msgid "facecolor： 多边形的填充颜色"
+msgid "facecolor: 多边形的填充颜色"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:21
-msgid "color： 点或线的颜色"
+msgid "color: 点或线的颜色"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:22
-msgid "marker： 点的形状"
+msgid "marker: 点的形状"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:23
-msgid "markersize： 点的大小"
+msgid "markersize: 点的大小"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:24
-msgid "alpha： 透明度"
+msgid "alpha: 透明度"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:26
@@ -258,5 +258,41 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "点型： \"o\""
+#~ msgstr ""
+
+#~ msgid "ax： matplotlib.axes._subplots.AxesSubplot 的实例，表示用于绘图的画布。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "geoms： 当前要绘制的几何图形集合，接受 pandas Series、Arctrn "
+#~ "GeoSeries 或者 pandas DataFrame "
+#~ "作为输入。其中的几何图形元素必须是 WKB 形式。"
+#~ msgstr ""
+
+#~ msgid "style_kwds： 绘图风格参数，包括："
+#~ msgstr ""
+
+#~ msgid "linewidth： 线或多边形的线宽"
+#~ msgstr ""
+
+#~ msgid "linestyle： 线或多边形的线型"
+#~ msgstr ""
+
+#~ msgid "edgecolor： 多边形的边缘颜色"
+#~ msgstr ""
+
+#~ msgid "facecolor： 多边形的填充颜色"
+#~ msgstr ""
+
+#~ msgid "color： 点或线的颜色"
+#~ msgstr ""
+
+#~ msgid "marker： 点的形状"
+#~ msgstr ""
+
+#~ msgid "markersize： 点的大小"
+#~ msgstr ""
+
+#~ msgid "alpha： 透明度"
 #~ msgstr ""
 
