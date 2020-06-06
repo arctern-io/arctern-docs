@@ -52,7 +52,7 @@ Import the following libraries:
 
 ```python
 >>> import arctern
-... from arctern.util import save_png, vega
+>>> from arctern.util import save_png, vega
 >>> import matplotlib.pyplot as plt
 >>> import matplotlib.image as mpimg
 ```
@@ -80,13 +80,13 @@ Use the `plot.weighted_pointmap` function of Arctern to draw a weighted point ma
 
 ```python
 >>> color_bound=[df.fare_amount.min(), df.fare_amount.max()]
-
+>>> 
 >>> size_bound=[5, 30]
 >>> total_max=df.total_amount.max()
 >>> total_min=df.total_amount.min()
 >>> size_weights = [(v-total_min)/(total_max-total_min)*(size_bound[1]-size_bound[0])+size_bound[0] for v in df.total_amount]
 >>> size_weights = pd.Series(size_weights)
-
+>>> 
 >>> fig, ax = plt.subplots(figsize=(10, 6), dpi=200)
 >>> arctern.plot.weighted_pointmap(ax, 
 ...                       arctern.GeoSeries.point(df.pickup_longitude,df.pickup_latitude),
