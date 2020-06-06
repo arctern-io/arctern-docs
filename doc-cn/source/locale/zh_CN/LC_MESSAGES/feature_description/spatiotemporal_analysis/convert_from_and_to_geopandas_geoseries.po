@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 16:17+0800\n"
+"POT-Creation-Date: 2020-06-06 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/convert_from_and_to_geopandas_geoseries.md:23
 msgid ""
-"调用 Arctern GeoSeries 的 to_geopandas 接口可将 Arctern GeoSeries 转为 GeoPandas "
+"使用 Arctern GeoSeries 的 to_geopandas 方法将 Arctern GeoSeries 转为 GeoPandas "
 "GeoSeries。"
 msgstr ""
 
@@ -57,7 +57,18 @@ msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/convert_from_and_to_geopandas_geoseries.md:36
 msgid ""
-"调用 Arctern GeoSeries 的 from_geopandas 接口可将 GeoPandas GeoSeries 转为 Arctern"
-" GeoSeries。"
+"使用 Arctern GeoSeries 的 from_geopandas 方法将 GeoPandas GeoSeries 转为 Arctern "
+"GeoSeries。"
 msgstr ""
+
+#~ msgid ""
+#~ "调用 Arctern GeoSeries 的 to_geopandas 接口可将"
+#~ " Arctern GeoSeries 转为 GeoPandas GeoSeries。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "调用 Arctern GeoSeries 的 from_geopandas "
+#~ "接口可将 GeoPandas GeoSeries 转为 Arctern "
+#~ "GeoSeries。"
+#~ msgstr ""
 

@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-06 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/api_reference/plot_api/plot_geometry.md:1
+msgid "plot_geometry"
+msgstr ""
+
+#: ../../source/api_reference/plot_api/plot_geometry.md:2
+msgid "plot_geometry(ax, geoms, **style_kwds) 在 matplotlib 中绘制几何图形。"
+msgstr ""
+
+#: ../../source/api_reference/plot_api/plot_geometry.md:5
+msgid "参数"
+msgstr ""
+
+#: ../../source/api_reference/plot_api/plot_geometry.md:7
+msgid "ax(matplotlib.axes.Axes) -- 用来绘制几何体的坐标轴。"
+msgstr ""
+
+#: ../../source/api_reference/plot_api/plot_geometry.md:9
+msgid "geoms(Series(dtype: object)) -- 所需绘制的几何体，格式为 WKB。"
+msgstr ""
+
+#: ../../source/api_reference/plot_api/plot_geometry.md:11
+msgid ""
+"style_kwds : 绘图风格参数设置，包括 linewidth, linestyle, edgecolor,facecolor, "
+"color, marker, markersize,alpha"
+msgstr ""
+
+#: ../../source/api_reference/plot_api/plot_geometry.md:13
+msgid "linewidth: list(float) -- 线宽(线/多边形)，默认值是 1.0。"
+msgstr ""
+
+#: ../../source/api_reference/plot_api/plot_geometry.md:15
+msgid "linestyle: list(string) -- 线型(线/多边形)，默认值是 '-'"
+msgstr ""
+
+#: ../../source/api_reference/plot_api/plot_geometry.md:17
+msgid "edgecolor: list(string) -- 边缘颜色(多边形)，默认值是黑色。"
+msgstr ""
+
+#: ../../source/api_reference/plot_api/plot_geometry.md:19
+msgid "facecolor: list(string) -- 填充颜色(多边形)，默认值是 'C0'。"
+msgstr ""
+
+#: ../../source/api_reference/plot_api/plot_geometry.md:21
+msgid "color: list(string) -- 图形颜色(点/线)，默认值是 'C0'。"
+msgstr ""
+
+#: ../../source/api_reference/plot_api/plot_geometry.md:23
+msgid "marker: string -- 点型(点)，默认值是 'o'。"
+msgstr ""
+
+#: ../../source/api_reference/plot_api/plot_geometry.md:25
+msgid "markersize: double -- 点大小(点)，默认值是 6.0。"
+msgstr ""
+
+#: ../../source/api_reference/plot_api/plot_geometry.md:27
+msgid "alpha: double -- 透明度，默认值是 1.0。"
+msgstr ""
+
+#: ../../source/api_reference/plot_api/plot_geometry.md:29
+msgid "示例:"
+msgstr ""
+

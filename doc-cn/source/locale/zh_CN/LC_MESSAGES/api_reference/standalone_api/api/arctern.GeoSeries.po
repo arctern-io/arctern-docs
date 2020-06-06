@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 16:36+0800\n"
+"POT-Creation-Date: 2020-06-06 20:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -393,6 +393,11 @@ msgstr ""
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:67:<autosummary>:1
 msgid ":obj:`crs <arctern.GeoSeries.crs>`\\"
 msgstr ""
+
+#: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:67:<autosummary>:1
+#, fuzzy
+msgid "Return the coordinate system of the GeoSeries."
+msgstr "GeoSeries 的参考坐标系现在只支持 SRID 格式。"
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:67:<autosummary>:1
 msgid ":obj:`envelope <arctern.GeoSeries.envelope>`\\"

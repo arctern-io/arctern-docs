@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 16:17+0800\n"
+"POT-Creation-Date: 2020-06-06 20:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,5 +19,25 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.crs.rst:2
 msgid "arctern.GeoSeries.crs"
+msgstr ""
+
+#: arctern.GeoSeries.crs:1 of
+msgid "Return the coordinate system of the GeoSeries."
+msgstr ""
+
+#: arctern.GeoSeries.crs of
+msgid "返回类型"
+msgstr ""
+
+#: arctern.GeoSeries.crs of
+msgid "返回"
+msgstr ""
+
+#: arctern.GeoSeries.crs:4 of
+msgid "the coordinate system of the GeoSeries."
+msgstr ""
+
+#: arctern.GeoSeries.crs of
+msgid "example"
 msgstr ""
 

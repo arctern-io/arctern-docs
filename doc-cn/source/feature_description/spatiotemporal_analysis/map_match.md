@@ -1,4 +1,5 @@
 # 地图匹配
+
 Arctern 支持对 GPS 数据和路网进行关系分析，比如判断 GPS 点附近是否存在道路、搜索距离 GPS 点最近的道路，以及获得距离 GPS 点最近且在道路上的映射点。
 
 ## 生成数据集
@@ -15,7 +16,8 @@ Arctern 支持对 GPS 数据和路网进行关系分析，比如判断 GPS 点�
 >>> points = GeoSeries(["POINT (-73.9780065 40.7748119)", "POINT (-73.9802864 40.7728317)"])
 ```
 
-## 判断 GPS 点附近固定范围内是否存在道路
+## 在 GPS 点附近查找道路
+
 使用 `near_road` 方法可以判断 GPS 点附近固定范围内是否存在道路。假设 `points` 为某城市内出租车上下客的位置，`roads` 为对应城市的路网信息。那么，如果乘客上下车的位置不在道路上或者偏离道路太远，那么这些位置数据就可以被认定为噪点。
 
 > **注意：** GPS 点和路网数据的坐标系必须是“EPSG:4326”。
@@ -45,10 +47,13 @@ dtype: GeoDtype
 ```
 
 ## 获得距离 GPS 点最近的道路
+
 使用 `nearest_road` 方法可以获得距离 GPS 点最近的道路。该方法的运行逻辑是：
 
 1. 基于路网信息建立索引树（Rtree）。
-2. 基于索引树快速查询 GPS 点附近的所有道路， 最后在查询出来的道路中筛选出距离 GPS 点最近的道路。 GPS 点和路网数据的坐标系统必须是 EPSG:4326。
+2. 基于索引树快速查询 GPS 点附近的所有道路， 最后在查询出来的道路中筛选出距离 GPS 点最近的道路。
+
+> **注意：** GPS 点和路网数据的坐标系必须是“EPSG:4326”。
 
 ```python
 >>> import arctern
@@ -63,7 +68,7 @@ dtype: GeoDtype
 >>> # 查询距离 GPS 点最近的道路
 >>> roads_wkb_rst = arctern.nearest_road(roads, points)
 >>> 
->>> # 将 WKB 格式的 roads_wkb_rst 转换成 GeoSeries，以便后续查看最近道路
+>>> # 将 roads_wkb_rst 从 WKB 格式转换成 GeoSeries 格式（易读）
 >>> nearest_roads = GeoSeries(roads_wkb_rst)
 >>> 
 >>> # 查看 GPS 点
@@ -90,7 +95,7 @@ dtype: GeoDtype
 >>> # 将 GPS 点绑定到距离最近的道路上
 >>> points_wkb_rst = arctern.nearest_location_on_road(roads, points)
 >>> 
->>> # 将 WKB 格式的 points_wkb_rst 转换成 GeoSeries，以便后续查看纠偏后的 GPS 点的位置
+>>> # 将 points_wkb_rst 从 WKB 格式转换成 GeoSeries 格式（易读）
 >>> nearest_location = GeoSeries(points_wkb_rst)
 >>> 
 >>> # 查看 GPS 点的初始位置

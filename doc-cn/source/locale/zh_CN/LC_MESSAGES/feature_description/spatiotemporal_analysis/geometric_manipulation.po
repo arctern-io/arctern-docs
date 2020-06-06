@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 16:17+0800\n"
+"POT-Creation-Date: 2020-06-06 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,8 +33,8 @@ msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:7
 msgid ""
-"功能： 计算 GeoSeries 对象中每个几何体的长度。如果几何体不是  LineString 和 MultiLineString "
-"类型的几何体， 则它的长度为 0 。"
+"功能： 计算 GeoSeries 对象中每个几何体的长度。如果几何体不是 LineString 和 MultiLineString 类型的几何体，"
+" 则它的长度为 0 。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:8
@@ -320,14 +320,10 @@ msgid "功能： 对于 GeoSeries 对象中的每个几何体，判断它是否�
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:333
-#: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:351
-#: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:370
 msgid "True： 两个几何体等价。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:334
-#: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:352
-#: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:371
 msgid "False： 两个几何体不等价。"
 msgstr ""
 
@@ -341,12 +337,28 @@ msgid ""
 "对象中相同位置的几何体相邻。“相邻”表示两个几何体在边界上有共同的点。"
 msgstr ""
 
+#: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:351
+msgid "True： 两个几何体相邻。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:352
+msgid "False： 两个几何体不相邻。"
+msgstr ""
+
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:365
 msgid "GeoSeries.overlaps(other)"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:367
 msgid "功能： 对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体重叠。“重叠”表示两个几何体相交且不互相包含。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:370
+msgid "True： 两个几何体重叠。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:371
+msgid "False： 两个几何体不重叠。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:384
@@ -435,4 +447,10 @@ msgstr ""
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:480
 msgid "返回： POINT"
 msgstr ""
+
+#~ msgid ""
+#~ "功能： 计算 GeoSeries 对象中每个几何体的长度。如果几何体不是  "
+#~ "LineString 和 MultiLineString 类型的几何体， 则它的长度为"
+#~ " 0 。"
+#~ msgstr ""
 

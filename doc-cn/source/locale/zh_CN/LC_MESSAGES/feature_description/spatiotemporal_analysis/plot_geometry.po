@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 16:17+0800\n"
+"POT-Creation-Date: 2020-06-06 20:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,196 +29,270 @@ msgstr ""
 msgid "plot_geometry"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:6
-msgid "plot_geometry 方法可以用来绘制一组几何图形。"
-msgstr ""
-
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:8
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:7
 msgid "方法定义"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:13
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:12
 msgid "参数介绍"
 msgstr ""
 
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:14
+msgid "ax: matplotlib.axes._subplots.AxesSubplot 的实例，表示用于绘图的画布。"
+msgstr ""
+
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:15
-msgid "ax： matplotlib.axes._subplots.AxesSubplot 的实例，表示用于绘图的画布。"
+msgid ""
+"geoms: 当前要绘制的几何图形集合，接受 pandas Series、Arctrn GeoSeries 或者 pandas DataFrame"
+" 作为输入。其中的几何图形元素必须是 WKB 形式。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:16
-msgid ""
-"geoms： 表示当前要绘制的几何图形集合，接受 pandas Series、Arctrn GeoSeries 或者 pandas "
-"DataFrame 作为输入。其中的几何图形元素必须是 WKB 形式。"
+msgid "style_kwds: 绘图风格参数，包括："
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:17
-msgid "style_kwds： 绘图风格参数，包括："
+msgid "linewidth: 线或多边形的线宽"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:18
-msgid "linewidth： 线宽设置 (线/多边形)"
+msgid "linestyle: 线或多边形的线型"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:19
-msgid "linestyle： 线型设置 (线/多边形)"
+msgid "edgecolor: 多边形的边缘颜色"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:20
-msgid "edgecolor： 图形边缘颜色设置 (多边形)"
+msgid "facecolor: 多边形的填充颜色"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:21
-msgid "facecolor： 图形填充颜色设置 (多边形)"
+msgid "color: 点或线的颜色"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:22
-msgid "color： 图形颜色 (点/线)"
+msgid "marker: 点的形状"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:23
-msgid "marker： 点的形状 (点)"
+msgid "markersize: 点的大小"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:24
-msgid "markersize： 点的大小 (点)"
+msgid "alpha: 透明度"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:25
-msgid "alpha： 透明度"
-msgstr ""
-
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:27
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:26
 msgid "以下展示如何使用 plot_geometry 方法绘制几何图形。"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:29
-msgid "创建测试数据"
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:28
+msgid "生成测试数据"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:31
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:30
 msgid ""
 "使用 GeoSeries "
 "的构造函数创建一些几何体对象，包括点（POINT）、线（LINESTRING）、多边形（POLYGON）、多点（MULTIPOINT）、多个多边形（MULTIPOLYGON）、几何体集合（GEOMETRYCOLLECTION）和多线（MULTILINESTRING）。在后续步骤中，我们将演示如何绘制这些几何图形。"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:49
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:48
 msgid "绘制几何图形"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:51
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:50
 msgid "点"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:53
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:68
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:103
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:121
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:175
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:197
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:52
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:67
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:102
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:120
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:174
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:196
 msgid "颜色： 蓝"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:54
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:70
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:88
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:106
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:123
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:140
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:158
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:181
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:199
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:204
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:209
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:53
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:69
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:87
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:105
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:122
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:139
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:157
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:180
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:198
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:203
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:208
 msgid "透明度： 0.4"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:66
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:196
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:65
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:195
 msgid "线"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:69
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:174
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:198
-msgid "线型： 点划线"
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:68
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:173
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:197
+msgid "线型： \" -. \""
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:83
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:176
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:200
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:82
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:175
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:199
 msgid "多边形"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:85
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:178
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:201
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:84
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:177
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:200
 msgid "填充颜色： 绿"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:86
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:202
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:85
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:201
 msgid "线宽： 3.0"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:87
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:156
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:179
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:203
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:207
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:86
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:155
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:178
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:202
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:206
 msgid "边缘颜色： 红"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:101
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:100
 msgid "多点"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:104
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:103
 msgid "点型： \" * \""
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:105
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:104
 msgid "大小： 40.0"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:119
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:173
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:118
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:172
 msgid "多线"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:122
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:177
-msgid "线型： 虚线"
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:121
+msgid "线型： \" -- \""
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:136
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:135
 msgid "多个多边形"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:139
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:155
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:206
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:138
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:154
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:205
 msgid "填充颜色： 蓝"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:153
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:205
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:152
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:204
 msgid "几何体集合"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:157
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:208
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:156
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:207
 msgid "点线颜色： 绿"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:171
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:170
 msgid "多个几何图形"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:180
-msgid "点型： \"o\""
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:176
+msgid "线型： 虚线"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:194
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:179
+msgid "点型： \" o \""
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/plot_geometry.md:193
 msgid "多次绘制几何图形"
 msgstr ""
+
+#~ msgid "plot_geometry 方法可以用来绘制一组几何图形。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "geoms： 表示当前要绘制的几何图形集合，接受 pandas Series、Arctrn "
+#~ "GeoSeries 或者 pandas DataFrame "
+#~ "作为输入。其中的几何图形元素必须是 WKB 形式。"
+#~ msgstr ""
+
+#~ msgid "linewidth： 线宽设置 (线/多边形)"
+#~ msgstr ""
+
+#~ msgid "linestyle： 线型设置 (线/多边形)"
+#~ msgstr ""
+
+#~ msgid "edgecolor： 图形边缘颜色设置 (多边形)"
+#~ msgstr ""
+
+#~ msgid "facecolor： 图形填充颜色设置 (多边形)"
+#~ msgstr ""
+
+#~ msgid "color： 图形颜色 (点/线)"
+#~ msgstr ""
+
+#~ msgid "marker： 点的形状 (点)"
+#~ msgstr ""
+
+#~ msgid "markersize： 点的大小 (点)"
+#~ msgstr ""
+
+#~ msgid "创建测试数据"
+#~ msgstr ""
+
+#~ msgid "线型： 点划线"
+#~ msgstr ""
+
+#~ msgid "点型： \"o\""
+#~ msgstr ""
+
+#~ msgid "ax： matplotlib.axes._subplots.AxesSubplot 的实例，表示用于绘图的画布。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "geoms： 当前要绘制的几何图形集合，接受 pandas Series、Arctrn "
+#~ "GeoSeries 或者 pandas DataFrame "
+#~ "作为输入。其中的几何图形元素必须是 WKB 形式。"
+#~ msgstr ""
+
+#~ msgid "style_kwds： 绘图风格参数，包括："
+#~ msgstr ""
+
+#~ msgid "linewidth： 线或多边形的线宽"
+#~ msgstr ""
+
+#~ msgid "linestyle： 线或多边形的线型"
+#~ msgstr ""
+
+#~ msgid "edgecolor： 多边形的边缘颜色"
+#~ msgstr ""
+
+#~ msgid "facecolor： 多边形的填充颜色"
+#~ msgstr ""
+
+#~ msgid "color： 点或线的颜色"
+#~ msgstr ""
+
+#~ msgid "marker： 点的形状"
+#~ msgstr ""
+
+#~ msgid "markersize： 点的大小"
+#~ msgstr ""
+
+#~ msgid "alpha： 透明度"
+#~ msgstr ""
 
