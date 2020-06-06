@@ -1,6 +1,6 @@
 .. _map_match:
 
-Map Macth
+Map Match
 ==========
 
 .. autosummary::

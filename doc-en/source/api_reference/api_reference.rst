@@ -8,3 +8,4 @@ API Reference
 
    standalone_api/geoseries
    map_match/map_match
+   plot_api/plot_api
