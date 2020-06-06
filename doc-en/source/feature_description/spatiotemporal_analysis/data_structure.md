@@ -52,7 +52,7 @@ If the result of the operation is geometry, a new GeoSeries object is returned, 
 
 The following lists some of the GeoSeries methods, including operations on geometry measurement, relationship calculation, and conversion. For detailed interface introduction, please see [API Reference](api_link).
 
-#### Measuring geometry  
+#### Geometric measurement  
 
 - **GeoSeries.is_valid：** Check whether each geometry in the GeoSeries object is valid.
 - **GeoSeries.area：** Calculate the area of each geometry in a GeoSeries object.
@@ -60,7 +60,7 @@ The following lists some of the GeoSeries methods, including operations on geome
 - **GeoSeries.distance_sphere：** For each geometry in the GeoSeries object, the minimum distance between two points on the earth's surface is calculated based on the latitude and longitude coordinates. This method uses the earth and radius defined by the SRID.
 - **GeoSeries.hausdorff_distance：** For each geometry in the GeoSeries object, check the Hausdorff distance between it and the geometry at the same position in the `other` object. This distance is to measure the similarity between two geometries.
 
-#### Geometric relationship calculation
+#### Geometric relationship operation
 
 - **GeoSeries.touches：** For each geometry in the GeoSeries object, check whether it touches the geometry at the same position in the `other` object. "touches" means that two geometries have a common point on the boundary.
 - **GeoSeries.overlaps：** For each geometry in the GeoSeries object, check whether it overlaps the geometry at the same position in the `other` object. "overlaps" means that the two geometries cross and do not contain each other.
