@@ -167,10 +167,10 @@ plt.show()
 
 ### Multiple Geometries
 
-- **多线**
+- **Multiple lines**
   * **Line style:** " -. " 
   * **Color:** Blue
-- **多边形**
+- **Polygon**
   * **Line style:** " -- "
   * **Face color:** Green 
   * **Edge color**: Red
