@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 16:36+0800\n"
+"POT-Creation-Date: 2020-06-07 10:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,41 @@ msgstr ""
 
 #: arctern.within_which:1 of
 msgid ""
-"Calculate spatial join of two GeoSeries :type left: GeoSeries :type "
-"right: GeoSeries :rtype: Series(dtype: object) :example:"
+"For each geometry in left, search geometries that satisfy \"within\" "
+"relationship in right"
 msgstr ""
+
+#: arctern.within_which of
+msgid "参数"
+msgstr ""
+
+#: arctern.within_which:4 arctern.within_which:7 of
+msgid "Sequence of Geometries"
+msgstr ""
+
+#: arctern.within_which of
+msgid "返回类型"
+msgstr ""
+
+#: arctern.within_which of
+msgid "返回"
+msgstr ""
+
+#: arctern.within_which:10 of
+msgid ""
+"For each `left[i]`, find `j` satisfying that `left[i]` is within "
+"`right[j]`. When there are multiple candidates, return one of them. When "
+"not exists, return `pandas.NA`"
+msgstr ""
+
+#: arctern.within_which of
+msgid "example"
+msgstr ""
+
+#~ msgid ""
+#~ "Calculate spatial join of two GeoSeries"
+#~ " :type left: GeoSeries :type right: "
+#~ "GeoSeries :rtype: Series(dtype: object) "
+#~ ":example:"
+#~ msgstr ""
 

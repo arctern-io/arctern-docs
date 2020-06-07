@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-07 10:00+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/api_reference/plot/api/arctern.plot.pointmap.rst:2
+msgid "arctern.plot.pointmap"
+msgstr ""
+
+#: arctern.plot.pointmap:1 of
+msgid "Plot pointmap in Matplotlib"
+msgstr ""
+
+#: arctern.plot.pointmap of
+msgid "参数"
+msgstr ""
+
+#: arctern.plot.pointmap:4 of
+msgid "Matplotlib axes object on which to add the basemap."
+msgstr ""
+
+#: arctern.plot.pointmap:7 of
+msgid "Sequence of Points"
+msgstr ""
+
+#: arctern.plot.pointmap:10 of
+msgid "Specify the bounding rectangle [west, south, east, north]."
+msgstr ""
+
+#: arctern.plot.pointmap:13 of
+msgid "Diameter of point, default as 3"
+msgstr ""
+
+#: arctern.plot.pointmap:16 of
+msgid "Specify point color in Hex Color Code, default as \"#115f9a\""
+msgstr ""
+
+#: arctern.plot.pointmap:19 of
+msgid "Opacity of point, ranged from 0.0 to 1.0, default as 1.0"
+msgstr ""
+
+#: arctern.plot.pointmap:22 of
+msgid ""
+"Coordinate Reference System of the geometry objects. Must be SRID formed,"
+" e.g. 'EPSG:4326' or 'EPSG:3857' Default as 'EPSG:3857'"
+msgstr ""
+
+#: arctern.plot.pointmap:27 of
+msgid ""
+"Extra parameters will be passed to contextily.add_basemap. See "
+"https://contextily.readthedocs.io/en/latest/reference.html for details"
+msgstr ""
+
+#: arctern.plot.pointmap of
+msgid "example"
+msgstr ""
+

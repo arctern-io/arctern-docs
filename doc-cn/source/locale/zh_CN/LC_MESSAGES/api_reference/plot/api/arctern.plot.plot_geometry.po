@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-07 10:00+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/api_reference/plot/api/arctern.plot.plot_geometry.rst:2
+msgid "arctern.plot.plot\\_geometry"
+msgstr ""
+
+#: arctern.plot.plot_geometry:1 of
+msgid ""
+"Plot a collection of geometries to `ax`. Parameters 'linewidth', "
+"'linestyle', 'edgecolor', 'facecolor', 'color', 'marker', 'markersize' "
+"are used to describe the style of plotted figure."
+msgstr ""
+
+#: arctern.plot.plot_geometry:4 of
+msgid ""
+"For geometry types `Polygon` and `MultiPolygon`, only 'linewidth', "
+"'linestyle', 'edgecolor', 'facecolor' are effective."
+msgstr ""
+
+#: arctern.plot.plot_geometry:7 of
+msgid ""
+"For geometry types `Linestring` and `MultiLinestring`, only 'color', "
+"'linewidth', 'linestyle' are effective."
+msgstr ""
+
+#: arctern.plot.plot_geometry:9 of
+msgid ""
+"For geometry types `Point` and `MultiPoint`, only 'color', 'marker', "
+"'markersize' are effective."
+msgstr ""
+
+#: arctern.plot.plot_geometry of
+msgid "参数"
+msgstr ""
+
+#: arctern.plot.plot_geometry:12 of
+msgid "The axes where geometries will be plotted."
+msgstr ""
+
+#: arctern.plot.plot_geometry:15 of
+msgid "sequence of geometries."
+msgstr ""
+
+#: arctern.plot.plot_geometry:18 of
+msgid "The width of line, the default value is 1.0."
+msgstr ""
+
+#: arctern.plot.plot_geometry:21 of
+msgid "The style of the line， the default value is '-'."
+msgstr ""
+
+#: arctern.plot.plot_geometry:24 of
+msgid "The edge color of the geometry, the default value is 'black'."
+msgstr ""
+
+#: arctern.plot.plot_geometry:27 of
+msgid "The color of the face of the geometry, the default value is 'C0'."
+msgstr ""
+
+#: arctern.plot.plot_geometry:30 of
+msgid "The color of the geometry, the default value is 'C0'."
+msgstr ""
+
+#: arctern.plot.plot_geometry:33 of
+msgid "The shape of point, the default value is 'o'."
+msgstr ""
+
+#: arctern.plot.plot_geometry:36 of
+msgid "The size of points, the default value is 6.0."
+msgstr ""
+
+#: arctern.plot.plot_geometry:39 of
+msgid "The transparency of the geometry, the default value is 1.0."
+msgstr ""
+
+#: arctern.plot.plot_geometry of
+msgid "example"
+msgstr ""
+
