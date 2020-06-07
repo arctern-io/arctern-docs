@@ -8,4 +8,4 @@ API 参考
 
    standalone_api/geoseries
    map_match/map_match
-   plot_api/plot_api
+   plot/plot
