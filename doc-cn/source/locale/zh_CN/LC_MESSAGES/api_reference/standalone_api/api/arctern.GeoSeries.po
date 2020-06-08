@@ -39,7 +39,7 @@ msgid ""
 "as `data`. Non-unique index values are allowed. Will default to "
 "RangeIndex (0, 1, 2, ..., n) if not provided. If both a dict and index "
 "sequence are used, the index will override the keys found in the dict."
-msgstr "与 pandas Series 相同。 值必须是可哈希的，并且与 `data` 的长度相同。 允许使用非唯一索引值。 如果未提供，则默认为 RangeIndex（0，1，2，…，n）。 如果同时使用了字典和索引序列，则索引将覆盖在字典中找到的键。"
+msgstr "与 pandas Series 相同。值必须是可哈希的，并且与 `data` 的长度相同。允许使用非唯一索引值。如果未提供，则默认为 RangeIndex（0，1，2，…，n）。如果同时使用了字典和索引序列，则索引将覆盖在字典中找到的键。"
 
 #: arctern.GeoSeries:15 of
 msgid "The name to give to the Series."
@@ -67,7 +67,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:51:<autosummary>:1
 msgid "Transform each to GeoJSON format string."
-msgstr "将每个转换为GeoJSON格式的字符串。"
+msgstr "将每个几何体转换为 GeoJSON 格式的字符串。"
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:51:<autosummary>:1
 msgid ":obj:`buffer <arctern.GeoSeries.buffer>`\\ \\(distance\\)"
