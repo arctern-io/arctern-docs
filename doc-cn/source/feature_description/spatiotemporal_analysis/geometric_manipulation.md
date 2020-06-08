@@ -52,8 +52,8 @@ dtype: float64
 
 * **功能：** 判断 GeoSeries 对象中的每个几何体是否有效。
 * **返回：** 布尔型的 pandas.Series
-  * **True：** 几何体有效。
-  * **False：** 几何体无效。
+  * **True:** 几何体有效。
+  * **False:** 几何体无效。
 
 ```python
 >>> from arctern import GeoSeries
@@ -68,8 +68,8 @@ dtype: bool
 
 * **功能：** 判断 GeoSeries 对象中的每个几何体是否简单。这里的“简单”表示某个几何图形没有异常的几何图形点，例如自相交或相切。
 * **返回：** 布尔型的 pandas.Series
-  * **True：** 几何体是简单的。
-  * **False：** 几何体不是简单的。
+  * **True:** 几何体是简单的。
+  * **False:** 几何体不是简单的。
 
 ```python
 >>> from arctern import GeoSeries
@@ -227,8 +227,8 @@ dtype: GeoDtype
 * **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否与 `other` 对象中相同位置的几何体存在交集。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
 * **返回：** 布尔型的 pandas.Series
-  * **True：** 两个几何体存在交集。
-  * **False：** 两个几何体不存在交集。
+  * **True:** 两个几何体存在交集。
+  * **False:** 两个几何体不存在交集。
 
 ### 示例 1
 ```python
@@ -271,8 +271,8 @@ dtype: bool
 * **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否在 `other` 对象中相同位置的几何体的内部。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
 * **返回：** 布尔型的 pandas.Series
-  * **True：** 两个几何体存在包含关系。
-  * **False：** 两个几何体存在包含关系。
+  * **True:** 两个几何体存在包含关系。
+  * **False:** 两个几何体存在包含关系。
 
 ```python
 >>> s1 = GeoSeries(["POLYGON((1 1, 4 1, 4 4, 1 4, 1 1))", "POLYGON((5 1, 7 1, 7 3, 5 3, 5 1))", "POLYGON((8 1, 9 1, 9 2, 8 2, 8 1))"])
@@ -290,8 +290,8 @@ dtype: bool
 * **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否包含 `other` 对象中相同位置的几何体。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
 * **返回：** 布尔型的 pandas.Series
-  * **True：** 两个几何体存在包含关系。
-  * **False：** 两个几何体存在包含关系。
+  * **True:** 两个几何体存在包含关系。
+  * **False:** 两个几何体存在包含关系。
 
 ```python
 >>> from arctern import GeoSeries
@@ -310,8 +310,8 @@ dtype: bool
 * **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否与 `other` 对象中相同位置的几何体相交。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
 * **返回：** 布尔型的 pandas.Series
-  * **True：** 两个几何体存在相交关系。
-  * **False：** 两个几何体存在相交关系。
+  * **True:** 两个几何体存在相交关系。
+  * **False:** 两个几何体存在相交关系。
 
 ```python
 >>> from arctern import GeoSeries
@@ -330,8 +330,8 @@ dtype: bool
 * **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否与 `other` 对象中相同位置的几何体等价。“等价”表示两个几何体的几何结构相同。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
 * **返回：** 布尔型的 pandas.Series
-  * **True：** 两个几何体等价。
-  * **False：** 两个几何体不等价。
+  * **True:** 两个几何体等价。
+  * **False:** 两个几何体不等价。
 
 ```python
 >>> from arctern import GeoSeries
@@ -348,8 +348,8 @@ dtype: bool
 * **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否与 `other` 对象中相同位置的几何体相邻。“相邻”表示两个几何体在边界上有共同的点。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
 * **返回：** 布尔型的 pandas.Series
-  * **True：** 两个几何体相邻。
-  * **False：** 两个几何体不相邻。
+  * **True:** 两个几何体相邻。
+  * **False:** 两个几何体不相邻。
 
 ```python
 >>> from arctern import GeoSeries
@@ -367,8 +367,8 @@ dtype: bool
 * **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否与 `other` 对象中相同位置的几何体重叠。“重叠”表示两个几何体相交且不互相包含。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
 * **返回：** 布尔型的 pandas.Series
-  * **True：** 两个几何体重叠。
-  * **False：** 两个几何体不重叠。
+  * **True:** 两个几何体重叠。
+  * **False:** 两个几何体不重叠。
 
 ```python
 >>> from arctern import GeoSeries
@@ -450,11 +450,11 @@ dtype: GeoDtype
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，根据给定的参数计算它的最小矩形边界范围，且该矩形的边与坐标轴平行。
 * **参数：**  
-  * **min_x：** 浮点型的 pandas.Series，表示矩形横坐标的最小值。
-  * **min_y：** 浮点型的 pandas.Series，表示矩形纵坐标的最小值。
-  * **max_x：** 浮点型的 pandas.Series，表示矩形横坐标的最大值。
-  * **max_y：** 浮点型的 pandas.Series，表示矩形纵坐标的最大值。
-  * **crs：** （可选参数）字符串，比如“ESPG:4326”、“ESPG:3857”。
+  * **min_x:** 浮点型的 pandas.Series，表示矩形横坐标的最小值。
+  * **min_y:** 浮点型的 pandas.Series，表示矩形纵坐标的最小值。
+  * **max_x:** 浮点型的 pandas.Series，表示矩形横坐标的最大值。
+  * **max_y:** 浮点型的 pandas.Series，表示矩形纵坐标的最大值。
+  * **crs:** （可选参数）字符串，比如“ESPG:4326”、“ESPG:3857”。
 * **返回：** GeoSeries
 
 ```python
@@ -475,8 +475,8 @@ dtype: GeoDtype
 
 * **功能：** 根据横坐标集合 `x` 和纵坐标集合 `y` 构造一组 POINT 对象。
 * **参数：**  
-  * **x：** 浮点型的 pandas.Series，表示一组点的横坐标。
-  * **y：** 浮点型的 pandas.Series，表示一组点的纵坐标。
+  * **x:** 浮点型的 pandas.Series，表示一组点的横坐标。
+  * **y:** 浮点型的 pandas.Series，表示一组点的纵坐标。
 * **返回：** POINT
 
 ```python
