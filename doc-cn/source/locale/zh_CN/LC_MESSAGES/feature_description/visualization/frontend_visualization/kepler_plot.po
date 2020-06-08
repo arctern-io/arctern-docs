@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-08 18:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgid "加载 Kepler.gl 地图"
 msgstr ""
 
 #: ../../source/feature_description/visualization/frontend_visualization/kepler_plot.md:20
-msgid "使用 KeplerGl（查看 KeplerGl 接口说明）创建一个地图对象 map_1："
+msgid "使用 KeplerGl 创建一个地图对象 map_1："
 msgstr ""
 
 #: ../../source/feature_description/visualization/frontend_visualization/kepler_plot.md:29
@@ -55,8 +55,8 @@ msgstr ""
 
 #: ../../source/feature_description/visualization/frontend_visualization/kepler_plot.md:33
 msgid ""
-"创建两个 LINESTRING 对象以表示两条道路，并将这两条道路的地理信息保存到 df 中。然后使用 add_data （查看 add_data"
-" 接口说明）将 df 作为输入数据加载到地图上。"
+"创建两个 LINESTRING 对象以表示两条道路，并将这两条道路的地理信息保存到 df 中。然后使用 add_data 将 df "
+"作为输入数据加载到地图上。"
 msgstr ""
 
 #: ../../source/feature_description/visualization/frontend_visualization/kepler_plot.md:42
@@ -74,4 +74,13 @@ msgstr ""
 #: ../../source/feature_description/visualization/frontend_visualization/kepler_plot.md:61
 msgid "更多示例及接口说明请参考 Kepler.gl 官网关于 Jupyter Notebook 的使用介绍。"
 msgstr ""
+
+#~ msgid "使用 KeplerGl（查看 KeplerGl 接口说明）创建一个地图对象 map_1："
+#~ msgstr ""
+
+#~ msgid ""
+#~ "创建两个 LINESTRING 对象以表示两条道路，并将这两条道路的地理信息保存到 df "
+#~ "中。然后使用 add_data （查看 add_data 接口说明）将 df"
+#~ " 作为输入数据加载到地图上。"
+#~ msgstr ""
 

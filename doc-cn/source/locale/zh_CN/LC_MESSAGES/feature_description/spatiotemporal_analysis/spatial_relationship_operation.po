@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-06 14:37+0800\n"
+"POT-Creation-Date: 2020-06-08 18:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,11 +22,13 @@ msgid "空间关系运算"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/spatial_relationship_operation.md:3
-msgid "Arctern 支持对几何体对象索引后, 批量地对几何体进行空间关系运算（目前仅支持 within 方法，类似于 SQL 的 Join）。"
+msgid ""
+"Arctern 支持对几何体对象索引后, 批量地对几何体进行空间关系运算（目前仅支持 GeoSeries.within 方法，类似于 SQL 的 "
+"Join）。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/spatial_relationship_operation.md:5
-msgid "which_within(left, right)"
+msgid "within_which(left, right)"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/spatial_relationship_operation.md:7
@@ -61,7 +63,7 @@ msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/spatial_relationship_operation.md:19
 msgid ""
-"我们将图中的绿色矩形命名为 polygons[0]、红色矩形命名为 polygons[1]。使用 which_within "
+"我们将图中的绿色矩形命名为 polygons[0]、红色矩形命名为 polygons[1]。使用 within_which "
 "方法判断图中各点（points）是否位于这两个矩形内。"
 msgstr ""
 
@@ -76,4 +78,15 @@ msgstr ""
 #: ../../source/feature_description/spatiotemporal_analysis/spatial_relationship_operation.md:23
 msgid "中间的点不在任何一个矩形中，因此对应返回值为 <NA>。"
 msgstr ""
+
+#~ msgid "Arctern 支持对几何体对象索引后, 批量地对几何体进行空间关系运算（目前仅支持 within 方法，类似于 SQL 的 Join）。"
+#~ msgstr ""
+
+#~ msgid "which_within(left, right)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "我们将图中的绿色矩形命名为 polygons[0]、红色矩形命名为 polygons[1]。使用 "
+#~ "which_within 方法判断图中各点（points）是否位于这两个矩形内。"
+#~ msgstr ""
 

@@ -4,7 +4,7 @@ GeoSeries
 =========
 .. currentmodule:: arctern
 
-GeoSeries is a Series to store and process geometry data by extending
+GeoSeries is a series to store and process geometry data by extending
 Pandas Series. It internally store geometry as bytes object.
 
 Constructor
