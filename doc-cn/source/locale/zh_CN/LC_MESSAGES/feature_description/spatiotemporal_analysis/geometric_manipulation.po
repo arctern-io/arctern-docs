@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-06 14:37+0800\n"
+"POT-Creation-Date: 2020-06-07 10:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,11 +86,11 @@ msgid "返回： 布尔型的 pandas.Series"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:55
-msgid "True： 几何体有效。"
+msgid "True: 几何体有效。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:56
-msgid "False： 几何体无效。"
+msgid "False: 几何体无效。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:67
@@ -102,11 +102,11 @@ msgid "功能： 判断 GeoSeries 对象中的每个几何体是否简单。这�
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:71
-msgid "True： 几何体是简单的。"
+msgid "True: 几何体是简单的。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:72
-msgid "False： 几何体不是简单的。"
+msgid "False: 几何体不是简单的。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:84
@@ -258,11 +258,11 @@ msgid "参数： other 为 GeoSeries 或者 WKB 类型的对象。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:230
-msgid "True： 两个几何体存在交集。"
+msgid "True: 两个几何体存在交集。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:231
-msgid "False： 两个几何体不存在交集。"
+msgid "False: 两个几何体不存在交集。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:257
@@ -279,12 +279,12 @@ msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:274
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:293
-msgid "True： 两个几何体存在包含关系。"
+msgid "True: 两个几何体存在包含关系。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:275
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:294
-msgid "False： 两个几何体存在包含关系。"
+msgid "False: 两个几何体存在包含关系。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:288
@@ -304,11 +304,11 @@ msgid "功能： 对于 GeoSeries 对象中的每个几何体，判断它是否�
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:313
-msgid "True： 两个几何体存在相交关系。"
+msgid "True: 两个几何体存在相交关系。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:314
-msgid "False： 两个几何体存在相交关系。"
+msgid "False: 两个几何体存在相交关系。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:328
@@ -320,11 +320,11 @@ msgid "功能： 对于 GeoSeries 对象中的每个几何体，判断它是否�
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:333
-msgid "True： 两个几何体等价。"
+msgid "True: 两个几何体等价。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:334
-msgid "False： 两个几何体不等价。"
+msgid "False: 两个几何体不等价。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:346
@@ -338,11 +338,11 @@ msgid ""
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:351
-msgid "True： 两个几何体相邻。"
+msgid "True: 两个几何体相邻。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:352
-msgid "False： 两个几何体不相邻。"
+msgid "False: 两个几何体不相邻。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:365
@@ -354,11 +354,11 @@ msgid "功能： 对于 GeoSeries 对象中的每个几何体，判断它是否�
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:370
-msgid "True： 两个几何体重叠。"
+msgid "True: 两个几何体重叠。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:371
-msgid "False： 两个几何体不重叠。"
+msgid "False: 两个几何体不重叠。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:384
@@ -409,23 +409,23 @@ msgid "参数："
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:453
-msgid "min_x： 浮点型的 pandas.Series，表示矩形横坐标的最小值。"
+msgid "min_x: 浮点型的 pandas.Series，表示矩形横坐标的最小值。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:454
-msgid "min_y： 浮点型的 pandas.Series，表示矩形纵坐标的最小值。"
+msgid "min_y: 浮点型的 pandas.Series，表示矩形纵坐标的最小值。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:455
-msgid "max_x： 浮点型的 pandas.Series，表示矩形横坐标的最大值。"
+msgid "max_x: 浮点型的 pandas.Series，表示矩形横坐标的最大值。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:456
-msgid "max_y： 浮点型的 pandas.Series，表示矩形纵坐标的最大值。"
+msgid "max_y: 浮点型的 pandas.Series，表示矩形纵坐标的最大值。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:457
-msgid "crs： （可选参数）字符串，比如“ESPG:4326”、“ESPG:3857”。"
+msgid "crs: （可选参数）字符串，比如“ESPG:4326”、“ESPG:3857”。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:474
@@ -437,11 +437,11 @@ msgid "功能： 根据横坐标集合 x 和纵坐标集合 y 构造一组 POINT
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:478
-msgid "x： 浮点型的 pandas.Series，表示一组点的横坐标。"
+msgid "x: 浮点型的 pandas.Series，表示一组点的横坐标。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:479
-msgid "y： 浮点型的 pandas.Series，表示一组点的纵坐标。"
+msgid "y: 浮点型的 pandas.Series，表示一组点的纵坐标。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/geometric_manipulation.md:480
@@ -452,5 +452,74 @@ msgstr ""
 #~ "功能： 计算 GeoSeries 对象中每个几何体的长度。如果几何体不是  "
 #~ "LineString 和 MultiLineString 类型的几何体， 则它的长度为"
 #~ " 0 。"
+#~ msgstr ""
+
+#~ msgid "True： 几何体有效。"
+#~ msgstr ""
+
+#~ msgid "False： 几何体无效。"
+#~ msgstr ""
+
+#~ msgid "True： 几何体是简单的。"
+#~ msgstr ""
+
+#~ msgid "False： 几何体不是简单的。"
+#~ msgstr ""
+
+#~ msgid "True： 两个几何体存在交集。"
+#~ msgstr ""
+
+#~ msgid "False： 两个几何体不存在交集。"
+#~ msgstr ""
+
+#~ msgid "True： 两个几何体存在包含关系。"
+#~ msgstr ""
+
+#~ msgid "False： 两个几何体存在包含关系。"
+#~ msgstr ""
+
+#~ msgid "True： 两个几何体存在相交关系。"
+#~ msgstr ""
+
+#~ msgid "False： 两个几何体存在相交关系。"
+#~ msgstr ""
+
+#~ msgid "True： 两个几何体等价。"
+#~ msgstr ""
+
+#~ msgid "False： 两个几何体不等价。"
+#~ msgstr ""
+
+#~ msgid "True： 两个几何体相邻。"
+#~ msgstr ""
+
+#~ msgid "False： 两个几何体不相邻。"
+#~ msgstr ""
+
+#~ msgid "True： 两个几何体重叠。"
+#~ msgstr ""
+
+#~ msgid "False： 两个几何体不重叠。"
+#~ msgstr ""
+
+#~ msgid "min_x： 浮点型的 pandas.Series，表示矩形横坐标的最小值。"
+#~ msgstr ""
+
+#~ msgid "min_y： 浮点型的 pandas.Series，表示矩形纵坐标的最小值。"
+#~ msgstr ""
+
+#~ msgid "max_x： 浮点型的 pandas.Series，表示矩形横坐标的最大值。"
+#~ msgstr ""
+
+#~ msgid "max_y： 浮点型的 pandas.Series，表示矩形纵坐标的最大值。"
+#~ msgstr ""
+
+#~ msgid "crs： （可选参数）字符串，比如“ESPG:4326”、“ESPG:3857”。"
+#~ msgstr ""
+
+#~ msgid "x： 浮点型的 pandas.Series，表示一组点的横坐标。"
+#~ msgstr ""
+
+#~ msgid "y： 浮点型的 pandas.Series，表示一组点的纵坐标。"
 #~ msgstr ""
 

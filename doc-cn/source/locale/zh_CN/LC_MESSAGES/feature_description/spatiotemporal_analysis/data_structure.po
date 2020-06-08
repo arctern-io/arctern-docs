@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 16:17+0800\n"
+"POT-Creation-Date: 2020-06-07 10:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,26 +94,26 @@ msgid "几何度量"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:57
-msgid "GeoSeries.is_valid： 判断 GeoSeries 对象中的每个几何体是否有效。"
+msgid "GeoSeries.is_valid: 判断 GeoSeries 对象中的每个几何体是否有效。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:58
-msgid "GeoSeries.area： 计算 GeoSeries 对象中每个几何体的面积。"
+msgid "GeoSeries.area: 计算 GeoSeries 对象中每个几何体的面积。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:59
-msgid "GeoSeries.distance： 对于 GeoSeries 对象中的每个几何体，创建一个与它的最远距离不大于 distance 的几何体。"
+msgid "GeoSeries.distance: 对于 GeoSeries 对象中的每个几何体，创建一个与它的最远距离不大于 distance 的几何体。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:60
 msgid ""
-"GeoSeries.distance_sphere： 对于 GeoSeries "
+"GeoSeries.distance_sphere: 对于 GeoSeries "
 "对象中的每个几何体，根据经纬度坐标计算地球表面两点之间的最短球面距离。该方法使用 SRID 定义的地球和半径。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:61
 msgid ""
-"GeoSeries.hausdorff_distance： 对于 GeoSeries 对象中的每个几何体，判断它与 other "
+"GeoSeries.hausdorff_distance: 对于 GeoSeries 对象中的每个几何体，判断它与 other "
 "对象中相同位置的几何体之间的 Hausdorff 距离。此距离用于度量两个几何体之间的相似度。"
 msgstr ""
 
@@ -123,18 +123,18 @@ msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:65
 msgid ""
-"GeoSeries.touches： 对于 GeoSeries 对象中的每个几何体，判断它是否与 other "
+"GeoSeries.touches: 对于 GeoSeries 对象中的每个几何体，判断它是否与 other "
 "对象中相同位置的几何体相邻。“相邻”表示两个几何体在边界上有共同的点。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:66
 msgid ""
-"GeoSeries.overlaps： 对于 GeoSeries 对象中的每个几何体，判断它是否与 other "
+"GeoSeries.overlaps: 对于 GeoSeries 对象中的每个几何体，判断它是否与 other "
 "对象中相同位置的几何体重叠。“重叠”表示两个几何体相交且不互相包含。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:67
-msgid "GeoSeries.intersects： 对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体存在交集。"
+msgid "GeoSeries.intersects: 对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体存在交集。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:69
@@ -143,19 +143,71 @@ msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:71
 msgid ""
-"GeoSeries.precision_reduce： 对于 GeoSeries 对象中的每个几何体，根据指定的有效数字位数 precision "
+"GeoSeries.precision_reduce: 对于 GeoSeries 对象中的每个几何体，根据指定的有效数字位数 precision "
 "创建降低坐标精度后的几何体。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:72
 msgid ""
-"GeoSeries.make_valid： 对于 GeoSeries "
+"GeoSeries.make_valid: 对于 GeoSeries "
 "对象中的每个几何体，根据它创建一个新的有效的几何体。在构造新几何体过程中，不会删除原始几何体的任何顶点。如果原始几何体本来就是有效的，则直接返回原始几何体。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:73
 msgid ""
-"GeoSeries.curve_to_line： 对于 GeoSeries "
+"GeoSeries.curve_to_line: 对于 GeoSeries "
 "对象中的每个几何体，计算它的近似表示。近似表示的方法是将每个几何图形中的曲线转换为近似线性表示。"
 msgstr ""
+
+#~ msgid "GeoSeries.is_valid： 判断 GeoSeries 对象中的每个几何体是否有效。"
+#~ msgstr ""
+
+#~ msgid "GeoSeries.area： 计算 GeoSeries 对象中每个几何体的面积。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "GeoSeries.distance： 对于 GeoSeries "
+#~ "对象中的每个几何体，创建一个与它的最远距离不大于 distance 的几何体。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "GeoSeries.distance_sphere： 对于 GeoSeries "
+#~ "对象中的每个几何体，根据经纬度坐标计算地球表面两点之间的最短球面距离。该方法使用 SRID 定义的地球和半径。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "GeoSeries.hausdorff_distance： 对于 GeoSeries "
+#~ "对象中的每个几何体，判断它与 other 对象中相同位置的几何体之间的 Hausdorff "
+#~ "距离。此距离用于度量两个几何体之间的相似度。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "GeoSeries.touches： 对于 GeoSeries 对象中的每个几何体，判断它是否与 "
+#~ "other 对象中相同位置的几何体相邻。“相邻”表示两个几何体在边界上有共同的点。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "GeoSeries.overlaps： 对于 GeoSeries 对象中的每个几何体，判断它是否与"
+#~ " other 对象中相同位置的几何体重叠。“重叠”表示两个几何体相交且不互相包含。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "GeoSeries.intersects： 对于 GeoSeries 对象中的每个几何体，判断它是否与"
+#~ " other 对象中相同位置的几何体存在交集。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "GeoSeries.precision_reduce： 对于 GeoSeries "
+#~ "对象中的每个几何体，根据指定的有效数字位数 precision 创建降低坐标精度后的几何体。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "GeoSeries.make_valid： 对于 GeoSeries "
+#~ "对象中的每个几何体，根据它创建一个新的有效的几何体。在构造新几何体过程中，不会删除原始几何体的任何顶点。如果原始几何体本来就是有效的，则直接返回原始几何体。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "GeoSeries.curve_to_line： 对于 GeoSeries "
+#~ "对象中的每个几何体，计算它的近似表示。近似表示的方法是将每个几何图形中的曲线转换为近似线性表示。"
+#~ msgstr ""
 
