@@ -45,6 +45,8 @@ Constructing Geometry
     GeoSeries.to_wkt
     GeoSeries.to_wkb
 
+    GeoSeries.from_geopandas
+
 Processing Geometry
 -------------------
 .. autosummary::
