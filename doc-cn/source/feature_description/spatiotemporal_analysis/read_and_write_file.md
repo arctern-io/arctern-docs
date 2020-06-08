@@ -16,7 +16,7 @@ POLYGON ((1 2, 3 4, 5 6, 1 2))
 POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 ```
 
-首先，使用 pandas 的 `read_csv` 方法导入文件并构造 pandas.Series 对象 `data_wkt`：
+首先，使用 pandas 的 [`read_csv`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) 方法导入文件并构造 pandas.Series 对象 `data_wkt`：
 
 ```python
 >>> import pandas as pd
@@ -38,7 +38,7 @@ Name: geos, dtype: object
 >>> geo_wkt = arctern.GeoSeries(data_wkt)
 ```
 
-为了演示如何读取 WKB 格式的数据并创建 GeoSeries 对象，我们将之前从  **wkt_geos.csv** 文件中读取并创建的 pandas.Series 对象从 WKT 格式转换为 WKB 格式。具体方法是使用 `to_wkb` 方法从 GeoSeries 对象 `geo_wkt` 得到  WKB 格式的 pandas.Series 对象 `data_wkb`。
+为了演示如何读取 WKB 格式的数据并创建 GeoSeries 对象，我们将之前从  **wkt_geos.csv** 文件中读取并创建的 pandas.Series 对象从 WKT 格式转换为 WKB 格式。具体方法是使用 [`to_wkb`](../../api_reference/standalone_api/api/arctern.GeoSeries.to_wkb.html) 方法从 GeoSeries 对象 `geo_wkt` 得到  WKB 格式的 pandas.Series 对象 `data_wkb`。
 
 然后，基于 WKB 格式的 pandas.Series 对象 `data_wkb` 构造 arctern.GeoSeries 对象 `geo_wkb`：
 
@@ -49,7 +49,7 @@ Name: geos, dtype: object
 >>> geo_wkb = arctern.GeoSeries(data_wkb)
 ```
 
-使用 GeoSeries 的 `geom_equals` 方法比较 `geo_wkt` 和 `geo_wkb` 两个 GeoSeries 对象，发现它们是相同的。这是因为   `geo_wkt` 和 `geo_wkb` 本质上都是由同一数据构造的 GeoSeries 对象。
+使用 GeoSeries 的 [`geom_equals`](../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html) 方法比较 `geo_wkt` 和 `geo_wkb` 两个 GeoSeries 对象，发现它们是相同的。这是因为   `geo_wkt` 和 `geo_wkb` 本质上都是由同一数据构造的 GeoSeries 对象。
 
 ```pytho
 >>> geo_wkt.geom_equals(geo_wkb)
@@ -73,7 +73,7 @@ dtype: bool
 }
 ```
 
-首先，使用 pandas 的 `read_json` 方法导入文件并构造 pandas.Series 对象 `data_json`：
+首先，使用 pandas 的 [`read_json`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html) 方法导入文件并构造 pandas.Series 对象 `data_json`：
 
 ```python
 >>> df = pd.read_json("</path/to/geos.json>",orient='index')
@@ -92,7 +92,7 @@ Name: geos, dtype: object
 >>> geo_json = arctern.GeoSeries.geom_from_geojson(data_json)
 ```
 
-使用 GeoSeries 的 `geom_equals` 方法比较 `geo_wkb` 和 `geo_json` 两个 GeoSeries 对象，发现它们是相同的。这是因为   `geo_wkb` 和 `geo_json` 的源文件（**wkt_geos.csv** 和 **geos.json**）中定义的是相同的几何体。
+使用 GeoSeries 的 [`geom_equals`](../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html) 方法比较 `geo_wkb` 和 `geo_json` 两个 GeoSeries 对象，发现它们是相同的。这是因为   `geo_wkb` 和 `geo_json` 的源文件（**wkt_geos.csv** 和 **geos.json**）中定义的是相同的几何体。
 
 ```python
 >>> geo_json.geom_equals(geo_wkb)
@@ -107,7 +107,7 @@ dtype: bool
 
 ### WKT 格式
 
-首先，使用 GeoSeries 的 `to_wkt` 方法从 GeoSeries 对象得到一个 pandas.Series 对象。然后，使用 pandas.Series 的 `to_csv` 方法将数据保存为 CSV 文件。
+首先，使用 GeoSeries 的 [`to_wkt`](../../api_reference/standalone_api/api/arctern.GeoSeries.to_wkt.html) 方法从 GeoSeries 对象得到一个 pandas.Series 对象。然后，使用 pandas.Series 的 [`to_csv`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html) 方法将数据保存为 CSV 文件。
 
 <!--  [to_wkt](/path/to/to_wkt)  -->
 
@@ -124,7 +124,7 @@ dtype: object
 
 ### GeoJson 格式
 
-首先，使用 GeoSeries 的 `as_geojson` 方法从 GeoSeries 对象得到一个 pandas.Series 对象。然后，使用 pandas.Series 的 `to_json` 方法将数据保存为 JSON 文件。
+首先，使用 GeoSeries 的 [`as_geojson`](../../api_reference/standalone_api/api/arctern.GeoSeries.as_geojson.html) 方法从 GeoSeries 对象得到一个 pandas.Series 对象。然后，使用 pandas.Series 的 [`to_json`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html) 方法将数据保存为 JSON 文件。
 
 <!--  [as_geojson](/path/to/as_geojson) -->
 

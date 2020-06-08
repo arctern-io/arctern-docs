@@ -12,8 +12,8 @@ Arctern 支持经纬度坐标系、墨卡托投影坐标系等常用的坐标参
 
 在 Arctern 中转换坐标参考系的方法如下：
 
-1. 使用 `set_crs` 方法设置几何体的当前使用的坐标参考系。
-2. 使用 `to_crs` 方法对几何体执行坐标系转换。
+1. 使用 [`set_crs`](../../api_reference/standalone_api/api/arctern.GeoSeries.set_crs.html) 方法设置几何体的当前使用的坐标参考系。
+2. 使用 [`to_crs`](../../api_reference/standalone_api/api/arctern.GeoSeries.to_crs.html) 方法对几何体执行坐标系转换。
 
 以下展示如何使用 Arctern 将几何体对象由经纬度坐标系转换到墨卡托投影坐标系。
 
@@ -38,7 +38,7 @@ dtype: GeoDtype
 
 ### 设置坐标参考系
 
-使用 GeoSeries 对象的 `set_crs` 方法，设置 `geos` 当前所属的坐标参考系。本例使用经纬度坐标系（EPSG:4326）作为初始坐标参考系。
+使用 GeoSeries 对象的 [`set_crs`](../../api_reference/standalone_api/api/arctern.GeoSeries.set_crs.html) 方法，设置 `geos` 当前所属的坐标参考系。本例使用经纬度坐标系（EPSG:4326）作为初始坐标参考系。
 
 <!-- [set_crs](/path/to/set_crs) -->
 
@@ -50,7 +50,7 @@ dtype: GeoDtype
 
 ### 转换坐标
 
-使用 GeoSeries 的 `to_crs` 方法，将 `geos` 的坐标参考系统从经纬度坐标系（EPSG:4326）转换为墨卡托投影坐标系（EPSG:3857）。
+使用 GeoSeries 的 [`to_crs`](../../api_reference/standalone_api/api/arctern.GeoSeries.to_crs.html) 方法，将 `geos` 的坐标参考系统从经纬度坐标系（EPSG:4326）转换为墨卡托投影坐标系（EPSG:3857）。
 
 <!-- [to_crs](/path/to/to_crs) -->
 
@@ -65,7 +65,7 @@ dtype: GeoDtype
 
 ### 验证结果
 
-使用 GeoSeries 的 `crs` 属性，查看 `geos` 当前所属的坐标系。由输出结果可知，`geos` 的坐标参考系已成功转换为墨卡托投影坐标系。
+使用 GeoSeries 的 [`crs`](../../api_reference/standalone_api/api/arctern.GeoSeries.crs.html) 属性，查看 `geos` 当前所属的坐标系。由输出结果可知，`geos` 的坐标参考系已成功转换为墨卡托投影坐标系。
 
 ```python
 >>> geos.crs

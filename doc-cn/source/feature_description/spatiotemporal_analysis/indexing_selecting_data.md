@@ -2,7 +2,7 @@
 本文档介绍 Arctern GeoSeries 如何索引和选择数据。
 
 ## 索引和选择数据的方法
-Arctern GeoSeries 继承了 pandas Series 索引和选择数据的方法，包括基于标签的索引 `loc` 和基于整数下标位置的索引 `iloc`。有关索引和选择数据的详细信息请见 [pandas 文档](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html)。
+Arctern GeoSeries 继承了 pandas Series 索引和选择数据的方法，包括基于标签的索引 [`loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html) 和基于整数下标位置的索引 [`iloc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html)。有关索引和选择数据的详细信息请见 [pandas 文档](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html)。
 
 ## 生成测试数据
 

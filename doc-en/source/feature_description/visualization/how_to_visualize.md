@@ -6,7 +6,7 @@ For example, in most navigation applications, the color of the road segment will
 
 Currently, Arctern includes APIs commonly used in the [OGC](https://en.wikipedia.org/wiki/Open_Geospatial_Consortium) standard, including the constructor, accessor, relationship analysis, and measurement of geometric objects. Therefore, any third-party web rendering tool that accepts input in OGC standard format, such as [Kepler.gl](https://kepler.gl/), can be used by Arctern.
 
-According to the [Kepler.gl User Guide](https://docs.kepler.gl/docs/user-guides), Kepler.gl accepts OGC standard [WKT](https://en.wikipedia.org/wiki/Well -known_text_representation_of_geometry) data as input. Therefore, you can use Arctern's `GeoSeries.to_wkt` method to convert spatiotemporal data from Arctern’s internal data format to WKT format, and then render the data via Kepler.gl.
+According to the [Kepler.gl User Guide](https://docs.kepler.gl/docs/user-guides), Kepler.gl accepts OGC standard [WKT](https://en.wikipedia.org/wiki/Well -known_text_representation_of_geometry) data as input. Therefore, you can use Arctern's [`GeoSeries.to_wkt`](../../api_reference/standalone_api/api/arctern.GeoSeries.to_wkt.html) method to convert spatiotemporal data from Arctern’s internal data format to WKT format, and then render the data via Kepler.gl.
 
 Except for utilizing traditional web rendering tools to visualize graphical data, Arctern itself provides server-side rendering. Arctern supports the rendering of large-scale data in different types of maps, such as choropleth map, heat map, point map, icon map, and fishnet map. Also, Arctern's server-side rendering can take advantage of GPU acceleration to improve its performance.
 

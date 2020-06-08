@@ -2,7 +2,7 @@
 
 Arctern implements multiple GIS processing functions that comply with the OGC standard. They are encapsulated as attributes and methods of the GeoSeries class. The methods are divided into unary operation methods and binary operation methods.
 
-## GeoSeries.length
+## [GeoSeries.length](../../api_reference/standalone_api/api/arctern.GeoSeries.length.html)
 
 * **Functions:** Calculate the length of each geometry in the GeoSeries object. If the geometry is not of type LineString and MultiLineString, its length is 0.
 * **Returns:** Floating point pandas.Series
@@ -17,7 +17,7 @@ Arctern implements multiple GIS processing functions that comply with the OGC st
 dtype: float64
 ```
 
-## GeoSeries.area
+## [GeoSeries.area](../../api_reference/standalone_api/api/arctern.GeoSeries.area.html)
 
 * **Functions:** Calculate the area of each geometry in a GeoSeries object.
 * **Returns:** Floating point pandas.Series
@@ -33,7 +33,7 @@ dtype: float64
 
 ![](./img//area.png)
 
-## GeoSeries.centroid
+## [GeoSeries.centroid](../../api_reference/standalone_api/api/arctern.GeoSeries.centroid.html)
 
 * **Functions:** Calculate the center point of each geometry in a GeoSeries object.
 * **Returns:** GeoSeries。
@@ -48,7 +48,7 @@ dtype: float64
 ```
 ![](./img/centroid.png)
 
-## GeoSeries.is_valid
+## [GeoSeries.is_valid](../../api_reference/standalone_api/api/arctern.GeoSeries.is_valid.html)
 
 * **Functions:** Determine whether each geometry in the GeoSeries object is valid.
 * **Returns:** Boolean pandas.Series
@@ -64,7 +64,7 @@ dtype: float64
 dtype: bool
 ```
 
-## GeoSeries.is_simple
+## [GeoSeries.is_simple](../../api_reference/standalone_api/api/arctern.GeoSeries.is_simple.html)
 
 * **Functions:** Determine if each geometry in the GeoSeries object is simple. "Simple" here means that a certain geometric figure has no abnormal geometric figure points, such as self-intersection or tangent.
 * **Returns:** Boolean pandas.Series
@@ -81,7 +81,7 @@ dtype: bool
 ```
 ![](./img/is_simple.png)
 
-## GeoSeries.convex_hull
+## [GeoSeries.convex_hull](../../api_reference/standalone_api/api/arctern.GeoSeries.convex_hull.html)
 
 * **Functions:** For each geometry in the GeoSeries object, calculate the smallest convex geometry surrounding it.
 * **Returns:** GeoSeries
@@ -96,7 +96,7 @@ dtype: GeoDtype
 ```
 ![](./img/convex_hull.png)
 
-## GeoSeries.npoints
+## [GeoSeries.npoints](../../api_reference/standalone_api/api/arctern.GeoSeries.npoints.html)
 
 * **Functions:** For each geometry in the GeoSeries object, calculate the number of points.
 * **Returns:** int64 type pandas.Series
@@ -110,7 +110,7 @@ dtype: GeoDtype
 dtype: int64
 ```
 
-## GeoSeries.curve_to_line
+## [GeoSeries.curve_to_line](../../api_reference/standalone_api/api/arctern.GeoSeries.curve_to_line.html)
 
 * **Functions:** For each geometry in the GeoSeries object, calculate its approximate representation. The approximate representation method is to convert the curve in each geometric figure into an approximate linear representation.
 * **Returns:** GeoSeries
@@ -124,7 +124,7 @@ dtype: GeoDtype
 ```
 ![](./img/curve_to_line.png)
 
-## GeoSeries.simplify(tolerance)
+## [GeoSeries.simplify(tolerance)](../../api_reference/standalone_api/api/arctern.GeoSeries.simplify.html)
 
 * **Functions:** For each geometry in the GeoSeries object, calculate its simplified representation. The simplified representation algorithm is Douglas-Peucker algorithm.
 * **Parameters:** `tolerance` is a floating-point number, indicating the maximum distance between a point on the line string and the curve.
@@ -139,7 +139,7 @@ dtype: GeoDtype
 dtype: GeoDtype
 ```
 
-## GeoSeries.envelope
+## [GeoSeries.envelope](../../api_reference/standalone_api/api/arctern.GeoSeries.envelope.html)
 
 * **Functions:** For each geometry in the GeoSeries object, calculate its minimum rectangular bounding box.
 * **Returns:** GeoSeries
@@ -154,7 +154,7 @@ dtype: GeoDtype
 ```
 ![](./img/envelope.png)
 
-## GeoSeries.buffer(distance)
+## [GeoSeries.buffer(distance)](../../api_reference/standalone_api/api/arctern.GeoSeries.buffer.html)
 
 * **Functions:** For each geometry in the GeoSeries object, create a geometry with the maximum distance not greater than `distance`.
 * **Parameters** `distance` is a floating point number, indicating the maximum distance between the new geometry and the original geometry.
@@ -189,7 +189,7 @@ dtype: float64
 
 ![](./img/buffer_2.png)
 
-## GeoSeries.precision_reduce(precision)
+## [GeoSeries.precision_reduce(precision)](../../api_reference/standalone_api/api/arctern.GeoSeries.precision_reduce.html)
 
 * **Functions:** For each geometry in the GeoSeries object, the geometry with reduced coordinate accuracy is created according to the specified valid digits number `precision`.
 * **Parameters:** `precision` is an integer number, indicating the number of valid digits.
@@ -206,7 +206,7 @@ In the following example, since the effective digits are set to 3, the coordinat
 dtype: GeoDtype
 ```
 
-## GeoSeries.make_valid
+## [GeoSeries.make_valid](../../api_reference/standalone_api/api/arctern.GeoSeries.make_valid.html)
 
 * **Functions:** For each geometry in the GeoSeries object, create a new valid geometry based on it. During the construction of the new geometry, no vertices of the original geometry are deleted. If the original geometry is already valid, then return the original geometry directly.
 * **Returns:** GeoSeries
@@ -222,7 +222,7 @@ Warning 1: Self-intersection at or near point 2 2
 dtype: GeoDtype
 ```
 
-## GeoSeries.intersects(other)
+## [GeoSeries.intersects(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.intersects.html)
 
 * **Functions:** For each geometry in the GeoSeries object, check whether it intersects with the geometry at the same position in the `other` object.
 * **Parameters:** `other` is GeoSeries or WKB formed object.
@@ -266,7 +266,7 @@ dtype: bool
 ```
 ![](./img/intersects_3.png)
 
-## GeoSeries.within(other)
+## [GeoSeries.within(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.within.html)
 
 * **Functions:** For each geometry in the GeoSeries object, check whether it is within the geometry at the same position in the `other` object.
 * **Parameters:** `other` is GeoSeries or WKB formed object.
@@ -285,7 +285,7 @@ dtype: bool
 ```
 ![](./img/within.png)
 
-## GeoSeries.contains(other)
+## [GeoSeries.contains(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.contains.html)
 
 * **Functions:** For each geometry in the GeoSeries object, check whether it contains the geometry at the same position in the `other` object.
 * **Parameters:** `other` is GeoSeries or WKB formed object.
@@ -305,7 +305,7 @@ dtype: bool
 ```
 ![](./img/contains.png)
 
-## GeoSeries.crosses(other)
+## [GeoSeries.crosses(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.crosses.html)
 
 * **Functions:** For each geometry in the GeoSeries object, check whether it crosses the geometry at the same position in the `other` object.
 * **Parameters:** `other` is GeoSeries or WKB formed object.
@@ -325,7 +325,7 @@ dtype: bool
 
 ![](./img/crosses.png)
 
-## GeoSeries.geom_equals(other)
+## [GeoSeries.geom_equals(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html)
 
 * **Functions:** For each geometry in the GeoSeries object, check whether it equals the geometry at the same position in the `other` object. "equals" means that the two geometries have the same geometric structure.
 * **Parameters:** `other` is GeoSeries or WKB formed object.
@@ -343,7 +343,7 @@ dtype: bool
 dtype: bool
 ```
 
-## GeoSeries.touches(other)
+## [GeoSeries.touches(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.touches.html)
 
 * **Functions:** For each geometry in the GeoSeries object, check whether it touches the geometry at the same position in the `other` object. "touches" means that two geometries have a common point on the boundary.
 * **Parameters:** `other` is GeoSeries or WKB formed object.
@@ -362,7 +362,7 @@ dtype: bool
 
 ![](./img/touches.png)
 
-## GeoSeries.overlaps(other)
+## [GeoSeries.overlaps(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.overlaps.html)
 
 * **Functions:** For each geometry in the GeoSeries object, check whether it overlaps the geometry at the same position in the `other` object. "overlaps" means that the two geometries cross and do not contain each other.
 * **Parameters:** `other` is GeoSeries or WKB formed object.
@@ -381,7 +381,7 @@ dtype: bool
 
 ![](./img/overlaps.png)
 
-## GeoSeries.distance(other)
+## [GeoSeries.distance(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.distance.html)
 
 * **Functions:** For each geometry in the GeoSeries object, check the shortest 2D Cartesian (planar) distance between the geometry at the same position in the `other` object.
 * **Parameters:** `other` is GeoSeries or WKB formed object.
@@ -398,7 +398,7 @@ dtype: float64
 ```
 ![](./img/distance.png)
 
-## GeoSeries.distance_sphere(other)
+## [GeoSeries.distance_sphere(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.distance_sphere.html)
 
 * **Functions:** For each geometry in the GeoSeries object, the minimum distance between two points on the earth's surface is calculated based on the latitude and longitude coordinates. This method uses the earth and radius defined by the SRID.
 * **Parameters:** `other` is GeoSeries or WKB formed object.
@@ -413,7 +413,7 @@ dtype: float64
 dtype: float64
 ```
 
-## GeoSeries.hausdorff_distance(other)
+## [GeoSeries.hausdorff_distance(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.hausdorff_distance.html)
 
 * **Functions:** For each geometry in the GeoSeries object, check the Hausdorff distance between it and the geometry at the same position in the `other` object. This distance is to measure the similarity between two geometries.
 * **Parameters:** `other` is GeoSeries or WKB formed object.
@@ -446,7 +446,7 @@ dtype: GeoDtype
 ```
 ![](./img/intersection.png)
 
-## GeoSeries.polygon_from_envelope(min_x, min_y, max_x, max_y, crs=None)
+## [GeoSeries.intersection(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.intersection.html)
 
 * **Functions:** For each geometry in the GeoSeries object, calculate its minimum rectangular bounding box according to the given Parameters, and the sides of the box are parallel to the coordinate axis.
 * **Parameters:**  
@@ -471,7 +471,7 @@ dtype: GeoDtype
 ```
 ![](./img/polygon_from_envelope.png)
 
-## GeoSeries.point(x, y)
+## [GeoSeries.polygon_from_envelope(min_x, min_y, max_x, max_y, crs=None)](../../api_reference/standalone_api/api/arctern.GeoSeries.polygon_from_envelope.html)
 
 * **Functions:** Construct a group of POINT objects according to the abscissa set `x` and the ordinate set `y`.
 * **Parameters:**  

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-08 11:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,7 +68,7 @@ msgid "以帝国大厦附近的两条道路为分析对象，创建 WKT 格式�
 msgstr ""
 
 #: ../../source/quick_start/demo.md:52
-msgid "使用 arctern.ST_Intersects 方法检查 road1 与 road2 是否相交。"
+msgid "使用 arctern.GeoSeries.intersects 方法检查 road1 与 road2 是否相交。"
 msgstr ""
 
 #: ../../source/quick_start/demo.md:54
@@ -79,15 +79,15 @@ msgstr ""
 msgid "若返回 False，则不相交。"
 msgstr ""
 
-#: ../../source/quick_start/demo.md:63
+#: ../../source/quick_start/demo.md:65
 msgid "使用 Kepler.gl 绘制地图"
 msgstr ""
 
-#: ../../source/quick_start/demo.md:65
+#: ../../source/quick_start/demo.md:67
 msgid "使用 Kepler.gl 在地图上绘制 road1 和 road2，观察这两条路是否相交："
 msgstr ""
 
-#: ../../source/quick_start/demo.md:74
+#: ../../source/quick_start/demo.md:75
 msgid "你还可以点击 Kepler.gl 界面右上角的 > 按钮以展开侧边栏，在其中设置每条路线的颜色和线宽。"
 msgstr ""
 
@@ -113,5 +113,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "在 Kepler.gl 中设置路线的颜色和线宽"
+#~ msgstr ""
+
+#~ msgid "使用 arctern.ST_Intersects 方法检查 road1 与 road2 是否相交。"
 #~ msgstr ""
 

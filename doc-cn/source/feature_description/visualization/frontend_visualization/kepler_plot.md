@@ -17,7 +17,7 @@ $ pip install keplergl
 
 ## 加载 Kepler.gl 地图
 
-使用 `KeplerGl`（查看 [KeplerGl 接口说明](https://docs.kepler.gl/docs/keplergl-jupyter#1-load-keplergl-map)）创建一个地图对象 `map_1`：
+使用 [`KeplerGl`](https://docs.kepler.gl/docs/keplergl-jupyter#1-load-keplergl-map) 创建一个地图对象 `map_1`：
 
 ```python
 >>> # 加载一个空地图
@@ -30,7 +30,7 @@ $ pip install keplergl
 
 ## 添加数据
 
-创建两个 LINESTRING 对象以表示两条道路，并将这两条道路的地理信息保存到 `df` 中。然后使用 `add_data` （查看 [add_data 接口说明](https://docs.kepler.gl/docs/keplergl-jupyter#add_data)）将 `df` 作为输入数据加载到地图上。
+创建两个 LINESTRING 对象以表示两条道路，并将这两条道路的地理信息保存到 `df` 中。然后使用 [`add_data`](https://docs.kepler.gl/docs/keplergl-jupyter#add_data) 将 `df` 作为输入数据加载到地图上。
 
 ```python
 >>> import pandas as pd
