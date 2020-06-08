@@ -56,7 +56,7 @@ $ jupyter-notebook
 
 ```python
 >>> geo1 = arctern.GeoSeries(road1)
->>>  geo2 = arctern.GeoSeries(road2)
+>>> geo2 = arctern.GeoSeries(road2)
 >>> geo1.intersects(geo2)
 0    True
 dtype: bool
