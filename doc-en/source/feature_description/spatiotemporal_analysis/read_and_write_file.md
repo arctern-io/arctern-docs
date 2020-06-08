@@ -16,7 +16,7 @@ POLYGON ((1 2, 3 4, 5 6, 1 2))
 POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))
 ```
 
-First, use the `read_csv` of pandas method to import the file and construct the pandas.Series object `data_wkt`:
+First, use the [`read_csv`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) of pandas method to import the file and construct the pandas.Series object `data_wkt`:
 
 ```python
 >>> import pandas as pd
@@ -38,7 +38,7 @@ Construct an arctern.GeoSeries object `geo_wkt` based on the pandas.Series objec
 >>> geo_wkt = arctern.GeoSeries(data_wkt)
 ```
 
-In order to demonstrate how to read data in WKB format and create GeoSeries objects, we converted the pandas.Series object that was previously read and created from the **wkt_geos.csv** file from WKT format to WKB format. Specifically, we use the `to_wkb` method to get the pandas.Series object `data_wkb` in WKB format from the GeoSeries object `geo_wkt`.
+In order to demonstrate how to read data in WKB format and create GeoSeries objects, we converted the pandas.Series object that was previously read and created from the **wkt_geos.csv** file from WKT format to WKB format. Specifically, we use the [`to_wkb`](../../api_reference/standalone_api/api/arctern.GeoSeries.to_wkb.html) method to get the pandas.Series object `data_wkb` in WKB format from the GeoSeries object `geo_wkt`.
 
 Then, construct the arctern.GeoSeries object `geo_wkb` based on the pandas.Series object `data_wkb` in WKB format:
 
@@ -49,7 +49,7 @@ Then, construct the arctern.GeoSeries object `geo_wkb` based on the pandas.Serie
 >>> geo_wkb = arctern.GeoSeries(data_wkb)
 ```
 
-Use the `geom_equals` method of GeoSeries to compare `geo_wkt` and `geo_wkb`. It turns out that these two GeoSeries objects are the same because they are essentially constructed from the same data.
+Use the [`geom_equals`](../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html) method of GeoSeries to compare `geo_wkt` and `geo_wkb`. It turns out that these two GeoSeries objects are the same because they are essentially constructed from the same data.
 
 ```pytho
 >>> geo_wkt.geom_equals(geo_wkb)
@@ -73,7 +73,7 @@ We use the **geos.json** file to demonstrate how to read GeoJson data from files
 }
 ```
 
-First, use the `read_json` method of pandas to import the file and construct the pandas.Series object `data_json`:
+First, use the [`read_json`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html) method of pandas to import the file and construct the pandas.Series object `data_json`:
 
 ```python
 >>> df = pd.read_json("</path/to/geos.json>",orient='index')
@@ -92,7 +92,7 @@ Construct an arctern.GeoSeries object `geo_json` based on the pandas.Series obje
 >>> geo_json = arctern.GeoSeries.geom_from_geojson(data_json)
 ```
 
-Use the `geom_equals` method of GeoSeries to compare `geo_wkb` and `geo_json`. It turns out that these two GeoSeries objects are the the source files of `geo_wkb` and `geo_json` (**wkt_geos.csv** and **geos.json**) define the same geometry.
+Use the [`geom_equals`](../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html) method of GeoSeries to compare `geo_wkb` and `geo_json`. It turns out that these two GeoSeries objects are the the source files of `geo_wkb` and `geo_json` (**wkt_geos.csv** and **geos.json**) define the same geometry.
 
 ```python
 >>> geo_json.geom_equals(geo_wkb)
@@ -107,7 +107,7 @@ dtype: bool
 
 ### From WKT format
 
-First, use the `to_wkt` method of GeoSeries to get a pandas.Series object from the GeoSeries object. Then, use the `to_csv` method of pandas.Series to save the data as a CSV file.
+First, use the [`to_wkt`](../../api_reference/standalone_api/api/arctern.GeoSeries.to_wkt.html) method of GeoSeries to get a pandas.Series object from the GeoSeries object. Then, use the [`to_csv`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html) method of pandas.Series to save the data as a CSV file.
 
 <!--  [to_wkt](/path/to/to_wkt)  -->
 
@@ -124,7 +124,7 @@ dtype: object
 
 ### From GeoJson format
 
-First, use the `as_geojson` method of GeoSeries to get a pandas.Series object from the GeoSeries object. Then, use the `to_json` method of pandas.Series to save the data as a JSON file.
+First, use the [`as_geojson`](../../api_reference/standalone_api/api/arctern.GeoSeries.as_geojson.html) method of GeoSeries to get a pandas.Series object from the GeoSeries object. Then, use the [`to_json`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html) method of pandas.Series to save the data as a JSON file.
 
 <!--  [as_geojson](/path/to/as_geojson) -->
 

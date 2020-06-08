@@ -1,5 +1,5 @@
 # 聚合
-空间数据处理领域对聚合操作有广泛的需求。Arctern 暂时仅支持两种聚合方法，即 `unary_union` 和 `envelope_aggr`。这两个聚合函数的功能如下：
+空间数据处理领域对聚合操作有广泛的需求。Arctern 暂时仅支持两种聚合方法，即 [`unary_union`](../../api_reference/standalone_api/api/arctern.GeoSeries.unary_union.html) 和 [`envelope_aggr`](../../api_reference/standalone_api/api/arctern.GeoSeries.envelope_aggr.html)。这两个聚合函数的功能如下：
  - **unary_union:** 返回一个代表一组几何体的并集的几何体。
  - **envelope_aggr:** 计算包含一组几何体的最小矩形边界范围，且该矩形的边与坐标轴平行。
 
@@ -21,7 +21,7 @@
 
 ### 获取一组几何体的并集
 
-选取 `polygon_s` 的所有元素，并使用 `unary_union` 方法得出它们的并集：
+选取 `polygon_s` 的所有元素，并使用 [`unary_union`](../../api_reference/standalone_api/api/arctern.GeoSeries.unary_union.html) 方法得出它们的并集：
 
 ```python
 >>> polygon_s[[0,1]].unary_union()
@@ -34,7 +34,7 @@ dtype: GeoDtype
 
 ### 获取一组几何体的最小矩形边界
 
-选取 `polygon_s` 的所有元素，并使用 `envelope_aggr` 方法得出它们的最小矩形边界：
+选取 `polygon_s` 的所有元素，并使用 [`envelope_aggr`](../../api_reference/standalone_api/api/arctern.GeoSeries.envelope_aggr.html) 方法得出它们的最小矩形边界：
 
 ```python
 >>> geos[[0,2]].envelope_aggr()

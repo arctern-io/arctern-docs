@@ -1,5 +1,5 @@
 # Aggregation
-Spatial data processing has extensive demands for aggregation operations. Currently, Arctern only supports two aggregation methods: `unary_union` and `envelope_aggr`. The description of these methods are as follows:
+Spatial data processing has extensive demands for aggregation operations. Currently, Arctern only supports two aggregation methods: [`unary_union`](../../api_reference/standalone_api/api/arctern.GeoSeries.unary_union.html) and [`envelope_aggr`](../../api_reference/standalone_api/api/arctern.GeoSeries.envelope_aggr.html). The description of these methods are as follows:
  - **unary_union:** Returns a geometry that represents the union of a set of geometries.
  - **envelope_aggr:** Calculate the minimum rectangular bounding box that contains a set of geometries, and the sides of the rectangle are parallel to the coordinate axis.
 
@@ -21,7 +21,7 @@ The two geometries in `polygon_s` are shown below:
 
 ### Get the union of a set of geometries
 
-Select all the elements of `polygon_s` and use the `unary_union` method to get their union:
+Select all the elements of `polygon_s` and use the [`unary_union`](../../api_reference/standalone_api/api/arctern.GeoSeries.unary_union.html) method to get their union:
 
 ```python
 >>> polygon_s[[0,1]].unary_union()
@@ -34,7 +34,7 @@ The aggregation results are shown in the following figure:
 
 ### Get the minimum rectangular bounding box of a set of geometries
 
-Select all the elements of `polygon_s` and use the `envelope_aggr` method to get their minimum rectangular bounding box:
+Select all the elements of `polygon_s` and use the [`envelope_aggr`](../../api_reference/standalone_api/api/arctern.GeoSeries.envelope_aggr.html) method to get their minimum rectangular bounding box:
 
 ```python
 >>> geos[[0,2]].envelope_aggr()

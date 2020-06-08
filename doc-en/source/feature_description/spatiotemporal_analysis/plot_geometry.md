@@ -2,7 +2,7 @@
 
 This article describes Arctern's plot methods.
 
-## plot_geometry
+## [plot_geometry](../../api_reference/plot/api/arctern.plot.plot_geometry.html)
 ### Definition
 
 ```python
@@ -22,7 +22,7 @@ This article describes Arctern's plot methods.
   * **markersize:** Size of points
   * **alpha:** Transparency
 
-The following examples show you how to use the `plot_geometry` method to draw geometric figures.
+The following examples show you how to use the [plot_geometry](../../api_reference/plot/api/arctern.plot.plot_geometry.html) method to draw geometric figures.
 
 ## Generate test data
 
