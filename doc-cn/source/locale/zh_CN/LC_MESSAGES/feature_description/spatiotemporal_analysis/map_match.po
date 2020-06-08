@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 16:17+0800\n"
+"POT-Creation-Date: 2020-06-06 14:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,52 +44,59 @@ msgid "points：使用 GeoSeries 的构造函数创建的一个包含两个 POIN
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/map_match.md:18
-msgid "判断 GPS 点附近固定范围内是否存在道路"
+msgid "在 GPS 点附近查找道路"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:19
+#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:20
 msgid ""
 "使用 near_road 方法可以判断 GPS 点附近固定范围内是否存在道路。假设 points 为某城市内出租车上下客的位置，roads "
 "为对应城市的路网信息。那么，如果乘客上下车的位置不在道路上或者偏离道路太远，那么这些位置数据就可以被认定为噪点。"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:21
-#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:85
+#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:22
+#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:55
+#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:89
 msgid "注意： GPS 点和路网数据的坐标系必须是“EPSG:4326”。"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:47
+#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:48
 msgid "获得距离 GPS 点最近的道路"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:48
+#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:50
 msgid "使用 nearest_road 方法可以获得距离 GPS 点最近的道路。该方法的运行逻辑是："
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:50
+#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:52
 msgid "基于路网信息建立索引树（Rtree）。"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:51
-msgid ""
-"基于索引树快速查询 GPS 点附近的所有道路， 最后在查询出来的道路中筛选出距离 GPS 点最近的道路。 GPS 点和路网数据的坐标系统必须是 "
-"EPSG:4326。"
+#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:53
+msgid "基于索引树快速查询 GPS 点附近的所有道路， 最后在查询出来的道路中筛选出距离 GPS 点最近的道路。"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:82
+#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:86
 msgid "将 GPS 点绑定到最近的道路"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:83
+#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:87
 msgid ""
 "nearest_location_on_road方法可以将 GPS 点绑定到距离最近的道路上。 假设 GPS "
 "点表示某城市内出租车上下客的位置。由于 GPS 精度问题，GPS 点的位置可能存在一定的偏差。那么，部分 GPS "
 "点可能偏离到附近的建筑物或河道里。因此，我们需要使用 nearest_location_on_road 方法对 GPS 点的位置进行纠偏。"
 msgstr ""
 
-#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:109
+#: ../../source/feature_description/spatiotemporal_analysis/map_match.md:113
 msgid ""
 "下图分别是纠偏前后 GPS 点和道路的拓扑关系。我们可以看出 nearest_location_on_road 成功地将偏离道路的 GPS "
 "点绑定到了最近的道路上。"
 msgstr ""
+
+#~ msgid "判断 GPS 点附近固定范围内是否存在道路"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "基于索引树快速查询 GPS 点附近的所有道路， 最后在查询出来的道路中筛选出距离 GPS"
+#~ " 点最近的道路。 GPS 点和路网数据的坐标系统必须是 EPSG:4326。"
+#~ msgstr ""
 
