@@ -1,8 +1,8 @@
 # Spatial relationship operations
 
-After indexing geometric objects, Arctern can batch perform spatial relationship operations on geometric data (currently Arctern only supports the `within` method, which is similar to SQL Join).
+After indexing geometric objects, Arctern can batch perform spatial relationship operations on geometric data (currently Arctern only supports the [`GeoSeries.within`](../../api_reference/standalone_api/api/arctern.GeoSeries.within.html) method, which is similar to SQL Join).
 
-## which_within(left, right)
+## within_which(left, right)
 
 ### Logic
 
@@ -16,7 +16,7 @@ After indexing geometric objects, Arctern can batch perform spatial relationship
 
 ### Example
 
-In the figure below, there is a green rectangle (`polygons[0]`), a red rectangle (`polygons[1]`), and some points (`points`) . The `which_within` method is used to determine whether the points are inside these two rectangles.
+In the figure below, there is a green rectangle (`polygons[0]`), a red rectangle (`polygons[1]`), and some points (`points`) . The [`within_which`](../../api_reference/map_match/api/arctern.within_which.html) method is used to determine whether the points are inside these two rectangles.
 
 * The four points at the bottom left corner are in the green rectangle, so the return values corresponding to these points are 0.
 * The two points at the top right corner are in the red rectangle, so the return values corresponding to these points are 1.

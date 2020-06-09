@@ -1,8 +1,8 @@
 # 空间关系运算
 
-Arctern 支持对几何体对象索引后, 批量地对几何体进行空间关系运算（目前仅支持 `within` 方法，类似于 SQL 的 Join）。 
+Arctern 支持对几何体对象索引后, 批量地对几何体进行空间关系运算（目前仅支持 [`GeoSeries.within`](../../api_reference/standalone_api/api/arctern.GeoSeries.within.html) 方法，类似于 SQL 的 Join）。 
 
-## which_within(left, right)
+## within_which(left, right)
 
 ### 运算逻辑
 
@@ -16,7 +16,7 @@ Arctern 支持对几何体对象索引后, 批量地对几何体进行空间关�
 
 ### 示例
 
-我们将图中的绿色矩形命名为 `polygons[0]`、红色矩形命名为 `polygons[1]`。使用 `which_within` 方法判断图中各点（`points`）是否位于这两个矩形内。
+我们将图中的绿色矩形命名为 `polygons[0]`、红色矩形命名为 `polygons[1]`。使用 [`within_which`](../../api_reference/map_match/api/arctern.within_which.html) 方法判断图中各点（`points`）是否位于这两个矩形内。
 
 * 左下的四个点在绿色矩形中，因此这四个点对应的返回值为 0。
 * 右上的两个点在红色矩形中，因此对应返回值为 1。

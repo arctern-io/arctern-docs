@@ -49,13 +49,15 @@ $ jupyter-notebook
 >>> road2 = 'LINESTRING (-73.989555 40.741531, -73.973952 40.762962)'
 ```
 
-使用 `arctern.ST_Intersects` 方法检查 `road1` 与 `road2` 是否相交。
+使用 `arctern.GeoSeries.intersects` 方法检查 `road1` 与 `road2` 是否相交。
 
 * 若返回 *True*，则相交；
 * 若返回 *False*，则不相交。
 
 ```python
->>> arctern.ST_Intersects(arctern.ST_GeomFromText(road1), arctern.ST_GeomFromText(road2))
+>>> geo1 = arctern.GeoSeries(road1)
+>>> geo2 = arctern.GeoSeries(road2)
+>>> geo1.intersects(geo2)
 0    True
 dtype: bool
 ```
@@ -65,8 +67,7 @@ dtype: bool
 使用 Kepler.gl 在地图上绘制 `road1` 和 `road2`，观察这两条路是否相交：
 
 ```python
->>> KeplerGl(height=600,data={"road1": pd.DataFrame(data={"road1":[road1]}),
-                          "road2": pd.DataFrame(data={"raod2":[road2]})})
+>>> KeplerGl(height=600,data={"road1":pd.DataFrame(data={"road1":[road1]}),"road2":pd.DataFrame(data={"raod2":[road2]})})
 ```
 
 ![](../../../img/quick_start/crossed_road.png)

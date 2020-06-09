@@ -17,7 +17,7 @@ $ pip install keplergl
 
 ## Loading Kepler.gl map
 
-Use `KeplerGl` (see  [KeplerGl interface description](https://docs.kepler.gl/docs/keplergl-jupyter#1-load-keplergl-map)) to create a map object named `map_1`：
+Use [`KeplerGl`](https://docs.kepler.gl/docs/keplergl-jupyter#1-load-keplergl-map) to create a map object named `map_1`：
 
 ```python
 # Load an empty map
@@ -30,7 +30,7 @@ Use `KeplerGl` (see  [KeplerGl interface description](https://docs.kepler.gl/doc
 
 ## Adding data
 
-Create two LINESTRING objects (`road1`, `road2`) to represent two roads, and save the geographic information of these roads in `df`. Then, use `add_data` (see [add_data interface description](https://docs.kepler.gl/docs/keplergl-jupyter#add_data)) to add  `df` as input dataset to the map.
+Create two LINESTRING objects (`road1`, `road2`) to represent two roads, and save the geographic information of these roads in `df`. Then, use [`add_data`](https://docs.kepler.gl/docs/keplergl-jupyter#add_data) to add  `df` as input dataset to the map.
 
 ```python
 >>> import pandas as pd

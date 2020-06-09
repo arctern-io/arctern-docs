@@ -2,7 +2,7 @@
 This article describes how Arctern GeoSeries index and select data.
 
 ## Methods of indexing and selecting data
-Arctern GeoSeries inherits the  indexing and data selection methods from pandas Series, including the label-based indexing `loc` and integer-location based indexing `iloc`. See [pandas documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html) for detailed information about indexing and selecting data.
+Arctern GeoSeries inherits the  indexing and data selection methods from pandas Series, including the label-based indexing [`loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html) and integer-location based indexing [`iloc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html). See [pandas documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html) for detailed information about indexing and selecting data.
 
 ## Generating test data
 

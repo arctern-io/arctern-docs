@@ -12,8 +12,8 @@ Arctern requires you to use a string in **SRID (Spatial Reference System Identif
 
 To transform CRS of a geometry, 
 
-1. use the `set_crs` method to set the currently used CRS of the geometry; 
-2. use the `to_crs` method to perform CRS transformation on the geometry.
+1. use the [`set_crs`](../../api_reference/standalone_api/api/arctern.GeoSeries.set_crs.html) method to set the currently used CRS of the geometry; 
+2. use the [`to_crs`](../../api_reference/standalone_api/api/arctern.GeoSeries.to_crs.html) method to perform CRS transformation on the geometry.
 
 The following shows how to use Arctern to transform the coordinates of a geometry from the latitude and longitude coordinate system to the UTM system.
 
@@ -40,7 +40,7 @@ dtype: GeoDtype
 
 ### Setting CRS
 
-The `set_crs` method sets the currently used CRS of `geos`. 
+The [`set_crs`](../../api_reference/standalone_api/api/arctern.GeoSeries.set_crs.html) method sets the currently used CRS of `geos`. 
 
 In this example, we use the latitude and longitude coordinate system (EPSG:4326) as the initial coordinate reference system.
 
@@ -54,7 +54,7 @@ In this example, we use the latitude and longitude coordinate system (EPSG:4326)
 
 ### Transforming CRS
 
-The `to_crs` method transforms the CRS of `geos` from the latitude and longitude coordinate system (EPSG:4326) to the UTM system (EPSG:3857).
+The [`to_crs`](../../api_reference/standalone_api/api/arctern.GeoSeries.to_crs.html) method transforms the CRS of `geos` from the latitude and longitude coordinate system (EPSG:4326) to the UTM system (EPSG:3857).
 
 <!-- [to_crs](/path/to/to_crs) -->
 
@@ -69,7 +69,7 @@ dtype: GeoDtype
 
 ### Result
 
-The `crs` attribute of GeoSeries objects shows the current CRS. According to the result, the CRS of `geos` has been successfully transformed to the UTM system.
+The [`crs`](../../api_reference/standalone_api/api/arctern.GeoSeries.crs.html) attribute of GeoSeries objects shows the current CRS. According to the result, the CRS of `geos` has been successfully transformed to the UTM system.
 
 ```python
 >>> geos.crs

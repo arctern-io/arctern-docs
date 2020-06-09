@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 16:17+0800\n"
+"POT-Creation-Date: 2020-06-08 11:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgid "本文档介绍 Arctern GeoSeries 如何索引和选择数据。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/indexing_selecting_data.md:4
-msgid "Arctern 索引和选择数据方法"
+msgid "索引和选择数据的方法"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/indexing_selecting_data.md:5
@@ -36,13 +36,14 @@ msgid ""
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/indexing_selecting_data.md:7
-msgid "创建测试数据"
+msgid "生成测试数据"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/indexing_selecting_data.md:9
 msgid ""
-"创建一个 arctern.GeoSeries 对象 geos，其中包括三个点（POINT）和一个多边形（POLYGON），并为它们建立索引 "
-"index。另外，以 geos 作为输入，创建一个 pandas.DataFrame 对象。"
+"创建一个 arctern.GeoSeries 对象 "
+"geos，其中包括三个点（POINT）和一个多边形（POLYGON），并为它们建立索引。另外，以 geos 作为输入，创建一个 "
+"pandas.DataFrame 对象。"
 msgstr ""
 
 #: ../../source/feature_description/spatiotemporal_analysis/indexing_selecting_data.md:11
@@ -80,4 +81,16 @@ msgstr ""
 #: ../../source/feature_description/spatiotemporal_analysis/indexing_selecting_data.md:63
 msgid "选取 df 的 第 1 行到第 3 行数据（不包含第 3 行数据）："
 msgstr ""
+
+#~ msgid "Arctern 索引和选择数据方法"
+#~ msgstr ""
+
+#~ msgid "创建测试数据"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "创建一个 arctern.GeoSeries 对象 "
+#~ "geos，其中包括三个点（POINT）和一个多边形（POLYGON），并为它们建立索引 index。另外，以 "
+#~ "geos 作为输入，创建一个 pandas.DataFrame 对象。"
+#~ msgstr ""
 

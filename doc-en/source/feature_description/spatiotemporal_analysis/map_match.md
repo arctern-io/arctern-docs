@@ -17,7 +17,7 @@ First, we generate a data set to demonstrate how to use Arctern to analyze the r
 ```
 
 ## Find a road near a GPS point
-The `near_road` method checks whether there is a road within a fixed range near the GPS point. Suppose `points` are the pick-up locations of taxis, and `roads` is the road network information of the corresponding city. Then, if some pick-up locations are not on the road or deviate too far from the road, then these positions can be regarded as noise.
+The [`near_road`](../../api_reference/map_match/api/arctern.near_road.html) method checks whether there is a road within a fixed range near the GPS point. Suppose `points` are the pick-up locations of taxis, and `roads` is the road network information of the corresponding city. Then, if some pick-up locations are not on the road or deviate too far from the road, then these positions can be regarded as noise.
 
 > **Note:** The coordinate reference system of the GPS points and road network must be "EPSG:4326".
 
@@ -46,7 +46,7 @@ dtype: GeoDtype
 ```
 
 ## Get the road closest to a GPS point
-The `nearest_road` method gets the road closest to the GPS point. Its operation logic is as follows:
+The [`nearest_road`](../../api_reference/map_match/api/arctern.nearest_road.html) method gets the road closest to the GPS point. Its operation logic is as follows:
 
 1. Create an index tree (Rtree) based on road network information.
 2. Find all roads near a GPS point based on the index tree, and select the road closest to the GPS point.
@@ -83,7 +83,7 @@ dtype: GeoDtype
 ```
 
 ## Bind GPS points to the nearest roads
-The `nearest_location_on_road` method binds GPS points to the nearest roads. Suppose a GPS point represents the location of a taxi. Due to GPS accuracy problems, there may be some deviations of the location of GPS points. So some GPS points may fall into nearby buildings or rivers. In this case, we need to use the `nearest_location_on_road` method to correct the position of these GPS points.
+The [`nearest_location_on_road`](../../api_reference/map_match/api/arctern.nearest_location_on_road.html) method binds GPS points to the nearest roads. Suppose a GPS point represents the location of a taxi. Due to GPS accuracy problems, there may be some deviations of the location of GPS points. So some GPS points may fall into nearby buildings or rivers. In this case, we need to use the [`nearest_location_on_road`](../../api_reference/map_match/api/arctern.nearest_location_on_road.html) method to correct the position of these GPS points.
 
 > **Note:** The coordinate reference system of the GPS points and road network must be "EPSG:4326".
 
@@ -109,7 +109,7 @@ dtype: GeoDtype
 dtype: GeoDtype
 ```
 
-The following figures shows the topological relations between the GPS points and roads before and after correction. The figures shows that `nearest_location_on_road` has successfully bound those GPS points that deviated from the road to the nearest road.
+The following figures shows the topological relations between the GPS points and roads before and after correction. The figures shows that [`nearest_location_on_road`](../../api_reference/map_match/api/arctern.nearest_location_on_road.html) has successfully bound those GPS points that deviated from the road to the nearest road.
 
 ![](./img/topo_before_correction.png)
 ![](./img/topo_after_correction.png)

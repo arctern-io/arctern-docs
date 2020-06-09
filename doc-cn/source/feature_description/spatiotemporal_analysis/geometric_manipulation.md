@@ -2,7 +2,7 @@
 
 Arctern 实现了多个符合 OGC 标准的 GIS 处理函数。它们被封装成 GeoSeries 类的属性和方法。其中的方法又分为一元操作方法和二元操作方法。
 
-## GeoSeries.length
+## [GeoSeries.length](../../api_reference/standalone_api/api/arctern.GeoSeries.length.html)
 
 * **功能：** 计算 GeoSeries 对象中每个几何体的长度。如果几何体不是 LineString 和 MultiLineString 类型的几何体， 则它的长度为 0 。
 * **返回：** 浮点型的 pandas.Series
@@ -17,7 +17,7 @@ Arctern 实现了多个符合 OGC 标准的 GIS 处理函数。它们被封装�
 dtype: float64
 ```
 
-## GeoSeries.area
+## [GeoSeries.area](../../api_reference/standalone_api/api/arctern.GeoSeries.area.html)
 
 * **功能：** 计算 GeoSeries 对象中每个几何体的面积。
 * **返回：** 浮点型的 pandas.Series
@@ -33,7 +33,7 @@ dtype: float64
 
 ![](./img//area.png)
 
-## GeoSeries.centroid
+## [GeoSeries.centroid](../../api_reference/standalone_api/api/arctern.GeoSeries.centroid.html)
 
 * **功能：** 计算 GeoSeries 对象中每个几何体的中心点。
 * **返回：** GeoSeries。
@@ -48,7 +48,7 @@ dtype: float64
 ```
 ![](./img/centroid.png)
 
-## GeoSeries.is_valid
+## [GeoSeries.is_valid](../../api_reference/standalone_api/api/arctern.GeoSeries.is_valid.html)
 
 * **功能：** 判断 GeoSeries 对象中的每个几何体是否有效。
 * **返回：** 布尔型的 pandas.Series
@@ -64,7 +64,7 @@ dtype: float64
 dtype: bool
 ```
 
-## GeoSeries.is_simple
+## [GeoSeries.is_simple](../../api_reference/standalone_api/api/arctern.GeoSeries.is_simple.html)
 
 * **功能：** 判断 GeoSeries 对象中的每个几何体是否简单。这里的“简单”表示某个几何图形没有异常的几何图形点，例如自相交或相切。
 * **返回：** 布尔型的 pandas.Series
@@ -81,7 +81,7 @@ dtype: bool
 ```
 ![](./img/is_simple.png)
 
-## GeoSeries.convex_hull
+## [GeoSeries.convex_hull](../../api_reference/standalone_api/api/arctern.GeoSeries.convex_hull.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，计算包围它的最小的凸几何体。
 * **返回：** GeoSeries
@@ -96,7 +96,7 @@ dtype: GeoDtype
 ```
 ![](./img/convex_hull.png)
 
-## GeoSeries.npoints
+## [GeoSeries.npoints](../../api_reference/standalone_api/api/arctern.GeoSeries.npoints.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，计算它的点的数量。
 * **返回：** int64 类型的 pandas.Series
@@ -110,7 +110,7 @@ dtype: GeoDtype
 dtype: int64
 ```
 
-## GeoSeries.curve_to_line
+## [GeoSeries.curve_to_line](../../api_reference/standalone_api/api/arctern.GeoSeries.curve_to_line.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，计算它的近似表示。近似表示的方法是将每个几何图形中的曲线转换为近似线性表示。
 * **返回：** GeoSeries
@@ -124,7 +124,7 @@ dtype: GeoDtype
 ```
 ![](./img/curve_to_line.png)
 
-## GeoSeries.simplify(tolerance)
+## [GeoSeries.simplify(tolerance)](../../api_reference/standalone_api/api/arctern.GeoSeries.simplify.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，计算它的简化表示。简化表示的算法是 Douglas-Peucker 算法。
 * **参数：** `tolerance` 为浮点型数字，表示线串上的点和曲线之间的最大距离。
@@ -139,7 +139,7 @@ dtype: GeoDtype
 dtype: GeoDtype
 ```
 
-## GeoSeries.envelope
+## [GeoSeries.envelope](../../api_reference/standalone_api/api/arctern.GeoSeries.envelope.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，计算它的最小矩形边界范围。
 * **返回：** GeoSeries
@@ -154,7 +154,7 @@ dtype: GeoDtype
 ```
 ![](./img/envelope.png)
 
-## GeoSeries.buffer(distance)
+## [GeoSeries.buffer(distance)](../../api_reference/standalone_api/api/arctern.GeoSeries.buffer.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，创建一个与它的最远距离不大于 `distance` 的几何体。
 * **参数：** `distance` 为浮点型数字，表示新几何体与原几何体之间的最大距离。
@@ -189,7 +189,7 @@ dtype: float64
 
 ![](./img/buffer_2.png)
 
-## GeoSeries.precision_reduce(precision)
+## [GeoSeries.precision_reduce(precision)](../../api_reference/standalone_api/api/arctern.GeoSeries.precision_reduce.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，根据指定的有效数字位数 `precision` 创建降低坐标精度后的几何体。
 * **参数：** `precision` 为整型数字，表示有效数字位数。
@@ -206,7 +206,7 @@ dtype: float64
 dtype: GeoDtype
 ```
 
-## GeoSeries.make_valid
+## [GeoSeries.make_valid](../../api_reference/standalone_api/api/arctern.GeoSeries.make_valid.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，根据它创建一个新的有效的几何体。在构造新几何体过程中，不会删除原始几何体的任何顶点。如果原始几何体本来就是有效的，则直接返回原始几何体。
 * **返回：** GeoSeries
@@ -222,7 +222,7 @@ Warning 1: Self-intersection at or near point 2 2
 dtype: GeoDtype
 ```
 
-## GeoSeries.intersects(other)
+## [GeoSeries.intersects(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.intersects.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否与 `other` 对象中相同位置的几何体存在交集。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
@@ -266,7 +266,7 @@ dtype: bool
 ```
 ![](./img/intersects_3.png)
 
-## GeoSeries.within(other)
+## [GeoSeries.within(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.within.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否在 `other` 对象中相同位置的几何体的内部。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
@@ -285,7 +285,7 @@ dtype: bool
 ```
 ![](./img/within.png)
 
-## GeoSeries.contains(other)
+## [GeoSeries.contains(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.contains.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否包含 `other` 对象中相同位置的几何体。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
@@ -305,7 +305,7 @@ dtype: bool
 ```
 ![](./img/contains.png)
 
-## GeoSeries.crosses(other)
+## [GeoSeries.crosses(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.crosses.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否与 `other` 对象中相同位置的几何体相交。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
@@ -325,7 +325,7 @@ dtype: bool
 
 ![](./img/crosses.png)
 
-## GeoSeries.geom_equals(other)
+## [GeoSeries.geom_equals(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否与 `other` 对象中相同位置的几何体等价。“等价”表示两个几何体的几何结构相同。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
@@ -343,7 +343,7 @@ dtype: bool
 dtype: bool
 ```
 
-## GeoSeries.touches(other)
+## [GeoSeries.touches(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.touches.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否与 `other` 对象中相同位置的几何体相邻。“相邻”表示两个几何体在边界上有共同的点。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
@@ -362,7 +362,7 @@ dtype: bool
 
 ![](./img/touches.png)
 
-## GeoSeries.overlaps(other)
+## [GeoSeries.overlaps(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.overlaps.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，判断它是否与 `other` 对象中相同位置的几何体重叠。“重叠”表示两个几何体相交且不互相包含。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
@@ -381,7 +381,7 @@ dtype: bool
 
 ![](./img/overlaps.png)
 
-## GeoSeries.distance(other)
+## [GeoSeries.distance(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.distance.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，判断它与 `other` 对象中相同位置的几何体之间的最短二维笛卡尔（平面）距离。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
@@ -398,7 +398,7 @@ dtype: float64
 ```
 ![](./img/distance.png)
 
-## GeoSeries.distance_sphere(other)
+## [GeoSeries.distance_sphere(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.distance_sphere.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，根据经纬度坐标计算地球表面两点之间的最短球面距离。该方法使用 SRID 定义的地球和半径。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
@@ -413,7 +413,7 @@ dtype: float64
 dtype: float64
 ```
 
-## GeoSeries.hausdorff_distance(other)
+## [GeoSeries.hausdorff_distance(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.hausdorff_distance.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，判断它与 `other` 对象中相同位置的几何体之间的 Hausdorff 距离。此距离用于度量两个几何体之间的相似度。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
@@ -430,7 +430,7 @@ dtype: float64
 ```
 ![](./img/hausdorff_distance.png)
 
-## GeoSeries.intersection(other)
+## [GeoSeries.intersection(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.intersection.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，计算它与 `other` 对象中相同位置的几何体之间交集。
 * **参数：** `other` 为 GeoSeries 或者 WKB 类型的对象。
@@ -446,7 +446,7 @@ dtype: GeoDtype
 ```
 ![](./img/intersection.png)
 
-## GeoSeries.polygon_from_envelope(min_x, min_y, max_x, max_y, crs=None)
+## [GeoSeries.polygon_from_envelope(min_x, min_y, max_x, max_y, crs=None)](../../api_reference/standalone_api/api/arctern.GeoSeries.polygon_from_envelope.html)
 
 * **功能：** 对于 GeoSeries 对象中的每个几何体，根据给定的参数计算它的最小矩形边界范围，且该矩形的边与坐标轴平行。
 * **参数：**  
@@ -471,7 +471,7 @@ dtype: GeoDtype
 ```
 ![](./img/polygon_from_envelope.png)
 
-## GeoSeries.point(x, y)
+## [GeoSeries.point(x, y)](../../api_reference/standalone_api/api/arctern.GeoSeries.point.html)
 
 * **功能：** 根据横坐标集合 `x` 和纵坐标集合 `y` 构造一组 POINT 对象。
 * **参数：**  
