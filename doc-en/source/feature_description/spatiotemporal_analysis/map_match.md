@@ -22,7 +22,7 @@ The [`near_road`](../../api_reference/map_match/api/arctern.near_road.html) meth
 > **Note:** The coordinate reference system of the GPS points and road network must be "EPSG:4326".
 
 ```python
->>> import arcternss
+>>> import arctern
 >>> 
 >>> points
 0    POINT (-73.9780065 40.7748119)

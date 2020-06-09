@@ -24,6 +24,13 @@ This article describes Arctern's plot methods.
 
 The following examples show you how to use the [plot_geometry](../../api_reference/plot/api/arctern.plot.plot_geometry.html) method to draw geometric figures.
 
+
+## Install dependencies
+```bash
+conda install -c conda-forge descartes
+conda install -c conda-forge matplotlib
+```
+
 ## Generate test data
 
 We use the GeoSeries constructor to create some geometric objects, including points (POINT), lines (LINESTRING), polygons (POLYGON), multiple points (MULTIPOINT), multiple polygons (MULTIPOLYGON), geometry collections (GEOMETRYCOLLECTION), and multiple lines (MULTILINESTRING) . In the next steps, we will demonstrate how to draw these geometric figures.
@@ -44,6 +51,7 @@ We use the GeoSeries constructor to create some geometric objects, including poi
 >>> geoms = GeoSeries(["MULTILINESTRING ((0 0,1 1,2 3),(1 0,2 4))","POINT (3 4)","POLYGON ((0 0,0 1,1.5 2,0 0))"])
 ```
 
+
 ## Plot geometric figures
 
 ### Point
@@ -51,12 +59,12 @@ We use the GeoSeries constructor to create some geometric objects, including poi
 - **Color:** Blue
 - **Transparency:** 0.4
 ```python
-from arctern import plot
-import matplotlib.pyplot as plt
-fig,ax = plt.subplots()
-ax.grid()
-plot.plot_geometry(ax,point_s,color=["blue"],alpha=0.4)
-plt.show()
+>>> from arctern import plot
+>>> import matplotlib.pyplot as plt
+>>> fig,ax = plt.subplots()
+>>> ax.grid()
+>>> plot.plot_geometry(ax,point_s,color=["blue"],alpha=0.4)
+>>> plt.show()
 ```
 
 ![](./img/point_s.png)
@@ -68,12 +76,12 @@ plt.show()
 - **Transparency:** 0.4
 
 ```python
-from arctern import plot
-import matplotlib.pyplot as plt
-fig,ax = plt.subplots()
-ax.grid()
-plot.plot_geometry(ax,linestring_s,color=["blue"],linestyle=["-."],alpha=0.4)
-plt.show()
+>>> from arctern import plot
+>>> import matplotlib.pyplot as plt
+>>> fig,ax = plt.subplots()
+>>> ax.grid()
+>>> plot.plot_geometry(ax,linestring_s,color=["blue"],linestyle=["-."],alpha=0.4)
+>>> plt.show()
 ```
 
 ![](./img/linestring_s.png)
@@ -86,12 +94,12 @@ plt.show()
 - **Transparency:** 0.4
 
 ```python
-from arctern import plot
-import matplotlib.pyplot as plt
-fig,ax = plt.subplots()
-ax.grid()
-plot.plot_geometry(ax,polygon_s,facecolor=["green"],linewidth=3.0,edgecolor=["red"],alpha=0.4)
-plt.show()
+>>> from arctern import plot
+>>> import matplotlib.pyplot as plt
+>>> fig,ax = plt.subplots()
+>>> ax.grid()
+>>> plot.plot_geometry(ax,polygon_s,facecolor=["green"],linewidth=3.0,edgecolor=["red"],alpha=0.4)
+>>> plt.show()
 ```
 
 ![](./img/polygon_s.png)
@@ -104,12 +112,12 @@ plt.show()
 - **Transparency:** 0.4
 
 ```python
-from arctern import plot
-import matplotlib.pyplot as plt
-fig,ax = plt.subplots()
-ax.grid()
-plot.plot_geometry(ax,multi_point_s,color=["blue"],marker="*",markersize=40.0,alpha=0.4)
-plt.show()
+>>> from arctern import plot
+>>> import matplotlib.pyplot as plt
+>>> fig,ax = plt.subplots()
+>>> ax.grid()
+>>> plot.plot_geometry(ax,multi_point_s,color=["blue"],marker="*",markersize=40.0,alpha=0.4)
+>>> plt.show()
 ```
 
 ![](./img/multi_point_s.png)
@@ -121,12 +129,12 @@ plt.show()
 - **Transparency:** 0.4
 
 ```python
-from arctern import plot
-import matplotlib.pyplot as plt
-fig,ax = plt.subplots()
-ax.grid()
-plot.plot_geometry(ax,multi_linestring_s,color=["blue"],linestyle=["--"],alpha=0.4)
-plt.show()
+>>> from arctern import plot
+>>> import matplotlib.pyplot as plt
+>>> fig,ax = plt.subplots()
+>>> ax.grid()
+>>> plot.plot_geometry(ax,multi_linestring_s,color=["blue"],linestyle=["--"],alpha=0.4)
+>>> plt.show()
 ```
 
 ![](./img/multi_linestring_s.png)
@@ -137,12 +145,12 @@ plt.show()
 - **Transparency:** 0.4
 
 ```python
-from arctern import plot
-import matplotlib.pyplot as plt
-fig,ax = plt.subplots()
-ax.grid()
-plot.plot_geometry(ax,multi_polygon_s,facecolor=["blue"],alpha=0.4)
-plt.show()
+>>> from arctern import plot
+>>> import matplotlib.pyplot as plt
+>>> fig,ax = plt.subplots()
+>>> ax.grid()
+>>> plot.plot_geometry(ax,multi_polygon_s,facecolor=["blue"],alpha=0.4)
+>>> plt.show()
 ```
 
 ![](./img/multi_polygon_s.png)
@@ -155,12 +163,12 @@ plt.show()
 - **Transparency:** 0.4
 
 ```python
-from arctern import plot
-import matplotlib.pyplot as plt
-fig,ax = plt.subplots()
-ax.grid()
-plot.plot_geometry(ax,geom_collection_s,facecolor=["blue"],edgecolor=["red"],color=["green"],alpha=0.4)
-plt.show()
+>>> from arctern import plot
+>>> import matplotlib.pyplot as plt
+>>> fig,ax = plt.subplots()
+>>> ax.grid()
+>>> plot.plot_geometry(ax,geom_collection_s,facecolor=["blue"],edgecolor=["red"],color=["green"],alpha=0.4)
+>>> plt.show()
 ```
 
 ![](./img/geom_collection_s.png)
@@ -178,12 +186,12 @@ plt.show()
   * **Transparency:** 0.4
 
 ```python
-from arctern import plot
-import matplotlib.pyplot as plt
-fig,ax = plt.subplots()
-ax.grid()
-plot.plot_geometry(ax,geoms,linestyle=["-.","","--"],marker="o",color=["blue","red","green"],edgecolor=["","","red"],alpha=0.4)
-plt.show()
+>>> from arctern import plot
+>>> import matplotlib.pyplot as plt
+>>> fig,ax = plt.subplots()
+>>> ax.grid()
+>>> plot.plot_geometry(ax,geoms,linestyle=["-.","","--"],marker="o",color=["blue","red","green"],edgecolor=["","","red"],alpha=0.4)
+>>> plt.show()
 ```
 
 ![](./img/geoms.png)
@@ -206,14 +214,14 @@ plt.show()
    * **Transparency:** 0.4
 
 ```python
-from arctern import plot
-import matplotlib.pyplot as plt
-fig,ax = plt.subplots()
-ax.grid()
-plot.plot_geometry(ax,linestring_s,color=["blue"],linestyle=["-."],alpha=0.4)
-plot.plot_geometry(ax,polygon_s,facecolor=["green"],linewidth=3.0,edgecolor=["red"],alpha=0.4)
-plot.plot_geometry(ax,geom_collection_s,facecolor=["blue"],edgecolor=["red"],color=["green"],alpha=0.4)
-plt.show()
+>>> from arctern import plot
+>>> import matplotlib.pyplot as plt
+>>> fig,ax = plt.subplots()
+>>> ax.grid()
+>>> plot.plot_geometry(ax,linestring_s,color=["blue"],linestyle=["-."],alpha=0.4)
+>>> plot.plot_geometry(ax,polygon_s,facecolor=["green"],linewidth=3.0,edgecolor=["red"],alpha=0.4)
+>>> plot.plot_geometry(ax,geom_collection_s,facecolor=["blue"],edgecolor=["red"],color=["green"],alpha=0.4)
+>>> plt.show()
 ```
 
 ![](./img/multi_plot.png)
