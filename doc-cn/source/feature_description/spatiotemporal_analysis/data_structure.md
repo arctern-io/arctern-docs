@@ -13,13 +13,14 @@ GeoSeries 在内部以 WKB 格式存储几何体，接受 WKT 或者 WKB 格式�
 你可以将多个 WKT 格式的字符串数据放到一个 list、numpy.ndarray 或者 pandas.Series 中，然后传入 GeoSeries 的构造函数即可创建 GeoSeries 对象。
 
 ```python
+>>> import pandas as pd
 >>> data = ['POINT(1 1)', 'POINT(1 3)']
 >>> s = arctern.GeoSeries(data)
 >>> s
 0    POINT (1 1)
 1    POINT (1 3)
 dtype: GeoDtype
->>> data = pandas.Series(data)
+>>> data = pd.Series(data)
 >>> s = arctern.GeoSeries(data)
 >>> s
 0    POINT (1 1)
