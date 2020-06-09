@@ -41,21 +41,6 @@ $ pip install keplergl
 
 ![add_data](./img/add_data.png)
 
-同样，你也可以将 CSV、GeoJSON 等格式的数据输入到地图上：
-
-```python
->>> # CSV
->>> with open('csv-data.csv', 'r') as f:
-...     csvData = f.read()
->>> map_1.add_data(data=csvData, name='data_2')
->>> 
->>> # GeoJSON
->>> with open('sf_zip_geo.json', 'r') as f:
-...     geojson = f.read()
->>> 
->>> map_1.add_data(data=geojson, name='geojson')
-```
-
 ## 参考
 
 更多示例及接口说明请参考 [Kepler.gl 官网关于 Jupyter Notebook 的使用介绍](https://docs.kepler.gl/docs/keplergl-jupyter)。
