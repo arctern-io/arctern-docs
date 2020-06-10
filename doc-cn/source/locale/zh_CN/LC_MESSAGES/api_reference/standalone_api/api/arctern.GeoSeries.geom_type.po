@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.geom_type:1 of
 msgid "Returns the type of each geometry in the GeoSeries."
-msgstr ""
+msgstr "返回 GeoSeries 中每个几何体的类型。"
 
 #: arctern.GeoSeries.geom_type of
 msgid "返回"
@@ -33,7 +33,7 @@ msgstr ""
 msgid ""
 "The string representations of geometry types. For example, "
 "\"ST_LINESTRING\", \"ST_POLYGON\", \"ST_POINT\", and \"ST_MULTIPOINT\"."
-msgstr ""
+msgstr "几何体类型的字符串表示。 例如，\"ST_LINESTRING\"，\"ST_POLYGON\"，\"ST_POINT\"，和 \"ST_MULTIPOINT\"。"
 
 #: arctern.GeoSeries.geom_type of
 msgid "返回类型"

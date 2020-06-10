@@ -22,14 +22,12 @@ msgid "arctern.GeoSeries.length"
 msgstr ""
 
 #: arctern.GeoSeries.length:1 of
-#, fuzzy
 msgid "Calculates the length of each geometry in the GeoSeries."
-msgstr "几何体的长度在 GeoSeries。"
+msgstr "计算 GeoSeries 中每个几何体的长度。"
 
 #: arctern.GeoSeries.length:3 of
-#, fuzzy
 msgid "The ways to calculate the length of geometries are as follows:"
-msgstr "计算几何体的长度。"
+msgstr "计算几何体长度的方法如下："
 
 #: arctern.GeoSeries.length:5 of
 msgid "POINT / MULTIPOINT / POLYGON / MULTIPOLYGON / CURVEPOLYGON / MULTICURVE: 0"
@@ -37,31 +35,30 @@ msgstr ""
 
 #: arctern.GeoSeries.length:6 of
 msgid "LINESTRING: Length of a single straight line."
-msgstr ""
+msgstr "LINESTRING: 一条直线的长度。"
 
 #: arctern.GeoSeries.length:7 of
 msgid "MULTILINESTRING: Sum of length of multiple straight lines."
-msgstr ""
+msgstr "MULTILINESTRING: 多条直线的长度总和。"
 
 #: arctern.GeoSeries.length:8 of
 msgid "CIRCULARSTRING: Length of a single curvilinear line."
-msgstr ""
+msgstr "CIRCULARSTRING: 一条曲线的长度。"
 
 #: arctern.GeoSeries.length:9 of
 msgid ""
 "MULTISURFACE / COMPOUNDCURVE / GEOMETRYCOLLECTION: For a geometry "
 "collection among the 3 types, calculates the sum of length of all "
 "geometries in the collection."
-msgstr ""
+msgstr "MULTISURFACE / COMPOUNDCURVE / GEOMETRYCOLLECTION: 对于 3 种类型中的几何体集合，计算集合中所有几何体的长度之和。"
 
 #: arctern.GeoSeries.length of
 msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.length:11 of
-#, fuzzy
 msgid "Length of each geometry in the GeoSeries."
-msgstr "几何体的长度在 GeoSeries。"
+msgstr "GeoSeries 中每个几何体的长度。"
 
 #: arctern.GeoSeries.length of
 msgid "返回类型"
