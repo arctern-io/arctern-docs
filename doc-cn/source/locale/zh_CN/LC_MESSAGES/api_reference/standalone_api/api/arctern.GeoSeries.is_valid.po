@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-09 18:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,22 +22,45 @@ msgid "arctern.GeoSeries.is\\_valid"
 msgstr ""
 
 #: arctern.GeoSeries.is_valid:1 of
-msgid "Check if each geometry is of valid geometry format."
-msgstr "检查几何体是否合法。"
-
-#: arctern.GeoSeries.is_valid of
-msgid "返回类型"
+msgid ""
+"Tests whether each geometry in the GeoSeries is in valid format, such as "
+"WKT and WKB formats."
 msgstr ""
 
 #: arctern.GeoSeries.is_valid of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.is_valid:4 of
-msgid "True value for geometries that are valid, False otherwise."
+#: arctern.GeoSeries.is_valid:3 of
+msgid ""
+"**Series(dtype** --  * *True:* All geometries are valid. * *False:* At "
+"least one geometry is invalid."
+msgstr ""
+
+#: arctern.GeoSeries.is_valid:3 of
+msgid "**Series(dtype** --"
+msgstr ""
+
+#: arctern.GeoSeries.is_valid:5 of
+#, fuzzy
+msgid "*True:* All geometries are valid."
 msgstr "如果几何体是合法的，返回 true，反之 false。"
 
+#: arctern.GeoSeries.is_valid:6 of
+msgid "*False:* At least one geometry is invalid."
+msgstr ""
+
 #: arctern.GeoSeries.is_valid of
-msgid "examples"
-msgstr "例子"
+msgid "返回类型"
+msgstr ""
+
+#: arctern.GeoSeries.is_valid:10 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid "Check if each geometry is of valid geometry format."
+#~ msgstr "检查几何体是否合法。"
+
+#~ msgid "examples"
+#~ msgstr "例子"
 

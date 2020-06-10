@@ -32,6 +32,15 @@ def delete_content(path):
     file_write.write(content)
     file_write.close()
 
+def replace(source_api_path):
+    for html_file in os.listdir(source_api_path):
+        if html_file.endswith('.html'):
+           with open(source_api_path + os.sep + html_file, 'r') as f:
+                contents = f.read()
+           contents = contents.replace("<a class=\"reference internal\"","<a target=\"_blank\" class=\"reference internal\"")
+           with open(source_api_path + os.sep + html_file, 'w') as f:
+                f.write(contents)
+
 
 if __name__ == "__main__":
     path = os.popen('which sphinx-build').readline().replace("\n", "")
@@ -39,4 +48,14 @@ if __name__ == "__main__":
     os.system('make clean')
     os.system('make html')
     delete_content(path)
+    replace("build/html/")
+    replace("build/html/feature_description/")
+    replace("build/html/quick_start/")
+    replace("build/html/feature_description/spatiotemporal_analysis/")
+    replace("build/html/feature_description/visualization/")
+    replace("build/html/api_reference/")
+    replace("build/html/api_reference/cluster_api")
+    replace("build/html/api_reference/map_match")
+    replace("build/html/api_reference/plot")
+    replace("build/html/api_reference/standalone_api")
     ignore_python_prompt()

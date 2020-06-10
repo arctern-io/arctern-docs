@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-09 18:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,39 +22,70 @@ msgid "arctern.GeoSeries.equals"
 msgstr ""
 
 #: arctern.GeoSeries.equals:1 of
-msgid "Test whether two objects contain the same elements."
+#, fuzzy
+msgid "Tests whether two objects contain the same elements."
 msgstr "测试两个对象是否包含相同元素。"
 
 #: arctern.GeoSeries.equals:3 of
 msgid ""
 "This function allows two GeoSeries to be compared against each other to "
-"see if they have the same shape and geometries (same wkb bytes). NaNs in "
-"the same location are considered equal. The column headers do not need to"
-" have the same type, but the elements within the columns must be the same"
-" dtype."
-msgstr "此方法用于比较两个 GeoSeries 是否具有相同的形状和几何体（相同的 WKB 字节）。在相同位置的 NaNs 视为相等。列标题不必是相同类型，但列中的元素必须是相同类型。"
+"see if they have the same shape and elements. NaNs in the same location "
+"are considered equal. The column headers do not need to have the same "
+"type, but the elements within the columns must be the same dtype."
+msgstr ""
 
 #: arctern.GeoSeries.equals of
 msgid "参数"
 msgstr ""
 
-#: arctern.GeoSeries.equals:10 of
-msgid "The other GeoSeries to be compared with the first"
+#: arctern.GeoSeries.equals:5 of
+#, fuzzy
+msgid "The other GeoSeries to be compared with the first GeoSeries."
 msgstr "其他 GeoSeries 与第一个相比较。"
-
-#: arctern.GeoSeries.equals of
-msgid "返回类型"
-msgstr ""
 
 #: arctern.GeoSeries.equals of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.equals:13 of
-msgid "True if all geometries are the same in both objects, False otherwise."
+#: arctern.GeoSeries.equals:8 of
+#, fuzzy
+msgid ""
+"* *True:* All geometries are the same in both objects. * *False:* The two"
+" objects are different in shape or elements."
 msgstr "如果在两个对象中的所有几何体 “等价”, 返回 true, 反之返回 false。"
 
+#: arctern.GeoSeries.equals:10 of
+#, fuzzy
+msgid "*True:* All geometries are the same in both objects."
+msgstr "如果在两个对象中的所有几何体 “等价”, 返回 true, 反之返回 false。"
+
+#: arctern.GeoSeries.equals:11 of
+#, fuzzy
+msgid "*False:* The two objects are different in shape or elements."
+msgstr "测试两个对象是否包含相同元素。"
+
 #: arctern.GeoSeries.equals of
-msgid "example"
-msgstr "例子"
+msgid "返回类型"
+msgstr ""
+
+#: arctern.GeoSeries.equals:15 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid ""
+#~ "This function allows two GeoSeries to"
+#~ " be compared against each other to"
+#~ " see if they have the same "
+#~ "shape and geometries (same wkb bytes)."
+#~ " NaNs in the same location are "
+#~ "considered equal. The column headers do"
+#~ " not need to have the same "
+#~ "type, but the elements within the "
+#~ "columns must be the same dtype."
+#~ msgstr ""
+#~ "此方法用于比较两个 GeoSeries 是否具有相同的形状和几何体（相同的 WKB "
+#~ "字节）。在相同位置的 NaNs 视为相等。列标题不必是相同类型，但列中的元素必须是相同类型。"
+
+#~ msgid "example"
+#~ msgstr "例子"
 

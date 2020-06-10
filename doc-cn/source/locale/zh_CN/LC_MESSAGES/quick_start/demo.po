@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-08 11:47+0800\n"
+"POT-Creation-Date: 2020-06-09 18:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,7 +68,7 @@ msgid "以帝国大厦附近的两条道路为分析对象，创建 WKT 格式�
 msgstr ""
 
 #: ../../source/quick_start/demo.md:52
-msgid "使用 arctern.GeoSeries.intersects 方法检查 road1 与 road2 是否相交。"
+msgid "使用 GeoSeries.intersects 方法检查 road1 与 road2 是否相交。"
 msgstr ""
 
 #: ../../source/quick_start/demo.md:54
@@ -116,5 +116,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "使用 arctern.ST_Intersects 方法检查 road1 与 road2 是否相交。"
+#~ msgstr ""
+
+#~ msgid "使用 arctern.GeoSeries.intersects 方法检查 road1 与 road2 是否相交。"
 #~ msgstr ""
 

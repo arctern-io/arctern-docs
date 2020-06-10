@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-09 18:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,22 +22,48 @@ msgid "arctern.GeoSeries.length"
 msgstr ""
 
 #: arctern.GeoSeries.length:1 of
-msgid "Calculate the length of each geometry."
+#, fuzzy
+msgid "Calculates the length of each geometry in the GeoSeries."
+msgstr "几何体的长度在 GeoSeries。"
+
+#: arctern.GeoSeries.length:3 of
+#, fuzzy
+msgid "The ways to calculate the length of geometries are as follows:"
 msgstr "计算几何体的长度。"
 
-#: arctern.GeoSeries.length of
-msgid "返回类型"
+#: arctern.GeoSeries.length:5 of
+msgid "POINT / MULTIPOINT / POLYGON / MULTIPOLYGON / CURVEPOLYGON / MULTICURVE: 0"
+msgstr ""
+
+#: arctern.GeoSeries.length:6 of
+msgid "LINESTRING: Length of a single straight line."
+msgstr ""
+
+#: arctern.GeoSeries.length:7 of
+msgid "MULTILINESTRING: Sum of length of multiple straight lines."
+msgstr ""
+
+#: arctern.GeoSeries.length:8 of
+msgid "CIRCULARSTRING: Length of a single curve line."
 msgstr ""
 
 #: arctern.GeoSeries.length of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.length:4 of
-msgid "The length of each geometry in the GeoSeries."
+#: arctern.GeoSeries.length:10 of
+#, fuzzy
+msgid "**Series(dtype** -- Length of each geometry in the GeoSeries."
 msgstr "几何体的长度在 GeoSeries。"
 
 #: arctern.GeoSeries.length of
-msgid "examples"
-msgstr "例子"
+msgid "返回类型"
+msgstr ""
+
+#: arctern.GeoSeries.length:14 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid "examples"
+#~ msgstr "例子"
 

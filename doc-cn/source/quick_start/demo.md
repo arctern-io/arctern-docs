@@ -49,7 +49,7 @@ $ jupyter-notebook
 >>> road2 = 'LINESTRING (-73.989555 40.741531, -73.973952 40.762962)'
 ```
 
-使用 `arctern.GeoSeries.intersects` 方法检查 `road1` 与 `road2` 是否相交。
+使用 `GeoSeries.intersects` 方法检查 `road1` 与 `road2` 是否相交。
 
 * 若返回 *True*，则相交；
 * 若返回 *False*，则不相交。

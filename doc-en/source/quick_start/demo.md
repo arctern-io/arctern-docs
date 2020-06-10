@@ -52,13 +52,15 @@ Create two LINESTRING objects (`road1`, `road2`) in WKT format based on the two 
 >>> road2 = 'LINESTRING (-73.989555 40.741531, -73.973952 40.762962)'
 ```
 
-Use `arctern.ST_Intersects` to check whether `road1` and `road2` intersect.
+Use `GeoSeries.intersects` to check whether `road1` and `road2` intersect.
 
 * _True:_ the two roads intersect.
 * _False:_ the two roads do not intersect.
 
 ```python
->>> arctern.ST_Intersects(arctern.ST_GeomFromText(road1), arctern.ST_GeomFromText(road2))
+>>> geo1 = arctern.GeoSeries(road1)
+>>> geo2 = arctern.GeoSeries(road2)
+>>> geo1.intersects(geo2)
 0    True
 dtype: bool
 ```

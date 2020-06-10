@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-07 10:00+0800\n"
+"POT-Creation-Date: 2020-06-09 18:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,40 +22,53 @@ msgid "arctern.GeoSeries"
 msgstr ""
 
 #: arctern.GeoSeries:1 of
-msgid "A Series to store geometry data which is WKB formed bytes object."
-msgstr "Series 存储几何体，此几何体是 WKB 格式的字节对象。"
+msgid "One-dimensional Series to store an array of geometry objects."
+msgstr ""
 
 #: arctern.GeoSeries of
 msgid "参数"
 msgstr ""
 
-#: arctern.GeoSeries:4 of
-msgid "Geometries to store, which can be WKB formed bytes or WKT formed string."
-msgstr "要存储的几何体，可以是 WKB 格式的字节或 WKT 格式的字符串。"
-
-#: arctern.GeoSeries:7 of
+#: arctern.GeoSeries:3 of
 msgid ""
-"Same to Pandas Series. Values must be hashable and have the same length "
-"as `data`. Non-unique index values are allowed. Will default to "
-"RangeIndex (0, 1, 2, ..., n) if not provided. If both a dict and index "
-"sequence are used, the index will override the keys found in the dict."
-msgstr "与 pandas Series 相同。值必须是可哈希的，并且与 `data` 的长度相同。允许使用非唯一索引值。如果未提供，则默认为 RangeIndex（0，1，2，…，n）。如果同时使用了字典和索引序列，则索引将覆盖在字典中找到的键。"
+"Contains geometric data stored in GeoSeries. The geometric data can be in"
+" `WKT (Well-Known Text) <https://en.wikipedia.org/wiki/Well-"
+"known_text_representation_of_geometry>`_ or `WKB "
+"<https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry"
+"#Well-known_binary>`_ format."
+msgstr ""
 
-#: arctern.GeoSeries:15 of
-msgid "The name to give to the Series."
+#: arctern.GeoSeries:5 of
+#, fuzzy
+msgid ""
+"Same to the index of pandas.Series. Values must be hashable and have the "
+"same length as data. Non-unique index values are allowed. Will default to"
+" RangeIndex (0, 1, 2, …, n) if not provided. If both a dict and index "
+"sequence are used, the index will override the keys found in the dict."
+msgstr ""
+"与 pandas Series 相同。值必须是可哈希的，并且与 `data` 的长度相同。允许使用非唯一索引值。如果未提供，则默认为 "
+"RangeIndex（0，1，2，…，n）。如果同时使用了字典和索引序列，则索引将覆盖在字典中找到的键。"
+
+#: arctern.GeoSeries:8 of
+#, fuzzy
+msgid "The name to give to the GeoSeries."
 msgstr "赋给 Series 的名称"
 
-#: arctern.GeoSeries:18 of
-msgid "The coordinate system for the GeoSeries, now only support SRID form."
-msgstr "GeoSeries 的参考坐标系现在只支持 SRID 格式。"
+#: arctern.GeoSeries:10 of
+msgid ""
+"The Coordinate Reference System (CRS) set to all geometries in GeoSeries."
+" Only supports SRID as a WKT representation of CRS by now, for example, "
+"``\"EPSG:4326\"``."
+msgstr ""
 
-#: arctern.GeoSeries:20 of
-msgid "Additional arguments passed to the GeoSeries constructor, e.g. ``copy``"
+#: arctern.GeoSeries:13 of
+#, fuzzy
+msgid "Options to pass to the GeoSeries constructor, for example, ``copy``."
 msgstr "传到 GeoSeries 构造器中的其他参数，例如 ``copy``。"
 
-#: arctern.GeoSeries of
-msgid "example"
-msgstr "例子"
+#: arctern.GeoSeries:16 of
+msgid "实际案例"
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:12
 msgid "Methods"
@@ -139,7 +152,8 @@ msgid ":obj:`equals <arctern.GeoSeries.equals>`\\ \\(other\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:51:<autosummary>:1
-msgid "Test whether two objects contain the same elements."
+#, fuzzy
+msgid "Tests whether two objects contain the same elements."
 msgstr "判断两个几何体是否含有相同元素。"
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:51:<autosummary>:1
@@ -149,7 +163,8 @@ msgid ""
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:51:<autosummary>:1
-msgid "Fill NA values with a geometry, which can be WKT or WKB formed."
+#, fuzzy
+msgid "Fills NA values with a geometry in WKT or WKB format."
 msgstr "用几何体填补 NA 值，该几何体可以为 WKT 或 WKB 格式。"
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:51:<autosummary>:1
@@ -186,7 +201,9 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:51:<autosummary>:1
 msgid "Returns the Hausdorff distance between each geometry and other."
-msgstr "对于 GeoSeries 对象中的每个几何体，判断它与 `other` 对象中相同位置的几何体之间的 Hausdorff 距离。此距离用于度量两个几何体之间的相似度。"
+msgstr ""
+"对于 GeoSeries 对象中的每个几何体，判断它与 `other` 对象中相同位置的几何体之间的 Hausdorff "
+"距离。此距离用于度量两个几何体之间的相似度。"
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:51:<autosummary>:1
 msgid ":obj:`intersection <arctern.GeoSeries.intersection>`\\ \\(other\\)"
@@ -209,12 +226,15 @@ msgid ":obj:`isna <arctern.GeoSeries.isna>`\\ \\(\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:51:<autosummary>:1
-msgid "Detect missing values."
+#, fuzzy
+msgid "Detects missing values."
 msgstr "检测丢失值。"
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:51:<autosummary>:1
 msgid ":obj:`make_valid <arctern.GeoSeries.make_valid>`\\ \\(\\)"
-msgstr "对于 GeoSeries 对象中的每个几何体，根据它创建一个新的有效的几何体。在构造新几何体过程中，不会删除原始几何体的任何顶点。如果原始几何体本来就是有效的，则直接返回原始几何体。"
+msgstr ""
+"对于 GeoSeries "
+"对象中的每个几何体，根据它创建一个新的有效的几何体。在构造新几何体过程中，不会删除原始几何体的任何顶点。如果原始几何体本来就是有效的，则直接返回原始几何体。"
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:51:<autosummary>:1
 msgid ""
@@ -227,7 +247,8 @@ msgid ":obj:`notna <arctern.GeoSeries.notna>`\\ \\(\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:51:<autosummary>:1
-msgid "Detect non-missing values."
+#, fuzzy
+msgid "Detects existing (non-missing) values."
 msgstr "检测未丢失值。"
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:51:<autosummary>:1
@@ -275,7 +296,10 @@ msgid ":obj:`set_crs <arctern.GeoSeries.set_crs>`\\ \\(crs\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:51:<autosummary>:1
-msgid "Set the coordinate system for the GeoSeries."
+#, fuzzy
+msgid ""
+"Sets the Coordinate Reference System (CRS) for all geometries in "
+"GeoSeries."
 msgstr "给 GeoSeries 设置坐标系。"
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:51:<autosummary>:1
@@ -355,7 +379,10 @@ msgid ":obj:`area <arctern.GeoSeries.area>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:65:<autosummary>:1
-msgid "Calculate the 2D Cartesian (planar) area of each geometry."
+#, fuzzy
+msgid ""
+"Calculates the 2D Cartesian (planar) area of each geometry in the "
+"GeoSeries."
 msgstr "计算 GeoSeries 对象中每个几何体的面积。"
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:65:<autosummary>:1
@@ -382,7 +409,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:65:<autosummary>:1
 #, fuzzy
-msgid "Return the coordinate system of the GeoSeries."
+msgid "Returns the Coordinate Reference System (CRS) of the GeoSeries."
 msgstr "GeoSeries 的参考坐标系现在只支持 SRID 格式。"
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:65:<autosummary>:1
@@ -400,15 +427,18 @@ msgid ":obj:`geom_type <arctern.GeoSeries.geom_type>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:65:<autosummary>:1
-msgid "For each geometry in geometries, return a string that indicates is type."
-msgstr "对于 GeoSeries 对象中的每个几何体，返回一个表示类型的字符串。"
+msgid ""
+"Returns a series of string that indicates the type of each geometry in "
+"the GeoSeries."
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:65:<autosummary>:1
 msgid ":obj:`is_simple <arctern.GeoSeries.is_simple>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:65:<autosummary>:1
-msgid "Check whether each geometry is \"simple\"."
+#, fuzzy
+msgid "Tests whether each geometry in the GeoSeries is simple."
 msgstr "判断 GeoSeries 对象中的每个几何体是否简单。这里的“简单”表示某个几何图形没有异常的几何图形点，例如自相交或相切。"
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:65:<autosummary>:1
@@ -416,16 +446,21 @@ msgid ":obj:`is_valid <arctern.GeoSeries.is_valid>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:65:<autosummary>:1
-msgid "Check if each geometry is of valid geometry format."
-msgstr "判断 GeoSeries 对象中的每个几何体是否有效。"
+msgid ""
+"Tests whether each geometry in the GeoSeries is in valid format, such as "
+"WKT and WKB formats."
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:65:<autosummary>:1
 msgid ":obj:`length <arctern.GeoSeries.length>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:65:<autosummary>:1
-msgid "Calculate the length of each geometry."
-msgstr "计算 GeoSeries 对象中每个几何体的长度。如果几何体不是 LineString 和 MultiLineString 类型的几何体， 则它的长度为 0 。"
+#, fuzzy
+msgid "Calculates the length of each geometry in the GeoSeries."
+msgstr ""
+"计算 GeoSeries 对象中每个几何体的长度。如果几何体不是 LineString 和 MultiLineString 类型的几何体， "
+"则它的长度为 0 。"
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:65:<autosummary>:1
 msgid ":obj:`npoints <arctern.GeoSeries.npoints>`\\"
@@ -493,4 +528,27 @@ msgstr "对于 GeoSeries 对象中的每个几何体，计算它的点的数量�
 
 #~ msgid "Initialize self."
 #~ msgstr ""
+
+#~ msgid "A Series to store geometry data which is WKB formed bytes object."
+#~ msgstr "Series 存储几何体，此几何体是 WKB 格式的字节对象。"
+
+#~ msgid ""
+#~ "Geometries to store, which can be "
+#~ "WKB formed bytes or WKT formed "
+#~ "string."
+#~ msgstr "要存储的几何体，可以是 WKB 格式的字节或 WKT 格式的字符串。"
+
+#~ msgid "The coordinate system for the GeoSeries, now only support SRID form."
+#~ msgstr "GeoSeries 的参考坐标系现在只支持 SRID 格式。"
+
+#~ msgid "example"
+#~ msgstr "例子"
+
+#~ msgid ""
+#~ "For each geometry in geometries, return"
+#~ " a string that indicates is type."
+#~ msgstr "对于 GeoSeries 对象中的每个几何体，返回一个表示类型的字符串。"
+
+#~ msgid "Check if each geometry is of valid geometry format."
+#~ msgstr "判断 GeoSeries 对象中的每个几何体是否有效。"
 
