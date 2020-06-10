@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-08 18:03+0800\n"
+"POT-Creation-Date: 2020-06-09 18:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,8 +22,9 @@ msgid "GeoSeries"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:7
+#, fuzzy
 msgid ""
-"GeoSeries is a Series to store and process geometry data by extending "
+"GeoSeries is a series to store and process geometry data by extending "
 "Pandas Series. It internally store geometry as bytes object."
 msgstr "GeoSeries 是通过扩展 Pandas Series 来存储和处理几何体的 Series"
 
@@ -38,8 +39,8 @@ msgid ""
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:18:<autosummary>:1
-msgid "A Series to store geometry data which is WKB formed bytes object."
-msgstr "存储 WKB 格式的字节对象几何体的 Series。"
+msgid "One-dimensional Series to store an array of geometry objects."
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:20
 msgid "Attributes"
@@ -50,15 +51,18 @@ msgid ":obj:`GeoSeries.is_valid <arctern.GeoSeries.is_valid>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
-msgid "Check if each geometry is of valid geometry format."
-msgstr "判断每个几何体是否有效。"
+msgid ""
+"Tests whether each geometry in the GeoSeries is in valid format, such as "
+"WKT and WKB formats."
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid ":obj:`GeoSeries.length <arctern.GeoSeries.length>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
-msgid "Calculate the length of each geometry."
+#, fuzzy
+msgid "Calculates the length of each geometry in the GeoSeries."
 msgstr "计算每个几何体的长度"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
@@ -66,7 +70,8 @@ msgid ":obj:`GeoSeries.is_simple <arctern.GeoSeries.is_simple>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
-msgid "Check whether each geometry is \"simple\"."
+#, fuzzy
+msgid "Tests whether each geometry in the GeoSeries is simple."
 msgstr "判断每个几何体是否简单。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
@@ -74,7 +79,10 @@ msgid ":obj:`GeoSeries.area <arctern.GeoSeries.area>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
-msgid "Calculate the 2D Cartesian (planar) area of each geometry."
+#, fuzzy
+msgid ""
+"Calculates the 2D Cartesian (planar) area of each geometry in the "
+"GeoSeries."
 msgstr "计算几何体的二维笛卡尔（平面）面积。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
@@ -82,7 +90,9 @@ msgid ":obj:`GeoSeries.geom_type <arctern.GeoSeries.geom_type>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
-msgid "For each geometry in geometries, return a string that indicates is type."
+msgid ""
+"Returns a series of string that indicates the type of each geometry in "
+"the GeoSeries."
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
@@ -262,7 +272,10 @@ msgid ":obj:`GeoSeries.set_crs <arctern.GeoSeries.set_crs>`\\ \\(crs\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:65:<autosummary>:1
-msgid "Set the coordinate system for the GeoSeries."
+#, fuzzy
+msgid ""
+"Sets the Coordinate Reference System (CRS) for all geometries in "
+"GeoSeries."
 msgstr "设置 GeoSeries 的坐标系。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:65:<autosummary>:1
@@ -271,7 +284,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:65:<autosummary>:1
 #, fuzzy
-msgid "Return the coordinate system of the GeoSeries."
+msgid "Returns the Coordinate Reference System (CRS) of the GeoSeries."
 msgstr "设置 GeoSeries 的坐标系。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:65:<autosummary>:1
@@ -422,7 +435,8 @@ msgid ":obj:`GeoSeries.isna <arctern.GeoSeries.isna>`\\ \\(\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:105:<autosummary>:1
-msgid "Detect missing values."
+#, fuzzy
+msgid "Detects missing values."
 msgstr "检测丢失值"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:105:<autosummary>:1
@@ -430,7 +444,8 @@ msgid ":obj:`GeoSeries.notna <arctern.GeoSeries.notna>`\\ \\(\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:105:<autosummary>:1
-msgid "Detect non-missing values."
+#, fuzzy
+msgid "Detects existing (non-missing) values."
 msgstr "检测未丢失值"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:105:<autosummary>:1
@@ -440,7 +455,8 @@ msgid ""
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:105:<autosummary>:1
-msgid "Fill NA values with a geometry, which can be WKT or WKB formed."
+#, fuzzy
+msgid "Fills NA values with a geometry in WKT or WKB format."
 msgstr "用几何体填补 NA 值，其可为 WKT 或 WKB 格式。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:105:<autosummary>:1
@@ -448,7 +464,8 @@ msgid ":obj:`GeoSeries.equals <arctern.GeoSeries.equals>`\\ \\(other\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:105:<autosummary>:1
-msgid "Test whether two objects contain the same elements."
+#, fuzzy
+msgid "Tests whether two objects contain the same elements."
 msgstr "测试两个几何体是否含有相同元素。"
 
 #~ msgid ":obj:`GeoSeries.geometry_type <arctern.GeoSeries.geometry_type>`\\"
@@ -468,7 +485,7 @@ msgstr "测试两个几何体是否含有相同元素。"
 #~ msgid ""
 #~ "For each geometry in geometries, return"
 #~ " a string that indicates is type."
-#~ msgstr "几何体中的每个几何体返回表示类型的字符串。"
+#~ msgstr ""
 
 #~ msgid ""
 #~ ":obj:`GeoSeries.simplify <arctern.GeoSeries.simplify>`\\ "
@@ -498,4 +515,10 @@ msgstr "测试两个几何体是否含有相同元素。"
 
 #~ msgid ":obj:`GeoSeries.unary_union <GeoSeries.unary_union>`\\"
 #~ msgstr ""
+
+#~ msgid "A Series to store geometry data which is WKB formed bytes object."
+#~ msgstr "存储 WKB 格式的字节对象几何体的 Series。"
+
+#~ msgid "Check if each geometry is of valid geometry format."
+#~ msgstr "判断每个几何体是否有效。"
 

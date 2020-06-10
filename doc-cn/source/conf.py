@@ -37,7 +37,8 @@ extensions = [
    'sphinx.ext.inheritance_diagram',
    'sphinx.ext.autosummary',
    'sphinx_markdown_tables',
-   'recommonmark'
+   'recommonmark',
+   'sphinx.ext.napoleon'
 ]
 
 source_suffix = {

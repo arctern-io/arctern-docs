@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-10 10:44+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,22 +22,38 @@ msgid "arctern.GeoSeries.area"
 msgstr ""
 
 #: arctern.GeoSeries.area:1 of
-msgid "Calculate the 2D Cartesian (planar) area of each geometry."
+#, fuzzy
+msgid ""
+"Calculates the 2D Cartesian (planar) area of each geometry in the "
+"GeoSeries."
+msgstr "计算几何体的二维笛卡尔（平面）面积。"
+
+#: arctern.GeoSeries.area of
+msgid "返回"
+msgstr ""
+
+#: arctern.GeoSeries.area:3 of
+#, fuzzy
+msgid "2D Cartesian (planar) area of each geometry in the GeoSeries."
 msgstr "计算几何体的二维笛卡尔（平面）面积。"
 
 #: arctern.GeoSeries.area of
 msgid "返回类型"
 msgstr ""
 
-#: arctern.GeoSeries.area of
-msgid "返回"
+#: arctern.GeoSeries.area:7 of
+msgid "实际案例"
 msgstr ""
 
-#: arctern.GeoSeries.area:4 of
-msgid "The area of each geometry."
-msgstr "几何体的面积"
+#~ msgid "The area of each geometry."
+#~ msgstr "几何体的面积"
 
-#: arctern.GeoSeries.area of
-msgid "examples"
-msgstr "例子"
+#~ msgid "examples"
+#~ msgstr "例子"
+
+#~ msgid ""
+#~ "**Series(dtype** -- 2D Cartesian (planar) "
+#~ "area of each geometry in the "
+#~ "GeoSeries."
+#~ msgstr "计算几何体的二维笛卡尔（平面）面积。"
 

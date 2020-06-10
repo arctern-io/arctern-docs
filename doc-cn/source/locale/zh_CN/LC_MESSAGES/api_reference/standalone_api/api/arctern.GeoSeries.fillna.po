@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-06 14:52+0800\n"
+"POT-Creation-Date: 2020-06-09 18:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,76 +22,176 @@ msgid "arctern.GeoSeries.fillna"
 msgstr ""
 
 #: arctern.GeoSeries.fillna:1 of
-msgid "Fill NA values with a geometry, which can be WKT or WKB formed."
+#, fuzzy
+msgid "Fills NA values with a geometry in WKT or WKB format."
 msgstr "给 NA 值填入几何体，可为 WKT 或 WKB 格式的。"
 
 #: arctern.GeoSeries.fillna of
 msgid "参数"
 msgstr ""
 
+#: arctern.GeoSeries.fillna:3 of
+msgid ""
+"Value to use to fill holes. This value should be the representation of a "
+"geometry in WKT or WKB format. For exmaple, \"POINT (1 1)\"."
+msgstr ""
+
 #: arctern.GeoSeries.fillna:4 of
 msgid ""
-"Value to use to fill holes (e.g. \"POINT (1 1)\"), alternately a "
-"dict/Series/DataFrame of values specifying which value to use for each "
-"index (for a Series) or column (for a DataFrame).  Values not in the "
-"dict/Series/DataFrame will not be filled. This value cannot be a list."
+"Method to use for filling holes in reindexed Series. * *pad/ffill:* "
+"Propagates the last valid observation forward to fill gap. * "
+"*backfill/bfill:* Propagates the next valid observation backward to fill "
+"gap."
 msgstr ""
 
-#: arctern.GeoSeries.fillna:11 of
-msgid ""
-"Method to use for filling holes in reindexed Series pad / ffill: "
-"propagate last valid observation forward to next valid backfill / bfill: "
-"use next valid observation to fill gap."
-msgstr ""
-
-#: arctern.GeoSeries.fillna:16 of
+#: arctern.GeoSeries.fillna:8 of
 msgid "Axis along which to fill missing values."
 msgstr ""
 
-#: arctern.GeoSeries.fillna:19 of
+#: arctern.GeoSeries.fillna:10 of
 msgid ""
-"If True, fill in-place. Note: this will modify any other views on this "
-"object (e.g., a no-copy slice for a column in a DataFrame)."
+"* *True:* Fills NA values in-place.     **Note:** this will modify any "
+"other views on this object. * *False:* Create a new GeoSeries object, and"
+" then fill NA values in it."
 msgstr ""
 
-#: arctern.GeoSeries.fillna:24 of
-msgid ""
-"If method is specified, this is the maximum number of consecutive NaN "
-"values to forward/backward fill. In other words, if there is a gap with "
-"more than this number of consecutive NaNs, it will only be partially "
-"filled. If method is not specified, this is the maximum number of entries"
-" along the entire axis where NaNs will be filled. Must be greater than 0 "
-"if not None."
+#: arctern.GeoSeries.fillna:11 of
+msgid "*True:* Fills NA values in-place."
 msgstr ""
 
-#: arctern.GeoSeries.fillna:32 of
+#: arctern.GeoSeries.fillna:12 of
+msgid "**Note:** this will modify any other views on this object."
+msgstr ""
+
+#: arctern.GeoSeries.fillna:13 of
+msgid "*False:* Create a new GeoSeries object, and then fill NA values in it."
+msgstr ""
+
+#: arctern.GeoSeries.fillna:15 of
+msgid ""
+"* If ``method`` is specified, this is the maximum number of consecutive "
+"NA values to forward/backward fill. In other words, if there is a gap "
+"with more than this number of consecutive NAs, it will only be partially "
+"filled. * If ``method`` is not specified, this is the maximum number of "
+"entries along the entire axis where NaNs will be filled. **Note:** It "
+"must be greater than 0 if not None."
+msgstr ""
+
+#: arctern.GeoSeries.fillna:16 of
+msgid "If ``method`` is specified, this is the maximum number of consecutive"
+msgstr ""
+
+#: arctern.GeoSeries.fillna:17 of
+msgid ""
+"NA values to forward/backward fill. In other words, if there is a gap "
+"with more than this number of consecutive NAs, it will only be partially "
+"filled. * If ``method`` is not specified, this is the maximum number of "
+"entries along the entire axis where NaNs will be filled. **Note:** It "
+"must be greater than 0 if not None."
+msgstr ""
+
+#: arctern.GeoSeries.fillna:23 of
 msgid ""
 "A dict of item->dtype of what to downcast if possible, or the string "
-"'infer' which will try to downcast to an appropriate equal type (e.g. "
-"float64 to int64 if possible)."
-msgstr ""
-
-#: arctern.GeoSeries.fillna of
-msgid "返回类型"
+"'infer' which will try to downcast to an appropriate equal type (for "
+"example, float64 to int64 if possible)."
 msgstr ""
 
 #: arctern.GeoSeries.fillna of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.fillna:37 of
-msgid "Object with missing values filled or None if ``inplace=True``."
+#: arctern.GeoSeries.fillna:28 of
+msgid ""
+"* None if ``inplace=False`` * Object with missing values filled if "
+"``inplace=True``."
+msgstr ""
+
+#: arctern.GeoSeries.fillna:30 of
+msgid "None if ``inplace=False``"
+msgstr ""
+
+#: arctern.GeoSeries.fillna:31 of
+msgid "Object with missing values filled if ``inplace=True``."
 msgstr ""
 
 #: arctern.GeoSeries.fillna of
-msgid "example"
+msgid "返回类型"
 msgstr ""
 
-#: arctern.GeoSeries.fillna:48 of
-msgid "Replace all NaN elements with WKT formed str."
+#: arctern.GeoSeries.fillna:35 of
+msgid "实际案例"
 msgstr ""
 
-#: arctern.GeoSeries.fillna:57 of
-msgid "We can also replace all NaN elements with WKB formed bytes."
+#: arctern.GeoSeries.fillna:44 of
+msgid "Replace all NA elements with a string in WKT format."
 msgstr ""
+
+#: arctern.GeoSeries.fillna:53 of
+msgid ""
+"We can also replace all NA elements with an object in WKB format. Here we"
+" use ``s[1]`` as an example of WKB objects because ``s`` is a GeoSeries "
+"and all elements stored in GeoSeries are transformed to WKB format."
+msgstr ""
+
+#~ msgid ""
+#~ "Value to use to fill holes (e.g."
+#~ " \"POINT (1 1)\"), alternately a "
+#~ "dict/Series/DataFrame of values specifying "
+#~ "which value to use for each index"
+#~ " (for a Series) or column (for "
+#~ "a DataFrame).  Values not in the "
+#~ "dict/Series/DataFrame will not be filled. "
+#~ "This value cannot be a list."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Method to use for filling holes in"
+#~ " reindexed Series pad / ffill: "
+#~ "propagate last valid observation forward "
+#~ "to next valid backfill / bfill: "
+#~ "use next valid observation to fill "
+#~ "gap."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If True, fill in-place. Note: this"
+#~ " will modify any other views on "
+#~ "this object (e.g., a no-copy slice"
+#~ " for a column in a DataFrame)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If method is specified, this is "
+#~ "the maximum number of consecutive NaN"
+#~ " values to forward/backward fill. In "
+#~ "other words, if there is a gap "
+#~ "with more than this number of "
+#~ "consecutive NaNs, it will only be "
+#~ "partially filled. If method is not "
+#~ "specified, this is the maximum number"
+#~ " of entries along the entire axis "
+#~ "where NaNs will be filled. Must be"
+#~ " greater than 0 if not None."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A dict of item->dtype of what to"
+#~ " downcast if possible, or the string"
+#~ " 'infer' which will try to downcast"
+#~ " to an appropriate equal type (e.g."
+#~ " float64 to int64 if possible)."
+#~ msgstr ""
+
+#~ msgid "Object with missing values filled or None if ``inplace=True``."
+#~ msgstr ""
+
+#~ msgid "example"
+#~ msgstr ""
+
+#~ msgid "Replace all NaN elements with WKT formed str."
+#~ msgstr ""
+
+#~ msgid "We can also replace all NaN elements with WKB formed bytes."
+#~ msgstr ""
 
