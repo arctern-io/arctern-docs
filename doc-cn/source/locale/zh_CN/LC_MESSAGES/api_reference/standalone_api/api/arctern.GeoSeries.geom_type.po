@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-09 18:00+0800\n"
+"POT-Creation-Date: 2020-06-10 15:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,9 +22,7 @@ msgid "arctern.GeoSeries.geom\\_type"
 msgstr ""
 
 #: arctern.GeoSeries.geom_type:1 of
-msgid ""
-"Returns a series of string that indicates the type of each geometry in "
-"the GeoSeries."
+msgid "Returns the type of each geometry in the GeoSeries."
 msgstr ""
 
 #: arctern.GeoSeries.geom_type of
@@ -33,9 +31,8 @@ msgstr ""
 
 #: arctern.GeoSeries.geom_type:3 of
 msgid ""
-"**Series(dtype** -- The string representations of geometry types. For "
-"example, \"ST_LINESTRING\", \"ST_POLYGON\", \"ST_POINT\", and "
-"\"ST_MULTIPOINT\"."
+"The string representations of geometry types. For example, "
+"\"ST_LINESTRING\", \"ST_POLYGON\", \"ST_POINT\", and \"ST_MULTIPOINT\"."
 msgstr ""
 
 #: arctern.GeoSeries.geom_type of
@@ -58,5 +55,18 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "examples"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns a series of string that "
+#~ "indicates the type of each geometry "
+#~ "in the GeoSeries."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Series(dtype** -- The string representations"
+#~ " of geometry types. For example, "
+#~ "\"ST_LINESTRING\", \"ST_POLYGON\", \"ST_POINT\", and"
+#~ " \"ST_MULTIPOINT\"."
 #~ msgstr ""
 

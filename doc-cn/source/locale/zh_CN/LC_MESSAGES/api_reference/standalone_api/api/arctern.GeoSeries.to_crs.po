@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-10 15:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,33 +23,61 @@ msgstr ""
 
 #: arctern.GeoSeries.to_crs:1 of
 msgid ""
-"Transform each geometry to a different coordinate reference system. The "
-"``crs`` attribute on the current GeoSeries must be set."
-msgstr "转换几何体的坐标参考系，必须设置当前的 GeoSeries 的 ``crs`` 属性。"
+"Transforms the Coordinate Reference System (CRS) of the GeoSeries to "
+"`crs`."
+msgstr ""
 
 #: arctern.GeoSeries.to_crs of
 msgid "参数"
 msgstr ""
 
-#: arctern.GeoSeries.to_crs:5 of
+#: arctern.GeoSeries.to_crs:3 of
 msgid ""
-"Coordinate Reference System of the geometry objects. Must be SRID formed,"
-" e.g. \"EPSG:4326\""
-msgstr "几何体的坐标参考系必须是 SRID 格式的，例如 \"EPSG:4326\"。"
-
-#: arctern.GeoSeries.to_crs of
-msgid "返回类型"
+"A string representation of CRS. The string is made up of an authority "
+"code and a SRID (Spatial Reference Identifier), for example, "
+"``\"EPSG:4326\"``."
 msgstr ""
 
 #: arctern.GeoSeries.to_crs of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.to_crs:9 of
-msgid "Geometries with transformed coordinate reference system."
+#: arctern.GeoSeries.to_crs:7 of
+#, fuzzy
+msgid "GeoSeries with transformed CRS."
 msgstr "具有转换的坐标参考系的几何体。"
 
 #: arctern.GeoSeries.to_crs of
-msgid "example"
-msgstr "例子"
+msgid "返回类型"
+msgstr ""
+
+#: arctern.GeoSeries.to_crs:11 of
+msgid "提示"
+msgstr ""
+
+#: arctern.GeoSeries.to_crs:12 of
+msgid ""
+"Arctern supports common CRSs listed at the `Spatial Reference "
+"<https://spatialreference.org/>`_ website."
+msgstr ""
+
+#: arctern.GeoSeries.to_crs:15 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid ""
+#~ "Transform each geometry to a different"
+#~ " coordinate reference system. The ``crs``"
+#~ " attribute on the current GeoSeries "
+#~ "must be set."
+#~ msgstr "转换几何体的坐标参考系，必须设置当前的 GeoSeries 的 ``crs`` 属性。"
+
+#~ msgid ""
+#~ "Coordinate Reference System of the "
+#~ "geometry objects. Must be SRID formed,"
+#~ " e.g. \"EPSG:4326\""
+#~ msgstr "几何体的坐标参考系必须是 SRID 格式的，例如 \"EPSG:4326\"。"
+
+#~ msgid "example"
+#~ msgstr "例子"
 

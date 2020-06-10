@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-10 15:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,24 +22,99 @@ msgid "arctern.GeoSeries.convex\\_hull"
 msgstr ""
 
 #: arctern.GeoSeries.convex_hull:1 of
+#, fuzzy
 msgid ""
-"For each geometry, compute the smallest convex geometry that encloses all"
-" geometries in it."
+"For each geometry in the GeoSeries, returns the smallest convex geometry "
+"that encloses it."
 msgstr "计算包含给定几何体的最小凸几何体。"
 
-#: arctern.GeoSeries.convex_hull of
-msgid "返回类型"
+#: arctern.GeoSeries.convex_hull:3 arctern.GeoSeries.convex_hull:7 of
+#, fuzzy
+msgid ""
+"For a polygon, the returned geometry is the smallest convex geometry that"
+" encloses it."
+msgstr "计算包含给定几何体的最小凸几何体。"
+
+#: arctern.GeoSeries.convex_hull:4 arctern.GeoSeries.convex_hull:8 of
+#, fuzzy
+msgid ""
+"For a geometry collection, the returned geometry is the smallest convex "
+"geometry that encloses all geometries in the collection."
+msgstr "计算包含给定几何体的最小凸几何体。"
+
+#: arctern.GeoSeries.convex_hull:5 arctern.GeoSeries.convex_hull:9 of
+msgid "For a point or line, the returned geometry is the same as the original."
 msgstr ""
 
 #: arctern.GeoSeries.convex_hull of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.convex_hull:5 of
-msgid "Convex Geometries."
-msgstr "凸几何体"
+#: arctern.GeoSeries.convex_hull:11 of
+msgid "Convex Geometry of each geometry in the GeoSeries."
+msgstr ""
 
 #: arctern.GeoSeries.convex_hull of
-msgid "example"
-msgstr "例子"
+msgid "返回类型"
+msgstr ""
+
+#: arctern.GeoSeries.convex_hull:15 of
+msgid "实际案例"
+msgstr ""
+
+#: arctern.GeoSeries.convex_hull:16 of
+msgid ""
+"For geometry collections, such as MULTIPOLYGON, MULTISURFACE, and "
+"GEOMETRYCOLLECTION, ``convex_hull`` ignores point and line elements and "
+"creates the smallest convex geometry that encloses all polygon elements."
+msgstr ""
+
+#: arctern.GeoSeries.convex_hull:18 of
+msgid ""
+"First, create a MULTIPOLYGON object that contains a concave polygon and a"
+" rectangle."
+msgstr ""
+
+#: arctern.GeoSeries.convex_hull:26 of
+#, fuzzy
+msgid ""
+"Then, use ``convex_hull`` to get the smallest convex geometry that "
+"encloses all geometries in the MULTIPOLYGON object."
+msgstr "计算包含给定几何体的最小凸几何体。"
+
+#: arctern.GeoSeries.convex_hull:32 of
+msgid ""
+"Let's see how ``convex_hull`` deals with a GEOMETRYCOLLECTION that "
+"contains a semicircle and a rectangle."
+msgstr ""
+
+#: arctern.GeoSeries.convex_hull:39 of
+msgid ""
+"Use ``convex_hull`` to get the smallest convex geometry that encloses all"
+" geometries in the GEOMETRYCOLLECTION object. Since semicircle and "
+"rectangle are convex, the returned convex geometry is just a combination "
+"of the two gemetries and looks the same as the original."
+msgstr ""
+
+#: arctern.GeoSeries.convex_hull:47 of
+msgid ""
+"``convex_hull`` will not make any changes to POINT, MULTIPOINT, "
+"LINESTRING, MULTILINESTRING, and CIRCULARSTRING."
+msgstr ""
+
+#: arctern.GeoSeries.convex_hull:49 of
+msgid "The GeoSeries ``s1`` below contains a point, a line, and a convex polygon."
+msgstr ""
+
+#: arctern.GeoSeries.convex_hull:56 of
+msgid ""
+"The returned geometries from ``convex_hull`` looks exactly the same as "
+"the original."
+msgstr ""
+
+#~ msgid "Convex Geometries."
+#~ msgstr "凸几何体"
+
+#~ msgid "example"
+#~ msgstr "例子"
 

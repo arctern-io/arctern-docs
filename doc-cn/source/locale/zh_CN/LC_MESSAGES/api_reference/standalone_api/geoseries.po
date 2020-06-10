@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-09 18:00+0800\n"
+"POT-Creation-Date: 2020-06-10 15:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -90,27 +90,28 @@ msgid ":obj:`GeoSeries.geom_type <arctern.GeoSeries.geom_type>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
-msgid ""
-"Returns a series of string that indicates the type of each geometry in "
-"the GeoSeries."
-msgstr ""
+#, fuzzy
+msgid "Returns the type of each geometry in the GeoSeries."
+msgstr "计算每个几何体的长度"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid ":obj:`GeoSeries.centroid <arctern.GeoSeries.centroid>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
-msgid "Compute the centroid of each geometry."
-msgstr "计算每个几何体的中心点"
+#, fuzzy
+msgid "Returns the centroid of each geometry in the GeoSeries."
+msgstr "计算每个几何体的长度"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid ":obj:`GeoSeries.convex_hull <arctern.GeoSeries.convex_hull>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
+#, fuzzy
 msgid ""
-"For each geometry, compute the smallest convex geometry that encloses all"
-" geometries in it."
+"For each geometry in the GeoSeries, returns the smallest convex geometry "
+"that encloses it."
 msgstr "对于 GeoSeries 对象中的每个几何体，计算包围它的最小的凸几何体"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
@@ -118,18 +119,18 @@ msgid ":obj:`GeoSeries.npoints <arctern.GeoSeries.npoints>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
-msgid "Calculates the points number for each geometry."
-msgstr "对于 GeoSeries 对象中的每个几何体，计算它的点的数量。"
+#, fuzzy
+msgid "Returns the number of points for each geometry in the GeoSeries."
+msgstr "计算每个几何体的长度"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
 msgid ":obj:`GeoSeries.envelope <arctern.GeoSeries.envelope>`\\"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:33:<autosummary>:1
-msgid ""
-"Compute the double-precision minimum bounding box geometry for each "
-"geometry."
-msgstr "对于 GeoSeries 对象中的每个几何体，计算它的最小矩形边界范围。"
+#, fuzzy
+msgid "Returns the minimum bounding box for each geometry in the GeoSeries."
+msgstr "计算每个几何体的长度"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:37
 msgid "Constructing Geometry"
@@ -263,8 +264,8 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:65:<autosummary>:1
 msgid ""
-"Returns a \"simplified\" version for each geometry using the Douglas-"
-"Peucker algorithm."
+"Returns a simplified version for each geometry in the GeoSeries using the"
+" Douglas-Peucker algorithm."
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:65:<autosummary>:1
@@ -292,19 +293,19 @@ msgid ":obj:`GeoSeries.to_crs <arctern.GeoSeries.to_crs>`\\ \\(crs\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:65:<autosummary>:1
-msgid "Transform each geometry to a different coordinate reference system."
-msgstr "转换几何体的 坐标参考系。"
+#, fuzzy
+msgid ""
+"Transforms the Coordinate Reference System (CRS) of the GeoSeries to "
+"`crs`."
+msgstr "设置 GeoSeries 的坐标系。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:65:<autosummary>:1
 msgid ":obj:`GeoSeries.curve_to_line <arctern.GeoSeries.curve_to_line>`\\ \\(\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:65:<autosummary>:1
-msgid ""
-"Convert curves in each geometry to approximate linear representation, "
-"e.g., CIRCULAR STRING to regular LINESTRING, CURVEPOLYGON to POLYGON, and"
-" MULTISURFACE to MULTIPOLYGON."
-msgstr "对于 GeoSeries 对象中的每个几何体，计算它的近似表示。近似表示的方法是将每个几何图形中的曲线转换为近似线性表示。"
+msgid "Converts curves in each geometry to approximate linear representation."
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:67
 msgid "Spatial Relationship"
@@ -521,4 +522,32 @@ msgstr "测试两个几何体是否含有相同元素。"
 
 #~ msgid "Check if each geometry is of valid geometry format."
 #~ msgstr "判断每个几何体是否有效。"
+
+#~ msgid ""
+#~ "Returns a series of string that "
+#~ "indicates the type of each geometry "
+#~ "in the GeoSeries."
+#~ msgstr ""
+
+#~ msgid "Compute the centroid of each geometry."
+#~ msgstr "计算每个几何体的中心点"
+
+#~ msgid "Calculates the points number for each geometry."
+#~ msgstr "对于 GeoSeries 对象中的每个几何体，计算它的点的数量。"
+
+#~ msgid ""
+#~ "Compute the double-precision minimum "
+#~ "bounding box geometry for each geometry."
+#~ msgstr "对于 GeoSeries 对象中的每个几何体，计算它的最小矩形边界范围。"
+
+#~ msgid "Transform each geometry to a different coordinate reference system."
+#~ msgstr "转换几何体的 坐标参考系。"
+
+#~ msgid ""
+#~ "Convert curves in each geometry to "
+#~ "approximate linear representation, e.g., "
+#~ "CIRCULAR STRING to regular LINESTRING, "
+#~ "CURVEPOLYGON to POLYGON, and MULTISURFACE "
+#~ "to MULTIPOLYGON."
+#~ msgstr "对于 GeoSeries 对象中的每个几何体，计算它的近似表示。近似表示的方法是将每个几何图形中的曲线转换为近似线性表示。"
 
