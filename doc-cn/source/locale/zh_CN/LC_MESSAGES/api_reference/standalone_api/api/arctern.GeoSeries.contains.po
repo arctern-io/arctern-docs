@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-10 18:54+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,21 +22,23 @@ msgid "arctern.GeoSeries.contains"
 msgstr ""
 
 #: arctern.GeoSeries.contains:1 of
-msgid "Check whether each geometry contains other (elementwise)."
+msgid ""
+"For each geometry in the GeoSeries and the corresponding geometry given "
+"in ``other``, tests whether the first geometry contains the other."
 msgstr ""
 
 #: arctern.GeoSeries.contains of
 msgid "参数"
 msgstr ""
 
-#: arctern.GeoSeries.contains:4 of
+#: arctern.GeoSeries.contains:3 of
 msgid ""
-"The geometries to test if each geometry is contained. Can be scalar WKB "
-"formed bytes object, or a GeoSeries."
-msgstr ""
-
-#: arctern.GeoSeries.contains of
-msgid "返回类型"
+"The geometry or GeoSeries to test whether the geometries in the first "
+"GeoSeries contains it. * If ``other`` is a geometry, this function tests "
+"the \"contain\" relation between each geometry in the GeoSeries and "
+"``other``. * If ``other`` is a GeoSeries, this function tests the "
+"\"contain\" relation between each geometry in the GeoSeries and the "
+"geometry with the same index in ``other``."
 msgstr ""
 
 #: arctern.GeoSeries.contains of
@@ -44,10 +46,32 @@ msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.contains:8 of
-msgid "A Series with value True if each geometry contains other."
+msgid ""
+"Mask of boolean values for each element in the GeoSeries that indicates "
+"whether it contains the geometries in ``other``."
 msgstr ""
 
 #: arctern.GeoSeries.contains of
-msgid "example"
-msgstr "例子"
+msgid "返回类型"
+msgstr ""
+
+#: arctern.GeoSeries.contains:12 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid "Check whether each geometry contains other (elementwise)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The geometries to test if each "
+#~ "geometry is contained. Can be scalar "
+#~ "WKB formed bytes object, or a "
+#~ "GeoSeries."
+#~ msgstr ""
+
+#~ msgid "A Series with value True if each geometry contains other."
+#~ msgstr ""
+
+#~ msgid "example"
+#~ msgstr "例子"
 

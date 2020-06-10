@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 15:09+0800\n"
+"POT-Creation-Date: 2020-06-10 18:54+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,13 @@ msgid ""
 "Propagates the last valid observation forward to fill gap. * "
 "*backfill/bfill:* Propagates the next valid observation backward to fill "
 "gap."
+<<<<<<< HEAD
 msgstr "在重新索引的 Series 中用于填充空缺的方法。* *pad/ffill：* 向前传递上一个有效观察值以填充空缺。* *backfill/bfill:* 向后传递下一个有效观察值以填补空缺。"
+=======
+msgstr ""
+"在重新索引的 Series 中 用于填充空缺的方法。* *pad/ffill：* 向后传递上一个有效观察值以填充空白。* "
+"*backfill/bfill:* 向前传递下一个有效观察值以填补空白。"
+>>>>>>> 22899704d484abb0e560ccabf7a3086b713c2c39
 
 #: arctern.GeoSeries.fillna:8 of
 msgid "Axis along which to fill missing values."
@@ -49,7 +55,7 @@ msgstr "沿着此坐标轴填充缺失值。"
 
 #: arctern.GeoSeries.fillna:10 of
 msgid ""
-"* *True:* Fills NA values in-place.     **Note:** this will modify any "
+"* *True:* Fills NA values in-place.     **Note:** This will modify any "
 "other views on this object. * *False:* Create a new GeoSeries object, and"
 " then fill NA values in it."
 msgstr "* *True:* 原处填充 NA 值。     **注意：** 该操作将修改此对象的任何其他视图。* *False:* 创建一个新的 GeoSeries 对象，在其中填充 NA 值。"
@@ -59,8 +65,13 @@ msgid "*True:* Fills NA values in-place."
 msgstr "*True:* 原处填充 NA 值。"
 
 #: arctern.GeoSeries.fillna:12 of
+<<<<<<< HEAD
 msgid "**Note:** this will modify any other views on this object."
 msgstr "**注意：** 该操作将修改此对象的任何其他视图。"
+=======
+msgid "**Note:** This will modify any other views on this object."
+msgstr ""
+>>>>>>> 22899704d484abb0e560ccabf7a3086b713c2c39
 
 #: arctern.GeoSeries.fillna:13 of
 msgid "*False:* Create a new GeoSeries object, and then fill NA values in it."
@@ -201,5 +212,17 @@ msgstr "也可以用 WKB 格式的对象替换所有 NA 元素。这里以 ``s[1
 #~ msgstr ""
 
 #~ msgid "None if ``inplace=False``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "* *True:* Fills NA values in-"
+#~ "place.     **Note:** this will modify "
+#~ "any other views on this object. *"
+#~ " *False:* Create a new GeoSeries "
+#~ "object, and then fill NA values in"
+#~ " it."
+#~ msgstr ""
+
+#~ msgid "**Note:** this will modify any other views on this object."
 #~ msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-10 18:54+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,22 +23,27 @@ msgstr ""
 
 #: arctern.GeoSeries.distance:1 of
 msgid ""
-"Calculates the minimum 2D Cartesian (planar) distance between each "
-"geometry and other."
-msgstr "计算每两个几何体之间的最短二维笛卡尔（平面）距离。"
+"For each geometry in the GeoSeries and the corresponding geometry given "
+"in ``other``, calculates the minimum 2D Cartesian (planar) distance "
+"between them."
+msgstr ""
 
-#: arctern.GeoSeries.distance of
-msgid "参数"
+#: arctern.GeoSeries.distance:6 of
+msgid "other"
+msgstr ""
+
+#: of
+msgid "geometry or GeoSeries"
 msgstr ""
 
 #: arctern.GeoSeries.distance:4 of
 msgid ""
-"The geometries to calculate the distance to each geometry. Can be scalar "
-"WKB formed bytes object, or a GeoSeries."
-msgstr "用来计算每个几何体之间的距离的几何体。它可以是标量 WKB 格式的字节对象或GeoSeries。"
-
-#: arctern.GeoSeries.distance of
-msgid "返回类型"
+"The geometry or GeoSeries to calculate whether the distance between it "
+"and the geometries in the first GeoSeries. * If ``other`` is a geometry, "
+"this function calculates the distance between each geometry in the "
+"GeoSeries and ``other``. * If ``other`` is a GeoSeries, this function "
+"calculates the distance between each geometry in the GeoSeries and the "
+"geometry with the same index in ``other``."
 msgstr ""
 
 #: arctern.GeoSeries.distance of
@@ -46,10 +51,36 @@ msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.distance:8 of
-msgid "A Series contains the distances between each geometry and other."
+#, fuzzy
+msgid ""
+"A Series contains the distances between each geometry in the GeoSeries "
+"and the corresponding geometry given in ``other``."
 msgstr "Series 包含每个几何体与其他几何体之间的球面距离。"
 
 #: arctern.GeoSeries.distance of
-msgid "example"
-msgstr "例子"
+msgid "返回类型"
+msgstr ""
+
+#: arctern.GeoSeries.distance:12 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid ""
+#~ "Calculates the minimum 2D Cartesian "
+#~ "(planar) distance between each geometry "
+#~ "and other."
+#~ msgstr "计算每两个几何体之间的最短二维笛卡尔（平面）距离。"
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The geometries to calculate the distance"
+#~ " to each geometry. Can be scalar "
+#~ "WKB formed bytes object, or a "
+#~ "GeoSeries."
+#~ msgstr "用来计算每个几何体之间的距离的几何体。它可以是标量 WKB 格式的字节对象或GeoSeries。"
+
+#~ msgid "example"
+#~ msgstr "例子"
 
