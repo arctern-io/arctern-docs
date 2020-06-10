@@ -27,15 +27,6 @@ msgid ""
 "GeoSeries."
 msgstr "为 GeoSeries 中的所有几何体设置坐标参考系（CRS）。"
 
-<<<<<<< HEAD
-#: arctern.GeoSeries.set_crs:3 of
-msgid ""
-"Arctern supports common CRSs listed at the `Spatial Reference "
-"<https://spatialreference.org/>`_ website."
-msgstr "Arctern 支持在 `Spatial Reference <https://spatialreference.org/>`_网站上列出的常见 CRS。"
-
-=======
->>>>>>> e1b9853074e8e0bc09e0ca6b383b4e04949f3269
 #: arctern.GeoSeries.set_crs of
 msgid "参数"
 msgstr ""
@@ -55,7 +46,7 @@ msgstr ""
 msgid ""
 "Arctern supports common CRSs listed at the `Spatial Reference "
 "<https://spatialreference.org/>`_ website."
-msgstr ""
+msgstr "Arctern 支持在 `Spatial Reference <https://spatialreference.org/>`_ 网站上列出的常见 CRS。"
 
 #: arctern.GeoSeries.set_crs:12 of
 msgid "实际案例"
