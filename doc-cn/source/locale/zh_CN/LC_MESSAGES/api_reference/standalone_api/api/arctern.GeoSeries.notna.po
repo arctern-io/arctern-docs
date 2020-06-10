@@ -24,7 +24,7 @@ msgstr ""
 #: arctern.GeoSeries.notna:1 of
 #, fuzzy
 msgid "Detects existing (non-missing) values."
-msgstr "检测未丢失的值。"
+msgstr "检测存在的（非缺失）值。"
 
 #: arctern.GeoSeries.notna of
 msgid "返回"
@@ -35,7 +35,7 @@ msgid ""
 "Mask of boolean values for each element in GeoSeries that indicates "
 "whether an element is not an NA value. * True: An element is a non-"
 "missing value. * False: An element is a NA value, such as None."
-msgstr ""
+msgstr "GeoSeries 中每个元素对应的布尔值，指示元素是否不为 NA 值。* True: 元素是缺失值。* False: 元素是 NA 值，例如 None。"
 
 #: arctern.GeoSeries.notna of
 msgid "返回类型"
