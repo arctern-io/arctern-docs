@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-10 18:54+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,24 +22,38 @@ msgid "arctern.GeoSeries.envelope\\_aggr"
 msgstr ""
 
 #: arctern.GeoSeries.envelope_aggr:1 of
+#, fuzzy
 msgid ""
-"Compute the double-precision minimum bounding box geometry for the union "
-"of all geometries."
+"Returns the minimum bounding box for the union of all geometries in the "
+"GeoSeries."
 msgstr "计算包含几何体集合的最小矩形边界范围，且该矩形的边与坐标轴平行。"
 
-#: arctern.GeoSeries.envelope_aggr of
-msgid "返回类型"
+#: arctern.GeoSeries.envelope_aggr:3 of
+msgid ""
+"The bounding box is a rectangular geometry object, and its sides are "
+"parallel to the axes."
 msgstr ""
 
 #: arctern.GeoSeries.envelope_aggr of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.envelope_aggr:4 of
-msgid "A GeoSeries contains only one geometry."
-msgstr "GeoSeries 只包含一个几何体。"
+#: arctern.GeoSeries.envelope_aggr:5 of
+#, fuzzy
+msgid "Minimum bounding box for the union of all geometries in the GeoSeries."
+msgstr "计算包含几何体集合的最小矩形边界范围，且该矩形的边与坐标轴平行。"
 
 #: arctern.GeoSeries.envelope_aggr of
-msgid "example"
-msgstr "例子"
+msgid "返回类型"
+msgstr ""
+
+#: arctern.GeoSeries.envelope_aggr:9 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid "A GeoSeries contains only one geometry."
+#~ msgstr "GeoSeries 只包含一个几何体。"
+
+#~ msgid "example"
+#~ msgstr "例子"
 

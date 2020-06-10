@@ -58,6 +58,6 @@ if __name__ == "__main__":
     replace("build/html/api_reference/")
     replace("build/html/api_reference/cluster_api")
     replace("build/html/api_reference/map_match")
-    replace("build/html/api_reference/plot_api")
+    replace("build/html/api_reference/plot")
     replace("build/html/api_reference/standalone_api")
     ignore_python_prompt()

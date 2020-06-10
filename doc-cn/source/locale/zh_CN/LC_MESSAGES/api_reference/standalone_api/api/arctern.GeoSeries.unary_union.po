@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 16:36+0800\n"
+"POT-Creation-Date: 2020-06-10 18:54+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,23 +23,37 @@ msgstr ""
 
 #: arctern.GeoSeries.unary_union:1 of
 msgid ""
-"Return a geometry that represents the union of all geometries in the "
+"Returns a geometry that represents the union of all geometries in the "
 "GeoSeries."
-msgstr ""
-
-#: arctern.GeoSeries.unary_union of
-msgid "返回类型"
 msgstr ""
 
 #: arctern.GeoSeries.unary_union of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.unary_union:4 of
-msgid "A GeoSeries contains only one geometry."
+#: arctern.GeoSeries.unary_union:3 of
+msgid ""
+"A GeoSeries that contains only one geometry, which is the union of all "
+"geometries in the first GeoSeries."
 msgstr ""
 
 #: arctern.GeoSeries.unary_union of
-msgid "example"
+msgid "返回类型"
 msgstr ""
+
+#: arctern.GeoSeries.unary_union:7 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid ""
+#~ "Return a geometry that represents the"
+#~ " union of all geometries in the "
+#~ "GeoSeries."
+#~ msgstr ""
+
+#~ msgid "A GeoSeries contains only one geometry."
+#~ msgstr ""
+
+#~ msgid "example"
+#~ msgstr ""
 

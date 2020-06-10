@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 15:09+0800\n"
+"POT-Creation-Date: 2020-06-10 18:54+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -220,9 +220,9 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:65:<autosummary>:1
 msgid ""
-"For each geometry, returns a geometry that represents all points whose "
-"distance from this geos is less than or equal to \"distance\"."
-msgstr "对于 GeoSeries 对象中的每个几何体，创建一个与它的最远距离不大于 distance 的几何体。"
+"For each geometry, returns a new geometry at a distance of ``distance`` "
+"from it."
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:65:<autosummary>:1
 msgid ""
@@ -231,9 +231,10 @@ msgid ""
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:65:<autosummary>:1
+#, fuzzy
 msgid ""
-"For the coordinates of each geometry, reduce the number of significant "
-"digits to the given number."
+"For the coordinates of each geometry in the GeoSeries, reduces the number"
+" of significant digits to the given number."
 msgstr "对于 GeoSeries 对象中的每个几何体，根据指定的有效数字位数 precision 创建降低坐标精度后的几何体。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:65:<autosummary>:1
@@ -251,9 +252,10 @@ msgid ":obj:`GeoSeries.make_valid <arctern.GeoSeries.make_valid>`\\ \\(\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:65:<autosummary>:1
+#, fuzzy
 msgid ""
-"Create a valid representation of each geometry without losing any of the "
-"input vertices."
+"Creates a valid representation of each geometry in the GeoSeries without "
+"losing any of the input vertices."
 msgstr ""
 "对于 GeoSeries "
 "对象中的每个几何体，根据它创建一个新的有效的几何体。在构造新几何体过程中，不会删除原始几何体的任何顶点。如果原始几何体本来就是有效的，则直接返回原始几何体。"
@@ -263,9 +265,11 @@ msgid ":obj:`GeoSeries.simplify <arctern.GeoSeries.simplify>`\\ \\(tolerance\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:65:<autosummary>:1
+#, python-format
 msgid ""
 "Returns a simplified version for each geometry in the GeoSeries using the"
-" Douglas-Peucker algorithm."
+" `Douglas-Peucker algorithm "
+"<https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm>`_."
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:65:<autosummary>:1
@@ -316,56 +320,72 @@ msgid ":obj:`GeoSeries.geom_equals <arctern.GeoSeries.geom_equals>`\\ \\(other\\
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:78:<autosummary>:1
-msgid "Check whether each geometry is \"spatially equal\" to other."
-msgstr "对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体等价。“等价”表示两个几何体的几何结构相同。"
+msgid ""
+"For each geometry in the GeoSeries and the corresponding geometry given "
+"in ``other``, tests whether the first geometry equals the other."
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:78:<autosummary>:1
 msgid ":obj:`GeoSeries.touches <arctern.GeoSeries.touches>`\\ \\(other\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:78:<autosummary>:1
-msgid "Check whether each geometry \"touches\" other."
-msgstr "对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体相邻。“相邻”表示两个几何体在边界上有共同的点。"
+msgid ""
+"For each geometry in the GeoSeries and the corresponding geometry given "
+"in ``other``, tests whether the first geometry touches the other."
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:78:<autosummary>:1
 msgid ":obj:`GeoSeries.overlaps <arctern.GeoSeries.overlaps>`\\ \\(other\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:78:<autosummary>:1
-msgid "Check whether each geometry \"spatially overlaps\" other."
-msgstr "对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体重叠。“重叠”表示两个几何体相交且不互相包含。"
+msgid ""
+"For each geometry in the GeoSeries and the corresponding geometry given "
+"in ``other``, tests whether the first geometry \"spatially overlaps\" the"
+" other."
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:78:<autosummary>:1
 msgid ":obj:`GeoSeries.crosses <arctern.GeoSeries.crosses>`\\ \\(other\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:78:<autosummary>:1
-msgid "Check whether each geometry and other(elementwise) \"spatially cross\"."
-msgstr " 对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体相交。"
+msgid ""
+"For each geometry in the GeoSeries and the corresponding geometry given "
+"in ``other``, tests whether the first geometry spatially crosses the "
+"other."
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:78:<autosummary>:1
 msgid ":obj:`GeoSeries.contains <arctern.GeoSeries.contains>`\\ \\(other\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:78:<autosummary>:1
-msgid "Check whether each geometry contains other (elementwise)."
-msgstr "对于 GeoSeries 对象中的每个几何体，判断它是否包含 other 对象中相同位置的几何体。"
+msgid ""
+"For each geometry in the GeoSeries and the corresponding geometry given "
+"in ``other``, tests whether the first geometry contains the other."
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:78:<autosummary>:1
 msgid ":obj:`GeoSeries.intersects <arctern.GeoSeries.intersects>`\\ \\(other\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:78:<autosummary>:1
-msgid "Check whether each geometry intersects other (elementwise)."
-msgstr " 对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体存在交集。"
+msgid ""
+"For each geometry in the GeoSeries and the corresponding geometry given "
+"in ``other``, tests whether they intersect each other."
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:78:<autosummary>:1
 msgid ":obj:`GeoSeries.within <arctern.GeoSeries.within>`\\ \\(other\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:78:<autosummary>:1
-msgid "Check whether each geometry is within other (elementwise)."
-msgstr "对于 GeoSeries 对象中的每个几何体，判断它是否在 other 对象中相同位置的几何体的内部。"
+msgid ""
+"For each geometry in the GeoSeries and the corresponding geometry given "
+"in ``other``, tests whether the first geometry is within the other."
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:80
 msgid "Measurement"
@@ -378,8 +398,10 @@ msgid ""
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:87:<autosummary>:1
-msgid "Return minimum distance in meters between two lon/lat points."
-msgstr "返回两个经纬度点之间的以米为单位的距离。"
+msgid ""
+"For each point in the GeoSeries and the corresponding point given in "
+"``other``, calculates the minimum spherical distance between them."
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:87:<autosummary>:1
 msgid ":obj:`GeoSeries.distance <arctern.GeoSeries.distance>`\\ \\(other\\)"
@@ -387,9 +409,10 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:87:<autosummary>:1
 msgid ""
-"Calculates the minimum 2D Cartesian (planar) distance between each "
-"geometry and other."
-msgstr "计算两个几何体之间的最小二维笛卡尔（平面）距离。"
+"For each geometry in the GeoSeries and the corresponding geometry given "
+"in ``other``, calculates the minimum 2D Cartesian (planar) distance "
+"between them."
+msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:87:<autosummary>:1
 msgid ""
@@ -413,7 +436,7 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:95:<autosummary>:1
 msgid ""
-"Return a geometry that represents the union of all geometries in the "
+"Returns a geometry that represents the union of all geometries in the "
 "GeoSeries."
 msgstr ""
 
@@ -422,10 +445,11 @@ msgid ":obj:`GeoSeries.envelope_aggr <arctern.GeoSeries.envelope_aggr>`\\ \\(\\)
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:95:<autosummary>:1
+#, fuzzy
 msgid ""
-"Compute the double-precision minimum bounding box geometry for the union "
-"of all geometries."
-msgstr "对于 GeoSeries 对象中的所有几何体集合，计算它的最小矩形边界范围。"
+"Returns the minimum bounding box for the union of all geometries in the "
+"GeoSeries."
+msgstr "计算每个几何体的长度"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:97
 msgid "Pandas Methods"
@@ -506,7 +530,7 @@ msgstr "测试两个几何体是否含有相同元素。"
 #~ "Return a geometry that represents the"
 #~ " union of all geometries in the "
 #~ "GeoSeries."
-#~ msgstr "返回代表 GeoSeries 中的所有几何体集合的几何体。"
+#~ msgstr ""
 
 #~ msgid ":obj:`GeoSeries.geom_type <GeoSeries.geom_type>`\\"
 #~ msgstr ""
@@ -550,4 +574,53 @@ msgstr "测试两个几何体是否含有相同元素。"
 #~ "CURVEPOLYGON to POLYGON, and MULTISURFACE "
 #~ "to MULTIPOLYGON."
 #~ msgstr "对于 GeoSeries 对象中的每个几何体，计算它的近似表示。近似表示的方法是将每个几何图形中的曲线转换为近似线性表示。"
+
+#~ msgid ""
+#~ "For each geometry, returns a geometry"
+#~ " that represents all points whose "
+#~ "distance from this geos is less "
+#~ "than or equal to \"distance\"."
+#~ msgstr "对于 GeoSeries 对象中的每个几何体，创建一个与它的最远距离不大于 distance 的几何体。"
+
+#~ msgid ""
+#~ "Returns a simplified version for each"
+#~ " geometry in the GeoSeries using the"
+#~ " Douglas-Peucker algorithm."
+#~ msgstr ""
+
+#~ msgid "Check whether each geometry is \"spatially equal\" to other."
+#~ msgstr "对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体等价。“等价”表示两个几何体的几何结构相同。"
+
+#~ msgid "Check whether each geometry \"touches\" other."
+#~ msgstr "对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体相邻。“相邻”表示两个几何体在边界上有共同的点。"
+
+#~ msgid "Check whether each geometry \"spatially overlaps\" other."
+#~ msgstr "对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体重叠。“重叠”表示两个几何体相交且不互相包含。"
+
+#~ msgid "Check whether each geometry and other(elementwise) \"spatially cross\"."
+#~ msgstr " 对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体相交。"
+
+#~ msgid "Check whether each geometry contains other (elementwise)."
+#~ msgstr "对于 GeoSeries 对象中的每个几何体，判断它是否包含 other 对象中相同位置的几何体。"
+
+#~ msgid "Check whether each geometry intersects other (elementwise)."
+#~ msgstr " 对于 GeoSeries 对象中的每个几何体，判断它是否与 other 对象中相同位置的几何体存在交集。"
+
+#~ msgid "Check whether each geometry is within other (elementwise)."
+#~ msgstr "对于 GeoSeries 对象中的每个几何体，判断它是否在 other 对象中相同位置的几何体的内部。"
+
+#~ msgid "Return minimum distance in meters between two lon/lat points."
+#~ msgstr "返回两个经纬度点之间的以米为单位的距离。"
+
+#~ msgid ""
+#~ "Calculates the minimum 2D Cartesian "
+#~ "(planar) distance between each geometry "
+#~ "and other."
+#~ msgstr "计算两个几何体之间的最小二维笛卡尔（平面）距离。"
+
+#~ msgid ""
+#~ "Compute the double-precision minimum "
+#~ "bounding box geometry for the union "
+#~ "of all geometries."
+#~ msgstr "对于 GeoSeries 对象中的所有几何体集合，计算它的最小矩形边界范围。"
 
