@@ -49,7 +49,7 @@ msgstr ""
 msgid ""
 "* *True:* All geometries are the same in both objects. * *False:* The two"
 " objects are different in shape or elements."
-msgstr "* *True：* 两个对象中的所有几何形状都相同。* *False：* 两个对象的形状或元素不同。"
+msgstr "* *True：* 两个对象中的所有几何体都相同。* *False：* 两个对象的形状或元素不同。"
 
 #: arctern.GeoSeries.equals:10 of
 msgid "*True:* All geometries are the same in both objects."
