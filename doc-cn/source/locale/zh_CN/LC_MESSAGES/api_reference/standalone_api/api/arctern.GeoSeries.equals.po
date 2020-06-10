@@ -22,7 +22,6 @@ msgid "arctern.GeoSeries.equals"
 msgstr ""
 
 #: arctern.GeoSeries.equals:1 of
-#, fuzzy
 msgid "Tests whether two objects contain the same elements."
 msgstr "测试两个对象是否包含相同元素。"
 
@@ -32,37 +31,33 @@ msgid ""
 "see if they have the same shape and elements. NaNs in the same location "
 "are considered equal. The column headers do not need to have the same "
 "type, but the elements within the columns must be the same dtype."
-msgstr ""
+msgstr "此方法将两个 GeoSeries 相互比较，以检查它们是否具有相同的形状和元素。在同一位置的 NaN 视为相等。列标题不必具有相同的类型，但是列中的元素必须具有相同的 dtype。"
 
 #: arctern.GeoSeries.equals of
 msgid "参数"
 msgstr ""
 
 #: arctern.GeoSeries.equals:5 of
-#, fuzzy
 msgid "The other GeoSeries to be compared with the first GeoSeries."
-msgstr "其他 GeoSeries 与第一个相比较。"
+msgstr "与第一个 GeoSeries 比较的另一个 GeoSeries。"
 
 #: arctern.GeoSeries.equals of
 msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.equals:8 of
-#, fuzzy
 msgid ""
 "* *True:* All geometries are the same in both objects. * *False:* The two"
 " objects are different in shape or elements."
-msgstr "如果在两个对象中的所有几何体 “等价”, 返回 true, 反之返回 false。"
+msgstr "* *True：* 两个对象中的所有几何体都相同。* *False：* 两个对象的形状或元素不同。"
 
 #: arctern.GeoSeries.equals:10 of
-#, fuzzy
 msgid "*True:* All geometries are the same in both objects."
-msgstr "如果在两个对象中的所有几何体 “等价”, 返回 true, 反之返回 false。"
+msgstr "* *True：* 两个对象中的所有几何形状都相同。"
 
 #: arctern.GeoSeries.equals:11 of
-#, fuzzy
 msgid "*False:* The two objects are different in shape or elements."
-msgstr "测试两个对象是否包含相同元素。"
+msgstr "* *False：* 这两个对象的形状或元素不同。"
 
 #: arctern.GeoSeries.equals of
 msgid "返回类型"
@@ -83,8 +78,7 @@ msgstr ""
 #~ "type, but the elements within the "
 #~ "columns must be the same dtype."
 #~ msgstr ""
-#~ "此方法用于比较两个 GeoSeries 是否具有相同的形状和几何体（相同的 WKB "
-#~ "字节）。在相同位置的 NaNs 视为相等。列标题不必是相同类型，但列中的元素必须是相同类型。"
+#~ "此方法将两个 GeoSeries 相互比较，以检查它们是否具有相同的形状和元素（相同的 WKB 字节）。在同一位置的 NaN 视为相等。列标题不必具有相同的类型，但是列中的元素必须具有相同的 dtype。"
 
 #~ msgid "example"
 #~ msgstr "例子"

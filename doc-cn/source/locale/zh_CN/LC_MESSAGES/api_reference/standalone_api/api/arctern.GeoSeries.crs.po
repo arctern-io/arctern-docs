@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.crs:1 of
 msgid "Returns the Coordinate Reference System (CRS) of the GeoSeries."
-msgstr ""
+msgstr "返回 GeoSeries 的坐标参考系（CRS）。"
 
 #: arctern.GeoSeries.crs of
 msgid "返回"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: arctern.GeoSeries.crs:3 of
 msgid "CRS of the GeoSeries."
-msgstr ""
+msgstr "GeoSeries 的 CRS。"
 
 #: arctern.GeoSeries.crs of
 msgid "返回类型"
@@ -42,11 +42,11 @@ msgid "实际案例"
 msgstr ""
 
 #~ msgid "Return the coordinate system of the GeoSeries."
-#~ msgstr ""
+#~ msgstr "返回 GeoSeries 的坐标参考系（CRS）。"
 
 #~ msgid "the coordinate system of the GeoSeries."
-#~ msgstr ""
+#~ msgstr "GeoSeries 的 CRS。"
 
 #~ msgid "example"
-#~ msgstr ""
+#~ msgstr "例子"
 
