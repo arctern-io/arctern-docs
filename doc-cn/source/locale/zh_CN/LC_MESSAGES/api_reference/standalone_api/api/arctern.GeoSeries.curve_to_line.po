@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-10 15:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,29 +22,59 @@ msgid "arctern.GeoSeries.curve\\_to\\_line"
 msgstr ""
 
 #: arctern.GeoSeries.curve_to_line:1 of
-msgid ""
-"Convert curves in each geometry to approximate linear representation, "
-"e.g., CIRCULAR STRING to regular LINESTRING, CURVEPOLYGON to POLYGON, and"
-" MULTISURFACE to MULTIPOLYGON. Useful for outputting to devices that "
-"can't support CIRCULARSTRING geometry types."
+msgid "Converts curves in each geometry to approximate linear representation."
 msgstr ""
-"将几何图形中的曲线转换为近似的线性表示形式，例如，将 CIRCULAR STRING 转换为普通的"
-" LINESTRING，将 CURVEPOLYGON 转换为 POLYGON，将 "
-"MULTISURFACE 转换为 MULTIPOLYGON。"
 
-#: arctern.GeoSeries.curve_to_line of
-msgid "返回类型"
+#: arctern.GeoSeries.curve_to_line:3 of
+#, fuzzy
+msgid "For example,"
+msgstr "例子"
+
+#: arctern.GeoSeries.curve_to_line:5 of
+msgid "CIRCULAR STRING to LINESTRING,"
+msgstr ""
+
+#: arctern.GeoSeries.curve_to_line:6 of
+msgid "CURVEPOLYGON to POLYGON,"
+msgstr ""
+
+#: arctern.GeoSeries.curve_to_line:7 of
+msgid "MULTISURFACE to MULTIPOLYGON."
+msgstr ""
+
+#: arctern.GeoSeries.curve_to_line:9 of
+msgid ""
+"It is useful for outputting to devices that can't support CIRCULARSTRING "
+"geometry types."
 msgstr ""
 
 #: arctern.GeoSeries.curve_to_line of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.curve_to_line:7 of
-msgid "Converted geometries"
+#: arctern.GeoSeries.curve_to_line:11 of
+#, fuzzy
+msgid "Converted linear geometries."
 msgstr "转换后的几何体"
 
 #: arctern.GeoSeries.curve_to_line of
-msgid "example"
-msgstr "例子"
+msgid "返回类型"
+msgstr ""
+
+#: arctern.GeoSeries.curve_to_line:15 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid ""
+#~ "Convert curves in each geometry to "
+#~ "approximate linear representation, e.g., "
+#~ "CIRCULAR STRING to regular LINESTRING, "
+#~ "CURVEPOLYGON to POLYGON, and MULTISURFACE "
+#~ "to MULTIPOLYGON. Useful for outputting "
+#~ "to devices that can't support "
+#~ "CIRCULARSTRING geometry types."
+#~ msgstr ""
+#~ "将几何图形中的曲线转换为近似的线性表示形式，例如，将 CIRCULAR STRING 转换为普通的"
+#~ " LINESTRING，将 CURVEPOLYGON 转换为 POLYGON，将 "
+#~ "MULTISURFACE 转换为 MULTIPOLYGON。"
 

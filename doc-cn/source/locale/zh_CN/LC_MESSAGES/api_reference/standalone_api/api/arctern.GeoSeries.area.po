@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 10:44+0800\n"
+"POT-Creation-Date: 2020-06-10 15:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,11 +28,42 @@ msgid ""
 "GeoSeries."
 msgstr "计算几何体的二维笛卡尔（平面）面积。"
 
+#: arctern.GeoSeries.area:3 of
+msgid "The ways to calculate the area of geometries are as follows:"
+msgstr ""
+
+#: arctern.GeoSeries.area:5 of
+msgid "POINT / MULTIPOINT / LINESTRING / MULTILINESTRING / CIRCULARSTRING: 0"
+msgstr ""
+
+#: arctern.GeoSeries.area:6 of
+msgid "POLYGON: Area of a single polygon."
+msgstr ""
+
+#: arctern.GeoSeries.area:7 of
+msgid "MULTIPOLYGON: Sum of area of multiple polygons."
+msgstr ""
+
+#: arctern.GeoSeries.area:8 of
+msgid "CURVEPOLYGON: Area of a single curvilinear polygon."
+msgstr ""
+
+#: arctern.GeoSeries.area:9 of
+msgid "MULTICURVE: Sum of area of multiple curvilinear polygons."
+msgstr ""
+
+#: arctern.GeoSeries.area:10 of
+msgid ""
+"MULTISURFACE / COMPOUNDCURVE / GEOMETRYCOLLECTION: For a geometry "
+"collection among the 3 types, calculates the sum of area of all "
+"geometries in the collection."
+msgstr ""
+
 #: arctern.GeoSeries.area of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.area:3 of
+#: arctern.GeoSeries.area:12 of
 #, fuzzy
 msgid "2D Cartesian (planar) area of each geometry in the GeoSeries."
 msgstr "计算几何体的二维笛卡尔（平面）面积。"
@@ -41,7 +72,7 @@ msgstr "计算几何体的二维笛卡尔（平面）面积。"
 msgid "返回类型"
 msgstr ""
 
-#: arctern.GeoSeries.area:7 of
+#: arctern.GeoSeries.area:16 of
 msgid "实际案例"
 msgstr ""
 

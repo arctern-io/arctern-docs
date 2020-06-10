@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-09 18:00+0800\n"
+"POT-Creation-Date: 2020-06-10 15:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,14 +38,11 @@ msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.is_simple:5 of
+#, fuzzy
 msgid ""
-"**Series(dtype** --  * *True:* All geometries are simple. * *False:* At "
-"least one geometry is not simple."
-msgstr ""
-
-#: arctern.GeoSeries.is_simple:5 of
-msgid "**Series(dtype** --"
-msgstr ""
+"* *True:* All geometries are simple. * *False:* At least one geometry is "
+"not simple."
+msgstr "检查几何体是否是“简单”的。"
 
 #: arctern.GeoSeries.is_simple:7 of
 #, fuzzy
@@ -67,4 +64,13 @@ msgstr ""
 
 #~ msgid "examples"
 #~ msgstr "例子"
+
+#~ msgid ""
+#~ "**Series(dtype** --  * *True:* All "
+#~ "geometries are simple. * *False:* At "
+#~ "least one geometry is not simple."
+#~ msgstr ""
+
+#~ msgid "**Series(dtype** --"
+#~ msgstr ""
 
