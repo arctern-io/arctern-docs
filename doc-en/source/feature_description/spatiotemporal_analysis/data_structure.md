@@ -13,13 +13,14 @@ GeoSeries internally stores geometry in WKB format and accepts data in WKT or WK
 You can put multiple string data in WKT format into a list, numpy.ndarray, or pandas.Series, and then pass in the GeoSeries constructor to create GeoSeries objects.
 
 ```python
+>>> import pandas as pd
 >>> data = ['POINT(1 1)', 'POINT(1 3)']
 >>> s = arctern.GeoSeries(data)
 >>> s
 0    POINT (1 1)
 1    POINT (1 3)
 dtype: GeoDtype
->>> data = pandas.Series(data)
+>>> data = pd.Series(data)
 >>> s = arctern.GeoSeries(data)
 >>> s
 0    POINT (1 1)

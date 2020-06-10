@@ -41,23 +41,6 @@ Create two LINESTRING objects (`road1`, `road2`) to represent two roads, and sav
 >>> map_1
 ```
 
-![add_data](./img/add_data.png)
-
-Likewise, you can input data in CSV, GeoJSON and other formats to the map:
-
-```python
->>> # CSV
->>> with open('csv-data.csv', 'r') as f:
-...     csvData = f.read()
->>> map_1.add_data(data=csvData, name='data_2')
->>> 
->>> # GeoJSON
->>> with open('sf_zip_geo.json', 'r') as f:
-...     geojson = f.read()
->>> 
->>> map_1.add_data(data=geojson, name='geojson')
-```
-
 ## Reference
 
 For more examples and interface descriptions, please refer to [the usage of Jupyter Notebook on Kepler.gl website](https://docs.kepler.gl/docs/keplergl-jupyter).
