@@ -33,7 +33,7 @@ msgstr ""
 msgid ""
 "Value to use to fill holes. This value should be the representation of a "
 "geometry in WKT or WKB format. For exmaple, \"POINT (1 1)\"."
-msgstr "用于填充空缺的值。此值应为 WKT 或 WKB 格式的几何图形表示"
+msgstr "用于填充空缺的值。此值应由 WKT 或 WKB 格式的几何体表示。例如，\"POINT (1 1)\"。"
 
 #: arctern.GeoSeries.fillna:4 of
 msgid ""
@@ -41,7 +41,7 @@ msgid ""
 "Propagates the last valid observation forward to fill gap. * "
 "*backfill/bfill:* Propagates the next valid observation backward to fill "
 "gap."
-msgstr ""
+msgstr "在重新索引的 Series中 用于填充空缺的方法。"
 
 #: arctern.GeoSeries.fillna:8 of
 msgid "Axis along which to fill missing values."

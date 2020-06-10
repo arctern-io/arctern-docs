@@ -39,7 +39,7 @@ msgstr ""
 
 #: arctern.GeoSeries.equals:5 of
 msgid "The other GeoSeries to be compared with the first GeoSeries."
-msgstr "其他 GeoSeries 与第一个相比较。"
+msgstr "与第一个 GeoSeries 比较的另一个 GeoSeries。"
 
 #: arctern.GeoSeries.equals of
 msgid "返回"
@@ -49,7 +49,7 @@ msgstr ""
 msgid ""
 "* *True:* All geometries are the same in both objects. * *False:* The two"
 " objects are different in shape or elements."
-msgstr "* *True：* 两个对象中的所有几何形状都相同。* *False：* 这两个对象的形状或元素不同。"
+msgstr "* *True：* 两个对象中的所有几何形状都相同。* *False：* 两个对象的形状或元素不同。"
 
 #: arctern.GeoSeries.equals:10 of
 msgid "*True:* All geometries are the same in both objects."
