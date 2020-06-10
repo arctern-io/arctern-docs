@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-10 15:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,22 +22,30 @@ msgid "arctern.GeoSeries.centroid"
 msgstr ""
 
 #: arctern.GeoSeries.centroid:1 of
-msgid "Compute the centroid of each geometry."
+#, fuzzy
+msgid "Returns the centroid of each geometry in the GeoSeries."
+msgstr "计算几何体的中心。"
+
+#: arctern.GeoSeries.centroid of
+msgid "返回"
+msgstr ""
+
+#: arctern.GeoSeries.centroid:3 of
+#, fuzzy
+msgid "The centroid of each geometry in the GeoSeries."
 msgstr "计算几何体的中心。"
 
 #: arctern.GeoSeries.centroid of
 msgid "返回类型"
 msgstr ""
 
-#: arctern.GeoSeries.centroid of
-msgid "返回"
+#: arctern.GeoSeries.centroid:7 of
+msgid "实际案例"
 msgstr ""
 
-#: arctern.GeoSeries.centroid:4 of
-msgid "The centroid of geometries."
-msgstr "几何体的中心"
+#~ msgid "The centroid of geometries."
+#~ msgstr "几何体的中心"
 
-#: arctern.GeoSeries.centroid of
-msgid "example"
-msgstr "例子"
+#~ msgid "example"
+#~ msgstr "例子"
 

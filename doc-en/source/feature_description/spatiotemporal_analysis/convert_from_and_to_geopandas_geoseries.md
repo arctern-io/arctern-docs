@@ -20,7 +20,7 @@ dtype: GeoDtype
 
 ## Convert Arctern GeoSeries to GeoPandas GeoSeries
 
-Use the `to_geopandas` method of Arctern GeoSeries to convert Arctern GeoSeries to GeoPandas GeoSeries.
+Use the [`to_geopandas`](../../api_reference/standalone_api/api/arctern.GeoSeries.to_geopandas.html) method of Arctern GeoSeries to convert Arctern GeoSeries to GeoPandas GeoSeries.
 
 <!-- link: [to_geopandas](/path/to/to_geopandas) -->
 
@@ -33,7 +33,7 @@ dtype: geometry
 
 ## Convert GeoPandas GeoSeries to Arctern GeoSeries
 
-Use the `from_geopandas` method of Arctern GeoSeries to convert GeoPandas GeoSeries to Arctern GeoSeries.
+Use the [`from_geopandas`](../../api_reference/standalone_api/api/arctern.GeoSeries.from_geopandas.html) method of Arctern GeoSeries to convert GeoPandas GeoSeries to Arctern GeoSeries.
 
 <!-- link: [from_geopandas](/path/to/from_geopandas) -->
 
