@@ -20,7 +20,7 @@ dtype: GeoDtype
 
 ## 将 Arctern GeoSeries 转换为 GeoPandas GeoSeries
 
-使用 Arctern GeoSeries 的 `to_geopandas` 方法将 Arctern GeoSeries 转为 GeoPandas GeoSeries。
+使用 Arctern GeoSeries 的 [`to_geopandas`](../../api_reference/standalone_api/api/arctern.GeoSeries.to_geopandas.html) 方法将 Arctern GeoSeries 转为 GeoPandas GeoSeries。
 
 <!-- link: [to_geopandas](/path/to/to_geopandas) -->
 
@@ -33,7 +33,7 @@ dtype: geometry
 
 ## 将 GeoPandas GeoSeries 转换为 Arctern GeoSeries
 
-使用 Arctern GeoSeries 的 `from_geopandas` 方法将 GeoPandas GeoSeries 转为 Arctern GeoSeries。
+使用 Arctern GeoSeries 的 [`from_geopandas`](../../api_reference/standalone_api/api/arctern.GeoSeries.from_geopandas.html) 方法将 GeoPandas GeoSeries 转为 Arctern GeoSeries。
 
 <!-- link: [from_geopandas](/path/to/from_geopandas) -->
 
