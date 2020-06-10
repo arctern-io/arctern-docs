@@ -22,14 +22,12 @@ msgid "arctern.GeoSeries.convex\\_hull"
 msgstr ""
 
 #: arctern.GeoSeries.convex_hull:1 of
-#, fuzzy
 msgid ""
 "For each geometry in the GeoSeries, returns the smallest convex geometry "
 "that encloses it."
-msgstr "计算包含给定几何体的最小凸几何体。"
+msgstr "对于 GeoSeries 中的每个几何体，计算包围它的最小凸几何体。"
 
 #: arctern.GeoSeries.convex_hull:3 arctern.GeoSeries.convex_hull:7 of
-#, fuzzy
 msgid ""
 "For a polygon, the returned geometry is the smallest convex geometry that"
 " encloses it."

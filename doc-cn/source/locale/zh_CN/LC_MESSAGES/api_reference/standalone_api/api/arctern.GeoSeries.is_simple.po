@@ -22,37 +22,32 @@ msgid "arctern.GeoSeries.is\\_simple"
 msgstr ""
 
 #: arctern.GeoSeries.is_simple:1 of
-#, fuzzy
 msgid "Tests whether each geometry in the GeoSeries is simple."
-msgstr "检查几何体是否是“简单”的。"
+msgstr "检测 GeoSeries 中的每个几何体是否为“简单”的。"
 
 #: arctern.GeoSeries.is_simple:3 of
-#, fuzzy
 msgid ""
 "Here \"simple\" means that a geometry has no anomalous point, such as a "
 "self-intersection or a self-tangency."
-msgstr "这里的“简单”指几何体没有异常点，例如自相交或者自相切。"
+msgstr "此处的“简单”是指几何体没有异常点，例如自相交或自相切。"
 
 #: arctern.GeoSeries.is_simple of
 msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.is_simple:5 of
-#, fuzzy
 msgid ""
 "* *True:* All geometries are simple. * *False:* At least one geometry is "
 "not simple."
-msgstr "检查几何体是否是“简单”的。"
+msgstr "* *True:* 所有几何体都是“简单”的。* *False:* 至少一个几何体不是“简单”的。"
 
 #: arctern.GeoSeries.is_simple:7 of
-#, fuzzy
 msgid "*True:* All geometries are simple."
-msgstr "如果几何体是“简单”的，返回 true，反之返回 false。"
+msgstr "*True:* 所有几何体都是“简单”的。"
 
 #: arctern.GeoSeries.is_simple:8 of
-#, fuzzy
 msgid "*False:* At least one geometry is not simple."
-msgstr "检查几何体是否是“简单”的。"
+msgstr "*False:* 至少一个几何体不是“简单”的。"
 
 #: arctern.GeoSeries.is_simple of
 msgid "返回类型"
