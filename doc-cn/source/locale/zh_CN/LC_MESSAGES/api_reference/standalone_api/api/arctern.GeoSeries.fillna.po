@@ -22,9 +22,8 @@ msgid "arctern.GeoSeries.fillna"
 msgstr ""
 
 #: arctern.GeoSeries.fillna:1 of
-#, fuzzy
 msgid "Fills NA values with a geometry in WKT or WKB format."
-msgstr "给 NA 值填入几何体，可为 WKT 或 WKB 格式的。"
+msgstr "用 WKT 或 WKB 格式的几何体填充 NA 值。"
 
 #: arctern.GeoSeries.fillna of
 msgid "参数"
@@ -34,7 +33,7 @@ msgstr ""
 msgid ""
 "Value to use to fill holes. This value should be the representation of a "
 "geometry in WKT or WKB format. For exmaple, \"POINT (1 1)\"."
-msgstr ""
+msgstr "用于填充空缺的值。此值应为 WKT 或 WKB 格式的几何图形表示"
 
 #: arctern.GeoSeries.fillna:4 of
 msgid ""
