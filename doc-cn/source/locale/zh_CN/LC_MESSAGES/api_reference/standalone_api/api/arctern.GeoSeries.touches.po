@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-10 18:54+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,8 +22,10 @@ msgid "arctern.GeoSeries.touches"
 msgstr ""
 
 #: arctern.GeoSeries.touches:1 of
-msgid "Check whether each geometry \"touches\" other."
-msgstr "检查两个几何体是否“相邻”。"
+msgid ""
+"For each geometry in the GeoSeries and the corresponding geometry given "
+"in ``other``, tests whether the first geometry touches the other."
+msgstr ""
 
 #: arctern.GeoSeries.touches:3 of
 msgid ""
@@ -35,25 +37,47 @@ msgstr "“相邻”表示两个几何体在边界上有共同的点。"
 msgid "参数"
 msgstr ""
 
-#: arctern.GeoSeries.touches:7 of
+#: arctern.GeoSeries.touches:5 of
 msgid ""
-"The geometries to test if each geometry is touched. Can be scalar WKB "
-"formed bytes object, or a GeoSeries."
-msgstr "用于测试几何体是否“相邻”的几何体，它可以是标量 WKB 格式的字节对象或 GeoSeries。"
-
-#: arctern.GeoSeries.touches of
-msgid "返回类型"
+"The geometry or GeoSeries to test whether it touches the geometries in "
+"the first GeoSeries. * If ``other`` is a geometry, this function tests "
+"the \"touch\" relation between each geometry in the GeoSeries and "
+"``other``. * If ``other`` is a GeoSeries, this function tests the "
+"\"touch\" relation between each geometry in the GeoSeries and the "
+"geometry with the same index in ``other``."
 msgstr ""
 
 #: arctern.GeoSeries.touches of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.touches:11 of
-msgid "A Series with value True if each geometry touches other."
-msgstr "返回值为 True 的 Series 表示每个几何体都“相邻”。"
+#: arctern.GeoSeries.touches:10 of
+msgid ""
+"Mask of boolean values for each element in the GeoSeries that indicates "
+"whether it touches the geometries in ``other``."
+msgstr ""
 
 #: arctern.GeoSeries.touches of
-msgid "example"
-msgstr "例子"
+msgid "返回类型"
+msgstr ""
+
+#: arctern.GeoSeries.touches:14 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid "Check whether each geometry \"touches\" other."
+#~ msgstr "检查两个几何体是否“相邻”。"
+
+#~ msgid ""
+#~ "The geometries to test if each "
+#~ "geometry is touched. Can be scalar "
+#~ "WKB formed bytes object, or a "
+#~ "GeoSeries."
+#~ msgstr "用于测试几何体是否“相邻”的几何体，它可以是标量 WKB 格式的字节对象或 GeoSeries。"
+
+#~ msgid "A Series with value True if each geometry touches other."
+#~ msgstr "返回值为 True 的 Series 表示每个几何体都“相邻”。"
+
+#~ msgid "example"
+#~ msgstr "例子"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 15:09+0800\n"
+"POT-Creation-Date: 2020-06-10 18:54+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,9 +22,11 @@ msgid "arctern.GeoSeries.simplify"
 msgstr ""
 
 #: arctern.GeoSeries.simplify:1 of
+#, python-format
 msgid ""
 "Returns a simplified version for each geometry in the GeoSeries using the"
-" Douglas-Peucker algorithm."
+" `Douglas-Peucker algorithm "
+"<https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm>`_."
 msgstr ""
 
 #: arctern.GeoSeries.simplify of
@@ -32,7 +34,7 @@ msgid "参数"
 msgstr ""
 
 #: arctern.GeoSeries.simplify:3 of
-msgid "The maximum distance between a point on a linestring and a curve."
+msgid "Distance tolerance."
 msgstr ""
 
 #: arctern.GeoSeries.simplify of
@@ -64,5 +66,14 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "example"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns a simplified version for each"
+#~ " geometry in the GeoSeries using the"
+#~ " Douglas-Peucker algorithm."
+#~ msgstr ""
+
+#~ msgid "The maximum distance between a point on a linestring and a curve."
 #~ msgstr ""
 
