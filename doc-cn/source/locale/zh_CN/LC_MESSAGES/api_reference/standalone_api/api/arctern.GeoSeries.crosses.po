@@ -26,16 +26,15 @@ msgid ""
 "For each geometry in the GeoSeries and the corresponding geometry given "
 "in ``other``, tests whether the first geometry spatially crosses the "
 "other."
-msgstr ""
+msgstr "对于 GeoSeries 中的每个几何体以及 ``other`` 中给出的对应的几何体，检测第一个几何体是否与其他几何体空间相交。"
 
 #: arctern.GeoSeries.crosses:3 of
-#, fuzzy
 msgid ""
 "\"Spatially cross\" means two geometries have some, but not all interior "
 "points in common. The intersection of the interiors of the geometries "
 "must not be the empty set and must have a dimensionality less than the "
 "maximum dimension of the two input geometries."
-msgstr "“相交”表示它们有部分但非全部内部点相同。这两个的几何体的交集不能为空，并且交集的维度小于输入几何体的最大维度。"
+msgstr "“空间交叉”是指两个几何体的一些但非所有内部点都相同。几何体内部的交集不得为空集，并且其维度必须小于两个输入几何体的最大维度。"
 
 #: arctern.GeoSeries.crosses of
 msgid "参数"
@@ -49,7 +48,7 @@ msgid ""
 "``other``. * If ``other`` is a GeoSeries, this function tests the "
 "\"cross\" relation between each geometry in the GeoSeries and the "
 "geometry with the same index in ``other``."
-msgstr ""
+msgstr "用于测试与第一个 GeoSeries 中的几何体空间相交的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 的空间相交关系。* 如果 ``other`` 是一个 GeoSeries，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体之间的空间相交关系。"
 
 #: arctern.GeoSeries.crosses of
 msgid "返回"
@@ -59,14 +58,14 @@ msgstr ""
 msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
 "whether it crosses the geometries in ``other``."
-msgstr ""
+msgstr "GeoSeries 中每个元素对应的布尔值，指示它是否与 ``other`` 中的几何体空间相交。"
 
 #: arctern.GeoSeries.crosses of
 msgid "返回类型"
 msgstr ""
 
 #: arctern.GeoSeries.crosses:14 of
-msgid "实际案例"
+msgid "例子"
 msgstr ""
 
 #~ msgid "Check whether each geometry and other(elementwise) \"spatially cross\"."

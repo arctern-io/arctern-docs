@@ -25,13 +25,13 @@ msgstr ""
 msgid ""
 "For each geometry in the GeoSeries and the corresponding geometry given "
 "in ``other``, tests whether the first geometry touches the other."
-msgstr ""
+msgstr "对于 GeoSeries 中的每个几何体以及 ``other`` 中给出的相应几何体，检测它们是否接触。"
 
 #: arctern.GeoSeries.touches:3 of
 msgid ""
 "\"Touch\" means two geometries have common points, and the common points "
 "locate only on their boundaries."
-msgstr "“相邻”表示两个几何体在边界上有共同的点。"
+msgstr "“接触”表示两个几何体具有公共点，并且公共点仅位于其边界上。"
 
 #: arctern.GeoSeries.touches of
 msgid "参数"
@@ -45,7 +45,7 @@ msgid ""
 "``other``. * If ``other`` is a GeoSeries, this function tests the "
 "\"touch\" relation between each geometry in the GeoSeries and the "
 "geometry with the same index in ``other``."
-msgstr ""
+msgstr "用于测试与第一个 GeoSeries 中的几何体接触的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 的接触关系。* 如果 ``other`` 是一个 GeoSeries，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体之间的接触关系。"
 
 #: arctern.GeoSeries.touches of
 msgid "返回"
@@ -55,7 +55,7 @@ msgstr ""
 msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
 "whether it touches the geometries in ``other``."
-msgstr ""
+msgstr "GeoSeries 中每个元素对应的布尔值，指示它是否与 ``other`` 中的几何体接触。"
 
 #: arctern.GeoSeries.touches of
 msgid "返回类型"
