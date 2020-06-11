@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Transforms the Coordinate Reference System (CRS) of the GeoSeries to "
 "`crs`."
-msgstr ""
+msgstr "将 GeoSeries 的坐标参考系（Coordinate Reference System）转换为 `crs`。"
 
 #: arctern.GeoSeries.to_crs of
 msgid "参数"
@@ -36,16 +36,15 @@ msgid ""
 "A string representation of CRS. The string is made up of an authority "
 "code and a SRID (Spatial Reference Identifier), for example, "
 "``\"EPSG:4326\"``."
-msgstr ""
+msgstr "坐标参考系的字符串表示。该字符串由机构代码和 SRID（空间参考标识符）组成，例如 ``\"EPSG:4326\"``。"
 
 #: arctern.GeoSeries.to_crs of
 msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.to_crs:7 of
-#, fuzzy
 msgid "GeoSeries with transformed CRS."
-msgstr "具有转换的坐标参考系的几何体。"
+msgstr "具有转换后的坐标参考系的 GeoSeries。"
 
 #: arctern.GeoSeries.to_crs of
 msgid "返回类型"
@@ -59,10 +58,10 @@ msgstr ""
 msgid ""
 "Arctern supports common CRSs listed at the `Spatial Reference "
 "<https://spatialreference.org/>`_ website."
-msgstr ""
+msgstr "Arctern 支持在 `Spatial Reference <https://spatialreference.org/>`_ 网站上列出的常见坐标参考系。"
 
 #: arctern.GeoSeries.to_crs:15 of
-msgid "实际案例"
+msgid "例子"
 msgstr ""
 
 #~ msgid ""

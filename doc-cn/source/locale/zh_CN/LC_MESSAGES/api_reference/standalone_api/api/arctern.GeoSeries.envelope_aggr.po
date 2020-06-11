@@ -22,33 +22,31 @@ msgid "arctern.GeoSeries.envelope\\_aggr"
 msgstr ""
 
 #: arctern.GeoSeries.envelope_aggr:1 of
-#, fuzzy
 msgid ""
 "Returns the minimum bounding box for the union of all geometries in the "
 "GeoSeries."
-msgstr "计算包含几何体集合的最小矩形边界范围，且该矩形的边与坐标轴平行。"
+msgstr "返回 GeoSeries 中所有几何体的并集的最小边界矩形。"
 
 #: arctern.GeoSeries.envelope_aggr:3 of
 msgid ""
 "The bounding box is a rectangular geometry object, and its sides are "
 "parallel to the axes."
-msgstr ""
+msgstr "边界矩形是一个矩形几何体对象，其边平行于坐标轴。"
 
 #: arctern.GeoSeries.envelope_aggr of
 msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.envelope_aggr:5 of
-#, fuzzy
 msgid "Minimum bounding box for the union of all geometries in the GeoSeries."
-msgstr "计算包含几何体集合的最小矩形边界范围，且该矩形的边与坐标轴平行。"
+msgstr "GeoSeries 中所有几何体的并集的最小边界矩形。"
 
 #: arctern.GeoSeries.envelope_aggr of
 msgid "返回类型"
 msgstr ""
 
 #: arctern.GeoSeries.envelope_aggr:9 of
-msgid "实际案例"
+msgid "例子"
 msgstr ""
 
 #~ msgid "A GeoSeries contains only one geometry."

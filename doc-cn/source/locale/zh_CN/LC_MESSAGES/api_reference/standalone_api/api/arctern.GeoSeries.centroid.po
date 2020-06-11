@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.centroid:1 of
 msgid "Returns the centroid of each geometry in the GeoSeries."
-msgstr "计算 GeoSeries 中每个几何体的中心。"
+msgstr "返回 GeoSeries 中每个几何体的中心。"
 
 #: arctern.GeoSeries.centroid of
 msgid "返回"

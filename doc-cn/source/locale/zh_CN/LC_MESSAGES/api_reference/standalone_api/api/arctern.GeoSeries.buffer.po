@@ -23,30 +23,29 @@ msgstr ""
 
 #: arctern.GeoSeries.buffer:1 of
 msgid ""
-"For each geometry, moves all of its points away from its centroid to "
-"construct a new geometry. The distance of movement is specified as "
-"``distance``."
-msgstr ""
+"For each geometry, returns a new geometry at a distance of ``distance`` "
+"from it."
+msgstr "对于每个几何体，在 ``distance`` 距离处返回新几何体。"
 
 #: arctern.GeoSeries.buffer:3 of
 msgid ""
-"If ``distance`` > 0, the new geometry is a scaled-up version outside the "
-"original geometry."
-msgstr ""
+"If ``distance`` &ge; 0, the new geometry is a scaled-up version outside "
+"the original goemetry."
+msgstr "如果 ``distance`` > 0，那么新几何体是原来的几何体之外的按比例放大版本。"
 
 #: arctern.GeoSeries.buffer:4 of
 msgid ""
-"If ``distance`` < 0, the new geometry is a scaled-down version inside the"
-" original geometry."
-msgstr ""
+"If ``distance`` &le; 0, the new geometry is a scaled-down version inside "
+"the original goemetry."
+msgstr "如果 ``distance`` < 0，则新几何体是原来的几何体内部的按比例缩小版本。"
 
 #: arctern.GeoSeries.buffer of
 msgid "参数"
 msgstr ""
 
 #: arctern.GeoSeries.buffer:6 of
-msgid "Distance of movement."
-msgstr ""
+msgid "The maximum distance between the returned geometry and the original."
+msgstr "返回的几何体与原来的几何体之间的最大距离。"
 
 #: arctern.GeoSeries.buffer of
 msgid "返回"
@@ -56,14 +55,14 @@ msgstr ""
 msgid ""
 "GeoSeries that contains the new geometries at a distance of ``distance`` "
 "from the original."
-msgstr ""
+msgstr "GeoSeries 包含与原来的几何体距离为 ``distance`` 的新几何体。"
 
 #: arctern.GeoSeries.buffer of
 msgid "返回类型"
 msgstr ""
 
 #: arctern.GeoSeries.buffer:13 of
-msgid "实际案例"
+msgid "例子"
 msgstr ""
 
 #~ msgid ""
