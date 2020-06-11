@@ -58,7 +58,7 @@ msgstr ""
 msgid ""
 "Arctern supports common CRSs listed at the `Spatial Reference "
 "<https://spatialreference.org/>`_ website."
-msgstr "Arctern 支持在 `空间参考 <https://spatialreference.org/>`_ 网站上列出的常见坐标参考系。"
+msgstr "Arctern 支持在 `Spatial Reference <https://spatialreference.org/>`_ 网站上列出的常见坐标参考系。"
 
 #: arctern.GeoSeries.to_crs:15 of
 msgid "例子"
