@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 18:54+0800\n"
+"POT-Creation-Date: 2020-06-11 17:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,12 +38,12 @@ msgstr ""
 
 #: arctern.GeoSeries.distance:4 of
 msgid ""
-"The geometry or GeoSeries to calculate whether the distance between it "
-"and the geometries in the first GeoSeries. * If ``other`` is a geometry, "
-"this function calculates the distance between each geometry in the "
-"GeoSeries and ``other``. * If ``other`` is a GeoSeries, this function "
-"calculates the distance between each geometry in the GeoSeries and the "
-"geometry with the same index in ``other``."
+"The geometry or GeoSeries to calculate the distance between it and the "
+"geometries in the first GeoSeries. * If ``other`` is a geometry, this "
+"function calculates the distance between each geometry in the GeoSeries "
+"and ``other``. * If ``other`` is a GeoSeries, this function calculates "
+"the distance between each geometry in the GeoSeries and the geometry with"
+" the same index in ``other``."
 msgstr ""
 
 #: arctern.GeoSeries.distance of
@@ -53,8 +53,8 @@ msgstr ""
 #: arctern.GeoSeries.distance:8 of
 #, fuzzy
 msgid ""
-"A Series contains the distances between each geometry in the GeoSeries "
-"and the corresponding geometry given in ``other``."
+"A Series that contains the distances between each geometry in the "
+"GeoSeries and the corresponding geometry given in ``other``."
 msgstr "Series 包含每个几何体与其他几何体之间的球面距离。"
 
 #: arctern.GeoSeries.distance of
@@ -83,4 +83,19 @@ msgstr ""
 
 #~ msgid "example"
 #~ msgstr "例子"
+
+#~ msgid ""
+#~ "The geometry or GeoSeries to calculate"
+#~ " whether the distance between it and"
+#~ " the geometries in the first "
+#~ "GeoSeries. * If ``other`` is a "
+#~ "geometry, this function calculates the "
+#~ "distance between each geometry in the"
+#~ " GeoSeries and ``other``. * If "
+#~ "``other`` is a GeoSeries, this function"
+#~ " calculates the distance between each "
+#~ "geometry in the GeoSeries and the "
+#~ "geometry with the same index in "
+#~ "``other``."
+#~ msgstr ""
 

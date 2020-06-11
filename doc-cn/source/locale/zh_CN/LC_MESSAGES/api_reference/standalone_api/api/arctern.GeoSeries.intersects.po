@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 18:54+0800\n"
+"POT-Creation-Date: 2020-06-11 17:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,10 @@ msgid ""
 "GeoSeries and ``other``. * If ``other`` is a GeoSeries, this function "
 "tests the intersection relation between each geometry in the GeoSeries "
 "and the geometry with the same index in ``other``."
-msgstr "用于测试与第一个 GeoSeries 中的几何体相交的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 的相交关系。* 如果 ``other`` 是一个 GeoSeries，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体之间的相交关系。"
+msgstr ""
+"用于测试与第一个 GeoSeries 中的几何体相交的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检测 "
+"GeoSeries 中的每个几何体与 ``other`` 的相交关系。* 如果 ``other`` 是一个 GeoSeries，那么此方法检测 "
+"GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体之间的相交关系。"
 
 #: arctern.GeoSeries.intersects of
 msgid "返回"
@@ -56,7 +59,7 @@ msgid "返回类型"
 msgstr ""
 
 #: arctern.GeoSeries.intersects:12 of
-msgid "例子"
+msgid "实际案例"
 msgstr ""
 
 #: arctern.GeoSeries.intersects:21 of
@@ -83,4 +86,7 @@ msgstr "或者，``other`` 可以是 WKB 格式的几何体。"
 
 #~ msgid "Alternatively other can be ca scalar bytes object."
 #~ msgstr "或者其他几何体可为标量字节对象。"
+
+#~ msgid "例子"
+#~ msgstr ""
 

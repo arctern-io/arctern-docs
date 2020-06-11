@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 15:09+0800\n"
+"POT-Creation-Date: 2020-06-11 17:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,8 +60,8 @@ msgid "返回类型"
 msgstr ""
 
 #: arctern.GeoSeries.curve_to_line:15 of
-msgid "Examples"
-msgstr "例子"
+msgid "实际案例"
+msgstr ""
 
 #~ msgid ""
 #~ "Convert curves in each geometry to "
@@ -75,4 +75,7 @@ msgstr "例子"
 #~ "将几何图形中的曲线转换为近似的线性表示形式，例如，将 CIRCULAR STRING 转换为普通的"
 #~ " LINESTRING，将 CURVEPOLYGON 转换为 POLYGON，将 "
 #~ "MULTISURFACE 转换为 MULTIPOLYGON。"
+
+#~ msgid "Examples"
+#~ msgstr "例子"
 

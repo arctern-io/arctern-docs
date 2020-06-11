@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-11 17:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,38 +22,67 @@ msgid "arctern.GeoSeries.point"
 msgstr ""
 
 #: arctern.GeoSeries.point:1 of
-msgid "Construct Point geometries according to the coordinates."
+#, fuzzy
+msgid "Constructs POINT objects based on the given coordinates."
 msgstr "根据输入的横纵坐标构建 point 对象。"
+
+#: arctern.GeoSeries.point:3 of
+msgid ""
+"``x``and ``y`` are Series so that points can be created in batch. The "
+"number of values in the two Series should be the same."
+msgstr ""
+
+#: arctern.GeoSeries.point:5 of
+msgid ""
+"Suppose that the demension of ``x`` is *N*, the returned GeoSeries of "
+"this function should contains *N* points. The position of the *i*th point"
+" is defined by its coordinates *(x, y)*."
+msgstr ""
 
 #: arctern.GeoSeries.point of
 msgid "参数"
 msgstr ""
 
-#: arctern.GeoSeries.point:4 of
-msgid "Abscissa of the point."
-msgstr "点的横坐标"
-
 #: arctern.GeoSeries.point:7 of
-msgid "Ordinate of the point."
+#, fuzzy
+msgid "X coordinates of points."
 msgstr "点的纵坐标"
 
-#: arctern.GeoSeries.point:10 of
-msgid "Must be SRID format string."
-msgstr "必须是 SRID 格式的字符串。"
+#: arctern.GeoSeries.point:9 of
+#, fuzzy
+msgid "Y coordinates of points."
+msgstr "点的纵坐标"
 
-#: arctern.GeoSeries.point of
-msgid "返回类型"
+#: arctern.GeoSeries.point:11 of
+msgid ""
+"A string representation of Coordinate Reference System (CRS). The string "
+"is made up of an authority code and a SRID (Spatial Reference "
+"Identifier), for example, ``\"EPSG:4326\"``."
 msgstr ""
 
 #: arctern.GeoSeries.point of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.point:13 of
-msgid "A GeoSeries contains point geometries."
+#: arctern.GeoSeries.point:15 of
+#, fuzzy
+msgid "A GeoSeries that contains POINT objects."
 msgstr "GeoSeries 包含 point 对象。"
 
 #: arctern.GeoSeries.point of
-msgid "example"
-msgstr "例子"
+msgid "返回类型"
+msgstr ""
+
+#: arctern.GeoSeries.point:19 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid "Abscissa of the point."
+#~ msgstr "点的横坐标"
+
+#~ msgid "Must be SRID format string."
+#~ msgstr "必须是 SRID 格式的字符串。"
+
+#~ msgid "example"
+#~ msgstr "例子"
 

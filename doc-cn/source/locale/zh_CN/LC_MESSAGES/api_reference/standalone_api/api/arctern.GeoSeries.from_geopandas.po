@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-09 18:00+0800\n"
+"POT-Creation-Date: 2020-06-11 17:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,38 +22,48 @@ msgid "arctern.GeoSeries.from\\_geopandas"
 msgstr ""
 
 #: arctern.GeoSeries.from_geopandas:1 of
-msgid "Construct geometries from geopandas GeoSeries."
-msgstr ""
-
-#: arctern.GeoSeries.from_geopandas of
-msgid "rtype data"
-msgstr ""
-
-#: arctern.GeoSeries.from_geopandas:3 of
-msgid "geopandas.GeoSeries"
+msgid "Constructs an arctern.GeoSeries object from a geopandas.GeoSeries object."
 msgstr ""
 
 #: arctern.GeoSeries.from_geopandas of
 msgid "参数"
 msgstr ""
 
-#: arctern.GeoSeries.from_geopandas:4 of
-msgid "Source geometries data."
-msgstr ""
-
-#: arctern.GeoSeries.from_geopandas of
-msgid "返回类型"
+#: arctern.GeoSeries.from_geopandas:3 of
+msgid "A geopandas.GeoSeries object."
 msgstr ""
 
 #: arctern.GeoSeries.from_geopandas of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.from_geopandas:7 of
-msgid "A arctern.GeoSeries constructed from geopandas.GeoSeries."
+#: arctern.GeoSeries.from_geopandas:6 of
+msgid "An arctern.GeoSeries object."
 msgstr ""
 
 #: arctern.GeoSeries.from_geopandas of
-msgid "example"
+msgid "返回类型"
 msgstr ""
+
+#: arctern.GeoSeries.from_geopandas:10 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid "Construct geometries from geopandas GeoSeries."
+#~ msgstr ""
+
+#~ msgid "rtype data"
+#~ msgstr ""
+
+#~ msgid "geopandas.GeoSeries"
+#~ msgstr ""
+
+#~ msgid "Source geometries data."
+#~ msgstr ""
+
+#~ msgid "A arctern.GeoSeries constructed from geopandas.GeoSeries."
+#~ msgstr ""
+
+#~ msgid "example"
+#~ msgstr ""
 
