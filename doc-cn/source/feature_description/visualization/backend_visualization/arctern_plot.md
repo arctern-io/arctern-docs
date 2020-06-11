@@ -57,6 +57,8 @@ $ conda install -c conda-forge pyproj
 >>> import matplotlib.image as mpimg
 ```
 
+**注意：** 如果你是通过 SSH 连接到部署了 Arctern 的服务器，确保连接的时候没有使用 X11-Forwarding，否者 Arctern.plot 只能显示底层地图。假如出现上述情况，请先在命令行中输入 echo $DISPLAY，如果结果是 localhost:xx.x，那么请在 SSH 连接服务器的时候关掉 X11-Forwarding。 
+
 ## 点图
 
 使用 [`plot.pointmap`](../../api_reference/plot/api/arctern.plot.pointmap.html) 方法根据出租车运营数据绘制带地图背景的点图。其中，点的位置为上车地点、点的大小为 10、颜色为 #2DEF4A、不透明度为 1。
