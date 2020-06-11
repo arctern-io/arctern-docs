@@ -35,7 +35,7 @@ msgstr ""
 
 #: arctern.GeoSeries.simplify:3 of
 msgid "Distance tolerance."
-msgstr "距离公差。"
+msgstr "距离偏差。"
 
 #: arctern.GeoSeries.simplify of
 msgid "返回"

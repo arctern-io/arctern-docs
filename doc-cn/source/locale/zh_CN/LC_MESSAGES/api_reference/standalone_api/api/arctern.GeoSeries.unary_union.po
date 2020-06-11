@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Returns a geometry that represents the union of all geometries in the "
 "GeoSeries."
-msgstr "返回一个几何体，该几何表示 GeoSeries 中所有几何体的并集。"
+msgstr "返回一个几何体，该几何体表示 GeoSeries 中所有几何体的并集。"
 
 #: arctern.GeoSeries.unary_union of
 msgid "返回"

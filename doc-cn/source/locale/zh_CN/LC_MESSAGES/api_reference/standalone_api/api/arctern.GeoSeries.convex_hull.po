@@ -49,7 +49,7 @@ msgstr ""
 
 #: arctern.GeoSeries.convex_hull:11 of
 msgid "Convex Geometry of each geometry in the GeoSeries."
-msgstr "GeoSeries 中每个几何体的凸几何体。"
+msgstr "GeoSeries 中每个几何体对应的凸几何体。"
 
 #: arctern.GeoSeries.convex_hull of
 msgid "返回类型"
@@ -106,7 +106,7 @@ msgstr "下面的 GeoSeries ``s1`` 包含一个点、一条线和一个凸多边
 msgid ""
 "The returned geometries from ``convex_hull`` looks exactly the same as "
 "the original."
-msgstr "从 ``convex_hull`` 返回的几何体看起来与原来的几何体完全相同。"
+msgstr "从 ``convex_hull`` 返回的几何体与原来的几何体完全相同。"
 
 #~ msgid "Convex Geometries."
 #~ msgstr "凸几何体"
