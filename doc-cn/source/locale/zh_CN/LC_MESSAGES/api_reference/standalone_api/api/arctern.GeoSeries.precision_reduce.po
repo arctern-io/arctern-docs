@@ -22,19 +22,17 @@ msgid "arctern.GeoSeries.precision\\_reduce"
 msgstr ""
 
 #: arctern.GeoSeries.precision_reduce:1 of
-#, fuzzy
 msgid ""
 "For the coordinates of each geometry in the GeoSeries, reduces the number"
 " of significant digits to the given number. The digit in the last decimal"
 " place will be rounded."
-msgstr "根据指定的有效数字位数，降低几何体的坐标精度。"
+msgstr "对于 GeoSeries 中每个几何体的坐标，将有效数字的位数减少到给定的数字。 最后一位小数位的数字将四舍五入。"
 
 #: arctern.GeoSeries.precision_reduce of
 msgid "参数"
 msgstr ""
 
 #: arctern.GeoSeries.precision_reduce:3 of
-#, fuzzy
 msgid "Number of significant digits."
 msgstr "有效数字位数。"
 
@@ -43,16 +41,15 @@ msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.precision_reduce:6 of
-#, fuzzy
 msgid "A GeoSeries that stores geometries with reduced precision."
-msgstr "降低坐标精度后的几何体。"
+msgstr "用于存储精度降低后的几何体的 GeoSeries。"
 
 #: arctern.GeoSeries.precision_reduce of
 msgid "返回类型"
 msgstr ""
 
 #: arctern.GeoSeries.precision_reduce:10 of
-msgid "实际案例"
+msgid "例子"
 msgstr ""
 
 #~ msgid "example"

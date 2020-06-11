@@ -22,18 +22,16 @@ msgid "arctern.GeoSeries.npoints"
 msgstr ""
 
 #: arctern.GeoSeries.npoints:1 of
-#, fuzzy
 msgid "Returns the number of points for each geometry in the GeoSeries."
-msgstr "几何体的点的数量。"
+msgstr "返回 GeoSeries 中每个几何体的点的数量。"
 
 #: arctern.GeoSeries.npoints of
 msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.npoints:3 of
-#, fuzzy
 msgid "Number of points for each geometry in the GeoSeries."
-msgstr "几何体的点的数量。"
+msgstr "GeoSeries 中每个几何体的点的数量。"
 
 #: arctern.GeoSeries.npoints of
 msgid "返回类型"

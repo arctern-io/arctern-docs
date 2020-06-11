@@ -27,7 +27,7 @@ msgid ""
 "Returns a simplified version for each geometry in the GeoSeries using the"
 " `Douglas-Peucker algorithm "
 "<https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm>`_."
-msgstr ""
+msgstr "使用 `Douglas-Peucker algorithm <https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm>`_ 来返回 GeoSeries 中每个几何体的简化版本。"
 
 #: arctern.GeoSeries.simplify of
 msgid "参数"
@@ -35,7 +35,7 @@ msgstr ""
 
 #: arctern.GeoSeries.simplify:3 of
 msgid "Distance tolerance."
-msgstr ""
+msgstr "距离公差。"
 
 #: arctern.GeoSeries.simplify of
 msgid "返回"
@@ -43,14 +43,14 @@ msgstr ""
 
 #: arctern.GeoSeries.simplify:6 of
 msgid "Simplified geometries."
-msgstr ""
+msgstr "简化后的几何体。"
 
 #: arctern.GeoSeries.simplify of
 msgid "返回类型"
 msgstr ""
 
 #: arctern.GeoSeries.simplify:10 of
-msgid "实际案例"
+msgid "例子"
 msgstr ""
 
 #~ msgid ""
