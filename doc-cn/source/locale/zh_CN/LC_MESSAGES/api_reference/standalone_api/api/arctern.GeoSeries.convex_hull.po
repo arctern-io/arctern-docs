@@ -41,7 +41,7 @@ msgstr "对于几何体集合，返回的几何体是将集合中的所有几何
 
 #: arctern.GeoSeries.convex_hull:5 arctern.GeoSeries.convex_hull:9 of
 msgid "For a point or line, the returned geometry is the same as the original."
-msgstr "对于点或线，返回的几何体与原始几何体相同。"
+msgstr "对于点或线，返回的几何体与原来的几何体相同。"
 
 #: arctern.GeoSeries.convex_hull of
 msgid "返回"
@@ -76,7 +76,7 @@ msgstr "首先，创建一个 MULTIPOLYGON 对象，该对象包含一个凹面�
 msgid ""
 "Then, use ``convex_hull`` to get the smallest convex geometry that "
 "encloses all geometries in the MULTIPOLYGON object."
-msgstr "然后，使用 ``convex_hull`` 获得最小的凸几何体，该凸几何将 MULTIPOLYGON 对象中的所有几何体包围起来。"
+msgstr "然后，使用 ``convex_hull`` 获得最小凸几何体，该凸几何将 MULTIPOLYGON 对象中的所有几何体包围起来。"
 
 #: arctern.GeoSeries.convex_hull:32 of
 msgid ""
@@ -90,7 +90,7 @@ msgid ""
 " geometries in the GEOMETRYCOLLECTION object. Since semicircle and "
 "rectangle are convex, the returned convex geometry is just a combination "
 "of the two gemetries and looks the same as the original."
-msgstr "使用 ``convex_hull`` 来获取最小的凸几何体，该凸几何体将 GEOMETRYCOLLECTION 对象中的所有几何体包围起来。由于半圆形和矩形是凸形的，因此返回的凸几何体只是两个几何体的组合，并且看起来与原来的几何体相同。"
+msgstr "使用 ``convex_hull`` 来获取最小凸几何体，该凸几何体将 GEOMETRYCOLLECTION 对象中的所有几何体包围起来。由于半圆形和矩形是凸形的，因此返回的凸几何体只是两个几何体的组合，并且看起来与原来的几何体相同。"
 
 #: arctern.GeoSeries.convex_hull:47 of
 msgid ""
@@ -100,7 +100,7 @@ msgstr "``convex_hull`` 不会对 POINT，MULTIPOINT，LINESTRING，MULTILINESTR
 
 #: arctern.GeoSeries.convex_hull:49 of
 msgid "The GeoSeries ``s1`` below contains a point, a line, and a convex polygon."
-msgstr "下面的 GeoSeries ``s1`` 包含一个点，一条线和一个凸多边形。"
+msgstr "下面的 GeoSeries ``s1`` 包含一个点、一条线和一个凸多边形。"
 
 #: arctern.GeoSeries.convex_hull:56 of
 msgid ""

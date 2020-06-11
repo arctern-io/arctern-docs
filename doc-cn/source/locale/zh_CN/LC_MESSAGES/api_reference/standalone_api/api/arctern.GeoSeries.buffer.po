@@ -37,7 +37,7 @@ msgstr "如果 ``distance`` > 0，那么新几何体是原来的几何体之外�
 msgid ""
 "If ``distance`` &le; 0, the new geometry is a scaled-down version inside "
 "the original goemetry."
-msgstr "如果 ``distance`` <0，则新几何体是原来的几何体内部的按比例缩小版本。"
+msgstr "如果 ``distance`` < 0，则新几何体是原来的几何体内部的按比例缩小版本。"
 
 #: arctern.GeoSeries.buffer of
 msgid "参数"
