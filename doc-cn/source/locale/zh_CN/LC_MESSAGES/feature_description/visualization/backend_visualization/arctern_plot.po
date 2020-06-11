@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-08 18:03+0800\n"
+"POT-Creation-Date: 2020-06-11 17:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,8 +65,8 @@ msgstr ""
 
 #: ../../source/feature_description/visualization/backend_visualization/arctern_plot.md:87
 msgid ""
-"使用 plot.pointmap 方法根据出租车运营数据绘制带地图背景的点图。其中，点的位置为上车地点、点的大小为 10、颜色为 "
-"#2DEF4A、不透明度为 1。"
+"使用 plot.pointmap 方法根据出租车运营数据绘制点图。其中，点的位置为上车地点、点的大小为 10、颜色为 #2DEF4A、不透明度为 "
+"1。"
 msgstr ""
 
 #: ../../source/feature_description/visualization/backend_visualization/arctern_plot.md:102
@@ -76,9 +76,8 @@ msgstr ""
 #: ../../source/feature_description/visualization/backend_visualization/arctern_plot.md:104
 msgid ""
 "使用 plot.weighted_pointmap "
-"方法根据出租车运营数据绘制带地图背景的带权点图。其中，点的位置为上车地点，点的颜色根据出租车的行程费用（df.fare_amount）在 "
-"#115f9a ～ #d0f400 之间变化，点的大小根据出租车的总费用（df.total_amount）在 5 ～ 30 "
-"之间变化，点的不透明度为 1。"
+"方法根据出租车运营数据绘制带权点图。其中，点的位置为上车地点，点的颜色根据出租车的行程费用（df.fare_amount）在 #115f9a ～ "
+"#d0f400 之间变化，点的大小根据出租车的总费用（df.total_amount）在 5 ～ 30 之间变化，点的不透明度为 1。"
 msgstr ""
 
 #: ../../source/feature_description/visualization/backend_visualization/arctern_plot.md:130
@@ -86,9 +85,7 @@ msgid "热力图"
 msgstr ""
 
 #: ../../source/feature_description/visualization/backend_visualization/arctern_plot.md:132
-msgid ""
-"使用 plot.heatmap "
-"方法根据出租车运营数据绘制带地图背景的热力图。其中，每个位置的颜色由出租车的总费用（df.total_amount）决定。"
+msgid "使用 plot.heatmap 方法根据出租车运营数据绘制热力图。其中，每个位置的颜色由出租车的总费用（df.total_amount）决定。"
 msgstr ""
 
 #: ../../source/feature_description/visualization/backend_visualization/arctern_plot.md:145
@@ -100,7 +97,7 @@ msgid "轮廓图能够绘制一块地理区域内的大量建筑轮廓。为了�
 msgstr ""
 
 #: ../../source/feature_description/visualization/backend_visualization/arctern_plot.md:154
-msgid "使用 plot.choroplethmap 方法根据两个建筑物的轮廓描述（p1、p2）绘制带地图背景的轮廓图。"
+msgid "使用 plot.choroplethmap 方法根据两个建筑物的轮廓描述（p1、p2）绘制轮廓图。"
 msgstr ""
 
 #: ../../source/feature_description/visualization/backend_visualization/arctern_plot.md:170
@@ -112,7 +109,7 @@ msgid "执行以下命令下载图标，你将用此图标绘制图标图。"
 msgstr ""
 
 #: ../../source/feature_description/visualization/backend_visualization/arctern_plot.md:178
-msgid "使用 plot.iconviz 方法根据出租车运营数绘制带地图背景的图标图。其中，图标的位置为上车地点。"
+msgid "使用 plot.iconviz 方法根据出租车运营数绘制图标图。其中，图标的位置为上车地点。"
 msgstr ""
 
 #: ../../source/feature_description/visualization/backend_visualization/arctern_plot.md:191
@@ -121,6 +118,26 @@ msgstr ""
 
 #: ../../source/feature_description/visualization/backend_visualization/arctern_plot.md:193
 msgid "使用 plot.fishnetmap 方法根据出租车运营数绘制渔网图。其中，网点的位置为上车地点。"
+msgstr ""
+
+#: ../../source/feature_description/visualization/backend_visualization/arctern_plot.md:209
+msgid "常见问题"
+msgstr ""
+
+#: ../../source/feature_description/visualization/backend_visualization/arctern_plot.md:211
+msgid "为什么我绘制的图片只显示地图背景？"
+msgstr ""
+
+#: ../../source/feature_description/visualization/backend_visualization/arctern_plot.md:213
+msgid ""
+"如果你是通过 MobaXterm 从 Windows 系统连接到部署了 Arctern 服务器的 Linux 系统，并且在 MobaXterm "
+"中开启了 X11-Forwarding，那么你在使用 arctern.plot 绘制图片时会出现“只显示地图背景”的问题。"
+msgstr ""
+
+#: ../../source/feature_description/visualization/backend_visualization/arctern_plot.md:215
+msgid ""
+"请执行 echo $DISPLAY 命令，检查是否开启了 X11-Forwarding。若结果类似 localhost:xx.x，则已开启 "
+"X11-Forwarding，请在 MobaXterm 中取消勾选此功能："
 msgstr ""
 
 #~ msgid "透明点图"
@@ -247,5 +264,29 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "使用 Arctern 的 plot.fishnetmap 方法根据出租车运营数绘制渔网图。其中，网点的位置为上车地点。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "使用 plot.pointmap 方法根据出租车运营数据绘制带地图背景的点图。其中，点的位置为上车地点、点的大小为"
+#~ " 10、颜色为 #2DEF4A、不透明度为 1。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "使用 plot.weighted_pointmap "
+#~ "方法根据出租车运营数据绘制带地图背景的带权点图。其中，点的位置为上车地点，点的颜色根据出租车的行程费用（df.fare_amount）在"
+#~ " #115f9a ～ #d0f400 "
+#~ "之间变化，点的大小根据出租车的总费用（df.total_amount）在 5 ～ 30 "
+#~ "之间变化，点的不透明度为 1。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "使用 plot.heatmap "
+#~ "方法根据出租车运营数据绘制带地图背景的热力图。其中，每个位置的颜色由出租车的总费用（df.total_amount）决定。"
+#~ msgstr ""
+
+#~ msgid "使用 plot.choroplethmap 方法根据两个建筑物的轮廓描述（p1、p2）绘制带地图背景的轮廓图。"
+#~ msgstr ""
+
+#~ msgid "使用 plot.iconviz 方法根据出租车运营数绘制带地图背景的图标图。其中，图标的位置为上车地点。"
 #~ msgstr ""
 

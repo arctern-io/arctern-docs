@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-11 17:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,21 +22,23 @@ msgid "arctern.GeoSeries.intersection"
 msgstr ""
 
 #: arctern.GeoSeries.intersection:1 of
-msgid "Calculate the point set intersection between each geometry and other."
-msgstr "检查两个几何体是否存在交集，即它们存在共享空间。"
+msgid ""
+"For each point in the GeoSeries and the corresponding point given in "
+"``other``, calculates the intersection of them."
+msgstr ""
 
 #: arctern.GeoSeries.intersection of
 msgid "参数"
 msgstr ""
 
-#: arctern.GeoSeries.intersection:5 of
+#: arctern.GeoSeries.intersection:3 of
 msgid ""
-"The geometries to calculate the intersection point set between each "
-"geometry."
-msgstr "用于计算每两个几何体的交集的几何体。"
-
-#: arctern.GeoSeries.intersection of
-msgid "返回类型"
+"The geometry or GeoSeries to calculate the intersection of it and the "
+"geometries in the first GeoSeries. * If ``other`` is a geometry, this "
+"function calculates the intersection of each geometry in the GeoSeries "
+"and ``other``. * If ``other`` is a GeoSeries, this function calculates "
+"the intersection of each geometry in the GeoSeries and the geometry with "
+"the same index in ``other``."
 msgstr ""
 
 #: arctern.GeoSeries.intersection of
@@ -44,10 +46,32 @@ msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.intersection:8 of
-msgid "A GeoSeries contains geometries."
-msgstr "GeoSeries 包含的几何体。"
+msgid ""
+"A GeoSeries that contains only one geometry, which is the intersection of"
+" each geometry in the GeoSeries and the corresponding geometry given in "
+"``other``."
+msgstr ""
 
 #: arctern.GeoSeries.intersection of
-msgid "example"
-msgstr "例子"
+msgid "返回类型"
+msgstr ""
+
+#: arctern.GeoSeries.intersection:12 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid "Calculate the point set intersection between each geometry and other."
+#~ msgstr "检查两个几何体是否存在交集，即它们存在共享空间。"
+
+#~ msgid ""
+#~ "The geometries to calculate the "
+#~ "intersection point set between each "
+#~ "geometry."
+#~ msgstr "用于计算每两个几何体的交集的几何体。"
+
+#~ msgid "A GeoSeries contains geometries."
+#~ msgstr "GeoSeries 包含的几何体。"
+
+#~ msgid "example"
+#~ msgstr "例子"
 

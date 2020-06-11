@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-11 17:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,34 +22,49 @@ msgid "arctern.GeoSeries.geom\\_from\\_geojson"
 msgstr ""
 
 #: arctern.GeoSeries.geom_from_geojson:1 of
-msgid "Construct geometry from the GeoJSON representation string."
+#, fuzzy
+msgid "Constructs geometries from GeoJSON strings."
 msgstr "根据 GeoJson 字符串构造几何体。"
+
+#: arctern.GeoSeries.geom_from_geojson:3 of
+msgid "``json`` is Series so that geometries can be created in batch."
+msgstr ""
 
 #: arctern.GeoSeries.geom_from_geojson of
 msgid "参数"
 msgstr ""
 
-#: arctern.GeoSeries.geom_from_geojson:4 of
-msgid "Geometries in json format."
+#: arctern.GeoSeries.geom_from_geojson:5 of
+#, fuzzy
+msgid "String representations of geometries in JSON format."
 msgstr "Json 格式的几何体。"
 
 #: arctern.GeoSeries.geom_from_geojson:7 of
-msgid "Must be SRID format string."
-msgstr "必须为 SRID 格式字符串。"
-
-#: arctern.GeoSeries.geom_from_geojson of
-msgid "返回类型"
+msgid ""
+"A string representation of Coordinate Reference System (CRS). The string "
+"is made up of an authority code and a SRID (Spatial Reference "
+"Identifier), for example, ``\"EPSG:4326\"``."
 msgstr ""
 
 #: arctern.GeoSeries.geom_from_geojson of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.geom_from_geojson:10 of
+#: arctern.GeoSeries.geom_from_geojson:11 of
 msgid "A GeoSeries contains geometries."
 msgstr "GeoSeries 包含 几何体。"
 
 #: arctern.GeoSeries.geom_from_geojson of
-msgid "example"
-msgstr "例子"
+msgid "返回类型"
+msgstr ""
+
+#: arctern.GeoSeries.geom_from_geojson:15 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid "Must be SRID format string."
+#~ msgstr "必须为 SRID 格式字符串。"
+
+#~ msgid "example"
+#~ msgstr "例子"
 
