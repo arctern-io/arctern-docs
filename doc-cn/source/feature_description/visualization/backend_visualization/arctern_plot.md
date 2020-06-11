@@ -57,11 +57,9 @@ $ conda install -c conda-forge pyproj
 >>> import matplotlib.image as mpimg
 ```
 
-**注意：** 如果你是通过 SSH 连接到部署了 Arctern 的服务器，确保连接的时候没有使用 X11-Forwarding，否者 Arctern.plot 只能显示底层地图。假如出现上述情况，请先在命令行中输入 echo $DISPLAY，如果结果是 localhost:xx.x，那么请在 SSH 连接服务器的时候关掉 X11-Forwarding。 
-
 ## 点图
 
-使用 [`plot.pointmap`](../../api_reference/plot/api/arctern.plot.pointmap.html) 方法根据出租车运营数据绘制带地图背景的点图。其中，点的位置为上车地点、点的大小为 10、颜色为 #2DEF4A、不透明度为 1。
+使用 [`plot.pointmap`](../../api_reference/plot/api/arctern.plot.pointmap.html) 方法根据出租车运营数据绘制点图。其中，点的位置为上车地点、点的大小为 10、颜色为 #2DEF4A、不透明度为 1。
 
 ```python
 >>> fig, ax = plt.subplots(figsize=(10, 6), dpi=200)
@@ -78,7 +76,7 @@ $ conda install -c conda-forge pyproj
 
 ## 带权点图
 
-使用 [`plot.weighted_pointmap`](../../api_reference/plot/api/arctern.plot.weighted_pointmap.html) 方法根据出租车运营数据绘制带地图背景的带权点图。其中，点的位置为上车地点，点的颜色根据出租车的行程费用（`df.fare_amount`）在 #115f9a ～ #d0f400 之间变化，点的大小根据出租车的总费用（`df.total_amount`）在 5 ～ 30 之间变化，点的不透明度为 1。
+使用 [`plot.weighted_pointmap`](../../api_reference/plot/api/arctern.plot.weighted_pointmap.html) 方法根据出租车运营数据绘制带权点图。其中，点的位置为上车地点，点的颜色根据出租车的行程费用（`df.fare_amount`）在 #115f9a ～ #d0f400 之间变化，点的大小根据出租车的总费用（`df.total_amount`）在 5 ～ 30 之间变化，点的不透明度为 1。
 
 ```python
 >>> color_bound=[df.fare_amount.min(), df.fare_amount.max()]
@@ -106,7 +104,7 @@ $ conda install -c conda-forge pyproj
 
 ## 热力图
 
-使用 [`plot.heatmap`](../../api_reference/plot/api/arctern.plot.heatmap.html) 方法根据出租车运营数据绘制带地图背景的热力图。其中，每个位置的颜色由出租车的总费用（`df.total_amount`）决定。
+使用 [`plot.heatmap`](../../api_reference/plot/api/arctern.plot.heatmap.html) 方法根据出租车运营数据绘制热力图。其中，每个位置的颜色由出租车的总费用（`df.total_amount`）决定。
 
 ```python
 >>> fig, ax = plt.subplots(figsize=(10, 6), dpi=200)
@@ -128,7 +126,7 @@ $ conda install -c conda-forge pyproj
 >>> p2="POLYGON ((-73.9542329907899 40.7787670145087,-73.9545101860555 40.7783876598084,-73.9546846384315 40.778461320293,-73.9548206058685 40.7785187302746,-73.9549036921298 40.7785538112695,-73.9550251774329 40.7786051054324,-73.9550562469185 40.7786182243649,-73.9549683394669 40.7787385313679,-73.9547798956672 40.778996428053,-73.954779053804 40.7789975803655,-73.9545166590009 40.7788867891633,-73.9544446005066 40.7788563633454,-73.9542329907899 40.7787670145087))"
 ```
 
-使用 [`plot.choroplethmap`](../../api_reference/plot/api/arctern.plot.choroplethmap.html) 方法根据两个建筑物的轮廓描述（`p1`、`p2`）绘制带地图背景的轮廓图。
+使用 [`plot.choroplethmap`](../../api_reference/plot/api/arctern.plot.choroplethmap.html) 方法根据两个建筑物的轮廓描述（`p1`、`p2`）绘制轮廓图。
 
 ```python
 >>> fig, ax = plt.subplots(figsize=(10, 6), dpi=200)
@@ -152,7 +150,7 @@ $ conda install -c conda-forge pyproj
 wget https://raw.githubusercontent.com/arctern-io/arctern-docs/branch-0.2.x/img/icon/icon-viz.png -O /tmp/icon.png
 ```
 
-使用 [`plot.iconviz`](../../api_reference/plot/api/arctern.plot.iconviz.html) 方法根据出租车运营数绘制带地图背景的图标图。其中，图标的位置为上车地点。
+使用 [`plot.iconviz`](../../api_reference/plot/api/arctern.plot.iconviz.html) 方法根据出租车运营数绘制图标图。其中，图标的位置为上车地点。
 
 ```python
 >>> fig, ax = plt.subplots(figsize=(10, 6), dpi=200)
@@ -182,3 +180,13 @@ wget https://raw.githubusercontent.com/arctern-io/arctern-docs/branch-0.2.x/img/
 ```
 
 ![](./img/output_28_0.png)
+
+## 常见问题
+
+### 为什么我绘制的图片只显示地图背景？
+
+如果你是通过 MobaXterm 从 Windows 系统连接到部署了 Arctern 服务器的 Linux 系统，并且在 MobaXterm 中开启了 X11-Forwarding，那么你在使用 `arctern.plot` 绘制图片时会出现“只显示地图背景”的问题。
+
+请执行 `echo $DISPLAY` 命令，检查是否开启了 X11-Forwarding。若结果类似 `localhost:xx.x`，则已开启 X11-Forwarding，请在 MobaXterm 中取消勾选此功能：
+
+![](./img/x11_forwarding.png)
