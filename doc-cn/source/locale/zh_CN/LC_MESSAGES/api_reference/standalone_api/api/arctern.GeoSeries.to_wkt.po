@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-11 17:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,22 +22,32 @@ msgid "arctern.GeoSeries.to\\_wkt"
 msgstr ""
 
 #: arctern.GeoSeries.to_wkt:1 of
-msgid "Transform each geometry to WKT formed string."
-msgstr "转换几何体为 WKT 格式的字符串。"
-
-#: arctern.GeoSeries.to_wkt of
-msgid "返回类型"
+msgid ""
+"Transforms all geometries in the GeoSeries to `WKT "
+"<https://en.wikipedia.org/wiki/Well-"
+"known_text_representation_of_geometry>`_ strings."
 msgstr ""
 
 #: arctern.GeoSeries.to_wkt of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.to_wkt:4 of
-msgid "A Series contains geometries as WKT formed string."
+#: arctern.GeoSeries.to_wkt:3 of
+#, fuzzy
+msgid "A Series that contains geometries in WKT format."
 msgstr "由 WKT 格式的字符串构造的多个几何体组成 Series。"
 
 #: arctern.GeoSeries.to_wkt of
-msgid "example"
-msgstr "例子"
+msgid "返回类型"
+msgstr ""
+
+#: arctern.GeoSeries.to_wkt:7 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid "Transform each geometry to WKT formed string."
+#~ msgstr "转换几何体为 WKT 格式的字符串。"
+
+#~ msgid "example"
+#~ msgstr "例子"
 

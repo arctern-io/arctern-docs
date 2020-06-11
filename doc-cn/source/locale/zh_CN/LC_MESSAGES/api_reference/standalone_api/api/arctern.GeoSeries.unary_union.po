@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 18:54+0800\n"
+"POT-Creation-Date: 2020-06-11 17:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.unary_union:1 of
 msgid ""
-"Returns a geometry that represents the union of all geometries in the "
+"Calculates a geometry that represents the union of all geometries in the "
 "GeoSeries."
 msgstr ""
 
@@ -55,5 +55,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "example"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns a geometry that represents the"
+#~ " union of all geometries in the "
+#~ "GeoSeries."
 #~ msgstr ""
 

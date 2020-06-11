@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-06 20:03+0800\n"
+"POT-Creation-Date: 2020-06-11 17:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,22 +22,32 @@ msgid "arctern.GeoSeries.to\\_wkb"
 msgstr ""
 
 #: arctern.GeoSeries.to_wkb:1 of
-msgid "Transform each geometry to WKB formed bytes object."
-msgstr "转换几何体为 WKB 格式的字节对象。"
-
-#: arctern.GeoSeries.to_wkb of
-msgid "返回类型"
+msgid ""
+"Transforms all geometries in the GeoSeries to `WKB "
+"<https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry"
+"#Well-known_binary>`_ strings."
 msgstr ""
 
 #: arctern.GeoSeries.to_wkb of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.to_wkb:4 of
-msgid "A Series contains geometries as WKB formed bytes object."
+#: arctern.GeoSeries.to_wkb:3 of
+#, fuzzy
+msgid "A Series that contains geometries in WKB format."
 msgstr "由 WKB 格式的字节对象构造的多个几何体组成 Series。"
 
 #: arctern.GeoSeries.to_wkb of
-msgid "example"
+msgid "返回类型"
 msgstr ""
+
+#: arctern.GeoSeries.to_wkb:7 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid "Transform each geometry to WKB formed bytes object."
+#~ msgstr "转换几何体为 WKB 格式的字节对象。"
+
+#~ msgid "example"
+#~ msgstr ""
 

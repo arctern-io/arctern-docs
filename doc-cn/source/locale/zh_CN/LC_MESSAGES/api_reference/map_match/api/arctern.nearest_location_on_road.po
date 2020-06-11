@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 10:53+0800\n"
+"POT-Creation-Date: 2020-06-11 17:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,16 +31,12 @@ msgstr ""
 msgid "参数"
 msgstr ""
 
-#: arctern.nearest_location_on_road:4 of
+#: arctern.nearest_location_on_road:3 of
 msgid "LineStrings in WKB form."
 msgstr ""
 
-#: arctern.nearest_location_on_road:7 arctern.nearest_location_on_road:10 of
+#: arctern.nearest_location_on_road:5 arctern.nearest_location_on_road:8 of
 msgid "Points in WKB form."
-msgstr ""
-
-#: arctern.nearest_location_on_road of
-msgid "返回类型"
 msgstr ""
 
 #: arctern.nearest_location_on_road of
@@ -48,6 +44,13 @@ msgid "返回"
 msgstr ""
 
 #: arctern.nearest_location_on_road of
-msgid "example"
+msgid "返回类型"
 msgstr ""
+
+#: arctern.nearest_location_on_road:12 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid "example"
+#~ msgstr ""
 
