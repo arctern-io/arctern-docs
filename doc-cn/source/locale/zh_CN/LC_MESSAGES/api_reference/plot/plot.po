@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-07 10:00+0800\n"
+"POT-Creation-Date: 2020-06-12 17:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
-msgid "Plot a collection of geometries to `ax`."
+msgid "Plots a collection of geometries."
 msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
-msgid "Plot pointmap in Matplotlib"
+msgid "Plots a point map in Matplotlib."
 msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
@@ -48,7 +48,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
-msgid "Plot weighted pointmap in Matplotlib"
+msgid "Plots a weighted point map in Matplotlib."
 msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
@@ -58,7 +58,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
-msgid "Plot heatmap in matplotlibs"
+msgid "Plots a heat map in matplotlib."
 msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
-msgid "Render region boundaries in matplotlib"
+msgid "Plots a choropleth map in matplotlib."
 msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
@@ -78,7 +78,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
-msgid "Plot points as icons on map in Matplotlib"
+msgid "Plots an icon map in Matplotlib."
 msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
@@ -88,6 +88,27 @@ msgid ""
 msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
-msgid "Plot fishnetmap in Matplotlib"
+msgid "Plots a fishnet map in Matplotlib."
 msgstr ""
+
+#~ msgid "Plot a collection of geometries to `ax`."
+#~ msgstr ""
+
+#~ msgid "Plot pointmap in Matplotlib"
+#~ msgstr ""
+
+#~ msgid "Plot weighted pointmap in Matplotlib"
+#~ msgstr ""
+
+#~ msgid "Plot heatmap in matplotlibs"
+#~ msgstr ""
+
+#~ msgid "Render region boundaries in matplotlib"
+#~ msgstr ""
+
+#~ msgid "Plot points as icons on map in Matplotlib"
+#~ msgstr ""
+
+#~ msgid "Plot fishnetmap in Matplotlib"
+#~ msgstr ""
 

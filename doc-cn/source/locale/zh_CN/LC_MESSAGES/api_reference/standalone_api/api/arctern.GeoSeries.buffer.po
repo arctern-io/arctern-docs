@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-11 17:51+0800\n"
+"POT-Creation-Date: 2020-06-12 17:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,10 +55,8 @@ msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.buffer:9 of
-msgid ""
-"GeoSeries that contains the new geometries at a distance of ``distance`` "
-"from the original."
-msgstr "GeoSeries 包含与原来的几何体距离为 ``distance`` 的新几何体。"
+msgid "Sequence of geometries."
+msgstr ""
 
 #: arctern.GeoSeries.buffer of
 msgid "返回类型"
@@ -104,4 +102,10 @@ msgstr ""
 
 #~ msgid "例子"
 #~ msgstr ""
+
+#~ msgid ""
+#~ "GeoSeries that contains the new "
+#~ "geometries at a distance of ``distance``"
+#~ " from the original."
+#~ msgstr "GeoSeries 包含与原来的几何体距离为 ``distance`` 的新几何体。"
 

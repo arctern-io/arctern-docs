@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 15:09+0800\n"
+"POT-Creation-Date: 2020-06-12 17:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,11 +31,14 @@ msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.isna:3 of
+#, fuzzy
 msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
-"whether an element is an NA value. * True: An element is a NA value, such"
-" as None. * False: An element is a non-missing value."
-msgstr "GeoSeries 中每个元素对应的布尔值，指示元素是否为 NA 值。* True: 元素是 NA 值，例如 None。* False: 元素是非缺失值。"
+"whether an element is an NA value. * *True*: An element is a NA value, "
+"such as None. * *False*: An element is a non-missing value."
+msgstr ""
+"GeoSeries 中每个元素对应的布尔值，指示元素是否为 NA 值。* True: 元素是 NA 值，例如 None。* False: "
+"元素是非缺失值。"
 
 #: arctern.GeoSeries.isna of
 msgid "返回类型"

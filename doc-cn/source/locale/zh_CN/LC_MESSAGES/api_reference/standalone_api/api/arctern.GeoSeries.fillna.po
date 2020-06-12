@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-11 17:22+0800\n"
+"POT-Creation-Date: 2020-06-12 17:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,8 +97,9 @@ msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.fillna:28 of
+#, fuzzy
 msgid ""
-"* None if ``inplace=False``. * Object with missing values filled if "
+"* None if ``inplace=False``. * A GeoSeries with missing values filled if "
 "``inplace=True``."
 msgstr "* 如果 ``inplace = False``，则为 None。* 如果 ``inplace = True``，则填充缺失值的对象。"
 
@@ -107,7 +108,8 @@ msgid "None if ``inplace=False``."
 msgstr "如果 ``inplace = False``，则为 None。"
 
 #: arctern.GeoSeries.fillna:31 of
-msgid "Object with missing values filled if ``inplace=True``."
+#, fuzzy
+msgid "A GeoSeries with missing values filled if ``inplace=True``."
 msgstr "如果 ``inplace = True``，则填充缺失值的对象。"
 
 #: arctern.GeoSeries.fillna of

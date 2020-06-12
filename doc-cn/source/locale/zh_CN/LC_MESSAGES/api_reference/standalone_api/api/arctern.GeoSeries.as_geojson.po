@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-11 17:22+0800\n"
+"POT-Creation-Date: 2020-06-12 17:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,9 +30,8 @@ msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.as_geojson:3 of
-#, fuzzy
-msgid "A Series that contains geometries in GeoJSON format."
-msgstr "由 GeoJSON 格式的字符串构造的多个几何体组成 Series。"
+msgid "Sequence of geometries in GeoJSON format."
+msgstr ""
 
 #: arctern.GeoSeries.as_geojson of
 msgid "返回类型"
@@ -47,4 +46,7 @@ msgstr ""
 
 #~ msgid "example"
 #~ msgstr "例子"
+
+#~ msgid "A Series that contains geometries in GeoJSON format."
+#~ msgstr "由 GeoJSON 格式的字符串构造的多个几何体组成 Series。"
 

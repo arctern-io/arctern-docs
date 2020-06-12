@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 18:54+0800\n"
+"POT-Creation-Date: 2020-06-12 17:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,14 +48,16 @@ msgstr ""
 #: arctern.GeoSeries.contains:8 of
 msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
-"whether it contains the geometries in ``other``."
+"whether it contains the geometries in ``other``. * *True*: The first "
+"geometry contains the other. * *False*: The first geometry does not "
+"contain the other."
 msgstr ""
 
 #: arctern.GeoSeries.contains of
 msgid "返回类型"
 msgstr ""
 
-#: arctern.GeoSeries.contains:12 of
+#: arctern.GeoSeries.contains:14 of
 msgid "实际案例"
 msgstr ""
 
@@ -74,4 +76,11 @@ msgstr ""
 
 #~ msgid "example"
 #~ msgstr "例子"
+
+#~ msgid ""
+#~ "Mask of boolean values for each "
+#~ "element in the GeoSeries that indicates"
+#~ " whether it contains the geometries "
+#~ "in ``other``."
+#~ msgstr ""
 

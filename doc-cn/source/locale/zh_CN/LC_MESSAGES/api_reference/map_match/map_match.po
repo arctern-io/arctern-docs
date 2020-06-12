@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-07 10:00+0800\n"
+"POT-Creation-Date: 2020-06-12 17:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,9 +28,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/api_reference/map_match/map_match.rst:12:<autosummary>:1
-msgid ""
-"Compute the location on roads closest to each point in points, The points"
-" passed do not need to be part of a continuous path."
+msgid "Returns the location on ``roads`` closest to the ``points``."
 msgstr ""
 
 #: ../../source/api_reference/map_match/map_match.rst:12:<autosummary>:1
@@ -38,9 +36,7 @@ msgid ":obj:`arctern.nearest_road <arctern.nearest_road>`\\ \\(roads\\, points\\
 msgstr ""
 
 #: ../../source/api_reference/map_match/map_match.rst:12:<autosummary>:1
-msgid ""
-"Compute the closest road for each point in points, The points passed do "
-"not need to be part of a continuous path."
+msgid "Returns the road in ``roads`` closest to the ``points``."
 msgstr ""
 
 #: ../../source/api_reference/map_match/map_match.rst:12:<autosummary>:1
@@ -50,7 +46,9 @@ msgid ""
 msgstr ""
 
 #: ../../source/api_reference/map_match/map_match.rst:12:<autosummary>:1
-msgid "Check if there is a road within distance meters of each point."
+msgid ""
+"Tests whether there is a road within the given ``distance`` of all "
+"``points``."
 msgstr ""
 
 #: ../../source/api_reference/map_match/map_match.rst:12:<autosummary>:1
@@ -59,8 +57,8 @@ msgstr ""
 
 #: ../../source/api_reference/map_match/map_match.rst:12:<autosummary>:1
 msgid ""
-"For each geometry in left, search geometries that satisfy \"within\" "
-"relationship in right"
+"For each geometry in ``left``, search for a geometry in ``right`` that "
+"contains it."
 msgstr ""
 
 #~ msgid ""
@@ -143,5 +141,11 @@ msgstr ""
 #~ "data2)   >>> print(res)       0    1       "
 #~ "1    <NA>       2    0       dtype: "
 #~ "object"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For each geometry in left, search "
+#~ "geometries that satisfy \"within\" "
+#~ "relationship in right"
 #~ msgstr ""
 

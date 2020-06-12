@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-11 17:22+0800\n"
+"POT-Creation-Date: 2020-06-12 17:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,8 +53,8 @@ msgstr ""
 #: arctern.GeoSeries.hausdorff_distance:10 of
 #, fuzzy
 msgid ""
-"A Series that contains the Hausdorff distance between each geometry in "
-"the GeoSeries and the corresponding geometry given in ``other``."
+"Hausdorff distance between each geometry in the GeoSeries and the "
+"corresponding geometry given in ``other``."
 msgstr "Series 包含每两个几何体之间的 Hausdorff 距离。"
 
 #: arctern.GeoSeries.hausdorff_distance of

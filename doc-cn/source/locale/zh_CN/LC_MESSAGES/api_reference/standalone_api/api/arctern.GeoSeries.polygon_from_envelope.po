@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-11 17:22+0800\n"
+"POT-Creation-Date: 2020-06-12 17:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,8 +38,8 @@ msgstr ""
 msgid ""
 "Suppose that the demension of ``min_x`` is *N*, the returned GeoSeries of"
 " this function should contains *N* rectangles. The shape and position of "
-"the *i*th rectangle is defined by its bottom left vertex *(min_x, min_y)*"
-" and top right vertex *(max_x, max_y)*."
+"the rectangle with index *i* is defined by its bottom left vertex "
+"*(min_x[i], min_y[i])* and top right vertex *(max_x[i], max_y[i])*."
 msgstr ""
 
 #: arctern.GeoSeries.polygon_from_envelope of
@@ -78,9 +78,7 @@ msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.polygon_from_envelope:19 of
-msgid ""
-"A GeoSeries that contains rectangular POLYGON objects within the given "
-"spatial range."
+msgid "Sequence of rectangular POLYGON objects within the given spatial range."
 msgstr ""
 
 #: arctern.GeoSeries.polygon_from_envelope of
@@ -107,4 +105,21 @@ msgstr ""
 
 #~ msgid "example"
 #~ msgstr "例子"
+
+#~ msgid ""
+#~ "Suppose that the demension of ``min_x``"
+#~ " is *N*, the returned GeoSeries of"
+#~ " this function should contains *N* "
+#~ "rectangles. The shape and position of"
+#~ " the *i*th rectangle is defined by"
+#~ " its bottom left vertex *(min_x, "
+#~ "min_y)* and top right vertex *(max_x,"
+#~ " max_y)*."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A GeoSeries that contains rectangular "
+#~ "POLYGON objects within the given spatial"
+#~ " range."
+#~ msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-11 17:22+0800\n"
+"POT-Creation-Date: 2020-06-12 17:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,10 +66,13 @@ msgstr ""
 "``\"EPSG:4326\"``。"
 
 #: arctern.GeoSeries:13 of
-msgid "Options to pass to the GeoSeries constructor, for example, ``copy``."
-msgstr "传到 GeoSeries 构造器中的其他参数，例如 ``copy``。"
+msgid ""
+"Parameters to pass to the GeoSeries constructor, for example, ``copy``. "
+"``copy`` is a boolean value, by default False. * *True:* Copys input "
+"data. * *False:* Points to input data."
+msgstr ""
 
-#: arctern.GeoSeries:16 of
+#: arctern.GeoSeries:19 of
 msgid "实际案例"
 msgstr ""
 
@@ -730,4 +733,7 @@ msgstr ""
 
 #~ msgid "Transform each geometry to WKT formed string."
 #~ msgstr "将几何体转换为 WKT 格式的字符串。"
+
+#~ msgid "Options to pass to the GeoSeries constructor, for example, ``copy``."
+#~ msgstr "传到 GeoSeries 构造器中的其他参数，例如 ``copy``。"
 

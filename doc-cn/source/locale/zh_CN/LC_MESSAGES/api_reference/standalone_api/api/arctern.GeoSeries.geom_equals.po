@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 18:54+0800\n"
+"POT-Creation-Date: 2020-06-12 17:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,14 +53,16 @@ msgstr ""
 #: arctern.GeoSeries.geom_equals:10 of
 msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
-"whether it equals the geometries in ``other``."
+"whether it equals the geometries in ``other``. * *True*: The first "
+"geometry equals the other. * *False*: The first geometry does not equal "
+"the other."
 msgstr ""
 
 #: arctern.GeoSeries.geom_equals of
 msgid "返回类型"
 msgstr ""
 
-#: arctern.GeoSeries.geom_equals:14 of
+#: arctern.GeoSeries.geom_equals:16 of
 msgid "实际案例"
 msgstr ""
 
@@ -79,4 +81,11 @@ msgstr ""
 
 #~ msgid "example"
 #~ msgstr "例子"
+
+#~ msgid ""
+#~ "Mask of boolean values for each "
+#~ "element in the GeoSeries that indicates"
+#~ " whether it equals the geometries in"
+#~ " ``other``."
+#~ msgstr ""
 

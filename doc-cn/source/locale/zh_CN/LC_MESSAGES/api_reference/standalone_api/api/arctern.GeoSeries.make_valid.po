@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-11 17:51+0800\n"
+"POT-Creation-Date: 2020-06-12 17:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,8 @@ msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.make_valid:5 of
-msgid "A GeoSeries with valid geometries."
+#, fuzzy
+msgid "Sequence of valid geometries."
 msgstr "具有有效几何体的 GeoSeries。"
 
 #: arctern.GeoSeries.make_valid of

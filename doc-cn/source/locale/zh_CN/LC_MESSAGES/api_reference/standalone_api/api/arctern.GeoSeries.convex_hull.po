@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 15:09+0800\n"
+"POT-Creation-Date: 2020-06-12 17:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,8 +48,8 @@ msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.convex_hull:11 of
-msgid "Convex Geometry of each geometry in the GeoSeries."
-msgstr "GeoSeries 中每个几何体对应的凸几何体。"
+msgid "Sequence of convex geometries."
+msgstr ""
 
 #: arctern.GeoSeries.convex_hull of
 msgid "返回类型"
@@ -64,7 +64,9 @@ msgid ""
 "For geometry collections, such as MULTIPOLYGON, MULTISURFACE, and "
 "GEOMETRYCOLLECTION, ``convex_hull`` ignores point and line elements and "
 "creates the smallest convex geometry that encloses all polygon elements."
-msgstr "对于 MULTIPOLYGON，MULTISURFACE 和 GEOMETRYCOLLECTION 等几何体集合，``convex_hull`` 忽略点和线元素，并创建包围所有多边形元素的最小凸几何体。"
+msgstr ""
+"对于 MULTIPOLYGON，MULTISURFACE 和 GEOMETRYCOLLECTION 等几何体集合，``convex_hull`` "
+"忽略点和线元素，并创建包围所有多边形元素的最小凸几何体。"
 
 #: arctern.GeoSeries.convex_hull:18 of
 msgid ""
@@ -90,13 +92,17 @@ msgid ""
 " geometries in the GEOMETRYCOLLECTION object. Since semicircle and "
 "rectangle are convex, the returned convex geometry is just a combination "
 "of the two gemetries and looks the same as the original."
-msgstr "使用 ``convex_hull`` 来获取最小凸几何体，该凸几何体将 GEOMETRYCOLLECTION 对象中的所有几何体包围起来。由于半圆形和矩形是凸形的，因此返回的凸几何体只是两个几何体的组合，并且看起来与原来的几何体相同。"
+msgstr ""
+"使用 ``convex_hull`` 来获取最小凸几何体，该凸几何体将 GEOMETRYCOLLECTION "
+"对象中的所有几何体包围起来。由于半圆形和矩形是凸形的，因此返回的凸几何体只是两个几何体的组合，并且看起来与原来的几何体相同。"
 
 #: arctern.GeoSeries.convex_hull:47 of
 msgid ""
 "``convex_hull`` will not make any changes to POINT, MULTIPOINT, "
 "LINESTRING, MULTILINESTRING, and CIRCULARSTRING."
-msgstr "``convex_hull`` 不会对 POINT，MULTIPOINT，LINESTRING，MULTILINESTRING 和 CIRCULARSTRING 进行任何更改。"
+msgstr ""
+"``convex_hull`` 不会对 POINT，MULTIPOINT，LINESTRING，MULTILINESTRING 和 "
+"CIRCULARSTRING 进行任何更改。"
 
 #: arctern.GeoSeries.convex_hull:49 of
 msgid "The GeoSeries ``s1`` below contains a point, a line, and a convex polygon."
@@ -113,4 +119,7 @@ msgstr "从 ``convex_hull`` 返回的几何体与原来的几何体完全相同�
 
 #~ msgid "example"
 #~ msgstr "例子"
+
+#~ msgid "Convex Geometry of each geometry in the GeoSeries."
+#~ msgstr "GeoSeries 中每个几何体对应的凸几何体。"
 
