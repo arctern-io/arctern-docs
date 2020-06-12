@@ -65,7 +65,7 @@ msgid "返回类型"
 msgstr ""
 
 #: arctern.GeoSeries.buffer:13 of
-msgid "实际案例"
+msgid "例子"
 msgstr ""
 
 #~ msgid ""

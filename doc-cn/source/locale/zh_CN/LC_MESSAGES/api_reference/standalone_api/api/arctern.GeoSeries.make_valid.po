@@ -46,7 +46,7 @@ msgid "返回类型"
 msgstr ""
 
 #: arctern.GeoSeries.make_valid:9 of
-msgid "实际案例"
+msgid "例子"
 msgstr ""
 
 #~ msgid "Geometries that are made to valid."

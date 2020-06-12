@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "For each geometry in the GeoSeries and the corresponding geometry given "
 "in ``other``, tests whether they intersect each other."
-msgstr "对于 GeoSeries 中的每个几何体以及 ``other`` 中给出的相应几何体，检测它们是否相交。"
+msgstr "对于 GeoSeries 中的每个几何体以及 ``other`` 中给出的对应的几何体，检测它们是否相交。"
 
 #: arctern.GeoSeries.intersects of
 msgid "参数"
@@ -39,10 +39,7 @@ msgid ""
 "GeoSeries and ``other``. * If ``other`` is a GeoSeries, this function "
 "tests the intersection relation between each geometry in the GeoSeries "
 "and the geometry with the same index in ``other``."
-msgstr ""
-"用于测试与第一个 GeoSeries 中的几何体相交的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检测 "
-"GeoSeries 中的每个几何体与 ``other`` 的相交关系。* 如果 ``other`` 是一个 GeoSeries，那么此方法检测 "
-"GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体之间的相交关系。"
+msgstr "用于测试与第一个 GeoSeries 中的几何体是否相交的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 的相交关系。* 如果 ``other`` 是一个 GeoSeries，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体之间的相交关系。"
 
 #: arctern.GeoSeries.intersects of
 msgid "返回"
@@ -59,7 +56,7 @@ msgid "返回类型"
 msgstr ""
 
 #: arctern.GeoSeries.intersects:12 of
-msgid "实际案例"
+msgid "例子"
 msgstr ""
 
 #: arctern.GeoSeries.intersects:21 of
