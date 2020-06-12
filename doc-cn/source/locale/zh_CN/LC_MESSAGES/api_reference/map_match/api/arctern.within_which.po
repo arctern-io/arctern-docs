@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-07 10:00+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,41 +23,35 @@ msgstr ""
 
 #: arctern.within_which:1 of
 msgid ""
-"For each geometry in left, search geometries that satisfy \"within\" "
-"relationship in right"
+"For each geometry in ``left``, search for a geometry in ``right`` that "
+"contains it."
 msgstr ""
 
 #: arctern.within_which of
 msgid "参数"
 msgstr ""
 
-#: arctern.within_which:4 arctern.within_which:7 of
-msgid "Sequence of Geometries"
-msgstr ""
-
-#: arctern.within_which of
-msgid "返回类型"
+#: arctern.within_which:3 arctern.within_which:5 of
+msgid "Sequence of geometries."
 msgstr ""
 
 #: arctern.within_which of
 msgid "返回"
 msgstr ""
 
-#: arctern.within_which:10 of
+#: arctern.within_which:8 of
 msgid ""
-"For each `left[i]`, find `j` satisfying that `left[i]` is within "
-"`right[j]`. When there are multiple candidates, return one of them. When "
-"not exists, return `pandas.NA`"
+"The indexes of geometries in ``right``. For example, the value *j* with "
+"index *i* in the returned Series indicates that the geometry ``left[i]`` "
+"is within the geometry ``right[j]``. * When there are multiple "
+"candidates, return one of them. * When there is no candidate, return NA."
 msgstr ""
 
 #: arctern.within_which of
-msgid "example"
+msgid "返回类型"
 msgstr ""
 
-#~ msgid ""
-#~ "Calculate spatial join of two GeoSeries"
-#~ " :type left: GeoSeries :type right: "
-#~ "GeoSeries :rtype: Series(dtype: object) "
-#~ ":example:"
-#~ msgstr ""
+#: arctern.within_which:15 of
+msgid "实际案例"
+msgstr ""
 

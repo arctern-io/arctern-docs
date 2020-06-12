@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 15:09+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,13 +23,13 @@ msgstr ""
 
 #: arctern.GeoSeries.is_simple:1 of
 msgid "Tests whether each geometry in the GeoSeries is simple."
-msgstr "检测 GeoSeries 中的每个几何体是否为“简单”的。"
+msgstr ""
 
 #: arctern.GeoSeries.is_simple:3 of
 msgid ""
 "Here \"simple\" means that a geometry has no anomalous point, such as a "
 "self-intersection or a self-tangency."
-msgstr "此处的“简单”是指几何体没有异常点，例如自相交或自相切。"
+msgstr ""
 
 #: arctern.GeoSeries.is_simple of
 msgid "返回"
@@ -37,35 +37,16 @@ msgstr ""
 
 #: arctern.GeoSeries.is_simple:5 of
 msgid ""
-"* *True:* All geometries are simple. * *False:* At least one geometry is "
-"not simple."
-msgstr "* *True:* 所有几何体都是“简单”的。* *False:* 至少一个几何体不是“简单”的。"
-
-#: arctern.GeoSeries.is_simple:7 of
-msgid "*True:* All geometries are simple."
-msgstr "*True:* 所有几何体都是“简单”的。"
-
-#: arctern.GeoSeries.is_simple:8 of
-msgid "*False:* At least one geometry is not simple."
-msgstr "*False:* 至少一个几何体不是“简单”的。"
+"Mask of boolean values for each element in the GeoSeries that indicates "
+"whether an element is simple. * *True:* The geometry is simple. * "
+"*False:* The geometry is not simple."
+msgstr ""
 
 #: arctern.GeoSeries.is_simple of
 msgid "返回类型"
 msgstr ""
 
-#: arctern.GeoSeries.is_simple:12 of
+#: arctern.GeoSeries.is_simple:11 of
 msgid "实际案例"
 msgstr ""
-
-#~ msgid "examples"
-#~ msgstr "例子"
-
-#~ msgid ""
-#~ "**Series(dtype** --  * *True:* All "
-#~ "geometries are simple. * *False:* At "
-#~ "least one geometry is not simple."
-#~ msgstr ""
-
-#~ msgid "**Series(dtype** --"
-#~ msgstr ""
 

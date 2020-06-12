@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 15:09+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Tests whether each geometry in the GeoSeries is in valid format, such as "
 "WKT and WKB formats."
-msgstr "检测 GeoSeries 中的每个几何体是否为有效格式，例如 WKT 和 WKB 格式。"
+msgstr ""
 
 #: arctern.GeoSeries.is_valid of
 msgid "返回"
@@ -33,38 +33,30 @@ msgstr ""
 
 #: arctern.GeoSeries.is_valid:3 of
 msgid ""
-"* *True:* All geometries are valid. * *False:* At least one geometry is "
-"invalid."
-msgstr "* *True:* 所有几何体均有效。* *False:* 至少一个几何体无效。"
+"* *Series* * *Mask of boolean values for each element in the GeoSeries "
+"that indicates whether an element is valid.* --    * *True:* The geometry"
+" is valid.   * *False:* The geometry is invalid."
+msgstr ""
 
-#: arctern.GeoSeries.is_valid:5 of
-msgid "*True:* All geometries are valid."
-msgstr "*True:* 所有几何体均有效。"
+#: arctern.GeoSeries.is_valid:3 of
+msgid "*Series*"
+msgstr ""
+
+#: arctern.GeoSeries.is_valid:4 of
+msgid ""
+"*Mask of boolean values for each element in the GeoSeries that indicates "
+"whether an element is valid.* --"
+msgstr ""
 
 #: arctern.GeoSeries.is_valid:6 of
-msgid "*False:* At least one geometry is invalid."
-msgstr "*False:* 至少一个几何体无效。"
+msgid "*True:* The geometry is valid."
+msgstr ""
 
-#: arctern.GeoSeries.is_valid of
-msgid "返回类型"
+#: arctern.GeoSeries.is_valid:7 of
+msgid "*False:* The geometry is invalid."
 msgstr ""
 
 #: arctern.GeoSeries.is_valid:10 of
 msgid "实际案例"
 msgstr ""
-
-#~ msgid "Check if each geometry is of valid geometry format."
-#~ msgstr "检查几何体是否合法。"
-
-#~ msgid "examples"
-#~ msgstr "例子"
-
-#~ msgid ""
-#~ "**Series(dtype** --  * *True:* All "
-#~ "geometries are valid. * *False:* At "
-#~ "least one geometry is invalid."
-#~ msgstr ""
-
-#~ msgid "**Series(dtype** --"
-#~ msgstr ""
 

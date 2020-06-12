@@ -36,8 +36,6 @@ def replace(source_api_path):
         if html_file.endswith('.html'):
            with open(source_api_path + os.sep + html_file, 'r') as f:
                 contents = f.read()
-           contents = contents.replace("<li class=\"toctree-l2\"><a class=\"reference internal\"","<li class=\"toctree-l2\"><a target=\"_blank\" class=\"reference internal\"")
-           contents = contents.replace("<li class=\"toctree-l1\"><a class=\"reference internal\"","<li class=\"toctree-l1\"><a target=\"_blank\" class=\"reference internal\"")
            contents = contents.replace("<a class=\"reference external\"","<a target=\"_blank\" class=\"reference external\"")
            with open(source_api_path + os.sep + html_file, 'w') as f:
                 f.write(contents)

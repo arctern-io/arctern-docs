@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 18:54+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,23 +59,7 @@ msgstr "GeoSeries 中每个元素对应的布尔值，指示它是否与 ``other
 msgid "返回类型"
 msgstr ""
 
-#: arctern.GeoSeries.geom_equals:14 of
+#: arctern.GeoSeries.geom_equals:16 of
 msgid "实际案例"
 msgstr ""
-
-#~ msgid "Check whether each geometry is \"spatially equal\" to other."
-#~ msgstr "检查任意两个几何体是否“等价”。"
-
-#~ msgid ""
-#~ "The geometries to test if each "
-#~ "geometry is equals. Can be scalar "
-#~ "WKB formed bytes object, or a "
-#~ "GeoSeries."
-#~ msgstr "用来测试几何体是否相同的几何体。它可为标量 WKB 格式的字节对象或 GeoSeries。"
-
-#~ msgid "A Series with value True if each geometry is spatially equals to other."
-#~ msgstr "返回值为 True 的 Series 表示每个几何体都“等价”。"
-
-#~ msgid "example"
-#~ msgstr "例子"
 

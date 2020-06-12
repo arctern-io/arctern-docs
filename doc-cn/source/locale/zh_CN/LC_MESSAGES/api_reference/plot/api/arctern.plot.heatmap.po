@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-07 10:00+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,50 +22,50 @@ msgid "arctern.plot.heatmap"
 msgstr ""
 
 #: arctern.plot.heatmap:1 of
-msgid "Plot heatmap in matplotlibs"
+msgid "Plots a heat map in matplotlib."
 msgstr ""
 
 #: arctern.plot.heatmap of
 msgid "参数"
 msgstr ""
 
-#: arctern.plot.heatmap:4 of
-msgid "Matplotlib axes object on which to add the basemap."
+#: arctern.plot.heatmap:3 of
+msgid "Axes where geometries will be plotted."
+msgstr ""
+
+#: arctern.plot.heatmap:5 of
+msgid "Sequence of points."
 msgstr ""
 
 #: arctern.plot.heatmap:7 of
-msgid "Sequence of Points"
+msgid "Weights of point intensity."
 msgstr ""
 
-#: arctern.plot.heatmap:10 of
-msgid "Weights of point intensity"
+#: arctern.plot.heatmap:9 of
+msgid "Bounding box of the map. For example, [west, south, east, north]."
+msgstr ""
+
+#: arctern.plot.heatmap:11 of
+msgid "Zoom level of the map."
 msgstr ""
 
 #: arctern.plot.heatmap:13 of
-msgid "Specify the bounding rectangle [west, south, east, north]."
+msgid ""
+"The Coordinate Reference System (CRS) set to all geometries. Only "
+"supports SRID as a WKT representation of CRS by now."
 msgstr ""
 
 #: arctern.plot.heatmap:16 of
-msgid "Zoom level of heatmap. Default as auto."
+msgid "Aggregation type."
 msgstr ""
 
-#: arctern.plot.heatmap:19 of
+#: arctern.plot.heatmap:18 of
 msgid ""
-"Coordinate Reference System of the geometry objects. Must be SRID formed,"
-" e.g. 'EPSG:4326' or 'EPSG:3857' Default as 'EPSG:3857'"
+"Extra parameters passed to `contextily.add_basemap. "
+"<https://contextily.readthedocs.io/en/latest/reference.html>`_"
 msgstr ""
 
-#: arctern.plot.heatmap:24 of
-msgid "Aggregation type of data processing. Default as 'max'"
-msgstr ""
-
-#: arctern.plot.heatmap:27 of
-msgid ""
-"Extra parameters will be passed to contextily.add_basemap. See "
-"https://contextily.readthedocs.io/en/latest/reference.html for details"
-msgstr ""
-
-#: arctern.plot.heatmap of
-msgid "example"
+#: arctern.plot.heatmap:22 of
+msgid "实际案例"
 msgstr ""
 

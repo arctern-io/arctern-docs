@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-11 17:22+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,11 +28,10 @@ msgid ""
 msgstr ""
 
 #: arctern.GeoSeries.distance_sphere:3 of
-#, fuzzy
 msgid ""
 "This function uses a spherical earth and radius derived from the spheroid"
 " defined by the SRID."
-msgstr "使用 SRID 定义的地球和半径。只有'EPSG:4326'能够计算球面距离。"
+msgstr ""
 
 #: arctern.GeoSeries.distance_sphere of
 msgid "参数"
@@ -54,11 +53,10 @@ msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.distance_sphere:10 of
-#, fuzzy
 msgid ""
-"A Series that contains the spherical distance between each geometry in "
-"the GeoSeries and the corresponding geometry given in ``other``."
-msgstr "Series 包含每个几何体与其他几何体之间的球面距离。"
+"Spherical distance between each geometry in the GeoSeries and the "
+"corresponding geometry given in ``other``."
+msgstr ""
 
 #: arctern.GeoSeries.distance_sphere of
 msgid "返回类型"
@@ -77,37 +75,4 @@ msgstr ""
 #: arctern.GeoSeries.distance_sphere:18 of
 msgid "实际案例"
 msgstr ""
-
-#~ msgid "Return minimum distance in meters between two lon/lat points."
-#~ msgstr "计算地球表面两点之间的最短球面距离（单位为米）。"
-
-#~ msgid ""
-#~ "The geometries to calculate the "
-#~ "spherical distance to each geometry. Can"
-#~ " be scalar WKB formed bytes object,"
-#~ " or a GeoSeries. If other is "
-#~ "scalar bytes object, we will assume "
-#~ "other's crs is 'EPSG:4326'."
-#~ msgstr ""
-#~ "用来计算每两个几何体之间的球面距离的几何体。它可以是标量 WKB 格式的字节对象或 "
-#~ "GeoSeries。如果另一个是标量字节对象，我们假定另一个的坐标参考系是'EPSG:4326'。"
-
-#~ msgid "example"
-#~ msgstr "例子"
-
-#~ msgid ""
-#~ "The geometry or GeoSeries to calculate"
-#~ " whether the spherical distance between "
-#~ "it and the geometries in the first"
-#~ " GeoSeries. * If ``other`` is a "
-#~ "geometry, this function calculates the "
-#~ "spherical distance between each geometry "
-#~ "in the GeoSeries and ``other``. The "
-#~ "``crs`` of ``other`` is \"EPSG:4326\" bu"
-#~ " default. * If ``other`` is a "
-#~ "GeoSeries, this function calculates the "
-#~ "spherical distance between each geometry "
-#~ "in the GeoSeries and the geometry "
-#~ "with the same index in ``other``."
-#~ msgstr ""
 

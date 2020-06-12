@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 15:09+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,15 +23,15 @@ msgstr ""
 
 #: arctern.GeoSeries.npoints:1 of
 msgid "Returns the number of points for each geometry in the GeoSeries."
-msgstr "返回 GeoSeries 中每个几何体的点的数量。"
+msgstr ""
 
 #: arctern.GeoSeries.npoints of
 msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.npoints:3 of
-msgid "Number of points for each geometry in the GeoSeries."
-msgstr "GeoSeries 中每个几何体的点的数量。"
+msgid "Number of points of each geometry in the GeoSeries."
+msgstr ""
 
 #: arctern.GeoSeries.npoints of
 msgid "返回类型"
@@ -40,10 +40,4 @@ msgstr ""
 #: arctern.GeoSeries.npoints:7 of
 msgid "实际案例"
 msgstr ""
-
-#~ msgid "Calculates the points number for each geometry."
-#~ msgstr "计算给定几何体中顶点/端点的数量。"
-
-#~ msgid "example"
-#~ msgstr "例子"
 
