@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-11 17:22+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,15 +28,11 @@ msgid ""
 "between them."
 msgstr "对于 GeoSeries 中的每个几何体以及 ``other`` 中给出的对应几何体，计算它们之间的最小 2D 笛卡尔（平面）距离。"
 
-#: arctern.GeoSeries.distance:6 of
-msgid "other"
+#: arctern.GeoSeries.distance of
+msgid "参数"
 msgstr ""
 
-#: of
-msgid "geometry or GeoSeries"
-msgstr ""
-
-#: arctern.GeoSeries.distance:4 of
+#: arctern.GeoSeries.distance:3 of
 msgid ""
 "The geometry or GeoSeries to calculate the distance between it and the "
 "geometries in the first GeoSeries. * If ``other`` is a geometry, this "
@@ -52,9 +48,15 @@ msgstr ""
 
 #: arctern.GeoSeries.distance:8 of
 msgid ""
+<<<<<<< HEAD
 "A Series that contains the distances between each geometry in the "
 "GeoSeries and the corresponding geometry given in ``other``."
 msgstr "包含 GeoSeries 中每个几何体 与 ``other`` 中给定的对应几何之间的距离的 Series。"
+=======
+"Distance between each geometry in the GeoSeries and the corresponding "
+"geometry given in ``other``."
+msgstr ""
+>>>>>>> 9e6fe2492d921a7096390a9ee5430eed887fc4dc
 
 #: arctern.GeoSeries.distance of
 msgid "返回类型"
@@ -63,38 +65,4 @@ msgstr ""
 #: arctern.GeoSeries.distance:12 of
 msgid "实际案例"
 msgstr ""
-
-#~ msgid ""
-#~ "Calculates the minimum 2D Cartesian "
-#~ "(planar) distance between each geometry "
-#~ "and other."
-#~ msgstr "计算每两个几何体之间的最短二维笛卡尔（平面）距离。"
-
-#~ msgid "参数"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The geometries to calculate the distance"
-#~ " to each geometry. Can be scalar "
-#~ "WKB formed bytes object, or a "
-#~ "GeoSeries."
-#~ msgstr "用来计算每个几何体之间的距离的几何体。它可以是标量 WKB 格式的字节对象或GeoSeries。"
-
-#~ msgid "example"
-#~ msgstr "例子"
-
-#~ msgid ""
-#~ "The geometry or GeoSeries to calculate"
-#~ " whether the distance between it and"
-#~ " the geometries in the first "
-#~ "GeoSeries. * If ``other`` is a "
-#~ "geometry, this function calculates the "
-#~ "distance between each geometry in the"
-#~ " GeoSeries and ``other``. * If "
-#~ "``other`` is a GeoSeries, this function"
-#~ " calculates the distance between each "
-#~ "geometry in the GeoSeries and the "
-#~ "geometry with the same index in "
-#~ "``other``."
-#~ msgstr ""
 

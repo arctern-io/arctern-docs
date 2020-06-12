@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 10:53+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,39 +23,42 @@ msgstr ""
 
 #: arctern.near_road:1 of
 msgid ""
-"Check if there is a road within distance meters of each point. The points"
-" passed do not need to be part of a continuous path."
+"Tests whether there is a road within the given ``distance`` of all "
+"``points``. The points do not need to be part of a continuous path."
 msgstr ""
 
 #: arctern.near_road of
 msgid "参数"
 msgstr ""
 
-#: arctern.near_road:4 of
-msgid "LineStrings in WKB form."
+#: arctern.near_road:3 of
+msgid "LINGSTRING objects in WKB format."
+msgstr ""
+
+#: arctern.near_road:5 of
+msgid "POINT objects in WKB format."
 msgstr ""
 
 #: arctern.near_road:7 of
-msgid "Points in WKB form."
-msgstr ""
-
-#: arctern.near_road:10 of
-msgid "distance meters around the point in points"
-msgstr ""
-
-#: arctern.near_road of
-msgid "返回类型"
+msgid "Searching distance around the points, by default 100."
 msgstr ""
 
 #: arctern.near_road of
 msgid "返回"
 msgstr ""
 
-#: arctern.near_road:13 of
-msgid "True if there is a road within 100 meters of the point."
+#: arctern.near_road:10 of
+msgid ""
+"A Series that contains only one boolean value that indicates whether "
+"there is a road within the given ``distance`` of all ``points``. * "
+"*True*: The road exists. * *False*: The road does not exist."
 msgstr ""
 
 #: arctern.near_road of
-msgid "example"
+msgid "返回类型"
+msgstr ""
+
+#: arctern.near_road:16 of
+msgid "实际案例"
 msgstr ""
 

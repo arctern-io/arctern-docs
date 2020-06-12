@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-07 10:00+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,42 +22,42 @@ msgid "arctern.plot.iconviz"
 msgstr ""
 
 #: arctern.plot.iconviz:1 of
-msgid "Plot points as icons on map in Matplotlib"
+msgid "Plots an icon map in Matplotlib."
 msgstr ""
 
 #: arctern.plot.iconviz of
 msgid "参数"
 msgstr ""
 
-#: arctern.plot.iconviz:4 of
-msgid "Matplotlib axes object on which to add the basemap."
+#: arctern.plot.iconviz:3 of
+msgid "Axes where geometries will be plotted."
+msgstr ""
+
+#: arctern.plot.iconviz:5 of
+msgid "Sequence of points."
 msgstr ""
 
 #: arctern.plot.iconviz:7 of
-msgid "Sequence of Points"
+msgid "Bounding box of the map. For example, [west, south, east, north]."
 msgstr ""
 
-#: arctern.plot.iconviz:10 of
-msgid "Specify the bounding rectangle [west, south, east, north]."
+#: arctern.plot.iconviz:9 of
+msgid "Absolute path to icon file."
 msgstr ""
 
-#: arctern.plot.iconviz:13 of
-msgid "Absolute path to icon file"
-msgstr ""
-
-#: arctern.plot.iconviz:16 of
+#: arctern.plot.iconviz:11 of
 msgid ""
-"Coordinate Reference System of the geometry objects. Must be SRID formed,"
-" e.g. 'EPSG:4326' or 'EPSG:3857' Default as 'EPSG:3857'"
+"The Coordinate Reference System (CRS) set to all geometries. Only "
+"supports SRID as a WKT representation of CRS by now."
 msgstr ""
 
-#: arctern.plot.iconviz:21 of
+#: arctern.plot.iconviz:14 of
 msgid ""
-"Extra parameters will be passed to contextily.add_basemap. See "
-"https://contextily.readthedocs.io/en/latest/reference.html for details"
+"Extra parameters passed to `contextily.add_basemap. "
+"<https://contextily.readthedocs.io/en/latest/reference.html>`_"
 msgstr ""
 
-#: arctern.plot.iconviz of
-msgid "example"
+#: arctern.plot.iconviz:18 of
+msgid "实际案例"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-07 10:00+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,75 +22,55 @@ msgid "arctern.plot.plot\\_geometry"
 msgstr ""
 
 #: arctern.plot.plot_geometry:1 of
-msgid ""
-"Plot a collection of geometries to `ax`. Parameters 'linewidth', "
-"'linestyle', 'edgecolor', 'facecolor', 'color', 'marker', 'markersize' "
-"are used to describe the style of plotted figure."
-msgstr ""
-
-#: arctern.plot.plot_geometry:4 of
-msgid ""
-"For geometry types `Polygon` and `MultiPolygon`, only 'linewidth', "
-"'linestyle', 'edgecolor', 'facecolor' are effective."
-msgstr ""
-
-#: arctern.plot.plot_geometry:7 of
-msgid ""
-"For geometry types `Linestring` and `MultiLinestring`, only 'color', "
-"'linewidth', 'linestyle' are effective."
-msgstr ""
-
-#: arctern.plot.plot_geometry:9 of
-msgid ""
-"For geometry types `Point` and `MultiPoint`, only 'color', 'marker', "
-"'markersize' are effective."
+msgid "Plots a collection of geometries."
 msgstr ""
 
 #: arctern.plot.plot_geometry of
 msgid "参数"
 msgstr ""
 
-#: arctern.plot.plot_geometry:12 of
+#: arctern.plot.plot_geometry:3 of
 msgid "The axes where geometries will be plotted."
 msgstr ""
 
-#: arctern.plot.plot_geometry:15 of
-msgid "sequence of geometries."
+#: arctern.plot.plot_geometry:5 of
+msgid "Sequence of geometries."
 msgstr ""
 
-#: arctern.plot.plot_geometry:18 of
-msgid "The width of line, the default value is 1.0."
-msgstr ""
-
-#: arctern.plot.plot_geometry:21 of
-msgid "The style of the line， the default value is '-'."
+#: arctern.plot.plot_geometry:7 of
+msgid ""
+"``style_kwds`` specify the properties that describe the style of "
+"geometric graphs. Here is a list of availble style properties:  "
+"+----------+------------------+-------+--------------------------------------------------+"
+" |Property  |Description       |Default|Applied to"
+"                                        | "
+"+==========|==================|=======+==================================================+"
+" |color     |str, color        |'C0'   |Point, MultiPoint, Linestring, "
+"MultiLinestring    | |edgecolor |str, edge color   |'black'|Polygon, "
+"MultiPolygon                             | |facecolor |str, face color   "
+"|'C0'   |Polygon, MultiPolygon                             | |linewidth "
+"|float, line width |1.0    |Linestring, MultiLinestring, Polygon, "
+"MultiPolygon| |linestyle |str, line style   |'-'    |Linestring, "
+"MultiLinestring, Polygon, MultiPolygon| |marker    |str, marker style "
+"|'o'    |Point, MultiPoint                                 | "
+"|markersize|float, marker size|6.0    |Point, MultiPoint"
+"                                 | |alpha     |float, opacity    |1.0    "
+"|All                                               | "
+"+----------+------------------|-------+--------------------------------------------------+"
 msgstr ""
 
 #: arctern.plot.plot_geometry:24 of
-msgid "The edge color of the geometry, the default value is 'black'."
+msgid "提示"
 msgstr ""
 
-#: arctern.plot.plot_geometry:27 of
-msgid "The color of the face of the geometry, the default value is 'C0'."
+#: arctern.plot.plot_geometry:25 of
+msgid ""
+"See `matplotlib.pyplot.plot document "
+"<https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html?highlight=plot#matplotlib.pyplot.plot>`_"
+" for detailed description of marker styles, line styles, and colors."
 msgstr ""
 
-#: arctern.plot.plot_geometry:30 of
-msgid "The color of the geometry, the default value is 'C0'."
-msgstr ""
-
-#: arctern.plot.plot_geometry:33 of
-msgid "The shape of point, the default value is 'o'."
-msgstr ""
-
-#: arctern.plot.plot_geometry:36 of
-msgid "The size of points, the default value is 6.0."
-msgstr ""
-
-#: arctern.plot.plot_geometry:39 of
-msgid "The transparency of the geometry, the default value is 1.0."
-msgstr ""
-
-#: arctern.plot.plot_geometry of
-msgid "example"
+#: arctern.plot.plot_geometry:28 of
+msgid "实际案例"
 msgstr ""
 

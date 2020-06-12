@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-11 17:51+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Transforms the Coordinate Reference System (CRS) of the GeoSeries to "
 "`crs`."
-msgstr "将 GeoSeries 的坐标参考系（Coordinate Reference System）转换为 `crs`。"
+msgstr ""
 
 #: arctern.GeoSeries.to_crs of
 msgid "参数"
@@ -36,7 +36,7 @@ msgid ""
 "A string representation of CRS. The string is made up of an authority "
 "code and a SRID (Spatial Reference Identifier), for example, "
 "``\"EPSG:4326\"``."
-msgstr "坐标参考系的字符串表示。该字符串由机构代码和 SRID（空间参考标识符）组成，例如 ``\"EPSG:4326\"``。"
+msgstr ""
 
 #: arctern.GeoSeries.to_crs of
 msgid "返回"
@@ -44,7 +44,7 @@ msgstr ""
 
 #: arctern.GeoSeries.to_crs:7 of
 msgid "GeoSeries with transformed CRS."
-msgstr "具有转换后的坐标参考系的 GeoSeries。"
+msgstr ""
 
 #: arctern.GeoSeries.to_crs of
 msgid "返回类型"
@@ -63,23 +63,4 @@ msgstr "Arctern 支持在 `Spatial Reference <https://spatialreference.org/>`_ �
 #: arctern.GeoSeries.to_crs:15 of
 msgid "例子"
 msgstr ""
-
-#~ msgid ""
-#~ "Transform each geometry to a different"
-#~ " coordinate reference system. The ``crs``"
-#~ " attribute on the current GeoSeries "
-#~ "must be set."
-#~ msgstr "转换几何体的坐标参考系，必须设置当前的 GeoSeries 的 ``crs`` 属性。"
-
-#~ msgid ""
-#~ "Coordinate Reference System of the "
-#~ "geometry objects. Must be SRID formed,"
-#~ " e.g. \"EPSG:4326\""
-#~ msgstr "几何体的坐标参考系必须是 SRID 格式的，例如 \"EPSG:4326\"。"
-
-#~ msgid "example"
-#~ msgstr "例子"
-
-#~ msgid "例子"
-#~ msgstr ""
 

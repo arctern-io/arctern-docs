@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-09 18:00+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.equals:1 of
 msgid "Tests whether two objects contain the same elements."
-msgstr "测试两个对象是否包含相同元素。"
+msgstr ""
 
 #: arctern.GeoSeries.equals:3 of
 msgid ""
@@ -31,7 +31,7 @@ msgid ""
 "see if they have the same shape and elements. NaNs in the same location "
 "are considered equal. The column headers do not need to have the same "
 "type, but the elements within the columns must be the same dtype."
-msgstr "此方法将两个 GeoSeries 相互比较，以检查它们是否具有相同的形状和元素。在同一位置的 NaN 视为相等。列标题不必具有相同的类型，但是列中的元素必须具有相同的 dtype。"
+msgstr ""
 
 #: arctern.GeoSeries.equals of
 msgid "参数"
@@ -39,7 +39,7 @@ msgstr ""
 
 #: arctern.GeoSeries.equals:5 of
 msgid "The other GeoSeries to be compared with the first GeoSeries."
-msgstr "与第一个 GeoSeries 比较的另一个 GeoSeries。"
+msgstr ""
 
 #: arctern.GeoSeries.equals of
 msgid "返回"
@@ -49,15 +49,15 @@ msgstr ""
 msgid ""
 "* *True:* All geometries are the same in both objects. * *False:* The two"
 " objects are different in shape or elements."
-msgstr "* *True：* 两个对象中的所有几何体都相同。* *False：* 两个对象的形状或元素不同。"
+msgstr ""
 
 #: arctern.GeoSeries.equals:10 of
 msgid "*True:* All geometries are the same in both objects."
-msgstr "* *True：* 两个对象中的所有几何形状都相同。"
+msgstr ""
 
 #: arctern.GeoSeries.equals:11 of
 msgid "*False:* The two objects are different in shape or elements."
-msgstr "* *False：* 这两个对象的形状或元素不同。"
+msgstr ""
 
 #: arctern.GeoSeries.equals of
 msgid "返回类型"
@@ -66,20 +66,4 @@ msgstr ""
 #: arctern.GeoSeries.equals:15 of
 msgid "实际案例"
 msgstr ""
-
-#~ msgid ""
-#~ "This function allows two GeoSeries to"
-#~ " be compared against each other to"
-#~ " see if they have the same "
-#~ "shape and geometries (same wkb bytes)."
-#~ " NaNs in the same location are "
-#~ "considered equal. The column headers do"
-#~ " not need to have the same "
-#~ "type, but the elements within the "
-#~ "columns must be the same dtype."
-#~ msgstr ""
-#~ "此方法将两个 GeoSeries 相互比较，以检查它们是否具有相同的形状和元素（相同的 WKB 字节）。在同一位置的 NaN 视为相等。列标题不必具有相同的类型，但是列中的元素必须具有相同的 dtype。"
-
-#~ msgid "example"
-#~ msgstr "例子"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-11 17:51+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,15 +35,15 @@ msgstr ""
 
 #: arctern.GeoSeries.simplify:3 of
 msgid "Distance tolerance."
-msgstr "距离偏差。"
+msgstr ""
 
 #: arctern.GeoSeries.simplify of
 msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.simplify:6 of
-msgid "Simplified geometries."
-msgstr "简化后的几何体。"
+msgid "Sequence of simplified geometries."
+msgstr ""
 
 #: arctern.GeoSeries.simplify of
 msgid "返回类型"
@@ -52,31 +52,4 @@ msgstr ""
 #: arctern.GeoSeries.simplify:10 of
 msgid "例子"
 msgstr ""
-
-#~ msgid ""
-#~ "Returns a \"simplified\" version for "
-#~ "each geometry using the Douglas-Peucker"
-#~ " algorithm."
-#~ msgstr ""
-
-#~ msgid "type"
-#~ msgstr ""
-
-#~ msgid "tolerance: float"
-#~ msgstr ""
-
-#~ msgid "example"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Returns a simplified version for each"
-#~ " geometry in the GeoSeries using the"
-#~ " Douglas-Peucker algorithm."
-#~ msgstr ""
-
-#~ msgid "The maximum distance between a point on a linestring and a curve."
-#~ msgstr ""
-
-#~ msgid "例子"
-#~ msgstr ""
 

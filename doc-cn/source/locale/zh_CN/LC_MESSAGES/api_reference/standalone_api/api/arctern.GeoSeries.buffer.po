@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-11 17:51+0800\n"
+"POT-Creation-Date: 2020-06-12 19:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,18 +29,16 @@ msgid ""
 msgstr ""
 
 #: arctern.GeoSeries.buffer:3 of
-#, fuzzy
 msgid ""
 "If ``distance`` > 0, the new geometry is a scaled-up version outside the "
 "original geometry."
-msgstr "如果 ``distance`` > 0，那么新几何体是原来的几何体之外的按比例放大版本。"
+msgstr ""
 
 #: arctern.GeoSeries.buffer:4 of
-#, fuzzy
 msgid ""
 "If ``distance`` < 0, the new geometry is a scaled-down version inside the"
 " original geometry."
-msgstr "如果 ``distance`` < 0，则新几何体是原来的几何体内部的按比例缩小版本。"
+msgstr ""
 
 #: arctern.GeoSeries.buffer of
 msgid "参数"
@@ -55,52 +53,16 @@ msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.buffer:9 of
-msgid ""
-"GeoSeries that contains the new geometries at a distance of ``distance`` "
-"from the original."
-msgstr "GeoSeries 包含与原来的几何体距离为 ``distance`` 的新几何体。"
+msgid "Sequence of geometries."
+msgstr ""
 
 #: arctern.GeoSeries.buffer of
 msgid "返回类型"
 msgstr ""
 
 #: arctern.GeoSeries.buffer:13 of
-msgid "例子"
+msgid "实际案例"
 msgstr ""
-
-#~ msgid ""
-#~ "For each geometry, returns a geometry"
-#~ " that represents all points whose "
-#~ "distance from this geos is less "
-#~ "than or equal to \"distance\"."
-#~ msgstr "返回一个与给定的几何体的距离不大于“distance”的几何体。"
-
-#~ msgid "Geometries."
-#~ msgstr "几何体"
-
-#~ msgid "example"
-#~ msgstr "例子"
-
-#~ msgid ""
-#~ "For each geometry, returns a new "
-#~ "geometry at a distance of ``distance``"
-#~ " from it."
-#~ msgstr "对于每个几何体，在 ``distance`` 距离处返回新几何体。"
-
-#~ msgid ""
-#~ "If ``distance`` &ge; 0, the new "
-#~ "geometry is a scaled-up version "
-#~ "outside the original goemetry."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If ``distance`` &le; 0, the new "
-#~ "geometry is a scaled-down version "
-#~ "inside the original goemetry."
-#~ msgstr ""
-
-#~ msgid "The maximum distance between the returned geometry and the original."
-#~ msgstr "返回的几何体与原来的几何体之间的最大距离。"
 
 #~ msgid "例子"
 #~ msgstr ""
