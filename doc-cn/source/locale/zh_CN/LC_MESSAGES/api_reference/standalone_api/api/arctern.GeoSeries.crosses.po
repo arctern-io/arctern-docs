@@ -34,11 +34,7 @@ msgid ""
 "points in common. The intersection of the interiors of the geometries "
 "must not be the empty set and must have a dimensionality less than the "
 "maximum dimension of the two input geometries."
-<<<<<<< HEAD
-msgstr ""
-=======
 msgstr "“空间相交”是指两个几何体的一些但非所有内部点都相同。几何体内部的交集不得为空集，并且其维度必须小于两个输入几何体的最大维度。"
->>>>>>> 24acd901b79a7818c8e981a073f90ba7f13c0364
 
 #: arctern.GeoSeries.crosses of
 msgid "参数"
@@ -61,26 +57,14 @@ msgstr ""
 #: arctern.GeoSeries.crosses:10 of
 msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
-<<<<<<< HEAD
-"whether it crosses the geometries in ``other``. * *True*: The first "
-"geometry crosses the other. * *False*: The first geometry does not cross "
-"the other."
-msgstr ""
-=======
 "whether it crosses the geometries in ``other``."
 msgstr "GeoSeries 中每个元素对应的布尔值，指示它是否与 ``other`` 中的几何体空间相交。"
->>>>>>> 24acd901b79a7818c8e981a073f90ba7f13c0364
 
 #: arctern.GeoSeries.crosses of
 msgid "返回类型"
 msgstr ""
 
-<<<<<<< HEAD
-#: arctern.GeoSeries.crosses:16 of
-msgid "实际案例"
-=======
 #: arctern.GeoSeries.crosses:14 of
 msgid "例子"
->>>>>>> 24acd901b79a7818c8e981a073f90ba7f13c0364
 msgstr ""
 

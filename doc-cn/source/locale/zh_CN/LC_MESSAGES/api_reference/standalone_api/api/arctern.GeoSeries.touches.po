@@ -31,11 +31,7 @@ msgstr "对于 GeoSeries 中的每个几何体以及 ``other`` 中给出的对�
 msgid ""
 "\"Touch\" means two geometries have common points, and the common points "
 "locate only on their boundaries."
-<<<<<<< HEAD
-msgstr ""
-=======
 msgstr "“接触”表示两个几何体具有公共点，并且公共点仅位于它们的边界上。"
->>>>>>> 24acd901b79a7818c8e981a073f90ba7f13c0364
 
 #: arctern.GeoSeries.touches of
 msgid "参数"
@@ -58,15 +54,8 @@ msgstr ""
 #: arctern.GeoSeries.touches:10 of
 msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
-<<<<<<< HEAD
-"whether it touches the geometries in ``other``. * *True*: The first "
-"geometry touches the other. * *False*: The first geometry does not touch "
-"the other."
-msgstr ""
-=======
 "whether it touches the geometries in ``other``."
 msgstr "GeoSeries 中每个元素对应的布尔值，指示它是否与 ``other`` 中的几何体接触。"
->>>>>>> 24acd901b79a7818c8e981a073f90ba7f13c0364
 
 #: arctern.GeoSeries.touches of
 msgid "返回类型"

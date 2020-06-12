@@ -48,26 +48,16 @@ msgstr ""
 #: arctern.GeoSeries.contains:8 of
 msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
-<<<<<<< HEAD
 "whether it contains the geometries in ``other``. * *True*: The first "
 "geometry contains the other. * *False*: The first geometry does not "
 "contain the other."
 msgstr ""
-=======
-"whether it contains the geometries in ``other``."
-msgstr "GeoSeries 中每个元素对应的布尔值，指示它是否包含 ``other`` 中的几何体。"
->>>>>>> 24acd901b79a7818c8e981a073f90ba7f13c0364
 
 #: arctern.GeoSeries.contains of
 msgid "返回类型"
 msgstr ""
 
-<<<<<<< HEAD
-#: arctern.GeoSeries.contains:14 of
-msgid "实际案例"
-=======
 #: arctern.GeoSeries.contains:12 of
 msgid "例子"
->>>>>>> 24acd901b79a7818c8e981a073f90ba7f13c0364
 msgstr ""
 

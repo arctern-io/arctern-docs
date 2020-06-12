@@ -29,11 +29,7 @@ msgstr "对于 GeoSeries 中的每个几何体以及 ``other`` 中给出的对�
 
 #: arctern.GeoSeries.geom_equals:3 of
 msgid "\"Equal\" means two geometries represent the same geometry structure."
-<<<<<<< HEAD
-msgstr ""
-=======
 msgstr "“等价”表示两个几何体表示相同的几何体结构。"
->>>>>>> 24acd901b79a7818c8e981a073f90ba7f13c0364
 
 #: arctern.GeoSeries.geom_equals of
 msgid "参数"
@@ -56,15 +52,8 @@ msgstr ""
 #: arctern.GeoSeries.geom_equals:10 of
 msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
-<<<<<<< HEAD
-"whether it equals the geometries in ``other``. * *True*: The first "
-"geometry equals the other. * *False*: The first geometry does not equal "
-"the other."
-msgstr ""
-=======
 "whether it equals the geometries in ``other``."
 msgstr "GeoSeries 中每个元素对应的布尔值，指示它是否与 ``other`` 中的几何体等价。"
->>>>>>> 24acd901b79a7818c8e981a073f90ba7f13c0364
 
 #: arctern.GeoSeries.geom_equals of
 msgid "返回类型"
