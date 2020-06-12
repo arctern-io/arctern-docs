@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "For each geometry in the GeoSeries and the corresponding geometry given "
 "in ``other``, tests whether the first geometry contains the other."
-msgstr ""
+msgstr "对于 GeoSeries 中的每个几何体以及 ``other`` 中给出的对应的几何体，检测第一个几何体是否包含另一个几何体。"
 
 #: arctern.GeoSeries.contains of
 msgid "参数"
@@ -39,7 +39,7 @@ msgid ""
 "``other``. * If ``other`` is a GeoSeries, this function tests the "
 "\"contain\" relation between each geometry in the GeoSeries and the "
 "geometry with the same index in ``other``."
-msgstr ""
+msgstr "用于检测第一个 GeoSeries 中的几何体是否包含它的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检测 GeoSeries 中每个几何体与 ``other`` 的“包含”关系。如果 ``other`` 是一个 GeoSeries，那么此方法将检测 GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体之间的“包含”关系。"
 
 #: arctern.GeoSeries.contains of
 msgid "返回"
@@ -48,16 +48,26 @@ msgstr ""
 #: arctern.GeoSeries.contains:8 of
 msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
+<<<<<<< HEAD
 "whether it contains the geometries in ``other``. * *True*: The first "
 "geometry contains the other. * *False*: The first geometry does not "
 "contain the other."
 msgstr ""
+=======
+"whether it contains the geometries in ``other``."
+msgstr "GeoSeries 中每个元素对应的布尔值，指示它是否包含 ``other`` 中的几何体。"
+>>>>>>> 24acd901b79a7818c8e981a073f90ba7f13c0364
 
 #: arctern.GeoSeries.contains of
 msgid "返回类型"
 msgstr ""
 
+<<<<<<< HEAD
 #: arctern.GeoSeries.contains:14 of
 msgid "实际案例"
+=======
+#: arctern.GeoSeries.contains:12 of
+msgid "例子"
+>>>>>>> 24acd901b79a7818c8e981a073f90ba7f13c0364
 msgstr ""
 

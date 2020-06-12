@@ -60,6 +60,6 @@ msgid "返回类型"
 msgstr ""
 
 #: arctern.GeoSeries.curve_to_line:15 of
-msgid "实际案例"
-msgstr ""
+msgid "Examples"
+msgstr "例子"
 
