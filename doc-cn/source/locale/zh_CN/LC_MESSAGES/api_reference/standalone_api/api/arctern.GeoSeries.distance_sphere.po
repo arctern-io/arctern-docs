@@ -25,13 +25,13 @@ msgstr ""
 msgid ""
 "For each point in the GeoSeries and the corresponding point given in "
 "``other``, calculates the minimum spherical distance between them."
-msgstr ""
+msgstr "对于 GeoSeries 中的每个几何体以及 ``other`` 中给出的对应几何体，计算它们之间的最小球面距离。"
 
 #: arctern.GeoSeries.distance_sphere:3 of
 msgid ""
 "This function uses a spherical earth and radius derived from the spheroid"
 " defined by the SRID."
-msgstr ""
+msgstr "此方法使用从 SRID 定义的球体派生的球形地球和半径。"
 
 #: arctern.GeoSeries.distance_sphere of
 msgid "参数"
@@ -46,7 +46,7 @@ msgid ""
 " default. * If ``other`` is a GeoSeries, this function calculates the "
 "spherical distance between each geometry in the GeoSeries and the "
 "geometry with the same index in ``other``."
-msgstr ""
+msgstr "用于计算第一个 GeoSeries 中的几何体与其之间球面距离的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法计算 GeoSeries 中每个几何体与 ``other`` 之间的球面距离。``other`` 的 ``crs`` 默认值为 \"EPSG:4326\"。* 如果 ``other`` 是一个 GeoSeries，那么此方法计算 GeoSeries 中每个几何体与 ``other`` 中具有相同索引的几何体之间的球面距离。"
 
 #: arctern.GeoSeries.distance_sphere of
 msgid "返回"
@@ -54,9 +54,9 @@ msgstr ""
 
 #: arctern.GeoSeries.distance_sphere:10 of
 msgid ""
-"Spherical distance between each geometry in the GeoSeries and the "
-"corresponding geometry given in ``other``."
-msgstr ""
+"A Series that contains the spherical distance between each geometry in "
+"the GeoSeries and the corresponding geometry given in ``other``."
+msgstr "包含 GeoSeries 中每个几何体 与 ``other`` 中给定的对应几何之间的球面距离的 Series。"
 
 #: arctern.GeoSeries.distance_sphere of
 msgid "返回类型"
@@ -70,7 +70,7 @@ msgstr ""
 msgid ""
 "Only the longitude and latitude coordinate reference system "
 "(\"EPSG:4326\") can be used to calculate spherical distance."
-msgstr ""
+msgstr "只有经度和纬度坐标参考系（\"EPSG:4326\"）才能用于计算球面距离。"
 
 #: arctern.GeoSeries.distance_sphere:18 of
 msgid "实际案例"

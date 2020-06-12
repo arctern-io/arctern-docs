@@ -26,13 +26,13 @@ msgid ""
 "For each geometry in the GeoSeries and the corresponding geometry given "
 "in ``other``, tests whether the first geometry \"spatially overlaps\" the"
 " other."
-msgstr ""
+msgstr "对于 GeoSeries 中的每个几何体以及 ``other`` 中给出的对应几何体，检测第一个几何体是否与另一个几何体空间重叠。"
 
 #: arctern.GeoSeries.overlaps:3 of
 msgid ""
 "\"Spatially overlap\" here means two geometries intersect but one does "
 "not completely contain another."
-msgstr ""
+msgstr "“空间重叠”表示两个几何体相交，但一个不完全包含另一个。"
 
 #: arctern.GeoSeries.overlaps of
 msgid "参数"
@@ -46,7 +46,7 @@ msgid ""
 "``other``. * If ``other`` is a GeoSeries, this function tests the "
 "\"overlap\" relation between each geometry in the GeoSeries and the "
 "geometry with the same index in ``other``."
-msgstr ""
+msgstr "用于测试与第一个 GeoSeries 中的几何体空间重叠的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 的空间重叠关系。* 如果 ``other`` 是一个 GeoSeries，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体之间的空间重叠关系。"
 
 #: arctern.GeoSeries.overlaps of
 msgid "返回"
