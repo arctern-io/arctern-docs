@@ -55,15 +55,10 @@ msgstr ""
 #: arctern.GeoSeries.overlaps:10 of
 msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
-<<<<<<< HEAD
-"whether it overlaps the geometries in ``other``."
-msgstr "GeoSeries 中每个元素对应的布尔值，指示它是否与 ``other`` 中的几何体空间重叠。"
-=======
 "whether it overlaps the geometries in ``other``. * *True*: The first "
 "geometry overlaps the other. * *False*: The first geometry does not "
 "overlap the other."
 msgstr ""
->>>>>>> 9e6fe2492d921a7096390a9ee5430eed887fc4dc
 
 #: arctern.GeoSeries.overlaps of
 msgid "返回类型"
