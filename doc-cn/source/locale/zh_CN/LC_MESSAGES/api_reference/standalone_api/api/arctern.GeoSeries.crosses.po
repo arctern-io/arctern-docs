@@ -34,7 +34,7 @@ msgid ""
 "points in common. The intersection of the interiors of the geometries "
 "must not be the empty set and must have a dimensionality less than the "
 "maximum dimension of the two input geometries."
-msgstr "“空间交叉”是指两个几何体的一些但非所有内部点都相同。几何体内部的交集不得为空集，并且其维度必须小于两个输入几何体的最大维度。"
+msgstr "“空间相交”是指两个几何体的一些但非所有内部点都相同。几何体内部的交集不得为空集，并且其维度必须小于两个输入几何体的最大维度。"
 
 #: arctern.GeoSeries.crosses of
 msgid "参数"
@@ -48,7 +48,7 @@ msgid ""
 "``other``. * If ``other`` is a GeoSeries, this function tests the "
 "\"cross\" relation between each geometry in the GeoSeries and the "
 "geometry with the same index in ``other``."
-msgstr "用于测试与第一个 GeoSeries 中的几何体空间相交的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 的空间相交关系。* 如果 ``other`` 是一个 GeoSeries，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体之间的空间相交关系。"
+msgstr "用于测试与第一个 GeoSeries 中的几何体是否空间相交的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 的空间相交关系。* 如果 ``other`` 是一个 GeoSeries，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体之间的空间相交关系。"
 
 #: arctern.GeoSeries.crosses of
 msgid "返回"
