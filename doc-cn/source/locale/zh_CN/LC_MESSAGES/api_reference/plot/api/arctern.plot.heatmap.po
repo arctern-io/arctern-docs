@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:27+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,42 +68,4 @@ msgstr ""
 #: arctern.plot.heatmap:22 of
 msgid "实际案例"
 msgstr ""
-
-#~ msgid "Plot heatmap in matplotlibs"
-#~ msgstr ""
-
-#~ msgid "Matplotlib axes object on which to add the basemap."
-#~ msgstr ""
-
-#~ msgid "Sequence of Points"
-#~ msgstr ""
-
-#~ msgid "Weights of point intensity"
-#~ msgstr ""
-
-#~ msgid "Specify the bounding rectangle [west, south, east, north]."
-#~ msgstr ""
-
-#~ msgid "Zoom level of heatmap. Default as auto."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Coordinate Reference System of the "
-#~ "geometry objects. Must be SRID formed,"
-#~ " e.g. 'EPSG:4326' or 'EPSG:3857' Default"
-#~ " as 'EPSG:3857'"
-#~ msgstr ""
-
-#~ msgid "Aggregation type of data processing. Default as 'max'"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Extra parameters will be passed to "
-#~ "contextily.add_basemap. See "
-#~ "https://contextily.readthedocs.io/en/latest/reference.html for"
-#~ " details"
-#~ msgstr ""
-
-#~ msgid "example"
-#~ msgstr ""
 

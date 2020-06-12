@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:27+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "For each geometry in the GeoSeries and the corresponding geometry given "
 "in ``other``, tests whether they intersect each other."
-msgstr "对于 GeoSeries 中的每个几何体以及 ``other`` 中给出的相应几何体，检测它们是否相交。"
+msgstr ""
 
 #: arctern.GeoSeries.intersects of
 msgid "参数"
@@ -40,22 +40,18 @@ msgid ""
 "tests the intersection relation between each geometry in the GeoSeries "
 "and the geometry with the same index in ``other``."
 msgstr ""
-"用于测试与第一个 GeoSeries 中的几何体相交的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检测 "
-"GeoSeries 中的每个几何体与 ``other`` 的相交关系。* 如果 ``other`` 是一个 GeoSeries，那么此方法检测 "
-"GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体之间的相交关系。"
 
 #: arctern.GeoSeries.intersects of
 msgid "返回"
 msgstr ""
 
 #: arctern.GeoSeries.intersects:8 of
-#, fuzzy
 msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
 "whether it intersects the geometries in ``other``. * *True*: The two "
 "geometries intersect each other. * *False*: The two geometries do not "
 "intersect each other."
-msgstr "GeoSeries 中每个元素对应的布尔值，指示它是否与 ``other`` 中的几何体相交。"
+msgstr ""
 
 #: arctern.GeoSeries.intersects of
 msgid "返回类型"
@@ -67,29 +63,5 @@ msgstr ""
 
 #: arctern.GeoSeries.intersects:23 of
 msgid "Alternatively, ``other`` can be a geometry in WKB format."
-msgstr "或者，``other`` 可以是 WKB 格式的几何体。"
-
-#~ msgid "Check whether each geometry intersects other (elementwise)."
-#~ msgstr "检查两个几何体是否存在交集。"
-
-#~ msgid ""
-#~ "The geometries to test if is "
-#~ "intersected. Can be scalar WKB formed"
-#~ " bytes object, or a GeoSeries."
-#~ msgstr "用于测试是否存在交集的几何体。它可以是标量 WKB 格式的字节对象或 GeoSeries。"
-
-#~ msgid ""
-#~ ":rtype : Series(dtype: bool) :return: A"
-#~ " Series with value True if "
-#~ "intersected."
-#~ msgstr ""
-
-#~ msgid "example"
-#~ msgstr "例子"
-
-#~ msgid "Alternatively other can be ca scalar bytes object."
-#~ msgstr "或者其他几何体可为标量字节对象。"
-
-#~ msgid "例子"
-#~ msgstr ""
+msgstr ""
 

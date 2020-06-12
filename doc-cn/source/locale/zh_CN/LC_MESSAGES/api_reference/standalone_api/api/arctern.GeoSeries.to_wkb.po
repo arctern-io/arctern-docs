@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:27+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,13 +43,4 @@ msgstr ""
 #: arctern.GeoSeries.to_wkb:7 of
 msgid "实际案例"
 msgstr ""
-
-#~ msgid "Transform each geometry to WKB formed bytes object."
-#~ msgstr "转换几何体为 WKB 格式的字节对象。"
-
-#~ msgid "example"
-#~ msgstr ""
-
-#~ msgid "A Series that contains geometries in WKB format."
-#~ msgstr "由 WKB 格式的字节对象构造的多个几何体组成 Series。"
 

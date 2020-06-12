@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:27+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,24 +47,20 @@ msgid "参数"
 msgstr ""
 
 #: arctern.GeoSeries.polygon_from_envelope:7 of
-#, fuzzy
 msgid "The minimum x coordinates of the rectangles."
-msgstr "矩形横坐标的最小值。"
+msgstr ""
 
 #: arctern.GeoSeries.polygon_from_envelope:9 of
-#, fuzzy
 msgid "The minimum y coordinates of the rectangles."
-msgstr "矩形纵坐标的最小值。"
+msgstr ""
 
 #: arctern.GeoSeries.polygon_from_envelope:11 of
-#, fuzzy
 msgid "The maximum x coordinates of the rectangles."
-msgstr "矩形横坐标的最大值。"
+msgstr ""
 
 #: arctern.GeoSeries.polygon_from_envelope:13 of
-#, fuzzy
 msgid "The maximum y coordinates of the rectangles."
-msgstr "矩形纵坐标的最大值。"
+msgstr ""
 
 #: arctern.GeoSeries.polygon_from_envelope:15 of
 msgid ""
@@ -88,38 +84,4 @@ msgstr ""
 #: arctern.GeoSeries.polygon_from_envelope:23 of
 msgid "实际案例"
 msgstr ""
-
-#~ msgid ""
-#~ "Construct polygon(rectangle) geometries from "
-#~ "arr_min_x, arr_min_y, arr_max_x, arr_max_y and"
-#~ " special coordinate system. The edges "
-#~ "of polygon are parallel to coordinate"
-#~ " axis."
-#~ msgstr "根据给定的参数和特殊坐标参考系构造矩形几何体，且该矩形的边与坐标轴平行。"
-
-#~ msgid "Must be SRID format string."
-#~ msgstr "必须是 SRID 格式的字符串。"
-
-#~ msgid "A GeoSeries contains geometries."
-#~ msgstr "GeoSeries 包含几何体。"
-
-#~ msgid "example"
-#~ msgstr "例子"
-
-#~ msgid ""
-#~ "Suppose that the demension of ``min_x``"
-#~ " is *N*, the returned GeoSeries of"
-#~ " this function should contains *N* "
-#~ "rectangles. The shape and position of"
-#~ " the *i*th rectangle is defined by"
-#~ " its bottom left vertex *(min_x, "
-#~ "min_y)* and top right vertex *(max_x,"
-#~ " max_y)*."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "A GeoSeries that contains rectangular "
-#~ "POLYGON objects within the given spatial"
-#~ " range."
-#~ msgstr ""
 

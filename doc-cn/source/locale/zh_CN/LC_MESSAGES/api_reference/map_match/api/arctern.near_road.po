@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:27+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,26 +61,4 @@ msgstr ""
 #: arctern.near_road:16 of
 msgid "实际案例"
 msgstr ""
-
-#~ msgid ""
-#~ "Check if there is a road within"
-#~ " distance meters of each point. The"
-#~ " points passed do not need to "
-#~ "be part of a continuous path."
-#~ msgstr ""
-
-#~ msgid "LineStrings in WKB form."
-#~ msgstr ""
-
-#~ msgid "Points in WKB form."
-#~ msgstr ""
-
-#~ msgid "distance meters around the point in points"
-#~ msgstr ""
-
-#~ msgid "True if there is a road within 100 meters of the point."
-#~ msgstr ""
-
-#~ msgid "example"
-#~ msgstr ""
 

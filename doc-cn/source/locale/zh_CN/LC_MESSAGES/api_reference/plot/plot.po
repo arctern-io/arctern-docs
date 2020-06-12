@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:27+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -90,25 +90,4 @@ msgstr ""
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
 msgid "Plots a fishnet map in Matplotlib."
 msgstr ""
-
-#~ msgid "Plot a collection of geometries to `ax`."
-#~ msgstr ""
-
-#~ msgid "Plot pointmap in Matplotlib"
-#~ msgstr ""
-
-#~ msgid "Plot weighted pointmap in Matplotlib"
-#~ msgstr ""
-
-#~ msgid "Plot heatmap in matplotlibs"
-#~ msgstr ""
-
-#~ msgid "Render region boundaries in matplotlib"
-#~ msgstr ""
-
-#~ msgid "Plot points as icons on map in Matplotlib"
-#~ msgstr ""
-
-#~ msgid "Plot fishnetmap in Matplotlib"
-#~ msgstr ""
 

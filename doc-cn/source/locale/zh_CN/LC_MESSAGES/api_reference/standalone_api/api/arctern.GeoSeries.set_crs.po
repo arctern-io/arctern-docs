@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 15:09+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Sets the Coordinate Reference System (CRS) for all geometries in "
 "GeoSeries."
-msgstr "为 GeoSeries 中的所有几何体设置坐标参考系（CRS）。"
+msgstr ""
 
 #: arctern.GeoSeries.set_crs of
 msgid "参数"
@@ -36,7 +36,7 @@ msgid ""
 "A string representation of CRS. The string is made up of an authority "
 "code and a SRID (Spatial Reference Identifier), for example, "
 "``\"EPSG:4326\"``."
-msgstr "CRS 的字符串表示。该字符串由授权码和 SRID（空间参考标识符）组成，例如 ``\"EPSG:4326\"``。"
+msgstr ""
 
 #: arctern.GeoSeries.set_crs:8 of
 msgid "提示"
@@ -46,15 +46,9 @@ msgstr ""
 msgid ""
 "Arctern supports common CRSs listed at the `Spatial Reference "
 "<https://spatialreference.org/>`_ website."
-msgstr "Arctern 支持在 `Spatial Reference <https://spatialreference.org/>`_ 网站上列出的常见 CRS。"
+msgstr ""
 
 #: arctern.GeoSeries.set_crs:12 of
 msgid "实际案例"
 msgstr ""
-
-#~ msgid "SRID(spatial reference identifier) form."
-#~ msgstr "SRID（空间参考标识符）格式"
-
-#~ msgid "example"
-#~ msgstr ""
 

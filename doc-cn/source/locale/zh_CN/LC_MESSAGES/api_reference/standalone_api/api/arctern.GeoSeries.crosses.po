@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:27+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,13 +29,12 @@ msgid ""
 msgstr ""
 
 #: arctern.GeoSeries.crosses:3 of
-#, fuzzy
 msgid ""
 "\"Spatially cross\" means two geometries have some, but not all interior "
 "points in common. The intersection of the interiors of the geometries "
 "must not be the empty set and must have a dimensionality less than the "
 "maximum dimension of the two input geometries."
-msgstr "“相交”表示它们有部分但非全部内部点相同。这两个的几何体的交集不能为空，并且交集的维度小于输入几何体的最大维度。"
+msgstr ""
 
 #: arctern.GeoSeries.crosses of
 msgid "参数"
@@ -70,26 +69,4 @@ msgstr ""
 #: arctern.GeoSeries.crosses:16 of
 msgid "实际案例"
 msgstr ""
-
-#~ msgid "Check whether each geometry and other(elementwise) \"spatially cross\"."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The geometries to test if cross. "
-#~ "Can be scalar WKB formed bytes "
-#~ "object, or a GeoSeries."
-#~ msgstr ""
-
-#~ msgid "A Series with value True if each geometry crosses other."
-#~ msgstr ""
-
-#~ msgid "example"
-#~ msgstr "例子"
-
-#~ msgid ""
-#~ "Mask of boolean values for each "
-#~ "element in the GeoSeries that indicates"
-#~ " whether it crosses the geometries in"
-#~ " ``other``."
-#~ msgstr ""
 

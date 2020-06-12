@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:27+0800\n"
+"POT-Creation-Date: 2020-06-12 17:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,13 +40,4 @@ msgstr ""
 #: arctern.GeoSeries.as_geojson:7 of
 msgid "实际案例"
 msgstr ""
-
-#~ msgid "Transform each to GeoJSON format string."
-#~ msgstr "转换为 GeoJSON 格式的字符串。"
-
-#~ msgid "example"
-#~ msgstr "例子"
-
-#~ msgid "A Series that contains geometries in GeoJSON format."
-#~ msgstr "由 GeoJSON 格式的字符串构造的多个几何体组成 Series。"
 
