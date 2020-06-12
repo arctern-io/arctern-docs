@@ -55,15 +55,9 @@ msgstr ""
 
 #: arctern.GeoSeries.hausdorff_distance:10 of
 msgid ""
-<<<<<<< HEAD
-"A Series that contains the Hausdorff distance between each geometry in "
-"the GeoSeries and the corresponding geometry given in ``other``."
-msgstr "包含 GeoSeries 中每个几何体 与 ``other`` 中给定的对应几何之间的 Hausdorff 距离的 Series。"
-=======
 "Hausdorff distance between each geometry in the GeoSeries and the "
 "corresponding geometry given in ``other``."
 msgstr ""
->>>>>>> 9e6fe2492d921a7096390a9ee5430eed887fc4dc
 
 #: arctern.GeoSeries.hausdorff_distance of
 msgid "返回类型"

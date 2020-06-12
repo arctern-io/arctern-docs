@@ -32,11 +32,7 @@ msgstr "对于 GeoSeries 中的每个几何体以及 ``other`` 中给出的对�
 msgid ""
 "\"Spatially overlap\" here means two geometries intersect but one does "
 "not completely contain another."
-<<<<<<< HEAD
 msgstr "“空间重叠”表示两个几何体相交，但一个不完全包含另一个。"
-=======
-msgstr ""
->>>>>>> 9e6fe2492d921a7096390a9ee5430eed887fc4dc
 
 #: arctern.GeoSeries.overlaps of
 msgid "参数"
