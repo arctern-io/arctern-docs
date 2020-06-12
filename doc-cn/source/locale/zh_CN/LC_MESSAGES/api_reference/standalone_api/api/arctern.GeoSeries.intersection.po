@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "For each point in the GeoSeries and the corresponding point given in "
 "``other``, calculates the intersection of them."
-msgstr ""
+msgstr "对于 GeoSeries 中的每个几何体以及 ``other`` 中给出的对应几何体，计算它们的交集。"
 
 #: arctern.GeoSeries.intersection of
 msgid "参数"
@@ -39,7 +39,7 @@ msgid ""
 "and ``other``. * If ``other`` is a GeoSeries, this function calculates "
 "the intersection of each geometry in the GeoSeries and the geometry with "
 "the same index in ``other``."
-msgstr ""
+msgstr "用于计算第一个 GeoSeries 中的几何体与其交集的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法计算 GeoSeries 中的每个几何体与 ``other`` 的交集。* 如果 ``other`` 是一个 GeoSeries，那么此方法计算 GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体的交集。"
 
 #: arctern.GeoSeries.intersection of
 msgid "返回"
@@ -50,7 +50,7 @@ msgid ""
 "A GeoSeries that contains only one geometry, which is the intersection of"
 " each geometry in the GeoSeries and the corresponding geometry given in "
 "``other``."
-msgstr ""
+msgstr "一个仅包含一个几何体的 GeoSeries，其中的几何体是 GeoSeries 中的每个几何体与 ``other`` 中给出的对应几何体的交集。"
 
 #: arctern.GeoSeries.intersection of
 msgid "返回类型"
