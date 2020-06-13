@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.isna:1 of
 msgid "Detects missing values."
-msgstr ""
+msgstr "检查缺失值。"
 
 #: arctern.GeoSeries.isna of
 msgid "返回"
@@ -34,7 +34,7 @@ msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
 "whether an element is an NA value. * *True*: An element is a NA value, "
 "such as None. * *False*: An element is a non-missing value."
-msgstr ""
+msgstr "GeoSeries 中每个元素对应的布尔值，指示元素是否为 NA 值。 * True: 元素是 NA 值，例如 None。 * False: 元素是非缺失值。"
 
 #: arctern.GeoSeries.isna of
 msgid "返回类型"

@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Sets the Coordinate Reference System (CRS) for all geometries in "
 "GeoSeries."
-msgstr ""
+msgstr "为 GeoSeries 中的所有几何体设置 CRS（Coordinate Reference System，坐标参考系）。"
 
 #: arctern.GeoSeries.set_crs of
 msgid "参数"
@@ -36,7 +36,7 @@ msgid ""
 "A string representation of CRS. The string is made up of an authority "
 "code and a SRID (Spatial Reference Identifier), for example, "
 "``\"EPSG:4326\"``."
-msgstr ""
+msgstr "CRS 的字符串表示。 该字符串由机构代码和 SRID（Spatial Reference Identifier，空间参考标识符）组成，例如 \"EPSG:4326\"。"
 
 #: arctern.GeoSeries.set_crs:8 of
 msgid "提示"
@@ -46,7 +46,7 @@ msgstr ""
 msgid ""
 "Arctern supports common CRSs listed at the `Spatial Reference "
 "<https://spatialreference.org/>`_ website."
-msgstr ""
+msgstr "Arctern 支持在 `Spatial Reference <https://spatialreference.org/>`_ 网站上列出的常见 CRS。"
 
 #: arctern.GeoSeries.set_crs:12 of
 msgid "实际案例"
