@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:31+0800\n"
+"POT-Creation-Date: 2020-06-13 14:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,8 +23,8 @@ msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:7
 msgid ""
-"GeoSeries is a series to store and process geometry data by extending "
-"Pandas Series. It internally store geometry as bytes object."
+"GeoSeries is a series to store and process geometric data by extending "
+"Pandas Series. It internally stores geometries as bytes objects."
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:11
@@ -477,4 +477,11 @@ msgstr ""
 #: ../../source/api_reference/standalone_api/geoseries.rst:105:<autosummary>:1
 msgid "Tests whether two objects contain the same elements."
 msgstr ""
+
+#~ msgid ""
+#~ "GeoSeries is a series to store and"
+#~ " process geometry data by extending "
+#~ "Pandas Series. It internally store "
+#~ "geometry as bytes object."
+#~ msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-13 10:28+0800\n"
+"POT-Creation-Date: 2020-06-13 14:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,11 +32,14 @@ msgid "参数"
 msgstr ""
 
 #: arctern.GeoSeries.set_crs:3 of
+#, fuzzy
 msgid ""
 "A string representation of CRS. The string is made up of an authority "
 "code and a SRID (Spatial Reference Identifier), for example, "
-"``\"EPSG:4326\"``."
-msgstr "CRS 的字符串表示。 该字符串由机构代码和 SRID（Spatial Reference Identifier，空间参考标识符）组成，例如 \"EPSG:4326\"。"
+"\"EPSG:4326\"."
+msgstr ""
+"CRS 的字符串表示。 该字符串由机构代码和 SRID（Spatial Reference Identifier，空间参考标识符）组成，例如 "
+"\"EPSG:4326\"。"
 
 #: arctern.GeoSeries.set_crs:8 of
 msgid "提示"
@@ -46,7 +49,9 @@ msgstr ""
 msgid ""
 "Arctern supports common CRSs listed at the `Spatial Reference "
 "<https://spatialreference.org/>`_ website."
-msgstr "Arctern 支持在 `Spatial Reference <https://spatialreference.org/>`_ 网站上列出的常见 CRS。"
+msgstr ""
+"Arctern 支持在 `Spatial Reference <https://spatialreference.org/>`_ 网站上列出的常见"
+" CRS。"
 
 #: arctern.GeoSeries.set_crs:12 of
 msgid "实际案例"
