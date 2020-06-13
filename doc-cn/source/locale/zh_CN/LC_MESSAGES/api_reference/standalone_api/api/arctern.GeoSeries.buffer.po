@@ -26,19 +26,19 @@ msgid ""
 "For each geometry, moves all of its points away from its centroid to "
 "construct a new geometry. The distance of movement is specified as "
 "``distance``."
-msgstr ""
+msgstr "对于每个几何体，将其所有点从其中心移开以构造新的几何体。移动距离被指定为 ``distance``。"
 
 #: arctern.GeoSeries.buffer:3 of
 msgid ""
 "If ``distance`` > 0, the new geometry is a scaled-up version outside the "
 "original geometry."
-msgstr ""
+msgstr "如果 ``distance`` > 0，则新几何体是原来的几何体之外的按比例放大版本。"
 
 #: arctern.GeoSeries.buffer:4 of
 msgid ""
 "If ``distance`` < 0, the new geometry is a scaled-down version inside the"
 " original geometry."
-msgstr ""
+msgstr "如果 ``distance`` < 0，则新几何体是原来的几何体内部的按比例缩小版本。"
 
 #: arctern.GeoSeries.buffer of
 msgid "参数"
@@ -46,7 +46,7 @@ msgstr ""
 
 #: arctern.GeoSeries.buffer:6 of
 msgid "Distance of movement."
-msgstr ""
+msgstr "移动距离。"
 
 #: arctern.GeoSeries.buffer of
 msgid "返回"
@@ -54,7 +54,7 @@ msgstr ""
 
 #: arctern.GeoSeries.buffer:9 of
 msgid "Sequence of geometries."
-msgstr ""
+msgstr "几何体序列。"
 
 #: arctern.GeoSeries.buffer of
 msgid "返回类型"
