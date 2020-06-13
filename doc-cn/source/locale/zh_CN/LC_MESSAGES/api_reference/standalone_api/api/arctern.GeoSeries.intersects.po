@@ -32,7 +32,6 @@ msgid "参数"
 msgstr ""
 
 #: arctern.GeoSeries.intersects:3 of
-#, fuzzy
 msgid ""
 "The geometry or GeoSeries to test whether it is intersected with the "
 "geometries in the first GeoSeries.  * If ``other`` is a geometry, this "
@@ -41,9 +40,7 @@ msgid ""
 "tests the intersection relation between each geometry in the GeoSeries "
 "and the geometry with the same index in ``other``."
 msgstr ""
-"用于测试与第一个 GeoSeries 中的几何体是否相交的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检测 "
-"GeoSeries 中的每个几何体与 ``other`` 的相交关系。* 如果 ``other`` 是一个 GeoSeries，那么此方法检测 "
-"GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体之间的相交关系。"
+"用于检查与第一个 GeoSeries 中的几何体是否相交的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检查 GeoSeries 中的每个几何体是否与 ``other`` 相交。* 如果 ``other`` 是一个 GeoSeries，那么此方法检查 GeoSeries 中的每个几何体是否与 ``other`` 中具有相同索引的几何体相交。"
 
 #: arctern.GeoSeries.intersects:3 of
 msgid ""
@@ -74,7 +71,7 @@ msgid ""
 "whether it intersects the geometries in ``other``.  * *True*: The two "
 "geometries intersect each other. * *False*: The two geometries do not "
 "intersect each other."
-msgstr ""
+msgstr "GeoSeries 中每个元素对应的布尔值，指示元素是否与 ``other`` 中的几何体相交。 * *True*: 两个几何体相交。* *False*: 两个几何体不相交。"
 
 #: arctern.GeoSeries.intersects:9 of
 msgid ""
@@ -100,7 +97,7 @@ msgstr ""
 
 #: arctern.GeoSeries.intersects:25 of
 msgid "Alternatively, ``other`` can be a geometry in WKB format."
-msgstr ""
+msgstr "或者，``other`` 可以是 WKB 格式的几何体。""
 
 #~ msgid "例子"
 #~ msgstr ""
