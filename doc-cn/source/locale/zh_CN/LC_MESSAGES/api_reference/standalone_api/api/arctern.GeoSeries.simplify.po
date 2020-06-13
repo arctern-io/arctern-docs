@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:31+0800\n"
+"POT-Creation-Date: 2020-06-13 10:28+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,10 @@ msgid ""
 "Returns a simplified version for each geometry in the GeoSeries using the"
 " `Douglas-Peucker algorithm "
 "<https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm>`_."
-msgstr "返回使用 `Douglas-Peucker 算法 <https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm>`_ 计算的 GeoSeries 中每个几何体的简化版本。"
+msgstr ""
+"返回使用 `Douglas-Peucker 算法 "
+"<https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm>`_"
+" 计算的 GeoSeries 中每个几何体的简化版本。"
 
 #: arctern.GeoSeries.simplify of
 msgid "参数"
@@ -50,6 +53,9 @@ msgid "返回类型"
 msgstr ""
 
 #: arctern.GeoSeries.simplify:10 of
-msgid "例子"
+msgid "实际案例"
 msgstr ""
+
+#~ msgid "例子"
+#~ msgstr ""
 

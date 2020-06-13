@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:31+0800\n"
+"POT-Creation-Date: 2020-06-13 11:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,17 +46,17 @@ msgid "Bounding box of the map. For example, [west, south, east, north]."
 msgstr ""
 
 #: arctern.plot.heatmap:11 of
-msgid "Zoom level of the map."
+msgid "Zoom level of the map by default 'auto'."
 msgstr ""
 
 #: arctern.plot.heatmap:13 of
 msgid ""
-"The Coordinate Reference System (CRS) set to all geometries. Only "
-"supports SRID as a WKT representation of CRS by now."
+"The Coordinate Reference System (CRS) set to all geometries, by default "
+"'EPSG:3857'. Only supports SRID as a WKT representation of CRS by now."
 msgstr ""
 
 #: arctern.plot.heatmap:16 of
-msgid "Aggregation type."
+msgid "Aggregation type, by default 'max'."
 msgstr ""
 
 #: arctern.plot.heatmap:18 of
@@ -68,4 +68,17 @@ msgstr ""
 #: arctern.plot.heatmap:22 of
 msgid "实际案例"
 msgstr ""
+
+#~ msgid "Zoom level of the map."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The Coordinate Reference System (CRS) "
+#~ "set to all geometries. Only supports "
+#~ "SRID as a WKT representation of "
+#~ "CRS by now."
+#~ msgstr ""
+
+#~ msgid "Aggregation type."
+#~ msgstr ""
 

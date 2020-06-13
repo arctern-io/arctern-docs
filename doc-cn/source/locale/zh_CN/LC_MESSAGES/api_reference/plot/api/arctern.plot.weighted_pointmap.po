@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:31+0800\n"
+"POT-Creation-Date: 2020-06-13 11:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,138 +21,67 @@ msgstr ""
 msgid "arctern.plot.weighted\\_pointmap"
 msgstr ""
 
+#: arctern.plot.weighted_pointmap:1 of
+msgid "Plots a weighted point map in Matplotlib."
+msgstr ""
+
+#: arctern.plot.weighted_pointmap of
+msgid "参数"
+msgstr ""
+
 #: arctern.plot.weighted_pointmap:3 of
-msgid "ax"
-msgstr ""
-
-#: of
-msgid "matplotlib.axes.Axes"
-msgstr ""
-
-#: arctern.plot.weighted_pointmap:4 of
 msgid "Axes where geometries will be plotted."
 msgstr ""
 
 #: arctern.plot.weighted_pointmap:5 of
-msgid "points"
-msgstr ""
-
-#: of
-msgid "GeoSeries"
-msgstr ""
-
-#: arctern.plot.weighted_pointmap:6 of
 msgid "Sequence of points."
 msgstr ""
 
 #: arctern.plot.weighted_pointmap:7 of
-msgid "color_weights"
-msgstr ""
-
-#: of
-msgid "Series, optional"
-msgstr ""
-
-#: arctern.plot.weighted_pointmap:8 of
 msgid "Weights of point color."
 msgstr ""
 
 #: arctern.plot.weighted_pointmap:9 of
-msgid "size_weights"
-msgstr ""
-
-#: arctern.plot.weighted_pointmap:10 of
 msgid "Weights of point size."
 msgstr ""
 
 #: arctern.plot.weighted_pointmap:11 of
-msgid "bounding_box"
-msgstr ""
-
-#: of
-msgid "list"
-msgstr ""
-
-#: arctern.plot.weighted_pointmap:12 of
 msgid "Bounding box of the map. For example, [west, south, east, north]."
 msgstr ""
 
-#: arctern.plot.weighted_pointmap:14 of
-msgid "color_gradient"
-msgstr ""
-
-#: of
-msgid "list, by default [\"#115f9a\", \"#d0f400\"]"
-msgstr ""
-
-#: arctern.plot.weighted_pointmap:14 of
+#: arctern.plot.weighted_pointmap:13 of
 msgid ""
-"Range of color gradient. Either use [\"hex_color\"] to specify a same "
-"color for all geometries, or [\"hex_color1\", \"hex_color2\"] to specify "
-"a color gradient ranging from \"hex_color1\" to \"hex_color2\"."
+"Range of color gradient, by default [\"#115f9a\", \"#d0f400\"]. Either "
+"use [\"hex_color\"] to specify a same color for all geometries, or "
+"[\"hex_color1\", \"hex_color2\"] to specify a color gradient ranging from"
+" \"hex_color1\" to \"hex_color2\"."
 msgstr ""
 
-#: arctern.plot.weighted_pointmap:17 of
-msgid "color_bound"
-msgstr ""
-
-#: of
-msgid "list, by default [0, 0]"
-msgstr ""
-
-#: arctern.plot.weighted_pointmap:17 of
+#: arctern.plot.weighted_pointmap:16 of
 msgid ""
-"Weight range [w1, w2] of ``color_gradient``. Needed only when "
-"``color_gradient`` has two values [\"color1\", \"color2\"]. Binds w1 to "
-"\"color1\", and w2 to \"color2\". When weight < w1 or weight > w2, the "
-"weight will be truncated to w1 or w2 accordingly."
+"Weight range [w1, w2] of ``color_gradient``, by default [0, 0]. Needed "
+"only when ``color_gradient`` has two values [\"color1\", \"color2\"]. "
+"Binds w1 to \"color1\", and w2 to \"color2\". When weight < w1 or weight "
+"> w2, the weight will be truncated to w1 or w2 accordingly."
 msgstr ""
 
 #: arctern.plot.weighted_pointmap:19 of
-msgid "size_bound"
-msgstr ""
-
-#: of
-msgid "list, by default [3]"
-msgstr ""
-
-#: arctern.plot.weighted_pointmap:20 of
 msgid ""
-"Weight range [w1, w2] of ``size_weights``. When weight < w1 or weight > "
-"w2, the weight will be truncated to w1 or w2 accordingly."
+"Weight range [w1, w2] of ``size_weights``, by default [3]. When weight < "
+"w1 or weight > w2, the weight will be truncated to w1 or w2 accordingly."
 msgstr ""
 
 #: arctern.plot.weighted_pointmap:21 of
-msgid "opacity"
+msgid "Opacity of points, ranged from 0.0 to 1.0, by default 1.0."
 msgstr ""
 
-#: of
-msgid "float, by default 1.0"
-msgstr ""
-
-#: arctern.plot.weighted_pointmap:22 of
-msgid "Opacity of points, ranged from 0.0 to 1.0."
-msgstr ""
-
-#: arctern.plot.weighted_pointmap:24 of
-msgid "coordinate_system"
-msgstr ""
-
-#: of
-msgid "str, by default 'EPSG:3857'"
-msgstr ""
-
-#: arctern.plot.weighted_pointmap:24 of
+#: arctern.plot.weighted_pointmap:23 of
 msgid ""
-"The Coordinate Reference System (CRS) set to all geometries. Only "
-"supports SRID as a WKT representation of CRS by now."
+"The Coordinate Reference System (CRS) set to all geometries, by default "
+"'EPSG:3857'. Only supports SRID as a WKT representation of CRS by now."
 msgstr ""
 
-#: arctern.plot.weighted_pointmap:27 of
-msgid "**extra_contextily_params: dict"
-msgstr ""
-
-#: arctern.plot.weighted_pointmap:27 of
+#: arctern.plot.weighted_pointmap:26 of
 msgid ""
 "Extra parameters passed to `contextily.add_basemap. "
 "<https://contextily.readthedocs.io/en/latest/reference.html>`_"
@@ -161,4 +90,102 @@ msgstr ""
 #: arctern.plot.weighted_pointmap:30 of
 msgid "实际案例"
 msgstr ""
+
+#~ msgid "ax"
+#~ msgstr ""
+
+#~ msgid "matplotlib.axes.Axes"
+#~ msgstr ""
+
+#~ msgid "points"
+#~ msgstr ""
+
+#~ msgid "GeoSeries"
+#~ msgstr ""
+
+#~ msgid "color_weights"
+#~ msgstr ""
+
+#~ msgid "Series, optional"
+#~ msgstr ""
+
+#~ msgid "size_weights"
+#~ msgstr ""
+
+#~ msgid "bounding_box"
+#~ msgstr ""
+
+#~ msgid "list"
+#~ msgstr ""
+
+#~ msgid "color_gradient"
+#~ msgstr ""
+
+#~ msgid "list, by default [\"#115f9a\", \"#d0f400\"]"
+#~ msgstr ""
+
+#~ msgid "color_bound"
+#~ msgstr ""
+
+#~ msgid "list, by default [0, 0]"
+#~ msgstr ""
+
+#~ msgid "size_bound"
+#~ msgstr ""
+
+#~ msgid "list, by default [3]"
+#~ msgstr ""
+
+#~ msgid "opacity"
+#~ msgstr ""
+
+#~ msgid "float, by default 1.0"
+#~ msgstr ""
+
+#~ msgid "coordinate_system"
+#~ msgstr ""
+
+#~ msgid "str, by default 'EPSG:3857'"
+#~ msgstr ""
+
+#~ msgid "**extra_contextily_params: dict"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Range of color gradient. Either use "
+#~ "[\"hex_color\"] to specify a same color"
+#~ " for all geometries, or [\"hex_color1\","
+#~ " \"hex_color2\"] to specify a color "
+#~ "gradient ranging from \"hex_color1\" to "
+#~ "\"hex_color2\"."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weight range [w1, w2] of "
+#~ "``color_gradient``. Needed only when "
+#~ "``color_gradient`` has two values [\"color1\","
+#~ " \"color2\"]. Binds w1 to \"color1\", "
+#~ "and w2 to \"color2\". When weight "
+#~ "< w1 or weight > w2, the "
+#~ "weight will be truncated to w1 or"
+#~ " w2 accordingly."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weight range [w1, w2] of "
+#~ "``size_weights``. When weight < w1 or"
+#~ " weight > w2, the weight will "
+#~ "be truncated to w1 or w2 "
+#~ "accordingly."
+#~ msgstr ""
+
+#~ msgid "Opacity of points, ranged from 0.0 to 1.0."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The Coordinate Reference System (CRS) "
+#~ "set to all geometries. Only supports "
+#~ "SRID as a WKT representation of "
+#~ "CRS by now."
+#~ msgstr ""
 

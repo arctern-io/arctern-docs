@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:31+0800\n"
+"POT-Creation-Date: 2020-06-13 10:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,15 +43,41 @@ msgstr ""
 msgid ""
 "The indexes of geometries in ``right``. For example, the value *j* with "
 "index *i* in the returned Series indicates that the geometry ``left[i]`` "
-"is within the geometry ``right[j]``. * When there are multiple "
+"is within the geometry ``right[j]``.  * When there are multiple "
 "candidates, return one of them. * When there is no candidate, return NA."
+msgstr ""
+
+#: arctern.within_which:8 of
+msgid ""
+"The indexes of geometries in ``right``. For example, the value *j* with "
+"index *i* in the returned Series indicates that the geometry ``left[i]`` "
+"is within the geometry ``right[j]``."
+msgstr ""
+
+#: arctern.within_which:11 of
+msgid "When there are multiple candidates, return one of them."
+msgstr ""
+
+#: arctern.within_which:12 of
+msgid "When there is no candidate, return NA."
 msgstr ""
 
 #: arctern.within_which of
 msgid "返回类型"
 msgstr ""
 
-#: arctern.within_which:15 of
+#: arctern.within_which:16 of
 msgid "实际案例"
 msgstr ""
+
+#~ msgid ""
+#~ "The indexes of geometries in ``right``."
+#~ " For example, the value *j* with "
+#~ "index *i* in the returned Series "
+#~ "indicates that the geometry ``left[i]`` "
+#~ "is within the geometry ``right[j]``. *"
+#~ " When there are multiple candidates, "
+#~ "return one of them. * When there"
+#~ " is no candidate, return NA."
+#~ msgstr ""
 

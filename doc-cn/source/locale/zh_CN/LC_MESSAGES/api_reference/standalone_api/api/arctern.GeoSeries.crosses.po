@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:31+0800\n"
+"POT-Creation-Date: 2020-06-13 10:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,30 +41,74 @@ msgid "参数"
 msgstr ""
 
 #: arctern.GeoSeries.crosses:5 of
+#, fuzzy
 msgid ""
 "The geometry or GeoSeries to test whether it crosses the geometries in "
-"the first GeoSeries. * If ``other`` is a geometry, this function tests "
+"the first GeoSeries.  * If ``other`` is a geometry, this function tests "
 "the \"cross\" relation between each geometry in the GeoSeries and "
 "``other``. * If ``other`` is a GeoSeries, this function tests the "
 "\"cross\" relation between each geometry in the GeoSeries and the "
 "geometry with the same index in ``other``."
-msgstr "用于测试与第一个 GeoSeries 中的几何体是否空间相交的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 的空间相交关系。* 如果 ``other`` 是一个 GeoSeries，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体之间的空间相交关系。"
+msgstr ""
+"用于测试与第一个 GeoSeries 中的几何体是否空间相交的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检测"
+" GeoSeries 中的每个几何体与 ``other`` 的空间相交关系。* 如果 ``other`` 是一个 "
+"GeoSeries，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体之间的空间相交关系。"
+
+#: arctern.GeoSeries.crosses:5 of
+msgid ""
+"The geometry or GeoSeries to test whether it crosses the geometries in "
+"the first GeoSeries."
+msgstr ""
+
+#: arctern.GeoSeries.crosses:7 of
+msgid ""
+"If ``other`` is a geometry, this function tests the \"cross\" relation "
+"between each geometry in the GeoSeries and ``other``."
+msgstr ""
+
+#: arctern.GeoSeries.crosses:8 of
+msgid ""
+"If ``other`` is a GeoSeries, this function tests the \"cross\" relation "
+"between each geometry in the GeoSeries and the geometry with the same "
+"index in ``other``."
+msgstr ""
 
 #: arctern.GeoSeries.crosses of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.crosses:10 of
+#: arctern.GeoSeries.crosses:11 of
+#, fuzzy
+msgid ""
+"Mask of boolean values for each element in the GeoSeries that indicates "
+"whether it crosses the geometries in ``other``.  * *True*: The first "
+"geometry crosses the other. * *False*: The first geometry does not cross "
+"the other."
+msgstr "GeoSeries 中每个元素对应的布尔值，指示它是否与 ``other`` 中的几何体空间相交。"
+
+#: arctern.GeoSeries.crosses:11 of
+#, fuzzy
 msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
 "whether it crosses the geometries in ``other``."
 msgstr "GeoSeries 中每个元素对应的布尔值，指示它是否与 ``other`` 中的几何体空间相交。"
 
+#: arctern.GeoSeries.crosses:13 of
+msgid "*True*: The first geometry crosses the other."
+msgstr ""
+
+#: arctern.GeoSeries.crosses:14 of
+msgid "*False*: The first geometry does not cross the other."
+msgstr ""
+
 #: arctern.GeoSeries.crosses of
 msgid "返回类型"
 msgstr ""
 
-#: arctern.GeoSeries.crosses:14 of
-msgid "例子"
+#: arctern.GeoSeries.crosses:18 of
+msgid "实际案例"
 msgstr ""
+
+#~ msgid "例子"
+#~ msgstr ""
 

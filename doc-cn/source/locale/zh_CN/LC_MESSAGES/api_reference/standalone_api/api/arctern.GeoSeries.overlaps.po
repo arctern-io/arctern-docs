@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:31+0800\n"
+"POT-Creation-Date: 2020-06-13 10:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,32 +39,79 @@ msgid "参数"
 msgstr ""
 
 #: arctern.GeoSeries.overlaps:5 of
+#, fuzzy
 msgid ""
 "The geometry or GeoSeries to test whether it overlaps the geometries in "
-"the first GeoSeries. * If ``other`` is a geometry, this function tests "
+"the first GeoSeries.  * If ``other`` is a geometry, this function tests "
 "the \"overlap\" relation between each geometry in the GeoSeries and "
 "``other``. * If ``other`` is a GeoSeries, this function tests the "
 "\"overlap\" relation between each geometry in the GeoSeries and the "
 "geometry with the same index in ``other``."
-msgstr "用于测试与第一个 GeoSeries 中的几何体空间重叠的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 的空间重叠关系。* 如果 ``other`` 是一个 GeoSeries，那么此方法检测 GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体之间的空间重叠关系。"
+msgstr ""
+"用于测试与第一个 GeoSeries 中的几何体空间重叠的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检测 "
+"GeoSeries 中的每个几何体与 ``other`` 的空间重叠关系。* 如果 ``other`` 是一个 GeoSeries，那么此方法检测"
+" GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体之间的空间重叠关系。"
+
+#: arctern.GeoSeries.overlaps:5 of
+msgid ""
+"The geometry or GeoSeries to test whether it overlaps the geometries in "
+"the first GeoSeries."
+msgstr ""
+
+#: arctern.GeoSeries.overlaps:7 of
+msgid ""
+"If ``other`` is a geometry, this function tests the \"overlap\" relation "
+"between each geometry in the GeoSeries and ``other``."
+msgstr ""
+
+#: arctern.GeoSeries.overlaps:8 of
+msgid ""
+"If ``other`` is a GeoSeries, this function tests the \"overlap\" relation"
+" between each geometry in the GeoSeries and the geometry with the same "
+"index in ``other``."
+msgstr ""
 
 #: arctern.GeoSeries.overlaps of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.overlaps:10 of
+#: arctern.GeoSeries.overlaps:11 of
 msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
-"whether it overlaps the geometries in ``other``. * *True*: The first "
+"whether it overlaps the geometries in ``other``.  * *True*: The first "
 "geometry overlaps the other. * *False*: The first geometry does not "
 "overlap the other."
+msgstr ""
+
+#: arctern.GeoSeries.overlaps:11 of
+msgid ""
+"Mask of boolean values for each element in the GeoSeries that indicates "
+"whether it overlaps the geometries in ``other``."
+msgstr ""
+
+#: arctern.GeoSeries.overlaps:13 of
+msgid "*True*: The first geometry overlaps the other."
+msgstr ""
+
+#: arctern.GeoSeries.overlaps:14 of
+msgid "*False*: The first geometry does not overlap the other."
 msgstr ""
 
 #: arctern.GeoSeries.overlaps of
 msgid "返回类型"
 msgstr ""
 
-#: arctern.GeoSeries.overlaps:16 of
+#: arctern.GeoSeries.overlaps:18 of
 msgid "实际案例"
 msgstr ""
+
+#~ msgid ""
+#~ "Mask of boolean values for each "
+#~ "element in the GeoSeries that indicates"
+#~ " whether it overlaps the geometries "
+#~ "in ``other``. * *True*: The first "
+#~ "geometry overlaps the other. * *False*:"
+#~ " The first geometry does not overlap"
+#~ " the other."
+#~ msgstr ""
 
