@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:31+0800\n"
+"POT-Creation-Date: 2020-06-13 10:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,17 +54,31 @@ msgstr ""
 msgid ""
 "The Coordinate Reference System (CRS) set to all geometries in GeoSeries."
 " Only supports SRID as a WKT representation of CRS by now, for example, "
-"``\"EPSG:4326\"``."
+"\"EPSG:4326\"."
 msgstr ""
 
 #: arctern.GeoSeries:13 of
 msgid ""
 "Parameters to pass to the GeoSeries constructor, for example, ``copy``. "
-"``copy`` is a boolean value, by default False. * *True:* Copys input "
+"``copy`` is a boolean value, by default False.  * *True:* Copys input "
 "data. * *False:* Points to input data."
 msgstr ""
 
-#: arctern.GeoSeries:19 of
+#: arctern.GeoSeries:13 of
+msgid ""
+"Parameters to pass to the GeoSeries constructor, for example, ``copy``. "
+"``copy`` is a boolean value, by default False."
+msgstr ""
+
+#: arctern.GeoSeries:16 of
+msgid "*True:* Copys input data."
+msgstr ""
+
+#: arctern.GeoSeries:17 of
+msgid "*False:* Points to input data."
+msgstr ""
+
+#: arctern.GeoSeries:20 of
 msgid "实际案例"
 msgstr ""
 
@@ -476,4 +490,20 @@ msgstr ""
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:65:<autosummary>:1
 msgid "Returns the number of points for each geometry in the GeoSeries."
 msgstr ""
+
+#~ msgid ""
+#~ "The Coordinate Reference System (CRS) "
+#~ "set to all geometries in GeoSeries. "
+#~ "Only supports SRID as a WKT "
+#~ "representation of CRS by now, for "
+#~ "example, ``\"EPSG:4326\"``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Parameters to pass to the GeoSeries "
+#~ "constructor, for example, ``copy``. ``copy``"
+#~ " is a boolean value, by default "
+#~ "False. * *True:* Copys input data. "
+#~ "* *False:* Points to input data."
+#~ msgstr ""
 
