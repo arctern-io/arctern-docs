@@ -155,7 +155,7 @@ msgid ""
 "We can also replace all NA elements with an object in WKB format. Here we"
 " use ``s[1]`` as an example of WKB objects because ``s`` is a GeoSeries "
 "and all elements stored in GeoSeries are transformed to WKB format."
-msgstr "也可以用 WKB 格式的对象替换所有 NA 元素。这里以 ``s[1]`` 作为 WKB 对象的示例，因为 ``s`` 是一个 GeoSeries，并且存储在 GeoSeries 中的所有元素都转换为 WKB 格式。"
+msgstr "也可以用 WKB 格式的对象替换所有 NA 元素。这里以 ``s[1]`` 作为 WKB 对象的示例，因为 ``s`` 是一个 GeoSeries，而 GeoSeries 中的所有元素都是以 WKB 格式存储的。"
 
 #~ msgid ""
 #~ "Method to use for filling holes in"
