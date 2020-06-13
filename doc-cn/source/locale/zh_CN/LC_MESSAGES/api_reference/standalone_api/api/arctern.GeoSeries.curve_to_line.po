@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.GeoSeries.curve_to_line:1 of
 msgid "Converts curves in each geometry to approximate linear representation."
-msgstr ""
+msgstr "将每个几何体中的曲线转换为近似线性表示。"
 
 #: arctern.GeoSeries.curve_to_line:3 of
 msgid "For example,"
@@ -31,21 +31,21 @@ msgstr ""
 
 #: arctern.GeoSeries.curve_to_line:5 of
 msgid "CIRCULAR STRING to LINESTRING,"
-msgstr ""
+msgstr "将 CIRCULAR STRING 转换为 LINESTRING，"
 
 #: arctern.GeoSeries.curve_to_line:6 of
 msgid "CURVEPOLYGON to POLYGON,"
-msgstr ""
+msgstr "将 CURVEPOLYGON 转换为 POLYGON，"
 
 #: arctern.GeoSeries.curve_to_line:7 of
 msgid "MULTISURFACE to MULTIPOLYGON."
-msgstr ""
+msgstr "将 MULTISURFACE 转换为 MULTIPOLYGON。"
 
 #: arctern.GeoSeries.curve_to_line:9 of
 msgid ""
 "It is useful for outputting to devices that can't support CIRCULARSTRING "
 "geometry types."
-msgstr ""
+msgstr "这对于输出到不支持 CIRCULARSTRING 几何体的设备很有用。"
 
 #: arctern.GeoSeries.curve_to_line of
 msgid "返回"
@@ -53,7 +53,7 @@ msgstr ""
 
 #: arctern.GeoSeries.curve_to_line:11 of
 msgid "Converted linear geometries."
-msgstr ""
+msgstr "转换后的线性几何体"
 
 #: arctern.GeoSeries.curve_to_line of
 msgid "返回类型"
