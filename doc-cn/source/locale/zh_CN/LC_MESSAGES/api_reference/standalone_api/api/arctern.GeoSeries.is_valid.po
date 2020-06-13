@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Tests whether each geometry in the GeoSeries is in valid format, such as "
 "WKT and WKB formats."
-msgstr ""
+msgstr "检查 GeoSeries 中的每个几何体是否为有效格式，例如 WKT 和 WKB 格式。"
 
 #: arctern.GeoSeries.is_valid of
 msgid "返回"
@@ -36,7 +36,7 @@ msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
 "whether an element is valid.  * *True:* The geometry is valid. * *False:*"
 " The geometry is invalid."
-msgstr ""
+msgstr "GeoSeries 中每个元素对应的布尔值，指示元素是否为有效的。 * *True*: 几何体是有效的。 * *False*: 几何体是无效的。"
 
 #: arctern.GeoSeries.is_valid:3 of
 msgid ""
