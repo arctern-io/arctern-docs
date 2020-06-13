@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-13 10:28+0800\n"
+"POT-Creation-Date: 2020-06-13 14:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgstr ""
 #: arctern.GeoSeries.unary_union:3 of
 msgid ""
 "A GeoSeries that contains only one geometry, which is the union of all "
-"geometries in the first GeoSeries."
+"geometries in the GeoSeries."
 msgstr ""
 
 #: arctern.GeoSeries.unary_union of
@@ -46,5 +46,11 @@ msgid "实际案例"
 msgstr ""
 
 #~ msgid "例子"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A GeoSeries that contains only one "
+#~ "geometry, which is the union of "
+#~ "all geometries in the first GeoSeries."
 #~ msgstr ""
 
