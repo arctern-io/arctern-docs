@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:31+0800\n"
+"POT-Creation-Date: 2020-06-13 11:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,37 +40,211 @@ msgstr ""
 #: arctern.plot.plot_geometry:7 of
 msgid ""
 "``style_kwds`` specify the properties that describe the style of "
-"geometric graphs. Here is a list of availble style properties:  "
+"geometric graphs.  Here is a list of availble style properties:  "
 "+----------+------------------+-------+--------------------------------------------------+"
 " |Property  |Description       |Default|Applied to"
 "                                        | "
-"+==========|==================|=======+==================================================+"
+"+==========+==================+=======+==================================================+"
 " |color     |str, color        |'C0'   |Point, MultiPoint, Linestring, "
-"MultiLinestring    | |edgecolor |str, edge color   |'black'|Polygon, "
-"MultiPolygon                             | |facecolor |str, face color   "
-"|'C0'   |Polygon, MultiPolygon                             | |linewidth "
-"|float, line width |1.0    |Linestring, MultiLinestring, Polygon, "
-"MultiPolygon| |linestyle |str, line style   |'-'    |Linestring, "
-"MultiLinestring, Polygon, MultiPolygon| |marker    |str, marker style "
-"|'o'    |Point, MultiPoint                                 | "
-"|markersize|float, marker size|6.0    |Point, MultiPoint"
-"                                 | |alpha     |float, opacity    |1.0    "
-"|All                                               | "
-"+----------+------------------|-------+--------------------------------------------------+"
+"MultiLinestring    | "
+"+----------+------------------+-------+--------------------------------------------------+"
+" |edgecolor |str, edge color   |'black'|Polygon, MultiPolygon"
+"                             | "
+"+----------+------------------+-------+--------------------------------------------------+"
+" |facecolor |str, face color   |'C0'   |Polygon, MultiPolygon"
+"                             | "
+"+----------+------------------+-------+--------------------------------------------------+"
+" |linewidth |float, line width |1.0    |Linestring, MultiLinestring, "
+"Polygon, MultiPolygon| "
+"+----------+------------------+-------+--------------------------------------------------+"
+" |linestyle |str, line style   |'-'    |Linestring, MultiLinestring, "
+"Polygon, MultiPolygon| "
+"+----------+------------------+-------+--------------------------------------------------+"
+" |marker    |str, marker style |'o'    |Point, MultiPoint"
+"                                 | "
+"+----------+------------------+-------+--------------------------------------------------+"
+" |markersize|float, marker size|6.0    |Point, MultiPoint"
+"                                 | "
+"+----------+------------------+-------+--------------------------------------------------+"
+" |alpha     |float, opacity    |1.0    |All"
+"                                               | "
+"+----------+------------------+-------+--------------------------------------------------+"
+msgstr ""
+
+#: arctern.plot.plot_geometry:7 of
+msgid ""
+"``style_kwds`` specify the properties that describe the style of "
+"geometric graphs."
+msgstr ""
+
+#: arctern.plot.plot_geometry:9 of
+msgid "Here is a list of availble style properties:"
+msgstr ""
+
+#: arctern.plot.plot_geometry:12 of
+msgid "Property"
+msgstr ""
+
+#: arctern.plot.plot_geometry:12 of
+msgid "Description"
+msgstr ""
+
+#: arctern.plot.plot_geometry:12 of
+msgid "Default"
+msgstr ""
+
+#: arctern.plot.plot_geometry:12 of
+msgid "Applied to"
+msgstr ""
+
+#: arctern.plot.plot_geometry:14 of
+msgid "color"
+msgstr ""
+
+#: arctern.plot.plot_geometry:14 of
+msgid "str, color"
+msgstr ""
+
+#: arctern.plot.plot_geometry:14 arctern.plot.plot_geometry:18 of
+msgid "'C0'"
+msgstr ""
+
+#: arctern.plot.plot_geometry:14 of
+msgid "Point, MultiPoint, Linestring, MultiLinestring"
+msgstr ""
+
+#: arctern.plot.plot_geometry:16 of
+msgid "edgecolor"
+msgstr ""
+
+#: arctern.plot.plot_geometry:16 of
+msgid "str, edge color"
+msgstr ""
+
+#: arctern.plot.plot_geometry:16 of
+msgid "'black'"
+msgstr ""
+
+#: arctern.plot.plot_geometry:16 arctern.plot.plot_geometry:18 of
+msgid "Polygon, MultiPolygon"
+msgstr ""
+
+#: arctern.plot.plot_geometry:18 of
+msgid "facecolor"
+msgstr ""
+
+#: arctern.plot.plot_geometry:18 of
+msgid "str, face color"
+msgstr ""
+
+#: arctern.plot.plot_geometry:20 of
+msgid "linewidth"
+msgstr ""
+
+#: arctern.plot.plot_geometry:20 of
+msgid "float, line width"
+msgstr ""
+
+#: arctern.plot.plot_geometry:20 arctern.plot.plot_geometry:28 of
+msgid "1.0"
+msgstr ""
+
+#: arctern.plot.plot_geometry:20 arctern.plot.plot_geometry:22 of
+msgid "Linestring, MultiLinestring, Polygon, MultiPolygon"
+msgstr ""
+
+#: arctern.plot.plot_geometry:22 of
+msgid "linestyle"
+msgstr ""
+
+#: arctern.plot.plot_geometry:22 of
+msgid "str, line style"
+msgstr ""
+
+#: arctern.plot.plot_geometry:22 of
+msgid "'-'"
 msgstr ""
 
 #: arctern.plot.plot_geometry:24 of
+msgid "marker"
+msgstr ""
+
+#: arctern.plot.plot_geometry:24 of
+msgid "str, marker style"
+msgstr ""
+
+#: arctern.plot.plot_geometry:24 of
+msgid "'o'"
+msgstr ""
+
+#: arctern.plot.plot_geometry:24 arctern.plot.plot_geometry:26 of
+msgid "Point, MultiPoint"
+msgstr ""
+
+#: arctern.plot.plot_geometry:26 of
+msgid "markersize"
+msgstr ""
+
+#: arctern.plot.plot_geometry:26 of
+msgid "float, marker size"
+msgstr ""
+
+#: arctern.plot.plot_geometry:26 of
+msgid "6.0"
+msgstr ""
+
+#: arctern.plot.plot_geometry:28 of
+msgid "alpha"
+msgstr ""
+
+#: arctern.plot.plot_geometry:28 of
+msgid "float, opacity"
+msgstr ""
+
+#: arctern.plot.plot_geometry:28 of
+msgid "All"
+msgstr ""
+
+#: arctern.plot.plot_geometry:32 of
 msgid "提示"
 msgstr ""
 
-#: arctern.plot.plot_geometry:25 of
+#: arctern.plot.plot_geometry:33 of
 msgid ""
 "See `matplotlib.pyplot.plot document "
 "<https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html?highlight=plot#matplotlib.pyplot.plot>`_"
 " for detailed description of marker styles, line styles, and colors."
 msgstr ""
 
-#: arctern.plot.plot_geometry:28 of
+#: arctern.plot.plot_geometry:36 of
 msgid "实际案例"
 msgstr ""
+
+#~ msgid ""
+#~ "``style_kwds`` specify the properties that "
+#~ "describe the style of geometric graphs."
+#~ " Here is a list of availble "
+#~ "style properties:  "
+#~ "+----------+------------------+-------+--------------------------------------------------+"
+#~ " |Property  |Description       |Default|Applied "
+#~ "to                                        | "
+#~ "+==========|==================|=======+==================================================+"
+#~ " |color     |str, color        |'C0'   "
+#~ "|Point, MultiPoint, Linestring, MultiLinestring"
+#~ "    | |edgecolor |str, edge color   "
+#~ "|'black'|Polygon, MultiPolygon                             "
+#~ "| |facecolor |str, face color   |'C0'"
+#~ "   |Polygon, MultiPolygon                             |"
+#~ " |linewidth |float, line width |1.0    "
+#~ "|Linestring, MultiLinestring, Polygon, MultiPolygon|"
+#~ " |linestyle |str, line style   |'-'    "
+#~ "|Linestring, MultiLinestring, Polygon, MultiPolygon|"
+#~ " |marker    |str, marker style |'o'    "
+#~ "|Point, MultiPoint                                 | "
+#~ "|markersize|float, marker size|6.0    |Point, "
+#~ "MultiPoint                                 | |alpha"
+#~ "     |float, opacity    |1.0    |All"
+#~ "                                               | "
+#~ "+----------+------------------|-------+--------------------------------------------------+"
+#~ msgstr ""
 

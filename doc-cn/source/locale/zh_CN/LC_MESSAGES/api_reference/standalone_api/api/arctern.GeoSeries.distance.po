@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:31+0800\n"
+"POT-Creation-Date: 2020-06-13 10:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,20 +33,43 @@ msgid "参数"
 msgstr ""
 
 #: arctern.GeoSeries.distance:3 of
+#, fuzzy
 msgid ""
 "The geometry or GeoSeries to calculate the distance between it and the "
-"geometries in the first GeoSeries. * If ``other`` is a geometry, this "
+"geometries in the first GeoSeries.  * If ``other`` is a geometry, this "
 "function calculates the distance between each geometry in the GeoSeries "
 "and ``other``. * If ``other`` is a GeoSeries, this function calculates "
 "the distance between each geometry in the GeoSeries and the geometry with"
 " the same index in ``other``."
-msgstr "用于计算第一个 GeoSeries 中的几何体与其之间距离的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法计算 GeoSeries 中每个几何体与 ``other`` 之间的距离。* 如果 ``other`` 是一个 GeoSeries，那么此方法计算 GeoSeries 中每个几何体与 ``other`` 中具有相同索引的几何体之间的距离。"
+msgstr ""
+"用于计算第一个 GeoSeries 中的几何体与其之间距离的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法计算 "
+"GeoSeries 中每个几何体与 ``other`` 之间的距离。* 如果 ``other`` 是一个 GeoSeries，那么此方法计算 "
+"GeoSeries 中每个几何体与 ``other`` 中具有相同索引的几何体之间的距离。"
+
+#: arctern.GeoSeries.distance:3 of
+msgid ""
+"The geometry or GeoSeries to calculate the distance between it and the "
+"geometries in the first GeoSeries."
+msgstr ""
+
+#: arctern.GeoSeries.distance:5 of
+msgid ""
+"If ``other`` is a geometry, this function calculates the distance between"
+" each geometry in the GeoSeries and ``other``."
+msgstr ""
+
+#: arctern.GeoSeries.distance:6 of
+msgid ""
+"If ``other`` is a GeoSeries, this function calculates the distance "
+"between each geometry in the GeoSeries and the geometry with the same "
+"index in ``other``."
+msgstr ""
 
 #: arctern.GeoSeries.distance of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.distance:8 of
+#: arctern.GeoSeries.distance:9 of
 msgid ""
 "Distance between each geometry in the GeoSeries and the corresponding "
 "geometry given in ``other``."
@@ -56,7 +79,7 @@ msgstr ""
 msgid "返回类型"
 msgstr ""
 
-#: arctern.GeoSeries.distance:12 of
+#: arctern.GeoSeries.distance:13 of
 msgid "实际案例"
 msgstr ""
 

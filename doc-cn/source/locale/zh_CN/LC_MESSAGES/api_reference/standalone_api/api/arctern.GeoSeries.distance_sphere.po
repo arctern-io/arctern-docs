@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:31+0800\n"
+"POT-Creation-Date: 2020-06-13 10:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,41 +38,68 @@ msgid "参数"
 msgstr ""
 
 #: arctern.GeoSeries.distance_sphere:5 of
+#, fuzzy
 msgid ""
 "The geometry or GeoSeries to calculate the spherical distance between it "
-"and the geometries in the first GeoSeries. * If ``other`` is a geometry, "
-"this function calculates the spherical distance between each geometry in "
-"the GeoSeries and ``other``. The ``crs`` of ``other`` is \"EPSG:4326\" bu"
-" default. * If ``other`` is a GeoSeries, this function calculates the "
+"and the geometries in the first GeoSeries.  * If ``other`` is a geometry,"
+" this function calculates the spherical distance between each geometry in"
+" the GeoSeries and ``other``. The ``crs`` of ``other`` is \"EPSG:4326\" "
+"bu default. * If ``other`` is a GeoSeries, this function calculates the "
 "spherical distance between each geometry in the GeoSeries and the "
 "geometry with the same index in ``other``."
-msgstr "用于计算第一个 GeoSeries 中的几何体与其之间球面距离的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法计算 GeoSeries 中每个几何体与 ``other`` 之间的球面距离。``other`` 的 ``crs`` 默认值为 \"EPSG:4326\"。* 如果 ``other`` 是一个 GeoSeries，那么此方法计算 GeoSeries 中每个几何体与 ``other`` 中具有相同索引的几何体之间的球面距离。"
+msgstr ""
+"用于计算第一个 GeoSeries 中的几何体与其之间球面距离的几何体或 GeoSeries。* 如果 ``other`` "
+"是几何体，那么此方法计算 GeoSeries 中每个几何体与 ``other`` 之间的球面距离。``other`` 的 ``crs`` 默认值为"
+" \"EPSG:4326\"。* 如果 ``other`` 是一个 GeoSeries，那么此方法计算 GeoSeries 中每个几何体与 "
+"``other`` 中具有相同索引的几何体之间的球面距离。"
+
+#: arctern.GeoSeries.distance_sphere:5 of
+msgid ""
+"The geometry or GeoSeries to calculate the spherical distance between it "
+"and the geometries in the first GeoSeries."
+msgstr ""
+
+#: arctern.GeoSeries.distance_sphere:7 of
+msgid ""
+"If ``other`` is a geometry, this function calculates the spherical "
+"distance between each geometry in the GeoSeries and ``other``. The "
+"``crs`` of ``other`` is \"EPSG:4326\" bu default."
+msgstr ""
+
+#: arctern.GeoSeries.distance_sphere:8 of
+#, fuzzy
+msgid ""
+"If ``other`` is a GeoSeries, this function calculates the spherical "
+"distance between each geometry in the GeoSeries and the geometry with the"
+" same index in ``other``."
+msgstr "包含 GeoSeries 中每个几何体 与 ``other`` 中给定的对应几何之间的球面距离的 Series。"
 
 #: arctern.GeoSeries.distance_sphere of
 msgid "返回"
 msgstr ""
 
-#: arctern.GeoSeries.distance_sphere:10 of
+#: arctern.GeoSeries.distance_sphere:11 of
+#, fuzzy
 msgid ""
-"A Series that contains the spherical distance between each geometry in "
-"the GeoSeries and the corresponding geometry given in ``other``."
+"Spherical distance between each geometry in the GeoSeries and the "
+"corresponding geometry given in ``other``."
 msgstr "包含 GeoSeries 中每个几何体 与 ``other`` 中给定的对应几何之间的球面距离的 Series。"
 
 #: arctern.GeoSeries.distance_sphere of
 msgid "返回类型"
 msgstr ""
 
-#: arctern.GeoSeries.distance_sphere:14 of
+#: arctern.GeoSeries.distance_sphere:15 of
 msgid "提示"
 msgstr ""
 
-#: arctern.GeoSeries.distance_sphere:15 of
+#: arctern.GeoSeries.distance_sphere:16 of
 msgid ""
 "Only the longitude and latitude coordinate reference system "
 "(\"EPSG:4326\") can be used to calculate spherical distance."
 msgstr "只有经度和纬度坐标参考系（\"EPSG:4326\"）才能用于计算球面距离。"
 
-#: arctern.GeoSeries.distance_sphere:18 of
+#: arctern.GeoSeries.distance_sphere:19 of
 msgid "实际案例"
 msgstr ""
 

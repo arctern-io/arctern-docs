@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 17:31+0800\n"
+"POT-Creation-Date: 2020-06-13 10:28+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,15 +38,37 @@ msgstr ""
 #: arctern.GeoSeries.is_simple:5 of
 msgid ""
 "Mask of boolean values for each element in the GeoSeries that indicates "
-"whether an element is simple. * *True:* The geometry is simple. * "
+"whether an element is simple.  * *True:* The geometry is simple. * "
 "*False:* The geometry is not simple."
+msgstr ""
+
+#: arctern.GeoSeries.is_simple:5 of
+msgid ""
+"Mask of boolean values for each element in the GeoSeries that indicates "
+"whether an element is simple."
+msgstr ""
+
+#: arctern.GeoSeries.is_simple:7 of
+msgid "*True:* The geometry is simple."
+msgstr ""
+
+#: arctern.GeoSeries.is_simple:8 of
+msgid "*False:* The geometry is not simple."
 msgstr ""
 
 #: arctern.GeoSeries.is_simple of
 msgid "返回类型"
 msgstr ""
 
-#: arctern.GeoSeries.is_simple:11 of
+#: arctern.GeoSeries.is_simple:12 of
 msgid "实际案例"
 msgstr ""
+
+#~ msgid ""
+#~ "Mask of boolean values for each "
+#~ "element in the GeoSeries that indicates"
+#~ " whether an element is simple. * "
+#~ "*True:* The geometry is simple. * "
+#~ "*False:* The geometry is not simple."
+#~ msgstr ""
 
