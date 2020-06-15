@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-15 14:42+0800\n"
+"POT-Creation-Date: 2020-06-15 15:55+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -174,7 +174,9 @@ msgid ""
 "Transforms all geometries in the GeoSeries to `WKT "
 "<https://en.wikipedia.org/wiki/Well-"
 "known_text_representation_of_geometry>`_ strings."
-msgstr "将 GeoSeries 中的所有几何体转换为 `WKT <https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry>`_ 字符串。"
+msgstr ""
+"将 GeoSeries 中的所有几何体转换为 `WKT <https://en.wikipedia.org/wiki/Well-"
+"known_text_representation_of_geometry>`_ 字符串。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:49:<autosummary>:1
 msgid ":obj:`GeoSeries.to_wkb <arctern.GeoSeries.to_wkb>`\\ \\(\\)"
@@ -185,7 +187,9 @@ msgid ""
 "Transforms all geometries in the GeoSeries to `WKB "
 "<https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry"
 "#Well-known_binary>`_ strings."
-msgstr "将 GeoSeries 中的所有几何体转换为 `WKB <https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry#Well-known_binary>`_ 字符串。"
+msgstr ""
+"将 GeoSeries 中的所有几何体转换为 `WKB <https://en.wikipedia.org/wiki/Well-"
+"known_text_representation_of_geometry#Well-known_binary>`_ 字符串。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:49:<autosummary>:1
 msgid ":obj:`GeoSeries.to_geopandas <arctern.GeoSeries.to_geopandas>`\\ \\(\\)"
@@ -263,7 +267,10 @@ msgid ""
 "Returns a simplified version for each geometry in the GeoSeries using the"
 " `Douglas-Peucker algorithm "
 "<https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm>`_."
-msgstr "返回使用 `Douglas-Peucker 算法 <https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm>`_ 计算的 GeoSeries 中每个几何体的简化版本。"
+msgstr ""
+"返回使用 `Douglas-Peucker 算法 "
+"<https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm>`_"
+" 计算的 GeoSeries 中每个几何体的简化版本。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:64:<autosummary>:1
 msgid ":obj:`GeoSeries.set_crs <arctern.GeoSeries.set_crs>`\\ \\(crs\\)"
@@ -288,9 +295,10 @@ msgid ":obj:`GeoSeries.to_crs <arctern.GeoSeries.to_crs>`\\ \\(crs\\)"
 msgstr ""
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:64:<autosummary>:1
+#, fuzzy
 msgid ""
 "Transforms the Coordinate Reference System (CRS) of the GeoSeries to "
-"`crs`."
+"``crs``."
 msgstr "将 GeoSeries 的 CRS（Coordinate Reference System，坐标参考系）转换为 ``crs``。"
 
 #: ../../source/api_reference/standalone_api/geoseries.rst:64:<autosummary>:1

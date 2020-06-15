@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Transforms the Coordinate Reference System (CRS) of the GeoSeries to "
 "`crs`."
-msgstr "将 GeoSeries 的 CRS（Coordinate Reference System，坐标参考系）转换为 ``crs``。"
+msgstr "将 GeoSeries 的 CRS（Coordinate Reference System，坐标参考系）转换为 `crs`。"
 
 #: arctern.GeoSeries.to_crs of
 msgid "参数"

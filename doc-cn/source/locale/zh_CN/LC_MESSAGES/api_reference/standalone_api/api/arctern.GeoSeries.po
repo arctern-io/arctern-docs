@@ -346,7 +346,7 @@ msgstr ""
 msgid ""
 "Transforms the Coordinate Reference System (CRS) of the GeoSeries to "
 "`crs`."
-msgstr "将 GeoSeries 的 CRS（Coordinate Reference System，坐标参考系）转换为 ``crs``。"
+msgstr "将 GeoSeries 的 CRS（Coordinate Reference System，坐标参考系）转换为 `crs`。"
 
 #: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:51:<autosummary>:1
 msgid ":obj:`to_geopandas <arctern.GeoSeries.to_geopandas>`\\ \\(\\)"
