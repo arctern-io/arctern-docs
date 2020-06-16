@@ -15,7 +15,7 @@ This document guides you to install Arctern in standalone mode.
 
 | Name             | Version           |
 | :--------------- | :---------------- |
-| Operating system | Ubuntu LTS 18.04  |
+| Operating system | Ubuntu LTS 18.04, Centos 7  |
 | Conda            | Miniconda Python3 |
 | CUDA             | 10.0              |
 | NVIDIA driver    | 4.30              |
@@ -23,6 +23,8 @@ This document guides you to install Arctern in standalone mode.
 > **Note:** You can go to [NVIDIA website](https://developer.nvidia.com/cuda-gpus) to check whether you have a CUDA-enabled GPU.
 
 ## Installing dependent libraries
+
+### Ubuntu
 
 * CPU version
 
@@ -37,6 +39,12 @@ $ sudo apt install libgl1-mesa-dev libegl1-mesa-dev
 ```
 
 > **Note:** If the installation fails, please run `apt update` and then run the above commands again.
+
+### Centos
+
+```bash
+$ sudo yum install mesa-libGLU-devel mesa-libOSMesa-devel
+```
 
 ## Installing Miniconda
 
