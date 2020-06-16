@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/api_reference/map_match/map_match.rst:4
 msgid "Map Match"
-msgstr "地图匹配"
+msgstr ""
 
 #: ../../source/api_reference/map_match/map_match.rst:12:<autosummary>:1
 msgid ""

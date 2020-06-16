@@ -17,7 +17,7 @@
 
 | 名称          | 版本              |
 | :------------ | :---------------- |
-| 操作系统      | Ubuntu LTS 18.04 / Centos 7  |
+| 操作系统      | Ubuntu LTS 18.04, Centos 7  |
 | Conda         | Miniconda Python3 |
 | CUDA          | 10.0              |
 | NVIDIA driver | 4.30              |
@@ -44,11 +44,9 @@ $ sudo apt install libgl1-mesa-dev libegl1-mesa-dev
 
 ### Centos
 
-
 ```bash
 $ sudo yum install mesa-libGLU-devel mesa-libOSMesa-devel
 ```
-
 
 ## 安装 Miniconda
 
