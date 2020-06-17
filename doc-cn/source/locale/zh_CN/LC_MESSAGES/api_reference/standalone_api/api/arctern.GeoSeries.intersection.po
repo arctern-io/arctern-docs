@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-15 09:57+0800\n"
+"POT-Creation-Date: 2020-06-16 16:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,10 +50,9 @@ msgstr ""
 
 #: arctern.GeoSeries.intersection:9 of
 msgid ""
-"A GeoSeries that contains only one geometry, which is the intersection of"
-" each geometry in the GeoSeries and the corresponding geometry given in "
-"``other``."
-msgstr "一个仅包含一个几何体的 GeoSeries，其中的几何体是 GeoSeries 中的每个几何体与 ``other`` 中给出的对应几何体的交集。"
+"Intersection of each geometry in the GeoSeries and the corresponding "
+"geometry given in ``other``."
+msgstr "GeoSeries 中的每个几何体与 ``other`` 中给出的对应几何体的交集。"
 
 #: arctern.GeoSeries.intersection of
 msgid "返回类型"

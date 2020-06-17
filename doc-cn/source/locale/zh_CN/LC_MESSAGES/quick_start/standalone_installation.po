@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 10:46+0800\n"
+"POT-Creation-Date: 2020-06-16 16:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,13 +30,13 @@ msgid "系统要求"
 msgstr ""
 
 #: ../../source/quick_start/standalone_installation.md:9
-#: ../../source/quick_start/standalone_installation.md:63
-#: ../../source/quick_start/standalone_installation.md:99
+#: ../../source/quick_start/standalone_installation.md:65
+#: ../../source/quick_start/standalone_installation.md:107
 msgid "CPU 版本"
 msgstr ""
 
 #: ../../source/quick_start/standalone_installation.md:30
-#: ../../source/quick_start/standalone_installation.md:69
+#: ../../source/quick_start/standalone_installation.md:71
 msgid "GPU 版本"
 msgstr ""
 
@@ -48,47 +48,58 @@ msgstr ""
 msgid "安装依赖库"
 msgstr ""
 
-#: ../../source/quick_start/standalone_installation.md:75
-msgid "注意： 如果安装失败，请先执行 apt update 再执行以上命令。"
+#: ../../source/quick_start/standalone_installation.md:63
+msgid "Ubuntu"
 msgstr ""
 
 #: ../../source/quick_start/standalone_installation.md:77
-msgid "安装 Miniconda"
+msgid "注意： 如果安装失败，请先执行 sudo apt update 再执行以上命令。"
 msgstr ""
 
 #: ../../source/quick_start/standalone_installation.md:79
+msgid "Centos"
+msgstr ""
+
+#: ../../source/quick_start/standalone_installation.md:85
+msgid "安装 Miniconda"
+msgstr ""
+
+#: ../../source/quick_start/standalone_installation.md:87
 msgid "安装 Miniconda："
 msgstr ""
 
-#: ../../source/quick_start/standalone_installation.md:88
+#: ../../source/quick_start/standalone_installation.md:96
 msgid "关闭当前终端，并重新打开一个新的终端。在新终端中打印所有 Conda 环境。若出现 base 环境，则 Conda 安装成功。"
 msgstr ""
 
-#: ../../source/quick_start/standalone_installation.md:95
+#: ../../source/quick_start/standalone_installation.md:103
 msgid "安装 Arctern"
 msgstr ""
 
-#: ../../source/quick_start/standalone_installation.md:97
+#: ../../source/quick_start/standalone_installation.md:105
 msgid "安装 Arctern 并创建名为 arctern_env 的 Conda 环境："
 msgstr ""
 
-#: ../../source/quick_start/standalone_installation.md:105
+#: ../../source/quick_start/standalone_installation.md:113
 msgid "GPU版本"
 msgstr ""
 
-#: ../../source/quick_start/standalone_installation.md:111
+#: ../../source/quick_start/standalone_installation.md:119
 msgid "进入 Conda 环境："
 msgstr ""
 
-#: ../../source/quick_start/standalone_installation.md:117
+#: ../../source/quick_start/standalone_installation.md:125
 msgid "安装验证"
 msgstr ""
 
-#: ../../source/quick_start/standalone_installation.md:119
+#: ../../source/quick_start/standalone_installation.md:127
 msgid "进入 Python 环境，尝试导入 arctern 并确认版本是否正确。"
 msgstr ""
 
-#: ../../source/quick_start/standalone_installation.md:127
+#: ../../source/quick_start/standalone_installation.md:135
 msgid "卸载 Arctern"
 msgstr ""
+
+#~ msgid "注意： 如果安装失败，请先执行 apt update 再执行以上命令。"
+#~ msgstr ""
 
