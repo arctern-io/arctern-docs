@@ -49,7 +49,7 @@ Name: geos, dtype: object
 >>> geo_wkb = arctern.GeoSeries(data_wkb)
 ```
 
-使用 GeoSeries 的 [`geom_equals`](../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html) 方法比较 `geo_wkt` 和 `geo_wkb` 两个 GeoSeries 对象，发现它们是相同的。这是因为   `geo_wkt` 和 `geo_wkb` 本质上都是由同一数据构造的 GeoSeries 对象。
+使用 GeoSeries 的 [`geom_equals`](../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html) 方法比较 `geo_wkt` 和 `geo_wkb` 两个 GeoSeries 对象，发现它们是相同的。这是因为 `geo_wkt` 和 `geo_wkb` 本质上都是由同一数据构造的 GeoSeries 对象。
 
 ```pytho
 >>> geo_wkt.geom_equals(geo_wkb)
@@ -92,7 +92,7 @@ Name: geos, dtype: object
 >>> geo_json = arctern.GeoSeries.geom_from_geojson(data_json)
 ```
 
-使用 GeoSeries 的 [`geom_equals`](../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html) 方法比较 `geo_wkb` 和 `geo_json` 两个 GeoSeries 对象，发现它们是相同的。这是因为   `geo_wkb` 和 `geo_json` 的源文件（**wkt_geos.csv** 和 **geos.json**）中定义的是相同的几何体。
+使用 GeoSeries 的 [`geom_equals`](../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html) 方法比较 `geo_wkb` 和 `geo_json` 两个 GeoSeries 对象，发现它们是相同的。这是因为 `geo_wkb` 和 `geo_json` 的源文件（**wkt_geos.csv** 和 **geos.json**）中定义的是相同的几何体。
 
 ```python
 >>> geo_json.geom_equals(geo_wkb)
