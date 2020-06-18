@@ -45,32 +45,32 @@ dtype: GeoDtype
 
 GeoSeries implements common operations on geometry (unary operations and binary operations).
 
-* When performing a unary operation on a GeoSeries object, Arctern performs the operation on all the geometry stored in the GeoSeries object.
-* When performing binary operations on two GeoSeries objects, Arctern performs one-to-one operations on each of the geometries in the two GeoSeries objects according to the index.
+* When performing a unary operation on a GeoSeries object, Arctern performs the operation on all the geometries stored in the GeoSeries object.
+* When performing binary operations on two GeoSeries objects, Arctern performs one-to-one operations on each geometry in the two GeoSeries objects according to the index.
 * When performing a binary operation on a GeoSeries object and a geometry (object in WKB format), Arctern performs an operation on each geometry in the GeoSeries object and this geometry.
 
-If the result of the operation is geometry, a new GeoSeries object is returned, otherwise a Pandas Series object is returned.
+If the result of the operation is geometric data, a new GeoSeries object is returned; otherwise a Pandas Series object is returned.
 
-The following lists some of the GeoSeries methods, including operations on geometry measurement, relationship calculation, and conversion. For detailed interface introduction, please see [API Reference](../../api_reference/standalone_api/geoseries.html).
+The following lists some of the GeoSeries methods, including operations on geometry measurement, relationship calculation, and conversion. For detailed information of APIs, please see [API Reference](../../api_reference/standalone_api/geoseries.html).
 
 #### Geometric measurement  
 
-- **[GeoSeries.is_valid](../../api_reference/standalone_api/api/arctern.GeoSeries.is_valid.html):** Check whether each geometry in the GeoSeries object is valid.
-- **[GeoSeries.area](../../api_reference/standalone_api/api/arctern.GeoSeries.area.html):** Calculate the area of each geometry in a GeoSeries object.
-- **[GeoSeries.distance](../../api_reference/standalone_api/api/arctern.GeoSeries.distance.html):** For each geometry in the GeoSeries object, create a geometry with the maximum distance not greater than the given distance.
-- **[GeoSeries.distance_sphere](../../api_reference/standalone_api/api/arctern.GeoSeries.distance_sphere.html):** For each geometry in the GeoSeries object, the minimum distance between two points on the earth's surface is calculated based on the latitude and longitude coordinates. This method uses the earth and radius defined by the SRID.
-- **[GeoSeries.hausdorff_distance](../../api_reference/standalone_api/api/arctern.GeoSeries.hausdorff_distance.html):** For each geometry in the GeoSeries object, check the Hausdorff distance between it and the geometry at the same position in the other GeoSeries object. This distance is to measure the similarity between two geometries.
+- **[GeoSeries.is_valid](../../api_reference/standalone_api/api/arctern.GeoSeries.is_valid.html):** Tests whether each geometry in the GeoSeries is in valid format, such as WKT and WKB formats.
+- **[GeoSeries.area](../../api_reference/standalone_api/api/arctern.GeoSeries.area.html):** Calculates the 2D Cartesian (planar) area of each geometry in the GeoSeries.
+- **[GeoSeries.distance](../../api_reference/standalone_api/api/arctern.GeoSeries.distance.html):** For each geometry in the GeoSeries and the corresponding geometry given in `other`, calculates the minimum 2D Cartesian (planar) distance between them.
+- **[GeoSeries.distance_sphere](../../api_reference/standalone_api/api/arctern.GeoSeries.distance_sphere.html):** For each point in the GeoSeries and the corresponding point given in `other`, calculates the minimum spherical distance between them.
+- **[GeoSeries.hausdorff_distance](../../api_reference/standalone_api/api/arctern.GeoSeries.hausdorff_distance.html):** For each point in the GeoSeries and the corresponding point given in `other`, calculates the Hausdorff distance between them.
 
 #### Geometric relationship operation
 
-- **[GeoSeries.touches](../../api_reference/standalone_api/api/arctern.GeoSeries.touches.html):** For each geometry in the GeoSeries object, check whether it touches the geometry at the same position in the other GeoSeries object. "touches" means that two geometries have a common point on the boundary.
-- **[GeoSeries.overlaps](../../api_reference/standalone_api/api/arctern.GeoSeries.overlaps.html):** For each geometry in the GeoSeries object, check whether it overlaps the geometry at the same position in the other GeoSeries object. "overlaps" means that the two geometries cross and do not contain each other.
-- **[GeoSeries.intersects](../../api_reference/standalone_api/api/arctern.GeoSeries.intersects.html):** For each geometry in the GeoSeries object, check whether it intersects with the geometry at the same position in the other GeoSeries object.
+- **[GeoSeries.touches](../../api_reference/standalone_api/api/arctern.GeoSeries.touches.html):** For each geometry in the GeoSeries and the corresponding geometry given in `other`, tests whether the first geometry touches the other.
+- **[GeoSeries.overlaps](../../api_reference/standalone_api/api/arctern.GeoSeries.overlaps.html):** For each geometry in the GeoSeries and the corresponding geometry given in `other`, tests whether the first geometry "spatially overlaps" the other.
+- **[GeoSeries.intersects](../../api_reference/standalone_api/api/arctern.GeoSeries.intersects.html):** For each geometry in the GeoSeries and the corresponding geometry given in `other`, tests whether they intersect each other.
 
 #### Geometric conversion
 
-- **[GeoSeries.precision_reduce](../../api_reference/standalone_api/api/arctern.GeoSeries.precision_reduce.html):** For each geometry in the GeoSeries object, the geometry with reduced coordinate accuracy is created according to the given valid digits number.
-- **[GeoSeries.make_valid](../../api_reference/standalone_api/api/arctern.GeoSeries.make_valid.html):** For each geometry in the GeoSeries object, create a new valid geometry based on it. During the construction of the new geometry, no vertices of the original geometry are deleted. If the original geometry is already valid, then return the original geometry directly.
-- **[GeoSeries.curve_to_line](../../api_reference/standalone_api/api/arctern.GeoSeries.curve_to_line.html):** For each geometry in the GeoSeries object, calculate its approximate representation. The approximate representation method is to convert the curve in each geometric figure into an approximate linear representation.
+- **[GeoSeries.precision_reduce](../../api_reference/standalone_api/api/arctern.GeoSeries.precision_reduce.html):** For the coordinates of each geometry in the GeoSeries, reduces the number of significant digits to the given number.
+- **[GeoSeries.make_valid](../../api_reference/standalone_api/api/arctern.GeoSeries.make_valid.html):** Creates a valid representation of each geometry in the GeoSeries without losing any of the input vertices.
+- **[GeoSeries.curve_to_line](../../api_reference/standalone_api/api/arctern.GeoSeries.curve_to_line.html):** Converts curves in each geometry to approximate linear representation.
 
 

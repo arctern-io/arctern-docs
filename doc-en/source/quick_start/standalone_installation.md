@@ -88,7 +88,7 @@ $ conda activate arctern_env
 
 ## Installation verification
 
-In the Python environment, try to import `arctern` and check whether it is the latest version (0.2.0):
+In the Python environment, try to import `arctern` and check whether it is the latest version:
 
 ```python
 >>> import arctern

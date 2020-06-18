@@ -1,6 +1,6 @@
 # Reading and writing files
 
-Arctern inherits the file reading and writing interface of pandas and supports reading and writing data types of [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry), [WKB](https://en.wikipedia.org/ wiki/Well-known_text_representation_of_geometry#Well-known_binary) and [GeoJson](https://geojson.org/) files. For the specific methods of reading and writing files through pandas, please refer to [pandas Documentation](https://pandas.pydata.org/pandas-docs/stable/reference/io.html).
+Arctern inherits the file reading and writing interface of pandas and supports reading and writing data types of [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry), [WKB](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry#Well-known_binary) and [GeoJson](https://geojson.org/) files. For the specific methods of reading and writing files through pandas, please refer to [pandas Documentation](https://pandas.pydata.org/pandas-docs/stable/reference/io.html).
 
 ## Importing files
 
@@ -32,7 +32,7 @@ First, use the [`read_csv`](https://pandas.pydata.org/pandas-docs/stable/referen
 Name: geos, dtype: object
 ```
 
-Construct an arctern.GeoSeries object `geo_wkt` based on the pandas.Series object `data_wkt` that consists of WKT data:
+Construct an arctern.GeoSeries object `geo_wkt` based on the pandas.Series object `data_wkt` made up of WKT data:
 
 ```python
 >>> geo_wkt = arctern.GeoSeries(data_wkt)
@@ -86,13 +86,13 @@ First, use the [`read_json`](https://pandas.pydata.org/pandas-docs/stable/refere
 Name: geos, dtype: object
 ```
 
-Construct an arctern.GeoSeries object `geo_json` based on the pandas.Series object `data_json` that consists of GeoJson data:
+Construct an arctern.GeoSeries object `geo_json` based on the pandas.Series object `data_json` made up of GeoJson data:
 
 ```python
 >>> geo_json = arctern.GeoSeries.geom_from_geojson(data_json)
 ```
 
-Use the [`geom_equals`](../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html) method of GeoSeries to compare `geo_wkb` and `geo_json`. It turns out that these two GeoSeries objects are the the source files of `geo_wkb` and `geo_json` (**wkt_geos.csv** and **geos.json**) define the same geometry.
+Use the [`geom_equals`](../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html) method of GeoSeries to compare `geo_wkb` and `geo_json`. It turns out that these two GeoSeries objects are the same because the source files of `geo_wkb` and `geo_json` (**wkt_geos.csv** and **geos.json**) define the same geometry.
 
 ```python
 >>> geo_json.geom_equals(geo_wkb)
