@@ -144,7 +144,6 @@ dtype: GeoDtype
 ## [GeoSeries.simplify(tolerance)](../../api_reference/standalone_api/api/arctern.GeoSeries.simplify.html)
 
 * **Function:** For each geometry in the GeoSeries object, calculate its simplified representation. The simplified representation algorithm is Douglas-Peucker algorithm.
-* **Parameters:** `tolerance` is a floating-point number, indicating the maximum distance between a point on the line string and the curve.
 * **Returns:** GeoSeries
 
 ```python
