@@ -172,9 +172,9 @@ dtype: GeoDtype
 
 ## [GeoSeries.buffer(distance)](../../api_reference/standalone_api/api/arctern.GeoSeries.buffer.html)
 
-* **Function:** For each geometry, moves all of its points away from its centroid to construct a new geometry. The distance of movement is specified as ``distance``.
-  * If ``distance`` > 0, the new geometry is a scaled-up version outside the original geometry.
-  * If ``distance`` < 0, the new geometry is a scaled-down version inside the original geometry.
+* **Function:** For each geometry, moves all of its points away from its centroid to construct a new geometry. The distance of movement is specified as `distance`.
+  * If `distance` > 0, the new geometry is a scaled-up version outside the original geometry.
+  * If `distance` < 0, the new geometry is a scaled-down version inside the original geometry.
 * **Returns:** Sequence of geometries.
 
 ### Example 1
@@ -240,8 +240,8 @@ dtype: GeoDtype
 
 ## [GeoSeries.intersects(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.intersects.html)
 
-* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in ``other``, tests whether they intersect each other.
-* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it intersects the geometries in ``other``.
+* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in `other`, tests whether they intersect each other.
+* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it intersects the geometries in `other`.
   * *True*: The two geometries intersect each other.
   * *False*: The two geometries do not intersect each other.
 
@@ -285,8 +285,8 @@ dtype: bool
 
 ## [GeoSeries.within(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.within.html)
 
-* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in ``other``, tests whether the first geometry is within the other.
-* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it is within the geometries in ``other``.
+* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in `other`, tests whether the first geometry is within the other.
+* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it is within the geometries in `other`.
   * *True*: The first geometry is within the other.
   * *False*: The first geometry is not within the other.
 
@@ -303,8 +303,8 @@ dtype: bool
 
 ## [GeoSeries.contains(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.contains.html)
 
-* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in ``other``, tests whether the first geometry contains the other.
-* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it contains the geometries in ``other``.
+* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in `other`, tests whether the first geometry contains the other.
+* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it contains the geometries in `other`.
   * *True*: The first geometry contains the other.
   * *False*: The first geometry does not contain the other.
 
@@ -322,8 +322,8 @@ dtype: bool
 
 ## [GeoSeries.crosses(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.crosses.html)
 
-* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in ``other``, tests whether the first geometry spatially crosses the other. "Spatially cross" means two geometries have some, but not all interior points in common. The intersection of the interiors of the geometries must not be the empty set and must have a dimensionality less than the maximum dimension of the two input geometries.
-* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it crosses the geometries in ``other``.
+* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in `other`, tests whether the first geometry spatially crosses the other. "Spatially cross" means two geometries have some, but not all interior points in common. The intersection of the interiors of the geometries must not be the empty set and must have a dimensionality less than the maximum dimension of the two input geometries.
+* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it crosses the geometries in `other`.
   * *True*: The first geometry crosses the other.
   * *False*: The first geometry does not cross the other.
 
@@ -341,8 +341,8 @@ dtype: bool
 
 ## [GeoSeries.geom_equals(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html)
 
-* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in ``other``, tests whether the first geometry equals the other. "Equal" means two geometries represent the same geometry structure.
-* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it equals the geometries in ``other``.
+* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in `other`, tests whether the first geometry equals the other. "Equal" means two geometries represent the same geometry structure.
+* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it equals the geometries in `other`.
   * *True*: The first geometry equals the other.
   * *False*: The first geometry does not equal the other.
 
@@ -358,8 +358,8 @@ dtype: bool
 
 ## [GeoSeries.touches(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.touches.html)
 
-* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in ``other``, tests whether the first geometry touches the other. "Touch" means two geometries have common points, and the common points locate only on their boundaries.
-* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it touches the geometries in ``other``.
+* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in `other`, tests whether the first geometry touches the other. "Touch" means two geometries have common points, and the common points locate only on their boundaries.
+* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it touches the geometries in `other`.
   * *True*: The first geometry touches the other.
   * *False*: The first geometry does not touch the other.
 
@@ -376,8 +376,8 @@ dtype: bool
 
 ## [GeoSeries.overlaps(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.overlaps.html)
 
-* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in ``other``, tests whether the first geometry "spatially overlaps" the other. "Spatially overlap" here means two geometries intersect but one does not completely contain another.
-* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it overlaps the geometries in ``other``.
+* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in `other`, tests whether the first geometry "spatially overlaps" the other. "Spatially overlap" here means two geometries intersect but one does not completely contain another.
+* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it overlaps the geometries in `other`.
   * *True*: The first geometry overlaps the other.
   * *False*: The first geometry does not overlap the other.
 
@@ -394,8 +394,8 @@ dtype: bool
 
 ## [GeoSeries.distance(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.distance.html)
 
-* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in ``other``, calculates the minimum 2D Cartesian (planar) distance between them.
-* **Returns:** Distance between each geometry in the GeoSeries and the corresponding geometry given in ``other``.
+* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in `other`, calculates the minimum 2D Cartesian (planar) distance between them.
+* **Returns:** Distance between each geometry in the GeoSeries and the corresponding geometry given in `other`.
 
 ```python
 >>> from arctern import GeoSeries
@@ -410,8 +410,8 @@ dtype: float64
 
 ## [GeoSeries.distance_sphere(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.distance_sphere.html)
 
-* **Function:** For each point in the GeoSeries and the corresponding point given in ``other``, calculates the minimum spherical distance between them. This function uses a spherical earth and radius derived from the spheroid defined by the SRID.
-* **Returns:** Spherical distance between each geometry in the GeoSeries and the corresponding geometry given in ``other``.
+* **Function:** For each point in the GeoSeries and the corresponding point given in `other`, calculates the minimum spherical distance between them. This function uses a spherical earth and radius derived from the spheroid defined by the SRID.
+* **Returns:** Spherical distance between each geometry in the GeoSeries and the corresponding geometry given in `other`.
 
 ```python
 >>> from arctern import GeoSeries
@@ -424,8 +424,8 @@ dtype: float64
 
 ## [GeoSeries.hausdorff_distance(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.hausdorff_distance.html)
 
-* **Function:** For each point in the GeoSeries and the corresponding point given in ``other``, calculates the Hausdorff distance between them. Hausdorff distance is a measure of how similar two geometries are.
-* **Returns:** Hausdorff distance between each geometry in the GeoSeries and the corresponding geometry given in ``other``.
+* **Function:** For each point in the GeoSeries and the corresponding point given in `other`, calculates the Hausdorff distance between them. Hausdorff distance is a measure of how similar two geometries are.
+* **Returns:** Hausdorff distance between each geometry in the GeoSeries and the corresponding geometry given in `other`.
 
 ```python
 >>> from arctern import GeoSeries
@@ -440,8 +440,8 @@ dtype: float64
 
 ## GeoSeries.intersection(other)
 
-* **Function:** For each point in the GeoSeries and the corresponding point given in ``other``, calculates the intersection of them.
-* **Returns:** Intersection of each geometry in the GeoSeries and the corresponding geometry given in ``other``.
+* **Function:** For each point in the GeoSeries and the corresponding point given in `other`, calculates the intersection of them.
+* **Returns:** Intersection of each geometry in the GeoSeries and the corresponding geometry given in `other`.
 
 ```python
 >>> from arctern import GeoSeries
@@ -474,7 +474,7 @@ dtype: GeoDtype
 
 ## [GeoSeries.point(x, y)](../../api_reference/standalone_api/api/arctern.GeoSeries.point.html)
 
-* **Function:** Constructs POINT objects based on the given coordinates. ``x`` and ``y`` are Series so that points can be created in batch. The number of values in the two Series should be the same. Suppose that the demension of ``x`` is *N*, the returned GeoSeries of this function should contains *N* points. The position of the *i*th point is defined by its coordinates *(x[i], y[i]).*
+* **Function:** Constructs POINT objects based on the given coordinates. `x` and `y` are Series so that points can be created in batch. The number of values in the two Series should be the same. Suppose that the demension of `x` is *N*, the returned GeoSeries of this function should contains *N* points. The position of the *i*th point is defined by its coordinates *(x[i], y[i]).*
 * **Returns:** Sequence of POINT objects.
 
 ```python
