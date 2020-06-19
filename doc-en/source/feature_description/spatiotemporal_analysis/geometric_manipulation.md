@@ -4,8 +4,13 @@ Arctern implements multiple GIS processing functions that comply with the OGC st
 
 ## [GeoSeries.length](../../api_reference/standalone_api/api/arctern.GeoSeries.length.html)
 
-* **Functions:** Calculate the length of each geometry in the GeoSeries object. If the geometry is not of type LineString and MultiLineString, its length is 0.
-* **Returns:** Floating point pandas.Series
+* **Function:** Calculates the length of each geometry in the GeoSeries. The ways to calculate the length of geometries are as follows:
+  * POINT / MULTIPOINT / POLYGON / MULTIPOLYGON / CURVEPOLYGON / MULTICURVE: 0
+  * LINESTRING: Length of a single straight line.
+  * MULTILINESTRING: Sum of length of multiple straight lines.
+  * CIRCULARSTRING: Length of a single curvilinear line.
+  * MULTISURFACE / COMPOUNDCURVE / GEOMETRYCOLLECTION: For a geometry collection among the 3 types, calculates the sum of length of all geometries in the collection.
+* **Returns:** Length of each geometry in the GeoSeries.
 
 ```python
 >>> from arctern import GeoSeries
@@ -19,8 +24,14 @@ dtype: float64
 
 ## [GeoSeries.area](../../api_reference/standalone_api/api/arctern.GeoSeries.area.html)
 
-* **Functions:** Calculate the area of each geometry in a GeoSeries object.
-* **Returns:** Floating point pandas.Series
+* **Function:** Calculates the 2D Cartesian (planar) area of each geometry in the GeoSeries. The ways to calculate the area of geometries are as follows:
+  * POINT / MULTIPOINT / LINESTRING / MULTILINESTRING / CIRCULARSTRING: 0
+  * POLYGON: Area of a single polygon.
+  * MULTIPOLYGON: Sum of area of multiple polygons.
+  * CURVEPOLYGON: Area of a single curvilinear polygon.
+  * MULTICURVE: Sum of area of multiple curvilinear polygons.
+  * MULTISURFACE / COMPOUNDCURVE / GEOMETRYCOLLECTION: For a geometry collection among the 3 types, calculates the sum of area of all geometries in the collection.
+* **Returns:** 2D Cartesian (planar) area of each geometry in the GeoSeries.
 
 ```python
 >>> from arctern import GeoSeries
@@ -35,8 +46,8 @@ dtype: float64
 
 ## [GeoSeries.centroid](../../api_reference/standalone_api/api/arctern.GeoSeries.centroid.html)
 
-* **Functions:** Calculate the center point of each geometry in a GeoSeries object.
-* **Returns:** GeoSeries。
+* **Function:** Returns the centroid of each geometry in the GeoSeries.
+* **Returns:** The centroid of each geometry in the GeoSeries.
 
 ```python
 >>> from arctern import GeoSeries
@@ -50,10 +61,10 @@ dtype: float64
 
 ## [GeoSeries.is_valid](../../api_reference/standalone_api/api/arctern.GeoSeries.is_valid.html)
 
-* **Functions:** Determine whether each geometry in the GeoSeries object is valid.
-* **Returns:** Boolean pandas.Series
-  * **True:** Geometry is valid。
-  * **False:** Geometry is invalid。
+* **Function:** Tests whether each geometry in the GeoSeries object is valid.
+* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether an element is valid.
+  * *True:* The geometry is valid.
+  * *False:* The geometry is invalid.
 
 ```python
 >>> from arctern import GeoSeries
@@ -66,10 +77,10 @@ dtype: bool
 
 ## [GeoSeries.is_simple](../../api_reference/standalone_api/api/arctern.GeoSeries.is_simple.html)
 
-* **Functions:** Determine if each geometry in the GeoSeries object is simple. "Simple" here means that a certain geometric figure has no abnormal geometric figure points, such as self-intersection or tangent.
-* **Returns:** Boolean pandas.Series
-  * **True:** Geometry is simple.
-  * **False:** Geometry is not simple.
+* **Function:** Tests whether each geometry in the GeoSeries is simple. Here "simple" means that a geometry has no anomalous point, such as a self-intersection or a self-tangency.
+* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether an element is simple.
+  * *True:* The geometry is simple.
+  * *False:* The geometry is not simple.
 
 ```python
 >>> from arctern import GeoSeries
@@ -83,8 +94,11 @@ dtype: bool
 
 ## [GeoSeries.convex_hull](../../api_reference/standalone_api/api/arctern.GeoSeries.convex_hull.html)
 
-* **Functions:** For each geometry in the GeoSeries object, calculate the smallest convex geometry surrounding it.
-* **Returns:** GeoSeries
+* **Function:** For each geometry in the GeoSeries, returns the smallest convex geometry that encloses it.
+  * For a polygon, the returned geometry is the smallest convex geometry that encloses it.
+  * For a geometry collection, the returned geometry is the smallest convex geometry that encloses all geometries in the collection.
+  * For a point or line, the returned geometry is the same as the original.
+* **Returns:** Sequence of convex geometries.
 
 ```python
 >>> from arctern import GeoSeries
@@ -98,8 +112,8 @@ dtype: GeoDtype
 
 ## [GeoSeries.npoints](../../api_reference/standalone_api/api/arctern.GeoSeries.npoints.html)
 
-* **Functions:** For each geometry in the GeoSeries object, calculate the number of points.
-* **Returns:** int64 type pandas.Series
+* **Function:** Returns the number of points for each geometry in the GeoSeries.
+* **Returns:** Number of points of each geometry in the GeoSeries.
 
 ```python
 >>> from arctern import GeoSeries
@@ -112,8 +126,11 @@ dtype: int64
 
 ## [GeoSeries.curve_to_line](../../api_reference/standalone_api/api/arctern.GeoSeries.curve_to_line.html)
 
-* **Functions:** For each geometry in the GeoSeries object, calculate its approximate representation. The approximate representation method is to convert the curve in each geometric figure into an approximate linear representation.
-* **Returns:** GeoSeries
+* **Function:** Converts curves in each geometry to approximate linear representations. For example,
+  * CIRCULAR STRING to LINESTRING,
+  * CURVEPOLYGON to POLYGON,
+  * MULTISURFACE to MULTIPOLYGON.
+* **Returns:** Converted linear geometries.
 
 ```python
 >>> from arctern import GeoSeries
@@ -126,7 +143,7 @@ dtype: GeoDtype
 
 ## [GeoSeries.simplify(tolerance)](../../api_reference/standalone_api/api/arctern.GeoSeries.simplify.html)
 
-* **Functions:** For each geometry in the GeoSeries object, calculate its simplified representation. The simplified representation algorithm is Douglas-Peucker algorithm.
+* **Function:** For each geometry in the GeoSeries object, calculate its simplified representation. The simplified representation algorithm is Douglas-Peucker algorithm.
 * **Parameters:** `tolerance` is a floating-point number, indicating the maximum distance between a point on the line string and the curve.
 * **Returns:** GeoSeries
 
@@ -141,8 +158,8 @@ dtype: GeoDtype
 
 ## [GeoSeries.envelope](../../api_reference/standalone_api/api/arctern.GeoSeries.envelope.html)
 
-* **Functions:** For each geometry in the GeoSeries object, calculate its minimum rectangular bounding box.
-* **Returns:** GeoSeries
+* **Function:** Returns the minimum bounding box for each geometry in the GeoSeries. The bounding box is a rectangular geometry object, and its edges are parallel to the axes.
+* **Returns:** Minimum bounding box of each geometry in the GeoSeries.
 
 ```python
 >>> from arctern import GeoSeries
@@ -156,9 +173,10 @@ dtype: GeoDtype
 
 ## [GeoSeries.buffer(distance)](../../api_reference/standalone_api/api/arctern.GeoSeries.buffer.html)
 
-* **Functions:** For each geometry in the GeoSeries object, create a geometry with the maximum distance not greater than `distance`.
-* **Parameters** `distance` is a floating point number, indicating the maximum distance between the new geometry and the original geometry.
-* **Returns:** GeoSeries
+* **Function:** For each geometry, moves all of its points away from its centroid to construct a new geometry. The distance of movement is specified as ``distance``.
+  * If ``distance`` > 0, the new geometry is a scaled-up version outside the original geometry.
+  * If ``distance`` < 0, the new geometry is a scaled-down version inside the original geometry.
+* **Returns:** Sequence of geometries.
 
 ### Example 1
 
@@ -191,11 +209,10 @@ dtype: float64
 
 ## [GeoSeries.precision_reduce(precision)](../../api_reference/standalone_api/api/arctern.GeoSeries.precision_reduce.html)
 
-* **Functions:** For each geometry in the GeoSeries object, the geometry with reduced coordinate accuracy is created according to the specified valid digits number `precision`.
-* **Parameters:** `precision` is an integer number, indicating the number of valid digits.
-* **Returns:** GeoSeries
+* **Function:** For the coordinates of each geometry in the GeoSeries, reduces the number of significant digits to the given `precision`. The digit in the last decimal place will be rounded.
+* **Returns:** Sequence of geometries with reduced precision.
 
-In the following example, since the effective digits are set to 3, the coordinates of all points in the result retain only 3 valid digits. In the POINT (1.333 2.666) of the coordinate, the last valid digit of 2.666 is rounded to 2.67.
+In the following example, since the effective digits are set to 3, the coordinates of all points in the result retain only 3 valid digits. For the POINT (1.333 2.666) object, the last valid digit of 2.666 is rounded to 2.67.
 
 ```python
 >>> from arctern import GeoSeries
@@ -208,10 +225,10 @@ dtype: GeoDtype
 
 ## [GeoSeries.make_valid](../../api_reference/standalone_api/api/arctern.GeoSeries.make_valid.html)
 
-* **Functions:** For each geometry in the GeoSeries object, create a new valid geometry based on it. During the construction of the new geometry, no vertices of the original geometry are deleted. If the original geometry is already valid, then return the original geometry directly.
-* **Returns:** GeoSeries
+* **Function:** Creates a valid representation of each geometry in the GeoSeries without losing any of the input vertices. If the geometry is already-valid, then nothing will be done. If the geometry can't be made to valid, it will be set to None.
+* **Returns:** Sequence of valid geometries.
 
-In the following example, the imported geometry is self-intersecting near POINT (2 2). Therefore, the `make_valid` method returns a new union of geometry, which contains a polygon and a line string.
+In the following example, the imported geometry is self-intersecting near POINT (2 2). Therefore, the `make_valid` method returns a new union of geometries, which contains a polygon and a line string.
 
 ```python
 >>> from arctern import GeoSeries
@@ -224,11 +241,10 @@ dtype: GeoDtype
 
 ## [GeoSeries.intersects(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.intersects.html)
 
-* **Functions:** For each geometry in the GeoSeries object, check whether it intersects with the geometry at the same position in the `other` object.
-* **Parameters:** `other` is GeoSeries or WKB formed object.
-* **Returns:** Boolean pandas.Series
-  * **True:** Two geometries have intersection.
-  * **False:** Two geometries have no intersection.
+* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in ``other``, tests whether they intersect each other.
+* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it intersects the geometries in ``other``.
+  * *True*: The two geometries intersect each other.
+  * *False*: The two geometries do not intersect each other.
 
 ### Example 1
 ```python
@@ -243,6 +259,7 @@ dtype: bool
 ![](./img/intersects_1.png)
 
 ### Example 2
+
 ```python
 >>> from arctern import GeoSeries
 >>> s1 = GeoSeries(["POLYGON((7 7,9 4,5 4,7 7))"])
@@ -255,6 +272,7 @@ dtype: bool
 ![](./img/intersects_2.png)
 
 ### Example 3
+
 ```python
 >>> from arctern import GeoSeries
 >>> s1 = GeoSeries(["POLYGON((8 0,9 0,9 1,8 1,8 0))"])
@@ -268,11 +286,10 @@ dtype: bool
 
 ## [GeoSeries.within(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.within.html)
 
-* **Functions:** For each geometry in the GeoSeries object, check whether it is within the geometry at the same position in the `other` object.
-* **Parameters:** `other` is GeoSeries or WKB formed object.
-* **Returns:** Boolean pandas.Series
-  * **True:** Each geometry is within other.
-  * **False:** Each geometry is not within other.
+* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in ``other``, tests whether the first geometry is within the other.
+* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it is within the geometries in ``other``.
+  * *True*: The first geometry is within the other.
+  * *False*: The first geometry is not within the other.
 
 ```python
 >>> s1 = GeoSeries(["POLYGON((1 1, 4 1, 4 4, 1 4, 1 1))", "POLYGON((5 1, 7 1, 7 3, 5 3, 5 1))", "POLYGON((8 1, 9 1, 9 2, 8 2, 8 1))"])
@@ -287,11 +304,10 @@ dtype: bool
 
 ## [GeoSeries.contains(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.contains.html)
 
-* **Functions:** For each geometry in the GeoSeries object, check whether it contains the geometry at the same position in the `other` object.
-* **Parameters:** `other` is GeoSeries or WKB formed object.
-* **Returns:** Boolean pandas.Series
-  * **True:** Each geometry contains other.
-  * **False:** Each geometry does not contain other.
+* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in ``other``, tests whether the first geometry contains the other.
+* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it contains the geometries in ``other``.
+  * *True*: The first geometry contains the other.
+  * *False*: The first geometry does not contain the other.
 
 ```python
 >>> from arctern import GeoSeries
@@ -307,11 +323,10 @@ dtype: bool
 
 ## [GeoSeries.crosses(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.crosses.html)
 
-* **Functions:** For each geometry in the GeoSeries object, check whether it crosses the geometry at the same position in the `other` object.
-* **Parameters:** `other` is GeoSeries or WKB formed object.
-* **Returns:** Boolean pandas.Series
-  * **True:** Two geometries cross.
-  * **False:** Two geometries do not cross.
+* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in ``other``, tests whether the first geometry spatially crosses the other. "Spatially cross" means two geometries have some, but not all interior points in common. The intersection of the interiors of the geometries must not be the empty set and must have a dimensionality less than the maximum dimension of the two input geometries.
+* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it crosses the geometries in ``other``.
+  * *True*: The first geometry crosses the other.
+  * *False*: The first geometry does not cross the other.
 
 ```python
 >>> from arctern import GeoSeries
@@ -327,11 +342,10 @@ dtype: bool
 
 ## [GeoSeries.geom_equals(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html)
 
-* **Functions:** For each geometry in the GeoSeries object, check whether it equals the geometry at the same position in the `other` object. "equals" means that the two geometries have the same geometric structure.
-* **Parameters:** `other` is GeoSeries or WKB formed object.
-* **Returns:** Boolean pandas.Series
-  * **True:** Two geometries equal.
-  * **False:** Two geometries do not equal.
+* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in ``other``, tests whether the first geometry equals the other. "Equal" means two geometries represent the same geometry structure.
+* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it equals the geometries in ``other``.
+  * *True*: The first geometry equals the other.
+  * *False*: The first geometry does not equal the other.
 
 ```python
 >>> from arctern import GeoSeries
@@ -345,11 +359,10 @@ dtype: bool
 
 ## [GeoSeries.touches(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.touches.html)
 
-* **Functions:** For each geometry in the GeoSeries object, check whether it touches the geometry at the same position in the `other` object. "touches" means that two geometries have a common point on the boundary.
-* **Parameters:** `other` is GeoSeries or WKB formed object.
-* **Returns:** Boolean pandas.Series
-  * **True:** Two geometries touch.
-  * **False:** Two geometries do not touch.
+* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in ``other``, tests whether the first geometry touches the other. "Touch" means two geometries have common points, and the common points locate only on their boundaries.
+* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it touches the geometries in ``other``.
+  * *True*: The first geometry touches the other.
+  * *False*: The first geometry does not touch the other.
 
 ```python
 >>> from arctern import GeoSeries
@@ -364,11 +377,10 @@ dtype: bool
 
 ## [GeoSeries.overlaps(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.overlaps.html)
 
-* **Functions:** For each geometry in the GeoSeries object, check whether it overlaps the geometry at the same position in the `other` object. "overlaps" means that the two geometries cross and do not contain each other.
-* **Parameters:** `other` is GeoSeries or WKB formed object.
-* **Returns:** Boolean pandas.Series
-  * **True:** Two geometries overlap.
-  * **False:** Two geometries do not overlap.
+* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in ``other``, tests whether the first geometry "spatially overlaps" the other. "Spatially overlap" here means two geometries intersect but one does not completely contain another.
+* **Returns:** Mask of boolean values for each element in the GeoSeries that indicates whether it overlaps the geometries in ``other``.
+  * *True*: The first geometry overlaps the other.
+  * *False*: The first geometry does not overlap the other.
 
 ```python
 >>> from arctern import GeoSeries
@@ -383,9 +395,8 @@ dtype: bool
 
 ## [GeoSeries.distance(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.distance.html)
 
-* **Functions:** For each geometry in the GeoSeries object, check the shortest 2D Cartesian (planar) distance between the geometry at the same position in the `other` object.
-* **Parameters:** `other` is GeoSeries or WKB formed object.
-* **Returns:** Floating point pandas.Series
+* **Function:** For each geometry in the GeoSeries and the corresponding geometry given in ``other``, calculates the minimum 2D Cartesian (planar) distance between them.
+* **Returns:** Distance between each geometry in the GeoSeries and the corresponding geometry given in ``other``.
 
 ```python
 >>> from arctern import GeoSeries
@@ -400,9 +411,8 @@ dtype: float64
 
 ## [GeoSeries.distance_sphere(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.distance_sphere.html)
 
-* **Functions:** For each geometry in the GeoSeries object, the minimum distance between two points on the earth's surface is calculated based on the latitude and longitude coordinates. This method uses the earth and radius defined by the SRID.
-* **Parameters:** `other` is GeoSeries or WKB formed object.
-* **Returns:** Floating point pandas.Series
+* **Function:** For each point in the GeoSeries and the corresponding point given in ``other``, calculates the minimum spherical distance between them. This function uses a spherical earth and radius derived from the spheroid defined by the SRID.
+* **Returns:** Spherical distance between each geometry in the GeoSeries and the corresponding geometry given in ``other``.
 
 ```python
 >>> from arctern import GeoSeries
@@ -415,9 +425,8 @@ dtype: float64
 
 ## [GeoSeries.hausdorff_distance(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.hausdorff_distance.html)
 
-* **Functions:** For each geometry in the GeoSeries object, check the Hausdorff distance between it and the geometry at the same position in the `other` object. This distance is to measure the similarity between two geometries.
-* **Parameters:** `other` is GeoSeries or WKB formed object.
-* **Returns:** Floating point pandas.Series
+* **Function:** For each point in the GeoSeries and the corresponding point given in ``other``, calculates the Hausdorff distance between them. Hausdorff distance is a measure of how similar two geometries are.
+* **Returns:** Hausdorff distance between each geometry in the GeoSeries and the corresponding geometry given in ``other``.
 
 ```python
 >>> from arctern import GeoSeries
@@ -432,9 +441,8 @@ dtype: float64
 
 ## GeoSeries.intersection(other)
 
-* **Functions:** For each geometry in the GeoSeries object, calculate the intersection with the geometry at the same position in the `other` object.
-* **Parameters:** `other` is GeoSeries or WKB formed object.
-* **Returns:** GeoSeries
+* **Function:** For each point in the GeoSeries and the corresponding point given in ``other``, calculates the intersection of them.
+* **Returns:** Intersection of each geometry in the GeoSeries and the corresponding geometry given in ``other``.
 
 ```python
 >>> from arctern import GeoSeries
@@ -446,16 +454,10 @@ dtype: GeoDtype
 ```
 ![](./img/intersection.png)
 
-## [GeoSeries.intersection(other)](../../api_reference/standalone_api/api/arctern.GeoSeries.intersection.html)
+## [GeoSeries.polygon_from_envelope(cls, min_x, min_y, max_x, max_y, crs=None)](../../api_reference/standalone_api/api/arctern.GeoSeries.polygon_from_envelope.html)
 
-* **Functions:** For each geometry in the GeoSeries object, calculate its minimum rectangular bounding box according to the given Parameters, and the sides of the box are parallel to the coordinate axis.
-* **Parameters:**  
-  * **min_x:** Floating point pandas.Series, represents the minimum value of the rectangular abscissa。
-  * **min_y:** Floating point pandas.Series, represents the minimum value of the rectangular ordinate.
-  * **max_x:** Floating point pandas.Series, represents the maximum value of the rectangular abscissa.
-  * **max_y:** Floating point pandas.Series, represents the maximum value of the rectangular ordinate.
-  * **crs:** （Optional Parameters）String, such as "ESPG:4326"、"ESPG:3857".
-* **Returns:** GeoSeries
+* **Function:** Constructs rectangular POLYGON objects within the given spatial range. The edges of the rectangles are parallel to the coordinate axises. ``min_x``, ``min_y``, ``max_x``, and ``max_y`` are Series so that polygons can be created in batch. The number of values in the four Series should be the same. Suppose that the demension of ``min_x`` is *N*, the returned GeoSeries of this function should contains *N* rectangles. The shape and position of the rectangle with index *i* is defined by its bottom left vertex *(min_x[i], min_y[i])* and top right vertex *(max_x[i], max_y[i])*.
+* **Returns:** Sequence of rectangular POLYGON objects within the given spatial range.
 
 ```python
 >>> from pandas import Series
@@ -471,13 +473,10 @@ dtype: GeoDtype
 ```
 ![](./img/polygon_from_envelope.png)
 
-## [GeoSeries.polygon_from_envelope(min_x, min_y, max_x, max_y, crs=None)](../../api_reference/standalone_api/api/arctern.GeoSeries.polygon_from_envelope.html)
+## [GeoSeries.point(x, y)](../../api_reference/standalone_api/api/arctern.GeoSeries.point.html)
 
-* **Functions:** Construct a group of POINT objects according to the abscissa set `x` and the ordinate set `y`.
-* **Parameters:**  
-  * **x:** Floating point pandas.Series, represents the abscissa of a group of points.。
-  * **y:** Floating point pandas.Series, represents the ordinate of a group of points.
-* **Returns:** POINT
+* **Function:** Constructs POINT objects based on the given coordinates. ``x`` and ``y`` are Series so that points can be created in batch. The number of values in the two Series should be the same. Suppose that the demension of ``x`` is *N*, the returned GeoSeries of this function should contains *N* points. The position of the *i*th point is defined by its coordinates *(x[i], y[i]).*
+* **Returns:** Sequence of POINT objects.
 
 ```python
 >>> from pandas import Series
