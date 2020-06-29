@@ -24,7 +24,7 @@ msgstr ""
 #: arctern.GeoSeries.polygon_from_envelope:1 of
 msgid ""
 "Constructs rectangular POLYGON objects within the given spatial range. "
-"The edges of the rectangles are parallel to the coordinate axises."
+"The edges of the rectangles are parallel to the coordinate axes."
 msgstr "在给定的空间范围内构造矩形 POLYGON 对象。矩形的边平行于坐标轴。"
 
 #: arctern.GeoSeries.polygon_from_envelope:3 of

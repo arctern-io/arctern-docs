@@ -455,7 +455,7 @@ dtype: GeoDtype
 
 ## [GeoSeries.polygon_from_envelope(cls, min_x, min_y, max_x, max_y, crs=None)](../../api_reference/standalone_api/api/arctern.GeoSeries.polygon_from_envelope.html)
 
-* **Function:** Constructs rectangular POLYGON objects within the given spatial range. The edges of the rectangles are parallel to the coordinate axises. ``min_x``, ``min_y``, ``max_x``, and ``max_y`` are Series so that polygons can be created in batch. The number of values in the four Series should be the same. Suppose that the demension of ``min_x`` is *N*, the returned GeoSeries of this function should contains *N* rectangles. The shape and position of the rectangle with index *i* is defined by its bottom left vertex *(min_x[i], min_y[i])* and top right vertex *(max_x[i], max_y[i])*.
+* **Function:** Constructs rectangular POLYGON objects within the given spatial range. The edges of the rectangles are parallel to the coordinate axes. ``min_x``, ``min_y``, ``max_x``, and ``max_y`` are Series so that polygons can be created in batch. The number of values in the four Series should be the same. Suppose that the demension of ``min_x`` is *N*, the returned GeoSeries of this function should contains *N* rectangles. The shape and position of the rectangle with index *i* is defined by its bottom left vertex *(min_x[i], min_y[i])* and top right vertex *(max_x[i], max_y[i])*.
 * **Returns:** Sequence of rectangular POLYGON objects within the given spatial range.
 
 ```python
