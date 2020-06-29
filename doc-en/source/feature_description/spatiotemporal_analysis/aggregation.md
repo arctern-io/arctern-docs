@@ -1,9 +1,11 @@
 # Aggregation
-Spatial data processing has extensive demands for aggregation operations. Currently, Arctern only supports two aggregation methods: [`unary_union`](../../api_reference/standalone_api/api/arctern.GeoSeries.unary_union.html) and [`envelope_aggr`](../../api_reference/standalone_api/api/arctern.GeoSeries.envelope_aggr.html). The description of these methods are as follows:
- - **unary_union:** Returns a geometry that represents the union of a set of geometries.
- - **envelope_aggr:** Calculate the minimum rectangular bounding box that contains a set of geometries, and the sides of the rectangle are parallel to the coordinate axis.
 
-This article describes how to use the aggregation methods of Arctern GeoSeries.
+Spatial data processing has extensive demands for aggregate functions. Currently, Arctern only supports two aggregate methods: [`unary_union`](../../api_reference/standalone_api/api/arctern.GeoSeries.unary_union.html) and [`envelope_aggr`](../../api_reference/standalone_api/api/arctern.GeoSeries.envelope_aggr.html). The descriptions of these methods are as follows:
+
+- **unary_union:** Returns a geometry that represents the union of a set of geometries.
+- **envelope_aggr:** Calculate the minimum rectangular bounding box that contains a set of geometries, and the sides of the rectangle are parallel to the coordinate axes.
+
+This article describes how to use the aggregate methods of Arctern GeoSeries.
 
 ## Generating test data
 
@@ -28,7 +30,7 @@ Select all the elements of `polygon_s` and use the [`unary_union`](../../api_ref
 0    MULTIPOLYGON (((0 0,0 1,1 1,0 0)),((1 1,2 3,2 1,1 1)))
 dtype: GeoDtype
 ```
-The aggregation results are shown in the following figure:
+The results are shown in the following figure:
 
 ![](./img/union_out.png)
 
@@ -41,6 +43,6 @@ Select all the elements of `polygon_s` and use the [`envelope_aggr`](../../api_r
 0    POLYGON ((0 0,0 3,2 3,2 0,0 0))
 dtype: GeoDtype
 ```
-The aggregation results are shown in the following figure:
+The results are shown in the following figure:
 
 ![](./img/envelope_out.png)
