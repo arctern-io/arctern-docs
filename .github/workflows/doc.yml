@@ -39,6 +39,7 @@ jobs:
               cd arctern-webdocs-copy && \
               cp -rf ../doc-cn/build-cn ./ && mv build-cn development-doc-cn && \
               cp -rf ../doc-en/build-en ./ && mv build-en development-doc-en && \
+              cp ../version.json . && \
               git checkout -b ${arctern_webdocs_released_branch} && git add . && \
               git commit -m "Arctern-bot release web-doc" && \
               git push -f origin HEAD:${arctern_webdocs_released_branch} && \
