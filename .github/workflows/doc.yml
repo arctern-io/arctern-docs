@@ -13,13 +13,11 @@ jobs:
 
       - name: Run bot realease
         run: |
-          #current_branch=`echo ${GITHUB_REF##*/} | cut -d '/' -f 3` && echo $current_branch && \
-          current_branch=`cat version.json | jq -r .arctern_compile_branch` && \
           arctern_docs_released_branch=`cat version.json | jq -r .arctern_docs_released_branch` && \
           released_check_flag=`cat version.json | jq -r .released` && \
           docker build --tag arctern-docs:bot-release . --file ./docker/Dockerfile && \
           echo "------------------------------------------------------------- docker image build ok --------------------------------------" &&  \
-          docker run -v ${GITHUB_WORKSPACE}:/arctern-docs -e ARCTERN_BRANCH=current_branch arctern-docs:bot-release && \
+          docker run -v ${GITHUB_WORKSPACE}:/arctern-docs arctern-docs:bot-release && \
           echo "------------------------------------------------------------- compile ok --------------------------------------"
           # &&  \
           # git config --global user.email "Arctern-doc-bot@zilliz.com" && \
