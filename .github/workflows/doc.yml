@@ -13,7 +13,8 @@ jobs:
 
       - name: Run bot realease
         run: |
-          current_branch=`echo ${GITHUB_REF##*/} | cut -d '/' -f 3` && echo $current_branch && \
+          #current_branch=`echo ${GITHUB_REF##*/} | cut -d '/' -f 3` && echo $current_branch && \
+          current_branch=`cat version.json | jq -r .arctern_compile_branch` && \
           arctern_docs_released_branch=`cat version.json | jq -r .arctern_docs_released_branch` && \
           released_check_flag=`cat version.json | jq -r .released` && \
           docker build --tag arctern-docs:bot-release . --file ./docker/Dockerfile && \
