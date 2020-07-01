@@ -35,4 +35,5 @@ conda env create -n arctern-doc -f /arctern-docs/docker/arctern-conda-dep.yml &&
 conda activate arctern-doc && \
 ARCTERN_BRANCH=`cat /arctern-docs/version.json | jq -r .arctern_compile_branch`
 compile_arctern ${ARCTERN_BRANCH} && \
-compile_arctern_docs
+compile_arctern_docs && \
+python -c "import arctern;print(arctern.version())"
