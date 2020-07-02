@@ -1,10 +1,10 @@
-name: arctern-doc 
+name: arctern-doc
 channels:
   - conda-forge
 dependencies:
 - python=3.7.6
 - gdal=3.0.4
-- pyarrow
+- pyarrow=0.17.1
 - gtest
 - rapidjson
 - Cython
