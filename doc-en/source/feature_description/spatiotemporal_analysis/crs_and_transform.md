@@ -42,7 +42,7 @@ dtype: GeoDtype
 
 The [`set_crs`](../../api_reference/standalone_api/api/arctern.GeoSeries.set_crs.html) method sets the currently used CRS of `geos`. 
 
-In this example, we use the latitude and longitude coordinate system (EPSG:4326) as the initial coordinate reference system.
+In this example, we use the latitude and longitude coordinate system (EPSG:4326) as the initial CRS.
 
 <!-- [set_crs](/path/to/set_crs) -->
 
@@ -69,7 +69,7 @@ dtype: GeoDtype
 
 ### Result
 
-The [`crs`](../../api_reference/standalone_api/api/arctern.GeoSeries.crs.html) attribute of GeoSeries objects shows the current CRS. According to the result, the CRS of `geos` has been successfully transformed to the UTM system.
+The [`crs`](../../api_reference/standalone_api/api/arctern.GeoSeries.crs.html) attribute of GeoSeries objects shows the current CRS. The result shows that the CRS of `geos` has been successfully transformed to the UTM system.
 
 ```python
 >>> geos.crs
