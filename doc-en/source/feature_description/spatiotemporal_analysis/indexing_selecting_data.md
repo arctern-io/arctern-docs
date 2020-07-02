@@ -23,6 +23,7 @@ Arctern GeoSeries inherits the  indexing and data selection methods from pandas 
 ### Testing the loc method
 
 Access all data of `geos`:
+
 ```python
 >>> geos.loc[:]    
 a                    POINT (0 1)
@@ -33,6 +34,7 @@ dtype: GeoDtype
 ```
 
 Select the data of `geos` from line `a` to line `c`:
+
 ```python
 >>> geos.loc['a':'c']
 a                    POINT (0 1)
@@ -54,6 +56,7 @@ dtype: GeoDtype
 ### Testing the iloc method
 
 Select the data of `geos` from line 1 to line 3 (excluding data in line 3):
+
 ```python
 >>> geos.iloc[1:3]
 b                    POINT (2 3)

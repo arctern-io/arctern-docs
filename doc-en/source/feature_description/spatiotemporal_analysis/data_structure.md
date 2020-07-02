@@ -2,7 +2,7 @@
 
 ## GeoSeries
 
-GeoSeries is an array that stores and manipulates geometric datasets. By extending pandas Series, GeoSeries internally stores objects in WKB format, and can batch calculate and operate on the stored elements like pandas Series.
+GeoSeries is an array that stores and manipulates geometric datasets. By extending pandas Series, GeoSeries internally stores objects in WKB format, and can batch calculate and manipulate elements in the GeoSeries like pandas Series does.
 
 ### Initializing
 
@@ -10,7 +10,7 @@ GeoSeries internally stores geometry in WKB format and accepts data in WKT or WK
 
 #### Initializing from WKT format data
 
-You can put multiple string data in WKT format into a list, numpy.ndarray, or pandas.Series, and then pass in the GeoSeries constructor to create GeoSeries objects.
+You can put multiple string data in WKT format into a list, numpy.ndarray, or pandas.Series, and then pass them to the GeoSeries constructor to create GeoSeries objects.
 
 ```python
 >>> import pandas as pd
@@ -30,7 +30,7 @@ dtype: GeoDtype
 
 #### Initializing from WKB format data
 
-You can put multiple string data in WKB format into a list, numpy.ndarray, or pandas.Series, and then pass the GeoSeries constructor to create GeoSeries objects.
+You can put multiple string data in WKB format into a list, numpy.ndarray, or pandas.Series, and then pass them to the GeoSeries constructor to create GeoSeries objects.
 ```python
 >>> data = [b'\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?',
 ...        b'\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\x08@']
@@ -43,7 +43,7 @@ dtype: GeoDtype
 
 ### Method overview
 
-GeoSeries implements common operations on geometry (unary operations and binary operations).
+GeoSeries implements common operations on geometries (unary operations and binary operations).
 
 * When performing a unary operation on a GeoSeries object, Arctern performs the operation on all the geometries stored in the GeoSeries object.
 * When performing binary operations on two GeoSeries objects, Arctern performs one-to-one operations on each geometry in the two GeoSeries objects according to the index.
@@ -51,7 +51,7 @@ GeoSeries implements common operations on geometry (unary operations and binary 
 
 If the result of the operation is geometric data, a new GeoSeries object is returned; otherwise a Pandas Series object is returned.
 
-The following lists some of the GeoSeries methods, including operations on geometry measurement, relationship calculation, and conversion. For detailed information of APIs, please see [API Reference](../../api_reference/standalone_api/geoseries.html).
+The following lists some of the GeoSeries methods, including operations on geometric measurement, relationship operation, and geometric conversion. For detailed information of APIs, please see [API Reference](../../api_reference/standalone_api/geoseries.html).
 
 #### Geometric measurement  
 

@@ -1,6 +1,6 @@
 # Convert with GeoPandas GeoSeries
 
-Arctern can seamlessly connect with GeoPandas ecology. By flexibly switching between Arctern GeoSeries and GeoPandas GeoSeries, you can improve the processing efficiency of spatial geographic information. For example, GeoPandas does not perform well in scenarios of big data, while Arctern shows more promising results by implementing GPU acceleration to some of the GeoSeries funtions. Therefore, you can convert GeoPandas GeoSeries to Arctern GeoSeries to take advantage of Arctern's computing speed.
+Arctern seamlessly connects with GeoPandas ecology. By switching between Arctern GeoSeries and GeoPandas GeoSeries, you can improve the efficiency of processing geographic data. For example, GeoPandas takes longer time to run in scenarios of large data volume, while Arctern can speed up data processing via some GPU-accelerated methods. In this case, you might want to convert GeoPandas GeoSeries to Arctern GeoSeries, and Arctern's `to_geopandas` and `from_geopandas` methods help you do this quickly and easily.
 
 This article describes how to convert between Arctern GeoSeries and GeoPandas GeoSeries.
 
@@ -20,7 +20,7 @@ dtype: GeoDtype
 
 ## Convert Arctern GeoSeries to GeoPandas GeoSeries
 
-Use the [`to_geopandas`](../../api_reference/standalone_api/api/arctern.GeoSeries.to_geopandas.html) method of Arctern GeoSeries to convert Arctern GeoSeries to GeoPandas GeoSeries.
+Use the [`to_geopandas`](../../api_reference/standalone_api/api/arctern.GeoSeries.to_geopandas.html) method to convert Arctern GeoSeries to GeoPandas GeoSeries.
 
 <!-- link: [to_geopandas](/path/to/to_geopandas) -->
 
@@ -33,7 +33,7 @@ dtype: geometry
 
 ## Convert GeoPandas GeoSeries to Arctern GeoSeries
 
-Use the [`from_geopandas`](../../api_reference/standalone_api/api/arctern.GeoSeries.from_geopandas.html) method of Arctern GeoSeries to convert GeoPandas GeoSeries to Arctern GeoSeries.
+Use the [`from_geopandas`](../../api_reference/standalone_api/api/arctern.GeoSeries.from_geopandas.html) method to convert GeoPandas GeoSeries to Arctern GeoSeries.
 
 <!-- link: [from_geopandas](/path/to/from_geopandas) -->
 
