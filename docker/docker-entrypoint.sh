@@ -29,9 +29,9 @@ function compile_arctern_docs {
   conda install -c conda-forge descartes && \
   conda install -c conda-forge matplotlib && \
   cd /arctern-docs/doc-cn && \
-  mkdir build && python create_html.py && mv build build-cn &&\
+  mkdir build && python create_html.py && mv build build-cn && \
   cd /arctern-docs/doc-en && \
-  make doctest && \
+  make doctest && rm -rf build && \
   mkdir build && python compile.py && mv build build-en
 }
 
