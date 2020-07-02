@@ -27,7 +27,6 @@ function compile_arctern_docs {
   cd /arctern-docs/doc-cn && \
   mkdir build && python create_html.py && mv build build-cn &&\
   cd /arctern-docs/doc-en && \
-  make doctest && \
   mkdir build && python compile.py && mv build build-en
 }
 
