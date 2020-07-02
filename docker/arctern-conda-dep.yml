@@ -1,0 +1,12 @@
+name: arctern-doc 
+channels:
+  - conda-forge
+dependencies:
+- python=3.7.6
+- gdal=3.0.4
+- pyarrow
+- gtest
+- rapidjson
+- Cython
+- pytest
+- pylint
