@@ -24,9 +24,14 @@ function compile_arctern_docs {
   pip install sphinx-markdown-tables==0.0.3 && \
   pip install sphinx-intl && \
   pip install pyspark && \
+  conda install -c conda-forge contextily && \
+  conda install -c conda-forge pyproj && \
+  conda install -c conda-forge descartes && \
+  conda install -c conda-forge matplotlib && \
   cd /arctern-docs/doc-cn && \
   mkdir build && python create_html.py && mv build build-cn &&\
   cd /arctern-docs/doc-en && \
+  make doctest && \
   mkdir build && python compile.py && mv build build-en
 }
 
