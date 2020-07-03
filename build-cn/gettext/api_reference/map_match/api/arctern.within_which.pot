@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-03 07:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/api_reference/map_match/api/arctern.within_which.rst:2
+msgid "arctern.within\\_which"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/_wrapper_func.py:docstring of arctern.within_which:1
+msgid "For each geometry in ``left``, search for a geometry in ``right`` that contains it."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/_wrapper_func.py:docstring of arctern.within_which:0
+msgid "参数"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/_wrapper_func.py:docstring of arctern.within_which:3
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/_wrapper_func.py:docstring of arctern.within_which:5
+msgid "Sequence of geometries."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/_wrapper_func.py:docstring of arctern.within_which:0
+msgid "返回"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/_wrapper_func.py:docstring of arctern.within_which:8
+msgid "The indexes of geometries in ``right``. For example, the value *j* with index *i* in the returned Series indicates that the geometry ``left[i]`` is within the geometry ``right[j]``.  * When there are multiple candidates, return one of them. * When there is no candidate, return NA."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/_wrapper_func.py:docstring of arctern.within_which:0
+msgid "返回类型"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/_wrapper_func.py:docstring of arctern.within_which:16
+msgid "实际案例"
+msgstr ""

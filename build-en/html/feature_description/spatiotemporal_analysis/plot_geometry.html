@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Plot methods &mdash; Arctern version : 0.2.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Coordinate reference system" href="crs_and_transform.html" />
+    <link rel="prev" title="Map match" href="map_match.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../feature_description.html">Feature Description</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="spatiotemporal_analysis.html">Spatiotemporal Analysis</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data_structure.html">Data structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="read_and_write_file.html">Reading and writing files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometric_manipulation.html">Basic manipulations of geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="convert_from_and_to_geopandas_geoseries.html">Convert with GeoPandas GeoSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spatial_relationship_operation.html">Spatial relationship operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="map_match.html">Map match</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Plot methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#plot-geometry">plot_geometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-dependencies">Install dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generate-test-data">Generate test data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#plot-geometric-figures">Plot geometric figures</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="crs_and_transform.html">Coordinate reference system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregation.html">Aggregation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="indexing_selecting_data.html">Indexing and selecting data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/api_reference.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../feature_description.html">Feature Description</a> &raquo;</li>
+        
+          <li><a href="spatiotemporal_analysis.html">Spatiotemporal Analysis</a> &raquo;</li>
+        
+      <li>Plot methods</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/feature_description/spatiotemporal_analysis/plot_geometry.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="plot-methods">
+<h1>Plot methods<a class="headerlink" href="#plot-methods" title="Permalink to this headline">¶</a></h1>
+<p>This article describes Arctern's plot methods.</p>
+<div class="section" id="plot-geometry">
+<h2><a target="_blank" class="reference external" href="../../api_reference/plot/api/arctern.plot.plot_geometry.html">plot_geometry</a><a class="headerlink" href="#plot-geometry" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="definition">
+<h3>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="k">def</span> <span class="nf">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">geoms</span><span class="p">,</span> <span class="o">**</span><span class="n">style_kwds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>ax:</strong> An instance of matplotlib.axes._subplots.AxesSubplot. It represents the axes of canvas.</p></li>
+<li><p><strong>geoms:</strong> A collection of geometries to be drawn. It accepts pandas Series, Arctrn GeoSeries, or pandas DataFrame as input. Note that the geometries must be in WKB form.</p></li>
+<li><p><strong>style_kwds:</strong> Parameters that describes the drawing style, including:</p>
+<ul>
+<li><p><strong>linewidth:</strong> Line width of lines or polygons</p></li>
+<li><p><strong>linestyle:</strong> Line style</p></li>
+<li><p><strong>edgecolor:</strong> Edge color of polygons</p></li>
+<li><p><strong>facecolor:</strong> Face color of polygons</p></li>
+<li><p><strong>color:</strong> Color of points or lines</p></li>
+<li><p><strong>marker:</strong> Shape of points</p></li>
+<li><p><strong>markersize:</strong> Size of points</p></li>
+<li><p><strong>alpha:</strong> Transparency</p></li>
+</ul>
+</li>
+</ul>
+<p>The following examples show you how to use the <a target="_blank" class="reference external" href="../../api_reference/plot/api/arctern.plot.plot_geometry.html">plot_geometry</a> method to draw geometric figures.</p>
+</div>
+</div>
+<div class="section" id="install-dependencies">
+<h2>Install dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge descartes
+conda install -c conda-forge matplotlib
+</pre></div>
+</div>
+</div>
+<div class="section" id="generate-test-data">
+<h2>Generate test data<a class="headerlink" href="#generate-test-data" title="Permalink to this headline">¶</a></h2>
+<p>We use the GeoSeries constructor to create some geometric objects, including points (POINT), lines (LINESTRING), polygons (POLYGON), multiple points (MULTIPOINT), multiple polygons (MULTIPOLYGON), geometry collections (GEOMETRYCOLLECTION), and multiple lines (MULTILINESTRING) . In the next steps, we will demonstrate how to draw these geometric figures.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">point_s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT (3 4)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linestring_s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;LINESTRING (0 0,1 1,2 3)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">polygon_s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON ((0 0,0 1,1.5 2,0 0))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">multi_point_s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;MULTIPOINT (3 4,5 5)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">multi_linestring_s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;MULTILINESTRING ((0 0,1 1,2 3),(1 0,2 4))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">multi_polygon_s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;MULTIPOLYGON (((0 0,0 1,1.5 2,0 0)),((0 0,0 2,1 0,0 0)))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom_collection_s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;GEOMETRYCOLLECTION(&quot;</span>
+<span class="gp">... </span>                    <span class="s2">&quot;polygon((1 1,1 2,2 2,2 1,1 1)),&quot;</span>
+<span class="gp">... </span>                    <span class="s2">&quot;linestring(0 1, 5 6, 10 11),&quot;</span>
+<span class="gp">... </span>                    <span class="s2">&quot;POINT(4 7))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geoms</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;MULTILINESTRING ((0 0,1 1,2 3),(1 0,2 4))&quot;</span><span class="p">,</span><span class="s2">&quot;POINT (3 4)&quot;</span><span class="p">,</span><span class="s2">&quot;POLYGON ((0 0,0 1,1.5 2,0 0))&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="plot-geometric-figures">
+<h2>Plot geometric figures<a class="headerlink" href="#plot-geometric-figures" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="point">
+<h3>Point<a class="headerlink" href="#point" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Color:</strong> Blue</p></li>
+<li><p><strong>Transparency:</strong> 0.4</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">point_s</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/point_s.png" src="../../_images/point_s.png" /></p>
+</div>
+<div class="section" id="line">
+<h3>Line<a class="headerlink" href="#line" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Color:</strong> Blue</p></li>
+<li><p><strong>Line style:</strong> &quot; -. &quot;</p></li>
+<li><p><strong>Transparency:</strong> 0.4</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">linestring_s</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;-.&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/linestring_s.png" src="../../_images/linestring_s.png" /></p>
+</div>
+<div class="section" id="polygon">
+<h3>Polygon<a class="headerlink" href="#polygon" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Face color:</strong> Green</p></li>
+<li><p><strong>Line width:</strong> 3.0</p></li>
+<li><p><strong>Edge color:</strong> Red</p></li>
+<li><p><strong>Transparency:</strong> 0.4</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">polygon_s</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;green&quot;</span><span class="p">],</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/polygon_s.png" src="../../_images/polygon_s.png" /></p>
+</div>
+<div class="section" id="multiple-points">
+<h3>Multiple points<a class="headerlink" href="#multiple-points" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Color:</strong> Blue</p></li>
+<li><p><strong>Marker:</strong> &quot; * &quot;</p></li>
+<li><p><strong>Size:</strong> 40.0</p></li>
+<li><p><strong>Transparency:</strong> 0.4</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">multi_point_s</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mf">40.0</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/multi_point_s.png" src="../../_images/multi_point_s.png" /></p>
+</div>
+<div class="section" id="multiple-lines">
+<h3>Multiple lines<a class="headerlink" href="#multiple-lines" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Color:</strong> Blue</p></li>
+<li><p><strong>Line style:</strong> &quot; -- &quot;</p></li>
+<li><p><strong>Transparency:</strong> 0.4</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">multi_linestring_s</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;--&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/multi_linestring_s.png" src="../../_images/multi_linestring_s.png" /></p>
+</div>
+<div class="section" id="multiple-polygons">
+<h3>Multiple polygons<a class="headerlink" href="#multiple-polygons" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Face color:</strong> Blue</p></li>
+<li><p><strong>Transparency:</strong> 0.4</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">multi_polygon_s</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/multi_polygon_s.png" src="../../_images/multi_polygon_s.png" /></p>
+</div>
+<div class="section" id="geometry-collection">
+<h3>Geometry collection<a class="headerlink" href="#geometry-collection" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Face Color:</strong> Blue</p></li>
+<li><p><strong>Edge Color:</strong> Red</p></li>
+<li><p><strong>Point and line Color:</strong> Green</p></li>
+<li><p><strong>Transparency:</strong> 0.4</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">geom_collection_s</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">edgecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;green&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/geom_collection_s.png" src="../../_images/geom_collection_s.png" /></p>
+</div>
+<div class="section" id="multiple-geometries">
+<h3>Multiple Geometries<a class="headerlink" href="#multiple-geometries" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Multiple lines</strong></p>
+<ul>
+<li><p><strong>Line style:</strong> &quot; -. &quot;</p></li>
+<li><p><strong>Color:</strong> Blue</p></li>
+</ul>
+</li>
+<li><p><strong>Polygon</strong></p>
+<ul>
+<li><p><strong>Line style:</strong> &quot; -- &quot;</p></li>
+<li><p><strong>Face color:</strong> Green</p></li>
+<li><p><strong>Edge color</strong>: Red</p></li>
+<li><p><strong>Marker:</strong> &quot; o &quot;</p></li>
+<li><p><strong>Transparency:</strong> 0.4</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">geoms</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;-.&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;--&quot;</span><span class="p">],</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;green&quot;</span><span class="p">],</span><span class="n">edgecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/geoms.png" src="../../_images/geoms.png" /></p>
+</div>
+<div class="section" id="plot-geometries-multiple-times">
+<h3>Plot geometries multiple times<a class="headerlink" href="#plot-geometries-multiple-times" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Line</strong></p>
+<ul>
+<li><p><strong>Color:</strong> Blue</p></li>
+<li><p><strong>Line style:</strong> &quot; -. &quot;</p></li>
+<li><p><strong>Transparency:</strong> 0.4</p></li>
+</ul>
+</li>
+<li><p><strong>Polygon</strong></p>
+<ul>
+<li><p><strong>Face color:</strong> Green</p></li>
+<li><p><strong>Line width:</strong> 3.0</p></li>
+<li><p><strong>Edge color:</strong> Red</p></li>
+<li><p><strong>Transparency:</strong> 0.4</p></li>
+</ul>
+</li>
+<li><p><strong>Geometry collection</strong></p>
+<ul>
+<li><p><strong>Face color:</strong> Blue</p></li>
+<li><p><strong>Edge color:</strong> Red</p></li>
+<li><p><strong>Point and line color:</strong> Green</p></li>
+<li><p><strong>Transparency:</strong> 0.4</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">linestring_s</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;-.&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">polygon_s</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;green&quot;</span><span class="p">],</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">geom_collection_s</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">edgecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;green&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/multi_plot.png" src="../../_images/multi_plot.png" /></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="crs_and_transform.html" class="btn btn-neutral float-right" title="Coordinate reference system" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="map_match.html" class="btn btn-neutral float-left" title="Map match" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Jul 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

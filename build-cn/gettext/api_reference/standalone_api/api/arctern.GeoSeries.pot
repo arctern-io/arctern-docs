@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-03 07:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.rst:2
+msgid "arctern.GeoSeries"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries:1
+msgid "One-dimensional Series to store an array of geometry objects."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries:0
+msgid "参数"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries:3
+msgid "Contains geometric data stored in GeoSeries. The geometric data can be in `WKT <https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry>`_ or `WKB <https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry#Well-known_binary>`_ format."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries:5
+msgid "Same to the index of pandas.Series, by default ``RangeIndex (0, 1, 2, …, n)``. Index values must be hashable and have the same length as ``data``. Non-unique index values are allowed. If both a dict and index sequence are used, the index will override the keys found in the dict."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries:8
+msgid "The name to give to the GeoSeries."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries:10
+msgid "The Coordinate Reference System (CRS) set to all geometries in GeoSeries. Only supports SRID as a WKT representation of CRS by now, for example, \"EPSG:4326\"."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries:13
+msgid "Parameters to pass to the GeoSeries constructor, for example, ``copy``. ``copy`` is a boolean value, by default False.  * *True:* Copys input data. * *False:* Points to input data."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries:20
+msgid "实际案例"
+msgstr ""

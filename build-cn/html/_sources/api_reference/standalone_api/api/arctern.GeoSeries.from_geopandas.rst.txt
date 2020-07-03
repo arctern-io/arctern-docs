@@ -1,0 +1,6 @@
+arctern.GeoSeries.from\_geopandas
+=================================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.from_geopandas

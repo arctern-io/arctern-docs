@@ -1,0 +1,41 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-03 07:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.isna.rst:2
+msgid "arctern.GeoSeries.isna"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries.isna:1
+msgid "Detects missing values."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries.isna:0
+msgid "返回"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries.isna:3
+msgid "Mask of boolean values for each element in the GeoSeries that indicates whether an element is an NA value.  * *True*: An element is a NA value, such as None. * *False*: An element is a non-missing value."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries.isna:0
+msgid "返回类型"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries.isna:10
+msgid "实际案例"
+msgstr ""

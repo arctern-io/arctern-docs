@@ -1,0 +1,6 @@
+arctern.GeoSeries.as\_geojson
+=============================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.as_geojson

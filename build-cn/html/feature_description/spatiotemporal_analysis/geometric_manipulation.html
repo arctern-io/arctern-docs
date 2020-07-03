@@ -1,0 +1,824 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>几何体的基本操作 &mdash; Arctern version : 0.2.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="与 GeoPandas GeoSeries 互相转换" href="convert_from_and_to_geopandas_geoseries.html" />
+    <link rel="prev" title="文件读写" href="read_and_write_file.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../feature_description.html">功能说明</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="spatiotemporal_analysis.html">时空数据分析</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data_structure.html">数据结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="read_and_write_file.html">文件读写</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">几何体的基本操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-length">GeoSeries.length</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-area">GeoSeries.area</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-centroid">GeoSeries.centroid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-is-valid">GeoSeries.is_valid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-is-simple">GeoSeries.is_simple</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-convex-hull">GeoSeries.convex_hull</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-npoints">GeoSeries.npoints</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-curve-to-line">GeoSeries.curve_to_line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-simplify-tolerance">GeoSeries.simplify(tolerance)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-envelope">GeoSeries.envelope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-buffer-distance">GeoSeries.buffer(distance)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-precision-reduce-precision">GeoSeries.precision_reduce(precision)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-make-valid">GeoSeries.make_valid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-intersects-other">GeoSeries.intersects(other)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-within-other">GeoSeries.within(other)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-contains-other">GeoSeries.contains(other)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-crosses-other">GeoSeries.crosses(other)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-geom-equals-other">GeoSeries.geom_equals(other)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-touches-other">GeoSeries.touches(other)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-overlaps-other">GeoSeries.overlaps(other)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-distance-other">GeoSeries.distance(other)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-distance-sphere-other">GeoSeries.distance_sphere(other)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-hausdorff-distance-other">GeoSeries.hausdorff_distance(other)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-intersection-other">GeoSeries.intersection(other)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-polygon-from-envelope-min-x-min-y-max-x-max-y-crs-none">GeoSeries.polygon_from_envelope(min_x, min_y, max_x, max_y, crs=None)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geoseries-point-x-y">GeoSeries.point(x, y)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="convert_from_and_to_geopandas_geoseries.html">与 GeoPandas GeoSeries 互相转换</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spatial_relationship_operation.html">空间关系运算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="map_match.html">地图匹配</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_geometry.html">绘图方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crs_and_transform.html">坐标参考系</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregation.html">聚合</a></li>
+<li class="toctree-l3"><a class="reference internal" href="indexing_selecting_data.html">索引和选择数据</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">可视化</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/api_reference.html">API 参考</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../feature_description.html">功能说明</a> &raquo;</li>
+        
+          <li><a href="spatiotemporal_analysis.html">时空数据分析</a> &raquo;</li>
+        
+      <li>几何体的基本操作</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/feature_description/spatiotemporal_analysis/geometric_manipulation.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>几何体的基本操作<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>Arctern 实现了多个符合 OGC 标准的 GIS 处理函数。它们被封装成 GeoSeries 类的属性和方法。其中的方法又分为一元操作方法和二元操作方法。</p>
+<div class="section" id="geoseries-length">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.length.html">GeoSeries.length</a><a class="headerlink" href="#geoseries-length" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 计算 GeoSeries 中每个几何体的长度。计算几何体长度的方法如下：</p>
+<ul>
+<li><p>POINT / MULTIPOINT / POLYGON / MULTIPOLYGON / CURVEPOLYGON / MULTICURVE: 0</p></li>
+<li><p>LINESTRING: 一条直线的长度。</p></li>
+<li><p>MULTILINESTRING: 多条直线的长度总和。</p></li>
+<li><p>CIRCULARSTRING: 一条曲线的长度。</p></li>
+<li><p>MULTISURFACE / COMPOUNDCURVE / GEOMETRYCOLLECTION: 对于 3 种类型中的几何体集合，计算集合中所有几何体的长度之和。</p></li>
+</ul>
+</li>
+<li><p><strong>返回：</strong> GeoSeries 中每个几何体的长度。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT(1 1)&quot;</span><span class="p">,</span> <span class="s2">&quot;LINESTRING (0 0, 0 2)&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON ((0 0,0 4,4 4,0 0))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">length</span>
+<span class="go">0    0.0</span>
+<span class="go">1    2.0</span>
+<span class="go">2    0.0</span>
+<span class="go">dtype: float64</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="geoseries-area">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.area.html">GeoSeries.area</a><a class="headerlink" href="#geoseries-area" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 计算 GeoSeries 中每个几何体的 2D 笛卡尔（平面）面积。计算几何体面积的方法如下：</p>
+<ul>
+<li><p>POINT / MULTIPOINT / LINESTRING / MULTILINESTRING / CIRCULARSTRING: 0</p></li>
+<li><p>POLYGON: 单个多边形的面积。</p></li>
+<li><p>MULTIPOLYGON: 多个多边形的面积总和。</p></li>
+<li><p>CURVEPOLYGON: 单个曲线多边形的面积。</p></li>
+<li><p>MULTIPOLYGON: 多个多边形的面积总和。</p></li>
+<li><p>MULTISURFACE / COMPOUNDCURVE / GEOMETRYCOLLECTION: 对于 3 种类型中的几何体集合，计算集合中所有几何体的面积之和。</p></li>
+</ul>
+</li>
+<li><p><strong>返回：</strong> GeoSeries 中每个几何体的 2D 笛卡尔（平面）面积。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT(1 1)&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON ((2 1, 3 3, 1 3, 2 1))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">area</span>
+<span class="go">0    0.0</span>
+<span class="go">1    2.0</span>
+<span class="go">dtype: float64</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/area.png" src="../../_images/area.png" /></p>
+</div>
+<div class="section" id="geoseries-centroid">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.centroid.html">GeoSeries.centroid</a><a class="headerlink" href="#geoseries-centroid" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 返回 GeoSeries 中每个几何体的中心。</p></li>
+<li><p><strong>返回：</strong> GeoSeries 中每个几何体的中心。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON ((1 1, 1.5 1, 1.5 1.25, 1 1.25, 1 1))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON ((2 1, 3 3, 1 3, 2 1))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">centroid</span>
+<span class="go">0              POINT (1.25 1.125)</span>
+<span class="go">1    POINT (2.0 2.33333333333333)</span>
+<span class="go">dtype: float64</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/centroid.png" src="../../_images/centroid.png" /></p>
+</div>
+<div class="section" id="geoseries-is-valid">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.is_valid.html">GeoSeries.is_valid</a><a class="headerlink" href="#geoseries-is-valid" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 检查 GeoSeries 中的每个几何体是否为有效格式，例如 WKT 和 WKB 格式。</p></li>
+<li><p><strong>返回：</strong> GeoSeries 中每个元素对应的布尔值，指示元素是否为有效的。</p>
+<ul>
+<li><p><em>True:</em> 几何体是有效的。</p></li>
+<li><p><em>False:</em> 几何体是无效的。</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT(1 1)&quot;</span><span class="p">,</span> <span class="s2">&quot;POINT(1)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">is_valid</span>
+<span class="go">0     True</span>
+<span class="go">1    False</span>
+<span class="go">dtype: bool</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="geoseries-is-simple">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.is_simple.html">GeoSeries.is_simple</a><a class="headerlink" href="#geoseries-is-simple" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 检查 GeoSeries 中的每个几何体是否为“简单”的。此处的“简单”是指几何体没有异常点，例如自相交或自相切。</p></li>
+<li><p><strong>返回：</strong> GeoSeries 中每个元素对应的布尔值，指示元素是否为“简单”的。</p>
+<ul>
+<li><p><em>True:</em> 几何体是“简单”的。</p></li>
+<li><p><em>False:</em> 几何体不是“简单”的。</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT(1 1)&quot;</span><span class="p">,</span> <span class="s2">&quot;LINESTRING (1 2,2 3,1 2,4 6,2 2,1 6)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">is_simple</span>
+<span class="go">0     True</span>
+<span class="go">1    False</span>
+<span class="go">dtype: bool</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/is_simple.png" src="../../_images/is_simple.png" /></p>
+</div>
+<div class="section" id="geoseries-convex-hull">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.convex_hull.html">GeoSeries.convex_hull</a><a class="headerlink" href="#geoseries-convex-hull" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 对于 GeoSeries 中的每个几何体，返回包围它的最小凸几何体。</p>
+<ul>
+<li><p>对于多边形，返回的几何体是包围它的最小凸几何体。</p></li>
+<li><p>对于几何体集合，返回的几何体是将集合中的所有几何体包围起来的最小凸几何体。</p></li>
+<li><p>对于点或线，返回的几何体与原来的几何体相同。</p></li>
+</ul>
+</li>
+<li><p><strong>返回：</strong> 凸几何体的序列。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT(1 1)&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON ((2 1, 5 1, 6 5, 4 2, 1 5, 2 1))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">convex_hull</span>
+<span class="go">0                        POINT (1 1)</span>
+<span class="go">1    POLYGON ((2 1,1 5,6 5,5 1,2 1))</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/convex_hull.png" src="../../_images/convex_hull.png" /></p>
+</div>
+<div class="section" id="geoseries-npoints">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.npoints.html">GeoSeries.npoints</a><a class="headerlink" href="#geoseries-npoints" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 返回 GeoSeries 中每个几何体的点的数量。</p></li>
+<li><p><strong>返回：</strong> GeoSeries 中每个几何体的点的数量。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT(1 1)&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">npoints</span>
+<span class="go">0    1</span>
+<span class="go">1    5</span>
+<span class="go">dtype: int64</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="geoseries-curve-to-line">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.curve_to_line.html">GeoSeries.curve_to_line</a><a class="headerlink" href="#geoseries-curve-to-line" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 将每个几何体中的曲线转换为近似线性表示。例如，</p>
+<ul>
+<li><p>将 CIRCULAR STRING 转换为 LINESTRING，</p></li>
+<li><p>将 CURVEPOLYGON 转换为 POLYGON，</p></li>
+<li><p>将 MULTISURFACE 转换为 MULTIPOLYGON。</p></li>
+</ul>
+</li>
+<li><p><strong>返回：</strong> 转换后的线性几何体。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;CURVEPOLYGON(CIRCULARSTRING(0 0, 4 0, 4 4, 0 4, 0 0))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">curve_to_line</span><span class="p">()</span>
+<span class="go">0    POLYGON ((0 0,0.144384846968599 -0.1346410480079,0.297810064436987 -0.258882339403264,0.459528180167908 -0.372118583103131,0.628751319757384 -0.473798103510646,0.804655045079528 -0.563425528223178,0.986382370866408 -0.640564201436803,1.17304793985397 -0.704838311289649,1.36374233615356 -0.755934720779265,1.55753651583507 -0.793604493334868,1.75348633313513 -0.817664105611044,1.9506371402407 -0.827996341595309,2.14802843823713 -0.824550863672528,2.34469855656221 -0.807344457864786,2.53968933816861 -0.776460952051593,2.73205080756895 -0.732050807568896,2.92084579902018 -0.674330386176507,3.10515452230186 -0.603580895965422,3.28407904384051 -0.520147021340222,3.45674766135266 -0.424435243751333,3.6223191506906 -0.316911861358278,3.7799868642013 -0.198100717271856,3.92898266063321 -0.068580647443195,4.06858064744324 0.071017339366811,4.19810071727193 0.220013135798766,4.31691186135845 0.377680849309456,4.42443524375153 0.543252338647363,4.52014702134033 0.715920956159607,4.60358089596548 0.894845477698254,4.67433038617651 1.07915420097987,4.73205080756907 1.26794919243116,4.77646095205159 1.46031066183144,4.80734445786493 1.65530144343791,4.82455086367258 1.85197156176298,4.82799634159551 2.04936285975941,4.81766410561113 2.24651366686498,4.7936044933349 2.44246348416505,4.75593472077935 2.63625766384655,4.70483831128968 2.82695206014614,4.64056420143697 3.0136176291337,4.56342552822321 3.19534495492053,4.47379810351072 3.37124868024273,4.3721185831032 3.54047181983219,4.2588823394035 3.70218993556301,4.13464104800801 3.85561515303141,4 4,3.85561515303141 4.13464104800801,3.70218993556307 4.25888233940338,3.54047181983219 4.3721185831032,3.37124868024273 4.47379810351072,3.19534495492053 4.56342552822321,3.0136176291337 4.64056420143697,2.82695206014614 4.70483831128968,2.63625766384655 4.75593472077935,2.44246348416505 4.7936044933349,2.24651366686498 4.81766410561113,2.04936285975941 4.82799634159551,1.85197156176298 4.82455086367258,1.65530144343791 4.80734445786493,1.46031066183144 4.77646095205159,1.26794919243116 4.73205080756907,1.07915420097987 4.67433038617651,0.894845477698254 4.60358089596548,0.715920956159607 4.52014702134033,0.543252338647363 4.42443524375153,0.377680849309442 4.31691186135845,0.220013135798759 4.19810071727193,0.071017339366808 4.06858064744324,-0.068580647443198 3.92898266063321,-0.198100717271863 3.7799868642013,-0.316911861358292 3.6223191506906,-0.424435243751333 3.45674766135266,-0.520147021340222 3.28407904384051,-0.603580895965422 3.10515452230175,-0.674330386176507 2.92084579902018,-0.732050807568896 2.73205080756895,-0.776460952051593 2.53968933816861,-0.807344457864786 2.34469855656221,-0.824550863672528 2.14802843823713,-0.827996341595309 1.9506371402407,-0.817664105611044 1.75348633313513,-0.793604493334868 1.55753651583507,-0.755934720779265 1.36374233615356,-0.704838311289649 1.17304793985397,-0.640564201436803 0.986382370866408,-0.563425528223178 0.804655045079528,-0.473798103510646 0.628751319757356,-0.372118583103131 0.459528180167908,-0.258882339403271 0.29781006443698,-0.134641048007893 0.144384846968599,0 0))</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/curve_to_line.png" src="../../_images/curve_to_line.png" /></p>
+</div>
+<div class="section" id="geoseries-simplify-tolerance">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.simplify.html">GeoSeries.simplify(tolerance)</a><a class="headerlink" href="#geoseries-simplify-tolerance" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 返回使用 Douglas-Peucker 算法 计算的 GeoSeries 中每个几何体的简化版本。</p></li>
+<li><p><strong>返回：</strong> 简化的几何体的序列。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON ((1 1,1 2,2 2,2 1,1 1))&quot;</span><span class="p">,</span> <span class="s2">&quot;CIRCULARSTRING (0 0,1 1,2 0)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="go">0    POLYGON ((1 1,1 2,2 2,2 1,1 1))</span>
+<span class="go">1               LINESTRING (0 0,2 0)</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="geoseries-envelope">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.envelope.html">GeoSeries.envelope</a><a class="headerlink" href="#geoseries-envelope" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 返回 GeoSeries 中每个几何体的最小边界矩形。边界矩形是一个矩形几何体对象，其边平行于坐标轴。</p></li>
+<li><p><strong>返回：</strong> GeoSeries 中每个几何体的最小边界矩形。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT(1 1)&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON ((4.76 3.16, 3.67 5.17, 2.85 2.21, 4.04 0.99, 7.00 2.83))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">envelope</span>
+<span class="go">0                                                    POINT (1 1)</span>
+<span class="go">1    POLYGON ((2.85 0.99,2.85 5.17,7.0 5.17,7.0 0.99,2.85 0.99))</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/envelope.png" src="../../_images/envelope.png" /></p>
+</div>
+<div class="section" id="geoseries-buffer-distance">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.buffer.html">GeoSeries.buffer(distance)</a><a class="headerlink" href="#geoseries-buffer-distance" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 对于每个几何体，将其所有点向远离几何体中心的方向移动以构造新的几何体。移动距离被指定为 <code class="docutils literal notranslate"><span class="pre">distance</span></code>。</p>
+<ul>
+<li><p>如果 <code class="docutils literal notranslate"><span class="pre">distance</span></code> &gt; 0，则新几何体是原来的几何体之外的按比例放大版本。</p></li>
+<li><p>如果 <code class="docutils literal notranslate"><span class="pre">distance</span></code> &lt; 0，则新几何体是原来的几何体内部的按比例缩小版本。</p></li>
+</ul>
+</li>
+<li><p><strong>返回：</strong> 几何体序列。</p></li>
+</ul>
+<div class="section" id="id2">
+<h3>示例 1<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p>将 <code class="docutils literal notranslate"><span class="pre">distance</span></code> 设为 0，则返回一个空的多边形。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT (0 1)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="go">0    POLYGON EMPTY</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>示例 2<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>将 <code class="docutils literal notranslate"><span class="pre">distance</span></code> 设为 1.0，则返回一个多边形。该多边形近似表示一个半径为 1.0、圆心为 <code class="docutils literal notranslate"><span class="pre">Point(0,</span> <span class="pre">1)</span></code> 的圆，该圆的面积为近似为 3.14。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT (0 1)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span>
+<span class="go">0    POLYGON ((1 1,0.998629534754574 0.947664043757056,0.994521895368273 0.895471536732347,0.987688340595138 0.843565534959769,0.978147600733806 0.792088309182241,0.965925826289068 0.741180954897479,0.951056516295154 0.690983005625053,0.933580426497202 0.6416320504547,0.913545457642601 0.5932633569242,0.891006524188368 0.546009500260454,0.866025403784439 0.5,0.838670567945424 0.455360964984973,0.809016994374948 0.412214747707527,0.777145961456971 0.370679608950163,0.743144825477395 0.330869393641142,0.707106781186548 0.292893218813453,0.669130606358859 0.256855174522606,0.629320391049838 0.22285403854303,0.587785252292474 0.190983005625053,0.544639035015028 0.161329432054576,0.5 0.133974596215562,0.453990499739548 0.108993475811633,0.406736643075801 0.0864545423574,0.358367949545302 0.066419573502799,0.309016994374949 0.048943483704847,0.258819045102522 0.034074173710932,0.207911690817761 0.021852399266195,0.156434465040233 0.012311659404863,0.104528463267656 0.005478104631727,0.052335956242946 0.001370465245426,0.0 0.0,-0.052335956242941 0.001370465245426,-0.104528463267651 0.005478104631726,-0.156434465040228 0.012311659404862,-0.207911690817756 0.021852399266194,-0.258819045102518 0.034074173710931,-0.309016994374944 0.048943483704845,-0.358367949545297 0.066419573502797,-0.406736643075797 0.086454542357398,-0.453990499739544 0.10899347581163,-0.5 0.13397459621556,-0.544639035015024 0.161329432054574,-0.58778525229247 0.19098300562505,-0.629320391049834 0.222854038543026,-0.669130606358855 0.256855174522603,-0.707106781186544 0.292893218813449,-0.743144825477391 0.330869393641138,-0.777145961456968 0.370679608950159,-0.809016994374944 0.412214747707523,-0.838670567945421 0.455360964984969,-0.866025403784436 0.5,-0.891006524188365 0.546009500260448,-0.913545457642599 0.593263356924195,-0.9335804264972 0.641632050454694,-0.951056516295152 0.690983005625047,-0.965925826289067 0.741180954897473,-0.978147600733804 0.792088309182235,-0.987688340595137 0.843565534959763,-0.994521895368273 0.89547153673234,-0.998629534754574 0.94766404375705,-1.0 1.0,-0.998629534754574 1.05233595624294,-0.994521895368274 1.10452846326765,-0.987688340595139 1.15643446504022,-0.978147600733807 1.20791169081775,-0.96592582628907 1.25881904510251,-0.951056516295156 1.30901699437494,-0.933580426497205 1.35836794954529,-0.913545457642604 1.40673664307579,-0.891006524188372 1.45399049973954,-0.866025403784443 1.5,-0.838670567945429 1.54463903501502,-0.809016994374952 1.58778525229247,-0.777145961456976 1.62932039104983,-0.7431448254774 1.66913060635885,-0.707106781186554 1.70710678118654,-0.669130606358865 1.74314482547739,-0.629320391049845 1.77714596145697,-0.58778525229248 1.80901699437494,-0.544639035015034 1.83867056794542,-0.5 1.86602540378443,-0.453990499739554 1.89100652418836,-0.406736643075807 1.9135454576426,-0.358367949545307 1.9335804264972,-0.309016994374954 1.95105651629515,-0.258819045102528 1.96592582628907,-0.207911690817766 1.9781476007338,-0.156434465040237 1.98768834059514,-0.10452846326766 1.99452189536827,-0.05233595624295 1.99862953475457,-0.0 2.0,0.052335956242939 1.99862953475457,0.104528463267649 1.99452189536827,0.156434465040226 1.98768834059514,0.207911690817755 1.97814760073381,0.258819045102517 1.96592582628907,0.309016994374944 1.95105651629515,0.358367949545297 1.9335804264972,0.406736643075797 1.9135454576426,0.453990499739544 1.89100652418837,0.5 1.86602540378444,0.544639035015025 1.83867056794543,0.587785252292471 1.80901699437495,0.629320391049836 1.77714596145697,0.669130606358857 1.7431448254774,0.707106781186547 1.70710678118655,0.743144825477394 1.66913060635886,0.777145961456971 1.62932039104984,0.809016994374947 1.58778525229247,0.838670567945424 1.54463903501503,0.866025403784439 1.5,0.891006524188368 1.45399049973955,0.913545457642601 1.4067366430758,0.933580426497202 1.3583679495453,0.951056516295154 1.30901699437495,0.965925826289069 1.25881904510252,0.978147600733806 1.20791169081776,0.987688340595138 1.15643446504023,0.994521895368274 1.10452846326765,0.998629534754574 1.05233595624294,1 1))</span>
+<span class="go">dtype: GeoDtype</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">area</span>
+<span class="go">0    3.140157</span>
+<span class="go">dtype: float64</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/buffer_2.png" src="../../_images/buffer_2.png" /></p>
+</div>
+</div>
+<div class="section" id="geoseries-precision-reduce-precision">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.precision_reduce.html">GeoSeries.precision_reduce(precision)</a><a class="headerlink" href="#geoseries-precision-reduce-precision" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 对于 GeoSeries 中每个几何体的坐标，将有效数字的位数减少到给定的 <code class="docutils literal notranslate"><span class="pre">precision</span></code>。 最后一位小数位的数字将四舍五入。</p></li>
+<li><p><strong>返回：</strong> 精度降低后的几何体序列。</p></li>
+</ul>
+<p>以下示例中，由于设置的有效位数是 3， 结果中所有点的坐标只保留了 3 位有效数字。其中 POINT (1.333 2.666) 的坐标 2.666 的最后有效位采用四舍五入的规则，变为 2.67 。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT (1.333 2.666)&quot;</span><span class="p">,</span> <span class="s2">&quot;POINT (2.655 4.447)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">precision_reduce</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">0    POINT (1.33 2.67)</span>
+<span class="go">1    POINT (2.66 4.45)</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="geoseries-make-valid">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.make_valid.html">GeoSeries.make_valid</a><a class="headerlink" href="#geoseries-make-valid" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 在不丢失任何输入顶点的情况下，为 GeoSeries 中的每个几何体创建有效的表示。</p>
+<ul>
+<li><p>如果几何体已经有效，则将不执行任何操作。</p></li>
+<li><p>如果无法使几何体有效，则将其设置为 None。</p></li>
+</ul>
+</li>
+<li><p><strong>返回：</strong> 有效几何体的序列。</p></li>
+</ul>
+<p>在以下示例中，输入的几何体在 POINT (2 2) 附近存在自相交的情况。因此，<code class="docutils literal notranslate"><span class="pre">make_valid</span></code> 方法返回一个新的几何体集合，该集合包含一个多边形和一个线串。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON ((2 1,3 1,3 2,2 2,2 8,2 1))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">make_valid</span><span class="p">()</span>
+<span class="go">Warning 1: Self-intersection at or near point 2 2</span>
+<span class="go">0    GEOMETRYCOLLECTION (POLYGON ((2 2,3 2,3 1,2 1,2 2)),LINESTRING (2 2,2 8))</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="geoseries-intersects-other">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.intersects.html">GeoSeries.intersects(other)</a><a class="headerlink" href="#geoseries-intersects-other" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应的几何体，检测它们是否相交。</p></li>
+<li><p><strong>返回：</strong> GeoSeries 中每个元素对应的布尔值，指示元素是否与 other 中的几何体相交。</p>
+<ul>
+<li><p><em>True:</em> 两个几何体相交。</p></li>
+<li><p><em>False:</em> 两个几何体不相交。</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="id4">
+<h3>示例 1<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((7 7,9 4,5 4,7 7))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((8 0,9 0,9 1,8 1,8 0))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((6 6,2 6,2 2,6 2,6 6))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((0 0,0 4,4 4,4 0,0 0))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="go">0     True</span>
+<span class="go">1    False</span>
+<span class="go">dtype: bool</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/intersects_1.png" src="../../_images/intersects_1.png" /></p>
+</div>
+<div class="section" id="id5">
+<h3>示例 2<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((7 7,9 4,5 4,7 7))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((6 6,2 6,2 2,6 2,6 6))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((0 0,0 4,4 4,4 0,0 0))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">s1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">0     True</span>
+<span class="go">1    False</span>
+<span class="go">dtype: bool</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/intersects_2.png" src="../../_images/intersects_2.png" /></p>
+</div>
+<div class="section" id="id6">
+<h3>示例 3<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((8 0,9 0,9 1,8 1,8 0))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((6 6,2 6,2 2,6 2,6 6))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((0 0,0 4,4 4,4 0,0 0))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">s1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">0    False</span>
+<span class="go">1    False</span>
+<span class="go">dtype: bool</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/intersects_3.png" src="../../_images/intersects_3.png" /></p>
+</div>
+</div>
+<div class="section" id="geoseries-within-other">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.within.html">GeoSeries.within(other)</a><a class="headerlink" href="#geoseries-within-other" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 对于 GeoSeries 中的每个几何体以及 other 中给出的对应的几何体，检测第一个几何体是否在另一个几何体内部。</p></li>
+<li><p><strong>返回：</strong> GeoSeries 中每个元素对应的布尔值，指示元素是否在 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中的几何体内部。</p>
+<ul>
+<li><p><em>True:</em> 第一个几何体在另一个几何体内部。</p></li>
+<li><p><em>False:</em> 第一个几何体不在另一个几何体内部。</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((1 1, 4 1, 4 4, 1 4, 1 1))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((5 1, 7 1, 7 3, 5 3, 5 1))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((8 1, 9 1, 9 2, 8 2, 8 1))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((2 2, 2 3, 3 3, 3 2, 2 2))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((5 4, 6 2, 7 4, 5 4))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((8 3, 9 3, 9 4, 8 4, 8 3))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span><span class="o">.</span><span class="n">within</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="go">0     True</span>
+<span class="go">1    False</span>
+<span class="go">2    False</span>
+<span class="go">dtype: bool</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/within.png" src="../../_images/within.png" /></p>
+</div>
+<div class="section" id="geoseries-contains-other">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.contains.html">GeoSeries.contains(other)</a><a class="headerlink" href="#geoseries-contains-other" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应的几何体，检测第一个几何体是否包含另一个几何体。</p></li>
+<li><p><strong>返回：</strong> GeoSeries 中每个元素对应的布尔值，指示元素是否包含 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中的几何体。</p>
+<ul>
+<li><p><em>True:</em> 第一个几何体包含另一个几何体。</p></li>
+<li><p><em>False:</em> 第一个几何体不包含另一个几何体。</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((2 2, 2 3, 3 3, 3 2, 2 2))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((5 4, 6 2, 7 4, 5 4))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((8 3, 9 3, 9 4, 8 4, 8 3))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((1 1, 4 1, 4 4, 1 4, 1 1))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((5 1, 7 1, 7 3, 5 3, 5 1))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((8 1, 9 1, 9 2, 8 2, 8 1))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="go">0     True</span>
+<span class="go">1    False</span>
+<span class="go">2    False</span>
+<span class="go">dtype: bool</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/contains.png" src="../../_images/contains.png" /></p>
+</div>
+<div class="section" id="geoseries-crosses-other">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.crosses.html">GeoSeries.crosses(other)</a><a class="headerlink" href="#geoseries-crosses-other" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应几何体，检查第一个几何体是否与另一个几何体空间相交。“空间相交”是指两个几何体的一些但非所有内部点都相同。几何体内部的交集不得为空集，并且其维度必须小于两个输入几何体的最大维度。</p></li>
+<li><p><strong>返回：</strong> GeoSeries 中每个元素对应的布尔值，指示元素是否与 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中的几何体空间相交。</p>
+<ul>
+<li><p><em>True:</em> 第一个几何体与另一个几何体空间相交。</p></li>
+<li><p><em>False:</em> 第一个几何体不与另一个几何体空间相交。</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((1 1, 4 1, 4 4, 1 4, 1 1))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((1 1, 4 1, 4 4, 1 4, 1 1))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;LINESTRING(1 5, 5 1)&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((2 2, 5 2, 5 5, 2 5, 2 2))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span><span class="o">.</span><span class="n">crosses</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="go">0     True</span>
+<span class="go">1    False</span>
+<span class="go">dtype: bool</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/crosses.png" src="../../_images/crosses.png" /></p>
+</div>
+<div class="section" id="geoseries-geom-equals-other">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html">GeoSeries.geom_equals(other)</a><a class="headerlink" href="#geoseries-geom-equals-other" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应几何体，检查第一个几何体是否与另一个几何体等价。“等价”表示两个几何体表示相同的几何体结构。</p></li>
+<li><p><strong>返回：</strong> GeoSeries 中每个元素对应的布尔值，指示元素是否与 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中的几何体等价。</p>
+<ul>
+<li><p><em>True:</em> 第一个几何体与另一个几何体等价。</p></li>
+<li><p><em>False:</em> 第一个几何体不与另一个几何体等价。</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((0 0,1 0,1 1,0 1,0 0))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((8 0,9 0,9 1,8 1,8 0))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((0 0,0 8,8 8,8 0,0 0))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((0 0,0 8,8 8,8 0,0 0))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span><span class="o">.</span><span class="n">geom_equals</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="go">0    False</span>
+<span class="go">1    False</span>
+<span class="go">dtype: bool</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="geoseries-touches-other">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.touches.html">GeoSeries.touches(other)</a><a class="headerlink" href="#geoseries-touches-other" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应几何体，检测它们是否接触。“接触”表示两个几何体具有公共点，并且公共点仅位于它们的边界上。</p></li>
+<li><p><strong>返回：</strong> GeoSeries 中每个元素对应的布尔值，指示元素是否接触 other 中的几何体。</p>
+<ul>
+<li><p><em>True:</em> 第一个几何体接触另一个几何体。</p></li>
+<li><p><em>False:</em> 第一个几何体不接触另一个几何体。</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((1 1, 4 1, 4 5, 1 5, 1 1))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((4 2, 7 2, 7 6, 4 6, 4 2))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span><span class="o">.</span><span class="n">touches</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="go">0    True</span>
+<span class="go">dtype: bool</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/touches.png" src="../../_images/touches.png" /></p>
+</div>
+<div class="section" id="geoseries-overlaps-other">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.overlaps.html">GeoSeries.overlaps(other)</a><a class="headerlink" href="#geoseries-overlaps-other" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 对于 GeoSeries 中的每个几何体以及 other 中给出的对应几何体，检查第一个几何体是否与另一个几何体空间重叠。“空间重叠”表示两个几何体相交，但一个不完全包含另一个。</p></li>
+<li><p><strong>返回：</strong> GeoSeries 中每个元素对应的布尔值，指示元素是否与 other 中的几何体空间重叠。</p>
+<ul>
+<li><p><em>True:</em> 第一个几何体与另一个几何体空间重叠。</p></li>
+<li><p><em>False:</em> 第一个几何体不与另一个几何体空间重叠。</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((1 1, 4 1, 4 5, 1 5, 1 1))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((3 2, 6 2, 6 6, 3 6, 3 2))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span><span class="o">.</span><span class="n">overlaps</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="go">0    True</span>
+<span class="go">dtype: bool</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/overlaps.png" src="../../_images/overlaps.png" /></p>
+</div>
+<div class="section" id="geoseries-distance-other">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.distance.html">GeoSeries.distance(other)</a><a class="headerlink" href="#geoseries-distance-other" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应几何体，计算它们之间的最小 2D 笛卡尔（平面）距离。</p></li>
+<li><p><strong>返回：</strong> GeoSeries 中的每个几何体与 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应几何体之间的距离。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;LINESTRING(8 0,9 2)&quot;</span><span class="p">,</span> <span class="s2">&quot;POINT(10 2)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((0 0,0 8,8 8,8 0,0 0))&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((0 0,0 8,8 8,8 0,0 0))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="go">0    1.0</span>
+<span class="go">1    2.0</span>
+<span class="go">dtype: float64</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/distance.png" src="../../_images/distance.png" /></p>
+</div>
+<div class="section" id="geoseries-distance-sphere-other">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.distance_sphere.html">GeoSeries.distance_sphere(other)</a><a class="headerlink" href="#geoseries-distance-sphere-other" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 对于 GeoSeries 对象中的每个几何体，根据经纬度坐标计算地球表面两点之间的最短球面距离。该方法使用 SRID 定义的地球和半径。</p></li>
+<li><p><strong>返回：</strong> 浮点型的 pandas.Series</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT(10 2)&quot;</span><span class="p">],</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT(10 3)&quot;</span><span class="p">],</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span><span class="o">.</span><span class="n">distance_sphere</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="go">0    111226.3</span>
+<span class="go">dtype: float64</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="geoseries-hausdorff-distance-other">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.hausdorff_distance.html">GeoSeries.hausdorff_distance(other)</a><a class="headerlink" href="#geoseries-hausdorff-distance-other" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应几何体，计算它们之间的最小球面距离。此方法使用由 SRID（Spatial Reference Identifier，空间参考标识符）定义的球体派生的球形地球和半径。</p></li>
+<li><p><strong>返回：</strong> GeoSeries 中每个几何体 与 other 中给定的对应几何之间的球面距离。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((0 0 ,0 1, 1 1, 1 0, 0 0))&quot;</span><span class="p">,</span> <span class="s2">&quot;POINT(0 0)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON((0 0 ,0 2, 1 1, 1 0, 0 0))&quot;</span><span class="p">,</span> <span class="s2">&quot;POINT(0 1)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span><span class="o">.</span><span class="n">hausdorff_distance</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="go">0    1.0</span>
+<span class="go">1    1.0</span>
+<span class="go">dtype: float64</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/hausdorff_distance.png" src="../../_images/hausdorff_distance.png" /></p>
+</div>
+<div class="section" id="geoseries-intersection-other">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.intersection.html">GeoSeries.intersection(other)</a><a class="headerlink" href="#geoseries-intersection-other" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 对于 GeoSeries 中的每个几何体以及 other 中给出的对应几何体，计算它们的交集。</p></li>
+<li><p><strong>返回：</strong> GeoSeries 中的每个几何体与 other 中给出的对应几何体的交集。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON ((1 1,1 2,2 2,2 1,1 1))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON ((2 1,3 1,3 2,2 2,2 1))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="go">0    LINESTRING (2 2,2 1)</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/intersection.png" src="../../_images/intersection.png" /></p>
+</div>
+<div class="section" id="geoseries-polygon-from-envelope-min-x-min-y-max-x-max-y-crs-none">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.polygon_from_envelope.html">GeoSeries.polygon_from_envelope(min_x, min_y, max_x, max_y, crs=None)</a><a class="headerlink" href="#geoseries-polygon-from-envelope-min-x-min-y-max-x-max-y-crs-none" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 在给定的空间范围内构造矩形 POLYGON 对象。矩形的边平行于坐标轴。<code class="docutils literal notranslate"><span class="pre">min_x</span></code>、<code class="docutils literal notranslate"><span class="pre">min_y</span></code>、<code class="docutils literal notranslate"><span class="pre">max_x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">max_y</span></code> 是 Series，因此可以批量创建多边形。这四个 Series 中的值的数量应相同。假设 <code class="docutils literal notranslate"><span class="pre">min_x</span></code> 的维度为 <em>N</em>，则此函数返回的 GeoSeries 应包含 <em>N</em> 个矩形。索引为 <em>i</em> 的矩形的形状和位置由其左下顶点 <em>(min_x[i], min_y[i])</em> 和右上顶点 <em>(max_x[i], max_y[i])</em> 定义。</p></li>
+<li><p><strong>返回：</strong> 给定空间范围内的矩形 POLYGON 对象的序列。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">Series</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">min_x</span> <span class="o">=</span> <span class="n">Series</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">max_x</span> <span class="o">=</span> <span class="n">Series</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">min_y</span> <span class="o">=</span> <span class="n">Series</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">max_y</span> <span class="o">=</span> <span class="n">Series</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">GeoSeries</span><span class="o">.</span><span class="n">polygon_from_envelope</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span>
+<span class="go">0                POLYGON ((0 0,0 1,2 1,2 0,0 0))</span>
+<span class="go">1    POLYGON ((1 1,1.0 1.5,1.5 1.5,1.5 1.0,1 1))</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/polygon_from_envelope.png" src="../../_images/polygon_from_envelope.png" /></p>
+</div>
+<div class="section" id="geoseries-point-x-y">
+<h2><a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.point.html">GeoSeries.point(x, y)</a><a class="headerlink" href="#geoseries-point-x-y" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>功能：</strong> 根据给定的坐标构造 POINT 对象。<code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 是 Series，因此可以批量创建点。这两个 Series 中的值的数量应相同。
+假设 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的维度为 <em>N</em>，则此函数返回的 GeoSeries 应包含 <em>N</em> 个点。第 <em>i</em> 个的点的位置由其坐标 <em>(x[i], y[i])</em> 定义。</p></li>
+<li><p><strong>返回：</strong> POINT 对象的序列。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">Series</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Series</span><span class="p">([</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">Series</span><span class="p">([</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">GeoSeries</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">0    POINT (1.3 1.3)</span>
+<span class="go">1    POINT (2.5 2.5)</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/point.png" src="../../_images/point.png" /></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="convert_from_and_to_geopandas_geoseries.html" class="btn btn-neutral float-right" title="与 GeoPandas GeoSeries 互相转换" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="read_and_write_file.html" class="btn btn-neutral float-left" title="文件读写" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, zilliz
+      <span class="lastupdated">
+        最后更新于 7月 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

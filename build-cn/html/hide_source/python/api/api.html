@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>API &mdash; Arctern version : 0.2.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_reference/api_reference.html">API 参考</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/hide_source/python/api/api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api">
+<h1>API<a class="headerlink" href="#api" title="永久链接至标题">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="geospatial/constructor_functions.html">Geometry Constructor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_Point.html">ST_Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_PolygonFromEnvelope.html">ST_PolygonFromEnvelope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_GeomFromText.html">ST_GeomFromText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_GeomFromGeoJSON.html">ST_GeomFromGeoJSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_AsText.html">ST_AsText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_AsGeoJson.html">ST_AsGeoJSON</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="geospatial/accessor_functions.html">Geometry Accessor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_IsValid.html">ST_IsValid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_IsSimple.html">ST_IsSimple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_GeometryType.html">ST_GeometryType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_NPoints.html">ST_NPoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_Envelope.html">ST_Envelope</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="geospatial/processing_functions.html">Geometry Processing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_Buffer.html">ST_Buffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_PrecisionReduce.html">ST_PrecisionReduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_Intersection.html">ST_Intersection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_MakeValid.html">ST_MakeValid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_SimplifyPreserveTopology.html">ST_SimplifyPreserveTopology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_Centroid.html">ST_Centroid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_ConvexHull.html">ST_ConvexHull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_Transform.html">ST_Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_CurveToLine.html">ST_CurveToLine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="geospatial/measurement_functions.html">Measurement Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_DistanceSphere.html">ST_DistanceSphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_Distance.html">ST_Distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_Area.html">ST_Area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_Length.html">ST_Length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_HausdorffDistance.html">ST_HausdorffDistance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="geospatial/relationship_functions.html">Spatial Relationship</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_Equals.html">ST_Equals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_Touches.html">ST_Touches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_Overlaps.html">ST_Overlaps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_Crosses.html">ST_Crosses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_Contains.html">ST_Contains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_Intersects.html">ST_Intersects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/geospatial/ST_Within.html">ST_Within</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="geospatial/aggr_functions.html">Aggregate Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/aggr/ST_Union_Aggr.html">ST_Union_Aggr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geospatial/function/aggr/ST_Envelope_Aggr.html">ST_Envelope_Aggr</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="render/plot.html">Plot Functions (Experimental)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="render/function/plot/Plot.html">plot</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="render/layer.html">Layer Functions (Experimental)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="render/function/layer/pointmap.html">point_map_layer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="render/function/layer/pointmap.html#vega-pointmap">vega_pointmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="render/function/layer/pointmap.html#id1">point_map_layer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="render/function/layer/weighted_pointmap.html">weighted_point_map_layer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="render/function/layer/weighted_pointmap.html#vega-weighted-pointmap">vega_weighted_pointmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="render/function/layer/weighted_pointmap.html#id1">weighted_point_map_layer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="render/function/layer/heatmap.html">heat_map_layer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="render/function/layer/heatmap.html#vega-heatmap">vega_heatmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="render/function/layer/heatmap.html#id1">heat_map_layer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="render/function/layer/choroplethmap.html">choropleth_map_layer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="render/function/layer/choroplethmap.html#vega-choroplethmap">vega_choroplethmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="render/function/layer/choroplethmap.html#id1">choropleth_map_layer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="render/function/layer/iconviz.html">icon_viz_layer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="render/function/layer/iconviz.html#vega-icon">vega_icon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="render/function/layer/iconviz.html#id1">icon_viz_layer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="render/function/layer/fishnetmap.html">fishnet_map_layer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="render/function/layer/fishnetmap.html#vega-fishnetmap">vega_fishnetmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="render/function/layer/fishnetmap.html#id1">fishnet_map_layer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, zilliz
+      <span class="lastupdated">
+        最后更新于 7月 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

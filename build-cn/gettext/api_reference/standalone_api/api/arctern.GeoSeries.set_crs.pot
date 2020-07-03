@@ -1,0 +1,45 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-03 07:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/api_reference/standalone_api/api/arctern.GeoSeries.set_crs.rst:2
+msgid "arctern.GeoSeries.set\\_crs"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries.set_crs:1
+msgid "Sets the Coordinate Reference System (CRS) for all geometries in GeoSeries."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries.set_crs:0
+msgid "参数"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries.set_crs:3
+msgid "A string representation of CRS. The string is made up of an authority code and a SRID (Spatial Reference Identifier), for example, \"EPSG:4326\"."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries.set_crs:8
+msgid "提示"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries.set_crs:9
+msgid "Arctern supports common CRSs listed at the `Spatial Reference <https://spatialreference.org/>`_ website."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/geoseries/geoseries.py:docstring of arctern.GeoSeries.set_crs:12
+msgid "实际案例"
+msgstr ""

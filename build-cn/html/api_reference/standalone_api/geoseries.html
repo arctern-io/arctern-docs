@@ -1,0 +1,513 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GeoSeries &mdash; Arctern version : 0.2.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="arctern.GeoSeries" href="api/arctern.GeoSeries.html" />
+    <link rel="prev" title="API 参考" href="../api_reference.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api_reference.html">API 参考</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GeoSeries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constructor">构造函数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.html">arctern.GeoSeries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#attributes">属性</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.is_valid.html">arctern.GeoSeries.is_valid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.length.html">arctern.GeoSeries.length</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.is_simple.html">arctern.GeoSeries.is_simple</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.area.html">arctern.GeoSeries.area</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.geom_type.html">arctern.GeoSeries.geom_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.centroid.html">arctern.GeoSeries.centroid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.convex_hull.html">arctern.GeoSeries.convex_hull</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.npoints.html">arctern.GeoSeries.npoints</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.envelope.html">arctern.GeoSeries.envelope</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#constructing-geometry">构造几何体</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.point.html">arctern.GeoSeries.point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.polygon_from_envelope.html">arctern.GeoSeries.polygon_from_envelope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.geom_from_geojson.html">arctern.GeoSeries.geom_from_geojson</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.as_geojson.html">arctern.GeoSeries.as_geojson</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.to_wkt.html">arctern.GeoSeries.to_wkt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.to_wkb.html">arctern.GeoSeries.to_wkb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.to_geopandas.html">arctern.GeoSeries.to_geopandas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.from_geopandas.html">arctern.GeoSeries.from_geopandas</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#processing-geometry">处理几何体</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.buffer.html">arctern.GeoSeries.buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.precision_reduce.html">arctern.GeoSeries.precision_reduce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.intersection.html">arctern.GeoSeries.intersection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.make_valid.html">arctern.GeoSeries.make_valid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.simplify.html">arctern.GeoSeries.simplify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.set_crs.html">arctern.GeoSeries.set_crs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.crs.html">arctern.GeoSeries.crs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.to_crs.html">arctern.GeoSeries.to_crs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.curve_to_line.html">arctern.GeoSeries.curve_to_line</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#spatial-relationship">空间关系</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.geom_equals.html">arctern.GeoSeries.geom_equals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.touches.html">arctern.GeoSeries.touches</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.overlaps.html">arctern.GeoSeries.overlaps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.crosses.html">arctern.GeoSeries.crosses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.contains.html">arctern.GeoSeries.contains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.intersects.html">arctern.GeoSeries.intersects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.within.html">arctern.GeoSeries.within</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#measurement">测量</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.distance_sphere.html">arctern.GeoSeries.distance_sphere</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.distance.html">arctern.GeoSeries.distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.hausdorff_distance.html">arctern.GeoSeries.hausdorff_distance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#aggregation">聚合</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.unary_union.html">arctern.GeoSeries.unary_union</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.envelope_aggr.html">arctern.GeoSeries.envelope_aggr</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#pandas-methods">Pandas 方法</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.isna.html">arctern.GeoSeries.isna</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.notna.html">arctern.GeoSeries.notna</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.fillna.html">arctern.GeoSeries.fillna</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoSeries.equals.html">arctern.GeoSeries.equals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../map_match/map_match.html">Map Match</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/plot.html">Plot</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../api_reference.html">API 参考</a> &raquo;</li>
+        
+      <li>GeoSeries</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/api_reference/standalone_api/geoseries.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="geoseries">
+<span id="id1"></span><h1>GeoSeries<a class="headerlink" href="#geoseries" title="永久链接至标题">¶</a></h1>
+<p>GeoSeries 继承于 pandas Series。它是一个存储和处理几何数据的 Series，并在内部将几何体存储为字节对象。</p>
+<div class="section" id="constructor">
+<h2>构造函数<a class="headerlink" href="#constructor" title="永久链接至标题">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.html#arctern.GeoSeries" title="arctern.GeoSeries"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries</span></code></a>([data, index, name, crs])</p></td>
+<td><p>用于存储一组几何对象的一维 Series。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>属性<a class="headerlink" href="#attributes" title="永久链接至标题">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.is_valid.html#arctern.GeoSeries.is_valid" title="arctern.GeoSeries.is_valid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.is_valid</span></code></a></p></td>
+<td><p>检查 GeoSeries 中的每个几何体是否为有效格式，例如 WKT 和 WKB 格式。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.length.html#arctern.GeoSeries.length" title="arctern.GeoSeries.length"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.length</span></code></a></p></td>
+<td><p>计算 GeoSeries 中每个几何体的长度。</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.is_simple.html#arctern.GeoSeries.is_simple" title="arctern.GeoSeries.is_simple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.is_simple</span></code></a></p></td>
+<td><p>检查 GeoSeries 中的每个几何体是否为“简单”的。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.area.html#arctern.GeoSeries.area" title="arctern.GeoSeries.area"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.area</span></code></a></p></td>
+<td><p>计算 GeoSeries 中每个几何体的 2D 笛卡尔（平面）面积。</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.geom_type.html#arctern.GeoSeries.geom_type" title="arctern.GeoSeries.geom_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.geom_type</span></code></a></p></td>
+<td><p>返回 GeoSeries 中每个几何体的类型。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.centroid.html#arctern.GeoSeries.centroid" title="arctern.GeoSeries.centroid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.centroid</span></code></a></p></td>
+<td><p>返回 GeoSeries 中每个几何体的中心。</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.convex_hull.html#arctern.GeoSeries.convex_hull" title="arctern.GeoSeries.convex_hull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.convex_hull</span></code></a></p></td>
+<td><p>对于 GeoSeries 中的每个几何体，返回包围它的最小凸几何体。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.npoints.html#arctern.GeoSeries.npoints" title="arctern.GeoSeries.npoints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.npoints</span></code></a></p></td>
+<td><p>返回 GeoSeries 中每个几何体的点的数量。</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.envelope.html#arctern.GeoSeries.envelope" title="arctern.GeoSeries.envelope"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.envelope</span></code></a></p></td>
+<td><p>返回 GeoSeries 中每个几何体的最小边界矩形。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="constructing-geometry">
+<h2>构造几何体<a class="headerlink" href="#constructing-geometry" title="永久链接至标题">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.point.html#arctern.GeoSeries.point" title="arctern.GeoSeries.point"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.point</span></code></a>(x, y[, crs])</p></td>
+<td><p>根据给定的坐标构造 POINT 对象。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.polygon_from_envelope.html#arctern.GeoSeries.polygon_from_envelope" title="arctern.GeoSeries.polygon_from_envelope"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.polygon_from_envelope</span></code></a>(min_x, …)</p></td>
+<td><p>在给定的空间范围内构造矩形 POLYGON 对象。</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.geom_from_geojson.html#arctern.GeoSeries.geom_from_geojson" title="arctern.GeoSeries.geom_from_geojson"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.geom_from_geojson</span></code></a>(json[, crs])</p></td>
+<td><p>根据 GeoJSON 字符串构造几何体。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.as_geojson.html#arctern.GeoSeries.as_geojson" title="arctern.GeoSeries.as_geojson"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.as_geojson</span></code></a>()</p></td>
+<td><p>将 GeoSeries 中的所有几何体转换为 GeoJSON 字符串。</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.to_wkt.html#arctern.GeoSeries.to_wkt" title="arctern.GeoSeries.to_wkt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.to_wkt</span></code></a>()</p></td>
+<td><p>将 GeoSeries 中的所有几何体转换为 <a target="_blank" class="reference external" href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">WKT</a> 字符串。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.to_wkb.html#arctern.GeoSeries.to_wkb" title="arctern.GeoSeries.to_wkb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.to_wkb</span></code></a>()</p></td>
+<td><p>将 GeoSeries 中的所有几何体转换为 <a target="_blank" class="reference external" href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry#Well-known_binary">WKB</a> 字符串。</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.to_geopandas.html#arctern.GeoSeries.to_geopandas" title="arctern.GeoSeries.to_geopandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.to_geopandas</span></code></a>()</p></td>
+<td><p>将 arctern.GeoSeries 对象转换为 geopandas.GeoSeries 对象。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.from_geopandas.html#arctern.GeoSeries.from_geopandas" title="arctern.GeoSeries.from_geopandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.from_geopandas</span></code></a>(data)</p></td>
+<td><p>由 geopandas.GeoSeries 对象构造一个 arctern.GeoSeries 对象。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="processing-geometry">
+<h2>处理几何体<a class="headerlink" href="#processing-geometry" title="永久链接至标题">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.buffer.html#arctern.GeoSeries.buffer" title="arctern.GeoSeries.buffer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.buffer</span></code></a>(distance)</p></td>
+<td><p>对于每个几何体，将其所有点向远离几何体中心的方向移动以构造新的几何体。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.precision_reduce.html#arctern.GeoSeries.precision_reduce" title="arctern.GeoSeries.precision_reduce"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.precision_reduce</span></code></a>(precision)</p></td>
+<td><p>对于 GeoSeries 中每个几何体的坐标，将有效数字的位数减少到给定的数字。</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.intersection.html#arctern.GeoSeries.intersection" title="arctern.GeoSeries.intersection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.intersection</span></code></a>(other)</p></td>
+<td><p>对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应几何体，计算它们的交集。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.make_valid.html#arctern.GeoSeries.make_valid" title="arctern.GeoSeries.make_valid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.make_valid</span></code></a>()</p></td>
+<td><p>在不丢失任何输入顶点的情况下，为 GeoSeries 中的每个几何体创建有效的表示。</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.simplify.html#arctern.GeoSeries.simplify" title="arctern.GeoSeries.simplify"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.simplify</span></code></a>(tolerance)</p></td>
+<td><p>返回使用 <a target="_blank" class="reference external" href="https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm">Douglas-Peucker 算法</a> 计算的 GeoSeries 中每个几何体的简化版本。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.set_crs.html#arctern.GeoSeries.set_crs" title="arctern.GeoSeries.set_crs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.set_crs</span></code></a>(crs)</p></td>
+<td><p>为 GeoSeries 中的所有几何体设置 CRS（Coordinate Reference System，坐标参考系）。</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.crs.html#arctern.GeoSeries.crs" title="arctern.GeoSeries.crs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.crs</span></code></a></p></td>
+<td><p>返回 GeoSeries 的 CRS（Coordinate Reference System，坐标参考系）。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.to_crs.html#arctern.GeoSeries.to_crs" title="arctern.GeoSeries.to_crs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.to_crs</span></code></a>(crs)</p></td>
+<td><p>Transforms the Coordinate Reference System (CRS) of the GeoSeries to <code class="docutils literal notranslate"><span class="pre">crs</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.curve_to_line.html#arctern.GeoSeries.curve_to_line" title="arctern.GeoSeries.curve_to_line"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.curve_to_line</span></code></a>()</p></td>
+<td><p>Converts curves in each geometry to approximate linear representations.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="spatial-relationship">
+<h2>空间关系<a class="headerlink" href="#spatial-relationship" title="永久链接至标题">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.geom_equals.html#arctern.GeoSeries.geom_equals" title="arctern.GeoSeries.geom_equals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.geom_equals</span></code></a>(other)</p></td>
+<td><p>对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应几何体，检查第一个几何体是否与另一个几何体等价。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.touches.html#arctern.GeoSeries.touches" title="arctern.GeoSeries.touches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.touches</span></code></a>(other)</p></td>
+<td><p>对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应几何体，检测它们是否接触。</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.overlaps.html#arctern.GeoSeries.overlaps" title="arctern.GeoSeries.overlaps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.overlaps</span></code></a>(other)</p></td>
+<td><p>对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应几何体，检查第一个几何体是否与另一个几何体空间重叠。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.crosses.html#arctern.GeoSeries.crosses" title="arctern.GeoSeries.crosses"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.crosses</span></code></a>(other)</p></td>
+<td><p>对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应几何体，检查第一个几何体是否与另一个几何体空间相交。</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.contains.html#arctern.GeoSeries.contains" title="arctern.GeoSeries.contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.contains</span></code></a>(other)</p></td>
+<td><p>对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应的几何体，检测第一个几何体是否包含另一个几何体。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.intersects.html#arctern.GeoSeries.intersects" title="arctern.GeoSeries.intersects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.intersects</span></code></a>(other)</p></td>
+<td><p>对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应的几何体，检测它们是否相交。</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.within.html#arctern.GeoSeries.within" title="arctern.GeoSeries.within"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.within</span></code></a>(other)</p></td>
+<td><p>对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应的几何体，检测第一个几何体是否在另一个几何体内部。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="measurement">
+<h2>测量<a class="headerlink" href="#measurement" title="永久链接至标题">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.distance_sphere.html#arctern.GeoSeries.distance_sphere" title="arctern.GeoSeries.distance_sphere"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.distance_sphere</span></code></a>(other)</p></td>
+<td><p>对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应几何体，计算它们之间的最小球面距离。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.distance.html#arctern.GeoSeries.distance" title="arctern.GeoSeries.distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.distance</span></code></a>(other)</p></td>
+<td><p>对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应几何体，计算它们之间的最小 2D 笛卡尔（平面）距离。</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.hausdorff_distance.html#arctern.GeoSeries.hausdorff_distance" title="arctern.GeoSeries.hausdorff_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.hausdorff_distance</span></code></a>(other)</p></td>
+<td><p>对于 GeoSeries 中的每个几何体以及 <code class="docutils literal notranslate"><span class="pre">other</span></code> 中给出的对应几何体，计算它们之间的 Hausdorff 距离。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="aggregation">
+<h2>聚合<a class="headerlink" href="#aggregation" title="永久链接至标题">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.unary_union.html#arctern.GeoSeries.unary_union" title="arctern.GeoSeries.unary_union"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.unary_union</span></code></a>()</p></td>
+<td><p>返回一个几何体，该几何体表示 GeoSeries 中所有几何体的并集。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.envelope_aggr.html#arctern.GeoSeries.envelope_aggr" title="arctern.GeoSeries.envelope_aggr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.envelope_aggr</span></code></a>()</p></td>
+<td><p>返回 GeoSeries 中所有几何体的并集的最小边界矩形。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="pandas-methods">
+<h2>Pandas 方法<a class="headerlink" href="#pandas-methods" title="永久链接至标题">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.isna.html#arctern.GeoSeries.isna" title="arctern.GeoSeries.isna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.isna</span></code></a>()</p></td>
+<td><p>检查缺失值。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.notna.html#arctern.GeoSeries.notna" title="arctern.GeoSeries.notna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.notna</span></code></a>()</p></td>
+<td><p>检查存在的（非缺失）值。</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoSeries.fillna.html#arctern.GeoSeries.fillna" title="arctern.GeoSeries.fillna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.fillna</span></code></a>([value, method, axis, …])</p></td>
+<td><p>用 WKT 或 WKB 格式的几何体填充 NA 值。</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoSeries.equals.html#arctern.GeoSeries.equals" title="arctern.GeoSeries.equals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoSeries.equals</span></code></a>(other)</p></td>
+<td><p>检查两个对象是否包含相同元素。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api/arctern.GeoSeries.html" class="btn btn-neutral float-right" title="arctern.GeoSeries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../api_reference.html" class="btn btn-neutral float-left" title="API 参考" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, zilliz
+      <span class="lastupdated">
+        最后更新于 7月 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

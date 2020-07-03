@@ -1,0 +1,6 @@
+arctern.GeoSeries.length
+========================
+
+.. currentmodule:: arctern
+
+.. autoproperty:: GeoSeries.length

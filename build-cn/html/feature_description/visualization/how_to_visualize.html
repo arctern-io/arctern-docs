@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>如何渲染时空数据 &mdash; Arctern version : 0.2.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="前端渲染" href="frontend_visualization/frontend_visualization.html" />
+    <link rel="prev" title="可视化" href="visualization.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../feature_description.html">功能说明</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../spatiotemporal_analysis/spatiotemporal_analysis.html">时空数据分析</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="visualization.html">可视化</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">如何渲染时空数据</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arctern-kepler-gl">Arctern 和 Kepler.gl 的渲染能力对比</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="frontend_visualization/frontend_visualization.html">前端渲染</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend_visualization/backend_visualization.html">后端渲染</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/api_reference.html">API 参考</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../feature_description.html">功能说明</a> &raquo;</li>
+        
+          <li><a href="visualization.html">可视化</a> &raquo;</li>
+        
+      <li>如何渲染时空数据</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/feature_description/visualization/how_to_visualize.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>如何渲染时空数据<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>时空数据渲染就是使用图形化的方式展示数据的整体面貌。</p>
+<p>例如，在手机导航软件中，路段的颜色会根据其拥堵状况而变化。在普通拥堵路况下，路段被标记为黄色；在严重拥堵路况下，路段被标记为红色。这样你就可以根据路段的颜色快速地了解某块地理区域内的整体道路拥堵状态，而不用陷入特定数据的特定细节。</p>
+<p>目前，Arctern 包含 <a target="_blank" class="reference external" href="https://en.wikipedia.org/wiki/Open_Geospatial_Consortium">OGC</a> 标准中常用的 API，涵盖几何对象的构造、访问、关系分析，以及度量。因此，任何接受 OGC 标准格式输入的第三方 Web 渲染工具都可以为 Arctern 所用，比如 <a target="_blank" class="reference external" href="https://kepler.gl/">Kepler.gl</a>。</p>
+<p>根据 <a target="_blank" class="reference external" href="https://docs.kepler.gl/docs/user-guides">Kepler.gl 用户手册</a>，Kepler.gl 接收 OGC 标准的 <a target="_blank" class="reference external" href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">WKT</a> 数据作为输入。因此，使用 Arctern 的 <a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.to_wkt.html"><code class="docutils literal notranslate"><span class="pre">GeoSeries.to_wkt</span></code></a> 方法将时空数据从 Arctern 的内部数据格式转换成 WKT 格式之后，你即可调用 Kepler.gl 实现数据渲染。</p>
+<p>除了调用传统的 Web 渲染工具实现图形化展示，Arctern 本身提供服务器端的渲染。Arctern 支持渲染大规模数据的轮廓图、热力图、散点图、图标图、渔网图等。另外 Arctern 的服务器端渲染支持 GPU 加速。</p>
+<div class="section" id="arctern-kepler-gl">
+<h2>Arctern 和 Kepler.gl 的渲染能力对比<a class="headerlink" href="#arctern-kepler-gl" title="永久链接至标题">¶</a></h2>
+<p>在不同数据量下，Arctern （CPU 版本和 GPU 版本）和 Kepler.gl 的渲染时间如下：</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>数据量</th>
+<th align="right">10</th>
+<th align="center">1e<sup>6</sup></th>
+<th align="center">2e<sup>6</sup></th>
+<th align="center">3e<sup>6</sup></th>
+<th align="center">4e<sup>6</sup></th>
+<th align="center">5e<sup>6</sup></th>
+<th align="center">6e<sup>6</sup></th>
+<th align="center">7e<sup>6</sup></th>
+<th align="center">8e<sup>6</sup></th>
+<th align="center">9e<sup>6</sup></th>
+<th align="center">10e<sup>6</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kepler.gl</strong></td>
+<td align="right">1.23</td>
+<td align="center">9.11</td>
+<td align="center">16.82</td>
+<td align="center">24.53</td>
+<td align="center">32.56</td>
+<td align="center">40.58</td>
+<td align="center">48.22</td>
+<td align="center">56.62</td>
+<td align="center">63.13</td>
+<td align="center">72.36</td>
+<td align="center">80.92</td>
+</tr>
+<tr>
+<td><strong>Arctern CPU</strong></td>
+<td align="right">0.05</td>
+<td align="center">1.45</td>
+<td align="center">2.98</td>
+<td align="center">4.32</td>
+<td align="center">5.81</td>
+<td align="center">7.02</td>
+<td align="center">8.31</td>
+<td align="center">10.36</td>
+<td align="center">11.71</td>
+<td align="center">12.72</td>
+<td align="center">13.65</td>
+</tr>
+<tr>
+<td><strong>Arctern GPU</strong></td>
+<td align="right">0.05</td>
+<td align="center">0.81</td>
+<td align="center">1.71</td>
+<td align="center">2.45</td>
+<td align="center">3.24</td>
+<td align="center">4.08</td>
+<td align="center">4.94</td>
+<td align="center">6.00</td>
+<td align="center">6.69</td>
+<td align="center">7.77</td>
+<td align="center">8.59</td>
+</tr>
+</tbody>
+</table><blockquote>
+<div><p><strong>注意：</strong> 上表数据的时间单位：秒</p>
+</div></blockquote>
+<p>根据上表数据，绘制折线图如下：</p>
+<p><img alt="../../_images/kerplergl_vs_arctern.png" src="../../_images/kerplergl_vs_arctern.png" /></p>
+<ul class="simple">
+<li><p>Arctern CPU 的渲染速度平均比 Kepler.gl 快 5.72 倍。</p></li>
+<li><p>Arctern GPU 的渲染速度平均比 Kepler.gl 快 9.84 倍。</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="frontend_visualization/frontend_visualization.html" class="btn btn-neutral float-right" title="前端渲染" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="visualization.html" class="btn btn-neutral float-left" title="可视化" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, zilliz
+      <span class="lastupdated">
+        最后更新于 7月 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

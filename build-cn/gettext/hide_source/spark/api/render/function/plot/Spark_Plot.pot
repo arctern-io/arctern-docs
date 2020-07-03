@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-03 07:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/hide_source/spark/api/render/function/plot/Spark_Plot.rst:2
+msgid "plot"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern_pyspark-0.0.0-py3.7.egg/arctern_pyspark/plot.py:docstring of arctern_pyspark.plot.plot:1
+msgid "Plot a collection of geometries to `ax`. Parameters 'linewidth', 'linestyle', 'edgecolor', 'facecolor', 'color', 'marker', 'markersize' are used to describe the style of plotted figure."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern_pyspark-0.0.0-py3.7.egg/arctern_pyspark/plot.py:docstring of arctern_pyspark.plot.plot:4
+msgid "For geometry types `Polygon` and `MultiPolygon`, only 'linewidth', 'linestyle', 'edgecolor', 'facecolor' are effective."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern_pyspark-0.0.0-py3.7.egg/arctern_pyspark/plot.py:docstring of arctern_pyspark.plot.plot:7
+msgid "For geometry types `Linestring` and `MultiLinestring`, only 'color', 'linewidth', 'linestyle' are effective."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern_pyspark-0.0.0-py3.7.egg/arctern_pyspark/plot.py:docstring of arctern_pyspark.plot.plot:9
+msgid "For geometry types `Point` and `MultiPoint`, only 'color', 'marker', 'markersize' are effective."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern_pyspark-0.0.0-py3.7.egg/arctern_pyspark/plot.py:docstring of arctern_pyspark.plot.plot:0
+msgid "参数"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern_pyspark-0.0.0-py3.7.egg/arctern_pyspark/plot.py:docstring of arctern_pyspark.plot.plot:12
+msgid "The axes where geometries will be plotted."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern_pyspark-0.0.0-py3.7.egg/arctern_pyspark/plot.py:docstring of arctern_pyspark.plot.plot:15
+msgid "sequence of geometries."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern_pyspark-0.0.0-py3.7.egg/arctern_pyspark/plot.py:docstring of arctern_pyspark.plot.plot:18
+msgid "The width of line, the default value is 1.0."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern_pyspark-0.0.0-py3.7.egg/arctern_pyspark/plot.py:docstring of arctern_pyspark.plot.plot:21
+msgid "The style of the line， the default value is '-'."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern_pyspark-0.0.0-py3.7.egg/arctern_pyspark/plot.py:docstring of arctern_pyspark.plot.plot:24
+msgid "The edge color of the geometry, the default value is 'black'."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern_pyspark-0.0.0-py3.7.egg/arctern_pyspark/plot.py:docstring of arctern_pyspark.plot.plot:27
+msgid "The color of the face of the geometry, the default value is 'C0'."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern_pyspark-0.0.0-py3.7.egg/arctern_pyspark/plot.py:docstring of arctern_pyspark.plot.plot:30
+msgid "The color of the geometry, the default value is 'C0'."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern_pyspark-0.0.0-py3.7.egg/arctern_pyspark/plot.py:docstring of arctern_pyspark.plot.plot:33
+msgid "The shape of point, the default value is 'o'."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern_pyspark-0.0.0-py3.7.egg/arctern_pyspark/plot.py:docstring of arctern_pyspark.plot.plot:36
+msgid "The size of points, the default value is 6.0."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern_pyspark-0.0.0-py3.7.egg/arctern_pyspark/plot.py:docstring of arctern_pyspark.plot.plot:0
+msgid "example"
+msgstr ""

@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>绘图方法 &mdash; Arctern version : 0.2.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="坐标参考系" href="crs_and_transform.html" />
+    <link rel="prev" title="地图匹配" href="map_match.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../feature_description.html">功能说明</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="spatiotemporal_analysis.html">时空数据分析</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data_structure.html">数据结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="read_and_write_file.html">文件读写</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometric_manipulation.html">几何体的基本操作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="convert_from_and_to_geopandas_geoseries.html">与 GeoPandas GeoSeries 互相转换</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spatial_relationship_operation.html">空间关系运算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="map_match.html">地图匹配</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">绘图方法</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">方法定义</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">参数介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">安装依赖库</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">生成测试数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">绘制几何图形</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="crs_and_transform.html">坐标参考系</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregation.html">聚合</a></li>
+<li class="toctree-l3"><a class="reference internal" href="indexing_selecting_data.html">索引和选择数据</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">可视化</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/api_reference.html">API 参考</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../feature_description.html">功能说明</a> &raquo;</li>
+        
+          <li><a href="spatiotemporal_analysis.html">时空数据分析</a> &raquo;</li>
+        
+      <li>绘图方法</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/feature_description/spatiotemporal_analysis/plot_geometry.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>绘图方法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>本文档介绍 Arctern 的绘图方法。
+<a target="_blank" class="reference external" href="../../api_reference/plot/api/arctern.plot.plot_geometry.html">plot_geometry</a>plot_geometry</p>
+<div class="section" id="id2">
+<h2>方法定义<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="k">def</span> <span class="nf">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">geoms</span><span class="p">,</span> <span class="o">**</span><span class="n">style_kwds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>参数介绍<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>ax:</strong> matplotlib.axes._subplots.AxesSubplot 的实例，表示用于绘图的画布。</p></li>
+<li><p><strong>geoms:</strong> 当前要绘制的几何图形集合，接受 pandas Series、Arctrn GeoSeries 或者 pandas DataFrame 作为输入。其中的几何图形元素必须是 WKB 形式。</p></li>
+<li><p><strong>style_kwds:</strong> 绘图风格参数，包括：</p>
+<ul>
+<li><p><strong>linewidth:</strong> 线或多边形的线宽</p></li>
+<li><p><strong>linestyle:</strong> 线或多边形的线型</p></li>
+<li><p><strong>edgecolor:</strong> 多边形的边缘颜色</p></li>
+<li><p><strong>facecolor:</strong> 多边形的填充颜色</p></li>
+<li><p><strong>color:</strong> 点或线的颜色</p></li>
+<li><p><strong>marker:</strong> 点的形状</p></li>
+<li><p><strong>markersize:</strong> 点的大小</p></li>
+<li><p><strong>alpha:</strong> 透明度</p></li>
+</ul>
+</li>
+</ul>
+<p>以下展示如何使用 <a target="_blank" class="reference external" href="../../api_reference/plot/api/arctern.plot.plot_geometry.html">plot_geometry</a> 方法绘制几何图形。</p>
+</div>
+<div class="section" id="id4">
+<h2>安装依赖库<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge descartes
+conda install -c conda-forge matplotlib
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>生成测试数据<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>使用 GeoSeries 的构造函数创建一些几何体对象，包括点（POINT）、线（LINESTRING）、多边形（POLYGON）、多点（MULTIPOINT）、多个多边形（MULTIPOLYGON）、几何体集合（GEOMETRYCOLLECTION）和多线（MULTILINESTRING）。在后续步骤中，我们将演示如何绘制这些几何图形。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">point_s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT (3 4)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linestring_s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;LINESTRING (0 0,1 1,2 3)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">polygon_s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POLYGON ((0 0,0 1,1.5 2,0 0))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">multi_point_s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;MULTIPOINT (3 4,5 5)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">multi_linestring_s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;MULTILINESTRING ((0 0,1 1,2 3),(1 0,2 4))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">multi_polygon_s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;MULTIPOLYGON (((0 0,0 1,1.5 2,0 0)),((0 0,0 2,1 0,0 0)))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom_collection_s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;GEOMETRYCOLLECTION(&quot;</span>
+<span class="gp">... </span>                    <span class="s2">&quot;polygon((1 1,1 2,2 2,2 1,1 1)),&quot;</span>
+<span class="gp">... </span>                    <span class="s2">&quot;linestring(0 1, 5 6, 10 11),&quot;</span>
+<span class="gp">... </span>                    <span class="s2">&quot;POINT(4 7))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geoms</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;MULTILINESTRING ((0 0,1 1,2 3),(1 0,2 4))&quot;</span><span class="p">,</span><span class="s2">&quot;POINT (3 4)&quot;</span><span class="p">,</span><span class="s2">&quot;POLYGON ((0 0,0 1,1.5 2,0 0))&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>绘制几何图形<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id7">
+<h3>点<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p><strong>颜色：</strong> 蓝</p></li>
+<li><p><strong>透明度：</strong> 0.4</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">point_s</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/point_s.png" src="../../_images/point_s.png" /></p>
+</div>
+<div class="section" id="id8">
+<h3>线<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p><strong>颜色：</strong> 蓝</p></li>
+<li><p><strong>线型：</strong> “ -. “</p></li>
+<li><p><strong>透明度：</strong> 0.4</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">linestring_s</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;-.&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/linestring_s.png" src="../../_images/linestring_s.png" /></p>
+</div>
+<div class="section" id="id9">
+<h3>多边形<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p><strong>填充颜色：</strong> 绿</p></li>
+<li><p><strong>线宽：</strong> 3.0</p></li>
+<li><p><strong>边缘颜色：</strong> 红</p></li>
+<li><p><strong>透明度：</strong> 0.4</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">polygon_s</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;green&quot;</span><span class="p">],</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/polygon_s.png" src="../../_images/polygon_s.png" /></p>
+</div>
+<div class="section" id="id10">
+<h3>多点<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p><strong>颜色：</strong> 蓝</p></li>
+<li><p><strong>点型：</strong> “ * “</p></li>
+<li><p><strong>大小：</strong> 40.0</p></li>
+<li><p><strong>透明度：</strong> 0.4</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">multi_point_s</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mf">40.0</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/multi_point_s.png" src="../../_images/multi_point_s.png" /></p>
+</div>
+<div class="section" id="id11">
+<h3>多线<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p><strong>颜色：</strong> 蓝</p></li>
+<li><p><strong>线型：</strong> “ – “</p></li>
+<li><p><strong>透明度：</strong> 0.4</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">multi_linestring_s</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;--&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/multi_linestring_s.png" src="../../_images/multi_linestring_s.png" /></p>
+</div>
+<div class="section" id="id12">
+<h3>多个多边形<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p><strong>填充颜色：</strong> 蓝</p></li>
+<li><p><strong>透明度：</strong> 0.4</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">multi_polygon_s</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/multi_polygon_s.png" src="../../_images/multi_polygon_s.png" /></p>
+</div>
+<div class="section" id="id13">
+<h3>几何体集合<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p><strong>填充颜色：</strong> 蓝</p></li>
+<li><p><strong>边缘颜色：</strong> 红</p></li>
+<li><p><strong>点线颜色：</strong> 绿</p></li>
+<li><p><strong>透明度：</strong> 0.4</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">geom_collection_s</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">edgecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;green&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/geom_collection_s.png" src="../../_images/geom_collection_s.png" /></p>
+</div>
+<div class="section" id="id14">
+<h3>多个几何图形<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p><strong>多线</strong></p>
+<ul>
+<li><p><strong>线型：</strong> “ -. “</p></li>
+<li><p><strong>颜色：</strong> 蓝</p></li>
+</ul>
+</li>
+<li><p><strong>多边形</strong></p>
+<ul>
+<li><p><strong>线型：</strong> 虚线</p></li>
+<li><p><strong>填充颜色：</strong> 绿</p></li>
+<li><p><strong>边缘颜色</strong>： 红</p></li>
+<li><p><strong>点型：</strong> “ o “</p></li>
+<li><p><strong>透明度：</strong> 0.4</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">geoms</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;-.&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;--&quot;</span><span class="p">],</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;green&quot;</span><span class="p">],</span><span class="n">edgecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/geoms.png" src="../../_images/geoms.png" /></p>
+</div>
+<div class="section" id="id15">
+<h3>多次绘制几何图形<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p><strong>线</strong></p>
+<ul>
+<li><p><strong>颜色：</strong> 蓝</p></li>
+<li><p><strong>线型：</strong> “ -. “</p></li>
+<li><p><strong>透明度：</strong> 0.4</p></li>
+</ul>
+</li>
+<li><p><strong>多边形</strong></p>
+<ul>
+<li><p><strong>填充颜色：</strong> 绿</p></li>
+<li><p><strong>线宽：</strong> 3.0</p></li>
+<li><p><strong>边缘颜色：</strong> 红</p></li>
+<li><p><strong>透明度：</strong> 0.4</p></li>
+</ul>
+</li>
+<li><p><strong>几何体集合</strong></p>
+<ul>
+<li><p><strong>填充颜色：</strong> 蓝</p></li>
+<li><p><strong>边缘颜色：</strong> 红</p></li>
+<li><p><strong>点线颜色：</strong> 绿</p></li>
+<li><p><strong>透明度：</strong> 0.4</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">linestring_s</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;-.&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">polygon_s</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;green&quot;</span><span class="p">],</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">geom_collection_s</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">edgecolor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;green&quot;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="../../_images/multi_plot.png" src="../../_images/multi_plot.png" /></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="crs_and_transform.html" class="btn btn-neutral float-right" title="坐标参考系" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="map_match.html" class="btn btn-neutral float-left" title="地图匹配" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, zilliz
+      <span class="lastupdated">
+        最后更新于 7月 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

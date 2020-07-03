@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arctern.plot.plot_geometry &mdash; Arctern version : 0.2.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="arctern.plot.pointmap" href="arctern.plot.pointmap.html" />
+    <link rel="prev" title="Plot" href="../plot.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feature_description/feature_description.html">Feature Description</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api_reference.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../standalone_api/geoseries.html">GeoSeries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../map_match/map_match.html">Map Match</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../plot.html">Plot</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arctern.plot.plot_geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arctern.plot.pointmap.html">arctern.plot.pointmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arctern.plot.weighted_pointmap.html">arctern.plot.weighted_pointmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arctern.plot.heatmap.html">arctern.plot.heatmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arctern.plot.choroplethmap.html">arctern.plot.choroplethmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arctern.plot.iconviz.html">arctern.plot.iconviz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arctern.plot.fishnetmap.html">arctern.plot.fishnetmap</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../api_reference.html">API Reference</a> &raquo;</li>
+        
+          <li><a href="../plot.html">Plot</a> &raquo;</li>
+        
+      <li>arctern.plot.plot_geometry</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/api_reference/plot/api/arctern.plot.plot_geometry.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="arctern-plot-plot-geometry">
+<h1>arctern.plot.plot_geometry<a class="headerlink" href="#arctern-plot-plot-geometry" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="arctern.plot.plot_geometry">
+<code class="sig-prename descclassname">arctern.plot.</code><code class="sig-name descname">plot_geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ax</span></em>, <em class="sig-param"><span class="n">geoms</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">style_kwds</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/arctern/plot/_plot.html#plot_geometry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arctern.plot.plot_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots a collection of geometries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ax</strong> (<em>matplotlib.axes.Axes</em>) -- The axes where geometries will be plotted.</p></li>
+<li><p><strong>geoms</strong> (<em>Series</em><em> or </em><em>DataFrame</em>) -- Sequence of geometries.</p></li>
+<li><p><strong>**style_kwds</strong> -- <p><code class="docutils literal notranslate"><span class="pre">style_kwds</span></code> specify the properties that describe the style of geometric graphs.</p>
+<p>Here is a list of availble style properties:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 21%" />
+<col style="width: 8%" />
+<col style="width: 59%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Applied to</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>color</p></td>
+<td><p>str, color</p></td>
+<td><p>'C0'</p></td>
+<td><p>Point, MultiPoint, Linestring, MultiLinestring</p></td>
+</tr>
+<tr class="row-odd"><td><p>edgecolor</p></td>
+<td><p>str, edge color</p></td>
+<td><p>'black'</p></td>
+<td><p>Polygon, MultiPolygon</p></td>
+</tr>
+<tr class="row-even"><td><p>facecolor</p></td>
+<td><p>str, face color</p></td>
+<td><p>'C0'</p></td>
+<td><p>Polygon, MultiPolygon</p></td>
+</tr>
+<tr class="row-odd"><td><p>linewidth</p></td>
+<td><p>float, line width</p></td>
+<td><p>1.0</p></td>
+<td><p>Linestring, MultiLinestring, Polygon, MultiPolygon</p></td>
+</tr>
+<tr class="row-even"><td><p>linestyle</p></td>
+<td><p>str, line style</p></td>
+<td><p>'-'</p></td>
+<td><p>Linestring, MultiLinestring, Polygon, MultiPolygon</p></td>
+</tr>
+<tr class="row-odd"><td><p>marker</p></td>
+<td><p>str, marker style</p></td>
+<td><p>'o'</p></td>
+<td><p>Point, MultiPoint</p></td>
+</tr>
+<tr class="row-even"><td><p>markersize</p></td>
+<td><p>float, marker size</p></td>
+<td><p>6.0</p></td>
+<td><p>Point, MultiPoint</p></td>
+</tr>
+<tr class="row-odd"><td><p>alpha</p></td>
+<td><p>float, opacity</p></td>
+<td><p>1.0</p></td>
+<td><p>All</p></td>
+</tr>
+</tbody>
+</table>
+</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>See <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html?highlight=plot#matplotlib.pyplot.plot">matplotlib.pyplot.plot document</a> for detailed description of marker styles, line styles, and colors.</p>
+<p>Examples
+.. doctest:</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">skipif</dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">arctern</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raw_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raw_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;point(0 0)&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raw_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;linestring(0 10, 5 5, 10 0)&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raw_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;polygon((2 2,2 3,3 3,3 2,2 2))&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raw_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;GEOMETRYCOLLECTION(&quot;</span>
+<span class="gp">... </span>                <span class="s2">&quot;polygon((1 1,1 2,2 2,2 1,1 1)),&quot;</span>
+<span class="gp">... </span>                <span class="s2">&quot;linestring(0 1, 5 6, 10 11),&quot;</span>
+<span class="gp">... </span>                <span class="s2">&quot;POINT(4 7))&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arr_wkt</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arr_wkb</span> <span class="o">=</span> <span class="p">(</span><span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">arr_wkt</span><span class="p">))</span><span class="o">.</span><span class="n">curve_to_line</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;wkb&#39;</span><span class="p">:</span><span class="n">arr_wkb</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span>
+<span class="gp">... </span>                           <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                           <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                           <span class="n">markersize</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+<span class="gp">... </span>                           <span class="n">linewidth</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+<span class="gp">... </span>                           <span class="n">linestyle</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="s1">&#39;dashdot&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
+<span class="gp">... </span>                           <span class="n">edgecolor</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
+<span class="gp">... </span>                           <span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;/tmp/plot_test.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arctern.plot.pointmap.html" class="btn btn-neutral float-right" title="arctern.plot.pointmap" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../plot.html" class="btn btn-neutral float-left" title="Plot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Jul 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

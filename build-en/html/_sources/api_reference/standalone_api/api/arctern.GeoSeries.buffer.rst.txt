@@ -1,0 +1,6 @@
+arctern.GeoSeries.buffer
+========================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.buffer

@@ -1,0 +1,661 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arctern.plot._plot_with_map &mdash; Arctern version : 0.2.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feature_description/feature_description.html">Feature Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_reference/api_reference.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>arctern.plot._plot_with_map</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for arctern.plot._plot_with_map</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (C) 2019-2020 Zilliz. All rights reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">from</span> <span class="nn">arctern.util.vega</span> <span class="kn">import</span> <span class="n">vega_pointmap</span><span class="p">,</span> <span class="n">vega_weighted_pointmap</span><span class="p">,</span> <span class="n">vega_heatmap</span><span class="p">,</span> <span class="n">vega_choroplethmap</span><span class="p">,</span> <span class="n">vega_icon</span><span class="p">,</span> <span class="n">vega_fishnetmap</span>
+<span class="kn">import</span> <span class="nn">arctern</span>
+
+
+<span class="k">def</span> <span class="nf">_get_recom_size</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="p">(</span><span class="mi">1600</span><span class="p">,</span> <span class="mi">1600</span><span class="p">)):</span>
+    <span class="n">scale_x</span> <span class="o">=</span> <span class="n">target</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">dx</span>
+    <span class="n">scale_y</span> <span class="o">=</span> <span class="n">target</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">dy</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">scale_x</span><span class="p">,</span> <span class="n">scale_y</span><span class="p">)</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dx</span> <span class="o">*</span> <span class="n">scale</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dy</span> <span class="o">*</span> <span class="n">scale</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span>
+
+
+<span class="k">def</span> <span class="nf">_transform_bbox</span><span class="p">(</span><span class="n">bounding_box</span><span class="p">,</span> <span class="n">src_coord_sys</span><span class="p">,</span> <span class="n">dst_coord_sys</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">pyproj</span>
+    <span class="k">if</span> <span class="n">src_coord_sys</span> <span class="o">!=</span> <span class="n">dst_coord_sys</span><span class="p">:</span>
+        <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">bounding_box</span>
+        <span class="n">dst_proj</span> <span class="o">=</span> <span class="n">pyproj</span><span class="o">.</span><span class="n">Proj</span><span class="p">(</span><span class="n">dst_coord_sys</span><span class="p">)</span>
+        <span class="n">src_proj</span> <span class="o">=</span> <span class="n">pyproj</span><span class="o">.</span><span class="n">Proj</span><span class="p">(</span><span class="n">src_coord_sys</span><span class="p">)</span>
+        <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">pyproj</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">src_proj</span><span class="p">,</span> <span class="n">dst_proj</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">always_xy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">pyproj</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">src_proj</span><span class="p">,</span> <span class="n">dst_proj</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">always_xy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">bounding_box</span> <span class="o">=</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">bounding_box</span>
+
+
+<div class="viewcode-block" id="pointmap"><a class="viewcode-back" href="../../../api_reference/plot/api/arctern.plot.pointmap.html#arctern.plot.pointmap">[docs]</a><span class="k">def</span> <span class="nf">pointmap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">bounding_box</span><span class="p">,</span>
+                  <span class="n">point_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">point_color</span><span class="o">=</span><span class="s1">&#39;#115f9a&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                  <span class="n">coordinate_system</span><span class="o">=</span><span class="s1">&#39;EPSG:3857&#39;</span><span class="p">,</span>
+                  <span class="o">**</span><span class="n">extra_contextily_params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plots a point map in Matplotlib.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ax : matplotlib.axes.Axes</span>
+<span class="sd">        Axes where geometries will be plotted.</span>
+<span class="sd">    points : GeoSeries</span>
+<span class="sd">        Sequence of points.</span>
+<span class="sd">    bounding_box : list</span>
+<span class="sd">        Bounding box of the map. For example, [west, south, east, north].</span>
+<span class="sd">    point_size : int, optional</span>
+<span class="sd">        Diameter of points, by default 3.</span>
+<span class="sd">    point_color : str, optional</span>
+<span class="sd">        Point color in Hex Color Code, by default &#39;#115f9a&#39;.</span>
+<span class="sd">    opacity : float, optional</span>
+<span class="sd">        Opacity of points, ranged from 0.0 to 1.0, by default 1.0.</span>
+<span class="sd">    coordinate_system : str, optional</span>
+<span class="sd">        The Coordinate Reference System (CRS) set to all geometries, by default &#39;EPSG:3857&#39;.</span>
+<span class="sd">        Only supports SRID as a WKT representation of CRS by now.</span>
+<span class="sd">    **extra_contextily_params: dict</span>
+<span class="sd">        Extra parameters passed to `contextily.add_basemap. &lt;https://contextily.readthedocs.io/en/latest/reference.html&gt;`_</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    .. doctest:</span>
+<span class="sd">        :skipif: True</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; import arctern</span>
+<span class="sd">    &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">    &gt;&gt;&gt; # read from test.csv</span>
+<span class="sd">    &gt;&gt;&gt; # Download link: https://raw.githubusercontent.com/arctern-io/arctern-resources/benchmarks/benchmarks/dataset/layer_rendering_test_data/test_data.csv</span>
+<span class="sd">    &gt;&gt;&gt; df = pd.read_csv(&quot;/path/to/test_data.csv&quot;, dtype={&#39;longitude&#39;:np.float64, &#39;latitude&#39;:np.float64, &#39;color_weights&#39;:np.float64, &#39;size_weights&#39;:np.float64, &#39;region_boundaries&#39;:np.object})</span>
+<span class="sd">    &gt;&gt;&gt; points = arctern.GeoSeries.point(df[&#39;longitude&#39;], df[&#39;latitude&#39;])</span>
+<span class="sd">    &gt;&gt;&gt; # plot pointmap</span>
+<span class="sd">    &gt;&gt;&gt; fig, ax = plt.subplots(figsize=(10, 6), dpi=200)</span>
+<span class="sd">    &gt;&gt;&gt; arctern.plot.pointmap(ax, points, [-74.01398981737215,40.71353244267465,-73.96979949831308,40.74480271529791], point_size=10, point_color=&#39;#115f9a&#39;,coordinate_system=&quot;EPSG:4326&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; plt.show()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+    <span class="kn">import</span> <span class="nn">contextily</span> <span class="k">as</span> <span class="nn">cx</span>
+    <span class="n">bbox</span> <span class="o">=</span> <span class="n">_transform_bbox</span><span class="p">(</span><span class="n">bounding_box</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="p">,</span> <span class="s1">&#39;epsg:3857&#39;</span><span class="p">)</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">_get_recom_size</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">vega</span> <span class="o">=</span> <span class="n">vega_pointmap</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">bounding_box</span><span class="o">=</span><span class="n">bounding_box</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="n">point_size</span><span class="p">,</span>
+                         <span class="n">point_color</span><span class="o">=</span><span class="n">point_color</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="n">opacity</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="o">=</span><span class="n">coordinate_system</span><span class="p">)</span>
+    <span class="n">hexstr</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">point_map_layer</span><span class="p">(</span><span class="n">vega</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">hexstr</span><span class="p">))</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="n">cx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_contextily_params</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">img</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span></div>
+
+<span class="c1"># pylint: disable=too-many-arguments</span>
+<span class="c1"># pylint: disable=dangerous-default-value</span>
+
+
+<div class="viewcode-block" id="weighted_pointmap"><a class="viewcode-back" href="../../../api_reference/plot/api/arctern.plot.weighted_pointmap.html#arctern.plot.weighted_pointmap">[docs]</a><span class="k">def</span> <span class="nf">weighted_pointmap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">color_weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                           <span class="n">size_weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                           <span class="n">bounding_box</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                           <span class="n">color_gradient</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#115f9a&quot;</span><span class="p">,</span> <span class="s2">&quot;#d0f400&quot;</span><span class="p">],</span>
+                           <span class="n">color_bound</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                           <span class="n">size_bound</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+                           <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                           <span class="n">coordinate_system</span><span class="o">=</span><span class="s1">&#39;EPSG:3857&#39;</span><span class="p">,</span>
+                           <span class="o">**</span><span class="n">extra_contextily_params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plots a weighted point map in Matplotlib.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ax : matplotlib.axes.Axes</span>
+<span class="sd">        Axes where geometries will be plotted.</span>
+<span class="sd">    points : GeoSeries</span>
+<span class="sd">        Sequence of points.</span>
+<span class="sd">    color_weights : Series, optional</span>
+<span class="sd">        Weights of point color.</span>
+<span class="sd">    size_weights : Series, optional</span>
+<span class="sd">        Weights of point size.</span>
+<span class="sd">    bounding_box : list</span>
+<span class="sd">        Bounding box of the map. For example, [west, south, east, north].</span>
+<span class="sd">    color_gradient : list, optional</span>
+<span class="sd">        Range of color gradient, by default [&quot;#115f9a&quot;, &quot;#d0f400&quot;].</span>
+<span class="sd">        Either use [&quot;hex_color&quot;] to specify a same color for all geometries, or [&quot;hex_color1&quot;, &quot;hex_color2&quot;] to specify a color gradient ranging from &quot;hex_color1&quot; to &quot;hex_color2&quot;.</span>
+<span class="sd">    color_bound : list, optional</span>
+<span class="sd">        Weight range [w1, w2] of ``color_gradient``, by default [0, 0].</span>
+<span class="sd">        Needed only when ``color_gradient`` has two values [&quot;color1&quot;, &quot;color2&quot;]. Binds w1 to &quot;color1&quot;, and w2 to &quot;color2&quot;. When weight &lt; w1 or weight &gt; w2, the weight will be truncated to w1 or w2 accordingly.</span>
+<span class="sd">    size_bound : list, optional</span>
+<span class="sd">        Weight range [w1, w2] of ``size_weights``, by default [3]. When weight &lt; w1 or weight &gt; w2, the weight will be truncated to w1 or w2 accordingly.</span>
+<span class="sd">    opacity : float, optional</span>
+<span class="sd">        Opacity of points, ranged from 0.0 to 1.0, by default 1.0.</span>
+<span class="sd">    coordinate_system : str, optional</span>
+<span class="sd">        The Coordinate Reference System (CRS) set to all geometries, by default &#39;EPSG:3857&#39;.</span>
+<span class="sd">        Only supports SRID as a WKT representation of CRS by now.</span>
+<span class="sd">    **extra_contextily_params: dict</span>
+<span class="sd">        Extra parameters passed to `contextily.add_basemap. &lt;https://contextily.readthedocs.io/en/latest/reference.html&gt;`_</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    .. doctest:</span>
+<span class="sd">        :skipif: True</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; import arctern</span>
+<span class="sd">    &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">    &gt;&gt;&gt; # read from test.csv</span>
+<span class="sd">    &gt;&gt;&gt; # Download link: https://raw.githubusercontent.com/arctern-io/arctern-resources/benchmarks/benchmarks/dataset/layer_rendering_test_data/test_data.csv</span>
+<span class="sd">    &gt;&gt;&gt; df = pd.read_csv(&quot;/path/to/test_data.csv&quot;, dtype={&#39;longitude&#39;:np.float64, &#39;latitude&#39;:np.float64, &#39;color_weights&#39;:np.float64, &#39;size_weights&#39;:np.float64, &#39;region_boundaries&#39;:np.object})</span>
+<span class="sd">    &gt;&gt;&gt; points = arctern.GeoSeries.point(df[&#39;longitude&#39;], df[&#39;latitude&#39;])</span>
+<span class="sd">    &gt;&gt;&gt;</span>
+<span class="sd">    &gt;&gt;&gt; # plot weighted pointmap with variable color and fixed size</span>
+<span class="sd">    &gt;&gt;&gt; fig, ax = plt.subplots(figsize=(10, 6), dpi=200)</span>
+<span class="sd">    &gt;&gt;&gt; arctern.plot.weighted_pointmap(ax, points, color_weights=df[&#39;color_weights&#39;], bounding_box=[-73.99668712186558,40.72972339069935,-73.99045479584949,40.7345193345495], color_gradient=[&quot;#115f9a&quot;, &quot;#d0f400&quot;], color_bound=[2.5,15], size_bound=[16], opacity=1.0, coordinate_system=&quot;EPSG:4326&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; plt.show()</span>
+<span class="sd">    &gt;&gt;&gt;</span>
+<span class="sd">    &gt;&gt;&gt; # plot weighted pointmap with fixed color and variable size</span>
+<span class="sd">    &gt;&gt;&gt; fig, ax = plt.subplots(figsize=(10, 6), dpi=200)</span>
+<span class="sd">    &gt;&gt;&gt; arctern.plot.weighted_pointmap(ax, points, size_weights=df[&#39;size_weights&#39;], bounding_box=[-73.99668712186558,40.72972339069935,-73.99045479584949,40.7345193345495], color_gradient=[&quot;#37A2DA&quot;], size_bound=[15, 50], opacity=1.0, coordinate_system=&quot;EPSG:4326&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; plt.show()</span>
+<span class="sd">    &gt;&gt;&gt;</span>
+<span class="sd">    &gt;&gt;&gt; # plot weighted pointmap with variable color and size</span>
+<span class="sd">    &gt;&gt;&gt; fig, ax = plt.subplots(figsize=(10, 6), dpi=200)</span>
+<span class="sd">    &gt;&gt;&gt; arctern.plot.weighted_pointmap(ax, points, color_weights=df[&#39;color_weights&#39;], size_weights=df[&#39;size_weights&#39;], bounding_box=[-73.99668712186558,40.72972339069935,-73.99045479584949,40.7345193345495], color_gradient=[&quot;#115f9a&quot;, &quot;#d0f400&quot;], color_bound=[2.5,15], size_bound=[15, 50], opacity=1.0, coordinate_system=&quot;EPSG:4326&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; plt.show()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+    <span class="kn">import</span> <span class="nn">contextily</span> <span class="k">as</span> <span class="nn">cx</span>
+    <span class="n">bbox</span> <span class="o">=</span> <span class="n">_transform_bbox</span><span class="p">(</span><span class="n">bounding_box</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="p">,</span> <span class="s1">&#39;epsg:3857&#39;</span><span class="p">)</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">_get_recom_size</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">vega</span> <span class="o">=</span> <span class="n">vega_weighted_pointmap</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">bounding_box</span><span class="o">=</span><span class="n">bounding_box</span><span class="p">,</span> <span class="n">color_gradient</span><span class="o">=</span><span class="n">color_gradient</span><span class="p">,</span>
+                                  <span class="n">color_bound</span><span class="o">=</span><span class="n">color_bound</span><span class="p">,</span> <span class="n">size_bound</span><span class="o">=</span><span class="n">size_bound</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="n">opacity</span><span class="p">,</span>
+                                  <span class="n">coordinate_system</span><span class="o">=</span><span class="n">coordinate_system</span><span class="p">)</span>
+    <span class="n">hexstr</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">weighted_point_map_layer</span><span class="p">(</span>
+        <span class="n">vega</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">color_weights</span><span class="o">=</span><span class="n">color_weights</span><span class="p">,</span> <span class="n">size_weights</span><span class="o">=</span><span class="n">size_weights</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">hexstr</span><span class="p">))</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="n">cx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_contextily_params</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">img</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span></div>
+
+<span class="c1"># pylint: disable=protected-access</span>
+
+
+<span class="k">def</span> <span class="nf">_calc_zoom</span><span class="p">(</span><span class="n">bbox</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">contextily</span> <span class="k">as</span> <span class="nn">cx</span>
+    <span class="n">bbox</span> <span class="o">=</span> <span class="n">_transform_bbox</span><span class="p">(</span><span class="n">bbox</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="p">,</span> <span class="s1">&#39;epsg:4326&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cx</span><span class="o">.</span><span class="n">tile</span><span class="o">.</span><span class="n">_calculate_zoom</span><span class="p">(</span><span class="o">*</span><span class="n">bbox</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="heatmap"><a class="viewcode-back" href="../../../api_reference/plot/api/arctern.plot.heatmap.html#arctern.plot.heatmap">[docs]</a><span class="k">def</span> <span class="nf">heatmap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">bounding_box</span><span class="p">,</span>
+                 <span class="n">map_zoom_level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">coordinate_system</span><span class="o">=</span><span class="s1">&#39;EPSG:3857&#39;</span><span class="p">,</span>
+                 <span class="n">aggregation_type</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">,</span>
+                 <span class="o">**</span><span class="n">extra_contextily_params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plots a heat map in matplotlib.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ax : matplotlib.axes.Axes</span>
+<span class="sd">        Axes where geometries will be plotted.</span>
+<span class="sd">    points : GeoSeries</span>
+<span class="sd">        Sequence of points.</span>
+<span class="sd">    weights : Series</span>
+<span class="sd">        Weights of point intensity.</span>
+<span class="sd">    bounding_box : list</span>
+<span class="sd">        Bounding box of the map. For example, [west, south, east, north].</span>
+<span class="sd">    map_zoom_level : [type], optional</span>
+<span class="sd">        Zoom level of the map by default &#39;auto&#39;.</span>
+<span class="sd">    coordinate_system : str, optional</span>
+<span class="sd">        The Coordinate Reference System (CRS) set to all geometries, by default &#39;EPSG:3857&#39;.</span>
+<span class="sd">        Only supports SRID as a WKT representation of CRS by now.</span>
+<span class="sd">    aggregation_type : str, optional</span>
+<span class="sd">        Aggregation type, by default &#39;max&#39;.</span>
+<span class="sd">    **extra_contextily_params: dict</span>
+<span class="sd">        Extra parameters passed to `contextily.add_basemap. &lt;https://contextily.readthedocs.io/en/latest/reference.html&gt;`_</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    .. doctest:</span>
+<span class="sd">        :skipif: True</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; import arctern</span>
+<span class="sd">    &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">    &gt;&gt;&gt; # read from test_data.csv</span>
+<span class="sd">    &gt;&gt;&gt; # Download link: https://raw.githubusercontent.com/arctern-io/arctern-resources/benchmarks/benchmarks/dataset/layer_rendering_test_data/test_data.csv</span>
+<span class="sd">    &gt;&gt;&gt; df = pd.read_csv(&quot;/path/to/test_data.csv&quot;, dtype={&#39;longitude&#39;:np.float64, &#39;latitude&#39;:np.float64, &#39;color_weights&#39;:np.float64, &#39;size_weights&#39;:np.float64, &#39;region_boundaries&#39;:np.object})</span>
+<span class="sd">    &gt;&gt;&gt; points = arctern.GeoSeries.point(df[&#39;longitude&#39;], df[&#39;latitude&#39;])</span>
+<span class="sd">    &gt;&gt;&gt;</span>
+<span class="sd">    &gt;&gt;&gt; # plot heatmap</span>
+<span class="sd">    &gt;&gt;&gt; fig, ax = plt.subplots(figsize=(10, 6), dpi=200)</span>
+<span class="sd">    &gt;&gt;&gt; arctern.plot.heatmap(ax, points, df[&#39;color_weights&#39;], bounding_box=[-74.01424568752932, 40.72759334104623, -73.96056823889673, 40.76721122683304], coordinate_system=&#39;EPSG:4326&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; plt.show()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+    <span class="kn">import</span> <span class="nn">contextily</span> <span class="k">as</span> <span class="nn">cx</span>
+    <span class="n">bbox</span> <span class="o">=</span> <span class="n">_transform_bbox</span><span class="p">(</span><span class="n">bounding_box</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="p">,</span> <span class="s1">&#39;epsg:3857&#39;</span><span class="p">)</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">_get_recom_size</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">map_zoom_level</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">map_zoom_level</span> <span class="o">=</span> <span class="n">_calc_zoom</span><span class="p">(</span><span class="n">bounding_box</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="p">)</span>
+    <span class="n">vega</span> <span class="o">=</span> <span class="n">vega_heatmap</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">bounding_box</span><span class="o">=</span><span class="n">bounding_box</span><span class="p">,</span> <span class="n">map_zoom_level</span><span class="o">=</span><span class="n">map_zoom_level</span><span class="p">,</span>
+                        <span class="n">aggregation_type</span><span class="o">=</span><span class="n">aggregation_type</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="o">=</span><span class="n">coordinate_system</span><span class="p">)</span>
+    <span class="n">hexstr</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">heat_map_layer</span><span class="p">(</span><span class="n">vega</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">hexstr</span><span class="p">))</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="n">cx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_contextily_params</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">img</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="choroplethmap"><a class="viewcode-back" href="../../../api_reference/plot/api/arctern.plot.choroplethmap.html#arctern.plot.choroplethmap">[docs]</a><span class="k">def</span> <span class="nf">choroplethmap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">region_boundaries</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">bounding_box</span><span class="p">,</span>
+                       <span class="n">color_gradient</span><span class="p">,</span> <span class="n">color_bound</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                       <span class="n">coordinate_system</span><span class="o">=</span><span class="s1">&#39;EPSG:3857&#39;</span><span class="p">,</span>
+                       <span class="n">aggregation_type</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">,</span>
+                       <span class="o">**</span><span class="n">extra_contextily_params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plots a choropleth map in matplotlib.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ax : matplotlib.axes.Axes</span>
+<span class="sd">        Axes where geometries will be plotted.</span>
+<span class="sd">    region_boundaries : GeoSeries</span>
+<span class="sd">        Sequence of polygons, as region boundaries to plot.</span>
+<span class="sd">    weights : Series</span>
+<span class="sd">        Color weights for polygons</span>
+<span class="sd">    bounding_box : list</span>
+<span class="sd">        Bounding box of the map. For example, [west, south, east, north].</span>
+<span class="sd">    color_gradient : list</span>
+<span class="sd">        Range of color gradient.</span>
+<span class="sd">        Either use [&quot;hex_color&quot;] to specify a same color for all geometries, or [&quot;hex_color1&quot;, &quot;hex_color2&quot;] to specify a color gradient ranging from &quot;hex_color1&quot; to &quot;hex_color2&quot;.</span>
+<span class="sd">    color_bound : list, optional</span>
+<span class="sd">        Weight range [w1, w2] of ``color_gradient``.</span>
+<span class="sd">        Needed only when ``color_gradient`` has two values [&quot;color1&quot;, &quot;color2&quot;]. Binds w1 to &quot;color1&quot;, and w2 to &quot;color2&quot;. When weight &lt; w1 or weight &gt; w2, the weight will be truncated to w1 or w2 accordingly.</span>
+<span class="sd">    opacity : float, optional</span>
+<span class="sd">        Opacity of polygons, ranged from 0.0 to 1.0, by default 1.0.</span>
+<span class="sd">    coordinate_system : str, optional</span>
+<span class="sd">        The Coordinate Reference System (CRS) set to all geometries, by default &#39;EPSG:3857&#39;.</span>
+<span class="sd">        Only supports SRID as a WKT representation of CRS by now.</span>
+<span class="sd">    aggregation_type : str, optional</span>
+<span class="sd">        Aggregation type, by default &#39;max&#39;.</span>
+<span class="sd">    **extra_contextily_params: dict</span>
+<span class="sd">        Extra parameters passed to `contextily.add_basemap. &lt;https://contextily.readthedocs.io/en/latest/reference.html&gt;`_</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    .. doctest:</span>
+<span class="sd">        :skipif: True</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; import arctern</span>
+<span class="sd">    &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">    &gt;&gt;&gt; # read from test_data.csv</span>
+<span class="sd">    &gt;&gt;&gt; # Download link: https://raw.githubusercontent.com/arctern-io/arctern-resources/benchmarks/benchmarks/dataset/layer_rendering_test_data/test_data.csv</span>
+<span class="sd">    &gt;&gt;&gt; df = pd.read_csv(&quot;/path/to/test_data.csv&quot;, dtype={&#39;longitude&#39;:np.float64, &#39;latitude&#39;:np.float64, &#39;color_weights&#39;:np.float64, &#39;size_weights&#39;:np.float64, &#39;region_boundaries&#39;:np.object})</span>
+<span class="sd">    &gt;&gt;&gt; input = df[pd.notna(df[&#39;region_boundaries&#39;])].groupby([&#39;region_boundaries&#39;]).mean().reset_index()</span>
+<span class="sd">    &gt;&gt;&gt; polygon = arctern.GeoSeries(input[&#39;region_boundaries&#39;])</span>
+<span class="sd">    &gt;&gt;&gt; # plot choroplethmap</span>
+<span class="sd">    &gt;&gt;&gt; fig, ax = plt.subplots(figsize=(10, 6), dpi=200)</span>
+<span class="sd">    &gt;&gt;&gt; arctern.plot.choroplethmap(ax, polygon, input[&#39;color_weights&#39;], bounding_box=[-74.01124953254566,40.73413446570038,-73.96238859103838,40.766161712662296], color_gradient=[&quot;#115f9a&quot;,&quot;#d0f400&quot;], color_bound=[5,18], opacity=1.0, coordinate_system=&#39;EPSG:4326&#39;, aggregation_type=&quot;mean&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; plt.show()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+    <span class="kn">import</span> <span class="nn">contextily</span> <span class="k">as</span> <span class="nn">cx</span>
+    <span class="n">bbox</span> <span class="o">=</span> <span class="n">_transform_bbox</span><span class="p">(</span><span class="n">bounding_box</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="p">,</span> <span class="s1">&#39;epsg:3857&#39;</span><span class="p">)</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">_get_recom_size</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">vega</span> <span class="o">=</span> <span class="n">vega_choroplethmap</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">bounding_box</span><span class="o">=</span><span class="n">bounding_box</span><span class="p">,</span> <span class="n">color_gradient</span><span class="o">=</span><span class="n">color_gradient</span><span class="p">,</span> <span class="n">color_bound</span><span class="o">=</span><span class="n">color_bound</span><span class="p">,</span>
+                              <span class="n">opacity</span><span class="o">=</span><span class="n">opacity</span><span class="p">,</span> <span class="n">aggregation_type</span><span class="o">=</span><span class="n">aggregation_type</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="o">=</span><span class="n">coordinate_system</span><span class="p">)</span>
+    <span class="n">hexstr</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">choropleth_map_layer</span><span class="p">(</span><span class="n">vega</span><span class="p">,</span> <span class="n">region_boundaries</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">hexstr</span><span class="p">))</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="n">cx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_contextily_params</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">img</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="iconviz"><a class="viewcode-back" href="../../../api_reference/plot/api/arctern.plot.iconviz.html#arctern.plot.iconviz">[docs]</a><span class="k">def</span> <span class="nf">iconviz</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">bounding_box</span><span class="p">,</span> <span class="n">icon_path</span><span class="p">,</span>
+                 <span class="n">icon_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="o">=</span><span class="s1">&#39;EPSG:3857&#39;</span><span class="p">,</span>
+                 <span class="o">**</span><span class="n">extra_contextily_params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plots an icon map in Matplotlib.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ax : matplotlib.axes.Axes</span>
+<span class="sd">        Axes where geometries will be plotted.</span>
+<span class="sd">    points : GeoSeries</span>
+<span class="sd">        Sequence of points.</span>
+<span class="sd">    bounding_box : list</span>
+<span class="sd">        Bounding box of the map. For example, [west, south, east, north].</span>
+<span class="sd">    icon_path : str</span>
+<span class="sd">        Absolute path to icon file.</span>
+<span class="sd">    icon_size : list</span>
+<span class="sd">        Size of the icon, a list with width and height of icon. For example, [width, height].</span>
+<span class="sd">    coordinate_system : str, optional</span>
+<span class="sd">        The Coordinate Reference System (CRS) set to all geometries, by default &#39;EPSG:3857&#39;.</span>
+<span class="sd">        Only supports SRID as a WKT representation of CRS by now.</span>
+<span class="sd">    **extra_contextily_params: dict</span>
+<span class="sd">        Extra parameters passed to `contextily.add_basemap. &lt;https://contextily.readthedocs.io/en/latest/reference.html&gt;`_</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    .. doctest:</span>
+<span class="sd">        :skipif: True</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; import arctern</span>
+<span class="sd">    &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">    &gt;&gt;&gt; # read from test_data.csv</span>
+<span class="sd">    &gt;&gt;&gt; # Download link: https://raw.githubusercontent.com/arctern-io/arctern-resources/benchmarks/benchmarks/dataset/layer_rendering_test_data/test_data.csv</span>
+<span class="sd">    &gt;&gt;&gt; df = pd.read_csv(&quot;/path/to/test_data.csv&quot;, dtype={&#39;longitude&#39;:np.float64, &#39;latitude&#39;:np.float64, &#39;color_weights&#39;:np.float64, &#39;size_weights&#39;:np.float64, &#39;region_boundaries&#39;:np.object}, nrows=10)</span>
+<span class="sd">    &gt;&gt;&gt; points = arctern.GeoSeries.point(df[&#39;longitude&#39;], df[&#39;latitude&#39;])</span>
+<span class="sd">    &gt;&gt;&gt; # plot icon visualization</span>
+<span class="sd">    &gt;&gt;&gt; # Download icon-viz.png :  https://raw.githubusercontent.com/arctern-io/arctern-docs/master/img/icon/icon-viz.png</span>
+<span class="sd">    &gt;&gt;&gt; fig, ax = plt.subplots(figsize=(10, 6), dpi=200)</span>
+<span class="sd">    &gt;&gt;&gt; arctern.plot.iconviz(ax, points, bounding_box=[-74.01424568752932, 40.72759334104623, -73.96056823889673, 40.76721122683304], icon_path=&#39;/path/to/icon-viz.png&#39;, coordinate_system=&#39;EPSG:4326&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; plt.show()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+    <span class="kn">import</span> <span class="nn">contextily</span> <span class="k">as</span> <span class="nn">cx</span>
+    <span class="n">bbox</span> <span class="o">=</span> <span class="n">_transform_bbox</span><span class="p">(</span><span class="n">bounding_box</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="p">,</span> <span class="s1">&#39;epsg:3857&#39;</span><span class="p">)</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">_get_recom_size</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">vega</span> <span class="o">=</span> <span class="n">vega_icon</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">bounding_box</span><span class="o">=</span><span class="n">bounding_box</span><span class="p">,</span> <span class="n">icon_path</span><span class="o">=</span><span class="n">icon_path</span><span class="p">,</span> <span class="n">icon_size</span><span class="o">=</span><span class="n">icon_size</span><span class="p">,</span>
+                     <span class="n">coordinate_system</span><span class="o">=</span><span class="n">coordinate_system</span><span class="p">)</span>
+    <span class="n">hexstr</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">icon_viz_layer</span><span class="p">(</span><span class="n">vega</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">hexstr</span><span class="p">))</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="n">cx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_contextily_params</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">img</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span></div>
+
+<span class="c1"># pylint: disable=too-many-arguments</span>
+<span class="c1"># pylint: disable=dangerous-default-value</span>
+
+
+<div class="viewcode-block" id="fishnetmap"><a class="viewcode-back" href="../../../api_reference/plot/api/arctern.plot.fishnetmap.html#arctern.plot.fishnetmap">[docs]</a><span class="k">def</span> <span class="nf">fishnetmap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">bounding_box</span><span class="p">,</span>
+                    <span class="n">color_gradient</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#0000FF&quot;</span><span class="p">,</span> <span class="s2">&quot;#FF0000&quot;</span><span class="p">],</span>
+                    <span class="n">cell_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">cell_spacing</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                    <span class="n">coordinate_system</span><span class="o">=</span><span class="s1">&#39;epsg:3857&#39;</span><span class="p">,</span>
+                    <span class="n">aggregation_type</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">,</span>
+                    <span class="o">**</span><span class="n">extra_contextily_params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plots a fishnet map in Matplotlib.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ax : matplotlib.axes.Axes</span>
+<span class="sd">        Axes where geometries will be plotted.</span>
+<span class="sd">    points : GeoSeries</span>
+<span class="sd">        Sequence of points.</span>
+<span class="sd">    weights : Series</span>
+<span class="sd">        Color weights of polygons.</span>
+<span class="sd">    bounding_box : list</span>
+<span class="sd">        Bounding box of the map. For example, [west, south, east, north].</span>
+<span class="sd">    color_gradient : list, optional</span>
+<span class="sd">        Range of color gradient, by default [&quot;#0000FF&quot;, &quot;#FF0000&quot;].</span>
+<span class="sd">        Either use [&quot;hex_color&quot;] to specify a same color for all geometries, or [&quot;hex_color1&quot;, &quot;hex_color2&quot;] to specify a color gradient ranging from &quot;hex_color1&quot; to &quot;hex_color2&quot;.</span>
+<span class="sd">    cell_size : int, optional</span>
+<span class="sd">        Side length of fishnet cells, by default 4.</span>
+<span class="sd">    cell_spacing : int, optional</span>
+<span class="sd">        Margin between adjacent fishnet cells, by default 1.</span>
+<span class="sd">    opacity : float, optional</span>
+<span class="sd">        Opacity of the fishnet, ranged from 0.0 to 1.0, by default 1.0.</span>
+<span class="sd">    coordinate_system : str, optional</span>
+<span class="sd">        The Coordinate Reference System (CRS) set to all geometries, by default &#39;EPSG:3857&#39;.</span>
+<span class="sd">        Only supports SRID as a WKT representation of CRS by now.</span>
+<span class="sd">    aggregation_type : str, optional</span>
+<span class="sd">        Aggregation type, by default &#39;sum&#39;.</span>
+<span class="sd">    **extra_contextily_params: dict</span>
+<span class="sd">        Extra parameters passed to `contextily.add_basemap. &lt;https://contextily.readthedocs.io/en/latest/reference.html&gt;`_</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    .. doctest:</span>
+<span class="sd">        :skipif: True</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; import arctern</span>
+<span class="sd">    &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">    &gt;&gt;&gt; # read from test_data.csv</span>
+<span class="sd">    &gt;&gt;&gt; # Download link: https://raw.githubusercontent.com/arctern-io/arctern-resources/benchmarks/benchmarks/dataset/layer_rendering_test_data/test_data.csv</span>
+<span class="sd">    &gt;&gt;&gt; df = pd.read_csv(&quot;/path/to/test_data.csv&quot;, dtype={&#39;longitude&#39;:np.float64, &#39;latitude&#39;:np.float64, &#39;color_weights&#39;:np.float64, &#39;size_weights&#39;:np.float64, &#39;region_boundaries&#39;:np.object})</span>
+<span class="sd">    &gt;&gt;&gt; points = arctern.GeoSeries.point(df[&#39;longitude&#39;], df[&#39;latitude&#39;])</span>
+<span class="sd">    &gt;&gt;&gt; # render fishnet</span>
+<span class="sd">    &gt;&gt;&gt; fig, ax = plt.subplots(figsize=(10, 6), dpi=200)</span>
+<span class="sd">    &gt;&gt;&gt; arctern.plot.fishnetmap(ax, points=points, weights=df[&#39;color_weights&#39;], bounding_box=[-74.01424568752932, 40.72759334104623, -73.96056823889673, 40.76721122683304], cell_size=8, cell_spacing=2, opacity=1.0, coordinate_system=&quot;EPSG:4326&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; plt.show()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+    <span class="kn">import</span> <span class="nn">contextily</span> <span class="k">as</span> <span class="nn">cx</span>
+    <span class="n">bbox</span> <span class="o">=</span> <span class="n">_transform_bbox</span><span class="p">(</span><span class="n">bounding_box</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="p">,</span> <span class="s1">&#39;epsg:3857&#39;</span><span class="p">)</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">_get_recom_size</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">vega</span> <span class="o">=</span> <span class="n">vega_fishnetmap</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">bounding_box</span><span class="o">=</span><span class="n">bounding_box</span><span class="p">,</span> <span class="n">color_gradient</span><span class="o">=</span><span class="n">color_gradient</span><span class="p">,</span>
+                           <span class="n">cell_size</span><span class="o">=</span><span class="n">cell_size</span><span class="p">,</span> <span class="n">cell_spacing</span><span class="o">=</span><span class="n">cell_spacing</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="n">opacity</span><span class="p">,</span>
+                           <span class="n">coordinate_system</span><span class="o">=</span><span class="n">coordinate_system</span><span class="p">,</span> <span class="n">aggregation_type</span><span class="o">=</span><span class="n">aggregation_type</span><span class="p">)</span>
+    <span class="n">hexstr</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">fishnet_map_layer</span><span class="p">(</span><span class="n">vega</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">hexstr</span><span class="p">))</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="n">cx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_contextily_params</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">img</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Jul 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

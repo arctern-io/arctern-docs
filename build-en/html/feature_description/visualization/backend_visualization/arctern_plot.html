@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Visualizing Spatiotemporal Information via Arctern &mdash; Arctern version : 0.2.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="API Reference" href="../../../api_reference/api_reference.html" />
+    <link rel="prev" title="Back-End Visualization" href="backend_visualization.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../feature_description.html">Feature Description</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../spatiotemporal_analysis/spatiotemporal_analysis.html">Spatiotemporal Analysis</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../visualization.html">Visualization</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../how_to_visualize.html">How to visualize spatiotemporal data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../frontend_visualization/frontend_visualization.html">Front-End Visualization</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="backend_visualization.html">Back-End Visualization</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Visualizing Spatiotemporal Information via Arctern</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_reference/api_reference.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../feature_description.html">Feature Description</a> &raquo;</li>
+        
+          <li><a href="../visualization.html">Visualization</a> &raquo;</li>
+        
+          <li><a href="backend_visualization.html">Back-End Visualization</a> &raquo;</li>
+        
+      <li>Visualizing Spatiotemporal Information via Arctern</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/feature_description/visualization/backend_visualization/arctern_plot.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="visualizing-spatiotemporal-information-via-arctern">
+<h1>Visualizing Spatiotemporal Information via Arctern<a class="headerlink" href="#visualizing-spatiotemporal-information-via-arctern" title="Permalink to this headline">¶</a></h1>
+<p>Arctern can draw multiple types of transparent layers and add a map background to these images. This article shows how to use Arctern to visualizing spatiotemporal information.</p>
+<div class="section" id="generate-simulation-data">
+<h2>Generate simulation data<a class="headerlink" href="#generate-simulation-data" title="Permalink to this headline">¶</a></h2>
+<p>Use random data to generate a taxi trip record data, which will be used later to make various plots:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">gen_data</span><span class="p">(</span><span class="n">num_rows</span><span class="p">,</span> <span class="n">bbox</span><span class="p">):</span>
+<span class="gp">... </span>   <span class="kn">import</span> <span class="nn">random</span>
+<span class="gp">... </span>   <span class="n">pickup_longitude</span> <span class="o">=</span> <span class="p">[(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">+</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rows</span><span class="p">)]</span>
+<span class="gp">... </span>   <span class="n">pickup_latitude</span> <span class="o">=</span> <span class="p">[(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">+</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rows</span><span class="p">)]</span>
+<span class="gp">... </span>   <span class="n">fare_amount</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="o">*</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rows</span><span class="p">)]</span>
+<span class="gp">... </span>   <span class="n">tip_amount</span> <span class="o">=</span> <span class="p">[</span><span class="n">fare</span><span class="o">*</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mf">0.05</span><span class="o">+</span><span class="mf">0.15</span><span class="p">)</span> <span class="k">for</span> <span class="n">fare</span> <span class="ow">in</span> <span class="n">fare_amount</span><span class="p">]</span>
+<span class="gp">... </span>   <span class="n">total_amount</span> <span class="o">=</span> <span class="p">[</span><span class="n">fare_amount</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">tip_amount</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rows</span><span class="p">)]</span>
+<span class="gp">... </span>   <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;pickup_longitude&quot;</span><span class="p">:</span><span class="n">pickup_longitude</span><span class="p">,</span>
+<span class="gp">... </span>                        <span class="s2">&quot;pickup_latitude&quot;</span><span class="p">:</span><span class="n">pickup_latitude</span><span class="p">,</span>
+<span class="gp">... </span>                        <span class="s2">&quot;fare_amount&quot;</span><span class="p">:</span><span class="n">fare_amount</span><span class="p">,</span>
+<span class="gp">... </span>                        <span class="s2">&quot;total_amount&quot;</span><span class="p">:</span><span class="n">total_amount</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">num_rows</span><span class="o">=</span><span class="mi">200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bbox</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">73.991504</span><span class="p">,</span> <span class="mf">40.770759</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.945155</span><span class="p">,</span> <span class="mf">40.783434</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">=</span><span class="n">gen_data</span><span class="p">(</span><span class="n">num_rows</span><span class="p">,</span><span class="n">bbox</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+</pre></div>
+</div>
+<p>In the geographic area with a longitude range of -73.991504 ~ -73.945155 and a latitude range of 40.770759 ~ 40.783434, the above code randomly extracts 200 coordinate points as pickup locations and generates random taxi fares accordingly. The description of the taxi trip record data is as follows:</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Description</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">pickup_longitude</td>
+<td align="left">Longitude coordinate of where the taxi ride started</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left">pickup_latitude</td>
+<td align="left">Latitude coordinate of where the taxi ride started.</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left">fare_amount</td>
+<td align="left">Dollar amount of the cost of the taxi ride without any tip.</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left">total_amount</td>
+<td align="left">Total dollar amount of the cost of the taxi ride including the tip.</td>
+<td align="left">double</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="installing-dependent-libraries">
+<h2>Installing dependent libraries<a class="headerlink" href="#installing-dependent-libraries" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install -c conda-forge matplotlib
+$ conda install -c conda-forge contextily
+$ conda install -c conda-forge pyproj
+</pre></div>
+</div>
+</div>
+<div class="section" id="import-plot-modules">
+<h2>Import plot modules<a class="headerlink" href="#import-plot-modules" title="Permalink to this headline">¶</a></h2>
+<p>Import the following libraries:</p>
+<ul class="simple">
+<li><p><strong>arctern:</strong> Provides modules for drawing and saving geographic information layers.</p></li>
+<li><p><strong>matplotlib:</strong> Provides modules for drawing pictures in Juypter Notebook.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">arctern</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern.util</span> <span class="kn">import</span> <span class="n">save_png</span><span class="p">,</span> <span class="n">vega</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="point-map">
+<h2>Point map<a class="headerlink" href="#point-map" title="Permalink to this headline">¶</a></h2>
+<p>Use the <a class="reference external" href="../../api_reference/plot/api/arctern.plot.pointmap.html"><code class="docutils literal notranslate"><span class="pre">plot.pointmap</span></code></a> method to draw a point map based on the taxi trip record data. For each point, its position is defined by the pickup location, its size is 10, its color is # 2DEF4A, and its opacity is 1.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pointmap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> 
+<span class="gp">... </span>                      <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_longitude</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_latitude</span><span class="p">),</span>
+<span class="gp">... </span>                      <span class="n">bbox</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="n">point_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="n">point_color</span><span class="o">=</span><span class="s2">&quot;#2DEF4A&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="n">coordinate_system</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="../../../_images/output_8_0.png" src="../../../_images/output_8_0.png" /></p>
+</div>
+<div class="section" id="weighted-point-map">
+<h2>Weighted point map<a class="headerlink" href="#weighted-point-map" title="Permalink to this headline">¶</a></h2>
+<p>Use the <a class="reference external" href="../../api_reference/plot/api/arctern.plot.weighted_pointmap.html"><code class="docutils literal notranslate"><span class="pre">plot.weighted_pointmap</span></code></a> method to draw a weighted point map based on the taxi trip record data. For each point, its position is defined by the pickup location, its color varies between # 115f9a ~ # d0f400 according to the taxi trip fare (<code class="docutils literal notranslate"><span class="pre">df.fare_amount</span></code>), its size varies between 5 ~ 30 according to the total taxi fare (<code class="docutils literal notranslate"> <span class="pre">df.total_amount</span></code>), its opacity is 1.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">color_bound</span><span class="o">=</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">fare_amount</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">fare_amount</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">size_bound</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">total_max</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">total_amount</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">total_min</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">total_amount</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">size_weights</span> <span class="o">=</span> <span class="p">[(</span><span class="n">v</span><span class="o">-</span><span class="n">total_min</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">total_max</span><span class="o">-</span><span class="n">total_min</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">size_bound</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">size_bound</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="n">size_bound</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">total_amount</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">size_weights</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">size_weights</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">weighted_pointmap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> 
+<span class="gp">... </span>                      <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_longitude</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_latitude</span><span class="p">),</span>
+<span class="gp">... </span>                      <span class="n">color_weights</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">fare_amount</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="n">size_weights</span><span class="o">=</span><span class="n">size_weights</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="n">bounding_box</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> 
+<span class="gp">... </span>                      <span class="n">color_gradient</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#115f9a&quot;</span><span class="p">,</span> <span class="s2">&quot;#d0f400&quot;</span><span class="p">],</span> 
+<span class="gp">... </span>                      <span class="n">color_bound</span><span class="o">=</span><span class="n">color_bound</span><span class="p">,</span> 
+<span class="gp">... </span>                      <span class="n">size_bound</span><span class="o">=</span><span class="n">size_bound</span><span class="p">,</span> 
+<span class="gp">... </span>                      <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> 
+<span class="gp">... </span>                      <span class="n">coordinate_system</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="../../../_images/output_12_0.png" src="../../../_images/output_12_0.png" /></p>
+</div>
+<div class="section" id="heat-map">
+<h2>Heat map<a class="headerlink" href="#heat-map" title="Permalink to this headline">¶</a></h2>
+<p>Use the <a class="reference external" href="../../api_reference/plot/api/arctern.plot.heatmap.html"><code class="docutils literal notranslate"><span class="pre">plot.heatmap</span></code></a> method to draw a heat map based on the taxi trip record data. The color of each position is decided by the total taxi fare (<code class="docutils literal notranslate"> <span class="pre">df.total_amount</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> 
+<span class="gp">... </span>                    <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_longitude</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_latitude</span><span class="p">),</span>
+<span class="gp">... </span>                    <span class="n">df</span><span class="o">.</span><span class="n">fare_amount</span><span class="p">,</span> 
+<span class="gp">... </span>                    <span class="n">bbox</span><span class="p">,</span> 
+<span class="gp">... </span>                    <span class="n">coordinate_system</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="../../../_images/output_16_0.png" src="../../../_images/output_16_0.png" /></p>
+</div>
+<div class="section" id="choropleth-map">
+<h2>Choropleth map<a class="headerlink" href="#choropleth-map" title="Permalink to this headline">¶</a></h2>
+<p>The choropleth map can draw a large number of building outlines within a geographical area. In order to simply demonstrate how to draw construction contours, we only create two POLYGON objects <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code> to describe the outlines of two buildings.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span><span class="o">=</span><span class="s2">&quot;POLYGON ((-73.9559920952719 40.7798302112586,-73.9558373836227 40.780041920447,-73.955817052153 40.7800697417696,-73.9561541507251 40.7802120850128,-73.9560310179165 40.780380581462,-73.9559809829928 40.7804490491413,-73.9554245436102 40.780214085171,-73.9552722050953 40.7801497573115,-73.9554553121101 40.7798991968954,-73.9556088484124 40.7796890996611,-73.955620419799 40.7796732651862,-73.9559015149432 40.7797919620232,-73.9559920952719 40.7798302112586))&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p2</span><span class="o">=</span><span class="s2">&quot;POLYGON ((-73.9542329907899 40.7787670145087,-73.9545101860555 40.7783876598084,-73.9546846384315 40.778461320293,-73.9548206058685 40.7785187302746,-73.9549036921298 40.7785538112695,-73.9550251774329 40.7786051054324,-73.9550562469185 40.7786182243649,-73.9549683394669 40.7787385313679,-73.9547798956672 40.778996428053,-73.954779053804 40.7789975803655,-73.9545166590009 40.7788867891633,-73.9544446005066 40.7788563633454,-73.9542329907899 40.7787670145087))&quot;</span>
+</pre></div>
+</div>
+<p>Use the <a class="reference external" href="../../api_reference/plot/api/arctern.plot.choroplethmap.html"><code class="docutils literal notranslate"><span class="pre">plot.choroplethmap</span></code></a> method to draw a choropleth map based on the description of two building outlines <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">choroplethmap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> 
+<span class="gp">... </span>                          <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">([</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">]),</span>
+<span class="gp">... </span>                          <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">]),</span>
+<span class="gp">... </span>                          <span class="n">bbox</span><span class="p">,</span> 
+<span class="gp">... </span>                          <span class="n">color_gradient</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#115f9a&quot;</span><span class="p">,</span> <span class="s2">&quot;#d0f400&quot;</span><span class="p">],</span> 
+<span class="gp">... </span>                          <span class="n">color_bound</span><span class="o">=</span><span class="p">[</span><span class="mf">2.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> 
+<span class="gp">... </span>                          <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> 
+<span class="gp">... </span>                          <span class="n">coordinate_system</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="../../../_images/output_20_0.png" src="../../../_images/output_20_0.png" /></p>
+</div>
+<div class="section" id="icon-map">
+<h2>Icon map<a class="headerlink" href="#icon-map" title="Permalink to this headline">¶</a></h2>
+<p>Download an icon image that will be used later to draw icon maps:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wget https://raw.githubusercontent.com/zilliztech/arctern-docs/branch-0.2.x/img/icon/icon.png -o /tmp/icon.png
+</pre></div>
+</div>
+<p>Use the <a class="reference external" href="../../api_reference/plot/api/arctern.plot.iconviz.html"><code class="docutils literal notranslate"><span class="pre">plot.iconviz</span></code></a> method to draw an icon map based on the taxi trip record data. The position of each icon is defined by the pickup location.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">iconviz</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> 
+<span class="gp">... </span>                    <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_longitude</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_latitude</span><span class="p">),</span>
+<span class="gp">... </span>                    <span class="n">icon_path</span><span class="o">=</span><span class="s2">&quot;/tmp/icon.png&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                    <span class="n">icon_size</span><span class="o">=</span><span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">33</span><span class="p">],</span>
+<span class="gp">... </span>                    <span class="n">bounding_box</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span>
+<span class="gp">... </span>                    <span class="n">coordinate_system</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="../../../_images/output_24_0.png" src="../../../_images/output_24_0.png" /></p>
+</div>
+<div class="section" id="fishnet-map">
+<h2>Fishnet map<a class="headerlink" href="#fishnet-map" title="Permalink to this headline">¶</a></h2>
+<p>Use the <a class="reference external" href="../../api_reference/plot/api/arctern.plot.fishnetmap.html"><code class="docutils literal notranslate"><span class="pre">plot.fishnetmap</span></code></a> method to draw a fishnet map based on the taxi trip record data. The position of each icon is defined by the pickup location.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">fishnetmap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> 
+<span class="gp">... </span>                       <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_longitude</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_latitude</span><span class="p">),</span>
+<span class="gp">... </span>                       <span class="n">df</span><span class="o">.</span><span class="n">fare_amount</span><span class="p">,</span> 
+<span class="gp">... </span>                       <span class="n">bbox</span><span class="p">,</span> 
+<span class="gp">... </span>                       <span class="n">cell_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> 
+<span class="gp">... </span>                       <span class="n">cell_spacing</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+<span class="gp">... </span>                       <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> 
+<span class="gp">... </span>                       <span class="n">coordinate_system</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="../../../_images/output_28_0.png" src="../../../_images/output_28_0.png" /></p>
+</div>
+<div class="section" id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="why-do-my-graphs-only-show-the-map-background">
+<h3>Why do my graphs only show the map background?<a class="headerlink" href="#why-do-my-graphs-only-show-the-map-background" title="Permalink to this headline">¶</a></h3>
+<p>This problem happens when you are using MobaXterm to connect to the Linux system where the Arctern server is deployed from a Windows system, and the X11-Forwarding option is enabled in MobaXterm.</p>
+<p>Run the <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$DISPLAY</span></code> command to check whether X11-Forwarding is enabled. If the result is similar to <code class="docutils literal notranslate"><span class="pre">localhost:xx.x</span></code>, then X11-Forwarding is turned on, and you should uncheck this option in MobaXterm:</p>
+<p><img alt="../../../_images/x11_forwarding.png" src="../../../_images/x11_forwarding.png" /></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../api_reference/api_reference.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="backend_visualization.html" class="btn btn-neutral float-left" title="Back-End Visualization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Jul 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

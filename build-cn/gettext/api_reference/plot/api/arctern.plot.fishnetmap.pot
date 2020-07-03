@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-03 07:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/api_reference/plot/api/arctern.plot.fishnetmap.rst:2
+msgid "arctern.plot.fishnetmap"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.fishnetmap:1
+msgid "Plots a fishnet map in Matplotlib."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.fishnetmap:0
+msgid "参数"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.fishnetmap:3
+msgid "Axes where geometries will be plotted."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.fishnetmap:5
+msgid "Sequence of points."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.fishnetmap:7
+msgid "Color weights of polygons."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.fishnetmap:9
+msgid "Bounding box of the map. For example, [west, south, east, north]."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.fishnetmap:11
+msgid "Range of color gradient, by default [\"#0000FF\", \"#FF0000\"]. Either use [\"hex_color\"] to specify a same color for all geometries, or [\"hex_color1\", \"hex_color2\"] to specify a color gradient ranging from \"hex_color1\" to \"hex_color2\"."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.fishnetmap:14
+msgid "Side length of fishnet cells, by default 4."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.fishnetmap:16
+msgid "Margin between adjacent fishnet cells, by default 1."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.fishnetmap:18
+msgid "Opacity of the fishnet, ranged from 0.0 to 1.0, by default 1.0."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.fishnetmap:20
+msgid "The Coordinate Reference System (CRS) set to all geometries, by default 'EPSG:3857'. Only supports SRID as a WKT representation of CRS by now."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.fishnetmap:23
+msgid "Aggregation type, by default 'sum'."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.fishnetmap:25
+msgid "Extra parameters passed to `contextily.add_basemap. <https://contextily.readthedocs.io/en/latest/reference.html>`_"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.fishnetmap:28
+msgid ":skipif: True"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.fishnetmap:0
+msgid "skipif"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.fishnetmap:28
+msgid "True"
+msgstr ""

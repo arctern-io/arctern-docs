@@ -1,0 +1,6 @@
+arctern.GeoSeries.is\_valid
+===========================
+
+.. currentmodule:: arctern
+
+.. autoproperty:: GeoSeries.is_valid

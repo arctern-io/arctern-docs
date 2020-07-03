@@ -1,0 +1,6 @@
+arctern.GeoSeries.convex\_hull
+==============================
+
+.. currentmodule:: arctern
+
+.. autoproperty:: GeoSeries.convex_hull

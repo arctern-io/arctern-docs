@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>与 GeoPandas GeoSeries 互相转换 &mdash; Arctern version : 0.2.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="空间关系运算" href="spatial_relationship_operation.html" />
+    <link rel="prev" title="几何体的基本操作" href="geometric_manipulation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../feature_description.html">功能说明</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="spatiotemporal_analysis.html">时空数据分析</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data_structure.html">数据结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="read_and_write_file.html">文件读写</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometric_manipulation.html">几何体的基本操作</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">与 GeoPandas GeoSeries 互相转换</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arctern-geoseries">构造 Arctern GeoSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arctern-geoseries-geopandas-geoseries">将 Arctern GeoSeries 转换为 GeoPandas GeoSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geopandas-geoseries-arctern-geoseries">将 GeoPandas GeoSeries 转换为 Arctern GeoSeries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spatial_relationship_operation.html">空间关系运算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="map_match.html">地图匹配</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_geometry.html">绘图方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crs_and_transform.html">坐标参考系</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregation.html">聚合</a></li>
+<li class="toctree-l3"><a class="reference internal" href="indexing_selecting_data.html">索引和选择数据</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">可视化</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/api_reference.html">API 参考</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../feature_description.html">功能说明</a> &raquo;</li>
+        
+          <li><a href="spatiotemporal_analysis.html">时空数据分析</a> &raquo;</li>
+        
+      <li>与 GeoPandas GeoSeries 互相转换</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/feature_description/spatiotemporal_analysis/convert_from_and_to_geopandas_geoseries.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="geopandas-geoseries">
+<h1>与 GeoPandas GeoSeries 互相转换<a class="headerlink" href="#geopandas-geoseries" title="永久链接至标题">¶</a></h1>
+<p>Arctern 可以与 GeoPandas 生态无缝衔接。通过灵活切换 Arctern GeoSeries 与 GeoPandas GeoSeries，你可以提高空间地理信息的处理效率。例如，在大数据量的场景下，GeoPandas 的运行速度不够理想，而 Arctern 对 GeoSeries 的部分功能进行了 GPU 加速。因此，你可以使用 Arctern 的 <code class="docutils literal notranslate"><span class="pre">to_geopandas</span></code> 和 <code class="docutils literal notranslate"><span class="pre">from_geopandas</span></code> 方法把 GeoPandas GeoSeries 转为 Arctern GeoSeries，发挥 Arctern 的运算加速能力。</p>
+<p>本文档介绍如何在 Arctern GeoSeries 与 GeoPandas GeoSeries 之间进行转换。</p>
+<div class="section" id="arctern-geoseries">
+<h2>构造 Arctern GeoSeries<a class="headerlink" href="#arctern-geoseries" title="永久链接至标题">¶</a></h2>
+<p>构造一个 Arctern GeoSeries 对象 <code class="docutils literal notranslate"><span class="pre">arctern_geoseries</span></code>。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">arctern</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">=</span> <span class="s2">&quot;POLYGON ((0 0,4 0,4 4,0 4,0 0))&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern_geoseries</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">([</span><span class="n">p1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern_geoseries</span>
+<span class="go">0    POLYGON ((0 0,4 0,4 4,0 4,0 0))</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="arctern-geoseries-geopandas-geoseries">
+<h2>将 Arctern GeoSeries 转换为 GeoPandas GeoSeries<a class="headerlink" href="#arctern-geoseries-geopandas-geoseries" title="永久链接至标题">¶</a></h2>
+<p>使用 <a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.to_geopandas.html"><code class="docutils literal notranslate"><span class="pre">to_geopandas</span></code></a> 方法将 Arctern GeoSeries 转为 GeoPandas GeoSeries。</p>
+<!-- link: [to_geopandas](/path/to/to_geopandas) --><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geopandas_geoseries</span> <span class="o">=</span> <span class="n">arctern_geoseries</span><span class="o">.</span><span class="n">to_geopandas</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geopandas_geoseries</span>
+<span class="go">0    POLYGON ((0.00000 0.00000, 4.00000 0.00000, 4.00000 4.00000, 0.00000 4.00000, 0.00000 0.00000))</span>
+<span class="go">dtype: geometry</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="geopandas-geoseries-arctern-geoseries">
+<h2>将 GeoPandas GeoSeries 转换为 Arctern GeoSeries<a class="headerlink" href="#geopandas-geoseries-arctern-geoseries" title="永久链接至标题">¶</a></h2>
+<p>使用 <a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.from_geopandas.html"><code class="docutils literal notranslate"><span class="pre">from_geopandas</span></code></a> 方法将 GeoPandas GeoSeries 转为 Arctern GeoSeries。</p>
+<!-- link: [from_geopandas](/path/to/from_geopandas) --><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arctern_geoseries</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="o">.</span><span class="n">from_geopandas</span><span class="p">(</span><span class="n">geopandas_geoseries</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern_geoseries</span>
+<span class="go">0    POLYGON ((0 0,4 0,4 4,0 4,0 0))</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+<!-- ## Arctern GeoSeries 与 GeoPandas GeoSeries 的性能对比
+
+在大数据量的情况下，GeoPandas 的执行速度不够理想，Arctern 实现了对 GeoPandas 部分函数的加速，平均加速比可达到6至七倍，个别函数甚至可以达到十倍之多。
+
+以下给出 is_simple 函数的性能对比测试示例。
+
+### 1. 测试　Arctern GeoSeries 与 GeoPandas GeoSeries 的执行时间
+
+测试在 1000000 行数据量下，Arctern GeoSeries 与 GeoPandas GeoSeries 的表现。
+
+```python
+>>> import arctern
+>>> import time
+>>>
+>>> p1 = "POLYGON ((0 0,4 0,4 4,0 4,0 0))"
+>>> arctern_geoseries = arctern.GeoSeries([p1] * 1000000)
+>>> arctern_start_time = time.time()
+>>> arctern_geoseries.is_simple
+0         True
+1         True
+2         True
+3         True
+4         True
+          ...
+999995    True
+999996    True
+999997    True
+999998    True
+999999    True
+Length: 1000000, dtype: bool
+>>> arctern_end_time = time.time()
+>>>
+>>> geopandas_geoseries = arctern_geoseries.to_geopandas()
+>>> geopandas_start_time = time.time()
+>>> geopandas_geoseries.is_simple
+0         True
+1         True
+2         True
+3         True
+4         True
+          ...
+999995    True
+999996    True
+999997    True
+999998    True
+999999    True
+Length: 1000000, dtype: bool
+>>> geopandas_end_time = time.time()
+>>> arctern_time = arctern_end_time - arctern_start_time
+>>> arctern_time
+2.7381417751312256
+>>> geopandas_time = geopandas_end_time - geopandas_start_time
+>>> geopandas_time
+36.56021523475647
+```
+
+在运行上面的代码后， Arctern GeoSeries 执行时间为 2.7381417751312256 秒, GeoPandas GeoSeries 执行时间为 36.56021523475647 秒。
+
+### 2. Arctern GeoSeries 与 GeoPandas GeoSeries 性能对比
+
+根据上面的测试结果计算Arctern GeoSeries 对于 GeoPandas GeoSeries 的加速比。
+
+```python
+>>> speedup = geopandas_time / arctern_time
+>>> speedup
+13.352199497779592
+```
+
+根据结果可知，Arctern GeoSeries 执行速度是 GeoPandas GeoSeries 的13.35倍。
+下面是在 1000000 数据量下，Arctern GeoSeries 与 GeoPandas GeoSeries 的性能对比柱状图。
+
+<img src="GeoSeries10_6.png">
+
+根据柱状图可以看出，在性能上，Arctern 对于 GeoPandas 是很有优势的。 --></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="spatial_relationship_operation.html" class="btn btn-neutral float-right" title="空间关系运算" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="geometric_manipulation.html" class="btn btn-neutral float-left" title="几何体的基本操作" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, zilliz
+      <span class="lastupdated">
+        最后更新于 7月 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

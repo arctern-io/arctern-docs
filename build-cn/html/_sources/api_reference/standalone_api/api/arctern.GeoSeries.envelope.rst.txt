@@ -1,0 +1,6 @@
+arctern.GeoSeries.envelope
+==========================
+
+.. currentmodule:: arctern
+
+.. autoproperty:: GeoSeries.envelope

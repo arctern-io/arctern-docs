@@ -1,0 +1,25 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-03 07:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/hide_source/spark/data_source/file_data.md:1
+msgid "文件的导入与导出"
+msgstr ""
+
+#: ../../source/hide_source/spark/data_source/file_data.md:3
+msgid "Arctern-Spark 借助 Spark 的文件读写功能完成数据的导入和导出。Spark 支持多种数据格式文件导入，以下是针对 CSV、PARQUET、JSON、ORC 等数据格式文件的导入导出例子。更多的文件格式支持请查看 Spark 官方文档"
+msgstr ""

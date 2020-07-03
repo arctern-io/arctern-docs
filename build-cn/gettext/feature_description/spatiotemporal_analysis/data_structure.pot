@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-03 07:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:1
+msgid "数据结构"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:3
+msgid "GeoSeries"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:5
+msgid "GeoSeries 是一个存储和操作几何体数据集的数组。通过扩展 pandas Series，GeoSeries 在內部存储 WKB 格式的对象，并可以像 pandas Series 那样对所存的元素批量地计算和操作。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:7
+msgid "初始化"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:9
+msgid "GeoSeries 在内部以 WKB 格式存储几何体，接受 WKT 或者 WKB 格式的数据作为输入来初始化 GeoSeries 对象。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:11
+msgid "从 WKT 格式数据初始化"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:13
+msgid "你可以将多个 WKT 格式的字符串数据放到一个 list、numpy.ndarray 或者 pandas.Series 中，然后传入 GeoSeries 的构造函数即可创建 GeoSeries 对象。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:31
+msgid "从 WKB 格式数据初始化"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:33
+msgid "你可以将多个 WKB 格式的字符串数据放到一个 list、numpy.ndarray 或者 pandas.Series 中，然后传入 GeoSeries 的构造函数即可创建 GeoSeries 对象。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:44
+msgid "方法概览"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:46
+msgid "GeoSeries 实现了对几何体的常见操作（一元操作和二元操作）。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:48
+msgid "对一个 GeoSeries 对象执行一元操作时，Arctern 对该 GeoSeries 对象中存储的所有几何体执行该操作。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:49
+msgid "对两个 GeoSeries 对象执行二元操作时，Arctern 对这两个 GeoSeries 对象中的每个几何体按照索引一对一地执行操作。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:50
+msgid "对一个 GeoSeries 对象和一个几何体（WKB 格式的对象）执行二元操作时，Arctern 将该 GeoSeries 对象中的每一个几何体和这个几何体执行操作。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:52
+msgid "如果操作的结果是几何体，那么会返回一个新的 GeoSeries 对象，否则返回一个 Pandas Series 对象。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:54
+msgid "以下列举 GeoSeries 的部分方法，包括了对几何体的度量、关系计算和转换等操作。详细的 API 介绍请见 API 参考。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:56
+msgid "几何度量"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:58
+msgid "GeoSeries.is_valid: 检查 GeoSeries 中的每个几何体是否为有效格式，例如 WKT 和 WKB 格式。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:59
+msgid "GeoSeries.area: 计算 GeoSeries 中每个几何体的 2D 笛卡尔（平面）面积。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:60
+msgid "GeoSeries.distance: 对于 GeoSeries 中的每个几何体以及 other 中给出的对应几何体，计算它们之间的最小 2D 笛卡尔（平面）距离。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:61
+msgid "GeoSeries.distance_sphere: 对于 GeoSeries 中的每个几何体以及 other 中给出的对应几何体，计算它们之间的最小球面距离。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:62
+msgid "GeoSeries.hausdorff_distance: 对于 GeoSeries 中的每个几何体以及 other 中给出的对应几何体，计算它们之间的 Hausdorff 距离。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:64
+msgid "几何关系计算"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:66
+msgid "GeoSeries.touches: 对于 GeoSeries 中的每个几何体以及 other 中给出的对应几何体，检测它们是否接触。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:67
+msgid "GeoSeries.overlaps: 对于 GeoSeries 中的每个几何体以及 other 中给出的对应几何体，检查第一个几何体是否与另一个几何体空间重叠。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:68
+msgid "GeoSeries.intersects: 对于 GeoSeries 中的每个几何体以及 other 中给出的对应的几何体，检测它们是否相交。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:70
+msgid "几何转换"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:72
+msgid "GeoSeries.precision_reduce: 对于 GeoSeries 中每个几何体的坐标，将有效数字的位数减少到给定的数字。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:73
+msgid "GeoSeries.make_valid: 在不丢失任何输入顶点的情况下，为 GeoSeries 中的每个几何体创建有效的表示。"
+msgstr ""
+
+#: ../../source/feature_description/spatiotemporal_analysis/data_structure.md:74
+msgid "GeoSeries.curve_to_line: 将每个几何体中的曲线转换为近似线性表示。"
+msgstr ""

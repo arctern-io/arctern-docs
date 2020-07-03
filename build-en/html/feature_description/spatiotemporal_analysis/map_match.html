@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Map match &mdash; Arctern version : 0.2.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Plot methods" href="plot_geometry.html" />
+    <link rel="prev" title="Spatial relationship operations" href="spatial_relationship_operation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../feature_description.html">Feature Description</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="spatiotemporal_analysis.html">Spatiotemporal Analysis</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data_structure.html">Data structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="read_and_write_file.html">Reading and writing files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometric_manipulation.html">Basic manipulations of geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="convert_from_and_to_geopandas_geoseries.html">Convert with GeoPandas GeoSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spatial_relationship_operation.html">Spatial relationship operations</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Map match</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#generating-dataset">Generating dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#find-a-road-near-a-gps-point">Find a road near a GPS point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-the-road-closest-to-a-gps-point">Get the road closest to a GPS point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bind-gps-points-to-the-nearest-roads">Bind GPS points to the nearest roads</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="plot_geometry.html">Plot methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crs_and_transform.html">Coordinate reference system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregation.html">Aggregation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="indexing_selecting_data.html">Indexing and selecting data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/api_reference.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../feature_description.html">Feature Description</a> &raquo;</li>
+        
+          <li><a href="spatiotemporal_analysis.html">Spatiotemporal Analysis</a> &raquo;</li>
+        
+      <li>Map match</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/feature_description/spatiotemporal_analysis/map_match.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="map-match">
+<h1>Map match<a class="headerlink" href="#map-match" title="Permalink to this headline">¶</a></h1>
+<p>Arctern supports analysis of the relationship between GPS data and the road network, such as judging whether there is a road near the GPS point, searching for the road closest to the GPS point, and obtaining the closest mapping point on the road to the GPS point.</p>
+<div class="section" id="generating-dataset">
+<h2>Generating dataset<a class="headerlink" href="#generating-dataset" title="Permalink to this headline">¶</a></h2>
+<p>First, we generate a data set to demonstrate how to use Arctern to analyze the relationship between GPS data and the road network.</p>
+<p><code class="docutils literal notranslate"><span class="pre">roads</span></code>: A collection of three LINESTRING objects created by the GeoSeries constructor to represent three roads.</p>
+<p><code class="docutils literal notranslate"><span class="pre">points</span></code>: A collection of two POINT objects created by the GeoSeries constructor to represent two GPS points.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">roads</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;LINESTRING (-73.9750065 40.7713819,-73.9750065 40.7763781)&quot;</span><span class="p">,</span> <span class="s2">&quot;LINESTRING (-73.9578864 40.7724317,-73.987674 40.7724317)&quot;</span><span class="p">,</span> <span class="s2">&quot;LINESTRING (-73.9578864 40.7744317,-73.987674 40.7744317)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">points</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT (-73.9780065 40.7748119)&quot;</span><span class="p">,</span> <span class="s2">&quot;POINT (-73.9802864 40.7728317)&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="find-a-road-near-a-gps-point">
+<h2>Find a road near a GPS point<a class="headerlink" href="#find-a-road-near-a-gps-point" title="Permalink to this headline">¶</a></h2>
+<p>The <a target="_blank" class="reference external" href="../../api_reference/map_match/api/arctern.near_road.html"><code class="docutils literal notranslate"><span class="pre">near_road</span></code></a> method checks whether there is a road within a fixed range near the GPS point. Suppose <code class="docutils literal notranslate"><span class="pre">points</span></code> are the pick-up locations of taxis, and <code class="docutils literal notranslate"><span class="pre">roads</span></code> is the road network information of the corresponding city. Then, if some pick-up locations are not on the road or deviate too far from the road, then these positions can be regarded as noise.</p>
+<blockquote>
+<div><p><strong>Note:</strong> The coordinate reference system of the GPS points and road network must be &quot;EPSG:4326&quot;.</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">arctern</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">points</span>
+<span class="go">0    POINT (-73.9780065 40.7748119)</span>
+<span class="go">1    POINT (-73.9802864 40.7728317)</span>
+<span class="go">dtype: GeoDtype</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Check whether there is any road within 40m of the GPS point.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bool_rst</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">near_road</span><span class="p">(</span><span class="n">roads</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="mi">43</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bool_rst</span>
+<span class="go">0     True</span>
+<span class="go">1    False</span>
+<span class="go">dtype: bool</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Select a GPS point near the road.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">point_rst</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">bool_rst</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># POINT (-73.962726 40.7601753) is filtered because there is no road nearby.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">point_rst</span>
+<span class="go">0    POINT (-73.9780065 40.7748119)</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-the-road-closest-to-a-gps-point">
+<h2>Get the road closest to a GPS point<a class="headerlink" href="#get-the-road-closest-to-a-gps-point" title="Permalink to this headline">¶</a></h2>
+<p>The <a target="_blank" class="reference external" href="../../api_reference/map_match/api/arctern.nearest_road.html"><code class="docutils literal notranslate"><span class="pre">nearest_road</span></code></a> method gets the road closest to the GPS point. Its operation logic is as follows:</p>
+<ol class="simple">
+<li><p>Create an index tree (Rtree) based on road network information.</p></li>
+<li><p>Find all roads near a GPS point based on the index tree, and select the road closest to the GPS point.</p></li>
+</ol>
+<blockquote>
+<div><p><strong>Note:</strong> The coordinate reference system of the GPS points and road network must be &quot;EPSG:4326&quot;.</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">arctern</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Print road information.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">roads</span>
+<span class="go">0     LINESTRING (-73.9750065 40.7713819,-73.9750065 40.7763781)</span>
+<span class="go">1     LINESTRING (-73.9578864 40.7724317,-73.987674 40.7724317)</span>
+<span class="go">2     LINESTRING (-73.9578864 40.7744317,-73.987674 40.7744317)</span>
+<span class="go">dtype: GeoDtype</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Find the road closest to the GPS point.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">roads_wkb_rst</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">nearest_road</span><span class="p">(</span><span class="n">roads</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Convert roads_wkb_rst from WKB format to GeoSeries format (human readable).</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nearest_roads</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">(</span><span class="n">roads_wkb_rst</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Print GPS points.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">points</span>
+<span class="go">0    POINT (-73.9780065 40.7748119)</span>
+<span class="go">1    POINT (-73.9802864 40.7728317)</span>
+<span class="go">dtype: GeoDtype</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># View the nearest road to each GPS point</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nearest_roads</span>
+<span class="go">0    LINESTRING (-73.9578864 40.7744317,-73.987674 40.7744317)</span>
+<span class="go">1    LINESTRING (-73.9578864 40.7724317,-73.987674 40.7724317)</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bind-gps-points-to-the-nearest-roads">
+<h2>Bind GPS points to the nearest roads<a class="headerlink" href="#bind-gps-points-to-the-nearest-roads" title="Permalink to this headline">¶</a></h2>
+<p>The <a target="_blank" class="reference external" href="../../api_reference/map_match/api/arctern.nearest_location_on_road.html"><code class="docutils literal notranslate"><span class="pre">nearest_location_on_road</span></code></a> method binds GPS points to the nearest roads. Suppose a GPS point represents the location of a taxi. Due to GPS accuracy problems, there may be some deviations of the location of GPS points. So some GPS points may fall into nearby buildings or rivers. In this case, we need to use the <a target="_blank" class="reference external" href="../../api_reference/map_match/api/arctern.nearest_location_on_road.html"><code class="docutils literal notranslate"><span class="pre">nearest_location_on_road</span></code></a> method to correct the position of these GPS points.</p>
+<blockquote>
+<div><p><strong>Note:</strong> The coordinate reference system of the GPS points and road network must be &quot;EPSG:4326&quot;.</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">arctern</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Bind GPS points to the closest roads.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">points_wkb_rst</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">nearest_location_on_road</span><span class="p">(</span><span class="n">roads</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Convert points_wkb_rst from WKB format to GeoSeries format (human readable).</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nearest_location</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">(</span><span class="n">points_wkb_rst</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Print the initial positions of the GPS points.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">points</span>
+<span class="go">0    POINT (-73.9780065 40.7748119)</span>
+<span class="go">1    POINT (-73.9802864 40.7728317)</span>
+<span class="go">dtype: GeoDtype</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Check the positions of the corrected GPS points.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nearest_location</span>
+<span class="go">0    POINT (-73.9780065 40.7744317)</span>
+<span class="go">1    POINT (-73.9802864 40.7724317)</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+<p>The following figures shows the topological relations between the GPS points and roads before and after correction. The figures shows that <a target="_blank" class="reference external" href="../../api_reference/map_match/api/arctern.nearest_location_on_road.html"><code class="docutils literal notranslate"><span class="pre">nearest_location_on_road</span></code></a> has successfully bound those GPS points that deviated from the road to the nearest road.</p>
+<p><img alt="../../_images/topo_before_correction.png" src="../../_images/topo_before_correction.png" />
+<img alt="../../_images/topo_after_correction.png" src="../../_images/topo_after_correction.png" /></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="plot_geometry.html" class="btn btn-neutral float-right" title="Plot methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="spatial_relationship_operation.html" class="btn btn-neutral float-left" title="Spatial relationship operations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Jul 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

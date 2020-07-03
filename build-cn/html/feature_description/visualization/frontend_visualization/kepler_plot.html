@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>使用 Kepler.gl 展示时空信息 &mdash; Arctern version : 0.2.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="后端渲染" href="../backend_visualization/backend_visualization.html" />
+    <link rel="prev" title="前端渲染" href="frontend_visualization.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../feature_description.html">功能说明</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../spatiotemporal_analysis/spatiotemporal_analysis.html">时空数据分析</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../visualization.html">可视化</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../how_to_visualize.html">如何渲染时空数据</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="frontend_visualization.html">前端渲染</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">使用 Kepler.gl 展示时空信息</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../backend_visualization/backend_visualization.html">后端渲染</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_reference/api_reference.html">API 参考</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../feature_description.html">功能说明</a> &raquo;</li>
+        
+          <li><a href="../visualization.html">可视化</a> &raquo;</li>
+        
+          <li><a href="frontend_visualization.html">前端渲染</a> &raquo;</li>
+        
+      <li>使用 Kepler.gl 展示时空信息</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/feature_description/visualization/frontend_visualization/kepler_plot.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="kepler-gl">
+<h1>使用 Kepler.gl 展示时空信息<a class="headerlink" href="#kepler-gl" title="永久链接至标题">¶</a></h1>
+<p><a class="reference external" href="https://kepler.gl/">Kepler.gl</a> 是一款功能强大的开源地理空间数据可视化工具。你只需在 Jupyter Notebook 中导入 Kepler.gl，就可以获得生动且直观的时空数据渲染效果。本文介绍如何使用 Kepler.gl 展示 Arctern 输出的时空信息。</p>
+<div class="section" id="jupyter-notebook-kepler-gl">
+<h2>安装 Jupyter Notebook 和 Kepler.gl<a class="headerlink" href="#jupyter-notebook-kepler-gl" title="永久链接至标题">¶</a></h2>
+<p>在后续步骤中，你需要使用 Jupyter Notebook 运行代码，以及使用 Kepler.gl 进行空间数据可视化。如果你的计算机未安装 Jupyter 和 Kepler.gl，请执行以下命令安装这两个工具：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 进入 Conda 环境</span>
+$ conda activate arctern_env
+
+<span class="c1"># 安装 Jupyter 和 Kepler.gl</span>
+$ conda install -c conda-forge jupyterlab
+$ pip install keplergl
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>加载 Kepler.gl 地图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>使用 <a class="reference external" href="https://docs.kepler.gl/docs/keplergl-jupyter#1-load-keplergl-map"><code class="docutils literal notranslate"><span class="pre">KeplerGl</span></code></a> 创建一个地图对象 <code class="docutils literal notranslate"><span class="pre">map_1</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># 加载一个空地图</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">keplergl</span> <span class="kn">import</span> <span class="n">KeplerGl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">map_1</span> <span class="o">=</span> <span class="n">KeplerGl</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">map_1</span>
+</pre></div>
+</div>
+<p><img alt="load_map" src="../../../_images/load_map.png" /></p>
+</div>
+<div class="section" id="id2">
+<h2>添加数据<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>创建两个 LINESTRING 对象以表示两条道路，并将这两条道路的地理信息保存到 <code class="docutils literal notranslate"><span class="pre">df</span></code> 中。然后使用 <a class="reference external" href="https://docs.kepler.gl/docs/keplergl-jupyter#add_data"><code class="docutils literal notranslate"><span class="pre">add_data</span></code></a> 将 <code class="docutils literal notranslate"><span class="pre">df</span></code> 作为输入数据加载到地图上。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;geos&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;LINESTRING (-73.996324 40.753388, -73.972088 40.743215)&#39;</span><span class="p">,</span> <span class="s1">&#39;LINESTRING (-73.989555 40.741531, -73.973952 40.762962)&#39;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">map_1</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;data_1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">map_1</span>
+</pre></div>
+</div>
+<p><img alt="add_data" src="../../../_images/add_data.png" /></p>
+</div>
+<div class="section" id="id3">
+<h2>参考<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>更多示例及接口说明请参考 <a class="reference external" href="https://docs.kepler.gl/docs/keplergl-jupyter">Kepler.gl 官网关于 Jupyter Notebook 的使用介绍</a>。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../backend_visualization/backend_visualization.html" class="btn btn-neutral float-right" title="后端渲染" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="frontend_visualization.html" class="btn btn-neutral float-left" title="前端渲染" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, zilliz
+      <span class="lastupdated">
+        最后更新于 7月 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

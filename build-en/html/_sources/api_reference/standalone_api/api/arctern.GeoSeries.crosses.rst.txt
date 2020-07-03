@@ -1,0 +1,6 @@
+arctern.GeoSeries.crosses
+=========================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.crosses

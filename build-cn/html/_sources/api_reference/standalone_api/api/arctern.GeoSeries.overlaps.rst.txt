@@ -1,0 +1,6 @@
+arctern.GeoSeries.overlaps
+==========================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.overlaps

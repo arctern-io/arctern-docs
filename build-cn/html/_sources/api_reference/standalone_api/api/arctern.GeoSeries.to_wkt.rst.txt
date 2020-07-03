@@ -1,0 +1,6 @@
+arctern.GeoSeries.to\_wkt
+=========================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.to_wkt

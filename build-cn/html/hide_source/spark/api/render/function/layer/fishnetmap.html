@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fishnet_map &mdash; Arctern version : 0.2.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../../" src="../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../_static/jquery.js"></script>
+        <script src="../../../../../../_static/underscore.js"></script>
+        <script src="../../../../../../_static/doctools.js"></script>
+        <script src="../../../../../../_static/language_data.js"></script>
+        <script src="../../../../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../../../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../api_reference/api_reference.html">API 参考</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>fishnet_map</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../../../_sources/hide_source/spark/api/render/function/layer/fishnetmap.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fishnet-map">
+<h1>fishnet_map<a class="headerlink" href="#fishnet-map" title="永久链接至标题">¶</a></h1>
+<p>绘制一个渔网图。需要先后调用 vega_fishnetmap 和 fishnet_map 两个接口。首先使用 vega_fishnetmap 构建描述渔网图渲染样式的 VegaFishNetMap 对象，然后使用 fishnet_map 渲染图像。</p>
+<div class="section" id="vega-fishnetmap">
+<h2>vega_fishnetmap<a class="headerlink" href="#vega-fishnetmap" title="永久链接至标题">¶</a></h2>
+<p><strong>arctern.util.vega.vega_fishnetmap(width,height,bounding_box,color_gradient,
+cell_size,cell_spacing,opacity,coordinate_system,aggregation_type)</strong></p>
+<p>    根据给定的配置参数，构建描述渔网图渲染样式的 VegaFishNetMap 对象。</p>
+<p>    参数</p>
+<p>        * width(int) – 图片宽度，单位为像素个数。</p>
+<p>        * height(int) – 图片高度，单位为像素个数。</p>
+<p>        * bounding_box(list) – 图片对应的地理坐标区域，以 [x_min, y_min, x_max, y_max] 的形式表示一个矩形区域。图片左下角的像素坐标 (0, 0) 对应地理坐标 (x_min, y_min) ，图片右上角的像素坐标 (width, height) 对应地理坐标 (x_max, y_max)。</p>
+<p>        * color_gradient(list) – 渔网网格的颜色渐变范围，表示形式为 [“hex_color”] 或 [“hex_color1”, “hex_color2”]。当形式为[“hex_color”] 时所有网格的颜色相同。当形式为[“hex_color1”, “hex_color2”] 时网格的颜色由输入数据中一列的值（权重）决定，且颜色在 “hex_color1” ~ “hex_color2” 之间变化。目前仅支持默认值 [“#0000FF”, “#FF0000”]。</p>
+<p>        * cell_size(int) – 可选参数，表示渔网网格的边长，单位为像素，默认值为 4。</p>
+<p>        * cell_spacing(int) – 可选参数，表示渔网网格之间的间隔，单位为像素，默认值为 1。</p>
+<p>        * opacity(float) – 可选参数，表示渔网网格的不透明度，范围为 0.0 ~ 1.0，默认值为 1.0。</p>
+<p>        * coordinate_system(str) – 可选参数，表示输入数据所属的地理坐标系统，默认值为”EPSG:3857”，当前支持的地理坐标系统请参照 <a class="reference external" href="https://spatialreference.org/">https://spatialreference.org/</a>。</p>
+<p>        * aggregation_type(str) – 可选参数，表示输入数据到渔网网格权重的聚合方式，默认值为”sum”。</p>
+<p>    返回值类型</p>
+<p>        arctern.util.vega.fishnetmap.vega_fishnetmap.VegaFishNetMap</p>
+<p>    返回</p>
+<p>        用于描述渲染样式的 VegaFishNetMap 对象。</p>
+</div>
+<div class="section" id="id1">
+<h2>fishnet_map<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><strong>arctern_pyspark.fishnet_map(vega, points, color_weights)</strong></p>
+<p>    绘制渔网图，权重用于决定渔网网格的颜色。</p>
+<p>    参数</p>
+<p>        * vega(VegaFishNetMap) – VegaFishNetMap 对象。</p>
+<p>        * points(WKB) – 数据点的位置，格式为 WKB。</p>
+<p>        * color_weights(int|float) – 数据点的颜色权重。</p>
+<p>    返回值类型</p>
+<p>        bytes</p>
+<p>    返回</p>
+<p>        base64 编码的 PNG 图片。</p>
+<div class="section" id="id2">
+<h3>示例:<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arctern.util</span> <span class="kn">import</span> <span class="n">save_png</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arctern.util.vega</span> <span class="kn">import</span> <span class="n">vega_fishnetmap</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arctern_pyspark</span> <span class="kn">import</span> <span class="n">register_funcs</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arctern_pyspark</span> <span class="kn">import</span> <span class="n">fishnetmap</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
+    <span class="o">&gt;&gt;&gt;</span> 
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">appName</span><span class="p">(</span><span class="s2">&quot;Python Arrow-in-Spark example&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">spark</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;spark.sql.execution.arrow.pyspark.enabled&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> 
+    <span class="o">&gt;&gt;&gt;</span> <span class="c1"># test_data.csv下载链接: https://github.com/zilliztech/arctern-resources/raw/benchmarks/benchmarks/dataset/layer_rendering_test_data/test_data.csv</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">table_df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;delimiter&quot;</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">schema</span><span class="p">(</span><span class="s2">&quot;longitude double, latitude double, color_weights double, size_weights double, region_boundaries string&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;file:///path/to/test_data.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">table_df</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s2">&quot;test_table&quot;</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> 
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">register_funcs</span><span class="p">(</span><span class="n">spark</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> 
+    <span class="o">&gt;&gt;&gt;</span> <span class="c1"># df 是包含 2 列数据的 pyspark.Dataframe，第一列为 WKB 类型的points，第二列为权重值</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="c1"># 根据 color_weights 绘制渔网图</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;select ST_Point(longitude, latitude) as point, color_weights from test_table where ST_Within(ST_Point(longitude, latitude), ST_GeomFromText(&#39;POLYGON ((-74.01424568752932 40.72759334104623, -74.01424568752932 40.76721122683304, -73.96056823889673 40.76721122683304, -73.96056823889673 40.72759334104623, -74.01424568752932 40.72759334104623))&#39;))&quot;</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">vega</span> <span class="o">=</span> <span class="n">vega_fishnetmap</span><span class="p">(</span><span class="mi">1824</span><span class="p">,</span> <span class="mi">1777</span><span class="p">,</span> <span class="n">bounding_box</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">74.01424568752932</span><span class="p">,</span> <span class="mf">40.72759334104623</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.96056823889673</span><span class="p">,</span> <span class="mf">40.76721122683304</span><span class="p">],</span> <span class="n">cell_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">cell_spacing</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">res</span> <span class="o">=</span> <span class="n">fishnetmap</span><span class="p">(</span><span class="n">vega</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">save_png</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="s1">&#39;/tmp/fishnetmap.png&#39;</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> 
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;show tables&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">spark</span><span class="o">.</span><span class="n">catalog</span><span class="o">.</span><span class="n">dropGlobalTempView</span><span class="p">(</span><span class="s2">&quot;test_table&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>渲染结果如下：
+<img alt="hide_source/spark/api/render/function/layer/../../../../../../../img/render/spark/fishnetmap.png" src="hide_source/spark/api/render/function/layer/../../../../../../../img/render/spark/fishnetmap.png" /></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, zilliz
+      <span class="lastupdated">
+        最后更新于 7月 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

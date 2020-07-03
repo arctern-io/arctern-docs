@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JDBC 连接 &mdash; Arctern version : 0.2.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_reference/api_reference.html">API 参考</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>JDBC 连接</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/hide_source/spark/data_source/jdbc_data.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="jdbc">
+<h1>JDBC 连接<a class="headerlink" href="#jdbc" title="永久链接至标题">¶</a></h1>
+<p>Arctern-Spark 可借助 Spark 的 JDBC 连接功能，完成数据从数据库的导入和导出。以下例子将展示如何利用 JDBC 从 PostGIS 中导入数据，更多详细信息请查看 <a class="reference external" href="https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html">Spark 官方文档</a>。</p>
+<div class="section" id="postgis">
+<h2>PostGIS 配置信息<a class="headerlink" href="#postgis" title="永久链接至标题">¶</a></h2>
+<p>假设 PostGIS 的相关配置如下：</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="left">配置</th>
+<th align="left">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">IP address</td>
+<td align="left">172.17.0.2</td>
+</tr>
+<tr>
+<td align="left">port</td>
+<td align="left">5432</td>
+</tr>
+<tr>
+<td align="left">database name</td>
+<td align="left">test</td>
+</tr>
+<tr>
+<td align="left">user name</td>
+<td align="left">acterner</td>
+</tr>
+<tr>
+<td align="left">password</td>
+<td align="left">acterner</td>
+</tr>
+</tbody>
+</table><p>使用如下命令测试 postgis 连接：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ psql <span class="nb">test</span> -h <span class="m">172</span>.17.0.2  -p <span class="m">5432</span> -U arcterner
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>JDBC 数据导入示例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>在提交 Spark 任务时，需要指定 JDBC 驱动。请从 <a class="reference external" href="https://jdbc.postgresql.org/download.html">PostgreSQL 官网</a>下载其最新的 JDBC 驱动。以下示例使用的的驱动为 <code class="docutils literal notranslate"><span class="pre">postgresql-42.2.11.jar</span></code>。</p>
+<p>以下命令为 Arctern-Spark 通过 JDBC 从 PostGIS 导入数据的示例：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./bin/spark-submit  --driver-class-path ~/postgresql-42.2.11.jar --jars ~/postgresql-42.2.11.jar ~/query_postgis.py 
+</pre></div>
+</div>
+<p>其中，<code class="docutils literal notranslate"><span class="pre">query_postgis.py</span></code> 的具体代码如下：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
+<span class="kn">from</span> <span class="nn">arctern_pyspark</span> <span class="kn">import</span> <span class="n">register_funcs</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="c1"># 创建 SparkSession 并对其进行配置</span>
+    <span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span> \
+        <span class="o">.</span><span class="n">builder</span> \
+        <span class="o">.</span><span class="n">appName</span><span class="p">(</span><span class="s2">&quot;polygon test&quot;</span><span class="p">)</span> \
+        <span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
+    <span class="n">spark</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;spark.sql.execution.arrow.pyspark.enabled&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span>
+
+    <span class="c1"># 注册 Arctern-Spark 提供的函数</span>
+    <span class="n">register_funcs</span><span class="p">(</span><span class="n">spark</span><span class="p">)</span>
+    
+    <span class="c1"># 数据导入</span>
+    <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;jdbc&quot;</span><span class="p">)</span> \
+              <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">,</span> <span class="s2">&quot;jdbc:postgresql://172.17.0.2:5432/test?user=arcterner&amp;password=arcterner&quot;</span><span class="p">)</span> \
+              <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;query&quot;</span><span class="p">,</span> <span class="s2">&quot;select st_astext(geos) as geos from simple&quot;</span><span class="p">)</span> \
+              <span class="o">.</span><span class="n">load</span><span class="p">()</span> \
+              <span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s2">&quot;simple&quot;</span><span class="p">)</span>
+
+    <span class="c1"># 对处理数据并打印结果</span>
+    <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;select ST_IsSimple(ST_GeomFromText(geos)) from simple&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># 数据导出</span>
+    <span class="n">spark</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;jdbc&quot;</span><span class="p">)</span> \
+               <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">,</span> <span class="s2">&quot;jdbc:postgresql://172.17.0.2:5432/test?user=arcterner&amp;password=arcterner&quot;</span><span class="p">)</span> \
+               <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;query&quot;</span><span class="p">,</span> <span class="s2">&quot;select st_astext(geos) as geos from simple&quot;</span><span class="p">)</span> \
+               <span class="o">.</span><span class="n">load</span><span class="p">()</span> \
+               <span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="n">spark</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>上述代码的执行结果如下：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">+----------------------------------+</span>                                            
+<span class="o">|</span><span class="n">ST_IsSimple</span><span class="p">(</span><span class="n">ST_GeomFromText</span><span class="p">(</span><span class="n">geos</span><span class="p">))</span><span class="o">|</span>
+<span class="o">+----------------------------------+</span>
+<span class="o">|</span><span class="n">true</span>                              <span class="o">|</span>
+<span class="o">|</span><span class="n">true</span>                              <span class="o">|</span>
+<span class="o">|</span><span class="n">false</span>                             <span class="o">|</span>
+<span class="o">|</span><span class="n">true</span>                              <span class="o">|</span>
+<span class="o">+----------------------------------+</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, zilliz
+      <span class="lastupdated">
+        最后更新于 7月 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

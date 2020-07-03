@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>基于 Docker Compose 部署 &mdash; Arctern version : 0.2.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_reference/api_reference.html">API 参考</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>基于 Docker Compose 部署</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/hide_source/spark/installation_and_deployment/deploy-with-docker-compose-cn.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="docker-compose">
+<h1>基于 Docker Compose 部署<a class="headerlink" href="#docker-compose" title="永久链接至标题">¶</a></h1>
+<p>本文档介绍如何使用 Docker Compose 在单台服务器上快速部署伪分布式 Arctern-Spark 实验环境，供你体验 Arctern-Spark 接口的基本使用。</p>
+<p><span style="color:red">强烈建议：本文档介绍的部署方案仅供示例和体验，请勿用于生产环境中的 Arctern-Spark 部署。</span></p>
+<div class="section" id="id1">
+<h2>安装前提<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h3>系统要求<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作系统</th>
+<th>版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CentOS</td>
+<td>7 或以上</td>
+</tr>
+<tr>
+<td>Ubuntu LTS</td>
+<td>16.04 或以上</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="id3">
+<h3>软件要求<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>软件名称</th>
+<th>版本</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Docker</td>
+<td>17.06.0 或以上</td>
+<td>必要</td>
+</tr>
+<tr>
+<td>Docker compose</td>
+<td>1.17.1 或以上</td>
+<td>必要</td>
+</tr>
+<tr>
+<td>Nvidia Docker</td>
+<td>Version 2</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="section" id="docker">
+<h2>配置 Docker<a class="headerlink" href="#docker" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h3>确认 Docker 运行状态<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>执行以下命令确认 Docker daemon 运行状态：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker info
+</pre></div>
+</div>
+<p>如果上述命令未能正常打印 Docker 相关信息，请启动 <strong>Docker</strong> daemon。</p>
+<blockquote>
+<div><p><strong>注意：</strong> 在 Linux 环境下，Docker 命令需要 <code class="docutils literal notranslate"><span class="pre">sudo</span></code> 权限。如需要在一般权限下运行 Docker 命令，请创建 <code class="docutils literal notranslate"><span class="pre">docker</span></code> 组并添加用户。详情请参阅 <a class="reference external" href="https://docs.docker.com/install/linux/linux-postinstall/">Linux 安装后步骤</a>。</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="nvidia-docker">
+<h2>配置 NVIDIA Docker （可选）<a class="headerlink" href="#nvidia-docker" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h3>确认 NVIDIA Docker状态<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>如果需要运行 GPU 版本 Arctern-Spark，需<a class="reference external" href="https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)">安装 NVIDIA Docker Version 2.0</a>。</p>
+<p>执行以下命令确认 NVIDIA Docker 是否安装成功。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ nvidia-docker version
+NVIDIA Docker: <span class="m">2</span>.0.3
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>设置默认运行时环境<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>编辑 <code class="docutils literal notranslate"><span class="pre">/etc/docker/daemon.json</span></code> 文件，并添加“default-runtime“相关配置:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;default-runtime&quot;</span><span class="p">:</span> <span class="s2">&quot;nvidia&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;runtimes&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;nvidia&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;nvidia-container-runtime&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;runtimeArgs&quot;</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>执行以下命令重新加载 Docker：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl daemon-reload
+$ sudo systemctl restart docker
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>安装并配置 Docker Compose<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id8">
+<h3>安装 Docker Compose<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://docs.docker.com/compose/install/">安装 Docker Compose</a>，并执行以下命令确认 Docker Compose 的版本信息：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker-compose version
+</pre></div>
+</div>
+</div>
+<div class="section" id="docker-compose-yml">
+<h3>下载 docker-compose.yml 文件<a class="headerlink" href="#docker-compose-yml" title="永久链接至标题">¶</a></h3>
+<ol class="simple">
+<li><p>创建 Docker Compose 工作目录</p></li>
+<li><p>下载 <a class="reference external" href="https://raw.githubusercontent.com/zilliztech/arctern-docs/branch-0.1.x/scripts/docker-compose.yml">docker-compose.yml</a> 文件并保存至该目录。</p></li>
+</ol>
+<blockquote>
+<div><p>如果需要运行 GPU 版本 Arctern-Spark，请将 docker-compose.yml 文件中的两处 <code class="docutils literal notranslate"><span class="pre">ARCTERN_REPO:-arcternio/arctern-spark</span></code> 修改为 <code class="docutils literal notranslate"><span class="pre">ARCTERN_REPO:-arcternio/arctern-spark-gpu</span></code>。</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>部署验证<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id10">
+<h3>启动分布式集群<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>在 Docker Compose 工作目录中执行以下命令启动分布式集群：</p>
+<p>前台执行：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo docker-compose up
+</pre></div>
+</div>
+<p>后台执行：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo docker-compose up -d
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>下载并执行验证代码<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<p>执行以下命令查看 Docker 容器的运行情况：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo docker ps    
+<span class="c1"># 输出如下：</span>
+CONTAINER ID        IMAGE                                                                  COMMAND                  CREATED             STATUS              PORTS                                            NAMES
+acbc7dfa299f        registry.zilliz.com/arctern/arctern-spark:master-ubuntu18.04-release   <span class="s2">&quot;/entrypoint.sh /run…&quot;</span>   About an hour ago   Up About an hour                                                     docker_spark-worker_1
+b7c75a456982        registry.zilliz.com/arctern/arctern-spark:master-ubuntu18.04-release   <span class="s2">&quot;/entrypoint.sh /run…&quot;</span>   About an hour ago   Up About an hour    <span class="m">0</span>.0.0.0:7077-&gt;7077/tcp, <span class="m">0</span>.0.0.0:8080-&gt;8080/tcp   docker_spark-master_1
+</pre></div>
+</div>
+<p>在 Docker 容器的运行情况中查找 NAMES 字段为“docker_spark-master_1” 的条目（在上方示例中，其 ID 为<code class="docutils literal notranslate"><span class="pre">b7c75a456982</span></code>），并执行以下命令进入 master 容器：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo docker <span class="nb">exec</span> -it b7c75a456982 bash
+</pre></div>
+</div>
+<p>下载测试脚本：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /tmp
+$ wget https://raw.githubusercontent.com/zilliztech/arctern/v0.1.0/spark/pyspark/examples/gis/spark_udf_ex.py
+</pre></div>
+</div>
+<p>通过 <code class="docutils literal notranslate"><span class="pre">spark-submit</span></code> 运行脚本：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /tmp
+$ spark-submit --master spark://spark-master:7077 spark_udf_ex.py
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>注意：</strong> 在 <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> 文件中已将 master 容器的 IP 地址映射为了 <code class="docutils literal notranslate"><span class="pre">spark-master</span></code>，因此上述命令中可用 <code class="docutils literal notranslate"><span class="pre">spark-master</span></code> 代替 master 容器的 IP 地址。另外，<code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> 文件中 master容器的 <code class="docutils literal notranslate"><span class="pre">7077</span></code> 端口映射到了宿主机的端口（<code class="docutils literal notranslate"><span class="pre">7077</span></code>-&gt;<code class="docutils literal notranslate"><span class="pre">7077</span></code>），因此 <code class="docutils literal notranslate"><span class="pre">spark-master</span></code> 也可以替换为宿主机的 IP 地址。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id12">
+<h3>关闭分布式集群<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<p>在 Docker Compose 工作目录中执行以下命令关闭分布式集群：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo docker-compose down
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, zilliz
+      <span class="lastupdated">
+        最后更新于 7月 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

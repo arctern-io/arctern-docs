@@ -1,0 +1,6 @@
+arctern.GeoSeries.curve\_to\_line
+=================================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.curve_to_line

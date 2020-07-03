@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arctern_pyspark.plot &mdash; Arctern version : 0.2.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/api_reference.html">API 参考</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">模块代码</a> &raquo;</li>
+        
+      <li>arctern_pyspark.plot</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>arctern_pyspark.plot 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (C) 2019-2020 Zilliz. All rights reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+
+<div class="viewcode-block" id="plot"><a class="viewcode-back" href="../../hide_source/spark/api/render/function/plot/Spark_Plot.html#arctern_pyspark.plot.plot">[文档]</a><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">geoms</span><span class="p">,</span> <span class="o">**</span><span class="n">style_kwds</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plot a collection of geometries to `ax`. Parameters &#39;linewidth&#39;, &#39;linestyle&#39;, &#39;edgecolor&#39;,</span>
+<span class="sd">    &#39;facecolor&#39;, &#39;color&#39;, &#39;marker&#39;, &#39;markersize&#39; are used to describe the style of plotted figure.</span>
+
+<span class="sd">    For geometry types `Polygon` and `MultiPolygon`, only &#39;linewidth&#39;, &#39;linestyle&#39;, &#39;edgecolor&#39;,</span>
+<span class="sd">    &#39;facecolor&#39; are effective.</span>
+
+<span class="sd">    For geometry types `Linestring` and `MultiLinestring`, only &#39;color&#39;, &#39;linewidth&#39;, &#39;linestyle&#39; are effective.</span>
+
+<span class="sd">    For geometry types `Point` and `MultiPoint`, only &#39;color&#39;, &#39;marker&#39;, &#39;markersize&#39; are effective.</span>
+
+<span class="sd">    :type ax: matplotlib.axes.Axes</span>
+<span class="sd">    :param ax: The axes where geometries will be plotted.</span>
+
+<span class="sd">    :type geoms: Series or DataFrame</span>
+<span class="sd">    :param geoms: sequence of geometries.</span>
+
+<span class="sd">    :type linewidth: list(float)</span>
+<span class="sd">    :param linewidth: The width of line, the default value is 1.0.</span>
+
+<span class="sd">    :type linestyle: list(string)</span>
+<span class="sd">    :param linestyle: The style of the line， the default value is &#39;-&#39;.</span>
+
+<span class="sd">    :type edgecolor: list(string)</span>
+<span class="sd">    :param edgecolor: The edge color of the geometry, the default value is &#39;black&#39;.</span>
+
+<span class="sd">    :type facecolor: list(string)</span>
+<span class="sd">    :param facecolor: The color of the face of the geometry, the default value is &#39;C0&#39;.</span>
+
+<span class="sd">    :type color: list(string)</span>
+<span class="sd">    :param color: The color of the geometry, the default value is &#39;C0&#39;.</span>
+
+<span class="sd">    :type marker: string</span>
+<span class="sd">    :param marker: The shape of point, the default value is &#39;o&#39;.</span>
+
+<span class="sd">    :type markersize: double</span>
+<span class="sd">    :param markersize: The size of points, the default value is 6.0.</span>
+
+<span class="sd">    :example:</span>
+<span class="sd">       &gt;&gt;&gt; from arctern_pyspark import register_funcs</span>
+<span class="sd">       &gt;&gt;&gt; from pyspark.sql.types import *</span>
+<span class="sd">       &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">       &gt;&gt;&gt; from arctern_pyspark import plot</span>
+<span class="sd">       &gt;&gt;&gt; spark.conf.set(&quot;spark.sql.execution.arrow.pyspark.enabled&quot;, &quot;true&quot;)</span>
+<span class="sd">       &gt;&gt;&gt; raw_data = []</span>
+<span class="sd">       &gt;&gt;&gt; raw_data.append((&#39;point(0 0)&#39;,))</span>
+<span class="sd">       &gt;&gt;&gt; raw_data.append((&#39;linestring(0 10, 5 5, 10 0)&#39;,))</span>
+<span class="sd">       &gt;&gt;&gt; raw_data.append((&#39;polygon((2 2,2 3,3 3,3 2,2 2))&#39;,))</span>
+<span class="sd">       &gt;&gt;&gt; raw_data.append((&quot;GEOMETRYCOLLECTION(&quot;</span>
+<span class="sd">                           &quot;polygon((1 1,1 2,2 2,2 1,1 1)),&quot;</span>
+<span class="sd">                           &quot;linestring(0 1, 5 6, 10 11),&quot;</span>
+<span class="sd">                           &quot;POINT(4 7))&quot;,))</span>
+<span class="sd">       &gt;&gt;&gt; raw_schema = StructType([StructField(&#39;geo&#39;, StringType(),False)])</span>
+<span class="sd">       &gt;&gt;&gt; df = spark.createDataFrame(data=raw_data, schema=raw_schema)</span>
+<span class="sd">       &gt;&gt;&gt; df.createOrReplaceTempView(&quot;geoms&quot;)</span>
+<span class="sd">       &gt;&gt;&gt; df2=spark.sql(&quot;select st_geomfromtext(geo) from geoms&quot;)</span>
+<span class="sd">       &gt;&gt;&gt; fig, ax = plt.subplots()</span>
+<span class="sd">       &gt;&gt;&gt; plot(ax, df2,</span>
+<span class="sd">                 color=[&#39;orange&#39;, &#39;green&#39;],</span>
+<span class="sd">                 marker=&#39;^&#39;,</span>
+<span class="sd">                 markersize=100,</span>
+<span class="sd">                 linewidth=[None, 7, 8],</span>
+<span class="sd">                 linestyle=[None, &#39;dashed&#39;, &#39;dashdot&#39;],</span>
+<span class="sd">                 edgecolor=[None, None, &#39;red&#39;],</span>
+<span class="sd">                 facecolor=[None, None, &#39;black&#39;])</span>
+<span class="sd">       &gt;&gt;&gt; ax.grid()</span>
+<span class="sd">       &gt;&gt;&gt; fig.savefig(&#39;/tmp/plot_test.png&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">pyspark.sql.dataframe</span>
+    <span class="kn">import</span> <span class="nn">arctern</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">geoms</span><span class="p">,</span> <span class="n">pyspark</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="n">dataframe</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+        <span class="n">pandas_df</span> <span class="o">=</span> <span class="n">geoms</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+        <span class="n">arctern</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">pandas_df</span><span class="p">,</span> <span class="o">**</span><span class="n">style_kwds</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, zilliz
+      <span class="lastupdated">
+        最后更新于 7月 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

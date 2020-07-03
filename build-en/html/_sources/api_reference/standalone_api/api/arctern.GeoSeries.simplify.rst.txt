@@ -1,0 +1,6 @@
+arctern.GeoSeries.simplify
+==========================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.simplify

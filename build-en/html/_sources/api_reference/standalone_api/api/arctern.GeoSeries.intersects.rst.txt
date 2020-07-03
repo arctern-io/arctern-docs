@@ -1,0 +1,6 @@
+arctern.GeoSeries.intersects
+============================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.intersects

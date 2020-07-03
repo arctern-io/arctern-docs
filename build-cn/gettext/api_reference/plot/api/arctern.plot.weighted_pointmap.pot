@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-03 07:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/api_reference/plot/api/arctern.plot.weighted_pointmap.rst:2
+msgid "arctern.plot.weighted\\_pointmap"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.weighted_pointmap:1
+msgid "Plots a weighted point map in Matplotlib."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.weighted_pointmap:0
+msgid "参数"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.weighted_pointmap:3
+msgid "Axes where geometries will be plotted."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.weighted_pointmap:5
+msgid "Sequence of points."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.weighted_pointmap:7
+msgid "Weights of point color."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.weighted_pointmap:9
+msgid "Weights of point size."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.weighted_pointmap:11
+msgid "Bounding box of the map. For example, [west, south, east, north]."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.weighted_pointmap:13
+msgid "Range of color gradient, by default [\"#115f9a\", \"#d0f400\"]. Either use [\"hex_color\"] to specify a same color for all geometries, or [\"hex_color1\", \"hex_color2\"] to specify a color gradient ranging from \"hex_color1\" to \"hex_color2\"."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.weighted_pointmap:16
+msgid "Weight range [w1, w2] of ``color_gradient``, by default [0, 0]. Needed only when ``color_gradient`` has two values [\"color1\", \"color2\"]. Binds w1 to \"color1\", and w2 to \"color2\". When weight < w1 or weight > w2, the weight will be truncated to w1 or w2 accordingly."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.weighted_pointmap:19
+msgid "Weight range [w1, w2] of ``size_weights``, by default [3]. When weight < w1 or weight > w2, the weight will be truncated to w1 or w2 accordingly."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.weighted_pointmap:21
+msgid "Opacity of points, ranged from 0.0 to 1.0, by default 1.0."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.weighted_pointmap:23
+msgid "The Coordinate Reference System (CRS) set to all geometries, by default 'EPSG:3857'. Only supports SRID as a WKT representation of CRS by now."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.weighted_pointmap:26
+msgid "Extra parameters passed to `contextily.add_basemap. <https://contextily.readthedocs.io/en/latest/reference.html>`_"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.weighted_pointmap:29
+msgid ":skipif: True"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.weighted_pointmap:0
+msgid "skipif"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot_with_map.py:docstring of arctern.plot.weighted_pointmap:29
+msgid "True"
+msgstr ""

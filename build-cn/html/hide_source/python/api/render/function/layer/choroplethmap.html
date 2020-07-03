@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>choropleth_map_layer &mdash; Arctern version : 0.2.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../../" src="../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../_static/jquery.js"></script>
+        <script src="../../../../../../_static/underscore.js"></script>
+        <script src="../../../../../../_static/doctools.js"></script>
+        <script src="../../../../../../_static/language_data.js"></script>
+        <script src="../../../../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../../../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../api_reference/api_reference.html">API 参考</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>choropleth_map_layer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../../../_sources/hide_source/python/api/render/function/layer/choroplethmap.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="choropleth-map-layer">
+<h1>choropleth_map_layer<a class="headerlink" href="#choropleth-map-layer" title="永久链接至标题">¶</a></h1>
+<p>绘制一个轮廓图。需要先后调用 vega_choroplethmap 和 choropleth_map_layer 两个接口。首先使用 vega_choroplethmap 构建描述轮廓图渲染样式的 VegaChoroplethMap 对象，然后使用 choropleth_map_layer 渲染图像。</p>
+<div class="section" id="vega-choroplethmap">
+<h2>vega_choroplethmap<a class="headerlink" href="#vega-choroplethmap" title="永久链接至标题">¶</a></h2>
+<p><strong>arctern.util.vega.vega_choroplethmap(width,height,bounding_box,color_gradient,
+color_bound,opacity,coordinate_system,aggregation_type)</strong></p>
+<p>    根据给定的配置参数，构建描述轮廓图渲染样式的 VegaChoroplethMap 对象。</p>
+<p>    参数</p>
+<p>        * width(int) – 图片宽度，单位为像素个数。</p>
+<p>        * height(int) – 图片高度，单位为像素个数。</p>
+<p>        * bounding_box(list) – 图片对应的地理坐标区域，以 [x_min, y_min, x_max, y_max] 的形式表示一个矩形区域。图片左下角的像素坐标 (0, 0) 对应地理坐标 (x_min, y_min) ，图片右上角的像素坐标 (width, height) 对应地理坐标 (x_max, y_max)。</p>
+<p>        * color_gradient(list) – 轮廓的颜色渐变范围，表示形式为 [“hex_color”] 或 [“hex_color1”, “hex_color2”]。当形式为[“hex_color”] 时所有轮廓的颜色相同。当形式为[“hex_color1”, “hex_color2”] 时轮廓的颜色由输入数据中一列的值（权重）决定，且颜色在 “hex_color1” ~ “hex_color2” 之间变化。</p>
+<p>        * color_bound(list) – 可选参数，用于描述权重与颜色的对应关系，仅当color_gradient中包含两个颜色值时需要设置，表示形式为 [color_min, color_max]。权重值小于等于 color_min 时轮廓的颜色为”hex_color1”， 权重值大于等于 color_max 时轮廓的颜色为”hex_color2”。</p>
+<p>        * opacity(float) – 可选参数，表示轮廓的不透明度，范围为 0.0 ~ 1.0，默认值为 1.0。</p>
+<p>        * coordinate_system(str) – 可选参数，表示输入数据所属的地理坐标系统，默认值为”EPSG:3857”，当前支持的地理坐标系统请参照 <a class="reference external" href="https://spatialreference.org/">https://spatialreference.org/</a>。</p>
+<p>        * aggregation_type(str) – 可选参数，表示输入数据到轮廓权重的聚合方式，默认值为”sum”。</p>
+<p>    返回值类型</p>
+<p>        arctern.util.vega.choroplethmap.vega_choroplethmap.VegaChoroplethMap</p>
+<p>    返回</p>
+<p>        用于描述渲染样式的 VegaChoroplethMap 对象。</p>
+</div>
+<div class="section" id="id1">
+<h2>choropleth_map_layer<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><strong>arctern.choropleth_map_layer(vega, region_boundaries, weights)</strong></p>
+<p>    绘制轮廓图，权重用于决定轮廓的填充颜色。</p>
+<p>    参数</p>
+<p>        * vega(VegaChoroplethMap) – VegaChoroplethMap 对象。</p>
+<p>        * region_boundaries(Series(dtype: object)) – 所需绘制的多边形轮廓，格式为 WKB。</p>
+<p>        * weights(Series(dtype: float64|int64)) – 轮廓的颜色权重。</p>
+<p>    返回值类型</p>
+<p>        bytes</p>
+<p>    返回</p>
+<p>        base64 编码的 PNG 图片。</p>
+<div class="section" id="id2">
+<h3>示例:<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">arctern</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arctern.util</span> <span class="kn">import</span> <span class="n">save_png</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arctern.util.vega</span> <span class="kn">import</span> <span class="n">vega_choroplethmap</span>
+    <span class="o">&gt;&gt;&gt;</span> 
+    <span class="o">&gt;&gt;&gt;</span> <span class="c1"># 读取 csv 文件并创建绘图数据</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="c1"># test_data.csv下载链接: https://github.com/zilliztech/arctern-resources/raw/benchmarks/benchmarks/dataset/layer_rendering_test_data/test_data.csv</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/path/to/test_data.csv&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;longitude&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="s1">&#39;latitude&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="s1">&#39;color_weights&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="s1">&#39;size_weights&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="s1">&#39;region_boundaries&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">object</span><span class="p">})</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">input1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;region_boundaries&#39;</span><span class="p">])]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;region_boundaries&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">polygon</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">ST_GeomFromText</span><span class="p">(</span><span class="n">input1</span><span class="p">[</span><span class="s1">&#39;region_boundaries&#39;</span><span class="p">])</span>
+    <span class="o">&gt;&gt;&gt;</span> 
+    <span class="o">&gt;&gt;&gt;</span> <span class="c1"># 绘制轮廓图，轮廓的填充颜色根据 input1[&#39;color_weights&#39;] 在 &quot;#115f9a&quot; ~ &quot;#d0f400&quot; 之间变化</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">vega</span> <span class="o">=</span> <span class="n">vega_choroplethmap</span><span class="p">(</span><span class="mi">1922</span><span class="p">,</span> <span class="mi">1663</span><span class="p">,</span> <span class="n">bounding_box</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">74.01124953254566</span><span class="p">,</span><span class="mf">40.73413446570038</span><span class="p">,</span><span class="o">-</span><span class="mf">73.96238859103838</span><span class="p">,</span><span class="mf">40.766161712662296</span><span class="p">],</span> <span class="n">color_gradient</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#115f9a&quot;</span><span class="p">,</span><span class="s2">&quot;#d0f400&quot;</span><span class="p">],</span> <span class="n">color_bound</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">18</span><span class="p">],</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span> <span class="n">aggregation_type</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">png</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">choropleth_map_layer</span><span class="p">(</span><span class="n">vega</span><span class="p">,</span> <span class="n">polygon</span><span class="p">,</span> <span class="n">input1</span><span class="p">[</span><span class="s1">&#39;color_weights&#39;</span><span class="p">])</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">save_png</span><span class="p">(</span><span class="n">png</span><span class="p">,</span> <span class="s2">&quot;/tmp/python_choroplethmap.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>渲染结果如下：
+<img alt="hide_source/python/api/render/function/layer/../../../../../../../img/render/python/python_choroplethmap.png" src="hide_source/python/api/render/function/layer/../../../../../../../img/render/python/python_choroplethmap.png" /></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, zilliz
+      <span class="lastupdated">
+        最后更新于 7月 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

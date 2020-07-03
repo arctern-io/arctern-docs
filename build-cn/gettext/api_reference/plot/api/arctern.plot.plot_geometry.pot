@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, zilliz
+# This file is distributed under the same license as the Arctern package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Arctern \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-03 07:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/api_reference/plot/api/arctern.plot.plot_geometry.rst:2
+msgid "arctern.plot.plot\\_geometry"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:1
+msgid "Plots a collection of geometries."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:0
+msgid "参数"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:3
+msgid "The axes where geometries will be plotted."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:5
+msgid "Sequence of geometries."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:7
+msgid "``style_kwds`` specify the properties that describe the style of geometric graphs.  Here is a list of availble style properties:  +----------+------------------+-------+--------------------------------------------------+ |Property  |Description       |Default|Applied to                                        | +==========+==================+=======+==================================================+ |color     |str, color        |'C0'   |Point, MultiPoint, Linestring, MultiLinestring    | +----------+------------------+-------+--------------------------------------------------+ |edgecolor |str, edge color   |'black'|Polygon, MultiPolygon                             | +----------+------------------+-------+--------------------------------------------------+ |facecolor |str, face color   |'C0'   |Polygon, MultiPolygon                             | +----------+------------------+-------+--------------------------------------------------+ |linewidth |float, line width |1.0    |Linestring, MultiLinestring, Polygon, MultiPolygon| +----------+------------------+-------+--------------------------------------------------+ |linestyle |str, line style   |'-'    |Linestring, MultiLinestring, Polygon, MultiPolygon| +----------+------------------+-------+--------------------------------------------------+ |marker    |str, marker style |'o'    |Point, MultiPoint                                 | +----------+------------------+-------+--------------------------------------------------+ |markersize|float, marker size|6.0    |Point, MultiPoint                                 | +----------+------------------+-------+--------------------------------------------------+ |alpha     |float, opacity    |1.0    |All                                               | +----------+------------------+-------+--------------------------------------------------+"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:7
+msgid "``style_kwds`` specify the properties that describe the style of geometric graphs."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:9
+msgid "Here is a list of availble style properties:"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:12
+msgid "Property"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:12
+msgid "Description"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:12
+msgid "Default"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:12
+msgid "Applied to"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:14
+msgid "color"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:14
+msgid "str, color"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:14
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:18
+msgid "'C0'"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:14
+msgid "Point, MultiPoint, Linestring, MultiLinestring"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:16
+msgid "edgecolor"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:16
+msgid "str, edge color"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:16
+msgid "'black'"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:16
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:18
+msgid "Polygon, MultiPolygon"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:18
+msgid "facecolor"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:18
+msgid "str, face color"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:20
+msgid "linewidth"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:20
+msgid "float, line width"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:20
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:28
+msgid "1.0"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:20
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:22
+msgid "Linestring, MultiLinestring, Polygon, MultiPolygon"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:22
+msgid "linestyle"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:22
+msgid "str, line style"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:22
+msgid "'-'"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:24
+msgid "marker"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:24
+msgid "str, marker style"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:24
+msgid "'o'"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:24
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:26
+msgid "Point, MultiPoint"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:26
+msgid "markersize"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:26
+msgid "float, marker size"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:26
+msgid "6.0"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:28
+msgid "alpha"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:28
+msgid "float, opacity"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:28
+msgid "All"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:32
+msgid "提示"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:33
+msgid "See `matplotlib.pyplot.plot document <https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html?highlight=plot#matplotlib.pyplot.plot>`_ for detailed description of marker styles, line styles, and colors."
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:35
+msgid "Examples .. doctest:"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:0
+msgid "skipif"
+msgstr ""
+
+#: ../../../../opt/conda/envs/arctern-doc/lib/python3.7/site-packages/arctern-0.1.0-py3.7.egg/arctern/plot/_plot.py:docstring of arctern.plot.plot_geometry:37
+msgid "True"
+msgstr ""

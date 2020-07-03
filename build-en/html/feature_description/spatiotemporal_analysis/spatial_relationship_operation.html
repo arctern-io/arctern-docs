@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Spatial relationship operations &mdash; Arctern version : 0.2.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Map match" href="map_match.html" />
+    <link rel="prev" title="Convert with GeoPandas GeoSeries" href="convert_from_and_to_geopandas_geoseries.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../feature_description.html">Feature Description</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="spatiotemporal_analysis.html">Spatiotemporal Analysis</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data_structure.html">Data structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="read_and_write_file.html">Reading and writing files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometric_manipulation.html">Basic manipulations of geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="convert_from_and_to_geopandas_geoseries.html">Convert with GeoPandas GeoSeries</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Spatial relationship operations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#within-which-left-right">within_which(left, right)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="map_match.html">Map match</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_geometry.html">Plot methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crs_and_transform.html">Coordinate reference system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregation.html">Aggregation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="indexing_selecting_data.html">Indexing and selecting data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/api_reference.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../feature_description.html">Feature Description</a> &raquo;</li>
+        
+          <li><a href="spatiotemporal_analysis.html">Spatiotemporal Analysis</a> &raquo;</li>
+        
+      <li>Spatial relationship operations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/feature_description/spatiotemporal_analysis/spatial_relationship_operation.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="spatial-relationship-operations">
+<h1>Spatial relationship operations<a class="headerlink" href="#spatial-relationship-operations" title="Permalink to this headline">¶</a></h1>
+<p>After indexing geometric objects, Arctern can batch perform spatial relationship operations on geometric data (currently Arctern only supports the <a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.within.html"><code class="docutils literal notranslate"><span class="pre">GeoSeries.within</span></code></a> method, which is similar to SQL Join).</p>
+<div class="section" id="within-which-left-right">
+<h2>within_which(left, right)<a class="headerlink" href="#within-which-left-right" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="logic">
+<h3>Logic<a class="headerlink" href="#logic" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Use RTree to index the geometries contained in <code class="docutils literal notranslate"><span class="pre">right</span></code>.</p></li>
+<li><p>For each geometry <code class="docutils literal notranslate"><span class="pre">left[i]</span></code> in <code class="docutils literal notranslate"><span class="pre">left</span></code>, find the geometry <code class="docutils literal notranslate"><span class="pre">right[j]</span></code> that satisfies the conditions of <code class="docutils literal notranslate"><span class="pre">within(left[i],</span> <span class="pre">right[j])</span></code> from the index tree, and record the index  <code class="docutils literal notranslate"><span class="pre">j</span></code>.</p></li>
+</ol>
+</div>
+<div class="section" id="return">
+<h3>Return<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>If there are multiple <code class="docutils literal notranslate"><span class="pre">right[j]</span></code> satisfying the above conditions, returns any one of the index <code class="docutils literal notranslate"><span class="pre">j</span></code>.</p></li>
+<li><p>Otherwise, returns <code class="docutils literal notranslate"><span class="pre">pandas.NA</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>In the figure below, there is a green rectangle (<code class="docutils literal notranslate"><span class="pre">polygons[0]</span></code>), a red rectangle (<code class="docutils literal notranslate"><span class="pre">polygons[1]</span></code>), and some points (<code class="docutils literal notranslate"><span class="pre">points</span></code>) . The <a target="_blank" class="reference external" href="../../api_reference/map_match/api/arctern.within_which.html"><code class="docutils literal notranslate"><span class="pre">within_which</span></code></a> method is used to determine whether the points are inside these two rectangles.</p>
+<ul class="simple">
+<li><p>The four points at the bottom left corner are in the green rectangle, so the return values corresponding to these points are 0.</p></li>
+<li><p>The two points at the top right corner are in the red rectangle, so the return values corresponding to these points are 1.</p></li>
+<li><p>The point in the middle is not in any rectangle, so its corresponding return value is <code class="docutils literal notranslate"><span class="pre">&lt;NA&gt;</span></code>.</p></li>
+</ul>
+<p><img alt="../../_images/within_which_example.png" src="../../_images/within_which_example.png" /></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">within_which</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">points</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;Point(0 0)&quot;</span><span class="p">,</span><span class="s2">&quot;Point(1 0)&quot;</span><span class="p">,</span><span class="s2">&quot;Point(0 1)&quot;</span><span class="p">,</span><span class="s2">&quot;Point(1 1)&quot;</span><span class="p">,</span> <span class="s2">&quot;Point(3 3)&quot;</span><span class="p">,</span><span class="s2">&quot;Point(5 5)&quot;</span><span class="p">,</span><span class="s2">&quot;Point(5 6)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">polygons</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;Polygon((-1 -1, 2 -1, 2 2, -1 2, -1 -1))&quot;</span><span class="p">,</span> <span class="s2">&quot;Polygon((4 4, 7 4, 7 7, 4 7, 4 4))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">within_which</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">polygons</span><span class="p">)</span>
+<span class="go">0       0</span>
+<span class="go">1       0</span>
+<span class="go">2       0</span>
+<span class="go">3       0</span>
+<span class="go">4    &lt;NA&gt;</span>
+<span class="go">5       1</span>
+<span class="go">6       1</span>
+<span class="go">dtype: object</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="map_match.html" class="btn btn-neutral float-right" title="Map match" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="convert_from_and_to_geopandas_geoseries.html" class="btn btn-neutral float-left" title="Convert with GeoPandas GeoSeries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Jul 03, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
