@@ -18,9 +18,14 @@
 # Currently we must make sure arctern package installed before generate doc.
 #
 # -- Project information -----------------------------------------------------
+import logging
+
+
 project = 'Arctern'
 copyright = '2020, zilliz'
 author = 'zilliz'
+
+logger = logging.getLogger(__name__)
 
 # The full version, including alpha/beta/rc tags
 import arctern
@@ -32,15 +37,37 @@ release = arctern.version()
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.doctest',
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx_automodapi.automodapi',
     'sphinx.ext.inheritance_diagram',
     'sphinx.ext.autosummary',
     'sphinx_markdown_tables',
+    'matplotlib.sphinxext.plot_directive',
     'recommonmark',
     'sphinx.ext.napoleon'
 ]
+
+exclude_patterns = ["**.ipynb_checkpoints"]
+try:
+    import nbconvert
+except ImportError:
+    logger.warn("nbconvert not installed. Skipping notebooks.")
+    exclude_patterns.append("**/*.ipynb")
+else:
+    try:
+        nbconvert.utils.pandoc.get_pandoc_version()
+    except nbconvert.utils.pandoc.PandocMissing:
+        logger.warn("Pandoc not installed. Skipping notebooks.")
+        exclude_patterns.append("**/*.ipynb")
+
+plot_include_source = True
+plot_formats = [("png", 90)]
+plot_html_show_formats = False
+plot_html_show_source_link = False
+plot_pre_code = """import numpy as np
+import pandas as pd"""
 
 source_suffix = {
     '.rst': 'restructuredtext',
