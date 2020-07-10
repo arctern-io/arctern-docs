@@ -1,7 +1,7 @@
 .. _restful:
 
 Arctern RESTful Service
-=======
+============
 
 .. toctree::
    :maxdepth: 2
