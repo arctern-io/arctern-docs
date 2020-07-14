@@ -38,7 +38,7 @@
 下载纽约出租车数据集：
 
 ```bash
-$ wget https://media.githubusercontent.com/media/zilliztech/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
+$ wget https://media.githubusercontent.com/media/arctern-io/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
 ```
 
 查看是否下载成功：
@@ -229,4 +229,4 @@ $ pip install requests
 
 热力图的绘制结果如下：
 
-![热力图](../../../img/restful-result/heatmap.png)
+![热力图](./img/heatmap.png)
