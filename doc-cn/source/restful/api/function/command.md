@@ -4,22 +4,23 @@
 
 ## 请求说明
 
-- Method: **POST**
+- Method: `POST`
 - URL: `/command`
 - Headers:
     - `Content-Type: application/json`
 - Body:
-```json
-{
-    "command": "import sys\nprint(len(sys.argv))"
-}
-```
 
-参数说明：
+    ```json
+    {
+        "command": "import sys\nprint(len(sys.argv))"
+    }
+    ```
 
-- command：待执行的 Python 代码。
+    参数说明：
 
-## 请求样例
+    - `command`: 待执行的 Python 代码。
+
+## 请求示例
 
 ### Python
 
@@ -59,7 +60,7 @@ curl --location --request POST 'http://localhost:8080/command' \
 }'
 ```
 
-## 响应样例
+## 响应示例
 
 ```json
 {
