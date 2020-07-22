@@ -1,8 +1,8 @@
-# 代码执行
+# Run codes
 
 执行给定的 Python 代码。
 
-## 请求说明
+## Request description
 
 - Method: `POST`
 - URL: `/command`
@@ -16,21 +16,21 @@
     }
     ```
 
-    参数说明：
+    Parameter description:
 
     - `command`: 待执行的 Python 代码。
 
-## 请求示例
+## Request example
 
 ### Python
 
-本文示例代码使用 Python 的 `requests` 库调用 `Arctern RESTful API`，执行以下命令安装 `requests`：
+The example uses Python's `requests` library to call `Arctern RESTful API`. Run the following command to install `requests`:
 
 ```bash
 pip install requests
 ```
 
-调用示例：
+Here is an example of calling the `command` API:
 
 ```python
 import requests
@@ -60,7 +60,7 @@ curl --location --request POST 'http://localhost:8080/command' \
 }'
 ```
 
-## 响应示例
+## Response example
 
 ```json
 {

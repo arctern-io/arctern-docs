@@ -1,18 +1,18 @@
-# 带权点图
+# Weighted point map
 
-根据相关画图参数绘制权重图，将绘图结果以 base64 编码方式返回。
+根据相关画图参数绘制权重图，将绘图结果以 Base64 编码方式返回。
 
-## 请求说明
+## Request description
 
 - Method: `POST`
 - URL: `/weighted_pointmap`
 - Headers:
     - `Content-Type: application/json`
-- Body: 见 [Body 示例](#Body-示例)。
+- Body: See [Body example](#Body-example)。
 
-## Body 示例
+## Body example
 
-参数说明：
+Parameter description:
 
 - `input_data`: 输入数据描述，需为已定义的变量名称或可执行的 Python 语句。
     - `points`: 点的位置，格式为 WKB 的 pandas.Series。
@@ -28,9 +28,9 @@
     - `opacity`: 点的不透明度。
     - `size_bound`: 点大小的取值范围。
 
-### Python 后台
+### Python backend
 
-如果数据处理后台为 Python，则示例 JSON 如下：
+The example for Python backend is as follows:
 
 ```json
 {
@@ -52,25 +52,25 @@
 }
 ```
 
-### PySpark 后台
+### PySpark backend
 
-如果数据处理后台为 PySpark，你只需将上面 Python 后台的示例代码中的 `input_data` 改为相应的 SQL 查询语句，示例如下：
+If you use the PySpark backend, you only need to change the `input_data` in the example of Python backend to the following SQL query:
 
 ```
 "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point, fare_amount as count1, total_amount as count2 from raw_data"
 ```
 
-## 请求示例
+## Request example
 
 ### Python
 
-本文示例代码使用 Python 的 `requests` 库调用 `Arctern RESTful API`，执行以下命令安装 `requests`：
+The example uses Python's `requests` library to call `Arctern RESTful API`. Run the following command to install `requests`:
 
 ```bash
 pip install requests
 ```
 
-调用示例
+Here is an example of calling the `weighted_pointmap` API:
 
 ```python
 import requests
@@ -128,12 +128,12 @@ curl --location --request POST 'http://localhost:8080/weighted_pointmap' \
 }'
 ```
 
-## 响应示例
+## Response example
 
 ```json
 {
     "status": "success",
     "code": "200",
-    "result": "使用 base64 编码后的权重图数据"
+    "result": "使用 Base64 编码后的权重图数据"
 }
 ```

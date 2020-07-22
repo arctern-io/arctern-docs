@@ -1,6 +1,6 @@
 # 轮廓图
 
-根据相关画图参数绘制轮廓图，将绘图结果以 base64 编码方式返回。
+根据相关画图参数绘制轮廓图，将绘图结果以 Base64 编码方式返回。
 
 ## 请求说明
 
@@ -29,7 +29,7 @@
 
 ### Python 后台
 
-如果数据处理后台为 Python，则示例如下：
+如果数据处理后台为 Python，则示例 JSON 如下：
 
 ```json
 {
@@ -130,6 +130,6 @@ curl --location --request POST 'http://localhost:8080/choroplethmap' \
 {
     "status": "success",
     "code": "200",
-    "result": "使用 base64 编码后的轮廓图数据"
+    "result": "使用 Base64 编码后的轮廓图数据"
 }
 ```

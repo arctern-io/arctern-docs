@@ -1,24 +1,24 @@
-# 获取表的列信息
+# Table schema
 
 获取数据表各列的名称与数据类型信息。
 
-## 请求说明
+## Request description
 
 - Method: `GET`
 - URL: `/table/schema?table=table_name`
 - table: 表名。
 
-## 请求示例
+## Request example
 
 ### Python
 
-本文示例代码使用 Python 的 `requests` 库调用 `Arctern RESTful API`，执行以下命令安装 `requests`：
+The example uses Python's `requests` library to call `Arctern RESTful API`. Run the following command to install `requests`:
 
 ```bash
 pip install requests
 ```
 
-调用示例
+Here is an example of calling the `table/schema` API:
 
 ```python
 import requests
@@ -39,7 +39,7 @@ print(response.text.encode('utf8'))
 curl --location --request GET 'http://localhost:8080/table/schema?table=table_name'
 ```
 
-## 响应示例
+## Response example
 
 ```json
 {

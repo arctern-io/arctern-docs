@@ -1,8 +1,8 @@
-# 加载文件
+# Load file
 
 加载数据文件。当前支持的文件格式详见 [文件的导入导出](../../file_data.md)。
 
-## 请求说明
+## Request description
 
 - Method: `POST`
 - URL: `/loadfile`
@@ -31,7 +31,7 @@
     }
     ```
 
-    参数说明：
+    Parameter description:
 
     - tables: 创建数据表的描述信息。该字段为一个列表，系统将会按照列表中的顺序依次进行建表操作。
         - name: 数据表名称。
@@ -40,17 +40,17 @@
         - options: 加载文件时的指定选项，使用 `key-value` 形式提供。
         - schema: 各列数据的名称和类型描述。schema 字段是一个列表，顺序需要和文件中各列的实际存储顺序保持一致。
 
-## 请求示例
+## Request example
 
 ### Python
 
-本文示例代码使用 Python 的 `requests` 库调用 `Arctern RESTful API`，执行以下命令安装 `requests`：
+The example uses Python's `requests` library to call `Arctern RESTful API`. Run the following command to install `requests`:
 
 ```bash
 pip install requests
 ```
 
-调用示例：
+Here is an example of calling the `loadfile` API:
 
 ```python
 import requests
@@ -129,7 +129,7 @@ curl --location --request POST 'http://localhost:8080/loadfile' \
 }'
 ```
 
-## 响应示例
+## Response example
 
 ```json
 {
