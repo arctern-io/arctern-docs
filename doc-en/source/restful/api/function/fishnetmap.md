@@ -1,6 +1,6 @@
-# Fishnet map
+# Fishnet Map
 
-根据相关画图参数绘制渔网图，将绘图结果以 Base64 编码方式返回。
+Draws a fishnet map according to the relevant drawing parameters and returns the map in Base64 format.
 
 ## Request description
 
@@ -8,29 +8,29 @@
 - URL: `/fishnetmap`
 - Headers:
     - `Content-Type: application/json`
-- Body: See [Body example](#Body-example)。
+- Body: See [Body example](#Body-example).
 
 ## Body example
 
 Parameter description:
 
-- `input_data`: 输入数据描述，需为已定义的变量名称或可执行的 Python 语句。
-    - `points`: 渔网网格的位置，格式为 WKB 的 pandas.Series。
-    - `weights`: 渔网网格的权重，为 float64 或 int64 类型的 pandas.Series。
-- `params`: 绘图参数。
-    - `width`: 图片宽度。
-    - `height`: 图片高度。
-    - `bounding_box`: 渲染图片所表示的地理范围 [x_min, y_min, x_max, y_max]。
-    - `coordinate_system`: 输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)。
-    - `color_gradient`: 渔网网格的颜色渐变范围，目前仅支持默认值 ["#0000FF", "#FF0000"]。
-    - `cell_size`: 渔网网格的边长。
-    - `cell_spacing`: 渔网网格之间的间隔。
-    - `opacity`: 渔网网格的不透明度。
-    - `aggregation_type`: 聚合类型。
+- `input_data`: Description of input data. Needs to be the names of the defined variables or executable Python statements.
+    - `points`: Location of the fishnet cell, which is pandas.Series in WKB format.
+    - `weights`: Weight of the fishnet cell, which is pandas.Series of float64 type or int64 type.
+- `params`: Drawing parameters.
+    - `width`: Width of the image.
+    - `height`: Height of the image.
+    - `bounding_box`: Geographic extent represented by the rendered image [x_min, y_min, x_max, y_max].
+    - `coordinate_system`: Coordinate system of the input data. See [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System) for more information.
+    - `color_gradient`: The color gradient range of the fishnet cell. Supports the default value ["#0000FF", "#FF0000"] only.
+    - `cell_size`: Size of the fishnet cell.
+    - `cell_spacing`: Spacing between fishnet cells.
+    - `opacity`: Opacity of the fishnet cell.
+    - `aggregation_type`: Aggregation type.
 
 ### Python backend
 
-The example for Python backend is as follows:
+A JSON example for the Python backend is as follows:
 
 ```json
 {
@@ -54,7 +54,7 @@ The example for Python backend is as follows:
 
 ### PySpark backend
 
-If you use the PySpark backend, you only need to change the `input_data` in the example of Python backend to the following SQL query:
+If you use the PySpark backend, you only need to change the `input_data` in the above example to the corresponding SQL query. See the following example:
 
 ```
 "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point, fare_amount as count from raw_data"
@@ -64,13 +64,13 @@ If you use the PySpark backend, you only need to change the `input_data` in the 
 
 ### Python
 
-The example uses Python's `requests` library to call `Arctern RESTful API`. Run the following command to install `requests`:
+Examples in this article use Python's `requests` library. Run the following command to install `requests`:
 
 ```bash
 pip install requests
 ```
 
-Here is an example of calling the `fishnetmap` API:
+Sample code:
 
 ```python
 import requests
@@ -134,6 +134,6 @@ curl --location --request POST 'http://localhost:8080/fishnetmap' \
 {
     "status": "success",
     "code": "200",
-    "result": "使用 Base64 编码后的渔网图数据"
+    "result": "Base64-encoded fishnet map data"
 }
 ```

@@ -1,6 +1,6 @@
 # Query
 
-执行给定的 SQL 查询语句。仅当数据处理后台为 PySpark 时可用。
+Executes a given SQL query statement. Only applicable to the PySpark backend.
 
 ## Request description
 
@@ -10,7 +10,7 @@
     - `Content-Type: application/json`
 - Body:
 
-    - 数据查询：
+    - Data query:
 
     ```json
     {
@@ -19,7 +19,7 @@
     }
     ```
 
-    - 创建数据表：
+    - Create a data table:
 
     ```json
     {
@@ -30,22 +30,22 @@
 
     Parameter description:
 
-    - `sql`: 待执行的 SQL 查询语句。
-    - `collect_result`: 可选参数，默认值为 1。
-        - 1: 将 SQL 语句的查询结果用 JSON 格式返回。
-        - 0: 仅在后台执行查询语句不返回执行结果。
+    - `sql`: The SQL query statement to execute.
+    - `collect_result`: Optional parameter; default value is "1".
+        - 1: Returns the SQL query result in JSON.
+        - 0: Runs the query only in backend and doesn't return a result.
 
 ## Request example
 
 ### Python
 
-The example uses Python's `requests` library to call `Arctern RESTful API`. Run the following command to install `requests`:
+Examples in this article use Python's `requests` library. Run the following command to install `requests`:
 
 ```bash
 pip install requests
 ```
 
-Here is an example of calling the `query` API:
+Sample code:
 
 ```python
 import requests

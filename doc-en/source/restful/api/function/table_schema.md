@@ -1,24 +1,24 @@
-# Table schema
+# Table Schema
 
-获取数据表各列的名称与数据类型信息。
+Fetches the name and data type of each column in a data table.
 
 ## Request description
 
 - Method: `GET`
 - URL: `/table/schema?table=table_name`
-- table: 表名。
+- table: Name of the table.
 
 ## Request example
 
 ### Python
 
-The example uses Python's `requests` library to call `Arctern RESTful API`. Run the following command to install `requests`:
+Examples in this article use Python's `requests` library. Run the following command to install `requests`:
 
 ```bash
 pip install requests
 ```
 
-Here is an example of calling the `table/schema` API:
+Sample code:
 
 ```python
 import requests
