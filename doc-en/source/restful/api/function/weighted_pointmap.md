@@ -1,6 +1,6 @@
-# Weighted point map
+# Weighted Point Map
 
-根据相关画图参数绘制权重图，将绘图结果以 Base64 编码方式返回。
+Draws a weighted point map according to the relevant drawing parameters and returns the map in Base64 format.
 
 ## Request description
 
@@ -8,29 +8,29 @@
 - URL: `/weighted_pointmap`
 - Headers:
     - `Content-Type: application/json`
-- Body: See [Body example](#Body-example)。
+- Body: See [Body example](#Body-example).
 
 ## Body example
 
 Parameter description:
 
-- `input_data`: 输入数据描述，需为已定义的变量名称或可执行的 Python 语句。
-    - `points`: 点的位置，格式为 WKB 的 pandas.Series。
-    - color_weights: 点的颜色权重，为 float64 或 int64 类型的 pandas.Series。
-    - size_weights: 点的大小权重，为 float64 或 int64 类型的 pandas.Series。
-- `params`: 绘图参数。
-    - `width`: 图片宽度。
-    - `height`: 图片高度。
-    - `bounding_box`: 渲染图片所表示的地理范围 [x_min, y_min, x_max, y_max]。
-    - `coordinate_system`: 输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)。
-    - `color_gradient`: 点的颜色渐变范围，即点的颜色从左边渐变到右边。
-    - `color_bound`: 点颜色的取值范围，与 `color_gradient` 配合使用。
-    - `opacity`: 点的不透明度。
-    - `size_bound`: 点大小的取值范围。
+- `input_data`: Description of input data. Needs to be the names of the defined variables or executable Python statements.
+    - `points`: Location of the point, which is pandas.Series in WKB format.
+    - `color_weights`: Weight of the point's color, which is pandas.Series of float64 type or int64 type.
+    - `size_weights`: Weight of the point's size, which is pandas.Series of float64 type or int64 type.
+- `params`: Drawing parameters.
+    - `width`: Width of the image.
+    - `height`: Height of the image.
+    - `bounding_box`: Geographic extent represented by the rendered image [x_min, y_min, x_max, y_max].
+    - `coordinate_system`: Coordinate system of the input data. See [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System) for more information.
+    - `color_gradient`: The color gradient range of the point, that is, the color of the point is gradient from the left to the right.
+    - `color_bound`: Value range of the point's color, used together with `color_gradient`.
+    - `opacity`: Opacity of the point.
+    - `size_bound`: Value range of the point's size.
 
 ### Python backend
 
-The example for Python backend is as follows:
+A JSON example for the Python backend is as follows:
 
 ```json
 {
@@ -54,7 +54,7 @@ The example for Python backend is as follows:
 
 ### PySpark backend
 
-If you use the PySpark backend, you only need to change the `input_data` in the example of Python backend to the following SQL query:
+If you use the PySpark backend, you only need to change the `input_data` in the above example for Python backend to the corresponding SQL query. See the following example:
 
 ```
 "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point, fare_amount as count1, total_amount as count2 from raw_data"
@@ -64,13 +64,13 @@ If you use the PySpark backend, you only need to change the `input_data` in the 
 
 ### Python
 
-The example uses Python's `requests` library to call `Arctern RESTful API`. Run the following command to install `requests`:
+Examples in this article use Python's `requests` library. Run the following command to install `requests`:
 
 ```bash
 pip install requests
 ```
 
-Here is an example of calling the `weighted_pointmap` API:
+Sample code:
 
 ```python
 import requests
@@ -134,6 +134,6 @@ curl --location --request POST 'http://localhost:8080/weighted_pointmap' \
 {
     "status": "success",
     "code": "200",
-    "result": "使用 Base64 编码后的权重图数据"
+    "result": "Base64-encoded weighted point map data"
 }
 ```

@@ -9,7 +9,7 @@
 
         > **注意：** 
         > * 在 local 模式下，Spark 在一个物理节点内运行。配置示例如 `--interpreter_master=local[8]`，其中 `[8]` 表示使用 8 个 CPU。
-        > * 在 standalone 模式下，你需要指定 maseter url。配置示例如 `--interpreter_master=spark://IP:PORT`。
+        > * 在 standalone 模式下，你需要指定 master url。配置示例如 `--interpreter_master=spark://IP:PORT`。
         
     - `interpreter_pyspark_python`： Spark executor 的 Python 解释器的绝对路径。
     - `interpreter_pyspark_driver_python`： Spark driver 的 Python 解释器的绝对路径。

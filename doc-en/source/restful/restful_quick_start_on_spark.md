@@ -1,69 +1,69 @@
-# 快速开始（PySpark 后台）
+# Quick Start (PySpark backend)
 
-本文以纽约出租车数据集为例，以 PySpark 作为数据处理后台，说明如何通过 Arctern RESTful API 完成数据的导入、运算和展示。
+This article takes the New York taxi dataset as an example and uses PySpark as the data processing backend to illustrate how to import, compute, and display data through Arctern RESTful API.
 
-> **注意：** 本章所有示例代码均默认在 Python 3.7 环境中运行。若要在其他 Python 环境下运行，你可能需要适当修改代码内容。
+> **Note:** By default, all sample codes in this section are run in Python 3.7 environment. To run in other Python environments, you need to adapt the code accordingly.
 
-## 服务器端的启动和配置
+## Configure and start on server side
 
-### 服务器启动
+### Start the server
 
-在调用 Arctern RESTful API 之前请先启动服务，具体步骤见 [服务器启动](../install/webserver_installation_config.md)。
+Start the server before calling Arctern RESTful API. For details, see [start the server](../install/webserver_installation_config.md).
 
-### 数据准备
+### Prepare data
 
-在后续示例中，你需要使用纽约出租车数据集。该数据集包含 2009 年纽约市出租车的运营记录，各字段的含义如下：
+In the following example, you need to use the New York taxi dataset. This dataset contains the operating records of taxis in New York City in 2009. The meaning of each field is as follows:
 
-| 名称                  | 含义                       | 类型   |
+| Field                  | Description                      | Type   |
 | :-------------------- | :------------------------- | :----- |
-| VendorID              | 运营商名称                 | string |
-| tpep_pickup_datetime  | 上车时间                   | string |
-| tpep_dropoff_datetime | 下车时间                   | string |
-| passenger_count       | 乘客数量                   | long   |
-| trip_distance         | 行程距离                   | double |
-| pickup_longitude      | 上车地点的经度              | double |
-| pickup_latitude       | 上车地点的纬度              | double |
-| dropoff_longitude     | 下车地点的经度              | double |
-| dropoff_latitude      | 下车地点的纬度              | double |
-| fare_amount           | 行程费用                   | double |
-| tip_amount            | 小费                       | double |
-| total_amount          | 总费用                     | double |
-| buildingid_pickup     | 上车地点所在建筑的 id      | long   |
-| buildingid_dropoff    | 下车地点所在建筑的 id      | long   |
-| buildingtext_pickup   | 上车地点所在建筑的轮廓描述 | string |
-| buildingtext_dropoff  | 下车地点所在建筑的轮廓描述 | string |
+| VendorID              | Name of vendor                  | string |
+| tpep_pickup_datetime  | Pickup time                   | string |
+| tpep_dropoff_datetime | Dropoff time                   | string |
+| passenger_count       | Number of passengers                   | long   |
+| trip_distance         | Distance of the trip                   | double |
+| pickup_longitude      | Longitude of the pickup location              | double |
+| pickup_latitude       | Latitude of the pickup location               | double |
+| dropoff_longitude     | Longitude of the dropoff location              | double |
+| dropoff_latitude      | Latitude of the dropoff location              | double |
+| fare_amount           | Fare amount for the trip                   | double |
+| tip_amount            | Tip amount                       | double |
+| total_amount          | Total charge                     | double |
+| buildingid_pickup     | ID of the building at pickup location     | long   |
+| buildingid_dropoff    | ID of the building at dropoff location      | long   |
+| buildingtext_pickup   | Description of the building at pickup location | string |
+| buildingtext_dropoff  | Description of the building at dropoff location | string |
 
-> **注意：** 该数据集有 200000 行，其中时间格式为：`yyyy-MM-dd HH:mm::ss XXXXX`，如“2009-04-12 03:16:33 +00:00”。
+> **Note:** This dataset has 200000 rows. The time format is `yyyy-MM-dd HH:mm::ss XXXXX`, such as "2009-04-12 03:16:33 +00:00".
 
-下载纽约出租车数据集：
+Download the New York taxi dataset:
 
 ```bash
 $ wget https://media.githubusercontent.com/media/arctern-io/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
 ```
 
-查看是否下载成功：
+Check if the download is successful:
 
 ```bash
 $ wc -l 0_2M_nyc_taxi_and_building.csv
 ```
 
-### 安装依赖
+### Install dependent packages
 
-本文示例代码使用 Python 的 `requests` 库调用 Arctern RESTful API，执行以下命令安装 `requests`：
+Sample codes in this article call Arctern RESTful API using the `request` library of Python. Run the command below to install `request`:
 
 ```bash
 $ pip install requests
 ```
 
-## API 调用
+## Call API 
 
-下述示例中，假设服务器 IP 地址为 `127.0.0.1`，RESTful 服务端口为`8080`。如果你在启动 arctern-server 时指定了 IP 与端口，则使用指定的 IP 与端口。
+In the following example, assume the IP address is `127.0.0.1` and the RESTful service port is `8080`. If you have specified IP address and service port when starting arctern-server, use your specified IP and service port. 
 
-### 数据导入
+### Import data
 
-使用 `/loadfile` 接口导入纽约出租车数据集，将其对应的数据表命名为`raw_data`。
+Use the `/loadfile` interface to import the New York taxi dataset and name the corresponding data table `raw_data`.
 
-> **注意：** 你需要将示例中的 `file_path` 替换为数据文件的绝对路径。
+> **Note:** You need to replace `file_path` in the sample code with the absolute path to the data file.
 
 ```python
 >>> import requests
@@ -111,9 +111,9 @@ $ pip install requests
 }
 ```
 
-### 查询数据表信息
+### Query information from data table
 
-你已经在后台创建了一张名为 `raw_data` 的数据表。接着，使用 `/table/schema` 接口可查询该表中各字段的名称以及对应的数据类型。
+You have created a data table at backend named `raw_data`. Then, you can use the `/table/schema` interface to query field names and the corresponding data types.
 
 ```python
 >>> import requests
@@ -192,13 +192,13 @@ $ pip install requests
 }
 ```
 
-### SQL 查询
+### SQL query
 
-使用 `/query` 接口可完成数据表的创建、查询和删除操作。
+Use the `/query` interface to create, query, and delete the data table.
 
-#### 创建数据表
+#### Create data table
 
-将 `raw_data` 数据表中的时间信息从 String 类型转换为 Timestamp 类型，并移除与后续操作无关的字段，保存为一张新的 `nyc_taxi` 数据表。
+Transform the time information in the `raw_data` data table from string to timestamp, delete fields irrelevant to subsequent operations, and save as a new data table named `nyc_taxi`.
 
 ```python
 >>> import requests
@@ -221,9 +221,9 @@ $ pip install requests
 }
 ```
 
-#### 查询数据
+#### Query data
 
-查询 `nyc_taxi` 数据表的行数。
+Query the number of rows in the `nyc_taxi` data table.
 
 ```python
 >>> import requests
@@ -249,11 +249,11 @@ $ pip install requests
 }
 ```
 
-#### 删除数据表
+#### Delete data table
 
-删除原始的 `raw_data` 数据表。
+Delete the original `raw_data` data table.
 
-> **注意：** `Arctern RESTful` 服务不会主动删除数据表，请务必删除不再使用的数据表释放服务器资源。
+> **Note:** `Arctern RESTful` service does not actively delete data tables. Make sure to delete data tables that are no longer used to release server resources.
 
 ```python
 >>> import requests
@@ -276,9 +276,9 @@ $ pip install requests
 }
 ```
 
-### 绘制热力图
+### Generate heat map
 
-使用 `/heatmap` 接口根据乘客的下车地点以及行程费用绘制热力图。其中，费用高的区域为红色，费用低的区域为绿色。热力图的具体参数说明请见 [热力图 RESTful API 说明](./api/function/heatmap.html)。
+Use the `/heatmap` interface to generate a heat map based on the passenger's dropoff location and total charge for the trip. Red areas represent high cost while green areas represent low cost. The specific parameters of the heat map are explained in [Heat map RESTful API](./api/function/heatmap.html).
 
 ```python
 >>> import requests
@@ -310,15 +310,15 @@ $ pip install requests
 ...     f.write(base64.b64decode(r.json()['result']))
 ```
 
-热力图的绘制结果如下：
+The resulting heat map is as follows:
 
-![热力图](./img/heatmap_spark.png)
+![Heat map](./img/heatmap_spark.png)
 
-### 删除数据表
+### Delete data table
 
-使用 `query` 接口删除 `nyc_taxi` 数据表，释放服务器资源。
+Use the `query` interface to delete the `nyc_taxi` data table to release server resources.
 
-> **注意：** `Arctern RESTful` 服务不会主动删除数据表，请务必删除不再使用的数据表释放服务器资源。
+> **Note:** `Arctern RESTful` service does not actively delete data tables. Make sure to delete data tables that are no longer used to release server resources.
 
 ```python
 >>> import requests

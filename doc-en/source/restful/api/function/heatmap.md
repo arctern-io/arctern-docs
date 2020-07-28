@@ -1,6 +1,6 @@
-# Heat map
+# Heat Map
 
-根据相关画图参数绘制热力图，将绘图结果以 Base64 编码方式返回。
+Draws a heat map according to the relevant drawing parameters and returns the map in Base64 format.
 
 ## Request description
 
@@ -8,26 +8,26 @@
 - URL: `/heatmap`
 - Headers:
     - `Content-Type: application/json`
-- Body: See [Body example](#Body-example)。
+- Body: See [Body example](#Body-example).
 
 ## Body example
 
 Parameter description:
 
-- `input_data`: 输入数据描述，需为已定义的变量名称或可执行的 Python 语句。
-    - `points`: 点的位置，格式为 WKB 的 pandas.Series。
-    - `weights`: 热力值，为 float64 或 int64 类型的 pandas.Series。
-- `params`: 绘图参数。
-    - `width`: 图片宽度。
-    - `height`: 图片高度。
-    - `bounding_box`: 渲染图片所表示的地理范围 [x_min, y_min, x_max, y_max]。
-    - `coordinate_system`: 输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)。
-    - `map_zoom_level`: 地图放大比例，取值范围 [1, 15]。
-    - `aggregation_type`: 聚合类型。
+- `input_data`: Description of input data. Needs to be the names of the defined variables or executable Python statements.
+    - `points`: Location of the point, which is pandas.Series in WKB format.
+    - `weights`: Heat value, which is pandas.Series of float64 type or int64 type.
+- `params`: Drawing parameters.
+    - `width`: Width of the image.
+    - `height`: Height of the image.
+    - `bounding_box`: Geographic extent represented by the rendered image [x_min, y_min, x_max, y_max].
+    - `coordinate_system`: Coordinate system of the input data. See [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System) for more information.
+    - `map_zoom_level`: Zoom level of the map, in the range of [1, 15].
+    - `aggregation_type`: Aggregation type.
 
 ### Python backend
 
-The example for Python backend is as follows:
+A JSON example for the Python backend is as follows:
 
 ```json
 {
@@ -48,7 +48,7 @@ The example for Python backend is as follows:
 
 ### PySpark backend
 
-If you use the PySpark backend, you only need to change the `input_data` in the example of Python backend to the following SQL query:
+If you use the PySpark backend, you only need to change the `input_data` in the above example for Python backend to the corresponding SQL query. See the following example:
 
 ```
 "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point, fare_amount as weights from raw_data"
@@ -58,13 +58,13 @@ If you use the PySpark backend, you only need to change the `input_data` in the 
 
 ### Python
 
-The example uses Python's `requests` library to call `Arctern RESTful API`. Run the following command to install `requests`:
+Examples in this article use Python's `requests` library. Run the following command to install `requests`:
 
 ```bash
 pip install requests
 ```
 
-Here is an example of calling the `heatmap` API:
+Sample code:
 
 ```python
 import requests
@@ -122,6 +122,6 @@ curl --location --request POST 'http://localhost:8080/heatmap' \
 {
     "status": "success",
     "code": "200",
-    "result": "使用 Base64 编码后的热力图数据"
+    "result": "Base64-encoded heat map data"
 }
 ```

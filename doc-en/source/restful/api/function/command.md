@@ -1,6 +1,6 @@
-# Run codes
+# Code Execution
 
-执行给定的 Python 代码。
+Executes a given Python code.
 
 ## Request description
 
@@ -18,19 +18,19 @@
 
     Parameter description:
 
-    - `command`: 待执行的 Python 代码。
+    - `command`: The Python code to execute.
 
 ## Request example
 
 ### Python
 
-The example uses Python's `requests` library to call `Arctern RESTful API`. Run the following command to install `requests`:
+Examples in this article use Python's `requests` library. Run the following command to install `requests`:
 
 ```bash
 pip install requests
 ```
 
-Here is an example of calling the `command` API:
+Sample code:
 
 ```python
 import requests

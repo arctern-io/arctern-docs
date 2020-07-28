@@ -1,6 +1,6 @@
-# Load file
+# Load File
 
-加载数据文件。当前支持的文件格式详见 [文件的导入导出](../../file_data.md)。
+Loads data files. See supported file formats at [Import and Export of Files](../../file_data.md).
 
 ## Request description
 
@@ -33,24 +33,24 @@
 
     Parameter description:
 
-    - tables: 创建数据表的描述信息。该字段为一个列表，系统将会按照列表中的顺序依次进行建表操作。
-        - name: 数据表名称。
-        - format: 待加载文件的文件格式。
-        - path: 文件路径。
-        - options: 加载文件时的指定选项，使用 `key-value` 形式提供。
-        - schema: 各列数据的名称和类型描述。schema 字段是一个列表，顺序需要和文件中各列的实际存储顺序保持一致。
+    - `tables`: Creates description of the data table. This field is a list, and the system will build the table in the order indicated by the list.
+        - `name`: Name of the data table.
+        - `format`: Format of the file to load.
+        - `path`: Path to the file.
+        - `options`: Options when loading the file, provided as `key-value`.
+        - `schema`: Name and type description of each column of data. The `schema` field is a list and its order needs to be consistent with the actual storage order of the columns in the file.
 
 ## Request example
 
 ### Python
 
-The example uses Python's `requests` library to call `Arctern RESTful API`. Run the following command to install `requests`:
+Examples in this article use Python's `requests` library. Run the following command to install `requests`:
 
 ```bash
 pip install requests
 ```
 
-Here is an example of calling the `loadfile` API:
+Sample code:
 
 ```python
 import requests
@@ -58,7 +58,7 @@ import json
 
 url = "http://localhost:8080/loadfile"
 
-# /path/to/data.csv文件内容示例如下：
+# An example of the content of a file at /path/to/data.csv:
 """
 column0, column1, column2
 str1, 0.1, 1
