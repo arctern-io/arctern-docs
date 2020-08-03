@@ -3,6 +3,7 @@ channels:
   - conda-forge
 dependencies:
 - python=3.7.6
+- pandas=1.0.5
 - gdal=3.0.4
 - pyarrow=0.17.1
 - koalas=1.0.0
