@@ -1,0 +1,6 @@
+arctern.plot.pointmap\_layer
+============================
+
+.. currentmodule:: arctern.plot
+
+.. autofunction:: pointmap_layer

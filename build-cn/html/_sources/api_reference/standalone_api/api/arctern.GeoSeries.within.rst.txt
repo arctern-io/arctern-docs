@@ -1,0 +1,6 @@
+arctern.GeoSeries.within
+========================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.within

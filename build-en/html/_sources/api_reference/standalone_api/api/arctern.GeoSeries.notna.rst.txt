@@ -1,0 +1,6 @@
+arctern.GeoSeries.notna
+=======================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.notna

@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>索引和选择数据 &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="可视化" href="../visualization/visualization.html" />
+    <link rel="prev" title="聚合" href="aggregation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../feature_description.html">功能说明</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="spatiotemporal_analysis.html">时空数据分析</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data_structure.html">数据结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="read_and_write_file.html">文件读写</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometric_manipulation.html">几何体的基本操作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="convert_from_and_to_geopandas_geoseries.html">与 GeoPandas GeoSeries 互相转换</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spatial_relationship_operation.html">空间关系运算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="map_match.html">地图匹配</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_geometry.html">绘图方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crs_and_transform.html">坐标参考系</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregation.html">聚合</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">索引和选择数据</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">索引和选择数据的方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">生成测试数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">测试</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">可视化</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/api_reference.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster/cluster.html">从单机过渡到分布式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../restful/restful.html">RESTful 服务</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../feature_description.html">功能说明</a> &raquo;</li>
+        
+          <li><a href="spatiotemporal_analysis.html">时空数据分析</a> &raquo;</li>
+        
+      <li>索引和选择数据</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/feature_description/spatiotemporal_analysis/indexing_selecting_data.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>索引和选择数据<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>本文档介绍 Arctern GeoSeries 如何索引和选择数据。</p>
+<div class="section" id="id2">
+<h2>索引和选择数据的方法<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Arctern GeoSeries 继承了 pandas Series 索引和选择数据的方法，包括基于标签的索引 <a target="_blank" class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html"><code class="docutils literal notranslate"><span class="pre">loc</span></code></a> 和基于整数下标位置的索引 <a target="_blank" class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html"><code class="docutils literal notranslate"><span class="pre">iloc</span></code></a>。有关索引和选择数据的详细信息请见 <a target="_blank" class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">pandas 文档</a>。</p>
+</div>
+<div class="section" id="id3">
+<h2>生成测试数据<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>创建一个 arctern.GeoSeries 对象 <code class="docutils literal notranslate"><span class="pre">geos</span></code>，其中包括三个点（POINT）和一个多边形（POLYGON），并为它们建立索引。另外，以 <code class="docutils literal notranslate"><span class="pre">geos</span></code> 作为输入，创建一个 pandas.DataFrame 对象。</p>
+<blockquote>
+<div><p><strong>注意：</strong> 索引中的 a、b、c、d 对应的行数分别是 0、1、2、3。</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geos</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT (0 1)&quot;</span><span class="p">,</span><span class="s2">&quot;POINT (2 3)&quot;</span><span class="p">,</span><span class="s2">&quot;POLYGON ((0 0,0 1,1 1,0 0))&quot;</span><span class="p">,</span> <span class="s2">&quot;POINT (0 0)&quot;</span><span class="p">],</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">geos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>测试<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="loc">
+<h3>测试 loc 方法<a class="headerlink" href="#loc" title="Permalink to this headline">¶</a></h3>
+<p>访问 <code class="docutils literal notranslate"><span class="pre">geos</span></code> 的所有数据：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geos</span><span class="o">.</span><span class="n">loc</span><span class="p">[:]</span>    
+<span class="go">a                    POINT (0 1)</span>
+<span class="go">b                    POINT (2 3)</span>
+<span class="go">c    POLYGON ((0 0,0 1,1 1,0 0))</span>
+<span class="go">d                    POINT (0 0)</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+<p>选取 <code class="docutils literal notranslate"><span class="pre">geos</span></code> 的 <code class="docutils literal notranslate"><span class="pre">a</span></code> 标签所在行到 <code class="docutils literal notranslate"><span class="pre">c</span></code> 标签所在行的数据：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geos</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="go">a                    POINT (0 1)</span>
+<span class="go">b                    POINT (2 3)</span>
+<span class="go">c    POLYGON ((0 0,0 1,1 1,0 0))</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+<p>选取 <code class="docutils literal notranslate"><span class="pre">geos</span></code> 的首行到 <code class="docutils literal notranslate"><span class="pre">c</span></code> 标签所在行的数据：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geos</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="go">a                    POINT (0 1)</span>
+<span class="go">b                    POINT (2 3)</span>
+<span class="go">c    POLYGON ((0 0,0 1,1 1,0 0))</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="iloc">
+<h3>测试 iloc 方法<a class="headerlink" href="#iloc" title="Permalink to this headline">¶</a></h3>
+<p>选取 <code class="docutils literal notranslate"><span class="pre">geos</span></code> 的 第 1 行到第 3 行数据（不包含第 3 行数据）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geos</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">b                    POINT (2 3)</span>
+<span class="go">c    POLYGON ((0 0,0 1,1 1,0 0))</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+<p>选取 <code class="docutils literal notranslate"><span class="pre">df</span></code> 的 第 1 行到第 3 行数据（不包含第 3 行数据）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">                             0</span>
+<span class="go">b                  POINT (2 3)</span>
+<span class="go">c  POLYGON ((0 0,0 1,1 1,0 0))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../visualization/visualization.html" class="btn btn-neutral float-right" title="可视化" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aggregation.html" class="btn btn-neutral float-left" title="聚合" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

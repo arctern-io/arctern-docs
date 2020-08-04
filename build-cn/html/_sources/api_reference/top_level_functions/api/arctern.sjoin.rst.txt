@@ -1,0 +1,6 @@
+arctern.sjoin
+=============
+
+.. currentmodule:: arctern
+
+.. autofunction:: sjoin

@@ -1,0 +1,6 @@
+arctern.GeoSeries.distance
+==========================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.distance

@@ -1,0 +1,6 @@
+arctern.GeoSeries.area
+======================
+
+.. currentmodule:: arctern
+
+.. autoproperty:: GeoSeries.area

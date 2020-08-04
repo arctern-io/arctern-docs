@@ -1,0 +1,6 @@
+arctern\_spark.GeoSeries.npoints
+================================
+
+.. currentmodule:: arctern_spark
+
+.. autoproperty:: GeoSeries.npoints

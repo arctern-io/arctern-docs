@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Arctern RESTful Server 配置项 &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="RESTful API" href="api/api.html" />
+    <link rel="prev" title="快速开始（PySpark 后台）" href="restful_quick_start_on_spark.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/api_reference.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster/cluster.html">从单机过渡到分布式</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="restful.html">RESTful 服务</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../install/webserver_installation_config.html">Arctern RESTful Server 安装与配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restful_quick_start_on_python.html">快速开始（Python 后台）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restful_quick_start_on_spark.html">快速开始（PySpark 后台）</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Arctern RESTful Server 配置项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/api.html">RESTful API</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="restful.html">RESTful 服务</a> &raquo;</li>
+        
+      <li>Arctern RESTful Server 配置项</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/restful/restful_config.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="arctern-restful-server">
+<h1>Arctern RESTful Server 配置项<a class="headerlink" href="#arctern-restful-server" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">interpreter</span></code>： Arctern 数据分析后台的相关配置。</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">interpreter_type</span></code>： 解释器类型，可选类型包括 <code class="docutils literal notranslate"><span class="pre">python</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pyspark</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interpreter_name</span></code>： 自定义的解释器名称，如 <code class="docutils literal notranslate"><span class="pre">python3</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interpreter_python_path</span></code>: Python 解释器所在的绝对路径。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interpreter_spark_home</span></code>： Spark 所在的绝对路径。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interpreter_master</span></code>： Spark master 节点模式，可选模式包括 <code class="docutils literal notranslate"><span class="pre">local</span></code> 和 <code class="docutils literal notranslate"><span class="pre">standalone</span></code>。</p>
+<blockquote>
+<div><p><strong>注意：</strong></p>
+<ul class="simple">
+<li><p>在 local 模式下，Spark 在一个物理节点内运行。配置示例如 <code class="docutils literal notranslate"><span class="pre">--interpreter_master=local[8]</span></code>，其中 <code class="docutils literal notranslate"><span class="pre">[8]</span></code> 表示使用 8 个 CPU。</p></li>
+<li><p>在 standalone 模式下，你需要指定 master url。配置示例如 <code class="docutils literal notranslate"><span class="pre">--interpreter_master=spark://IP:PORT</span></code>。</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interpreter_pyspark_python</span></code>： Spark executor 的 Python 解释器的绝对路径。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interpreter_pyspark_driver_python</span></code>： Spark driver 的 Python 解释器的绝对路径。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arctern</span> <span class="pre">server</span></code>: Arctern RESTful Server 的相关配置。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">arctern_server_host</span></code>: Arctern RESTful Server 的 IP 地址。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arctern_server_port</span></code>: Arctern RESTful Server 的端口号。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zepplin</span></code>： Arctern RESTful Server 所使用的 Zeppelin 系统的相关配置。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">zeppelin_port</span></code>： Zeppelin 的端口号。</p></li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api/api.html" class="btn btn-neutral float-right" title="RESTful API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="restful_quick_start_on_spark.html" class="btn btn-neutral float-left" title="快速开始（PySpark 后台）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

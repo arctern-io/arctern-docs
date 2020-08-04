@@ -1,0 +1,253 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>时空数据分析 &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="数据结构" href="data_structure.html" />
+    <link rel="prev" title="功能说明" href="../feature_description.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../feature_description.html">功能说明</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">时空数据分析</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data_structure.html">数据结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="read_and_write_file.html">文件读写</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometric_manipulation.html">几何体的基本操作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="convert_from_and_to_geopandas_geoseries.html">与 GeoPandas GeoSeries 互相转换</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spatial_relationship_operation.html">空间关系运算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="map_match.html">地图匹配</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_geometry.html">绘图方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crs_and_transform.html">坐标参考系</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregation.html">聚合</a></li>
+<li class="toctree-l3"><a class="reference internal" href="indexing_selecting_data.html">索引和选择数据</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">可视化</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/api_reference.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster/cluster.html">从单机过渡到分布式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../restful/restful.html">RESTful 服务</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../feature_description.html">功能说明</a> &raquo;</li>
+        
+      <li>时空数据分析</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/feature_description/spatiotemporal_analysis/spatiotemporal_analysis.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="spatiotemporal-analysis">
+<span id="id1"></span><h1>时空数据分析<a class="headerlink" href="#spatiotemporal-analysis" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data_structure.html">数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read_and_write_file.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geometric_manipulation.html">几何体的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convert_from_and_to_geopandas_geoseries.html">与 GeoPandas GeoSeries 互相转换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spatial_relationship_operation.html">空间关系运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map_match.html">地图匹配</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot_geometry.html">绘图方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crs_and_transform.html">坐标参考系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregation.html">聚合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indexing_selecting_data.html">索引和选择数据</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="data_structure.html" class="btn btn-neutral float-right" title="数据结构" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../feature_description.html" class="btn btn-neutral float-left" title="功能说明" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

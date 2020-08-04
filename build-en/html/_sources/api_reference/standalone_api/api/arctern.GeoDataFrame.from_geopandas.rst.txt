@@ -1,0 +1,6 @@
+arctern.GeoDataFrame.from\_geopandas
+====================================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoDataFrame.from_geopandas

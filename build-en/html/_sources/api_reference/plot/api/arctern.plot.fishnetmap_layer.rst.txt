@@ -1,0 +1,6 @@
+arctern.plot.fishnetmap\_layer
+==============================
+
+.. currentmodule:: arctern.plot
+
+.. autofunction:: fishnetmap_layer

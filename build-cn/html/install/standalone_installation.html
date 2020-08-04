@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>安装部署 &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="使用 Arctern 分析空间数据" href="../quick_start/demo.html" />
+    <link rel="prev" title="快速开始" href="../quick_start/quick_start.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../quick_start/quick_start.html">快速开始</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">安装部署</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">系统要求</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">安装依赖库</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ubuntu">Ubuntu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#centos">Centos</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#miniconda">安装 Miniconda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arctern">安装 Arctern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">安装验证</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">卸载 Arctern</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../quick_start/demo.html">使用 Arctern 分析空间数据</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/api_reference.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster/cluster.html">从单机过渡到分布式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../restful/restful.html">RESTful 服务</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../quick_start/quick_start.html">快速开始</a> &raquo;</li>
+        
+      <li>安装部署</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/install/standalone_installation.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>安装部署<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>本文档将引导你在单机模式下安装 Arctern。</p>
+<div class="section" id="id2">
+<h2>系统要求<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>CPU 版本</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">操作系统</td>
+<td align="left">Ubuntu LTS 18.04</td>
+</tr>
+<tr>
+<td align="left">Conda</td>
+<td align="left">Miniconda Python3</td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>GPU 版本</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">操作系统</td>
+<td align="left">Ubuntu LTS 18.04, Centos 7</td>
+</tr>
+<tr>
+<td align="left">Conda</td>
+<td align="left">Miniconda Python3</td>
+</tr>
+<tr>
+<td align="left">CUDA</td>
+<td align="left">10.0</td>
+</tr>
+<tr>
+<td align="left">NVIDIA driver</td>
+<td align="left">4.30</td>
+</tr>
+</tbody>
+</table><blockquote>
+<div><p><strong>注意：</strong> 你可以到 <a class="reference external" href="https://developer.nvidia.com/cuda-gpus">NVIDIA 官网</a> 查询你的 GPU 是否支持 CUDA 功能。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>安装依赖库<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubuntu">
+<h3>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>CPU 版本</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>GPU 版本</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt install libgl1-mesa-dev libegl1-mesa-dev
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>注意：</strong> 如果安装失败，请先执行 <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">update</span></code> 再执行以上命令。</p>
+</div></blockquote>
+</div>
+<div class="section" id="centos">
+<h3>Centos<a class="headerlink" href="#centos" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo yum install mesa-libGLU-devel mesa-libOSMesa-devel
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="miniconda">
+<h2>安装 Miniconda<a class="headerlink" href="#miniconda" title="Permalink to this headline">¶</a></h2>
+<p>安装 <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install">Miniconda</a>：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+$ bash Miniconda3-latest-Linux-x86_64.sh -b
+$ echo &quot;source $HOME/miniconda3/etc/profile.d/conda.sh&quot; &gt;&gt; $HOME/.bashrc
+</pre></div>
+</div>
+<p>关闭当前终端，并重新打开一个新的终端。在新终端中打印所有 Conda 环境。若出现 <code class="docutils literal notranslate"><span class="pre">base</span></code> 环境，则 Conda 安装成功。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda env list
+base                   * /home/arcterner/miniconda3
+</pre></div>
+</div>
+</div>
+<div class="section" id="arctern">
+<h2>安装 Arctern<a class="headerlink" href="#arctern" title="Permalink to this headline">¶</a></h2>
+<p>安装 Arctern 并创建名为 <code class="docutils literal notranslate"><span class="pre">arctern_env</span></code> 的 Conda 环境：</p>
+<ul class="simple">
+<li><p>CPU 版本</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda create -n arctern_env -c conda-forge -c arctern arctern
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>GPU版本</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda create -n arctern_env -c conda-forge -c arctern/label/cuda10.0 arctern
+</pre></div>
+</div>
+<p>进入 Conda 环境：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda activate arctern_env
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>安装验证<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>进入 Python 环境，尝试导入 <code class="docutils literal notranslate"><span class="pre">arctern</span></code> 并确认版本是否正确。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">arctern</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern</span><span class="o">.</span><span class="n">__version__</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>卸载 Arctern<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda deactivate
+$ conda remove -n arctern_env --all
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../quick_start/demo.html" class="btn btn-neutral float-right" title="使用 Arctern 分析空间数据" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../quick_start/quick_start.html" class="btn btn-neutral float-left" title="快速开始" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

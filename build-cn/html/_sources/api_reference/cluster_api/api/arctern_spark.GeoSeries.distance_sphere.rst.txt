@@ -1,0 +1,6 @@
+arctern\_spark.GeoSeries.distance\_sphere
+=========================================
+
+.. currentmodule:: arctern_spark
+
+.. automethod:: GeoSeries.distance_sphere

@@ -1,0 +1,6 @@
+arctern.GeoSeries
+=================
+
+.. currentmodule:: arctern
+
+.. autoclass:: GeoSeries

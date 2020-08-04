@@ -1,0 +1,6 @@
+arctern.GeoDataFrame.to\_json
+=============================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoDataFrame.to_json

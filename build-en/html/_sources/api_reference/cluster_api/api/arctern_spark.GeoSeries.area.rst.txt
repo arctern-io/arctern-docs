@@ -1,0 +1,6 @@
+arctern\_spark.GeoSeries.area
+=============================
+
+.. currentmodule:: arctern_spark
+
+.. autoproperty:: GeoSeries.area

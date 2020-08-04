@@ -1,0 +1,6 @@
+arctern\_spark.GeoSeries.geom\_from\_geojson
+============================================
+
+.. currentmodule:: arctern_spark
+
+.. automethod:: GeoSeries.geom_from_geojson

@@ -1,0 +1,6 @@
+arctern.GeoDataFrame.set\_geometry
+==================================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoDataFrame.set_geometry

@@ -1,0 +1,6 @@
+arctern.GeoSeries.boundary
+==========================
+
+.. currentmodule:: arctern
+
+.. autoproperty:: GeoSeries.boundary

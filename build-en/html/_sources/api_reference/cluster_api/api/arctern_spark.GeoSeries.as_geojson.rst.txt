@@ -1,0 +1,6 @@
+arctern\_spark.GeoSeries.as\_geojson
+====================================
+
+.. currentmodule:: arctern_spark
+
+.. automethod:: GeoSeries.as_geojson

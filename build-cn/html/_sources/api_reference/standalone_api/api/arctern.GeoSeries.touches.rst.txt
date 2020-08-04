@@ -1,0 +1,6 @@
+arctern.GeoSeries.touches
+=========================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.touches

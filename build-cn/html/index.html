@@ -1,0 +1,245 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>欢迎访问 Arctern 文档 &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="快速开始" href="quick_start/quick_start.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/api_reference.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cluster/cluster.html">从单机过渡到分布式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="restful/restful.html">RESTful 服务</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>欢迎访问 Arctern 文档</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="arctern">
+<h1>欢迎访问 Arctern 文档<a class="headerlink" href="#arctern" title="Permalink to this headline">¶</a></h1>
+<p>Arctern 是一个快速可扩展的时空数据分析框架。</p>
+<p>可扩展性是构建生产环境下的数据科学管道的关键和主要挑战。为了应对这一挑战，我们推出了开源的时空分析框架 Arctern 以提高端到端的数据科学性能，并期望从两个方面提高 Arctern 在时空数据分析领域的可扩展性：</p>
+<ul class="simple">
+<li><p>从单机到集群和云，跨平台实现一致的数据分析和处理接口。</p></li>
+<li><p>跨越数据科学管道的不同阶段，实现丰富且一致的算法和模型，包括轨迹处理、空间聚类和回归等。</p></li>
+</ul>
+<p>我们计划在 GeoPandas 接口的基础上构建可向上和向外扩展的 GeoDataFrame 和 GeoSeries 数据结构，并面向 GeoDataFrame 和 GeoSeries 对象开发时空数据分析算法。所开发的算法在不同的执行环境中将保持一致的使用方法。</p>
+<p>现在，我们已经实现了一种有效的多线程 GeoSeries 数据结构，并且正在开发它的分布式版本。在最新的 0.2.0 版本中，Arctern 的处理速度比 GeoPandas 快 7 倍。详细的评估结果如下图所示：</p>
+<img alt="_images/arcternVSgeopandas.png" src="_images/arcternVSgeopandas.png" />
+<p>此外，我们正在开发实验性的 GPU 加速功能，以加速时空数据的分析和渲染。目前，Arctern 提供了 6 种 GPU 加速的渲染方法和 8 种空间关系操作，其性能优于基于 CPU 的同类产品近 36 倍。</p>
+<p>在接下来的几个版本中，我们的团队将专注于以下几个方面：</p>
+<ul class="simple">
+<li><p>基于 Spark 开发 GeoSeries 的分布式版本。自 Arcern 发布预览版以来，它一直与 Spark 3.0 同步开发。Spark 支持 GPU 调度和基于列的处理，高度吻合我们对高性能时空数据处理的想法。因此，Koalas 接口被引入 Arctern 框架以助力 Arctern 在 Spark 上实现一致的 GeoDataFrame 和 GeoSeries 接口。</p></li>
+<li><p>丰富我们的时空数据分析算法集。在项目的早期阶段，我们将专注于 KNN 搜索和轨迹分析。</p></li>
+</ul>
+<div class="section" id="id1">
+<h2>目录<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/api_reference.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cluster/cluster.html">从单机过渡到分布式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="restful/restful.html">RESTful 服务</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="quick_start/quick_start.html" class="btn btn-neutral float-right" title="快速开始" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+arctern.GeoSeries.centroid
+==========================
+
+.. currentmodule:: arctern
+
+.. autoproperty:: GeoSeries.centroid

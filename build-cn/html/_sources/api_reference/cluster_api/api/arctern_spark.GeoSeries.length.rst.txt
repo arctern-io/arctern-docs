@@ -1,0 +1,6 @@
+arctern\_spark.GeoSeries.length
+===============================
+
+.. currentmodule:: arctern_spark
+
+.. autoproperty:: GeoSeries.length

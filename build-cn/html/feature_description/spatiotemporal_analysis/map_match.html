@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>地图匹配 &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="绘图方法" href="plot_geometry.html" />
+    <link rel="prev" title="空间关系运算" href="spatial_relationship_operation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../feature_description.html">功能说明</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="spatiotemporal_analysis.html">时空数据分析</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data_structure.html">数据结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="read_and_write_file.html">文件读写</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometric_manipulation.html">几何体的基本操作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="convert_from_and_to_geopandas_geoseries.html">与 GeoPandas GeoSeries 互相转换</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spatial_relationship_operation.html">空间关系运算</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">地图匹配</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">生成数据集</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gps">在 GPS 点附近查找道路</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">获得距离 GPS 点最近的道路</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">将 GPS 点绑定到最近的道路</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="plot_geometry.html">绘图方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crs_and_transform.html">坐标参考系</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregation.html">聚合</a></li>
+<li class="toctree-l3"><a class="reference internal" href="indexing_selecting_data.html">索引和选择数据</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">可视化</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/api_reference.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster/cluster.html">从单机过渡到分布式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../restful/restful.html">RESTful 服务</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../feature_description.html">功能说明</a> &raquo;</li>
+        
+          <li><a href="spatiotemporal_analysis.html">时空数据分析</a> &raquo;</li>
+        
+      <li>地图匹配</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/feature_description/spatiotemporal_analysis/map_match.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>地图匹配<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Arctern 支持对 GPS 数据和路网进行关系分析，比如判断 GPS 点附近是否存在道路、搜索距离 GPS 点最近的道路，以及获得距离 GPS 点最近且在道路上的映射点。</p>
+<div class="section" id="id2">
+<h2>生成数据集<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>首先，生成数据集以演示如何使用 Arctern 分析 GPS 数据和路网的关系。</p>
+<p><code class="docutils literal notranslate"><span class="pre">roads</span></code>：使用 GeoSeries 的构造函数创建的一个包含三个 LINESTRING 对象的集合，用于表示三条道路。</p>
+<p><code class="docutils literal notranslate"><span class="pre">points</span></code>：使用 GeoSeries 的构造函数创建的一个包含两个 POINT 对象的集合，用于表示两个 GPS 点。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">roads</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;LINESTRING (-73.9750065 40.7713819,-73.9750065 40.7763781)&quot;</span><span class="p">,</span> <span class="s2">&quot;LINESTRING (-73.9578864 40.7724317,-73.987674 40.7724317)&quot;</span><span class="p">,</span> <span class="s2">&quot;LINESTRING (-73.9578864 40.7744317,-73.987674 40.7744317)&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">points</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT (-73.9780065 40.7748119)&quot;</span><span class="p">,</span> <span class="s2">&quot;POINT (-73.9802864 40.7728317)&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="gps">
+<h2>在 GPS 点附近查找道路<a class="headerlink" href="#gps" title="Permalink to this headline">¶</a></h2>
+<p>使用 <a target="_blank" class="reference external" href="../../api_reference/map_match/api/arctern.near_road.html"><code class="docutils literal notranslate"><span class="pre">near_road</span></code></a> 方法可以判断 GPS 点附近固定范围内是否存在道路。假设 <code class="docutils literal notranslate"><span class="pre">points</span></code> 为某城市内出租车上下客的位置，<code class="docutils literal notranslate"><span class="pre">roads</span></code> 为对应城市的路网信息。那么，如果乘客上下车的位置不在道路上或者偏离道路太远，那么这些位置数据就可以被认定为噪点。</p>
+<blockquote>
+<div><p><strong>注意：</strong> GPS 点和路网数据的坐标系必须是“EPSG:4326”。</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">arctern</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">points</span>
+<span class="go">0    POINT (-73.9780065 40.7748119)</span>
+<span class="go">1    POINT (-73.9802864 40.7728317)</span>
+<span class="go">dtype: GeoDtype</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 判断 GPS 点附近 40m 范围内是否存在道路</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bool_rst</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">near_road</span><span class="p">(</span><span class="n">roads</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="mi">43</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bool_rst</span>
+<span class="go">0     True</span>
+<span class="go">1    False</span>
+<span class="go">dtype: bool</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 过滤出在道路附近的 GPS 点</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">point_rst</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">bool_rst</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># POINT (-73.962726 40.7601753) 附近由于不存在道路而被过滤</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">point_rst</span>
+<span class="go">0    POINT (-73.9780065 40.7748119)</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>获得距离 GPS 点最近的道路<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>使用 <a target="_blank" class="reference external" href="../../api_reference/map_match/api/arctern.nearest_road.html"><code class="docutils literal notranslate"><span class="pre">nearest_road</span></code></a> 方法可以获得距离 GPS 点最近的道路。该方法的运行逻辑是：</p>
+<ol class="simple">
+<li><p>基于路网信息建立索引树（Rtree）。</p></li>
+<li><p>基于索引树快速查询 GPS 点附近的所有道路， 最后在查询出来的道路中筛选出距离 GPS 点最近的道路。</p></li>
+</ol>
+<blockquote>
+<div><p><strong>注意：</strong> GPS 点和路网数据的坐标系必须是“EPSG:4326”。</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">arctern</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 查看道路信息</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">roads</span>
+<span class="go">0     LINESTRING (-73.9750065 40.7713819,-73.9750065 40.7763781)</span>
+<span class="go">1     LINESTRING (-73.9578864 40.7724317,-73.987674 40.7724317)</span>
+<span class="go">2     LINESTRING (-73.9578864 40.7744317,-73.987674 40.7744317)</span>
+<span class="go">dtype: GeoDtype</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 查询距离 GPS 点最近的道路</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">roads_wkb_rst</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">nearest_road</span><span class="p">(</span><span class="n">roads</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 将 roads_wkb_rst 从 WKB 格式转换成 GeoSeries 格式（易读）</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nearest_roads</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">(</span><span class="n">roads_wkb_rst</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 查看 GPS 点</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">points</span>
+<span class="go">0    POINT (-73.9780065 40.7748119)</span>
+<span class="go">1    POINT (-73.9802864 40.7728317)</span>
+<span class="go">dtype: GeoDtype</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 查看距离每个 GPS 点最近的道路</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nearest_roads</span>
+<span class="go">0    LINESTRING (-73.9578864 40.7744317,-73.987674 40.7744317)</span>
+<span class="go">1    LINESTRING (-73.9578864 40.7724317,-73.987674 40.7724317)</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>将 GPS 点绑定到最近的道路<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><a target="_blank" class="reference external" href="../../api_reference/map_match/api/arctern.nearest_location_on_road.html"><code class="docutils literal notranslate"><span class="pre">nearest_location_on_road</span></code></a> 方法可以将 GPS 点绑定到距离最近的道路上。 假设 GPS 点表示某城市内出租车上下客的位置。由于 GPS 精度问题，GPS 点的位置可能存在一定的偏差。那么，部分 GPS 点可能偏离到附近的建筑物或河道里。因此，我们需要使用 <a target="_blank" class="reference external" href="../../api_reference/map_match/api/arctern.nearest_location_on_road.html"><code class="docutils literal notranslate"><span class="pre">nearest_location_on_road</span></code></a> 方法对 GPS 点的位置进行纠偏。</p>
+<blockquote>
+<div><p><strong>注意：</strong> GPS 点和路网数据的坐标系必须是“EPSG:4326”。</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">arctern</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 将 GPS 点绑定到距离最近的道路上</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">points_wkb_rst</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">nearest_location_on_road</span><span class="p">(</span><span class="n">roads</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 将 points_wkb_rst 从 WKB 格式转换成 GeoSeries 格式（易读）</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nearest_location</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">(</span><span class="n">points_wkb_rst</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 查看 GPS 点的初始位置</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">points</span>
+<span class="go">0    POINT (-73.9780065 40.7748119)</span>
+<span class="go">1    POINT (-73.9802864 40.7728317)</span>
+<span class="go">dtype: GeoDtype</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 查看纠偏后的 GPS 点的位置</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nearest_location</span>
+<span class="go">0    POINT (-73.9780065 40.7744317)</span>
+<span class="go">1    POINT (-73.9802864 40.7724317)</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+<p>下图分别是纠偏前后 GPS 点和道路的拓扑关系。我们可以看出 <a target="_blank" class="reference external" href="../../api_reference/map_match/api/arctern.nearest_location_on_road.html"><code class="docutils literal notranslate"><span class="pre">nearest_location_on_road</span></code></a> 成功地将偏离道路的 GPS 点绑定到了最近的道路上。</p>
+<p><img alt="../../_images/topo_before_correction.png" src="../../_images/topo_before_correction.png" />
+<img alt="../../_images/topo_after_correction.png" src="../../_images/topo_after_correction.png" /></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="plot_geometry.html" class="btn btn-neutral float-right" title="绘图方法" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="spatial_relationship_operation.html" class="btn btn-neutral float-left" title="空间关系运算" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

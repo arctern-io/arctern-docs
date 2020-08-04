@@ -1,0 +1,6 @@
+arctern\_spark.GeoSeries.intersection
+=====================================
+
+.. currentmodule:: arctern_spark
+
+.. automethod:: GeoSeries.intersection

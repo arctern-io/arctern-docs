@@ -1,0 +1,6 @@
+arctern.GeoSeries.is\_empty
+===========================
+
+.. currentmodule:: arctern
+
+.. autoproperty:: GeoSeries.is_empty

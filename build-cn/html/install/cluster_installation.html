@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>在 Spark 集群上安装部署 Arctern &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="代码迁移" href="../cluster/cluster_code.html" />
+    <link rel="prev" title="从单机过渡到分布式" href="../cluster/cluster.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/api_reference.html">API 参考</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../cluster/cluster.html">从单机过渡到分布式</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">在 Spark 集群上安装部署 Arctern</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#docker">创建 Docker 子网</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">启动容器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">安装基础库和工具</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">设置免密登录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">部署 Spark 和 Arctern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spark">配置 Spark 集群</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">启动 Spark 集群</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">验证部署</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cluster/cluster_code.html">代码迁移</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../restful/restful.html">RESTful 服务</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../cluster/cluster.html">从单机过渡到分布式</a> &raquo;</li>
+        
+      <li>在 Spark 集群上安装部署 Arctern</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/install/cluster_installation.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="spark-arctern">
+<h1>在 Spark 集群上安装部署 Arctern<a class="headerlink" href="#spark-arctern" title="Permalink to this headline">¶</a></h1>
+<p>本文介绍使用 Docker 技术在一台主机上启动三个容器，并将它们组织成一个 <strong>Standalone</strong> 模式的 Spark 集群。之后，你将在该集群上运行 CPU 版本的 Arctern。三个容器的信息如下：</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="left">Host name</th>
+<th align="left">IP address</th>
+<th align="left">Container name</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">node-master</td>
+<td align="left">172.18.0.20</td>
+<td align="left">node-master</td>
+<td align="left">master</td>
+</tr>
+<tr>
+<td align="left">node-slave1</td>
+<td align="left">172.18.0.21</td>
+<td align="left">node-slave1</td>
+<td align="left">worker</td>
+</tr>
+<tr>
+<td align="left">node-slave2</td>
+<td align="left">172.18.0.22</td>
+<td align="left">node-slave2</td>
+<td align="left">worker</td>
+</tr>
+</tbody>
+</table><div class="section" id="docker">
+<h2>创建 Docker 子网<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h2>
+<p>创建一个名为 <code class="docutils literal notranslate"><span class="pre">arcternet</span></code> 的 Docker 子网：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker network create --subnet<span class="o">=</span><span class="m">172</span>.18.0.0/16 arcternet
+</pre></div>
+</div>
+<p>如果你看到以下提示，则表示该子网已经存在，无需创建子网。你也可以删除现有子网，然后重新创建子网；或者尝试创建其它网段的子网。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="n">response</span> <span class="kn">from</span> <span class="nn">daemon</span><span class="p">:</span> <span class="n">Pool</span> <span class="n">overlaps</span> <span class="k">with</span> <span class="n">other</span> <span class="n">one</span> <span class="n">on</span> <span class="n">this</span> <span class="n">address</span> <span class="n">space</span>
+</pre></div>
+</div>
+<p>创建完毕后，可以通过以下命令查看创建的子网：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker network ls
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>启动容器<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker run -d -ti --name node-master --hostname node-master --net arcternet --ip <span class="m">172</span>.18.0.20 --add-host node-slave1:172.18.0.21 --add-host node-slave2:172.18.0.22  ubuntu:18.04 bash
+$ docker run -d -ti --name node-slave1 --hostname node-slave1 --net arcternet --ip <span class="m">172</span>.18.0.21 --add-host node-master:172.18.0.20 --add-host node-slave2:172.18.0.22  ubuntu:18.04 bash
+$ docker run -d -ti --name node-slave2 --hostname node-slave2 --net arcternet --ip <span class="m">172</span>.18.0.22 --add-host node-master:172.18.0.20 --add-host node-slave1:172.18.0.21  ubuntu:18.04 bash
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>安装基础库和工具<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>本文使用的 Docker 镜像是 <code class="docutils literal notranslate"><span class="pre">ubuntu:18.04</span></code>，需要安装一些基础库和工具。下面以 <code class="docutils literal notranslate"><span class="pre">node-master</span></code> 为例介绍安装步骤。</p>
+<blockquote>
+<div><p><strong>注意：</strong> 你需要对 <code class="docutils literal notranslate"><span class="pre">node-slave1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">node-slave2</span></code> 重复下方所述的操作。</p>
+</div></blockquote>
+<p>进入 <code class="docutils literal notranslate"><span class="pre">node-master</span></code> 节点：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -it node-master bash
+</pre></div>
+</div>
+<p>使用以下命令安装基础依赖库和工具：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ apt update
+$ apt install -y wget openjdk-8-jre openssh-server vim sudo
+$ service ssh start
+</pre></div>
+</div>
+<p>新建用户 <code class="docutils literal notranslate"><span class="pre">arcterner</span></code> 并将密码设置为 <code class="docutils literal notranslate"><span class="pre">arcterner</span></code>：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ useradd -m arcterner -s /bin/bash -G sudo
+$ echo -e &quot;arcterner\narcterner&quot; | passwd arcterner
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>设置免密登录<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>注意：</strong> 此操作只在 <code class="docutils literal notranslate"><span class="pre">node-master</span></code> 上执行。</p>
+</div></blockquote>
+<p>以 <code class="docutils literal notranslate"><span class="pre">arcterner</span></code> 用户登录 <code class="docutils literal notranslate"><span class="pre">node-master</span></code>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -it -u arcterner node-master bash
+</pre></div>
+</div>
+<p>设置 <code class="docutils literal notranslate"><span class="pre">node-master</span></code> 到所有节点免密登录：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ssh-keygen -t rsa -P <span class="s1">&#39;&#39;</span> -f ~/.ssh/id_rsa
+$ cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+$ ssh-copy-id node-master
+$ ssh-copy-id node-slave1
+$ ssh-copy-id node-slave2
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>部署 Spark 和 Arctern<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>注意：</strong> 你需要以 <code class="docutils literal notranslate"><span class="pre">arcterner</span></code> 用户登录所有 Docker 节点部署 Spark 和 Arctern。</p>
+</div></blockquote>
+<p>参考以下方式：</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="install_arctern_on_spark_cn.html"><span class="doc">在 Spark 上安装 Arctern</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="spark">
+<h2>配置 Spark 集群<a class="headerlink" href="#spark" title="Permalink to this headline">¶</a></h2>
+<p>以 <code class="docutils literal notranslate"><span class="pre">arcterner</span></code> 用户登录 <code class="docutils literal notranslate"><span class="pre">node-master</span></code> 。执行 <code class="docutils literal notranslate"><span class="pre">vim</span> <span class="pre">~/spark-3.0.0-bin-hadoop2.7/conf/slaves</span></code> 以编辑 <strong>slaves</strong> 文件。文件内容如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="o">-</span><span class="n">master</span>
+<span class="n">node</span><span class="o">-</span><span class="n">slave1</span>
+<span class="n">node</span><span class="o">-</span><span class="n">slave2</span>
+</pre></div>
+</div>
+<p>执行 <code class="docutils literal notranslate"><span class="pre">vim</span> <span class="pre">~/spark-3.0.0-bin-hadoop2.7/conf/spark-defaults.conf</span></code> 以编辑 <strong>spark-defaults.conf</strong> 文件。在该文件中添加以下内容：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spark.master  spark://node-master:7077
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>启动 Spark 集群<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>以 <code class="docutils literal notranslate"><span class="pre">arcterner</span></code> 用户登录 <code class="docutils literal notranslate"><span class="pre">node-master</span></code> 并启动集群：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$SPARK_HOME</span>/sbin/start-master.sh
+<span class="nv">$SPARK_HOME</span>/sbin/start-slaves.sh
+</pre></div>
+</div>
+<p>关闭 <code class="docutils literal notranslate"><span class="pre">node-master</span></code> 宿主机的 HTTP 代理，在宿主机的浏览器中输入 <code class="docutils literal notranslate"><span class="pre">http://172.18.0.20:8080/</span></code>，验证 Spark 集群是否正确启动：</p>
+<p><img alt="查看集群" src="../_images/check_cluster.png" /></p>
+</div>
+<div class="section" id="id6">
+<h2>验证部署<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>以 <code class="docutils literal notranslate"><span class="pre">arcterner</span></code> 用户登录 <code class="docutils literal notranslate"><span class="pre">node-master</span></code>，并进入 Conda 环境：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda activate arctern_env
+</pre></div>
+</div>
+<p>验证是否部署成功：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">PYSPARK_PYTHON</span><span class="o">=</span><span class="nv">$CONDA_PREFIX</span>/bin/python
+$ python -c <span class="s2">&quot;from arctern_spark import examples;examples.run_geo_functions_test()&quot;</span>
+</pre></div>
+</div>
+<p>若输出结果包含以下内容，则表示通过测试示例。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>All tests have passed!
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cluster/cluster_code.html" class="btn btn-neutral float-right" title="代码迁移" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../cluster/cluster.html" class="btn btn-neutral float-left" title="从单机过渡到分布式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+arctern.GeoSeries.rotate
+========================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.rotate

@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Indexing and selecting data &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Visualization" href="../visualization/visualization.html" />
+    <link rel="prev" title="Aggregation" href="aggregation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../feature_description.html">Feature Description</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="spatiotemporal_analysis.html">Spatiotemporal Analysis</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data_structure.html">Data structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="read_and_write_file.html">Reading and writing files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometric_manipulation.html">Basic manipulations of geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="convert_from_and_to_geopandas_geoseries.html">GeoSeries conversion between Arctern and GeoPandas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spatial_relationship_operation.html">Spatial relationship operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="map_match.html">Map match</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_geometry.html">Plot methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crs_and_transform.html">Coordinate reference system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregation.html">Aggregation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Indexing and selecting data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#methods-of-indexing-and-selecting-data">Methods of indexing and selecting data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generating-test-data">Generating test data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tests">Tests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/api_reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster/cluster.html">Transform from standalone version to distributed version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../restful/restful.html">RESTful Service</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../feature_description.html">Feature Description</a> &raquo;</li>
+        
+          <li><a href="spatiotemporal_analysis.html">Spatiotemporal Analysis</a> &raquo;</li>
+        
+      <li>Indexing and selecting data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/feature_description/spatiotemporal_analysis/indexing_selecting_data.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="indexing-and-selecting-data">
+<h1>Indexing and selecting data<a class="headerlink" href="#indexing-and-selecting-data" title="Permalink to this headline">¶</a></h1>
+<p>This article describes how Arctern GeoSeries index and select data.</p>
+<div class="section" id="methods-of-indexing-and-selecting-data">
+<h2>Methods of indexing and selecting data<a class="headerlink" href="#methods-of-indexing-and-selecting-data" title="Permalink to this headline">¶</a></h2>
+<p>Arctern GeoSeries inherits the  indexing and data selection methods from pandas Series, including the label-based indexing <a target="_blank" class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html"><code class="docutils literal notranslate"><span class="pre">loc</span></code></a> and integer-location based indexing <a target="_blank" class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html"><code class="docutils literal notranslate"><span class="pre">iloc</span></code></a>. See <a target="_blank" class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">pandas documentation</a> for detailed information about indexing and selecting data.</p>
+</div>
+<div class="section" id="generating-test-data">
+<h2>Generating test data<a class="headerlink" href="#generating-test-data" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Create an arctern.GeoSeries object <code class="docutils literal notranslate"><span class="pre">geos</span></code>, which includes three points (POINT) and a polygon (POLYGON), and then index them.</p></li>
+<li><p>Create a pandas.DataFrame object with <code class="docutils literal notranslate"><span class="pre">geos</span></code> as input.</p></li>
+</ol>
+<blockquote>
+<div><p><strong>Note:</strong> The row indexes corresponding to a, b, c, and d are 0, 1, 2, and 3.</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geos</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT (0 1)&quot;</span><span class="p">,</span><span class="s2">&quot;POINT (2 3)&quot;</span><span class="p">,</span><span class="s2">&quot;POLYGON ((0 0,0 1,1 1,0 0))&quot;</span><span class="p">,</span> <span class="s2">&quot;POINT (0 0)&quot;</span><span class="p">],</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">geos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tests">
+<h2>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="testing-the-loc-method">
+<h3>Testing the loc method<a class="headerlink" href="#testing-the-loc-method" title="Permalink to this headline">¶</a></h3>
+<p>Access all data of <code class="docutils literal notranslate"><span class="pre">geos</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geos</span><span class="o">.</span><span class="n">loc</span><span class="p">[:]</span>    
+<span class="go">a                    POINT (0 1)</span>
+<span class="go">b                    POINT (2 3)</span>
+<span class="go">c    POLYGON ((0 0,0 1,1 1,0 0))</span>
+<span class="go">d                    POINT (0 0)</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+<p>Select the data of <code class="docutils literal notranslate"><span class="pre">geos</span></code> from line <code class="docutils literal notranslate"><span class="pre">a</span></code> to line <code class="docutils literal notranslate"><span class="pre">c</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geos</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="go">a                    POINT (0 1)</span>
+<span class="go">b                    POINT (2 3)</span>
+<span class="go">c    POLYGON ((0 0,0 1,1 1,0 0))</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+<p>Select the data of <code class="docutils literal notranslate"><span class="pre">geos</span></code> from the first line to line <code class="docutils literal notranslate"><span class="pre">c</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geos</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="go">a                    POINT (0 1)</span>
+<span class="go">b                    POINT (2 3)</span>
+<span class="go">c    POLYGON ((0 0,0 1,1 1,0 0))</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="testing-the-iloc-method">
+<h3>Testing the iloc method<a class="headerlink" href="#testing-the-iloc-method" title="Permalink to this headline">¶</a></h3>
+<p>Select the data of <code class="docutils literal notranslate"><span class="pre">geos</span></code> from line 1 to line 3 (excluding data in line 3):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geos</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">b                    POINT (2 3)</span>
+<span class="go">c    POLYGON ((0 0,0 1,1 1,0 0))</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+<p>Select the data of <code class="docutils literal notranslate"><span class="pre">df</span></code> from line 1 to line 3 (excluding data in line 3):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">                             0</span>
+<span class="go">b                  POINT (2 3)</span>
+<span class="go">c  POLYGON ((0 0,0 1,1 1,0 0))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../visualization/visualization.html" class="btn btn-neutral float-right" title="Visualization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aggregation.html" class="btn btn-neutral float-left" title="Aggregation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

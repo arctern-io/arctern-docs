@@ -1,0 +1,6 @@
+arctern.GeoSeries.exterior
+==========================
+
+.. currentmodule:: arctern
+
+.. autoproperty:: GeoSeries.exterior

@@ -1,0 +1,6 @@
+arctern.GeoSeries.fillna
+========================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.fillna

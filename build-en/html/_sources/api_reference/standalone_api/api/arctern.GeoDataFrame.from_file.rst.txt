@@ -1,0 +1,6 @@
+arctern.GeoDataFrame.from\_file
+===============================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoDataFrame.from_file

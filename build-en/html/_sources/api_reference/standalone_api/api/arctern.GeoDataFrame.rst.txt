@@ -1,0 +1,6 @@
+arctern.GeoDataFrame
+====================
+
+.. currentmodule:: arctern
+
+.. autoclass:: GeoDataFrame

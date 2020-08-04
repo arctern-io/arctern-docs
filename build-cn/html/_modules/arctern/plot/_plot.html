@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arctern.plot._plot &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_reference/api_reference.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cluster/cluster.html">从单机过渡到分布式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../restful/restful.html">RESTful 服务</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>arctern.plot._plot</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for arctern.plot._plot</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (C) 2019-2020 Zilliz. All rights reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;plot_geometry&quot;</span>
+    <span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">_flat_polygon</span><span class="p">(</span><span class="n">geo_dict</span><span class="p">,</span> <span class="n">dict_collect</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">&#39;polygons&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dict_collect</span><span class="p">:</span>
+        <span class="n">dict_collect</span><span class="p">[</span><span class="s1">&#39;polygons&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">dict_collect</span><span class="p">[</span><span class="s1">&#39;polygons&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">geo_dict</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_flat_line</span><span class="p">(</span><span class="n">geo_dict</span><span class="p">,</span> <span class="n">dict_collect</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="k">if</span> <span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;MultiLineString&#39;</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">]:</span>
+            <span class="n">line_arry</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">),</span> <span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">coor</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                <span class="n">line_arry</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">coor</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">line_arry</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">coor</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">idx</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="s1">&#39;lines&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dict_collect</span><span class="p">:</span>
+                <span class="n">dict_collect</span><span class="p">[</span><span class="s1">&#39;lines&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">dict_collect</span><span class="p">[</span><span class="s1">&#39;lines&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line_arry</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;LineString&#39;</span><span class="p">:</span>
+        <span class="n">line_arry</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">]),</span> <span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">coor</span> <span class="ow">in</span> <span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">]:</span>
+            <span class="n">line_arry</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">coor</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">line_arry</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">coor</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="s1">&#39;lines&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dict_collect</span><span class="p">:</span>
+            <span class="n">dict_collect</span><span class="p">[</span><span class="s1">&#39;lines&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">dict_collect</span><span class="p">[</span><span class="s1">&#39;lines&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line_arry</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_flat_point</span><span class="p">(</span><span class="n">geo_dict</span><span class="p">,</span> <span class="n">dict_collect</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Point&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;points&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dict_collect</span><span class="p">:</span>
+            <span class="n">dict_collect</span><span class="p">[</span><span class="s1">&#39;points&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">dict_collect</span><span class="p">[</span><span class="s1">&#39;points&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;MultiPoint&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;points&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dict_collect</span><span class="p">:</span>
+            <span class="n">dict_collect</span><span class="p">[</span><span class="s1">&#39;points&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">dict_collect</span><span class="p">[</span><span class="s1">&#39;points&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">_flat_geoms</span><span class="p">(</span><span class="n">geo_dict</span><span class="p">,</span> <span class="n">dict_collect</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;GeometryCollection&#39;</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">geos</span> <span class="ow">in</span> <span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;geometries&#39;</span><span class="p">]:</span>
+            <span class="n">_flat_geoms</span><span class="p">(</span><span class="n">geos</span><span class="p">,</span> <span class="n">dict_collect</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;MultiPolygon&#39;</span> <span class="ow">or</span> <span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Polygon&#39;</span><span class="p">:</span>
+        <span class="n">_flat_polygon</span><span class="p">(</span><span class="n">geo_dict</span><span class="p">,</span> <span class="n">dict_collect</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;MultiLineString&#39;</span> <span class="ow">or</span> <span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;LineString&#39;</span><span class="p">:</span>
+        <span class="n">_flat_line</span><span class="p">(</span><span class="n">geo_dict</span><span class="p">,</span> <span class="n">dict_collect</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Point&#39;</span> <span class="ow">or</span> <span class="n">geo_dict</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;MultiPoint&#39;</span><span class="p">:</span>
+        <span class="n">_flat_point</span><span class="p">(</span><span class="n">geo_dict</span><span class="p">,</span> <span class="n">dict_collect</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;unsupported geometry: </span><span class="si">{</span><span class="n">geo_dict</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_plot_polygons</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">polygons</span><span class="p">,</span> <span class="o">**</span><span class="n">style_kwds</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">descartes.patch</span> <span class="kn">import</span> <span class="n">PolygonPatch</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+            <span class="s2">&quot;The descartes package is required for plotting polygons in arctern. &quot;</span>
+            <span class="s2">&quot;You can install it using &#39;conda install -c conda-forge descartes&#39; &quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">matplotlib.collections</span> <span class="kn">import</span> <span class="n">PatchCollection</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+            <span class="s2">&quot;The matplotlib package is required for plotting polygons in arctern. &quot;</span>
+            <span class="s2">&quot;You can install it using &#39;conda install -c conda-forge matplotlib&#39; &quot;</span><span class="p">)</span>
+    <span class="n">collection</span> <span class="o">=</span> <span class="n">PatchCollection</span><span class="p">([</span><span class="n">PolygonPatch</span><span class="p">(</span><span class="n">geo</span><span class="p">)</span> <span class="k">for</span> <span class="n">geo</span> <span class="ow">in</span> <span class="n">polygons</span><span class="p">],</span> <span class="o">**</span><span class="n">style_kwds</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_collection</span><span class="p">(</span><span class="n">collection</span><span class="p">,</span> <span class="n">autolim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># value for linestyles : solid|dashed|dashdot|dotted</span>
+<span class="k">def</span> <span class="nf">_plot_lines</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="o">**</span><span class="n">style_kwds</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">matplotlib.collections</span> <span class="kn">import</span> <span class="n">LineCollection</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+            <span class="s2">&quot;The matplotlib package is required for plotting polygons in arctern. &quot;</span>
+            <span class="s2">&quot;You can install it using &#39;conda install -c conda-forge matplotlib&#39; &quot;</span><span class="p">)</span>
+
+    <span class="n">collection</span> <span class="o">=</span> <span class="n">LineCollection</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="o">**</span><span class="n">style_kwds</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_collection</span><span class="p">(</span><span class="n">collection</span><span class="p">,</span> <span class="n">autolim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_plot_points</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">style_kwds</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">&#39;markersize&#39;</span> <span class="ow">in</span> <span class="n">style_kwds</span><span class="p">:</span>
+        <span class="n">style_kwds</span><span class="p">[</span><span class="s1">&#39;s&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">style_kwds</span><span class="p">[</span><span class="s1">&#39;markersize&#39;</span><span class="p">]</span>
+        <span class="k">del</span> <span class="n">style_kwds</span><span class="p">[</span><span class="s1">&#39;markersize&#39;</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">style_kwds</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_get_random_color_from_cycle</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">random</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+            <span class="s2">&quot;The matplotlib package is required for plotting polygons in arctern. &quot;</span>
+            <span class="s2">&quot;You can install it using &#39;conda install -c conda-forge matplotlib&#39; &quot;</span><span class="p">)</span>
+
+    <span class="n">cycle_list</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.prop_cycle&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">by_key</span><span class="p">()[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span>
+    <span class="n">cyc_idx</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cycle_list</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">cycle_list</span><span class="p">[</span><span class="n">cyc_idx</span><span class="p">]</span>
+
+<span class="c1"># pylint: disable=too-many-return-statements</span>
+<span class="c1"># pylint: disable=too-many-branches</span>
+<span class="k">def</span> <span class="nf">_get_style_value</span><span class="p">(</span><span class="n">geo_name</span><span class="p">,</span> <span class="n">style_key</span><span class="p">,</span> <span class="n">style_vale</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">is_color_like</span>
+        <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+            <span class="s2">&quot;The matplotlib package is required for plotting polygons in arctern. &quot;</span>
+            <span class="s2">&quot;You can install it using &#39;conda install -c conda-forge matplotlib&#39; &quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">style_key</span> <span class="o">==</span> <span class="s1">&#39;alpha&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">style_vale</span> <span class="k">if</span> <span class="n">style_vale</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">geo_name</span> <span class="o">==</span> <span class="s1">&#39;polygons&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">style_key</span> <span class="o">==</span> <span class="s1">&#39;linewidth&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">style_vale</span> <span class="k">if</span> <span class="n">style_vale</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;patch.linewidth&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">style_key</span> <span class="o">==</span> <span class="s1">&#39;linestyle&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">style_vale</span> <span class="k">if</span> <span class="n">style_vale</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;lines.linestyle&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">style_key</span> <span class="o">==</span> <span class="s1">&#39;edgecolor&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">style_vale</span> <span class="k">if</span> <span class="n">is_color_like</span><span class="p">(</span><span class="n">style_vale</span><span class="p">)</span> <span class="k">else</span> <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;patch.edgecolor&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">style_key</span> <span class="o">==</span> <span class="s1">&#39;facecolor&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">style_vale</span> <span class="k">if</span> <span class="n">style_vale</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;patch.facecolor&#39;</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">geo_name</span> <span class="o">==</span> <span class="s1">&#39;lines&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">style_key</span> <span class="o">==</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">style_vale</span> <span class="k">if</span> <span class="n">is_color_like</span><span class="p">(</span><span class="n">style_vale</span><span class="p">)</span> <span class="k">else</span> <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;lines.color&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">style_key</span> <span class="o">==</span> <span class="s1">&#39;linewidth&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">style_vale</span> <span class="k">if</span> <span class="n">style_vale</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;lines.linewidth&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">style_key</span> <span class="o">==</span> <span class="s1">&#39;linestyle&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">style_vale</span> <span class="k">if</span> <span class="n">style_vale</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;lines.linestyle&#39;</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">geo_name</span> <span class="o">==</span> <span class="s1">&#39;points&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">style_key</span> <span class="o">==</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">style_vale</span> <span class="k">if</span> <span class="n">is_color_like</span><span class="p">(</span><span class="n">style_vale</span><span class="p">)</span> <span class="k">else</span> <span class="n">_get_random_color_from_cycle</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">style_key</span> <span class="o">==</span> <span class="s1">&#39;marker&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">style_vale</span> <span class="k">if</span> <span class="n">style_vale</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;scatter.marker&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">style_key</span> <span class="o">==</span> <span class="s1">&#39;markersize&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">style_vale</span> <span class="k">if</span> <span class="n">style_vale</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;lines.markersize&#39;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">_extend_collect</span><span class="p">(</span><span class="n">geo_name</span><span class="p">,</span> <span class="n">geo_collect</span><span class="p">,</span> <span class="n">plot_collect</span><span class="p">,</span> <span class="n">row_style</span><span class="p">,</span> <span class="n">geo_style</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">geo_name</span> <span class="ow">in</span> <span class="n">geo_collect</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">geo_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plot_collect</span><span class="p">:</span>
+            <span class="n">plot_collect</span><span class="p">[</span><span class="n">geo_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">plot_collect</span><span class="p">[</span><span class="n">geo_name</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">geo_collect</span><span class="p">[</span><span class="n">geo_name</span><span class="p">])</span>
+
+        <span class="k">for</span> <span class="n">style_key</span><span class="p">,</span> <span class="n">style_val</span> <span class="ow">in</span> <span class="n">row_style</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">style_key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">geo_style</span><span class="p">:</span>
+                <span class="n">geo_style</span><span class="p">[</span><span class="n">style_key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">style_val</span> <span class="o">=</span> <span class="n">_get_style_value</span><span class="p">(</span><span class="n">geo_name</span><span class="p">,</span> <span class="n">style_key</span><span class="p">,</span> <span class="n">style_val</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">style_val</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">del</span> <span class="n">geo_style</span><span class="p">[</span><span class="n">style_key</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">style</span> <span class="o">=</span> <span class="p">[</span><span class="n">style_val</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">geo_collect</span><span class="p">[</span><span class="n">geo_name</span><span class="p">]))]</span>
+                <span class="n">geo_style</span><span class="p">[</span><span class="n">style_key</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_add_global_plot_style</span><span class="p">(</span><span class="n">geo_name</span><span class="p">,</span> <span class="n">style_key</span><span class="p">,</span> <span class="n">style_val</span><span class="p">,</span> <span class="n">plot_style</span><span class="p">):</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">_get_style_value</span><span class="p">(</span><span class="n">geo_name</span><span class="p">,</span> <span class="n">style_key</span><span class="p">,</span> <span class="n">style_val</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">plot_style</span><span class="p">[</span><span class="n">style_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+
+<span class="k">def</span> <span class="nf">_plot_collection</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">geoms_list</span><span class="p">,</span> <span class="o">**</span><span class="n">style_kwds</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">json</span>
+    <span class="n">style_iter</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="n">polygons_style</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="n">lines_style</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="n">points_style</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">style_kwds</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="n">_add_global_plot_style</span><span class="p">(</span><span class="s1">&#39;polygons&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">polygons_style</span><span class="p">)</span>
+            <span class="n">_add_global_plot_style</span><span class="p">(</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">lines_style</span><span class="p">)</span>
+            <span class="n">_add_global_plot_style</span><span class="p">(</span><span class="s1">&#39;points&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">points_style</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">style_iter</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                <span class="n">_add_global_plot_style</span><span class="p">(</span><span class="s1">&#39;polygons&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">polygons_style</span><span class="p">)</span>
+                <span class="n">_add_global_plot_style</span><span class="p">(</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">lines_style</span><span class="p">)</span>
+                <span class="n">_add_global_plot_style</span><span class="p">(</span><span class="s1">&#39;points&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">points_style</span><span class="p">)</span>
+
+    <span class="n">plot_collect</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">geo</span> <span class="ow">in</span> <span class="n">geoms_list</span><span class="p">:</span>
+        <span class="n">row_style</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val_iter</span> <span class="ow">in</span> <span class="n">style_iter</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">val_iter</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="n">row_style</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+
+        <span class="k">if</span> <span class="n">geo</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">geo_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">geo</span><span class="p">)</span>
+            <span class="n">geo_collect</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+            <span class="n">_flat_geoms</span><span class="p">(</span><span class="n">geo_dict</span><span class="p">,</span> <span class="n">geo_collect</span><span class="p">)</span>
+            <span class="n">_extend_collect</span><span class="p">(</span><span class="s1">&#39;polygons&#39;</span><span class="p">,</span> <span class="n">geo_collect</span><span class="p">,</span> <span class="n">plot_collect</span><span class="p">,</span> <span class="n">row_style</span><span class="p">,</span> <span class="n">polygons_style</span><span class="p">)</span>
+            <span class="n">_extend_collect</span><span class="p">(</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">geo_collect</span><span class="p">,</span> <span class="n">plot_collect</span><span class="p">,</span> <span class="n">row_style</span><span class="p">,</span> <span class="n">lines_style</span><span class="p">)</span>
+            <span class="n">_extend_collect</span><span class="p">(</span><span class="s1">&#39;points&#39;</span><span class="p">,</span> <span class="n">geo_collect</span><span class="p">,</span> <span class="n">plot_collect</span><span class="p">,</span> <span class="n">row_style</span><span class="p">,</span> <span class="n">points_style</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s1">&#39;polygons&#39;</span> <span class="ow">in</span> <span class="n">plot_collect</span><span class="p">:</span>
+        <span class="n">_plot_polygons</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">plot_collect</span><span class="p">[</span><span class="s1">&#39;polygons&#39;</span><span class="p">],</span> <span class="o">**</span><span class="n">polygons_style</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;lines&#39;</span> <span class="ow">in</span> <span class="n">plot_collect</span><span class="p">:</span>
+        <span class="n">_plot_lines</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">plot_collect</span><span class="p">[</span><span class="s1">&#39;lines&#39;</span><span class="p">],</span> <span class="o">**</span><span class="n">lines_style</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;points&#39;</span> <span class="ow">in</span> <span class="n">plot_collect</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">plot_collect</span><span class="p">[</span><span class="s1">&#39;points&#39;</span><span class="p">]]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">plot_collect</span><span class="p">[</span><span class="s1">&#39;points&#39;</span><span class="p">]]</span>
+        <span class="n">_plot_points</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">points_style</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">autoscale_view</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">_plot_pandas_series</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">geoms</span><span class="p">,</span> <span class="o">**</span><span class="n">style_kwds</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">pandas.core.series</span>
+    <span class="kn">import</span> <span class="nn">arctern</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">geoms</span><span class="p">,</span> <span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">series</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;geoms shuld be type of pandas.core.series.Series&quot;</span><span class="p">)</span>
+    <span class="n">len_geoms</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">geoms</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">len_geoms</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">geoms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">geoms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">bytes</span><span class="p">):</span>
+        <span class="n">geoms</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">ST_AsGeoJSON</span><span class="p">(</span><span class="n">geoms</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;unexpected input type, </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">geoms</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">_plot_collection</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">geoms</span><span class="p">,</span> <span class="o">**</span><span class="n">style_kwds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="plot_geometry"><a class="viewcode-back" href="../../../api_reference/plot/api/arctern.plot.plot_geometry.html#arctern.plot.plot_geometry">[docs]</a><span class="k">def</span> <span class="nf">plot_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">geoms</span><span class="p">,</span> <span class="o">**</span><span class="n">style_kwds</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plots a collection of geometries.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ax : matplotlib.axes.Axes</span>
+<span class="sd">        The axes where geometries will be plotted.</span>
+<span class="sd">    geoms : Series or DataFrame</span>
+<span class="sd">        Sequence of geometries.</span>
+<span class="sd">    **style_kwds:</span>
+<span class="sd">        ``style_kwds`` specify the properties that describe the style of geometric graphs.</span>
+
+<span class="sd">        Here is a list of availble style properties:</span>
+
+<span class="sd">        +----------+------------------+-------+--------------------------------------------------+</span>
+<span class="sd">        |Property  |Description       |Default|Applied to                                        |</span>
+<span class="sd">        +==========+==================+=======+==================================================+</span>
+<span class="sd">        |color     |str, color        |&#39;C0&#39;   |Point, MultiPoint, Linestring, MultiLinestring    |</span>
+<span class="sd">        +----------+------------------+-------+--------------------------------------------------+</span>
+<span class="sd">        |edgecolor |str, edge color   |&#39;black&#39;|Polygon, MultiPolygon                             |</span>
+<span class="sd">        +----------+------------------+-------+--------------------------------------------------+</span>
+<span class="sd">        |facecolor |str, face color   |&#39;C0&#39;   |Polygon, MultiPolygon                             |</span>
+<span class="sd">        +----------+------------------+-------+--------------------------------------------------+</span>
+<span class="sd">        |linewidth |float, line width |1.0    |Linestring, MultiLinestring, Polygon, MultiPolygon|</span>
+<span class="sd">        +----------+------------------+-------+--------------------------------------------------+</span>
+<span class="sd">        |linestyle |str, line style   |&#39;-&#39;    |Linestring, MultiLinestring, Polygon, MultiPolygon|</span>
+<span class="sd">        +----------+------------------+-------+--------------------------------------------------+</span>
+<span class="sd">        |marker    |str, marker style |&#39;o&#39;    |Point, MultiPoint                                 |</span>
+<span class="sd">        +----------+------------------+-------+--------------------------------------------------+</span>
+<span class="sd">        |markersize|float, marker size|6.0    |Point, MultiPoint                                 |</span>
+<span class="sd">        +----------+------------------+-------+--------------------------------------------------+</span>
+<span class="sd">        |alpha     |float, opacity    |1.0    |All                                               |</span>
+<span class="sd">        +----------+------------------+-------+--------------------------------------------------+</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    --------</span>
+<span class="sd">    See `matplotlib.pyplot.plot document &lt;https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html?highlight=plot#matplotlib.pyplot.plot&gt;`_ for detailed description of marker styles, line styles, and colors.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    -------</span>
+
+<span class="sd">    .. plot::</span>
+<span class="sd">       :context: close-figs</span>
+
+<span class="sd">       &gt;&gt;&gt; import pandas</span>
+<span class="sd">       &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">       &gt;&gt;&gt; import arctern</span>
+<span class="sd">       &gt;&gt;&gt; raw_data = []</span>
+<span class="sd">       &gt;&gt;&gt; raw_data.append(&#39;point(0 0)&#39;)</span>
+<span class="sd">       &gt;&gt;&gt; raw_data.append(&#39;linestring(0 10, 5 5, 10 0)&#39;)</span>
+<span class="sd">       &gt;&gt;&gt; raw_data.append(&#39;polygon((2 2,2 3,3 3,3 2,2 2))&#39;)</span>
+<span class="sd">       &gt;&gt;&gt; raw_data.append(&quot;GEOMETRYCOLLECTION(&quot;</span>
+<span class="sd">       ...                 &quot;polygon((1 1,1 2,2 2,2 1,1 1)),&quot;</span>
+<span class="sd">       ...                 &quot;linestring(0 1, 5 6, 10 11),&quot;</span>
+<span class="sd">       ...                 &quot;POINT(4 7))&quot;)</span>
+<span class="sd">       &gt;&gt;&gt; arr_wkt = pandas.Series(raw_data)</span>
+<span class="sd">       &gt;&gt;&gt; arr_wkb = (arctern.GeoSeries(arr_wkt)).curve_to_line()</span>
+<span class="sd">       &gt;&gt;&gt; df = pandas.DataFrame({&#39;wkb&#39;:arr_wkb})</span>
+<span class="sd">       &gt;&gt;&gt; fig, ax = plt.subplots()</span>
+<span class="sd">       &gt;&gt;&gt; arctern.plot.plot_geometry(ax, df,</span>
+<span class="sd">       ...                            color=[&#39;orange&#39;, &#39;green&#39;, &#39;blue&#39;, &#39;red&#39;],</span>
+<span class="sd">       ...                            marker=&#39;^&#39;,</span>
+<span class="sd">       ...                            markersize=100,</span>
+<span class="sd">       ...                            linewidth=[None, 7, 8, 5],</span>
+<span class="sd">       ...                            linestyle=[None, &#39;dashed&#39;, &#39;dashdot&#39;, None],</span>
+<span class="sd">       ...                            edgecolor=[None, None, &#39;red&#39;, None],</span>
+<span class="sd">       ...                            facecolor=[None, None, &#39;black&#39;, None])</span>
+<span class="sd">       &gt;&gt;&gt; ax.grid()</span>
+<span class="sd">       &gt;&gt;&gt; fig.savefig(&#39;/tmp/plot_test.png&#39;)</span>
+<span class="sd">       &gt;&gt;&gt; plt.show()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">pandas.core.series</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">geoms</span><span class="p">,</span> <span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">series</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>
+        <span class="n">_plot_pandas_series</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">geoms</span><span class="p">,</span> <span class="o">**</span><span class="n">style_kwds</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">geoms</span><span class="p">,</span> <span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">geoms</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The input param &#39;geoms&#39; should have only one column. geoms schema = </span><span class="si">{</span><span class="n">geoms</span><span class="o">.</span><span class="n">columns</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">geom_series</span> <span class="o">=</span> <span class="n">geoms</span><span class="p">[</span><span class="n">geoms</span><span class="o">.</span> <span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="n">_plot_pandas_series</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">geom_series</span><span class="p">,</span> <span class="o">**</span><span class="n">style_kwds</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

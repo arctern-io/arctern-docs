@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Arctern RESTful Server 安装与配置 &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="快速开始（Python 后台）" href="../restful/restful_quick_start_on_python.html" />
+    <link rel="prev" title="RESTful 服务" href="../restful/restful.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/api_reference.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster/cluster.html">从单机过渡到分布式</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../restful/restful.html">RESTful 服务</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Arctern RESTful Server 安装与配置</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arctern">安装 Arctern 后台</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#python-arctern">安装基于 Python 的 Arctern 后台</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spark-arctern">安装基于 Spark 的 Arctern 后台</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">安装 Arctern RESTful Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workspace">设置 Workspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">配置 Arctern RESTful Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">启动</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#faq">FAQ</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arctern-conda-python">如何获取 Arctern Conda 环境的 Python 路径</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#http-arctern-restful-server">使用 HTTP 代理对 Arctern RESTful Server 的影响</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../restful/restful_quick_start_on_python.html">快速开始（Python 后台）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restful/restful_quick_start_on_spark.html">快速开始（PySpark 后台）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restful/restful_config.html">Arctern RESTful Server 配置项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restful/api/api.html">RESTful API</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../restful/restful.html">RESTful 服务</a> &raquo;</li>
+        
+      <li>Arctern RESTful Server 安装与配置</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/install/webserver_installation_config.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="arctern-restful-server">
+<h1>Arctern RESTful Server 安装与配置<a class="headerlink" href="#arctern-restful-server" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="arctern">
+<h2>安装 Arctern 后台<a class="headerlink" href="#arctern" title="Permalink to this headline">¶</a></h2>
+<p>Arctern RESTful Server 仅负责接收和解析 RESTful 请求，实际操作由 Arctern 后台执行。在安装 Arctern RESTful Server 前，你需要事先安装 Arctern 后台系统。目前，Arctern RESTful Server 支持基于 Python 和基于 Spark 的两种 Arctern 后台。你可以任选一种安装使用。</p>
+<div class="section" id="python-arctern">
+<h3>安装基于 Python 的 Arctern 后台<a class="headerlink" href="#python-arctern" title="Permalink to this headline">¶</a></h3>
+<p>请参考如下链接：</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="standalone_installation.html"><span class="doc">安装 Arctern</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="spark-arctern">
+<h3>安装基于 Spark 的 Arctern 后台<a class="headerlink" href="#spark-arctern" title="Permalink to this headline">¶</a></h3>
+<p>请参考如下链接：</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="install_arctern_on_spark_cn.html"><span class="doc">在 Spark 上安装 Arctern</span></a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>安装 Arctern RESTful Server<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>为 Arctern RESTful Server 构建 Conda 环境：</p>
+<blockquote>
+<div><p><strong>注意：</strong> 此处使用的环境名为 <code class="docutils literal notranslate"><span class="pre">arctern_server_env</span></code>，你可根据需求自行选择合适的名称。</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda create -n arctern_server_env -c conda-forge -c arctern arctern-webserver
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>注意：</strong> 如果你在同一台计算机上安装 Arctern 后台系统和 Arctern RESTful Server，建议二者使用不同的 Conda 环境。例如，为 Arctern 后台创建名为 <code class="docutils literal notranslate"><span class="pre">arctern_env</span></code> 的环境，为 Arctern RESTful Server 的创建名为 <code class="docutils literal notranslate"><span class="pre">arctern_server_env</span></code> 的环境。</p>
+</div></blockquote>
+</div>
+<div class="section" id="workspace">
+<h2>设置 Workspace<a class="headerlink" href="#workspace" title="Permalink to this headline">¶</a></h2>
+<p>进入 <code class="docutils literal notranslate"><span class="pre">arctern_server_env</span></code> 虚拟环境：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda activate arctern_server_env
+</pre></div>
+</div>
+<p>Workspace 文件夹用于存放 Arctern RESTful Server 所依赖的第三方工具、插件、系统配置文件等信息。在初次启动 RESTful Server 前，你需要通过 <code class="docutils literal notranslate"><span class="pre">bootstrap</span></code> 命令设置 workspace。</p>
+<blockquote>
+<div><p><strong>注意：</strong> 此处 <code class="docutils literal notranslate"><span class="pre">workspace</span></code> 指定为 <code class="docutils literal notranslate"><span class="pre">/home/usr/arctern_server/</span></code>，你可根据需求自行选择合适的路径。</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>arctern-server bootstrap --workspace<span class="o">=</span>/home/usr/arctern_server/
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>配置 Arctern RESTful Server<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Arctern RESTful Server 为用户开放了一组系统配置项，包括服务端口、IP 地址、数据处理后台等。其中，Python 或 PySpark 等不同的数据处理后台的选择由 <code class="docutils literal notranslate"><span class="pre">interpreter_type</span></code> 选项控制。</p>
+<p>如果选用 Python 作为后台，请依照以下命令示例进行配置，配置项解释详见 <a class="reference internal" href="../restful/restful_config.html"><span class="doc">Arctern RESTful Server 配置选项</span></a>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>arctern-server config --arctern_server_host<span class="o">=</span><span class="m">127</span>.0.0.1 --arctern_server_port<span class="o">=</span><span class="m">8080</span> --interpreter_type<span class="o">=</span>python --interpreter_name<span class="o">=</span>arcternpython --interpreter_python_path<span class="o">=</span><span class="s2">&quot;&lt;/path/to/python&gt;&quot;</span>
+</pre></div>
+</div>
+<p>如果选用 Spark 作为后台，请依照以下命令示例进行配置，配置项解释详见 <a class="reference internal" href="../restful/restful_config.html"><span class="doc">Arctern RESTful Server 配置选项</span></a>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>arctern-server config --arctern_server_host<span class="o">=</span><span class="m">127</span>.0.0.1 --arctern_server_port<span class="o">=</span><span class="m">8080</span> --interpreter_type<span class="o">=</span>pyspark --interpreter_name<span class="o">=</span>arcternpyspark --interpreter_pyspark_python<span class="o">=</span><span class="s2">&quot;&lt;/path/to/python&gt;&quot;</span> --interpreter_pyspark_driver_python<span class="o">=</span>&lt;/path/to/python&gt; --interpreter_spark_home<span class="o">=</span><span class="s2">&quot;&lt;/path/to/spark&gt;&quot;</span> --interpreter_master<span class="o">=</span><span class="nb">local</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>注意：</strong></p>
+<ul class="simple">
+<li><p>你需要将 <code class="docutils literal notranslate"><span class="pre">&lt;/path/to/python&gt;</span></code> 替换为 Arctern 所在 Conda 环境的 Python 绝对路径，如何获取该路径请参考 <a class="reference external" href="#faq">FAQ</a>。</p></li>
+<li><p>你还需要将 <code class="docutils literal notranslate"><span class="pre">&lt;/path/to/spark&gt;</span></code> 替换为 Spark 的 HOME 路径。</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>启动<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>arctern-server start --mode<span class="o">=</span>release
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mode</span></code> 可选 <code class="docutils literal notranslate"><span class="pre">release</span></code> 或 <code class="docutils literal notranslate"><span class="pre">debug</span></code>。<code class="docutils literal notranslate"><span class="pre">debug</span></code> 模式会提供更准确的提示信息，但比 <code class="docutils literal notranslate"><span class="pre">release</span></code> 模式的执行效率低。</p>
+</div>
+<div class="section" id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="arctern-conda-python">
+<h3>如何获取 Arctern Conda 环境的 Python 路径<a class="headerlink" href="#arctern-conda-python" title="Permalink to this headline">¶</a></h3>
+<p>进入 Arctern 所在的 Conda 环境：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda activate arctern_env
+</pre></div>
+</div>
+<p>获取 python 的路径：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ which python
+</pre></div>
+</div>
+</div>
+<div class="section" id="http-arctern-restful-server">
+<h3>使用 HTTP 代理对 Arctern RESTful Server 的影响<a class="headerlink" href="#http-arctern-restful-server" title="Permalink to this headline">¶</a></h3>
+<p>使用 HTTP 代理可能会导致 RESTful API 无法被正常调用，请关闭 HTTP 代理然后重启 Arctern RESTful Server。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../restful/restful_quick_start_on_python.html" class="btn btn-neutral float-right" title="快速开始（Python 后台）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../restful/restful.html" class="btn btn-neutral float-left" title="RESTful 服务" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

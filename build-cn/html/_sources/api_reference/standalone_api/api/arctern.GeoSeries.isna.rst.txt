@@ -1,0 +1,6 @@
+arctern.GeoSeries.isna
+======================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.isna

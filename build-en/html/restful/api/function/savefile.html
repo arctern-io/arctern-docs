@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Save File &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feature_description/feature_description.html">Feature Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_reference/api_reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cluster/cluster.html">Transform from standalone version to distributed version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../restful.html">RESTful Service</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Save File</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/restful/api/function/savefile.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="save-file">
+<h1>Save File<a class="headerlink" href="#save-file" title="Permalink to this headline">¶</a></h1>
+<p>Executes data queries and saves the results to specified files. Only applicable to the PySpark backend. In case of the Python backend, use the <code class="docutils literal notranslate"><span class="pre">command</span></code> interface to save the files. See <a class="reference internal" href="command.html"><span class="doc">interface description for code execution</span></a>.</p>
+<div class="section" id="request-description">
+<h2>Request description<a class="headerlink" href="#request-description" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Method: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">/savefile</span></code></p></li>
+<li><p>Headers:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Content-Type:</span> <span class="pre">application/json</span></code></p></li>
+</ul>
+</li>
+<li><p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;tables&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;sql&quot;</span><span class="p">:</span> <span class="s2">&quot;select * from table_name&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;csv&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/data.csv&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;header&quot;</span><span class="p">:</span> <span class="s2">&quot;True&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;delimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Parameter description:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tables</span></code>: Descriptions when saving data as a file. This field is a list, and the system will save the files in the order indicated by the list.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">sql</span></code>: The SQL query statement to execute, the result of which is the table to save.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">format</span></code>: Format of the file to save.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code>: Path to the file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">options</span></code>: Options when saving the file, provided as <code class="docutils literal notranslate"><span class="pre">key-value</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="request-example">
+<h2>Request example<a class="headerlink" href="#request-example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<p>Examples in this article use Python's <code class="docutils literal notranslate"><span class="pre">requests</span></code> library. Run the following command to install <code class="docutils literal notranslate"><span class="pre">requests</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install requests
+</pre></div>
+</div>
+<p>Sample code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8080/savefile&quot;</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;tables&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;sql&quot;</span><span class="p">:</span> <span class="s2">&quot;select * from table_name&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;csv&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/data.csv&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;header&quot;</span><span class="p">:</span> <span class="s2">&quot;True&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;delimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="curl">
+<h3>curl<a class="headerlink" href="#curl" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl --location --request POST <span class="s1">&#39;http://localhost:8080/savefile&#39;</span> <span class="se">\</span>
+--header <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+--data-raw <span class="s1">&#39;{</span>
+<span class="s1">    &quot;tables&quot;: [</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;sql&quot;: &quot;select * from table_name&quot;,</span>
+<span class="s1">            &quot;format&quot;: &quot;csv&quot;,</span>
+<span class="s1">            &quot;path&quot;: &quot;/path/to/data.csv&quot;,</span>
+<span class="s1">            &quot;options&quot;: {</span>
+<span class="s1">                &quot;header&quot;: &quot;True&quot;,</span>
+<span class="s1">                &quot;delimiter&quot;: &quot;,&quot;</span>
+<span class="s1">            }</span>
+<span class="s1">        }</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="response-example">
+<h2>Response example<a class="headerlink" href="#response-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;200&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;save table successfully!&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

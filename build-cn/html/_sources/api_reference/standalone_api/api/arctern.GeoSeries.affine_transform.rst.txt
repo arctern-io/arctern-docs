@@ -1,0 +1,6 @@
+arctern.GeoSeries.affine\_transform
+===================================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.affine_transform

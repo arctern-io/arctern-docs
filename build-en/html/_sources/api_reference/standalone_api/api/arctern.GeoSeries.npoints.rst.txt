@@ -1,0 +1,6 @@
+arctern.GeoSeries.npoints
+=========================
+
+.. currentmodule:: arctern
+
+.. autoproperty:: GeoSeries.npoints

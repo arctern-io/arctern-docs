@@ -1,0 +1,6 @@
+arctern.GeoDataFrame.crs
+========================
+
+.. currentmodule:: arctern
+
+.. autoproperty:: GeoDataFrame.crs

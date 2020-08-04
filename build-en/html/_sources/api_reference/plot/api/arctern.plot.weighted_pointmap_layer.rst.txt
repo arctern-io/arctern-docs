@@ -1,0 +1,6 @@
+arctern.plot.weighted\_pointmap\_layer
+======================================
+
+.. currentmodule:: arctern.plot
+
+.. autofunction:: weighted_pointmap_layer

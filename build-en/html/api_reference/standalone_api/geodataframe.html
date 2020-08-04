@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GeoDataFrame &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="arctern.GeoDataFrame" href="api/arctern.GeoDataFrame.html" />
+    <link rel="prev" title="arctern.GeoSeries.equals" href="api/arctern.GeoSeries.equals.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../feature_description/feature_description.html">Feature Description</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api_reference.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="geoseries.html">GeoSeries</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GeoDataFrame</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constructor">Constructor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoDataFrame.html">arctern.GeoDataFrame</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#geodataframe-functions">GeoDataFrame Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoDataFrame.to_geopandas.html">arctern.GeoDataFrame.to_geopandas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoDataFrame.from_geopandas.html">arctern.GeoDataFrame.from_geopandas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoDataFrame.to_json.html">arctern.GeoDataFrame.to_json</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoDataFrame.from_file.html">arctern.GeoDataFrame.from_file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoDataFrame.to_file.html">arctern.GeoDataFrame.to_file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoDataFrame.crs.html">arctern.GeoDataFrame.crs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoDataFrame.set_geometry.html">arctern.GeoDataFrame.set_geometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoDataFrame.dissolve.html">arctern.GeoDataFrame.dissolve</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/arctern.GeoDataFrame.merge.html">arctern.GeoDataFrame.merge</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../top_level_functions/top_level_functions.html">Top Level Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/plot.html">Plot</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster/cluster.html">Transform from standalone version to distributed version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../restful/restful.html">RESTful Service</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../api_reference.html">API Reference</a> &raquo;</li>
+        
+      <li>GeoDataFrame</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/api_reference/standalone_api/geodataframe.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="geodataframe">
+<span id="id1"></span><h1>GeoDataFrame<a class="headerlink" href="#geodataframe" title="Permalink to this headline">¶</a></h1>
+<p>GeoDataFrame inherits pandas DataFrame. It is a DataFrame to store and process geometric data.</p>
+<div class="section" id="constructor">
+<h2>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoDataFrame.html#arctern.GeoDataFrame" title="arctern.GeoDataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoDataFrame</span></code></a>([data, index, columns, dtype, ...])</p></td>
+<td><p>A GeoDataFrame object is a pandas.DataFrame that has columns with geometry.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="geodataframe-functions">
+<h2>GeoDataFrame Functions<a class="headerlink" href="#geodataframe-functions" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoDataFrame.to_geopandas.html#arctern.GeoDataFrame.to_geopandas" title="arctern.GeoDataFrame.to_geopandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoDataFrame.to_geopandas</span></code></a>()</p></td>
+<td><p>Transforms an arctern.GeoDataFrame object to a geopandas.GeoDataFrame object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoDataFrame.from_geopandas.html#arctern.GeoDataFrame.from_geopandas" title="arctern.GeoDataFrame.from_geopandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoDataFrame.from_geopandas</span></code></a>(gdf)</p></td>
+<td><p>Constructs an arctern.GeoDataFrame object from a geopandas.GeoDataFrame object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoDataFrame.to_json.html#arctern.GeoDataFrame.to_json" title="arctern.GeoDataFrame.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoDataFrame.to_json</span></code></a>([na, show_bbox, geometry])</p></td>
+<td><p>Returns a GeoJSON string representation of the GeoDataFrame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoDataFrame.from_file.html#arctern.GeoDataFrame.from_file" title="arctern.GeoDataFrame.from_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoDataFrame.from_file</span></code></a>(filename, **kwargs)</p></td>
+<td><p>Constructs a GeoDataFrame from a file or url.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoDataFrame.to_file.html#arctern.GeoDataFrame.to_file" title="arctern.GeoDataFrame.to_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoDataFrame.to_file</span></code></a>(filename[, driver, ...])</p></td>
+<td><p>Writes a GeoDataFrame to a file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoDataFrame.crs.html#arctern.GeoDataFrame.crs" title="arctern.GeoDataFrame.crs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoDataFrame.crs</span></code></a></p></td>
+<td><p>The Coordinate Reference System (CRS) of arctern.GeoDataFrame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoDataFrame.set_geometry.html#arctern.GeoDataFrame.set_geometry" title="arctern.GeoDataFrame.set_geometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoDataFrame.set_geometry</span></code></a>(col[, inplace, crs])</p></td>
+<td><p>Sets an existing column in the GeoDataFrame to a geometry column, which is used to perform geometric calculations later.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/arctern.GeoDataFrame.dissolve.html#arctern.GeoDataFrame.dissolve" title="arctern.GeoDataFrame.dissolve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoDataFrame.dissolve</span></code></a>([by, col, aggfunc, ...])</p></td>
+<td><p>Dissolves geometries within <code class="docutils literal notranslate"><span class="pre">by</span></code> into a single observation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/arctern.GeoDataFrame.merge.html#arctern.GeoDataFrame.merge" title="arctern.GeoDataFrame.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoDataFrame.merge</span></code></a>(right[, how, on, ...])</p></td>
+<td><p>Merges two GeoDataFrame objects with a database-style join.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api/arctern.GeoDataFrame.html" class="btn btn-neutral float-right" title="arctern.GeoDataFrame" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api/arctern.GeoSeries.equals.html" class="btn btn-neutral float-left" title="arctern.GeoSeries.equals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

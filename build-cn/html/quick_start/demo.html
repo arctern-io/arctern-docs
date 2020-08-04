@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>使用 Arctern 分析空间数据 &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="功能说明" href="../feature_description/feature_description.html" />
+    <link rel="prev" title="安装部署" href="../install/standalone_installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="quick_start.html">快速开始</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../install/standalone_installation.html">安装部署</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">使用 Arctern 分析空间数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#jupyter-kepler-gl">安装 Jupyter 和 Kepler.gl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jupyter-notebook">运行 Jupyter Notebook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">运行 Arctern</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">使用 Arctern 分析道路信息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kepler-gl">使用 Kepler.gl 绘制地图</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">使用 Arctern 筛选信息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">使用 Kepler.Gl 绘制地图</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/api_reference.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster/cluster.html">从单机过渡到分布式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../restful/restful.html">RESTful 服务</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="quick_start.html">快速开始</a> &raquo;</li>
+        
+      <li>使用 Arctern 分析空间数据</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/quick_start/demo.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="arctern">
+<h1>使用 Arctern 分析空间数据<a class="headerlink" href="#arctern" title="Permalink to this headline">¶</a></h1>
+<p>完成 <a class="reference internal" href="../install/standalone_installation.html"><span class="doc">Arctern 的安装部署</span></a> 之后，本文档引导你使用 Arctern 分析帝国大厦附近的道路信息。</p>
+<div class="section" id="jupyter-kepler-gl">
+<h2>安装 Jupyter 和 Kepler.gl<a class="headerlink" href="#jupyter-kepler-gl" title="Permalink to this headline">¶</a></h2>
+<p>在后续步骤中，你需要使用 Jupyter Notebook 运行代码，以及使用 Kepler.gl 进行空间数据可视化。如果你的计算机未安装 Jupyter 和 Kepler.gl，请执行以下命令安装这两个工具：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 进入 Conda 环境</span>
+$ conda activate arctern_env
+
+<span class="c1"># 安装 Jupyter 和 Kepler.gl</span>
+$ conda install -c conda-forge jupyterlab
+$ pip install keplergl
+</pre></div>
+</div>
+</div>
+<div class="section" id="jupyter-notebook">
+<h2>运行 Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<p>在 Conda 环境中运行 Jupyter Notebook，它将在你的默认浏览器中打开一个页面。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ jupyter-notebook
+</pre></div>
+</div>
+<p>点击页面右上角的 <strong>New &gt; Python3</strong> 以新建一个 Notebook。</p>
+</div>
+<div class="section" id="id1">
+<h2>运行 Arctern<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>使用 Arctern 分析道路信息<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>注意：</strong> 以下操作均在新建的 Notebook 中运行。</p>
+</div></blockquote>
+<p>导入 <code class="docutils literal notranslate"><span class="pre">arctern</span></code>、<code class="docutils literal notranslate"><span class="pre">keplergl</span></code> 以及其他的相关库：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">keplergl</span> <span class="kn">import</span> <span class="n">KeplerGl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">arctern</span>
+</pre></div>
+</div>
+<p>以帝国大厦附近的两条道路为分析对象，创建 <a target="_blank" class="reference external" href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">WKT</a> 格式的 LINESTRING 对象（<code class="docutils literal notranslate"><span class="pre">road1</span></code>、<code class="docutils literal notranslate"><span class="pre">road2</span></code>）以表示这两条道路。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># road1 道路两端的经纬度坐标分别是 (-73.996324, 40.753388)、(-73.972088, 40.743215)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># road2 道路两端的经纬度坐标分别是 (-73.989555, 40.741531)、(-73.973952, 40.762962)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">road1</span> <span class="o">=</span> <span class="s1">&#39;LINESTRING (-73.996324 40.753388, -73.972088 40.743215)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">road2</span> <span class="o">=</span> <span class="s1">&#39;LINESTRING (-73.989555 40.741531, -73.973952 40.762962)&#39;</span>
+</pre></div>
+</div>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">GeoSeries.intersects</span></code> 方法检查 <code class="docutils literal notranslate"><span class="pre">road1</span></code> 与 <code class="docutils literal notranslate"><span class="pre">road2</span></code> 是否相交。</p>
+<ul class="simple">
+<li><p>若返回 <em>True</em>，则相交；</p></li>
+<li><p>若返回 <em>False</em>，则不相交。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geo1</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">road1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geo2</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">road2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geo1</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">geo2</span><span class="p">)</span>
+<span class="go">0    True</span>
+<span class="go">dtype: bool</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="kepler-gl">
+<h3>使用 Kepler.gl 绘制地图<a class="headerlink" href="#kepler-gl" title="Permalink to this headline">¶</a></h3>
+<p>使用 Kepler.gl 在地图上绘制 <code class="docutils literal notranslate"><span class="pre">road1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">road2</span></code>，观察这两条路是否相交：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">KeplerGl</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;road1&quot;</span><span class="p">:</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;road1&quot;</span><span class="p">:[</span><span class="n">road1</span><span class="p">]}),</span><span class="s2">&quot;road2&quot;</span><span class="p">:</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;raod2&quot;</span><span class="p">:[</span><span class="n">road2</span><span class="p">]})})</span>
+</pre></div>
+</div>
+<p><img alt="../_images/crossed_road.png" src="../_images/crossed_road.png" /></p>
+<p>你还可以点击 Kepler.gl 界面右上角的 <strong>&gt;</strong> 按钮以展开侧边栏，在其中设置每条路线的颜色和线宽。</p>
+<p><img alt="../_images/kepler_set_witth.png" src="../_images/kepler_set_witth.png" /></p>
+</div>
+<div class="section" id="id3">
+<h3>使用 Arctern 筛选信息<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>注意：</strong> 以下操作均在新建的 Notebook 中运行。</p>
+</div></blockquote>
+<p>导入 <code class="docutils literal notranslate"><span class="pre">arctern</span></code>、<code class="docutils literal notranslate"><span class="pre">keplergl</span></code> 以及其他的相关库：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">keplergl</span> <span class="kn">import</span> <span class="n">KeplerGl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoDataFrame</span>
+</pre></div>
+</div>
+<p>创建一个 GeoDataFrame 对象 <code class="docutils literal notranslate"><span class="pre">df</span></code>以表示城市信息：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s1">&#39;City&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;BeiJing&#39;</span><span class="p">,</span> <span class="s1">&#39;ShangHai&#39;</span><span class="p">,</span> <span class="s1">&#39;Tokyo&#39;</span><span class="p">,</span> <span class="s1">&#39;Seoul&#39;</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;China&#39;</span><span class="p">,</span> <span class="s1">&#39;China&#39;</span><span class="p">,</span> <span class="s1">&#39;Japan&#39;</span><span class="p">,</span> <span class="s1">&#39;Korea&#39;</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s1">&#39;Coordinates&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;POINT(116.24 39.55)&#39;</span><span class="p">,</span> <span class="s1">&#39;POINT(121.29 31.14)&#39;</span><span class="p">,</span> 
+<span class="gp">&gt;&gt;&gt; </span>                    <span class="s1">&#39;POINT(139.49 35.40)&#39;</span><span class="p">,</span> <span class="s1">&#39;POINT(126.58 37.33)&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">geometries</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Coordinates&quot;</span><span class="p">],</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>筛选出 <code class="docutils literal notranslate"><span class="pre">Country</span> <span class="pre">==</span> <span class="pre">&quot;China&quot;</span></code> 的城市信息：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">in_china</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">Country</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;China&quot;</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_in_china</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">in_china</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_in_china</span>
+<span class="go">	City	Country	Coordinates</span>
+<span class="go">0	BeiJing	China	POINT (116.24 39.55)</span>
+<span class="go">1	ShangHai	China	POINT (121.29 31.14)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>使用 Kepler.Gl 绘制地图<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>使用 Kepler.Gl 在地图上标示出 <code class="docutils literal notranslate"><span class="pre">Beijing</span></code> 和　<code class="docutils literal notranslate"><span class="pre">ShangHai</span></code> 两个城市：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">KeplerGl</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;citys&quot;</span><span class="p">:</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rst</span><span class="o">.</span><span class="n">Coordinates</span><span class="o">.</span><span class="n">to_wkt</span><span class="p">())})</span>
+</pre></div>
+</div>
+<p><img alt="../_images/citys.png" src="../_images/citys.png" /></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../feature_description/feature_description.html" class="btn btn-neutral float-right" title="功能说明" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../install/standalone_installation.html" class="btn btn-neutral float-left" title="安装部署" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

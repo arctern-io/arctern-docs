@@ -1,0 +1,6 @@
+arctern\_spark.GeoSeries.within
+===============================
+
+.. currentmodule:: arctern_spark
+
+.. automethod:: GeoSeries.within

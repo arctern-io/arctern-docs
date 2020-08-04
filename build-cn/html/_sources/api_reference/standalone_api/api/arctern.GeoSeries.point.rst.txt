@@ -1,0 +1,6 @@
+arctern.GeoSeries.point
+=======================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.point

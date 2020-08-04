@@ -1,0 +1,6 @@
+arctern.GeoSeries.scale
+=======================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.scale

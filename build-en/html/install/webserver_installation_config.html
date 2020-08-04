@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Install and deploy Arctern RESTful server &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quick Start (Python backend)" href="../restful/restful_quick_start_on_python.html" />
+    <link rel="prev" title="RESTful Service" href="../restful/restful.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feature_description/feature_description.html">Feature Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/api_reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster/cluster.html">Transform from standalone version to distributed version</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../restful/restful.html">RESTful Service</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Install and deploy Arctern RESTful server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-arctern-backend">Install Arctern backend</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#install-python-based-arctern-backend">Install Python-based Arctern backend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-spark-based-arctern-backend">Install Spark-based Arctern backend</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#install-arctern-restful-server">Install Arctern RESTful server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-workspace">Set up workspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-arctern-restful-server">Configure Arctern RESTful server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-arctern-restful-server">Start Arctern RESTful server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#faq">FAQ</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-get-the-path-to-python-in-the-arctern-conda-environment">How to get the path to Python in the Arctern Conda environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-impact-of-using-http-proxy-on-arctern-restful-server">The impact of using HTTP proxy on Arctern RESTful server</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../restful/restful_quick_start_on_python.html">Quick Start (Python backend)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restful/restful_quick_start_on_spark.html">Quick Start (PySpark backend)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restful/restful_config.html">Arctern RESTful Server Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restful/api/api.html">RESTful API</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../restful/restful.html">RESTful Service</a> &raquo;</li>
+        
+      <li>Install and deploy Arctern RESTful server</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/install/webserver_installation_config.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="install-and-deploy-arctern-restful-server">
+<h1>Install and deploy Arctern RESTful server<a class="headerlink" href="#install-and-deploy-arctern-restful-server" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-arctern-backend">
+<h2>Install Arctern backend<a class="headerlink" href="#install-arctern-backend" title="Permalink to this headline">¶</a></h2>
+<p>Arctern RESTful Server only takes charge of receiving and parsing RESTful requests. Actual operations are performed by the Arctern backend. Before installing Arctern RESTful Server, you need to install the Arctern backend in advance. Currently, Arctern RESTful Server supports two Arctern backend systems, which are based on Python and Spark respectively. You can choose to install and use one type of backend.</p>
+<div class="section" id="install-python-based-arctern-backend">
+<h3>Install Python-based Arctern backend<a class="headerlink" href="#install-python-based-arctern-backend" title="Permalink to this headline">¶</a></h3>
+<p>See the following article:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="standalone_installation.html"><span class="doc">Install Arctern</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="install-spark-based-arctern-backend">
+<h3>Install Spark-based Arctern backend<a class="headerlink" href="#install-spark-based-arctern-backend" title="Permalink to this headline">¶</a></h3>
+<p>See the following article:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="install_arctern_on_spark.html"><span class="doc">Install Arctern on Spark</span></a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="install-arctern-restful-server">
+<h2>Install Arctern RESTful server<a class="headerlink" href="#install-arctern-restful-server" title="Permalink to this headline">¶</a></h2>
+<p>Build a Conda environment for Arctern RESTful server:</p>
+<blockquote>
+<div><p><strong>Note:</strong> Here we name the environment <code class="docutils literal notranslate"><span class="pre">arctern_server_env</span></code>. You can use another name according to your needs.</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda create -n arctern_server_env -c conda-forge -c arctern arctern-webserver
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Note:</strong> If you want to install the Arctern backend and Arctern RESTful server on the same computer, it is recommended that they use different Conda environments. For example, create an environment called <code class="docutils literal notranslate"><span class="pre">arctern_env</span></code> for the Arctern backend and an environment called <code class="docutils literal notranslate"><span class="pre">arctern_server_env</span></code> for the Arctern RESTful server.</p>
+</div></blockquote>
+</div>
+<div class="section" id="set-up-workspace">
+<h2>Set up workspace<a class="headerlink" href="#set-up-workspace" title="Permalink to this headline">¶</a></h2>
+<p>Enter the <code class="docutils literal notranslate"><span class="pre">arctern_server_env</span></code> virtual environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda activate arctern_server_env
+</pre></div>
+</div>
+<p>The workspace folder is used to store the third-party tools, extensions, and system configuration files that Arctern RESTful server depends on. Before starting RESTful Server for the first time, you need to set the workspace through the <code class="docutils literal notranslate"><span class="pre">bootstrap</span></code> command.</p>
+<blockquote>
+<div><p><strong>Note:</strong> Here we specify <code class="docutils literal notranslate"><span class="pre">workspace</span></code> as <code class="docutils literal notranslate"><span class="pre">/home/usr/arctern_server/</span></code>, you can choose the appropriate path according to your needs.</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>arctern-server bootstrap --workspace<span class="o">=</span>/home/usr/arctern_server/
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-arctern-restful-server">
+<h2>Configure Arctern RESTful server<a class="headerlink" href="#configure-arctern-restful-server" title="Permalink to this headline">¶</a></h2>
+<p>Arctern RESTful server provides a set of system configurations, including service port, IP address, data processing backend, and so on. The <code class="docutils literal notranslate"><span class="pre">interpreter_type</span></code> option controls the selection of different data processing backends (such as Python or PySpark).</p>
+<p>If you choose Python as the backend, you can configure it according to the following command. For detailed information about configurations, please refer to <a class="reference internal" href="../restful/restful_config.html"><span class="doc">Arctern RESTful server configurations</span></a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>arctern-server config --arctern_server_host<span class="o">=</span><span class="m">127</span>.0.0.1 --arctern_server_port<span class="o">=</span><span class="m">8080</span> --interpreter_type<span class="o">=</span>python --interpreter_name<span class="o">=</span>arcternpython --interpreter_python_path<span class="o">=</span><span class="s2">&quot;&lt;/path/to/python&gt;&quot;</span>
+</pre></div>
+</div>
+<p>If you choose Spark as the backend, you can configure it according to the following command. For detailed information about configurations, please refer to <a class="reference internal" href="../restful/restful_config.html"><span class="doc">Arctern RESTful server configurations</span></a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>arctern-server config --arctern_server_host<span class="o">=</span><span class="m">127</span>.0.0.1 --arctern_server_port<span class="o">=</span><span class="m">8080</span> --interpreter_type<span class="o">=</span>pyspark --interpreter_name<span class="o">=</span>arcternpyspark --interpreter_pyspark_python<span class="o">=</span><span class="s2">&quot;&lt;/path/to/python&gt;&quot;</span> --interpreter_pyspark_driver_python<span class="o">=</span>&lt;/path/to/python&gt; --interpreter_spark_home<span class="o">=</span><span class="s2">&quot;&lt;/path/to/spark&gt;&quot;</span> --interpreter_master<span class="o">=</span><span class="nb">local</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Note:</strong></p>
+<ul class="simple">
+<li><p>You need to replace <code class="docutils literal notranslate"><span class="pre">&lt;/path/to/python&gt;</span></code> with the absolute path to Python in the Arctern Conda environment. See <a class="reference external" href="#faq">FAQ</a> for details about how to obtain the path.</p></li>
+<li><p>You also need to replace <code class="docutils literal notranslate"><span class="pre">&lt;/path/to/spark&gt;</span></code> with Spark's HOME path.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="start-arctern-restful-server">
+<h2>Start Arctern RESTful server<a class="headerlink" href="#start-arctern-restful-server" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>arctern-server start --mode<span class="o">=</span>release
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mode</span></code> can be <code class="docutils literal notranslate"><span class="pre">release</span></code> or <code class="docutils literal notranslate"><span class="pre">debug</span></code>. The <code class="docutils literal notranslate"><span class="pre">debug</span></code> mode provides more accurate information, but it is less efficient than the <code class="docutils literal notranslate"><span class="pre">release</span></code> mode.</p>
+</div>
+<div class="section" id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-get-the-path-to-python-in-the-arctern-conda-environment">
+<h3>How to get the path to Python in the Arctern Conda environment<a class="headerlink" href="#how-to-get-the-path-to-python-in-the-arctern-conda-environment" title="Permalink to this headline">¶</a></h3>
+<p>Enter the Arctern Conda environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda activate arctern_env
+</pre></div>
+</div>
+<p>Get the path to python:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ which python
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-impact-of-using-http-proxy-on-arctern-restful-server">
+<h3>The impact of using HTTP proxy on Arctern RESTful server<a class="headerlink" href="#the-impact-of-using-http-proxy-on-arctern-restful-server" title="Permalink to this headline">¶</a></h3>
+<p>Using the HTTP proxy may cause the failure of calling RESTful APIs. Please close the HTTP proxy and restart Arctern RESTful Server.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../restful/restful_quick_start_on_python.html" class="btn btn-neutral float-right" title="Quick Start (Python backend)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../restful/restful.html" class="btn btn-neutral float-left" title="RESTful Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

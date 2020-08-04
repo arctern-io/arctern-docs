@@ -1,0 +1,6 @@
+arctern\_spark.GeoSeries.is\_valid
+==================================
+
+.. currentmodule:: arctern_spark
+
+.. autoproperty:: GeoSeries.is_valid

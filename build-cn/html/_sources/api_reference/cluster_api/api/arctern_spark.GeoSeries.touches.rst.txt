@@ -1,0 +1,6 @@
+arctern\_spark.GeoSeries.touches
+================================
+
+.. currentmodule:: arctern_spark
+
+.. automethod:: GeoSeries.touches

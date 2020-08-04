@@ -1,0 +1,6 @@
+arctern.GeoSeries.difference
+============================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.difference

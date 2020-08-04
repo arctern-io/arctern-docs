@@ -1,0 +1,6 @@
+arctern.GeoSeries.polygon\_from\_envelope
+=========================================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.polygon_from_envelope

@@ -1,0 +1,6 @@
+arctern.GeoSeries.translate
+===========================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.translate

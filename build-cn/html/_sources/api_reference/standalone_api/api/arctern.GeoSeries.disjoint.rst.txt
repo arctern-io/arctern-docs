@@ -1,0 +1,6 @@
+arctern.GeoSeries.disjoint
+==========================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.disjoint

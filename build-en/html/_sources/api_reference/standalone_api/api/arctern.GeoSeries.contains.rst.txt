@@ -1,0 +1,6 @@
+arctern.GeoSeries.contains
+==========================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.contains

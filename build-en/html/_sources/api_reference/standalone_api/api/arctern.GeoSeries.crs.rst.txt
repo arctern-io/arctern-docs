@@ -1,0 +1,6 @@
+arctern.GeoSeries.crs
+=====================
+
+.. currentmodule:: arctern
+
+.. autoproperty:: GeoSeries.crs

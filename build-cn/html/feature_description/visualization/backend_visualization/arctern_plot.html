@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>使用 Arctern 展示时空信息 &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="API 参考" href="../../../api_reference/api_reference.html" />
+    <link rel="prev" title="后端渲染" href="backend_visualization.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../feature_description.html">功能说明</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../spatiotemporal_analysis/spatiotemporal_analysis.html">时空数据分析</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../visualization.html">可视化</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../how_to_visualize.html">如何渲染时空数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../frontend_visualization/frontend_visualization.html">前端渲染</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="backend_visualization.html">后端渲染</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">使用 Arctern 展示时空信息</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_reference/api_reference.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cluster/cluster.html">从单机过渡到分布式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../restful/restful.html">RESTful 服务</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../feature_description.html">功能说明</a> &raquo;</li>
+        
+          <li><a href="../visualization.html">可视化</a> &raquo;</li>
+        
+          <li><a href="backend_visualization.html">后端渲染</a> &raquo;</li>
+        
+      <li>使用 Arctern 展示时空信息</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/feature_description/visualization/backend_visualization/arctern_plot.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="arctern">
+<h1>使用 Arctern 展示时空信息<a class="headerlink" href="#arctern" title="Permalink to this headline">¶</a></h1>
+<p>Arctern 可以绘制多种类型的透明图层，并将这些透明图层叠加到地图背景上。本文介绍如何使用 Arctern 展示时空信息。</p>
+<div class="section" id="id1">
+<h2>生成模拟数据<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>首先，使用随机数据生成一个出租车运营数据，之后我们将使用此数据绘图。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">gen_data</span><span class="p">(</span><span class="n">num_rows</span><span class="p">,</span> <span class="n">bbox</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="kn">import</span> <span class="nn">random</span>
+<span class="gp">... </span>    <span class="n">pickup_longitude</span> <span class="o">=</span> <span class="p">[(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">+</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rows</span><span class="p">)]</span>
+<span class="gp">... </span>    <span class="n">pickup_latitude</span> <span class="o">=</span> <span class="p">[(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">+</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rows</span><span class="p">)]</span>
+<span class="gp">... </span>    <span class="n">fare_amount</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="o">*</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rows</span><span class="p">)]</span>
+<span class="gp">... </span>    <span class="n">tip_amount</span> <span class="o">=</span> <span class="p">[</span><span class="n">fare</span><span class="o">*</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mf">0.05</span><span class="o">+</span><span class="mf">0.15</span><span class="p">)</span> <span class="k">for</span> <span class="n">fare</span> <span class="ow">in</span> <span class="n">fare_amount</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="n">total_amount</span> <span class="o">=</span> <span class="p">[</span><span class="n">fare_amount</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">tip_amount</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rows</span><span class="p">)]</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;pickup_longitude&quot;</span><span class="p">:</span><span class="n">pickup_longitude</span><span class="p">,</span>
+<span class="gp">... </span>                         <span class="s2">&quot;pickup_latitude&quot;</span><span class="p">:</span><span class="n">pickup_latitude</span><span class="p">,</span>
+<span class="gp">... </span>                         <span class="s2">&quot;fare_amount&quot;</span><span class="p">:</span><span class="n">fare_amount</span><span class="p">,</span>
+<span class="gp">... </span>                         <span class="s2">&quot;total_amount&quot;</span><span class="p">:</span><span class="n">total_amount</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">num_rows</span><span class="o">=</span><span class="mi">200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bbox</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">73.991504</span><span class="p">,</span> <span class="mf">40.770759</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.945155</span><span class="p">,</span> <span class="mf">40.783434</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">=</span><span class="n">gen_data</span><span class="p">(</span><span class="n">num_rows</span><span class="p">,</span><span class="n">bbox</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+</pre></div>
+</div>
+<p>以上代码在经度范围为 -73.991504 ~ -73.945155、纬度范围为 40.770759 ~ 40.783434 的地理区域中，随机提取 200 个坐标点作为出租车的上车地点，并生成随机的运营费用。出租车运营数据中各参数的描述如下：</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">含义</th>
+<th align="left">类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">pickup_longitude</td>
+<td align="left">上车地点的经度</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left">pickup_latitude</td>
+<td align="left">上车地点的纬度</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left">fare_amount</td>
+<td align="left">行程费用</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left">total_amount</td>
+<td align="left">总费用</td>
+<td align="left">double</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="id2">
+<h2>安装依赖库<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install -c conda-forge matplotlib
+$ conda install -c conda-forge contextily
+$ conda install -c conda-forge pyproj
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>导入绘图需要使用的模块<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>导入以下库：</p>
+<ul class="simple">
+<li><p><strong>arctern:</strong> 提供绘制和保存地理信息图层的模块。</p></li>
+<li><p><strong>matplotlib:</strong> 提供在 Juypter Notebook 中绘制图片的模块。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">arctern</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern.util</span> <span class="kn">import</span> <span class="n">save_png</span><span class="p">,</span> <span class="n">vega</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>点图<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>使用 <a class="reference external" href="../../api_reference/plot/api/arctern.plot.pointmap.html"><code class="docutils literal notranslate"><span class="pre">plot.pointmap</span></code></a> 方法根据出租车运营数据绘制点图。其中，点的位置为上车地点、点的大小为 10、颜色为 #2DEF4A、不透明度为 1。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pointmap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> 
+<span class="gp">... </span>                      <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_longitude</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_latitude</span><span class="p">),</span>
+<span class="gp">... </span>                      <span class="n">bbox</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="n">point_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="n">point_color</span><span class="o">=</span><span class="s2">&quot;#2DEF4A&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="n">coordinate_system</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="../../../_images/output_8_0.png" src="../../../_images/output_8_0.png" /></p>
+</div>
+<div class="section" id="id5">
+<h2>带权点图<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>使用 <a class="reference external" href="../../api_reference/plot/api/arctern.plot.weighted_pointmap.html"><code class="docutils literal notranslate"><span class="pre">plot.weighted_pointmap</span></code></a> 方法根据出租车运营数据绘制带权点图。其中，点的位置为上车地点，点的颜色根据出租车的行程费用（<code class="docutils literal notranslate"><span class="pre">df.fare_amount</span></code>）在 #115f9a ～ #d0f400 之间变化，点的大小根据出租车的总费用（<code class="docutils literal notranslate"><span class="pre">df.total_amount</span></code>）在 5 ～ 30 之间变化，点的不透明度为 1。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">color_bound</span><span class="o">=</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">fare_amount</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">fare_amount</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">size_bound</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">total_max</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">total_amount</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">total_min</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">total_amount</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">size_weights</span> <span class="o">=</span> <span class="p">[(</span><span class="n">v</span><span class="o">-</span><span class="n">total_min</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">total_max</span><span class="o">-</span><span class="n">total_min</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">size_bound</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">size_bound</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="n">size_bound</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">total_amount</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">size_weights</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">size_weights</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">weighted_pointmap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> 
+<span class="gp">... </span>                       <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_longitude</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_latitude</span><span class="p">),</span>
+<span class="gp">... </span>                       <span class="n">color_weights</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">fare_amount</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="n">size_weights</span><span class="o">=</span><span class="n">size_weights</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="n">bounding_box</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> 
+<span class="gp">... </span>                       <span class="n">color_gradient</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#115f9a&quot;</span><span class="p">,</span> <span class="s2">&quot;#d0f400&quot;</span><span class="p">],</span> 
+<span class="gp">... </span>                       <span class="n">color_bound</span><span class="o">=</span><span class="n">color_bound</span><span class="p">,</span> 
+<span class="gp">... </span>                       <span class="n">size_bound</span><span class="o">=</span><span class="n">size_bound</span><span class="p">,</span> 
+<span class="gp">... </span>                       <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> 
+<span class="gp">... </span>                       <span class="n">coordinate_system</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="../../../_images/output_12_0.png" src="../../../_images/output_12_0.png" /></p>
+</div>
+<div class="section" id="id6">
+<h2>热力图<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>使用 <a class="reference external" href="../../api_reference/plot/api/arctern.plot.heatmap.html"><code class="docutils literal notranslate"><span class="pre">plot.heatmap</span></code></a> 方法根据出租车运营数据绘制热力图。其中，每个位置的颜色由出租车的总费用（<code class="docutils literal notranslate"><span class="pre">df.total_amount</span></code>）决定。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> 
+<span class="gp">... </span>                     <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_longitude</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_latitude</span><span class="p">),</span>
+<span class="gp">... </span>                     <span class="n">weights</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">fare_amount</span><span class="p">,</span> 
+<span class="gp">... </span>                     <span class="n">bounding_box</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> 
+<span class="gp">... </span>                     <span class="n">coordinate_system</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="../../../_images/output_16_0.png" src="../../../_images/output_16_0.png" /></p>
+</div>
+<div class="section" id="id7">
+<h2>轮廓图<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>轮廓图能够绘制一块地理区域内的大量建筑轮廓。为了简单演示如何绘制轮廓图，我们只创建 <code class="docutils literal notranslate"><span class="pre">p1</span></code>、<code class="docutils literal notranslate"><span class="pre">p2</span></code> 两个 POLYGEN 对象以描述两个建筑物的轮廓。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span><span class="o">=</span><span class="s2">&quot;POLYGON ((-73.9559920952719 40.7798302112586,-73.9558373836227 40.780041920447,-73.955817052153 40.7800697417696,-73.9561541507251 40.7802120850128,-73.9560310179165 40.780380581462,-73.9559809829928 40.7804490491413,-73.9554245436102 40.780214085171,-73.9552722050953 40.7801497573115,-73.9554553121101 40.7798991968954,-73.9556088484124 40.7796890996611,-73.955620419799 40.7796732651862,-73.9559015149432 40.7797919620232,-73.9559920952719 40.7798302112586))&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p2</span><span class="o">=</span><span class="s2">&quot;POLYGON ((-73.9542329907899 40.7787670145087,-73.9545101860555 40.7783876598084,-73.9546846384315 40.778461320293,-73.9548206058685 40.7785187302746,-73.9549036921298 40.7785538112695,-73.9550251774329 40.7786051054324,-73.9550562469185 40.7786182243649,-73.9549683394669 40.7787385313679,-73.9547798956672 40.778996428053,-73.954779053804 40.7789975803655,-73.9545166590009 40.7788867891633,-73.9544446005066 40.7788563633454,-73.9542329907899 40.7787670145087))&quot;</span>
+</pre></div>
+</div>
+<p>使用 <a class="reference external" href="../../api_reference/plot/api/arctern.plot.choroplethmap.html"><code class="docutils literal notranslate"><span class="pre">plot.choroplethmap</span></code></a> 方法根据两个建筑物的轮廓描述（<code class="docutils literal notranslate"><span class="pre">p1</span></code>、<code class="docutils literal notranslate"><span class="pre">p2</span></code>）绘制轮廓图。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">choroplethmap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> 
+<span class="gp">... </span>                           <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">([</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">]),</span>
+<span class="gp">... </span>                           <span class="n">weights</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">30</span><span class="p">]),</span>
+<span class="gp">... </span>                           <span class="n">bounding_box</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> 
+<span class="gp">... </span>                           <span class="n">color_gradient</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#115f9a&quot;</span><span class="p">,</span> <span class="s2">&quot;#d0f400&quot;</span><span class="p">],</span> 
+<span class="gp">... </span>                           <span class="n">color_bound</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> 
+<span class="gp">... </span>                           <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> 
+<span class="gp">... </span>                           <span class="n">coordinate_system</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="../../../_images/output_20_0.png" src="../../../_images/output_20_0.png" /></p>
+</div>
+<div class="section" id="id8">
+<h2>图标图<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>执行以下命令下载图标，你将用此图标绘制图标图。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://raw.githubusercontent.com/arctern-io/arctern-docs/branch-0.2.x/img/icon/icon-viz.png -O /tmp/icon.png
+</pre></div>
+</div>
+<p>使用 <a class="reference external" href="../../api_reference/plot/api/arctern.plot.iconviz.html"><code class="docutils literal notranslate"><span class="pre">plot.iconviz</span></code></a> 方法根据出租车运营数绘制图标图，并更改图标大小为 [17, 33]。其中，图标的位置为上车地点。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">iconviz</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> 
+<span class="gp">... </span>                     <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_longitude</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_latitude</span><span class="p">),</span>
+<span class="gp">... </span>                     <span class="n">icon_path</span><span class="o">=</span><span class="s2">&quot;/tmp/icon.png&quot;</span><span class="p">,</span> 
+<span class="gp">... </span>                     <span class="n">icon_size</span><span class="o">=</span><span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">33</span><span class="p">],</span>
+<span class="gp">... </span>                     <span class="n">bounding_box</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span>
+<span class="gp">... </span>                     <span class="n">coordinate_system</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="../../../_images/output_24_0.png" src="../../../_images/output_24_0.png" /></p>
+</div>
+<div class="section" id="id9">
+<h2>渔网图<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>使用 <a class="reference external" href="../../api_reference/plot/api/arctern.plot.fishnetmap.html"><code class="docutils literal notranslate"><span class="pre">plot.fishnetmap</span></code></a> 方法根据出租车运营数绘制渔网图。其中，网点的位置为上车地点。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arctern</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">fishnetmap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> 
+<span class="gp">... </span>                        <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_longitude</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">pickup_latitude</span><span class="p">),</span>
+<span class="gp">... </span>                        <span class="n">weights</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">fare_amount</span><span class="p">,</span> 
+<span class="gp">... </span>                        <span class="n">bounding_box</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> 
+<span class="gp">... </span>                        <span class="n">cell_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> 
+<span class="gp">... </span>                        <span class="n">cell_spacing</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+<span class="gp">... </span>                        <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> 
+<span class="gp">... </span>                        <span class="n">coordinate_system</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="../../../_images/output_28_0.png" src="../../../_images/output_28_0.png" /></p>
+</div>
+<div class="section" id="id10">
+<h2>常见问题<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h3>为什么我绘制的图片只显示地图背景？<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>如果你是通过 MobaXterm 从 Windows 系统连接到部署了 Arctern 服务器的 Linux 系统，并且在 MobaXterm 中开启了 X11-Forwarding，那么你在使用 <code class="docutils literal notranslate"><span class="pre">arctern.plot</span></code> 绘制图片时会出现“只显示地图背景”的问题。</p>
+<p>请执行 <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$DISPLAY</span></code> 命令，检查是否开启了 X11-Forwarding。若结果类似 <code class="docutils literal notranslate"><span class="pre">localhost:xx.x</span></code>，则已开启 X11-Forwarding，请在 MobaXterm 中取消勾选此功能：</p>
+<p><img alt="../../../_images/x11_forwarding.png" src="../../../_images/x11_forwarding.png" /></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../api_reference/api_reference.html" class="btn btn-neutral float-right" title="API 参考" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="backend_visualization.html" class="btn btn-neutral float-left" title="后端渲染" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

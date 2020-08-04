@@ -1,0 +1,539 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>快速开始（Python 后台） &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="快速开始（PySpark 后台）" href="restful_quick_start_on_spark.html" />
+    <link rel="prev" title="Arctern RESTful Server 安装与配置" href="../install/webserver_installation_config.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/api_reference.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster/cluster.html">从单机过渡到分布式</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="restful.html">RESTful 服务</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../install/webserver_installation_config.html">Arctern RESTful Server 安装与配置</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">快速开始（Python 后台）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">服务器端的启动和配置</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">服务器启动</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">数据准备</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">安装依赖</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#api">API 调用</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">数据导入</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">查询数据表信息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">绘制热力图</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="restful_quick_start_on_spark.html">快速开始（PySpark 后台）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restful_config.html">Arctern RESTful Server 配置项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/api.html">RESTful API</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="restful.html">RESTful 服务</a> &raquo;</li>
+        
+      <li>快速开始（Python 后台）</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/restful/restful_quick_start_on_python.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python">
+<h1>快速开始（Python 后台）<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<p>本文以纽约出租车数据集为例，以 Python 作为数据处理后台，说明如何通过 Arctern RESTful API 完成数据的导入、运算和展示。</p>
+<blockquote>
+<div><p><strong>注意：</strong> 本章所有示例代码均默认在 Python 3.7 环境中运行。若要在其他 Python 环境下运行，你可能需要适当修改代码内容。</p>
+</div></blockquote>
+<div class="section" id="id1">
+<h2>服务器端的启动和配置<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>服务器启动<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>在调用 Arctern RESTful API 之前请先启动服务，具体步骤见 <a class="reference internal" href="../install/webserver_installation_config.html"><span class="doc">服务器启动</span></a>。</p>
+</div>
+<div class="section" id="id3">
+<h3>数据准备<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>在后续示例中，你需要使用纽约出租车数据集。该数据集包含 2009 年纽约市出租车的运营记录，各字段的含义如下：</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">含义</th>
+<th align="left">类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">VendorID</td>
+<td align="left">运营商名称</td>
+<td align="left">string</td>
+</tr>
+<tr>
+<td align="left">tpep_pickup_datetime</td>
+<td align="left">上车时间</td>
+<td align="left">string</td>
+</tr>
+<tr>
+<td align="left">tpep_dropoff_datetime</td>
+<td align="left">下车时间</td>
+<td align="left">string</td>
+</tr>
+<tr>
+<td align="left">passenger_count</td>
+<td align="left">乘客数量</td>
+<td align="left">long</td>
+</tr>
+<tr>
+<td align="left">trip_distance</td>
+<td align="left">行程距离</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left">pickup_longitude</td>
+<td align="left">上车地点的经度</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left">pickup_latitude</td>
+<td align="left">上车地点的纬度</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left">dropoff_longitude</td>
+<td align="left">下车地点的经度</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left">dropoff_latitude</td>
+<td align="left">下车地点的纬度</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left">fare_amount</td>
+<td align="left">行程费用</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left">tip_amount</td>
+<td align="left">小费</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left">total_amount</td>
+<td align="left">总费用</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left">buildingid_pickup</td>
+<td align="left">上车地点所在建筑的 id</td>
+<td align="left">long</td>
+</tr>
+<tr>
+<td align="left">buildingid_dropoff</td>
+<td align="left">下车地点所在建筑的 id</td>
+<td align="left">long</td>
+</tr>
+<tr>
+<td align="left">buildingtext_pickup</td>
+<td align="left">上车地点所在建筑的轮廓描述</td>
+<td align="left">string</td>
+</tr>
+<tr>
+<td align="left">buildingtext_dropoff</td>
+<td align="left">下车地点所在建筑的轮廓描述</td>
+<td align="left">string</td>
+</tr>
+</tbody>
+</table><blockquote>
+<div><p><strong>注意：</strong> 该数据集有 200000 行，其中时间格式为：<code class="docutils literal notranslate"><span class="pre">yyyy-MM-dd</span> <span class="pre">HH:mm::ss</span> <span class="pre">XXXXX</span></code>，如“2009-04-12 03:16:33 +00:00”。</p>
+</div></blockquote>
+<p>下载纽约出租车数据集：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wget https://media.githubusercontent.com/media/arctern-io/arctern-resources/benchmarks/benchmarks/dataset/nyc_taxi/0_2M_nyc_taxi_and_building/0_2M_nyc_taxi_and_building.csv
+</pre></div>
+</div>
+<p>查看是否下载成功：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wc -l 0_2M_nyc_taxi_and_building.csv
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>安装依赖<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>本文示例代码使用 Python 的 <code class="docutils literal notranslate"><span class="pre">requests</span></code> 库调用 Arctern RESTful API，执行以下命令安装 <code class="docutils literal notranslate"><span class="pre">requests</span></code>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install requests
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="api">
+<h2>API 调用<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<p>下述示例中，假设服务器 IP 地址为 <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>，RESTful 服务端口为 <code class="docutils literal notranslate"><span class="pre">8080</span></code>。如果你在启动 arctern-server 时指定了 IP 与端口，则使用指定的 IP 与端口。</p>
+<div class="section" id="id5">
+<h3>数据导入<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">/loadfile</span></code> 接口导入纽约出租车数据集，将其对应的数据表命名为 <code class="docutils literal notranslate"><span class="pre">raw_data</span></code>。</p>
+<blockquote>
+<div><p><strong>注意：</strong> 你需要将示例中的 <code class="docutils literal notranslate"><span class="pre">file_path</span></code> 替换为数据文件的绝对路径。</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">json</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;/example/data/0_2M_nyc_taxi_and_building.csv&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span><span class="s2">&quot;tables&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="p">{</span>
+<span class="gp">... </span>        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;raw_data&quot;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;csv&quot;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">file_path</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s2">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="gp">... </span>            <span class="s2">&quot;header&quot;</span><span class="p">:</span> <span class="s2">&quot;True&quot;</span><span class="p">,</span>
+<span class="gp">... </span>            <span class="s2">&quot;delimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span>
+<span class="gp">... </span>        <span class="p">},</span>
+<span class="gp">... </span>        <span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="gp">... </span>            <span class="p">{</span><span class="s2">&quot;VendorID&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+<span class="gp">... </span>            <span class="p">{</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+<span class="gp">... </span>            <span class="p">{</span><span class="s2">&quot;tpep_dropoff_datetime&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+<span class="gp">... </span>            <span class="p">{</span><span class="s2">&quot;passenger_count&quot;</span><span class="p">:</span> <span class="s2">&quot;long&quot;</span><span class="p">},</span>
+<span class="gp">... </span>            <span class="p">{</span><span class="s2">&quot;trip_distance&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">},</span>
+<span class="gp">... </span>            <span class="p">{</span><span class="s2">&quot;pickup_longitude&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">},</span>
+<span class="gp">... </span>            <span class="p">{</span><span class="s2">&quot;pickup_latitude&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">},</span>
+<span class="gp">... </span>            <span class="p">{</span><span class="s2">&quot;dropoff_longitude&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">},</span>
+<span class="gp">... </span>            <span class="p">{</span><span class="s2">&quot;dropoff_latitude&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">},</span>
+<span class="gp">... </span>            <span class="p">{</span><span class="s2">&quot;fare_amount&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">},</span>
+<span class="gp">... </span>            <span class="p">{</span><span class="s2">&quot;tip_amount&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">},</span>
+<span class="gp">... </span>            <span class="p">{</span><span class="s2">&quot;total_amount&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">},</span>
+<span class="gp">... </span>            <span class="p">{</span><span class="s2">&quot;buildingid_pickup&quot;</span><span class="p">:</span> <span class="s2">&quot;long&quot;</span><span class="p">},</span>
+<span class="gp">... </span>            <span class="p">{</span><span class="s2">&quot;buildingid_dropoff&quot;</span><span class="p">:</span> <span class="s2">&quot;long&quot;</span><span class="p">},</span>
+<span class="gp">... </span>            <span class="p">{</span><span class="s2">&quot;buildingtext_pickup&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+<span class="gp">... </span>            <span class="p">{</span><span class="s2">&quot;buildingtext_dropoff&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">}</span>
+<span class="gp">... </span>        <span class="p">]</span>
+<span class="gp">... </span>    <span class="p">}</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">... </span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://127.0.0.1:8080/loadfile&quot;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">},</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;code&#39;: 200,</span>
+<span class="go">    &#39;message&#39;: &#39;load table successfully!&#39;,</span>
+<span class="go">    &#39;status&#39;: &#39;success&#39;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>查询数据表信息<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>你已经在后台创建了一张名为 <code class="docutils literal notranslate"><span class="pre">raw_data</span></code>的数据表。接着，使用 <code class="docutils literal notranslate"><span class="pre">/table/schema</span></code> 接口可查询该表中各字段的名称以及对应的数据类型。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://127.0.0.1:8080/table/schema?table=raw_data&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &quot;code&quot;: 200,</span>
+<span class="go">    &quot;schema&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;col_name&quot;: &quot;VendorID&quot;,</span>
+<span class="go">            &quot;data_type&quot;: &quot;string&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;col_name&quot;: &quot;tpep_pickup_datetime&quot;,</span>
+<span class="go">            &quot;data_type&quot;: &quot;string&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;col_name&quot;: &quot;tpep_dropoff_datetime&quot;,</span>
+<span class="go">            &quot;data_type&quot;: &quot;string&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;col_name&quot;: &quot;passenger_count&quot;,</span>
+<span class="go">            &quot;data_type&quot;: &quot;bigint&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;col_name&quot;: &quot;trip_distance&quot;,</span>
+<span class="go">            &quot;data_type&quot;: &quot;double&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;col_name&quot;: &quot;pickup_longitude&quot;,</span>
+<span class="go">            &quot;data_type&quot;: &quot;double&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;col_name&quot;: &quot;pickup_latitude&quot;,</span>
+<span class="go">            &quot;data_type&quot;: &quot;double&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;col_name&quot;: &quot;dropoff_longitude&quot;,</span>
+<span class="go">            &quot;data_type&quot;: &quot;double&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;col_name&quot;: &quot;dropoff_latitude&quot;,</span>
+<span class="go">            &quot;data_type&quot;: &quot;double&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;col_name&quot;: &quot;fare_amount&quot;,</span>
+<span class="go">            &quot;data_type&quot;: &quot;double&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;col_name&quot;: &quot;tip_amount&quot;,</span>
+<span class="go">            &quot;data_type&quot;: &quot;double&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;col_name&quot;: &quot;total_amount&quot;,</span>
+<span class="go">            &quot;data_type&quot;: &quot;double&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;col_name&quot;: &quot;buildingid_pickup&quot;,</span>
+<span class="go">            &quot;data_type&quot;: &quot;bigint&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;col_name&quot;: &quot;buildingid_dropoff&quot;,</span>
+<span class="go">            &quot;data_type&quot;: &quot;bigint&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;col_name&quot;: &quot;buildingtext_pickup&quot;,</span>
+<span class="go">            &quot;data_type&quot;: &quot;string&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;col_name&quot;: &quot;buildingtext_dropoff&quot;,</span>
+<span class="go">            &quot;data_type&quot;: &quot;string&quot;</span>
+<span class="go">        }</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;status&quot;: &quot;success&quot;,</span>
+<span class="go">    &quot;table&quot;: &quot;raw_data&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>绘制热力图<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">/heatmap</span></code> 接口根据乘客的下车地点以及行程费用绘制热力图。其中，费用高的区域为红色，费用低的区域为绿色。热力图的具体参数说明请见 <a class="reference external" href="./api/function/heatmap.html">热力图 RESTful API 说明</a>。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">json</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span><span class="s2">&quot;input_data&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="gp">... </span>    <span class="s2">&quot;points&quot;</span><span class="p">:</span> <span class="s2">&quot;ST_Point(raw_data.pickup_longitude, raw_data.pickup_latitude)&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;weights&quot;</span><span class="p">:</span> <span class="s2">&quot;raw_data.fare_amount&quot;</span>
+<span class="gp">... </span><span class="p">},</span>
+<span class="gp">... </span><span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="gp">... </span>    <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mi">512</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="mi">448</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;bounding_box&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="gp">... </span>        <span class="o">-</span><span class="mf">74.01556543545699</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="mf">40.69354738164881</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="o">-</span><span class="mf">73.9434424136598</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="mf">40.780921656427836</span>
+<span class="gp">... </span>    <span class="p">],</span>
+<span class="gp">... </span>    <span class="s2">&quot;coordinate_system&quot;</span><span class="p">:</span> <span class="s2">&quot;EPSG:4326&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;map_zoom_level&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;aggregation_type&quot;</span><span class="p">:</span> <span class="s2">&quot;sum&quot;</span>
+<span class="gp">... </span><span class="p">}</span>
+<span class="gp">... </span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://127.0.0.1:8080/heatmap&quot;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">},</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">base64</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/tmp/heatmap.png&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;result&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>热力图的绘制结果如下：</p>
+<p><img alt="热力图" src="../_images/heatmap.png" /></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="restful_quick_start_on_spark.html" class="btn btn-neutral float-right" title="快速开始（PySpark 后台）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../install/webserver_installation_config.html" class="btn btn-neutral float-left" title="Arctern RESTful Server 安装与配置" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

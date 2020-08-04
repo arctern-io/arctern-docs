@@ -1,0 +1,6 @@
+arctern.nearest\_road
+=====================
+
+.. currentmodule:: arctern
+
+.. autofunction:: nearest_road

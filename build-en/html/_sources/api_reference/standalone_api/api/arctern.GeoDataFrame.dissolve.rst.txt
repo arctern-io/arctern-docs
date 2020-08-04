@@ -1,0 +1,6 @@
+arctern.GeoDataFrame.dissolve
+=============================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoDataFrame.dissolve

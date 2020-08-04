@@ -1,0 +1,6 @@
+arctern.plot.choroplethmap\_layer
+=================================
+
+.. currentmodule:: arctern.plot
+
+.. autofunction:: choroplethmap_layer

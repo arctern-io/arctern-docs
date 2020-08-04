@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arctern.GeoSeries.envelope &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="arctern.GeoSeries.boundary" href="arctern.GeoSeries.boundary.html" />
+    <link rel="prev" title="arctern.GeoSeries.npoints" href="arctern.GeoSeries.npoints.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api_reference.html">API 参考</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../geoseries.html">GeoSeries</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../geoseries.html#constructor">Constructor</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../geoseries.html#attributes">Attributes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="arctern.GeoSeries.is_valid.html">arctern.GeoSeries.is_valid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arctern.GeoSeries.is_simple.html">arctern.GeoSeries.is_simple</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arctern.GeoSeries.is_empty.html">arctern.GeoSeries.is_empty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arctern.GeoSeries.length.html">arctern.GeoSeries.length</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arctern.GeoSeries.area.html">arctern.GeoSeries.area</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arctern.GeoSeries.geom_type.html">arctern.GeoSeries.geom_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arctern.GeoSeries.centroid.html">arctern.GeoSeries.centroid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arctern.GeoSeries.convex_hull.html">arctern.GeoSeries.convex_hull</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arctern.GeoSeries.npoints.html">arctern.GeoSeries.npoints</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">arctern.GeoSeries.envelope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arctern.GeoSeries.boundary.html">arctern.GeoSeries.boundary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../geoseries.html#constructing-geometry">Constructing Geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geoseries.html#processing-geometry">Processing Geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geoseries.html#spatial-relationship">Spatial Relationship</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geoseries.html#measurement">Measurement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geoseries.html#aggregation">Aggregation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geoseries.html#pandas-methods">Pandas Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../geodataframe.html">GeoDataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../top_level_functions/top_level_functions.html">Top Level Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plot/plot.html">Plot</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cluster/cluster.html">从单机过渡到分布式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../restful/restful.html">RESTful 服务</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../api_reference.html">API 参考</a> &raquo;</li>
+        
+          <li><a href="../geoseries.html">GeoSeries</a> &raquo;</li>
+        
+      <li>arctern.GeoSeries.envelope</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/api_reference/standalone_api/api/arctern.GeoSeries.envelope.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="arctern-geoseries-envelope">
+<h1>arctern.GeoSeries.envelope<a class="headerlink" href="#arctern-geoseries-envelope" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt id="arctern.GeoSeries.envelope">
+<em class="property">property </em><code class="sig-prename descclassname">GeoSeries.</code><code class="sig-name descname">envelope</code><a class="headerlink" href="#arctern.GeoSeries.envelope" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the minimum bounding box for each geometry in the GeoSeries.</p>
+<p>The bounding box is a rectangular geometry object, and its edges are parallel to the axes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Minimum bounding box of each geometry in the GeoSeries.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../cluster_api/api/arctern_spark.GeoSeries.html#arctern_spark.GeoSeries" title="arctern_spark.GeoSeries">GeoSeries</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoSeries</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">GeoSeries</span><span class="p">([</span><span class="s2">&quot;POINT(1 1)&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">envelope</span>
+<span class="go">0                        POINT (1 1)</span>
+<span class="go">1    POLYGON ((1 1,1 3,3 3,3 1,1 1))</span>
+<span class="go">dtype: GeoDtype</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arctern.GeoSeries.boundary.html" class="btn btn-neutral float-right" title="arctern.GeoSeries.boundary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arctern.GeoSeries.npoints.html" class="btn btn-neutral float-left" title="arctern.GeoSeries.npoints" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

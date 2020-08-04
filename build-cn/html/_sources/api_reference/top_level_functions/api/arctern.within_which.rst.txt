@@ -1,0 +1,6 @@
+arctern.within\_which
+=====================
+
+.. currentmodule:: arctern
+
+.. autofunction:: within_which

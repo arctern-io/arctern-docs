@@ -1,0 +1,6 @@
+arctern\_spark.GeoSeries.geom\_type
+===================================
+
+.. currentmodule:: arctern_spark
+
+.. autoproperty:: GeoSeries.geom_type

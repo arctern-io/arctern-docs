@@ -1,0 +1,488 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arctern.tools.sjoin &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_reference/api_reference.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cluster/cluster.html">从单机过渡到分布式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../restful/restful.html">RESTful 服务</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>arctern.tools.sjoin</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for arctern.tools.sjoin</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (C) 2019-2020 Zilliz. All rights reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+
+<span class="c1"># pylint: disable=too-many-lines</span>
+<span class="c1"># pylint: disable=too-many-public-methods, unused-argument, redefined-builtin,protected-access</span>
+
+<span class="kn">from</span> <span class="nn">warnings</span> <span class="kn">import</span> <span class="n">warn</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># pylint: disable=too-many-branches,too-many-statements</span>
+<div class="viewcode-block" id="sjoin"><a class="viewcode-back" href="../../../api_reference/top_level_functions/api/arctern.sjoin.html#arctern.sjoin">[docs]</a><span class="k">def</span> <span class="nf">sjoin</span><span class="p">(</span>
+        <span class="n">left_df</span><span class="p">,</span> <span class="n">right_df</span><span class="p">,</span> <span class="n">left_col</span><span class="p">,</span> <span class="n">right_col</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="s2">&quot;intersects&quot;</span><span class="p">,</span> <span class="n">left_suffix</span><span class="o">=</span><span class="s2">&quot;_left&quot;</span><span class="p">,</span> <span class="n">right_suffix</span><span class="o">=</span><span class="s2">&quot;_right&quot;</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Spatially joins two GeoDataFrames.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    left_df : GeoDataFrame</span>
+<span class="sd">        A GeoDataFrame object.</span>
+<span class="sd">    right_df : GeoDataFrame</span>
+<span class="sd">        A GeoDataFrame object.</span>
+<span class="sd">    left_col : str</span>
+<span class="sd">        Specifies geometry columns of ``left_df`` to be joined.</span>
+<span class="sd">    right_col : str</span>
+<span class="sd">        Specifies geometry columns of ``right_df`` to be joined.</span>
+<span class="sd">    how : str</span>
+<span class="sd">        The type of join, by default &#39;inner&#39;.</span>
+
+<span class="sd">        * &#39;left&#39;: Uses keys from ``left_df``; only retains geometry columns of ``left_df``.</span>
+<span class="sd">        * &#39;right&#39;: Uses keys from ``right_df``; only retains geometry columns of ``right_df``.</span>
+<span class="sd">        * &#39;inner&#39;: Uses intersection of keys from both GeoDataFrames; only retains geometry columns of ``left_df``.</span>
+
+<span class="sd">    op : str</span>
+<span class="sd">        A binary predicate in {&#39;intersects&#39;, &#39;contains&#39;, &#39;within&#39;}, by default &#39;intersects&#39;.</span>
+<span class="sd">    left_suffix : str</span>
+<span class="sd">        Suffix to apply to overlapping column names of ``left_df``, by default &#39;left&#39;.</span>
+<span class="sd">    right_suffix : str</span>
+<span class="sd">        Suffix to apply to overlapping column names of ``right_df``, by default &#39;right&#39;.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    GeoDataFrame</span>
+<span class="sd">        An arctern.GeoDataFrame object.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    ---------</span>
+<span class="sd">    &gt;&gt;&gt; import arctern</span>
+<span class="sd">    &gt;&gt;&gt; from arctern import GeoDataFrame</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; data1 = {</span>
+<span class="sd">    ...     &quot;A&quot;: range(5),</span>
+<span class="sd">    ...     &quot;B&quot;: np.arange(5.0),</span>
+<span class="sd">    ...     &quot;geometry&quot;: [&quot;LINESTRING (0 0, 2 2)&quot;, &quot;LINESTRING (1 0,1 3)&quot;, &quot;LINESTRING (9 3, 3 5)&quot;, &quot;LINESTRING (4 5, 6 7)&quot;,</span>
+<span class="sd">    ...                  &quot;LINESTRING (7 7, 9 9)&quot;, ],</span>
+<span class="sd">    ... }</span>
+<span class="sd">    &gt;&gt;&gt; gdf1 = GeoDataFrame(data1, geometries=[&quot;geometry&quot;], crs=[&quot;epsg:4326&quot;])</span>
+<span class="sd">    &gt;&gt;&gt; data2 = {</span>
+<span class="sd">    ...      &quot;C&quot;: range(5),</span>
+<span class="sd">    ...      &quot;location&quot;: [&quot;LINESTRING (1 0, 3 4)&quot;, &quot;LINESTRING (0 0, 6 7)&quot;, &quot;LINESTRING (5 3, 8 7)&quot;, &quot;LINESTRING (9 8, 4 7)&quot;,</span>
+<span class="sd">    ...                   &quot;LINESTRING (3 3, 6 9)&quot;, ]</span>
+<span class="sd">    ... }</span>
+<span class="sd">    &gt;&gt;&gt; gdf2 = GeoDataFrame(data2, geometries=[&quot;location&quot;], crs=[&quot;epsg:4326&quot;])</span>
+<span class="sd">    &gt;&gt;&gt; arctern.sjoin(left_df=gdf1, right_df=gdf2, left_col=&quot;geometry&quot;, right_col=&quot;location&quot;)</span>
+<span class="sd">       A    B              geometry  index_right  C</span>
+<span class="sd">    0  0  0.0  LINESTRING (0 0,2 2)            0  0</span>
+<span class="sd">    1  1  1.0  LINESTRING (1 0,1 3)            0  0</span>
+<span class="sd">    0  0  0.0  LINESTRING (0 0,2 2)            1  1</span>
+<span class="sd">    1  1  1.0  LINESTRING (1 0,1 3)            1  1</span>
+<span class="sd">    2  2  2.0  LINESTRING (9 3,3 5)            1  1</span>
+<span class="sd">    3  3  3.0  LINESTRING (4 5,6 7)            1  1</span>
+<span class="sd">    2  2  2.0  LINESTRING (9 3,3 5)            2  2</span>
+<span class="sd">    2  2  2.0  LINESTRING (9 3,3 5)            4  4</span>
+<span class="sd">    3  3  3.0  LINESTRING (4 5,6 7)            4  4</span>
+<span class="sd">    4  4  4.0  LINESTRING (7 7,9 9)            3  3</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">arctern</span> <span class="kn">import</span> <span class="n">GeoDataFrame</span><span class="p">,</span> <span class="n">GeoSeries</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">left_df</span><span class="p">,</span> <span class="n">GeoDataFrame</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;&#39;left_df&#39; should be GeoDataFrame, got </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">left_df</span><span class="p">))</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">right_df</span><span class="p">,</span> <span class="n">GeoDataFrame</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;&#39;right_df&#39; should be GeoDataFrame, got </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">right_df</span><span class="p">))</span>
+        <span class="p">)</span>
+
+    <span class="n">allowed_hows</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="s2">&quot;inner&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">how</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed_hows</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s1">&#39;`how` was &quot;</span><span class="si">%s</span><span class="s1">&quot; but is expected to be in </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">how</span><span class="p">,</span> <span class="n">allowed_hows</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="n">allowed_ops</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;contains&quot;</span><span class="p">,</span> <span class="s2">&quot;within&quot;</span><span class="p">,</span> <span class="s2">&quot;intersects&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">op</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed_ops</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s1">&#39;`op` was &quot;</span><span class="si">%s</span><span class="s1">&quot; but is expected to be in </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">allowed_ops</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">left_df</span><span class="p">[</span><span class="n">left_col</span><span class="p">]</span><span class="o">.</span><span class="n">crs</span> <span class="o">!=</span> <span class="n">right_df</span><span class="p">[</span><span class="n">right_col</span><span class="p">]</span><span class="o">.</span><span class="n">crs</span><span class="p">:</span>
+        <span class="n">warn</span><span class="p">(</span>
+            <span class="p">(</span>
+                <span class="s2">&quot;CRS of frames being joined does not match!&quot;</span>
+                <span class="s2">&quot;(</span><span class="si">%s</span><span class="s2"> != </span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">left_df</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span> <span class="n">right_df</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="n">index_left</span> <span class="o">=</span> <span class="s2">&quot;index</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">left_suffix</span>
+    <span class="n">index_right</span> <span class="o">=</span> <span class="s2">&quot;index</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">right_suffix</span>
+
+    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">left_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="n">index_left</span><span class="p">,</span> <span class="n">index_right</span><span class="p">]))</span> <span class="ow">or</span> <span class="nb">any</span><span class="p">(</span>
+        <span class="n">right_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="n">index_left</span><span class="p">,</span> <span class="n">index_right</span><span class="p">])</span>
+    <span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;&#39;</span><span class="si">{0}</span><span class="s2">&#39; and &#39;</span><span class="si">{1}</span><span class="s2">&#39; cannot be names in the frames being&quot;</span>
+            <span class="s2">&quot; joined&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index_left</span><span class="p">,</span> <span class="n">index_right</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">right_df</span><span class="p">[</span><span class="n">right_col</span><span class="p">]</span><span class="o">.</span><span class="n">_sindex_generated</span> <span class="ow">or</span> <span class="p">(</span>
+            <span class="ow">not</span> <span class="n">left_df</span><span class="p">[</span><span class="n">left_col</span><span class="p">]</span><span class="o">.</span><span class="n">_sindex_generated</span> <span class="ow">and</span> <span class="n">right_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">left_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="p">):</span>
+        <span class="n">tree_idx</span> <span class="o">=</span> <span class="n">right_df</span><span class="p">[</span><span class="n">right_col</span><span class="p">]</span><span class="o">.</span><span class="n">sindex</span>
+        <span class="n">tree_idx_right</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tree_idx</span> <span class="o">=</span> <span class="n">left_df</span><span class="p">[</span><span class="n">left_col</span><span class="p">]</span><span class="o">.</span><span class="n">sindex</span>
+        <span class="n">tree_idx_right</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">left_df</span> <span class="o">=</span> <span class="n">left_df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">left_index_name</span> <span class="o">=</span> <span class="n">left_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">left_df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">left_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index_left</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="n">index_left</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&quot;index</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">left_suffix</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="k">for</span> <span class="n">l</span><span class="p">,</span> <span class="n">ix</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">left_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="n">left_index_name</span> <span class="o">=</span> <span class="n">left_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span>
+        <span class="n">left_df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">left_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index_left</span><span class="p">)</span>
+    <span class="n">left_df</span> <span class="o">=</span> <span class="n">left_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+    <span class="n">right_df</span> <span class="o">=</span> <span class="n">right_df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">right_index_name</span> <span class="o">=</span> <span class="n">right_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">right_df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">right_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index_right</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="n">index_right</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&quot;index</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">right_suffix</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="k">for</span> <span class="n">l</span><span class="p">,</span> <span class="n">ix</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">right_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="n">right_index_name</span> <span class="o">=</span> <span class="n">right_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span>
+        <span class="n">right_df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">right_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index_right</span><span class="p">)</span>
+    <span class="n">right_df</span> <span class="o">=</span> <span class="n">right_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+    <span class="n">r_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">l_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">tree_idx_right</span><span class="p">:</span>
+        <span class="n">idxmatch</span> <span class="o">=</span> <span class="n">left_df</span><span class="p">[</span><span class="n">left_col</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">tree_idx</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">x</span> <span class="o">==</span> <span class="p">()</span> <span class="k">else</span> <span class="p">[]</span>
+        <span class="p">)</span>
+        <span class="n">idxmatch</span> <span class="o">=</span> <span class="n">idxmatch</span><span class="p">[</span><span class="n">idxmatch</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">idxmatch</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">r_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">idxmatch</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+            <span class="n">l_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">idxmatch</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">idxmatch</span> <span class="o">=</span> <span class="n">right_df</span><span class="p">[</span><span class="n">right_col</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">tree_idx</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">x</span> <span class="o">==</span> <span class="p">()</span> <span class="k">else</span> <span class="p">[]</span>
+        <span class="p">)</span>
+        <span class="n">idxmatch</span> <span class="o">=</span> <span class="n">idxmatch</span><span class="p">[</span><span class="n">idxmatch</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">idxmatch</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">l_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">idxmatch</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+            <span class="n">r_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">idxmatch</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()])</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">r_idx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">l_idx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">find_intersects</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">GeoSeries</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">a2</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">def</span> <span class="nf">find_contains</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">GeoSeries</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">a2</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">def</span> <span class="nf">find_within</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">GeoSeries</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">.</span><span class="n">within</span><span class="p">(</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">a2</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">predicate_d</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;intersects&quot;</span><span class="p">:</span> <span class="n">find_intersects</span><span class="p">,</span>
+            <span class="s2">&quot;contains&quot;</span><span class="p">:</span> <span class="n">find_contains</span><span class="p">,</span>
+            <span class="s2">&quot;within&quot;</span><span class="p">:</span> <span class="n">find_within</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">check_predicates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">predicate_d</span><span class="p">[</span><span class="n">op</span><span class="p">])</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">l_idx</span><span class="p">,</span>
+                    <span class="n">r_idx</span><span class="p">,</span>
+                    <span class="n">check_predicates</span><span class="p">(</span>
+                        <span class="n">left_df</span><span class="p">[</span><span class="n">left_col</span><span class="p">][</span><span class="n">l_idx</span><span class="p">],</span>
+                        <span class="n">right_df</span><span class="p">[</span><span class="n">right_col</span><span class="p">][</span><span class="n">r_idx</span><span class="p">],</span>
+                    <span class="p">),</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="n">result</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_key_left&quot;</span><span class="p">,</span> <span class="s2">&quot;_key_right&quot;</span><span class="p">,</span> <span class="s2">&quot;match_bool&quot;</span><span class="p">]</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;match_bool&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
+            <span class="s2">&quot;match_bool&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+        <span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;_key_left&quot;</span><span class="p">,</span> <span class="s2">&quot;_key_right&quot;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">how</span> <span class="o">==</span> <span class="s2">&quot;inner&quot;</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;_key_left&quot;</span><span class="p">)</span>
+        <span class="n">joined</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">left_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">left_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+                <span class="n">right_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">right_col</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;_key_right&quot;</span><span class="p">,</span>
+                <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">suffixes</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">left_suffix</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">right_suffix</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">index_left</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;_key_right&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index_left</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">joined</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="n">left_index_name</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">joined</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">left_index_name</span>
+
+    <span class="k">elif</span> <span class="n">how</span> <span class="o">==</span> <span class="s2">&quot;left&quot;</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;_key_left&quot;</span><span class="p">)</span>
+        <span class="n">joined</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">left_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">left_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+                <span class="n">right_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">right_col</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+                <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;_key_right&quot;</span><span class="p">,</span>
+                <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">suffixes</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">left_suffix</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">right_suffix</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">index_left</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;_key_right&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index_left</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">joined</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="n">left_index_name</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">joined</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">left_index_name</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">joined</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">left_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">left_col</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+                    <span class="n">right_df</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;_key_right&quot;</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;right&quot;</span>
+                <span class="p">),</span>
+                <span class="n">left_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;_key_left&quot;</span><span class="p">,</span>
+                <span class="n">how</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">index_right</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;_key_left&quot;</span><span class="p">,</span> <span class="s2">&quot;_key_right&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index_right</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">joined</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="n">right_index_name</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">joined</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">right_index_name</span>
+
+    <span class="k">return</span> <span class="n">joined</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

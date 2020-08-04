@@ -1,0 +1,6 @@
+arctern\_spark.GeoSeries.buffer
+===============================
+
+.. currentmodule:: arctern_spark
+
+.. automethod:: GeoSeries.buffer

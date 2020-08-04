@@ -1,0 +1,6 @@
+arctern\_spark.GeoSeries.polygon\_from\_envelope
+================================================
+
+.. currentmodule:: arctern_spark
+
+.. automethod:: GeoSeries.polygon_from_envelope

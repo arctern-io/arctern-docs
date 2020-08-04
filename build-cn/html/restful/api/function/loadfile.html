@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>加载文件 &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="获取表的列信息" href="table_schema.html" />
+    <link rel="prev" title="RESTful API" href="../api.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start/quick_start.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feature_description/feature_description.html">功能说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_reference/api_reference.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cluster/cluster.html">从单机过渡到分布式</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../restful.html">RESTful 服务</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../install/webserver_installation_config.html">Arctern RESTful Server 安装与配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restful_quick_start_on_python.html">快速开始（Python 后台）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restful_quick_start_on_spark.html">快速开始（PySpark 后台）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restful_config.html">Arctern RESTful Server 配置项</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html">RESTful API</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">加载文件</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">请求说明</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">请求示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">响应示例</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="table_schema.html">获取表的列信息</a></li>
+<li class="toctree-l3"><a class="reference internal" href="query.html">查询</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pointmap.html">点图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="weighted_pointmap.html">带权点图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="heatmap.html">热力图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="choroplethmap.html">轮廓图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="icon_viz.html">图标图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fishnetmap.html">渔网图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="command.html">代码执行</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../restful.html">RESTful 服务</a> &raquo;</li>
+        
+          <li><a href="../api.html">RESTful API</a> &raquo;</li>
+        
+      <li>加载文件</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/restful/api/function/loadfile.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>加载文件<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>加载数据文件。当前支持的文件格式详见 <a class="reference internal" href="../../file_data.html"><span class="doc">文件的导入导出</span></a>。</p>
+<div class="section" id="id2">
+<h2>请求说明<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Method: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">/loadfile</span></code></p></li>
+<li><p>Headers:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Content-Type:</span> <span class="pre">application/json</span></code></p></li>
+</ul>
+</li>
+<li><p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;tables&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;table_name&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;csv&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/data.csv&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;header&quot;</span><span class="p">:</span> <span class="s2">&quot;True&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;delimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;schema&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span><span class="nt">&quot;column0&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;column1&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;column2&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>参数说明：</p>
+<ul class="simple">
+<li><p>tables: 创建数据表的描述信息。该字段为一个列表，系统将会按照列表中的顺序依次进行建表操作。</p>
+<ul>
+<li><p>name: 数据表名称。</p></li>
+<li><p>format: 待加载文件的文件格式。</p></li>
+<li><p>path: 文件路径。</p></li>
+<li><p>options: 加载文件时的指定选项，使用 <code class="docutils literal notranslate"><span class="pre">key-value</span></code> 形式提供。</p></li>
+<li><p>schema: 各列数据的名称和类型描述。schema 字段是一个列表，顺序需要和文件中各列的实际存储顺序保持一致。</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>请求示例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<p>本文示例代码使用 Python 的 <code class="docutils literal notranslate"><span class="pre">requests</span></code> 库调用 <code class="docutils literal notranslate"><span class="pre">Arctern</span> <span class="pre">RESTful</span> <span class="pre">API</span></code>，执行以下命令安装 <code class="docutils literal notranslate"><span class="pre">requests</span></code>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install requests
+</pre></div>
+</div>
+<p>调用示例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8080/loadfile&quot;</span>
+
+<span class="c1"># /path/to/data.csv文件内容示例如下：</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">column0, column1, column2</span>
+<span class="sd">str1, 0.1, 1</span>
+<span class="sd">str2, 0.2, 2</span>
+<span class="sd">str3, 0.3, 3</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;tables&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;table_name&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;csv&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/data.csv&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;header&quot;</span><span class="p">:</span> <span class="s2">&quot;True&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;delimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;column0&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;column1&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;column2&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="curl">
+<h3>curl<a class="headerlink" href="#curl" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl --location --request POST <span class="s1">&#39;http://localhost:8080/loadfile&#39;</span> <span class="se">\</span>
+--header <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+--data-raw <span class="s1">&#39;{</span>
+<span class="s1">    &quot;tables&quot;: [</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;name&quot;: &quot;table_name&quot;,</span>
+<span class="s1">            &quot;format&quot;: &quot;csv&quot;,</span>
+<span class="s1">            &quot;path&quot;: &quot;/path/to/data.csv&quot;,</span>
+<span class="s1">            &quot;options&quot;: {</span>
+<span class="s1">                &quot;header&quot;: &quot;True&quot;,</span>
+<span class="s1">                &quot;delimiter&quot;: &quot;,&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;schema&quot;: [</span>
+<span class="s1">                {</span>
+<span class="s1">                    &quot;column0&quot;: &quot;string&quot;</span>
+<span class="s1">                },</span>
+<span class="s1">                {</span>
+<span class="s1">                    &quot;column1&quot;: &quot;double&quot;</span>
+<span class="s1">                },</span>
+<span class="s1">                {</span>
+<span class="s1">                    &quot;column2&quot;: &quot;int&quot;</span>
+<span class="s1">                }</span>
+<span class="s1">            ]</span>
+<span class="s1">        }</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>响应示例<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;200&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;create table successfully!&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="table_schema.html" class="btn btn-neutral float-right" title="获取表的列信息" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../api.html" class="btn btn-neutral float-left" title="RESTful API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+arctern.GeoSeries.envelope\_aggr
+================================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.envelope_aggr

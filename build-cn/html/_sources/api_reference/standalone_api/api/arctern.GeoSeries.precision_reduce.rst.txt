@@ -1,0 +1,6 @@
+arctern.GeoSeries.precision\_reduce
+===================================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.precision_reduce

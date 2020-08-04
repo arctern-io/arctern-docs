@@ -1,0 +1,6 @@
+arctern.GeoSeries.symmetric\_difference
+=======================================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.symmetric_difference

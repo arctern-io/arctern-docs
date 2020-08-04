@@ -1,0 +1,6 @@
+arctern\_spark.GeoSeries.make\_valid
+====================================
+
+.. currentmodule:: arctern_spark
+
+.. automethod:: GeoSeries.make_valid

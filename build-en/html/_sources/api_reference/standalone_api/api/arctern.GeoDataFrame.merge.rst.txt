@@ -1,0 +1,6 @@
+arctern.GeoDataFrame.merge
+==========================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoDataFrame.merge

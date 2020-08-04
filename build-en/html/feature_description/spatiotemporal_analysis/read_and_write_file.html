@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Reading and writing files &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Basic manipulations of geometry" href="geometric_manipulation.html" />
+    <link rel="prev" title="Data structure" href="data_structure.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../feature_description.html">Feature Description</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="spatiotemporal_analysis.html">Spatiotemporal Analysis</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data_structure.html">Data structure</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Reading and writing files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#importing-files">Importing files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exporting-files">Exporting files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="geometric_manipulation.html">Basic manipulations of geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="convert_from_and_to_geopandas_geoseries.html">GeoSeries conversion between Arctern and GeoPandas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spatial_relationship_operation.html">Spatial relationship operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="map_match.html">Map match</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_geometry.html">Plot methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crs_and_transform.html">Coordinate reference system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregation.html">Aggregation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="indexing_selecting_data.html">Indexing and selecting data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/api_reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster/cluster.html">Transform from standalone version to distributed version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../restful/restful.html">RESTful Service</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../feature_description.html">Feature Description</a> &raquo;</li>
+        
+          <li><a href="spatiotemporal_analysis.html">Spatiotemporal Analysis</a> &raquo;</li>
+        
+      <li>Reading and writing files</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/feature_description/spatiotemporal_analysis/read_and_write_file.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reading-and-writing-files">
+<h1>Reading and writing files<a class="headerlink" href="#reading-and-writing-files" title="Permalink to this headline">¶</a></h1>
+<p>Arctern inherits the file reading and writing interface of pandas and supports reading and writing data types of <a target="_blank" class="reference external" href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">WKT</a>, <a target="_blank" class="reference external" href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry#Well-known_binary">WKB</a> and <a target="_blank" class="reference external" href="https://geojson.org/">GeoJson</a> files. For the specific methods of reading and writing files through pandas, please refer to <a target="_blank" class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/io.html">pandas Documentation</a>.</p>
+<div class="section" id="importing-files">
+<h2>Importing files<a class="headerlink" href="#importing-files" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="from-wkt-and-wkb-format">
+<h3>From WKT and WKB format<a class="headerlink" href="#from-wkt-and-wkb-format" title="Permalink to this headline">¶</a></h3>
+<p>We use the <strong>wkt_geos.csv</strong> file to demonstrate how to read WKT and WKB data from files. This file mainly defines four geometric objects in WKT format, including one point (POINT) and three polygons (POLYGON). The content of the file is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geos</span>
+<span class="n">POINT</span> <span class="p">(</span><span class="mi">30</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">POLYGON</span> <span class="p">((</span><span class="mi">30</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">40</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">20</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">10</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">POLYGON</span> <span class="p">((</span><span class="mi">1</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">POLYGON</span> <span class="p">((</span><span class="mi">1</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>First, use the <a target="_blank" class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html"><code class="docutils literal notranslate"><span class="pre">read_csv</span></code></a> of pandas method to import the file and construct the pandas.Series object <code class="docutils literal notranslate"><span class="pre">data_wkt</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">arctern</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;&lt;/path/to/wkt_geos.csv&gt;&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;|&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_wkt</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;geos&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">data_wkt</span><span class="p">)</span>
+<span class="go">0                                    POINT (30 10)</span>
+<span class="go">1    POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))</span>
+<span class="go">2                   POLYGON ((1 2, 3 4, 5 6, 1 2))</span>
+<span class="go">3              POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))</span>
+<span class="go">Name: geos, dtype: object</span>
+</pre></div>
+</div>
+<p>Construct an arctern.GeoSeries object <code class="docutils literal notranslate"><span class="pre">geo_wkt</span></code> based on the pandas.Series object <code class="docutils literal notranslate"><span class="pre">data_wkt</span></code> made up of WKT data:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geo_wkt</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">data_wkt</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In order to demonstrate how to read data in WKB format and create GeoSeries objects, we converted the pandas.Series object that was previously read and created from the <strong>wkt_geos.csv</strong> file from WKT format to WKB format. Specifically, we use the <a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.to_wkb.html"><code class="docutils literal notranslate"><span class="pre">to_wkb</span></code></a> method to get the pandas.Series object <code class="docutils literal notranslate"><span class="pre">data_wkb</span></code> in WKB format from the GeoSeries object <code class="docutils literal notranslate"><span class="pre">geo_wkt</span></code>.</p>
+<p>Then, construct the arctern.GeoSeries object <code class="docutils literal notranslate"><span class="pre">geo_wkb</span></code> based on the pandas.Series object <code class="docutils literal notranslate"><span class="pre">data_wkb</span></code> in WKB format:</p>
+<!-- [to_wkb](/path/to/to_wkb) --><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data_wkb</span> <span class="o">=</span> <span class="n">geo_wkt</span><span class="o">.</span><span class="n">to_wkb</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geo_wkb</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">data_wkb</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use the <a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html"><code class="docutils literal notranslate"><span class="pre">geom_equals</span></code></a> method of GeoSeries to compare <code class="docutils literal notranslate"><span class="pre">geo_wkt</span></code> and <code class="docutils literal notranslate"><span class="pre">geo_wkb</span></code>. It turns out that these two GeoSeries objects are the same because they are essentially constructed from the same data.</p>
+<div class="highlight-pytho notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; geo_wkt.geom_equals(geo_wkb)
+0    True
+1    True
+2    True
+3    True
+dtype: bool
+</pre></div>
+</div>
+</div>
+<div class="section" id="from-geojson-format">
+<h3>From GeoJson format<a class="headerlink" href="#from-geojson-format" title="Permalink to this headline">¶</a></h3>
+<p>We use the <strong>geos.json</strong> file to demonstrate how to read GeoJson data from files. This file mainly defines four geometric objects in WKT format, including one point (POINT) and three polygons (POLYGON). The contents of the file are as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;0&quot;</span><span class="p">:</span><span class="s2">&quot;{ </span><span class="se">\&quot;</span><span class="s2">type</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">Point</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">coordinates</span><span class="se">\&quot;</span><span class="s2">: [ 30.0, 10.0 ] }&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;1&quot;</span><span class="p">:</span><span class="s2">&quot;{ </span><span class="se">\&quot;</span><span class="s2">type</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">Polygon</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">coordinates</span><span class="se">\&quot;</span><span class="s2">: [ [ [ 30.0, 10.0 ], [ 40.0, 40.0 ], [ 20.0, 40.0 ], [ 10.0, 20.0 ], [ 30.0, 10.0 ] ] ] }&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2&quot;</span><span class="p">:</span><span class="s2">&quot;{ </span><span class="se">\&quot;</span><span class="s2">type</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">Polygon</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">coordinates</span><span class="se">\&quot;</span><span class="s2">: [ [ [ 1.0, 2.0 ], [ 3.0, 4.0 ], [ 5.0, 6.0 ], [ 1.0, 2.0 ] ] ] }&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;3&quot;</span><span class="p">:</span><span class="s2">&quot;{ </span><span class="se">\&quot;</span><span class="s2">type</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">Polygon</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">coordinates</span><span class="se">\&quot;</span><span class="s2">: [ [ [ 1.0, 1.0 ], [ 3.0, 1.0 ], [ 3.0, 3.0 ], [ 1.0, 3.0 ], [ 1.0, 1.0 ] ] ] }&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>First, use the <a target="_blank" class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html"><code class="docutils literal notranslate"><span class="pre">read_json</span></code></a> method of pandas to import the file and construct the pandas.Series object <code class="docutils literal notranslate"><span class="pre">data_json</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s2">&quot;&lt;/path/to/geos.json&gt;&quot;</span><span class="p">,</span><span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_json</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">data_json</span><span class="p">)</span>
+<span class="go">0    { &quot;type&quot;: &quot;Point&quot;, &quot;coordinates&quot;: [ 30.0, 10.0...</span>
+<span class="go">1    { &quot;type&quot;: &quot;Polygon&quot;, &quot;coordinates&quot;: [ [ [ 30.0...</span>
+<span class="go">2    { &quot;type&quot;: &quot;Polygon&quot;, &quot;coordinates&quot;: [ [ [ 1.0,...</span>
+<span class="go">3    { &quot;type&quot;: &quot;Polygon&quot;, &quot;coordinates&quot;: [ [ [ 1.0,...</span>
+<span class="go">Name: geos, dtype: object</span>
+</pre></div>
+</div>
+<p>Construct an arctern.GeoSeries object <code class="docutils literal notranslate"><span class="pre">geo_json</span></code> based on the pandas.Series object <code class="docutils literal notranslate"><span class="pre">data_json</span></code> made up of GeoJson data:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geo_json</span> <span class="o">=</span> <span class="n">arctern</span><span class="o">.</span><span class="n">GeoSeries</span><span class="o">.</span><span class="n">geom_from_geojson</span><span class="p">(</span><span class="n">data_json</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use the <a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.geom_equals.html"><code class="docutils literal notranslate"><span class="pre">geom_equals</span></code></a> method of GeoSeries to compare <code class="docutils literal notranslate"><span class="pre">geo_wkb</span></code> and <code class="docutils literal notranslate"><span class="pre">geo_json</span></code>. It turns out that these two GeoSeries objects are the same because the source files of <code class="docutils literal notranslate"><span class="pre">geo_wkb</span></code> and <code class="docutils literal notranslate"><span class="pre">geo_json</span></code> (<strong>wkt_geos.csv</strong> and <strong>geos.json</strong>) define the same geometry.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geo_json</span><span class="o">.</span><span class="n">geom_equals</span><span class="p">(</span><span class="n">geo_wkb</span><span class="p">)</span>
+<span class="go">0    True</span>
+<span class="go">1    True</span>
+<span class="go">2    True</span>
+<span class="go">3    True</span>
+<span class="go">dtype: bool</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="exporting-files">
+<h2>Exporting files<a class="headerlink" href="#exporting-files" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="from-wkt-format">
+<h3>From WKT format<a class="headerlink" href="#from-wkt-format" title="Permalink to this headline">¶</a></h3>
+<p>First, use the <a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.to_wkt.html"><code class="docutils literal notranslate"><span class="pre">to_wkt</span></code></a> method of GeoSeries to get a pandas.Series object from the GeoSeries object. Then, use the <a target="_blank" class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html"><code class="docutils literal notranslate"><span class="pre">to_csv</span></code></a> method of pandas.Series to save the data as a CSV file.</p>
+<!--  [to_wkt](/path/to/to_wkt)  --><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">out_file_data</span> <span class="o">=</span> <span class="n">geo_wkb</span><span class="o">.</span><span class="n">to_wkt</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">out_file_data</span><span class="p">)</span>
+<span class="go">0                                POINT (30 10)</span>
+<span class="go">1    POLYGON ((30 10,40 40,20 40,10 20,30 10))</span>
+<span class="go">2                  POLYGON ((1 2,3 4,5 6,1 2))</span>
+<span class="go">3              POLYGON ((1 1,3 1,3 3,1 3,1 1))</span>
+<span class="go">dtype: object</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">out_file_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;&lt;/path/to/out_wkt_geos.csv&gt;&quot;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">quoting</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>From GeoJson format<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>First, use the <a target="_blank" class="reference external" href="../../api_reference/standalone_api/api/arctern.GeoSeries.as_geojson.html"><code class="docutils literal notranslate"><span class="pre">as_geojson</span></code></a> method of GeoSeries to get a pandas.Series object from the GeoSeries object. Then, use the <a target="_blank" class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html"><code class="docutils literal notranslate"><span class="pre">to_json</span></code></a> method of pandas.Series to save the data as a JSON file.</p>
+<!--  [as_geojson](/path/to/as_geojson) --><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">out_file_data</span> <span class="o">=</span> <span class="n">geo_wkb</span><span class="o">.</span><span class="n">as_geojson</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="p">(</span><span class="n">out_file_data</span><span class="p">)</span>
+<span class="go">0    { &quot;type&quot;: &quot;Point&quot;, &quot;coordinates&quot;: [ 30.0, 10.0...</span>
+<span class="go">1    { &quot;type&quot;: &quot;Polygon&quot;, &quot;coordinates&quot;: [ [ [ 30.0...</span>
+<span class="go">2    { &quot;type&quot;: &quot;Polygon&quot;, &quot;coordinates&quot;: [ [ [ 1.0,...</span>
+<span class="go">3    { &quot;type&quot;: &quot;Polygon&quot;, &quot;coordinates&quot;: [ [ [ 1.0,...</span>
+<span class="go">dtype: object</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">out_file_data</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;&lt;/path/to/out_geos.json&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="geometric_manipulation.html" class="btn btn-neutral float-right" title="Basic manipulations of geometry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="data_structure.html" class="btn btn-neutral float-left" title="Data structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+arctern\_spark.GeoSeries.hausdorff\_distance
+============================================
+
+.. currentmodule:: arctern_spark
+
+.. automethod:: GeoSeries.hausdorff_distance

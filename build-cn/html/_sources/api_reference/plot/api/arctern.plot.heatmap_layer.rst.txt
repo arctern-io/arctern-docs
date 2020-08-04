@@ -1,0 +1,6 @@
+arctern.plot.heatmap\_layer
+===========================
+
+.. currentmodule:: arctern.plot
+
+.. autofunction:: heatmap_layer

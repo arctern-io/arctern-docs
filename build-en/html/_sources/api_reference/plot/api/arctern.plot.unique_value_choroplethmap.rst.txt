@@ -1,0 +1,6 @@
+arctern.plot.unique\_value\_choroplethmap
+=========================================
+
+.. currentmodule:: arctern.plot
+
+.. autofunction:: unique_value_choroplethmap

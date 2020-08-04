@@ -1,0 +1,6 @@
+arctern.read\_file
+==================
+
+.. currentmodule:: arctern
+
+.. autofunction:: read_file

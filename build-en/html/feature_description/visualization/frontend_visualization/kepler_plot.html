@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Visualizing Spatiotemporal Information via Kepler.gl &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Back-End Visualization" href="../backend_visualization/backend_visualization.html" />
+    <link rel="prev" title="Front-End Visualization" href="frontend_visualization.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../feature_description.html">Feature Description</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../spatiotemporal_analysis/spatiotemporal_analysis.html">Spatiotemporal Analysis</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../visualization.html">Visualization</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../how_to_visualize.html">How to visualize spatiotemporal data</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="frontend_visualization.html">Front-End Visualization</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Visualizing Spatiotemporal Information via Kepler.gl</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../backend_visualization/backend_visualization.html">Back-End Visualization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_reference/api_reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cluster/cluster.html">Transform from standalone version to distributed version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../restful/restful.html">RESTful Service</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../feature_description.html">Feature Description</a> &raquo;</li>
+        
+          <li><a href="../visualization.html">Visualization</a> &raquo;</li>
+        
+          <li><a href="frontend_visualization.html">Front-End Visualization</a> &raquo;</li>
+        
+      <li>Visualizing Spatiotemporal Information via Kepler.gl</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/feature_description/visualization/frontend_visualization/kepler_plot.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="visualizing-spatiotemporal-information-via-kepler-gl">
+<h1>Visualizing Spatiotemporal Information via Kepler.gl<a class="headerlink" href="#visualizing-spatiotemporal-information-via-kepler-gl" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://kepler.gl/">Kepler.gl</a> is a powerful open source web application for geospatial analytic visualizations. After importing Kepler.gl into Jupyter Notebook, you can get vivid and intuitive rendering of spatiotemporal data. This article shows how to use Kepler.gl to display the spatiotemporal information output by Arctern.</p>
+<div class="section" id="installing-jupyter-notebook-and-kepler-gl">
+<h2>Installing Jupyter Notebook and Kepler.gl<a class="headerlink" href="#installing-jupyter-notebook-and-kepler-gl" title="Permalink to this headline">¶</a></h2>
+<p>In the next sections, you need to use Jupyter Notebook for running Python codes and Kepler.gl for visualizing spatial data. Run the commands below to install Jupyter and Kepler.gl if you have not installed them yet:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter the Conda environment</span>
+$ conda activate arctern_env
+
+<span class="c1"># Install Jupyter and Kepler.gl</span>
+$ conda install -c conda-forge jupyterlab
+$ pip install keplergl
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-kepler-gl-map">
+<h2>Loading Kepler.gl map<a class="headerlink" href="#loading-kepler-gl-map" title="Permalink to this headline">¶</a></h2>
+<p>Use <a class="reference external" href="https://docs.kepler.gl/docs/keplergl-jupyter#1-load-keplergl-map"><code class="docutils literal notranslate"><span class="pre">KeplerGl</span></code></a> to create a map object named <code class="docutils literal notranslate"><span class="pre">map_1</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load an empty map</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">keplergl</span> <span class="kn">import</span> <span class="n">KeplerGl</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map_1</span> <span class="o">=</span> <span class="n">KeplerGl</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map_1</span>
+</pre></div>
+</div>
+<p><img alt="load_map" src="../../../_images/load_map.png" /></p>
+</div>
+<div class="section" id="adding-data">
+<h2>Adding data<a class="headerlink" href="#adding-data" title="Permalink to this headline">¶</a></h2>
+<p>Create two LINESTRING objects (<code class="docutils literal notranslate"><span class="pre">road1</span></code>, <code class="docutils literal notranslate"><span class="pre">road2</span></code>) to represent two roads, and save the geographic information of these roads in <code class="docutils literal notranslate"><span class="pre">df</span></code>. Then, use <a class="reference external" href="https://docs.kepler.gl/docs/keplergl-jupyter#add_data"><code class="docutils literal notranslate"><span class="pre">add_data</span></code></a> to add  <code class="docutils literal notranslate"><span class="pre">df</span></code> as input dataset to the map.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># DataFrame</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;geos&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;LINESTRING (-73.996324 40.753388, -73.972088 40.743215)&#39;</span><span class="p">,</span> <span class="s1">&#39;LINESTRING (-73.989555 40.741531, -73.973952 40.762962)&#39;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">map_1</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;data_1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">map_1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<p>For more examples and interface descriptions, please refer to <a class="reference external" href="https://docs.kepler.gl/docs/keplergl-jupyter">the usage of Jupyter Notebook on Kepler.gl website</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../backend_visualization/backend_visualization.html" class="btn btn-neutral float-right" title="Back-End Visualization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="frontend_visualization.html" class="btn btn-neutral float-left" title="Front-End Visualization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

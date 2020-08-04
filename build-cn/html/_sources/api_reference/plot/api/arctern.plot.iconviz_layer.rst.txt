@@ -1,0 +1,6 @@
+arctern.plot.iconviz\_layer
+===========================
+
+.. currentmodule:: arctern.plot
+
+.. autofunction:: iconviz_layer

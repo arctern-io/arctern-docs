@@ -1,0 +1,6 @@
+arctern.GeoSeries.set\_crs
+==========================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.set_crs

@@ -1,0 +1,6 @@
+arctern.GeoSeries.geom\_equals
+==============================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.geom_equals

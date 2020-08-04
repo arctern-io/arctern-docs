@@ -1,0 +1,6 @@
+arctern.GeoSeries.hausdorff\_distance
+=====================================
+
+.. currentmodule:: arctern
+
+.. automethod:: GeoSeries.hausdorff_distance

@@ -1,0 +1,6 @@
+arctern\_spark.GeoSeries.to\_wkb
+================================
+
+.. currentmodule:: arctern_spark
+
+.. automethod:: GeoSeries.to_wkb

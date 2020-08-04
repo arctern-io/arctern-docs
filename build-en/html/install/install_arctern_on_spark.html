@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Install Arctern on Spark &mdash; Arctern 0.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Arctern
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feature_description/feature_description.html">Feature Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/api_reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster/cluster.html">Transform from standalone version to distributed version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../restful/restful.html">RESTful Service</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Arctern</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Install Arctern on Spark</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/install/install_arctern_on_spark.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="install-arctern-on-spark">
+<h1>Install Arctern on Spark<a class="headerlink" href="#install-arctern-on-spark" title="Permalink to this headline">¶</a></h1>
+<p>This article describes how to install Spark 3.0.0 and Arctern and run Arctern on Spark.</p>
+<div class="section" id="install-arctern">
+<h2>Install Arctern<a class="headerlink" href="#install-arctern" title="Permalink to this headline">¶</a></h2>
+<p>See the article below:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="standalone_installation.html"><span class="doc">Install Arctern</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="install-and-configure-spark">
+<h2>Install and configure Spark<a class="headerlink" href="#install-and-configure-spark" title="Permalink to this headline">¶</a></h2>
+<p>The following describes how to install and configure Spark in the <strong>local</strong> mode.</p>
+<blockquote>
+<div><p><strong>Note:</strong> If you need to install Spark in cluster mode, please see <a class="reference external" href="https://spark.apache.org/docs/latest/">Spark documentation</a>. You can also see <a class="reference internal" href="cluster_installation.html"><span class="doc">Install and deploy Arctern on a Spark cluster</span></a>.</p>
+</div></blockquote>
+<div class="section" id="spark-installation-requirements">
+<h3>Spark installation requirements<a class="headerlink" href="#spark-installation-requirements" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Operating system</td>
+<td align="left">Ubuntu LTS 18.04, Centos 7</td>
+</tr>
+<tr>
+<td align="left">JDK</td>
+<td align="left">JDK 8</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="download-spark-pre-compiled-package">
+<h3>Download Spark pre-compiled package<a class="headerlink" href="#download-spark-pre-compiled-package" title="Permalink to this headline">¶</a></h3>
+<p>Download <a class="reference external" href="https://mirrors.sonic.net/apache/spark/spark-3.0.0/spark-3.0.0-bin-hadoop2.7.tgz">spark-3.0.0 TGZ file</a> and unzip it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wget https://mirrors.sonic.net/apache/spark/spark-3.0.0/spark-3.0.0-bin-hadoop2.7.tgz
+$ tar -xvzf spark-3.0.0-bin-hadoop2.7.tgz
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-spark">
+<h3>Configure Spark<a class="headerlink" href="#configure-spark" title="Permalink to this headline">¶</a></h3>
+<p>Run <code class="docutils literal notranslate"><span class="pre">vim</span> <span class="pre">~/.bashrc</span></code> to edit the <strong>bashrc</strong> file. Add the following to the file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">SPARK_HOME</span><span class="o">=</span>&lt;path/to/spark-3.0.0-bin-hadoop2.7&gt;
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$SPARK_HOME</span>/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span> <span class="nv">SPARK_LOCAL_HOSTNAME</span><span class="o">=</span>localhost
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Note:</strong></p>
+<ul class="simple">
+<li><p>You need to replace <code class="docutils literal notranslate"><span class="pre">&lt;path/to/spark-3.0.0-bin-hadoop2.7&gt;</span></code> with the path to the local folder <strong>spark-3.0.0-bin-hadoop2.7</strong>.</p></li>
+<li><p>You need to restart the terminal for the above settings to take effect.</p></li>
+</ul>
+</div></blockquote>
+<p>Create <strong>spark-defaults.conf</strong>, <strong>spark-env.sh</strong> and <strong>hive-site.xml</strong> files:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> spark-3.0.0-bin-hadoop2.7/conf
+$ cp spark-defaults.conf.template spark-defaults.conf
+$ cp spark-env.sh.template spark-env.sh
+$ touch hive-site.xml
+</pre></div>
+</div>
+<p>Add the following at the end of the <strong>spark-defaults.conf</strong> file:</p>
+<blockquote>
+<div><p><strong>Note:</strong> You need to replace <code class="docutils literal notranslate"><span class="pre">&lt;conda_prefix&gt;</span></code> with the installation path to the local Conda environment. See <a class="reference external" href="#faq">FAQ</a> for how to obtain the installation path to the conda environment.</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spark.driver.extraClassPath &lt;conda_prefix&gt;/jars/arctern_scala-assembly-0.3.0.jar
+spark.executorEnv.PROJ_LIB &lt;conda_prefix&gt;/share/proj
+spark.executorEnv.GDAL_DATA &lt;conda_prefix&gt;/share/gdal
+spark.executor.extraClassPath &lt;conda_prefix&gt;/jars/arctern_scala-assembly-0.3.0.jar
+</pre></div>
+</div>
+<p>Add the following content at the end of the file <strong>spark-env.sh</strong>:</p>
+<blockquote>
+<div><p><strong>Note:</strong> You need to replace <code class="docutils literal notranslate"><span class="pre">&lt;conda_prefix&gt;</span></code> with the installation path to the local Conda environment. See <a class="reference external" href="#faq">FAQ</a> for how to obtain the installation path to conda environment.</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">PYSPARK_PYTHON</span><span class="o">=</span>&lt;conda_prefix&gt;/bin/python
+</pre></div>
+</div>
+<p>Add the following content to the file <strong>hive-site.xml</strong>:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;configuration&gt;</span>
+    <span class="nt">&lt;property&gt;</span>
+        <span class="nt">&lt;name&gt;</span>hive.metastore.warehouse.dir<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;value&gt;</span>${user.home}/hive/warehouse<span class="nt">&lt;/value&gt;</span>
+        <span class="nt">&lt;description&gt;</span>location of default database for the warehouse<span class="nt">&lt;/description&gt;</span>
+    <span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="compile-and-install-pyspark-package">
+<h3>Compile and install PySpark package<a class="headerlink" href="#compile-and-install-pyspark-package" title="Permalink to this headline">¶</a></h3>
+<p>Enter the Conda environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda activate arctern_env
+</pre></div>
+</div>
+<p>Compile and install the pyspark package:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> <span class="nv">$SPAKR_HOME</span>/python
+$ python setup.py install
+</pre></div>
+</div>
+<p>Check if PySpark is successfully installed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python -c <span class="s2">&quot;import pyspark&quot;</span>
+</pre></div>
+</div>
+<p>If you do not see any error message, then the installation is successful.</p>
+</div>
+</div>
+<div class="section" id="test-example">
+<h2>Test example<a class="headerlink" href="#test-example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="download-the-test-module">
+<h3>Download the test module<a class="headerlink" href="#download-the-test-module" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wget https://raw.githubusercontent.com/arctern-io/arctern/branch-0.3.x/spark/pyspark/examples/gis/spark_udf_ex.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="submit-the-test-task">
+<h3>Submit the test task<a class="headerlink" href="#submit-the-test-task" title="Permalink to this headline">¶</a></h3>
+<p>Submit the Spark task:</p>
+<blockquote>
+<div><p><strong>Note:</strong></p>
+<ul class="simple">
+<li><p>You need to replace <code class="docutils literal notranslate"><span class="pre">&lt;path/to/your/spark&gt;</span></code> with the local installation path to Spark, and <code class="docutils literal notranslate"><span class="pre">&lt;path/to/spark_udf_ex.py&gt;</span></code> with the path to the local test file.</p></li>
+<li><p>You are not required to enter the Conda environment.</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ spark-submit --master <span class="nb">local</span> &lt;path/to/spark_udf_ex.py&gt;
+</pre></div>
+</div>
+<p>若最后结果输出包含以下内容，则表示通过测试示例。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>All tests of arctern have passed!
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-the-test-module-directly">
+<h3>Run the test module directly<a class="headerlink" href="#run-the-test-module-directly" title="Permalink to this headline">¶</a></h3>
+<p>You can also run the test file directly:</p>
+<blockquote>
+<div><p><strong>Note:</strong></p>
+<ul class="simple">
+<li><p>You need to replace <code class="docutils literal notranslate"><span class="pre">&lt;path/to/your/spark&gt;</span></code> with the local installation path to Spark, and <code class="docutils literal notranslate"><span class="pre">&lt;path/to/spark_udf_ex.py&gt;</span></code> with the path to the local test file.</p></li>
+<li><p>You need to enter the Conda environment.</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python &lt;path/to/spark_udf_ex.py&gt;
+</pre></div>
+</div>
+<p>If you see the following message, it means that the test example is passed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>All tests of arctern have passed!
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="how-to-get-the-installation-path-of-conda-environment">
+<h2>How to get the installation path of Conda environment<a class="headerlink" href="#how-to-get-the-installation-path-of-conda-environment" title="Permalink to this headline">¶</a></h2>
+<p>Enter the Conda environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda activate arctern_env
+</pre></div>
+</div>
+<p>Get the installation path to the current Conda environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> $ <span class="nb">echo</span> <span class="nv">$CONDA_PREFIX</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, zilliz
+      <span class="lastupdated">
+        Last updated on Aug 04, 2020.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
